@@ -1,0 +1,2279 @@
+{
+  "type": "object",
+  "format": "categories",
+  "title": "Idle RPG - Editor",
+  "basicCategoryTitle": "Idle RPG - Editor",
+  "additionalProperties": false,
+  "required": [
+    "basic",
+    "categories",
+    "actions",
+    "items",
+    "groups",
+    "events",
+    "presets"
+  ],
+  "options": {
+    "disable_collapse": true
+  },
+  "properties": {
+    "basic": {
+      "type": "object",
+      "format": "categories",
+      "basicCategoryTitle": "Grundeinstellung",
+      "additionalProperties": false,
+      "required": [
+        "overview",
+        "general",
+        "design",
+        "development"
+      ],
+      "options": {
+        "disable_collapse": true,
+        "infoText": "Details"
+      },
+      "properties": {
+        "overview": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "information",
+            "version",
+            "author",
+            "homepage",
+            "url",
+            "estimatedPlayingTime"
+          ],
+          "options": {
+            "disable_collapse": true
+          },
+          "properties": {
+            "information": {
+              "type": "object",
+              "additionalProperties": false,
+              "format": "grid",
+              "required": [
+                "id",
+                "name",
+                "explanation",
+                "icon",
+                "color"
+              ],
+              "options": {
+                "disable_collapse": true
+              },
+              "properties": {
+                "id": {
+                  "type": "string",
+                  "default": "",
+                  "minLength": 1,
+                  "maxLength": 100,
+                  "pattern": "^[0-9a-zA-Z\\-]+$"
+                },
+                "name": {
+                  "type": "string",
+                  "maxLength": 20
+                },
+                "explanation": {
+                  "type": "string"
+                },
+                "icon": {
+                  "type": "object",
+                  "additionalProperties": false,
+                  "format": "grid",
+                  "required": [
+                    "emoji",
+                    "iconify",
+                    "image"
+                  ],
+                  "options": {
+                    "disable_collapse": true
+                  },
+                  "properties": {
+                    "emoji": {
+                      "type": "string",
+                      "options": {
+                        "grid_columns": 4
+                      }
+                    },
+                    "iconify": {
+                      "type": "string",
+                      "default": "",
+                      "options": {
+                        "grid_columns": 4
+                      }
+                    },
+                    "image": {
+                      "type": "string",
+                      "default": "",
+                      "media": {
+                        "binaryEncoding": "base64",
+                        "type": "img/png"
+                      },
+                      "options": {
+                        "grid_columns": 4
+                      }
+                    },
+                    "delete": {
+                      "format": "button",
+                      "options": {
+                        "button": {
+                          "text": "Delete Image",
+                          "icon": "trash",
+                          "action": "deletePrevious"
+                        }
+                      }
+                    }
+                  }
+                },
+                "color": {
+                  "type": "string",
+                  "default": "#000000",
+                  "format": "color",
+                  "pattern": "(^#[0-9a-fA-F]{6}$)|(^$)"
+                },
+                "copy": {
+                  "type": "string",
+                  "format": "button",
+                  "options": {
+                    "button": {
+                      "text": "Copy Information",
+                      "icon": "copy",
+                      "action": "copyInformation"
+                    }
+                  }
+                }
+              }
+            },
+            "version": {
+              "type": "number",
+              "default": 0,
+              "minimum": 0
+            },
+            "author": {
+              "type": "string",
+              "minLength": 3,
+              "maxLength": 20,
+              "pattern": "^[A-Za-z0-9 !?.,-]+$"
+            },
+            "homepage": {
+              "type": "string",
+              "default": "https://",
+              "format": "url",
+              "minLength": 0
+            },
+            "url": {
+              "type": "string",
+              "default": "https://",
+              "format": "url",
+              "minLength": 0
+            },
+            "estimatedPlayingTime": {
+              "type": "object",
+              "additionalProperties": false,
+              "format": "grid",
+              "required": [
+                "value",
+                "unit"
+              ],
+              "options": {
+                "disable_collapse": true
+              },
+              "properties": {
+                "value": {
+                  "type": "integer",
+                  "default": 1,
+                  "minimum": 1
+                },
+                "unit": {
+                  "type": "string",
+                  "enum": [
+                    "seconds",
+                    "minutes",
+                    "hours",
+                    "days",
+                    "years",
+                    "centuries",
+                    "endless"
+                  ],
+                  "default": "days"
+                }
+              }
+            }
+          }
+        },
+        "general": {
+          "type": "object",
+          "additionalProperties": false,
+          "format": "grid",
+          "required": [
+            "offlineMaxHours",
+            "maxCategoryLevels",
+            "levelCommonRatio",
+            "language",
+            "translations",
+            "coins",
+            "capacity",
+            "queue",
+            "actionLevelLimit",
+            "defaultCombat"
+          ],
+          "options": {
+            "disable_collapse": true
+          },
+          "properties": {
+            "offlineMaxHours": {
+              "type": "integer",
+              "default": 24,
+              "minimum": 0,
+              "maximum": 24,
+              "propertyOrder": 100
+            },
+            "maxCategoryLevels": {
+              "type": "integer",
+              "default": 100,
+              "minimum": 1,
+              "propertyOrder": 101
+            },
+            "actionLevelLimit": {
+              "type": "boolean",
+              "default": false,
+              "format": "checkbox",
+              "propertyOrder": 103
+            },
+            "levelCommonRatio": {
+              "type": "number",
+              "default": 1.05,
+              "minimum": 1,
+              "propertyOrder": 104
+            },
+            "language": {
+              "type": "string",
+              "default": "en",
+              "enum": [
+                "en",
+                "zh",
+                "es",
+                "pt",
+                "fr",
+                "ru",
+                "de",
+                "ja",
+                "id",
+                "ko"
+              ],
+              "propertyOrder": 106
+            },
+            "translations": {
+              "type": "boolean",
+              "default": false,
+              "format": "checkbox",
+              "propertyOrder": 107
+            },
+            "coins": {
+              "type": "array",
+              "minItems": 1,
+              "format": "tabs",
+              "options": {
+                "disable_collapse": true
+              },
+              "items": {
+                "type": "object",
+                "additionalProperties": false,
+                "format": "grid",
+                "required": [
+                  "id",
+                  "name",
+                  "explanation",
+                  "icon",
+                  "color"
+                ],
+                "options": {
+                  "disable_collapse": true
+                },
+                "properties": {
+                  "id": {
+                    "type": "string",
+                    "default": "",
+                    "minLength": 1,
+                    "maxLength": 100,
+                    "pattern": "^[0-9a-zA-Z\\-]+$"
+                  },
+                  "name": {
+                    "type": "string",
+                    "maxLength": 20
+                  },
+                  "explanation": {
+                    "type": "string"
+                  },
+                  "icon": {
+                    "type": "object",
+                    "additionalProperties": false,
+                    "format": "grid",
+                    "required": [
+                      "emoji",
+                      "iconify",
+                      "image"
+                    ],
+                    "options": {
+                      "disable_collapse": true
+                    },
+                    "properties": {
+                      "emoji": {
+                        "type": "string",
+                        "options": {
+                          "grid_columns": 4
+                        }
+                      },
+                      "iconify": {
+                        "type": "string",
+                        "default": "",
+                        "options": {
+                          "grid_columns": 4
+                        }
+                      },
+                      "image": {
+                        "type": "string",
+                        "default": "",
+                        "media": {
+                          "binaryEncoding": "base64",
+                          "type": "img/png"
+                        },
+                        "options": {
+                          "grid_columns": 4
+                        }
+                      },
+                      "delete": {
+                        "format": "button",
+                        "options": {
+                          "button": {
+                            "text": "Delete Image",
+                            "icon": "trash",
+                            "action": "deletePrevious"
+                          }
+                        }
+                      }
+                    }
+                  },
+                  "color": {
+                    "type": "string",
+                    "default": "#000000",
+                    "format": "color",
+                    "pattern": "(^#[0-9a-fA-F]{6}$)|(^$)"
+                  },
+                  "copy": {
+                    "type": "string",
+                    "format": "button",
+                    "options": {
+                      "button": {
+                        "text": "Copy Information",
+                        "icon": "copy",
+                        "action": "copyInformation"
+                      }
+                    }
+                  }
+                },
+                "headerTemplate": "{{ i1 }}: {{ self.id }}"
+              },
+              "propertyOrder": 200
+            },
+            "capacity": {
+              "type": "object",
+              "additionalProperties": false,
+              "format": "grid",
+              "required": [
+                "information",
+                "increasingRate",
+                "initialCost",
+                "initialCount",
+                "coinId",
+                "buyingLimit"
+              ],
+              "options": {
+                "disable_collapse": true
+              },
+              "properties": {
+                "information": {
+                  "type": "object",
+                  "additionalProperties": false,
+                  "format": "grid",
+                  "required": [
+                    "id",
+                    "name",
+                    "explanation",
+                    "icon",
+                    "color"
+                  ],
+                  "options": {
+                    "disable_collapse": true
+                  },
+                  "properties": {
+                    "id": {
+                      "type": "string",
+                      "default": "",
+                      "minLength": 1,
+                      "maxLength": 100,
+                      "pattern": "^[0-9a-zA-Z\\-]+$"
+                    },
+                    "name": {
+                      "type": "string",
+                      "maxLength": 20
+                    },
+                    "explanation": {
+                      "type": "string"
+                    },
+                    "icon": {
+                      "type": "object",
+                      "additionalProperties": false,
+                      "format": "grid",
+                      "required": [
+                        "emoji",
+                        "iconify",
+                        "image"
+                      ],
+                      "options": {
+                        "disable_collapse": true
+                      },
+                      "properties": {
+                        "emoji": {
+                          "type": "string",
+                          "options": {
+                            "grid_columns": 4
+                          }
+                        },
+                        "iconify": {
+                          "type": "string",
+                          "default": "",
+                          "options": {
+                            "grid_columns": 4
+                          }
+                        },
+                        "image": {
+                          "type": "string",
+                          "default": "",
+                          "media": {
+                            "binaryEncoding": "base64",
+                            "type": "img/png"
+                          },
+                          "options": {
+                            "grid_columns": 4
+                          }
+                        },
+                        "delete": {
+                          "format": "button",
+                          "options": {
+                            "button": {
+                              "text": "Delete Image",
+                              "icon": "trash",
+                              "action": "deletePrevious"
+                            }
+                          }
+                        }
+                      }
+                    },
+                    "color": {
+                      "type": "string",
+                      "default": "#000000",
+                      "format": "color",
+                      "pattern": "(^#[0-9a-fA-F]{6}$)|(^$)"
+                    },
+                    "copy": {
+                      "type": "string",
+                      "format": "button",
+                      "options": {
+                        "button": {
+                          "text": "Copy Information",
+                          "icon": "copy",
+                          "action": "copyInformation"
+                        }
+                      }
+                    }
+                  }
+                },
+                "initialCount": {
+                  "type": "integer",
+                  "default": 10,
+                  "minimum": 0
+                },
+                "initialCost": {
+                  "type": "integer",
+                  "default": 100,
+                  "minimum": 1
+                },
+                "increasingRate": {
+                  "type": "number",
+                  "default": 1.2,
+                  "minimum": 1
+                },
+                "coinId": {
+                  "type": "string",
+                  "default": "",
+                  "pattern": "^[0-9a-zA-Z\\-]*$"
+                },
+                "buyingLimit": {
+                  "type": "integer",
+                  "default": 0,
+                  "minimum": -1
+                }
+              },
+              "propertyOrder": 201
+            },
+            "queue": {
+              "type": "object",
+              "additionalProperties": false,
+              "format": "grid",
+              "required": [
+                "information",
+                "increasingRate",
+                "initialCost",
+                "initialCount",
+                "coinId",
+                "buyingLimit"
+              ],
+              "options": {
+                "disable_collapse": true
+              },
+              "properties": {
+                "information": {
+                  "type": "object",
+                  "additionalProperties": false,
+                  "format": "grid",
+                  "required": [
+                    "id",
+                    "name",
+                    "explanation",
+                    "icon",
+                    "color"
+                  ],
+                  "options": {
+                    "disable_collapse": true
+                  },
+                  "properties": {
+                    "id": {
+                      "type": "string",
+                      "default": "",
+                      "minLength": 1,
+                      "maxLength": 100,
+                      "pattern": "^[0-9a-zA-Z\\-]+$"
+                    },
+                    "name": {
+                      "type": "string",
+                      "maxLength": 20
+                    },
+                    "explanation": {
+                      "type": "string"
+                    },
+                    "icon": {
+                      "type": "object",
+                      "additionalProperties": false,
+                      "format": "grid",
+                      "required": [
+                        "emoji",
+                        "iconify",
+                        "image"
+                      ],
+                      "options": {
+                        "disable_collapse": true
+                      },
+                      "properties": {
+                        "emoji": {
+                          "type": "string",
+                          "options": {
+                            "grid_columns": 4
+                          }
+                        },
+                        "iconify": {
+                          "type": "string",
+                          "default": "",
+                          "options": {
+                            "grid_columns": 4
+                          }
+                        },
+                        "image": {
+                          "type": "string",
+                          "default": "",
+                          "media": {
+                            "binaryEncoding": "base64",
+                            "type": "img/png"
+                          },
+                          "options": {
+                            "grid_columns": 4
+                          }
+                        },
+                        "delete": {
+                          "format": "button",
+                          "options": {
+                            "button": {
+                              "text": "Delete Image",
+                              "icon": "trash",
+                              "action": "deletePrevious"
+                            }
+                          }
+                        }
+                      }
+                    },
+                    "color": {
+                      "type": "string",
+                      "default": "#000000",
+                      "format": "color",
+                      "pattern": "(^#[0-9a-fA-F]{6}$)|(^$)"
+                    },
+                    "copy": {
+                      "type": "string",
+                      "format": "button",
+                      "options": {
+                        "button": {
+                          "text": "Copy Information",
+                          "icon": "copy",
+                          "action": "copyInformation"
+                        }
+                      }
+                    }
+                  }
+                },
+                "initialCount": {
+                  "type": "integer",
+                  "default": 1,
+                  "minimum": 1
+                },
+                "initialCost": {
+                  "type": "integer",
+                  "default": 100,
+                  "minimum": 1
+                },
+                "increasingRate": {
+                  "type": "number",
+                  "default": 1.2,
+                  "minimum": 1
+                },
+                "coinId": {
+                  "type": "string",
+                  "default": "",
+                  "pattern": "^[0-9a-zA-Z\\-]*$"
+                },
+                "buyingLimit": {
+                  "type": "integer",
+                  "default": 0,
+                  "minimum": -1
+                }
+              },
+              "propertyOrder": 202
+            },
+            "defaultCombat": {
+              "type": "object",
+              "additionalProperties": false,
+              "format": "grid",
+              "required": [
+                "attack",
+                "defence",
+                "accuracy",
+                "evasion"
+              ],
+              "options": {
+                "disable_collapse": true
+              },
+              "properties": {
+                "attack": {
+                  "type": "number",
+                  "default": 0
+                },
+                "defence": {
+                  "type": "number",
+                  "default": 0
+                },
+                "accuracy": {
+                  "type": "number",
+                  "default": 0
+                },
+                "evasion": {
+                  "type": "number",
+                  "default": 0
+                },
+                "restore": {
+                  "type": "number",
+                  "default": 0
+                }
+              },
+              "propertyOrder": 400
+            }
+          }
+        },
+        "design": {
+          "type": "object",
+          "additionalProperties": false,
+          "format": "grid",
+          "required": [
+            "mainColor",
+            "subColor",
+            "background"
+          ],
+          "options": {
+            "disable_collapse": true
+          },
+          "properties": {
+            "mainColor": {
+              "type": "string",
+              "default": "#000000",
+              "format": "color",
+              "pattern": "(^#[0-9a-fA-F]{6}$)|(^$)"
+            },
+            "subColor": {
+              "type": "string",
+              "default": "#000000",
+              "format": "color",
+              "pattern": "(^#[0-9a-fA-F]{6}$)|(^$)"
+            },
+            "background": {
+              "type": "string",
+              "default": "",
+              "media": {
+                "binaryEncoding": "base64",
+                "type": "img/png"
+              }
+            },
+            "delete": {
+              "format": "button",
+              "options": {
+                "button": {
+                  "text": "Delete Image",
+                  "icon": "trash",
+                  "action": "deletePrevious"
+                }
+              }
+            }
+          }
+        },
+        "development": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "version",
+            "memo",
+            "errors",
+            "timestamp",
+            "autosaveing"
+          ],
+          "options": {
+            "disable_collapse": true
+          },
+          "properties": {
+            "version": {
+              "type": "string",
+              "readOnly": true
+            },
+            "memo": {
+              "type": "array",
+              "format": "table",
+              "options": {},
+              "items": {
+                "type": "string"
+              }
+            },
+            "errors": {
+              "type": "array",
+              "format": "table",
+              "readOnly": true,
+              "options": {
+                "disable_array_add": true,
+                "disable_array_delete": true,
+                "disable_array_delete_all_rows": true,
+                "disable_array_delete_last_row": true,
+                "disable_array_reorder": true
+              },
+              "items": {
+                "type": "string",
+                "readOnly": true
+              }
+            },
+            "timestamp": {
+              "type": "object",
+              "additionalProperties": false,
+              "required": [
+                "created",
+                "saved",
+                "published"
+              ],
+              "properties": {
+                "created": {
+                  "type": "string",
+                  "readOnly": true
+                },
+                "saved": {
+                  "type": "string",
+                  "readOnly": true
+                },
+                "published": {
+                  "type": "string",
+                  "readOnly": true
+                }
+              }
+            },
+            "autosaveing": {
+              "type": "boolean",
+              "default": false,
+              "readOnly": true,
+              "format": "checkbox"
+            }
+          }
+        }
+      },
+      "title": "Grundeinstellung",
+      "description": "Grundlegende Konfigurationselemente für die Welt im Allgemeinen.",
+      "yutori": {
+        "points": [
+          "Konfiguration des Namens der Welt, der Beschreibung, des Hintergrunds, der Währung, der Kapazität, des maximalen Levels der Kategorien, der Rate des Erfahrungszuwachses, des Rabatts, der Standard-Kampfparameter, usw.",
+          "Diese Konfigurationen wirken sich auf die gesamte Welt aus."
+        ],
+        "reference": "de/editor/grundlegend"
+      }
+    },
+    "categories": {
+      "type": "array",
+      "basicCategoryTitle": "Kategorie.",
+      "format": "tabs",
+      "options": {
+        "disable_collapse": true,
+        "infoText": "Details"
+      },
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "format": "categories",
+        "basicCategoryTitle": "Category",
+        "headerTemplate": "{{ i1 }}: {{ self.information.id }}",
+        "options": {
+          "disable_collapse": true
+        },
+        "required": [
+          "information",
+          "group",
+          "unlocked",
+          "requirements",
+          "equipmentGroups",
+          "numeric",
+          "standaloneProgress",
+          "background"
+        ],
+        "properties": {
+          "information": {
+            "type": "object",
+            "additionalProperties": false,
+            "format": "grid",
+            "required": [
+              "id",
+              "name",
+              "explanation",
+              "icon",
+              "color"
+            ],
+            "options": {
+              "disable_collapse": true
+            },
+            "properties": {
+              "id": {
+                "type": "string",
+                "default": "",
+                "minLength": 1,
+                "maxLength": 100,
+                "pattern": "^[0-9a-zA-Z\\-]+$"
+              },
+              "name": {
+                "type": "string",
+                "maxLength": 20
+              },
+              "explanation": {
+                "type": "string"
+              },
+              "icon": {
+                "type": "object",
+                "additionalProperties": false,
+                "format": "grid",
+                "required": [
+                  "emoji",
+                  "iconify",
+                  "image"
+                ],
+                "options": {
+                  "disable_collapse": true
+                },
+                "properties": {
+                  "emoji": {
+                    "type": "string",
+                    "options": {
+                      "grid_columns": 4
+                    }
+                  },
+                  "iconify": {
+                    "type": "string",
+                    "default": "",
+                    "options": {
+                      "grid_columns": 4
+                    }
+                  },
+                  "image": {
+                    "type": "string",
+                    "default": "",
+                    "media": {
+                      "binaryEncoding": "base64",
+                      "type": "img/png"
+                    },
+                    "options": {
+                      "grid_columns": 4
+                    }
+                  },
+                  "delete": {
+                    "format": "button",
+                    "options": {
+                      "button": {
+                        "text": "Delete Image",
+                        "icon": "trash",
+                        "action": "deletePrevious"
+                      }
+                    }
+                  }
+                }
+              },
+              "color": {
+                "type": "string",
+                "default": "#000000",
+                "format": "color",
+                "pattern": "(^#[0-9a-fA-F]{6}$)|(^$)"
+              },
+              "copy": {
+                "type": "string",
+                "format": "button",
+                "options": {
+                  "button": {
+                    "text": "Copy Information",
+                    "icon": "copy",
+                    "action": "copyInformation"
+                  }
+                }
+              }
+            }
+          },
+          "group": {
+            "type": "string",
+            "default": "",
+            "pattern": "^[0-9a-zA-Z\\-]*$"
+          },
+          "unlocked": {
+            "type": "string",
+            "enum": [
+              "secreted",
+              "hidden",
+              "hinted",
+              "released"
+            ],
+            "default": "hinted",
+            "options": {
+              "enum_titles": [
+                "Secreted: Completely hidden from all UI (not even as a hint) until all requirements are met",
+                "Hidden: Fully concealed (grayed out, no name) until referenced or conditions met",
+                "Hinted: Name shown as a teaser but not operable until released (default)",
+                "Released: Unlocked and operable from the start regardless of conditions"
+              ]
+            }
+          },
+          "requirements": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "additionalProperties": false,
+              "headerTemplate": "{{ i1 }}: {{ self.id }} [ {{ self.type }} ]",
+              "format": "grid",
+              "required": [
+                "type",
+                "id",
+                "count",
+                "chance",
+                "equipment"
+              ],
+              "options": {
+                "disable_collapse": true
+              },
+              "properties": {
+                "type": {
+                  "type": "string",
+                  "enum": [
+                    "category",
+                    "action",
+                    "item"
+                  ],
+                  "default": "item"
+                },
+                "id": {
+                  "type": "string",
+                  "pattern": "^[0-9a-zA-Z\\-]+$"
+                },
+                "count": {
+                  "type": "integer",
+                  "minimum": 0,
+                  "default": 1
+                },
+                "chance": {
+                  "type": "number",
+                  "default": 1,
+                  "minimum": 0,
+                  "maximum": 1
+                },
+                "equipment": {
+                  "type": "boolean",
+                  "default": false,
+                  "format": "checkbox"
+                }
+              }
+            },
+            "options": {
+              "disable_collapse": true
+            }
+          },
+          "equipmentGroups": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "pattern": "^[0-9a-zA-Z\\-]*$"
+            },
+            "options": {
+              "disable_collapse": true
+            },
+            "default": [
+              ""
+            ],
+            "uniqueItems": true
+          },
+          "numeric": {
+            "type": "boolean",
+            "default": true,
+            "format": "checkbox"
+          },
+          "standaloneProgress": {
+            "type": "boolean",
+            "default": false,
+            "format": "checkbox"
+          },
+          "background": {
+            "type": "string",
+            "default": "",
+            "media": {
+              "binaryEncoding": "base64",
+              "type": "img/png"
+            }
+          },
+          "delete": {
+            "format": "button",
+            "options": {
+              "button": {
+                "text": "Delete Image",
+                "icon": "trash",
+                "action": "deletePrevious"
+              }
+            }
+          }
+        }
+      },
+      "title": "Kategorie.",
+      "description": "Allgemeiner Rahmen für die Klassifizierung von Aktionen und Gegenständen.",
+      "yutori": {
+        "points": [
+          "Stellt eine wichtige Minute dar.",
+          "Zum Beispiel kann es in jeder beliebigen Konfiguration eingesetzt werden, wie z.B. Nahbereich, Fernbereich, Magie, Kerker, Schmiede, Manufakturen, usw.",
+          "Aktionen und Gegenstände werden direkt ab der Welt platziert und sind mit einer Kategorie ID verbunden."
+        ],
+        "reference": "de/editor/Kategorie"
+      }
+    },
+    "actions": {
+      "type": "array",
+      "basicCategoryTitle": "Aktion.",
+      "format": "tabs",
+      "options": {
+        "disable_collapse": true,
+        "infoText": "Details"
+      },
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "headerTemplate": "{{ i1 }}: {{ self.information.id }}",
+        "options": {
+          "disable_collapse": true
+        },
+        "format": "grid",
+        "required": [
+          "information",
+          "category",
+          "attribute",
+          "group",
+          "unlocked",
+          "seconds",
+          "level",
+          "experience",
+          "chance",
+          "maximum",
+          "requirements",
+          "acquisitions",
+          "progressType",
+          "property"
+        ],
+        "properties": {
+          "information": {
+            "type": "object",
+            "additionalProperties": false,
+            "format": "grid",
+            "required": [
+              "id",
+              "name",
+              "explanation",
+              "icon",
+              "color"
+            ],
+            "options": {
+              "disable_collapse": true
+            },
+            "properties": {
+              "id": {
+                "type": "string",
+                "default": "",
+                "minLength": 1,
+                "maxLength": 100,
+                "pattern": "^[0-9a-zA-Z\\-]+$"
+              },
+              "name": {
+                "type": "string",
+                "maxLength": 20
+              },
+              "explanation": {
+                "type": "string"
+              },
+              "icon": {
+                "type": "object",
+                "additionalProperties": false,
+                "format": "grid",
+                "required": [
+                  "emoji",
+                  "iconify",
+                  "image"
+                ],
+                "options": {
+                  "disable_collapse": true
+                },
+                "properties": {
+                  "emoji": {
+                    "type": "string",
+                    "options": {
+                      "grid_columns": 4
+                    }
+                  },
+                  "iconify": {
+                    "type": "string",
+                    "default": "",
+                    "options": {
+                      "grid_columns": 4
+                    }
+                  },
+                  "image": {
+                    "type": "string",
+                    "default": "",
+                    "media": {
+                      "binaryEncoding": "base64",
+                      "type": "img/png"
+                    },
+                    "options": {
+                      "grid_columns": 4
+                    }
+                  },
+                  "delete": {
+                    "format": "button",
+                    "options": {
+                      "button": {
+                        "text": "Delete Image",
+                        "icon": "trash",
+                        "action": "deletePrevious"
+                      }
+                    }
+                  }
+                }
+              },
+              "color": {
+                "type": "string",
+                "default": "#000000",
+                "format": "color",
+                "pattern": "(^#[0-9a-fA-F]{6}$)|(^$)"
+              },
+              "copy": {
+                "type": "string",
+                "format": "button",
+                "options": {
+                  "button": {
+                    "text": "Copy Information",
+                    "icon": "copy",
+                    "action": "copyInformation"
+                  }
+                }
+              }
+            }
+          },
+          "category": {
+            "type": "string",
+            "default": "",
+            "pattern": "^[0-9a-zA-Z\\-]*$"
+          },
+          "attribute": {
+            "type": "string",
+            "maxLength": 20
+          },
+          "group": {
+            "type": "string",
+            "default": "",
+            "pattern": "^[0-9a-zA-Z\\-]*$"
+          },
+          "unlocked": {
+            "type": "string",
+            "enum": [
+              "secreted",
+              "hidden",
+              "hinted",
+              "released"
+            ],
+            "default": "hinted",
+            "options": {
+              "enum_titles": [
+                "Secreted: Completely hidden from all UI (not even as a hint) until all requirements are met",
+                "Hidden: Fully concealed (grayed out, no name) until referenced or conditions met",
+                "Hinted: Name shown as a teaser but not operable until released (default)",
+                "Released: Unlocked and operable from the start regardless of conditions"
+              ]
+            }
+          },
+          "seconds": {
+            "type": "number",
+            "default": 2,
+            "minimum": 0
+          },
+          "level": {
+            "type": "integer",
+            "default": 1,
+            "minimum": 1
+          },
+          "experience": {
+            "type": "number",
+            "default": 1,
+            "minimum": 0
+          },
+          "chance": {
+            "type": "number",
+            "default": 1,
+            "minimum": 0,
+            "maximum": 1
+          },
+          "maximum": {
+            "type": "number",
+            "default": 0,
+            "minimum": 0
+          },
+          "requirements": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "additionalProperties": false,
+              "headerTemplate": "{{ i1 }}: {{ self.id }} [ {{ self.type }} ]",
+              "format": "grid",
+              "required": [
+                "type",
+                "id",
+                "count",
+                "chance",
+                "equipment"
+              ],
+              "options": {
+                "disable_collapse": true
+              },
+              "properties": {
+                "type": {
+                  "type": "string",
+                  "enum": [
+                    "category",
+                    "action",
+                    "item"
+                  ],
+                  "default": "item"
+                },
+                "id": {
+                  "type": "string",
+                  "pattern": "^[0-9a-zA-Z\\-]+$"
+                },
+                "count": {
+                  "type": "integer",
+                  "minimum": 0,
+                  "default": 1
+                },
+                "chance": {
+                  "type": "number",
+                  "default": 1,
+                  "minimum": 0,
+                  "maximum": 1
+                },
+                "equipment": {
+                  "type": "boolean",
+                  "default": false,
+                  "format": "checkbox"
+                }
+              }
+            },
+            "options": {
+              "disable_collapse": true
+            }
+          },
+          "acquisitions": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "additionalProperties": false,
+              "headerTemplate": "{{ i1 }}: {{ self.id }} [ {{ self.type }} ]",
+              "format": "grid",
+              "required": [
+                "id",
+                "count",
+                "chance",
+                "type"
+              ],
+              "options": {
+                "disable_collapse": true
+              },
+              "properties": {
+                "type": {
+                  "type": "string",
+                  "enum": [
+                    "category",
+                    "action",
+                    "item"
+                  ],
+                  "default": "item"
+                },
+                "id": {
+                  "type": "string",
+                  "pattern": "^[0-9a-zA-Z\\-]+$"
+                },
+                "count": {
+                  "type": "integer",
+                  "default": 1
+                },
+                "chance": {
+                  "type": "number",
+                  "default": 1,
+                  "minimum": -1,
+                  "maximum": 1
+                }
+              }
+            },
+            "options": {
+              "disable_collapse": true
+            }
+          },
+          "progressType": {
+            "type": "string",
+            "default": "persistent",
+            "enum": [
+              "persistent",
+              "single",
+              "snap",
+              "stamina"
+            ],
+            "options": {
+              "enum_titles": [
+                "Persistent: Continuous action",
+                "Single: Interruptible action",
+                "Snap: Momentary action",
+                "Stamina: Combat style action"
+              ]
+            }
+          },
+          "property": {
+            "type": "object",
+            "additionalProperties": false,
+            "format": "grid",
+            "required": [
+              "attack",
+              "defence",
+              "accuracy",
+              "evasion"
+            ],
+            "options": {
+              "disable_collapse": true
+            },
+            "properties": {
+              "attack": {
+                "type": "number",
+                "default": 0
+              },
+              "defence": {
+                "type": "number",
+                "default": 0
+              },
+              "accuracy": {
+                "type": "number",
+                "default": 0
+              },
+              "evasion": {
+                "type": "number",
+                "default": 0
+              },
+              "restore": {
+                "type": "number",
+                "default": 0
+              }
+            }
+          }
+        }
+      },
+      "title": "Aktion.",
+      "description": "Elemente des Handelns wie Sammeln, Herstellen und Kämpfen.",
+      "yutori": {
+        "points": [
+          "Dies sind Elemente, die Handlungen wie Sammeln, Herstellen, Kaufen und Verkaufen sowie Kämpfen darstellen.",
+          "Mit jeder Handlung, die du ausführst, gewinnst du Erfahrung und dein Level steigt.",
+          "Sie können für jede Handlung Gegenstände einrichten, die verbraucht oder beschafft werden sollen.",
+          "Es gibt ja verschiedene Arten von Handlungen."
+        ],
+        "reference": "de/editor/Aktion"
+      }
+    },
+    "items": {
+      "type": "array",
+      "basicCategoryTitle": "Gegenstand",
+      "format": "tabs",
+      "options": {
+        "disable_collapse": true,
+        "infoText": "Details"
+      },
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "format": "grid",
+        "headerTemplate": "{{ i1 }}: {{ self.information.id }}",
+        "options": {
+          "disable_collapse": true
+        },
+        "required": [
+          "information",
+          "category",
+          "group",
+          "unlocked",
+          "buyingValue",
+          "sellingValue",
+          "coinId",
+          "maximum",
+          "equipmentType",
+          "requirements",
+          "properties"
+        ],
+        "properties": {
+          "information": {
+            "type": "object",
+            "additionalProperties": false,
+            "format": "grid",
+            "required": [
+              "id",
+              "name",
+              "explanation",
+              "icon",
+              "color"
+            ],
+            "options": {
+              "disable_collapse": true
+            },
+            "properties": {
+              "id": {
+                "type": "string",
+                "default": "",
+                "minLength": 1,
+                "maxLength": 100,
+                "pattern": "^[0-9a-zA-Z\\-]+$"
+              },
+              "name": {
+                "type": "string",
+                "maxLength": 20
+              },
+              "explanation": {
+                "type": "string"
+              },
+              "icon": {
+                "type": "object",
+                "additionalProperties": false,
+                "format": "grid",
+                "required": [
+                  "emoji",
+                  "iconify",
+                  "image"
+                ],
+                "options": {
+                  "disable_collapse": true
+                },
+                "properties": {
+                  "emoji": {
+                    "type": "string",
+                    "options": {
+                      "grid_columns": 4
+                    }
+                  },
+                  "iconify": {
+                    "type": "string",
+                    "default": "",
+                    "options": {
+                      "grid_columns": 4
+                    }
+                  },
+                  "image": {
+                    "type": "string",
+                    "default": "",
+                    "media": {
+                      "binaryEncoding": "base64",
+                      "type": "img/png"
+                    },
+                    "options": {
+                      "grid_columns": 4
+                    }
+                  },
+                  "delete": {
+                    "format": "button",
+                    "options": {
+                      "button": {
+                        "text": "Delete Image",
+                        "icon": "trash",
+                        "action": "deletePrevious"
+                      }
+                    }
+                  }
+                }
+              },
+              "color": {
+                "type": "string",
+                "default": "#000000",
+                "format": "color",
+                "pattern": "(^#[0-9a-fA-F]{6}$)|(^$)"
+              },
+              "copy": {
+                "type": "string",
+                "format": "button",
+                "options": {
+                  "button": {
+                    "text": "Copy Information",
+                    "icon": "copy",
+                    "action": "copyInformation"
+                  }
+                }
+              }
+            }
+          },
+          "category": {
+            "type": "string",
+            "default": "",
+            "pattern": "^[0-9a-zA-Z\\-]*$"
+          },
+          "group": {
+            "type": "string",
+            "default": "",
+            "pattern": "^[0-9a-zA-Z\\-]*$"
+          },
+          "unlocked": {
+            "type": "string",
+            "enum": [
+              "secreted",
+              "hidden",
+              "hinted",
+              "released"
+            ],
+            "default": "hinted",
+            "options": {
+              "enum_titles": [
+                "Secreted: Completely hidden from all UI (not even as a hint) until all requirements are met",
+                "Hidden: Fully concealed (grayed out, no name) until referenced or conditions met",
+                "Hinted: Name shown as a teaser but not operable until released (default)",
+                "Released: Unlocked and operable from the start regardless of conditions"
+              ]
+            }
+          },
+          "buyingValue": {
+            "type": "integer",
+            "default": -1
+          },
+          "sellingValue": {
+            "type": "integer",
+            "default": 0,
+            "minimum": 0
+          },
+          "coinId": {
+            "type": "string",
+            "default": "",
+            "pattern": "^[0-9a-zA-Z\\-]*$"
+          },
+          "maximum": {
+            "type": "number",
+            "default": 0,
+            "minimum": 0
+          },
+          "equipmentType": {
+            "type": "string",
+            "enum": [
+              "necessary",
+              "unnecessary",
+              "impossible",
+              "consumable"
+            ],
+            "default": "necessary",
+            "options": {
+              "enum_titles": [
+                "Necessary: Must be equipped",
+                "Unnecessary: Doesn't need to be equipped, always effective",
+                "Impossible: Cannot be equipped",
+                "Consumable: Consumed when used"
+              ]
+            }
+          },
+          "requirements": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "additionalProperties": false,
+              "headerTemplate": "{{ i1 }}: {{ self.id }} [ {{ self.type }} ]",
+              "format": "grid",
+              "required": [
+                "type",
+                "id",
+                "count",
+                "chance",
+                "equipment"
+              ],
+              "options": {
+                "disable_collapse": true
+              },
+              "properties": {
+                "type": {
+                  "type": "string",
+                  "enum": [
+                    "category",
+                    "action",
+                    "item"
+                  ],
+                  "default": "item"
+                },
+                "id": {
+                  "type": "string",
+                  "pattern": "^[0-9a-zA-Z\\-]+$"
+                },
+                "count": {
+                  "type": "integer",
+                  "minimum": 0,
+                  "default": 1
+                },
+                "chance": {
+                  "type": "number",
+                  "default": 1,
+                  "minimum": 0,
+                  "maximum": 1
+                },
+                "equipment": {
+                  "type": "boolean",
+                  "default": false,
+                  "format": "checkbox"
+                }
+              }
+            },
+            "options": {
+              "disable_collapse": true
+            }
+          },
+          "properties": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "additionalProperties": false,
+              "headerTemplate": "{{ i1 }}: {{ self.category }}",
+              "format": "grid",
+              "required": [
+                "category",
+                "attack",
+                "defence",
+                "accuracy",
+                "evasion",
+                "restore",
+                "speed",
+                "chance",
+                "experience"
+              ],
+              "options": {
+                "disable_collapse": true
+              },
+              "properties": {
+                "category": {
+                  "type": "string",
+                  "pattern": "^(\\*|[^*]*)$"
+                },
+                "attack": {
+                  "type": "number",
+                  "default": 0
+                },
+                "defence": {
+                  "type": "number",
+                  "default": 0
+                },
+                "accuracy": {
+                  "type": "number",
+                  "default": 0
+                },
+                "evasion": {
+                  "type": "number",
+                  "default": 0
+                },
+                "restore": {
+                  "type": "number",
+                  "default": 0
+                },
+                "speed": {
+                  "type": "number",
+                  "default": 0
+                },
+                "chance": {
+                  "type": "number",
+                  "default": 0
+                },
+                "experience": {
+                  "type": "number",
+                  "default": 0
+                }
+              }
+            },
+            "options": {
+              "disable_collapse": true
+            }
+          }
+        }
+      },
+      "title": "Gegenstand",
+      "description": "Güterelemente wie Ausrüstung und Verbrauchsgüter",
+      "yutori": {
+        "points": [
+          "Dieses Element bezieht sich auf den Besitz von Gegenständen wie Ausrüstung, Verbrauchsmaterial und Wertsachen.",
+          "Innerhalb einer Kategorie kann nur eine Ausrüstung vorhanden sein, oder sie kann Nichts sein.",
+          "Es gibt auch zahllose Möglichkeiten, sie zu verwenden."
+        ],
+        "reference": "de/editor/Artikel"
+      }
+    },
+    "groups": {
+      "type": "array",
+      "basicCategoryTitle": "Gruppe (z.B. von Personen)",
+      "format": "tabs",
+      "options": {
+        "disable_collapse": true,
+        "infoText": "Details"
+      },
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "format": "grid",
+        "required": [
+          "id",
+          "name",
+          "explanation",
+          "icon",
+          "color"
+        ],
+        "options": {
+          "disable_collapse": true
+        },
+        "properties": {
+          "id": {
+            "type": "string",
+            "default": "",
+            "minLength": 1,
+            "maxLength": 100,
+            "pattern": "^[0-9a-zA-Z\\-]+$"
+          },
+          "name": {
+            "type": "string",
+            "maxLength": 20
+          },
+          "explanation": {
+            "type": "string"
+          },
+          "icon": {
+            "type": "object",
+            "additionalProperties": false,
+            "format": "grid",
+            "required": [
+              "emoji",
+              "iconify",
+              "image"
+            ],
+            "options": {
+              "disable_collapse": true
+            },
+            "properties": {
+              "emoji": {
+                "type": "string",
+                "options": {
+                  "grid_columns": 4
+                }
+              },
+              "iconify": {
+                "type": "string",
+                "default": "",
+                "options": {
+                  "grid_columns": 4
+                }
+              },
+              "image": {
+                "type": "string",
+                "default": "",
+                "media": {
+                  "binaryEncoding": "base64",
+                  "type": "img/png"
+                },
+                "options": {
+                  "grid_columns": 4
+                }
+              },
+              "delete": {
+                "format": "button",
+                "options": {
+                  "button": {
+                    "text": "Delete Image",
+                    "icon": "trash",
+                    "action": "deletePrevious"
+                  }
+                }
+              }
+            }
+          },
+          "color": {
+            "type": "string",
+            "default": "#000000",
+            "format": "color",
+            "pattern": "(^#[0-9a-fA-F]{6}$)|(^$)"
+          },
+          "copy": {
+            "type": "string",
+            "format": "button",
+            "options": {
+              "button": {
+                "text": "Copy Information",
+                "icon": "copy",
+                "action": "copyInformation"
+              }
+            }
+          }
+        },
+        "headerTemplate": "{{ i1 }}: {{ self.id }}"
+      },
+      "title": "Gruppe (z.B. von Personen)",
+      "description": "Definieren Sie Anzeigegruppen für Kategorien, Aktionen und Gegenstände",
+      "yutori": {
+        "points": [
+          "Definieren Sie Gruppen, um die Reihenfolge der Anzeige zu steuern.",
+          "Sie können die hier definierten Gruppen für jede Kategorie, Aktion und jeden Gegenstand einrichten.",
+          "Gruppen mit der gleichen Gruppe werden dicht nebeneinander angezeigt.",
+          "Bleibt sie leer, wird keine Gruppierung vorgenommen."
+        ],
+        "reference": "de/editor/Gruppe"
+      }
+    },
+    "events": {
+      "type": "array",
+      "basicCategoryTitle": "Ereignis",
+      "format": "tabs",
+      "options": {
+        "disable_collapse": true,
+        "infoText": "Details"
+      },
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "headerTemplate": "{{ i1 }}: {{ self.information.id }} [{{ self.timing }}]",
+        "options": {
+          "disable_collapse": true
+        },
+        "required": [
+          "information",
+          "timing",
+          "unlocked",
+          "requirements",
+          "acquisitions",
+          "group"
+        ],
+        "properties": {
+          "information": {
+            "type": "object",
+            "additionalProperties": false,
+            "format": "grid",
+            "required": [
+              "id",
+              "name",
+              "explanation",
+              "icon",
+              "color"
+            ],
+            "options": {
+              "disable_collapse": true
+            },
+            "properties": {
+              "id": {
+                "type": "string",
+                "default": "",
+                "minLength": 1,
+                "maxLength": 100,
+                "pattern": "^[0-9a-zA-Z\\-]+$"
+              },
+              "name": {
+                "type": "string",
+                "maxLength": 20
+              },
+              "explanation": {
+                "type": "string"
+              },
+              "icon": {
+                "type": "object",
+                "additionalProperties": false,
+                "format": "grid",
+                "required": [
+                  "emoji",
+                  "iconify",
+                  "image"
+                ],
+                "options": {
+                  "disable_collapse": true
+                },
+                "properties": {
+                  "emoji": {
+                    "type": "string",
+                    "options": {
+                      "grid_columns": 4
+                    }
+                  },
+                  "iconify": {
+                    "type": "string",
+                    "default": "",
+                    "options": {
+                      "grid_columns": 4
+                    }
+                  },
+                  "image": {
+                    "type": "string",
+                    "default": "",
+                    "media": {
+                      "binaryEncoding": "base64",
+                      "type": "img/png"
+                    },
+                    "options": {
+                      "grid_columns": 4
+                    }
+                  },
+                  "delete": {
+                    "format": "button",
+                    "options": {
+                      "button": {
+                        "text": "Delete Image",
+                        "icon": "trash",
+                        "action": "deletePrevious"
+                      }
+                    }
+                  }
+                }
+              },
+              "color": {
+                "type": "string",
+                "default": "#000000",
+                "format": "color",
+                "pattern": "(^#[0-9a-fA-F]{6}$)|(^$)"
+              },
+              "copy": {
+                "type": "string",
+                "format": "button",
+                "options": {
+                  "button": {
+                    "text": "Copy Information",
+                    "icon": "copy",
+                    "action": "copyInformation"
+                  }
+                }
+              }
+            }
+          },
+          "timing": {
+            "type": "string",
+            "enum": [
+              "matched",
+              "comebacked",
+              "gameovered",
+              "welcomed",
+              "completed",
+              "obtained"
+            ],
+            "default": "matched",
+            "options": {
+              "enum_titles": [
+                "Matched: When the set conditions are met",
+                "Comebacked: When the player returnss from offline",
+                "Gameovered: When the game is over due to combat",
+                "Welcomed: When the player first opens the world",
+                "Completed: When a player reaches the maximum level in all categories",
+                "Obtained: When a single action such as opening a treasure chest is completed"
+              ]
+            }
+          },
+          "unlocked": {
+            "type": "string",
+            "enum": [
+              "secreted",
+              "hidden",
+              "hinted",
+              "released"
+            ],
+            "default": "hinted",
+            "options": {
+              "enum_titles": [
+                "Secreted: Completely hidden from all UI (not even as a hint) until all requirements are met",
+                "Hidden: Fully concealed (grayed out, no name) until referenced or conditions met",
+                "Hinted: Name shown as a teaser but not operable until released (default)",
+                "Released: Unlocked and operable from the start regardless of conditions"
+              ]
+            }
+          },
+          "requirements": {
+            "type": "array",
+            "format": "table",
+            "options": {
+              "disable_collapse": true
+            },
+            "items": {
+              "type": "object",
+              "additionalProperties": false,
+              "headerTemplate": "{{ i1 }}: {{ self.id }} [ {{ self.type }} ]",
+              "format": "grid",
+              "required": [
+                "type",
+                "id",
+                "count",
+                "chance",
+                "equipment"
+              ],
+              "options": {
+                "disable_collapse": true
+              },
+              "properties": {
+                "type": {
+                  "type": "string",
+                  "enum": [
+                    "category",
+                    "action",
+                    "item"
+                  ],
+                  "default": "item"
+                },
+                "id": {
+                  "type": "string",
+                  "pattern": "^[0-9a-zA-Z\\-]+$"
+                },
+                "count": {
+                  "type": "integer",
+                  "minimum": 0,
+                  "default": 1
+                },
+                "chance": {
+                  "type": "number",
+                  "default": 0,
+                  "minimum": 0,
+                  "maximum": 1
+                },
+                "equipment": {
+                  "type": "boolean",
+                  "default": false,
+                  "format": "checkbox"
+                }
+              }
+            }
+          },
+          "acquisitions": {
+            "type": "array",
+            "format": "table",
+            "options": {
+              "disable_collapse": true
+            },
+            "items": {
+              "type": "object",
+              "additionalProperties": false,
+              "headerTemplate": "{{ i1 }}: {{ self.id }} [ {{ self.type }} ]",
+              "format": "grid",
+              "required": [
+                "id",
+                "count",
+                "chance",
+                "type"
+              ],
+              "options": {
+                "disable_collapse": true
+              },
+              "properties": {
+                "type": {
+                  "type": "string",
+                  "enum": [
+                    "category",
+                    "action",
+                    "item"
+                  ],
+                  "default": "item"
+                },
+                "id": {
+                  "type": "string",
+                  "pattern": "^[0-9a-zA-Z\\-]+$"
+                },
+                "count": {
+                  "type": "integer",
+                  "default": 1
+                },
+                "chance": {
+                  "type": "number",
+                  "default": 1,
+                  "minimum": -1,
+                  "maximum": 1
+                }
+              }
+            }
+          },
+          "group": {
+            "type": "string",
+            "pattern": "^[0-9a-zA-Z\\-]*$",
+            "default": ""
+          }
+        }
+      },
+      "title": "Ereignis",
+      "description": "Nachrichten- und Belohnungssystem, das durch Bedingungen ausgelöst wird.",
+      "yutori": {
+        "points": [
+          "Sie wird ausgelöst, wenn die eingestellten Zeitpunkte/Bedingungen erfüllt sind, und es wird eine Meldung angezeigt.",
+          "Sie kann beim ersten Start, nach dem Spiel vorbei, bei der Rückkehr aus dem Aus ausgelöst werden, oder wenn bestimmte Bedingungen erfüllt sind.",
+          "Er kann das Level der Kategorie, die Anzahl der durchgeführten Aktionen und die Anzahl der Gegenstände, die er bei der Aktivierung besitzt, verändern."
+        ],
+        "reference": "de/editor/Veranstaltung"
+      }
+    },
+    "presets": {
+      "type": "array",
+      "basicCategoryTitle": "Voreinstellung",
+      "format": "tabs",
+      "options": {
+        "disable_collapse": true,
+        "infoText": "Details"
+      },
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "format": "grid",
+        "required": [
+          "id",
+          "name",
+          "explanation",
+          "icon",
+          "color"
+        ],
+        "options": {
+          "disable_collapse": true
+        },
+        "properties": {
+          "id": {
+            "type": "string",
+            "default": "",
+            "minLength": 1,
+            "maxLength": 100,
+            "pattern": "^[0-9a-zA-Z\\-]+$"
+          },
+          "name": {
+            "type": "string",
+            "maxLength": 20
+          },
+          "explanation": {
+            "type": "string"
+          },
+          "icon": {
+            "type": "object",
+            "additionalProperties": false,
+            "format": "grid",
+            "required": [
+              "emoji",
+              "iconify",
+              "image"
+            ],
+            "options": {
+              "disable_collapse": true
+            },
+            "properties": {
+              "emoji": {
+                "type": "string",
+                "options": {
+                  "grid_columns": 4
+                }
+              },
+              "iconify": {
+                "type": "string",
+                "default": "",
+                "options": {
+                  "grid_columns": 4
+                }
+              },
+              "image": {
+                "type": "string",
+                "default": "",
+                "media": {
+                  "binaryEncoding": "base64",
+                  "type": "img/png"
+                },
+                "options": {
+                  "grid_columns": 4
+                }
+              },
+              "delete": {
+                "format": "button",
+                "options": {
+                  "button": {
+                    "text": "Delete Image",
+                    "icon": "trash",
+                    "action": "deletePrevious"
+                  }
+                }
+              }
+            }
+          },
+          "color": {
+            "type": "string",
+            "default": "#000000",
+            "format": "color",
+            "pattern": "(^#[0-9a-fA-F]{6}$)|(^$)"
+          },
+          "copy": {
+            "type": "string",
+            "format": "button",
+            "options": {
+              "button": {
+                "text": "Copy Information",
+                "icon": "copy",
+                "action": "copyInformation"
+              }
+            }
+          }
+        },
+        "headerTemplate": "{{ i1 }}: {{ self.id }}"
+      },
+      "title": "Voreinstellung",
+      "description": "Anpassen der Anzeige von Systemelementen",
+      "yutori": {
+        "points": [
+          "Ersetzt UI-Text und -Symbole, die bereits in die Spiel-Engine (Spieler) integriert sind.",
+          "Es werden nur diejenigen ersetzt, die mit einer vorhandenen Voreinstellung nach ID übereinstimmen.",
+          "Nur die Elemente, die Sie konfigurieren, werden ersetzt. Wenn zum Beispiel nur das Symbol konfiguriert ist, werden die anderen Elemente wie Name und Farbe durch das Original ersetzt."
+        ],
+        "reference": "de/editor/Voreinstellung"
+      }
+    }
+  }
+}

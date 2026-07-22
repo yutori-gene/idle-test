@@ -1,0 +1,116 @@
+{
+  "menu": {
+    "header": {
+      "test": "test",
+      "data": "données",
+      "document": "document",
+      "language": "Langue."
+    },
+    "item": {
+      "save": "le stockage (généralement un liquide, par exemple l'eau de pluie, ou derrière un barrage)",
+      "overwrite": "mémorial du trône",
+      "autosave": "commutation automatique",
+      "play": "jouer",
+      "continue": "suite",
+      "new": "nouveau",
+      "validation": "vérification",
+      "import": "l'importation",
+      "local": "local",
+      "empty": "creux",
+      "sample": "échantillon",
+      "export": "l'exportation",
+      "publish": "la mise à disposition du public",
+      "execute": "l'exécution (par exemple, un programme)",
+      "portal": "portail",
+      "document": "document",
+      "language": "Langue.",
+      "menu": "menu"
+    },
+    "status": {
+      "on": "sur",
+      "off": "éteint"
+    },
+    "comment": {
+      "continue": "S'approprier le progrès.",
+      "new": "Réinitialiser la progression.",
+      "overwrite_warning_1": "Le contenu édité est le suivant.",
+      "overwrite_warning_2": "Dérogation.",
+      "processing_time": "Le processus prend du temps.",
+      "autosave_status": "Actuel : {état}",
+      "autosave_description": "Sauvegarder le menu lorsqu'il est ouvert."
+    }
+  },
+  "confirm": {
+    "load_empty": "Les modifications en cours seront perdues. Charger des données vides ?",
+    "load_file": "Les modifications en cours seront perdues. Vous souhaitez charger des données à partir d'un fichier ?",
+    "load_sample": "Les modifications en cours seront perdues. Charger un échantillon de données ?"
+  },
+  "toast": {
+    "error": {
+      "editor_not_initialized": "L'éditeur n'est pas initialisé.",
+      "validation_debug": "Erreur de vérification trouvée. Le débogage ne peut pas être lancé.",
+      "validation_publish": "Erreur de validation détectée. Impossible de commencer la publication.",
+      "publishing_failed": "La publication n'a pas eu lieu.",
+      "invalid_image": "Image non valide.",
+      "image_size_limit": "Images valides. {taille} KB ; (limite : {limite}KB)",
+      "export_failed": "L'exportation a échoué.",
+      "empty_data_load_failed": "Échec du chargement des données vides.",
+      "invalid_world_data": "Données mondiales non valides. Vérifier la structure de base.",
+      "json_parse_failed": "Échec de la lecture du fichier JSON. Veuillez vérifier le format du fichier.",
+      "file_read_failed": "Échec de la lecture du fichier.",
+      "sample_data_load_failed": "Échec du chargement des données de l'échantillon.",
+      "validation_process_failed": "Le processus de vérification a échoué.",
+      "autosave_toggle_failed": "Le basculement de la sauvegarde automatique a échoué."
+    },
+    "success": {
+      "validation_generating": "Vérification réussie ! Fichier autonome en cours de génération...",
+      "publishing_completed": "Le fichier autonome est maintenant disponible !",
+      "data_exported": "Données exportées : {nom de fichier}",
+      "empty_data_loaded": "Données vides chargées.",
+      "data_loaded": "Données chargées : {nom du fichier}",
+      "sample_data_loaded": "Les données de l'échantillon ont été chargées.",
+      "validation_successful": "Vérification réussie : aucun problème de données n'a été détecté",
+      "autosave_enabled": "Sauvegarde automatique activée.",
+      "autosave_disabled": "Sauvegarde automatique désactivée.",
+      "save_for_play": "Données sauvegardées pour la lecture."
+    }
+  },
+  "copyInformation": {
+    "promptType": "Veuillez indiquer le type de destination de la copie",
+    "promptId": "Saisir l'ID de la destination de la copie :.",
+    "success": "Informations copiées sur {type} (id : {id})",
+    "errorInvalidType": "Type non valide.",
+    "errorNotFound": "L'identifiant spécifié '{id}' est introuvable dans {type}.",
+    "errorCanceled": "Copie annulée."
+  },
+  "alert": {
+    "storage_quota_exceeded": "💾 La capacité de stockage est dépassée. Échec de l'enregistrement.",
+    "save_failed": "Échec de l'enregistrement.",
+    "indexeddb_private_mode": "🔒 IndexedDB ne peut pas être utilisé en mode privé",
+    "storage_quota": "💾 Capacité de stockage dépassée.",
+    "indexeddb_unsupported": "⚠️ Le navigateur ne prend pas en charge IndexedDB",
+    "database_init_failed": "❌ L'initialisation de la base de données a échoué : {message}"
+  },
+  "ui": {
+    "copy": "copie",
+    "cancel": "annuler",
+    "enter_id": "Saisissez votre identifiant"
+  },
+  "validation": {
+    "failed_with_count": "🚨 La validation a échoué : {count} erreurs trouvées\n\n📋 Voir Base → Développement → Erreurs pour plus d'informations",
+    "icon": {
+      "invalid_base64_format": "Format d'image Base64 non valide [{preview}...]. at {chemin} - doit commencer par 'data:image/[type];base64,'.",
+      "missing_base64_data": "Format d'image Base64 non valide à {chemin} - pas de données base64 après la virgule.",
+      "invalid_base64_chars": "Encodage Base64 non valide à {chemin} - contient des caractères non valides.",
+      "invalid_base64_length": "Encodage Base64 non valide à {chemin} - la longueur doit être un multiple de 4.",
+      "invalid_iconify_format": "Format d'ID d'icône invalide [{iconifyId}] at {path} - doit contenir le séparateur ':'.",
+      "empty_iconify_family": "Format d'identifiant non valide [{iconifyId}] at {path} - le nom de famille est vide.",
+      "empty_iconify_name": "Format d'ID d'icône invalide [{iconifyId}] at {path} - Le nom de l'icône est vide.",
+      "iconify_load_failed": "Échec du chargement de la famille iconify [{family}] [{iconifyId}] à {chemin} - {erreur}"
+    },
+    "reference": {
+      "id_not_found": "L'id [{id}] de {typeName} n'a pas été trouvé dans {chemin}:{id}.",
+      "group_not_found": "Groupe [{groupe}] introuvable dans {chemin}. Doit être vide ou un ID de groupe prédéfini."
+    }
+  }
+}

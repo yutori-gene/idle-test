@@ -1,0 +1,116 @@
+{
+  "menu": {
+    "header": {
+      "test": "teste",
+      "data": "dados",
+      "document": "documento",
+      "language": "Idioma."
+    },
+    "item": {
+      "save": "armazenamento (geralmente um líquido, por exemplo, água da chuva, ou atrás de uma represa)",
+      "overwrite": "memorial ao trono",
+      "autosave": "comutação automática",
+      "play": "jogar",
+      "continue": "continuação",
+      "new": "novo",
+      "validation": "verificação",
+      "import": "importação",
+      "local": "local",
+      "empty": "oco",
+      "sample": "amostra",
+      "export": "exportação",
+      "publish": "disponibilização ao público",
+      "execute": "execução (por exemplo, programa)",
+      "portal": "portal",
+      "document": "documento",
+      "language": "Idioma.",
+      "menu": "menu"
+    },
+    "status": {
+      "on": "em",
+      "off": "desligado"
+    },
+    "comment": {
+      "continue": "Assumir o controle do progresso.",
+      "new": "Redefinir o progresso.",
+      "overwrite_warning_1": "O conteúdo que está sendo editado é.",
+      "overwrite_warning_2": "Substituir.",
+      "processing_time": "O processo leva tempo.",
+      "autosave_status": "Atual: {status}",
+      "autosave_description": "Salvar o menu quando ele for aberto."
+    }
+  },
+  "confirm": {
+    "load_empty": "As edições atuais serão perdidas. Carregar dados vazios?",
+    "load_file": "As edições atuais serão perdidas. Deseja carregar dados de um arquivo?",
+    "load_sample": "As edições atuais serão perdidas. Carregar dados de amostra?"
+  },
+  "toast": {
+    "error": {
+      "editor_not_initialized": "Editor não inicializado.",
+      "validation_debug": "Erro de verificação encontrado. A depuração não pode ser iniciada.",
+      "validation_publish": "Erro de validação encontrado. Não é possível iniciar a publicação.",
+      "publishing_failed": "Falha na publicação.",
+      "invalid_image": "Imagem inválida.",
+      "image_size_limit": "Imagens válidas. {size} KB; (limit: {limit}KB)",
+      "export_failed": "Falha na exportação.",
+      "empty_data_load_failed": "Falha ao carregar dados vazios.",
+      "invalid_world_data": "Dados mundiais inválidos. Verifique a estrutura básica.",
+      "json_parse_failed": "Falha ao ler o arquivo JSON. Verifique o formato do arquivo.",
+      "file_read_failed": "Falha na leitura do arquivo.",
+      "sample_data_load_failed": "Falha ao carregar dados de amostra.",
+      "validation_process_failed": "Falha no processo de verificação.",
+      "autosave_toggle_failed": "Falha na comutação de salvamento automático."
+    },
+    "success": {
+      "validation_generating": "Verificação bem-sucedida! Arquivo autônomo sendo gerado...",
+      "publishing_completed": "O arquivo autônomo já está disponível!",
+      "data_exported": "Dados exportados: {filename}",
+      "empty_data_loaded": "Dados vazios carregados.",
+      "data_loaded": "Dados carregados: {filename}",
+      "sample_data_loaded": "Os dados de amostra foram carregados.",
+      "validation_successful": "Verificação bem-sucedida: não foram encontrados problemas nos dados",
+      "autosave_enabled": "O salvamento automático está ativado.",
+      "autosave_disabled": "O salvamento automático foi desativado.",
+      "save_for_play": "Dados salvos para reprodução."
+    }
+  },
+  "copyInformation": {
+    "promptType": "Digite o tipo de destino da cópia",
+    "promptId": "Digite a ID do destino da cópia:.",
+    "success": "Informações copiadas para {type} (id: {id})",
+    "errorInvalidType": "Tipo inválido.",
+    "errorNotFound": "A ID especificada '{id}' não foi encontrada em {type}.",
+    "errorCanceled": "Cópia cancelada."
+  },
+  "alert": {
+    "storage_quota_exceeded": "Capacidade de armazenamento excedida. Falha ao salvar.",
+    "save_failed": "Falha ao salvar.",
+    "indexeddb_private_mode": "O IndexedDB não pode ser usado no modo privado",
+    "storage_quota": "Capacidade de armazenamento excedida.",
+    "indexeddb_unsupported": "O navegador ⚠️ não é compatível com o IndexedDB",
+    "database_init_failed": "Falha na inicialização do banco de dados: {mensagem}"
+  },
+  "ui": {
+    "copy": "cópia",
+    "cancel": "cancelar",
+    "enter_id": "Digite sua ID"
+  },
+  "validation": {
+    "failed_with_count": "Falha na validação: {count} erros encontrados\n\nConsulte Básico → Desenvolvimento → Erros para obter mais informações.",
+    "icon": {
+      "invalid_base64_format": "Formato de imagem Base64 inválido [{preview}...]. em {path} - deve começar com 'data:image/[type];base64,'.",
+      "missing_base64_data": "Formato de imagem Base64 inválido em {path} - nenhum dado base64 após a vírgula.",
+      "invalid_base64_chars": "Codificação Base64 inválida em {path} - contém caracteres inválidos.",
+      "invalid_base64_length": "Codificação Base64 inválida em {path} - o comprimento deve ser um múltiplo de 4.",
+      "invalid_iconify_format": "Formato de ID de iconificação inválido [{iconifyId}] em {path} - deve conter o separador ':'.",
+      "empty_iconify_family": "Formato de ID de iconificação inválido [{iconifyId}] em {path} - o nome da família está vazio.",
+      "empty_iconify_name": "Formato de ID de iconificação inválido [{iconifyId}] em {path} - O nome do ícone está vazio.",
+      "iconify_load_failed": "Falha ao carregar a família iconify [{family}] [{iconifyId}] em {path} - {error}"
+    },
+    "reference": {
+      "id_not_found": "{typeName} id [{id}] não encontrado em {path}:{id}.",
+      "group_not_found": "Grupo [{group}] não encontrado em {path}. Deve estar vazio ou ser um ID de grupo predefinido."
+    }
+  }
+}

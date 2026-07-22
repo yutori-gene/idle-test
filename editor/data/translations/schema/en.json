@@ -1,0 +1,4462 @@
+{
+  "type": "object",
+  "format": "categories",
+  "title": "Idle RPG - Editor",
+  "basicCategoryTitle": "Idle RPG - Editor",
+  "additionalProperties": false,
+  "required": [
+    "basic",
+    "categories",
+    "actions",
+    "items",
+    "groups",
+    "events",
+    "presets"
+  ],
+  "options": {
+    "disable_collapse": true
+  },
+  "properties": {
+    "basic": {
+      "type": "object",
+      "format": "categories",
+      "basicCategoryTitle": "Basic Configuration",
+      "additionalProperties": false,
+      "required": [
+        "overview",
+        "general",
+        "design",
+        "development"
+      ],
+      "options": {
+        "disable_collapse": true,
+        "infoText": "Details"
+      },
+      "properties": {
+        "overview": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "information",
+            "version",
+            "author",
+            "homepage",
+            "url",
+            "estimatedPlayingTime"
+          ],
+          "options": {
+            "disable_collapse": true,
+            "infoText": "Details"
+          },
+          "properties": {
+            "information": {
+              "type": "object",
+              "additionalProperties": false,
+              "format": "grid",
+              "required": [
+                "id",
+                "name",
+                "explanation",
+                "icon",
+                "color"
+              ],
+              "options": {
+                "disable_collapse": true,
+                "infoText": "Details"
+              },
+              "properties": {
+                "id": {
+                  "type": "string",
+                  "default": "",
+                  "minLength": 1,
+                  "maxLength": 100,
+                  "pattern": "^[0-9a-zA-Z\\-]+$",
+                  "title": "ID",
+                  "options": {
+                    "infoText": "unique ID to identify an element"
+                  },
+                  "yutori": {
+                    "points": [
+                      "ID to uniquely identify each element.",
+                      "A string that identifies the element in the editor.",
+                      "For example, the ID specifies which Item is obtained when the Action is completed."
+                    ],
+                    "reference": "en/editor/information?id=ID"
+                  }
+                },
+                "name": {
+                  "type": "string",
+                  "maxLength": 20,
+                  "title": "Name",
+                  "options": {
+                    "infoText": "The name under which the element appears"
+                  },
+                  "yutori": {
+                    "points": [
+                      "The name of the element displayed in the game.",
+                      "Languages other than English can also be entered.",
+                      "Names that duplicate other elements are acceptable.",
+                      "If it is too long, the overflowing part will be omitted by `...` in the display during play."
+                    ],
+                    "reference": "en/editor/information?id=Name"
+                  }
+                },
+                "explanation": {
+                  "type": "string",
+                  "title": "explanatory note",
+                  "options": {
+                    "infoText": "Detailed description of the element"
+                  },
+                  "yutori": {
+                    "points": [
+                      "A description of the elements displayed in the game.",
+                      "Languages other than English can be entered. Even long sentences are all displayed.",
+                      "If there is nothing to explain, leave blank."
+                    ],
+                    "reference": "en/editor/information?id=explanatory note"
+                  }
+                },
+                "icon": {
+                  "type": "object",
+                  "additionalProperties": false,
+                  "format": "grid",
+                  "required": [
+                    "emoji",
+                    "iconify",
+                    "image"
+                  ],
+                  "options": {
+                    "disable_collapse": true,
+                    "infoText": "Configure icons to represent elements"
+                  },
+                  "properties": {
+                    "emoji": {
+                      "type": "string",
+                      "options": {
+                        "grid_columns": 4,
+                        "infoText": "Icon display with pictograms"
+                      },
+                      "title": "pictograph",
+                      "yutori": {
+                        "points": [
+                          "Display pictograms as icons.",
+                          "It can be converted from text to pictograms and configured quickly.",
+                          "For pictograms, enter Unicode pictograms as they are.",
+                          "Since the pictograms introduced in the execution environment are used, the display may differ slightly from user to user.",
+                          "Iconify allows you to configure emoji that are nothing specific to each environment",
+                          "It is possible to display characters other than pictograms, but it is Possible for the display to be corrupted if there is more than one character.",
+                          "For example, enter a pictogram such as `🗡️` or `⚔️`."
+                        ],
+                        "reference": "en/editor/information?id=pictograph"
+                      }
+                    },
+                    "iconify": {
+                      "type": "string",
+                      "default": "",
+                      "options": {
+                        "grid_columns": 4,
+                        "infoText": "Using the Iconify Icon Set"
+                      },
+                      "title": "Iconify",
+                      "yutori": {
+                        "points": [
+                          "An icon representing an element.",
+                          "Iconify is a service that provides various types of icons.",
+                          "If an image is configured, it will take precedence."
+                        ],
+                        "reference": "en/editor/information?id=Iconify"
+                      }
+                    },
+                    "image": {
+                      "type": "string",
+                      "default": "",
+                      "media": {
+                        "binaryEncoding": "base64",
+                        "type": "img/png"
+                      },
+                      "options": {
+                        "grid_columns": 4,
+                        "infoText": "Use any image file"
+                      },
+                      "title": "image",
+                      "yutori": {
+                        "points": [
+                          "An image representing an element.",
+                          "If the file size is large, it will be automatically resized.",
+                          "Unnecessary if Iconify or pictograms are configured."
+                        ],
+                        "reference": "en/editor/information?id=image"
+                      }
+                    },
+                    "delete": {
+                      "format": "button",
+                      "options": {
+                        "button": {
+                          "text": "Delete Image",
+                          "icon": "trash",
+                          "action": "deletePrevious"
+                        }
+                      }
+                    }
+                  },
+                  "title": "icon",
+                  "yutori": {
+                    "points": [
+                      "Icons can be configured as images, Iconify, or emoji.",
+                      "Iconify is a service that provides various types of icons.",
+                      "If more than one of these is configured, priority is given to images, Iconify, and pictograms, in that order."
+                    ],
+                    "reference": "en/editor/information?id=icon"
+                  }
+                },
+                "color": {
+                  "type": "string",
+                  "default": "#000000",
+                  "format": "color",
+                  "pattern": "(^#[0-9a-fA-F]{6}$)|(^$)",
+                  "title": "variety",
+                  "options": {
+                    "infoText": "Configure the display color of the element"
+                  },
+                  "yutori": {
+                    "points": [
+                      "As the element's color, it is applied to the element's icon and background color.",
+                      "Select from the editor's color picker."
+                    ],
+                    "reference": "en/editor/information?id=variety"
+                  }
+                },
+                "copy": {
+                  "type": "string",
+                  "format": "button",
+                  "options": {
+                    "button": {
+                      "text": "Copy Information",
+                      "icon": "copy",
+                      "action": "copyInformation"
+                    }
+                  }
+                }
+              },
+              "title": "information",
+              "description": "Configure basic information about the element (ID, name, icon, color, etc.)",
+              "yutori": {
+                "points": [
+                  "This is an item of basic information common to each element in the world (Category, Action, Item, Event, etc.).",
+                  "Each element is configured separately."
+                ],
+                "reference": "en/editor/information"
+              }
+            },
+            "version": {
+              "type": "number",
+              "default": 0,
+              "minimum": 0,
+              "title": "version",
+              "options": {
+                "infoText": "Version number of the world"
+              },
+              "yutori": {
+                "points": [
+                  "Enter any number (integer or decimal).",
+                  "In general, the integer portion represents the major version and the minority portion the minor version."
+                ],
+                "reference": "en/editor/overview?id=version"
+              }
+            },
+            "author": {
+              "type": "string",
+              "minLength": 3,
+              "maxLength": 20,
+              "pattern": "^[A-Za-z0-9 !?.,-]+$",
+              "title": "Author Name",
+              "options": {
+                "infoText": "World author's name"
+              },
+              "yutori": {
+                "points": [
+                  "Please enter your handle or nickname."
+                ],
+                "reference": "en/editor/overview?id=Author Name"
+              }
+            },
+            "homepage": {
+              "type": "string",
+              "default": "https://",
+              "format": "url",
+              "minLength": 0,
+              "title": "homepage",
+              "options": {
+                "infoText": "Author's website URL"
+              },
+              "yutori": {
+                "points": [
+                  "If you have your own homepage or social networking site, please enter its URL.",
+                  "Players can check this URL by means of a link.",
+                  "If nothing applies, leave blank."
+                ],
+                "reference": "en/editor/overview?id=homepage"
+              }
+            },
+            "url": {
+              "type": "string",
+              "default": "https://",
+              "format": "url",
+              "minLength": 0,
+              "title": "uniform resouce locator",
+              "options": {
+                "infoText": "Game URL"
+              },
+              "yutori": {
+                "points": [
+                  "Enter the URL where you would like to place the game for this world.",
+                  "Enter the URL of the Top page, such as index.html, including the domain.",
+                  "If the appropriate URL is provided, it will act as a PWA.",
+                  "A PWA is a feature that works like an app that can be installed and played offline."
+                ],
+                "reference": "en/editor/overview?id=uniform resouce locator"
+              }
+            },
+            "estimatedPlayingTime": {
+              "type": "object",
+              "additionalProperties": false,
+              "format": "grid",
+              "required": [
+                "value",
+                "unit"
+              ],
+              "options": {
+                "disable_collapse": true,
+                "infoText": "Estimated time to complete world play"
+              },
+              "properties": {
+                "value": {
+                  "type": "integer",
+                  "default": 1,
+                  "minimum": 1,
+                  "title": "value",
+                  "options": {
+                    "infoText": "Play time counts"
+                  },
+                  "yutori": {
+                    "reference": "en/editor/overview?id=value"
+                  }
+                },
+                "unit": {
+                  "type": "string",
+                  "enum": [
+                    "seconds",
+                    "minutes",
+                    "hours",
+                    "days",
+                    "years",
+                    "centuries",
+                    "endless"
+                  ],
+                  "default": "days",
+                  "title": "unit",
+                  "options": {
+                    "infoText": "Unit of time (hours, minutes, etc.)"
+                  },
+                  "yutori": {
+                    "reference": "en/editor/overview?id=unit"
+                  }
+                }
+              },
+              "title": "Estimated playing time",
+              "yutori": {
+                "points": [
+                  "The estimated play time Necessary to complete the world play.",
+                  "Players can check it as a guide when playing.",
+                  "This is only a reference time and there is no clear definition of what constitutes the completion of a world."
+                ],
+                "reference": "en/editor/overview?id=Estimated playing time"
+              }
+            }
+          },
+          "title": "overview",
+          "description": "Basic information about the world and its author",
+          "yutori": {
+            "points": [
+              "This section describes the contents of the world.",
+              "Please configure it so that it is easy for users to understand when selecting a world.",
+              "These configurations do not affect the operation of the world."
+            ],
+            "reference": "en/editor/overview"
+          }
+        },
+        "general": {
+          "type": "object",
+          "additionalProperties": false,
+          "format": "grid",
+          "required": [
+            "offlineMaxHours",
+            "maxCategoryLevels",
+            "levelCommonRatio",
+            "language",
+            "translations",
+            "coins",
+            "capacity",
+            "queue",
+            "actionLevelLimit",
+            "defaultCombat"
+          ],
+          "options": {
+            "disable_collapse": true,
+            "infoText": "Details"
+          },
+          "properties": {
+            "offlineMaxHours": {
+              "type": "integer",
+              "default": 24,
+              "minimum": 0,
+              "maximum": 24,
+              "propertyOrder": 100,
+              "title": "Max. offline time [hours]",
+              "options": {
+                "infoText": "Time limits for offline progress"
+              },
+              "yutori": {
+                "points": [
+                  "Configure the max number of hours of progress when offline.",
+                  "For example, if 6 hours is set, the process of coming back offline up to 6 hours will be processed, but if more time is allowed to come back offline, the offline time will be treated as 6 hours.",
+                  "If the time is set to 0 hours, no process processing will be done at all when returning offline.",
+                  "The max value is 24 hours."
+                ],
+                "reference": "en/editor/general?id=Max. offline time [hours]"
+              }
+            },
+            "maxCategoryLevels": {
+              "type": "integer",
+              "default": 100,
+              "minimum": 1,
+              "propertyOrder": 101,
+              "title": "Maximum level of Category",
+              "options": {
+                "infoText": "Levels up in each Category"
+              },
+              "yutori": {
+                "points": [
+                  "Configure the max level for each Category.",
+                  "If experience is acquired beyond this level, the max level configured here is used in the calculation of each property.",
+                  "This value has no relationships in categories with no levels."
+                ],
+                "reference": "en/editor/general?id=Maximum level of Category"
+              }
+            },
+            "actionLevelLimit": {
+              "type": "boolean",
+              "default": false,
+              "format": "checkbox",
+              "propertyOrder": 103,
+              "title": "Action Level Limits",
+              "options": {
+                "infoText": "Requests the number of times the same attribute action has been executed to execute the action"
+              },
+              "yutori": {
+                "points": [
+                  "If enabled, the number of times an action with the same attribute has been executed is automatically added to the execution condition of each Action.",
+                  "The Necessary count is equal to the level value of the Action.",
+                  "If the attribute is nothing configured, the ID of the category to which it belongs is used."
+                ],
+                "reference": "en/editor/general?id=Action Level Limits"
+              }
+            },
+            "levelCommonRatio": {
+              "type": "number",
+              "default": 1.05,
+              "minimum": 1,
+              "propertyOrder": 104,
+              "title": "Rate of increase in experience [times].",
+              "options": {
+                "infoText": "Percentage increase in level difficulty"
+              },
+              "yutori": {
+                "points": [
+                  "As the level of a Category increases, the rate of increase in the Necessary experience value to get to the next level.",
+                  "Increasing this value increases the difficulty.",
+                  "The experience necessary to reach the next level is (experience point gain rate)^(current level - 1)."
+                ],
+                "reference": "en/editor/general?id=Rate of increase in experience [times]."
+              }
+            },
+            "language": {
+              "type": "string",
+              "default": "en",
+              "enum": [
+                "en",
+                "zh",
+                "es",
+                "pt",
+                "fr",
+                "ru",
+                "de",
+                "ja",
+                "id",
+                "ko"
+              ],
+              "propertyOrder": 106,
+              "title": "Language",
+              "options": {
+                "infoText": "Language at the time of creation of the world"
+              },
+              "yutori": {
+                "points": [
+                  "Configure the language to be used in this world editor.",
+                  "This is the first language displayed when the user starts the game."
+                ],
+                "reference": "en/editor/general?id=Language"
+              }
+            },
+            "translations": {
+              "type": "boolean",
+              "default": false,
+              "format": "checkbox",
+              "propertyOrder": 107,
+              "title": "translation",
+              "options": {
+                "infoText": "Do you have multilingual translations available?"
+              },
+              "yutori": {
+                "points": [
+                  "If enabled, users can play in any language.",
+                  "If disabled, you can play only in the language selected in the language config.",
+                  "Necessary to prepare translation data for each language if translation is to be enabled."
+                ],
+                "reference": "en/editor/general?id=translation"
+              }
+            },
+            "coins": {
+              "type": "array",
+              "minItems": 1,
+              "format": "tabs",
+              "options": {
+                "disable_collapse": true,
+                "infoText": "Configuring the In-Game Currency (Coins)"
+              },
+              "items": {
+                "type": "object",
+                "additionalProperties": false,
+                "format": "grid",
+                "required": [
+                  "id",
+                  "name",
+                  "explanation",
+                  "icon",
+                  "color"
+                ],
+                "options": {
+                  "disable_collapse": true
+                },
+                "properties": {
+                  "id": {
+                    "type": "string",
+                    "default": "",
+                    "minLength": 1,
+                    "maxLength": 100,
+                    "pattern": "^[0-9a-zA-Z\\-]+$"
+                  },
+                  "name": {
+                    "type": "string",
+                    "maxLength": 20
+                  },
+                  "explanation": {
+                    "type": "string"
+                  },
+                  "icon": {
+                    "type": "object",
+                    "additionalProperties": false,
+                    "format": "grid",
+                    "required": [
+                      "emoji",
+                      "iconify",
+                      "image"
+                    ],
+                    "options": {
+                      "disable_collapse": true
+                    },
+                    "properties": {
+                      "emoji": {
+                        "type": "string",
+                        "options": {
+                          "grid_columns": 4
+                        }
+                      },
+                      "iconify": {
+                        "type": "string",
+                        "default": "",
+                        "options": {
+                          "grid_columns": 4
+                        }
+                      },
+                      "image": {
+                        "type": "string",
+                        "default": "",
+                        "media": {
+                          "binaryEncoding": "base64",
+                          "type": "img/png"
+                        },
+                        "options": {
+                          "grid_columns": 4
+                        }
+                      },
+                      "delete": {
+                        "format": "button",
+                        "options": {
+                          "button": {
+                            "text": "Delete Image",
+                            "icon": "trash",
+                            "action": "deletePrevious"
+                          }
+                        }
+                      }
+                    }
+                  },
+                  "color": {
+                    "type": "string",
+                    "default": "#000000",
+                    "format": "color",
+                    "pattern": "(^#[0-9a-fA-F]{6}$)|(^$)"
+                  },
+                  "copy": {
+                    "type": "string",
+                    "format": "button",
+                    "options": {
+                      "button": {
+                        "text": "Copy Information",
+                        "icon": "copy",
+                        "action": "copyInformation"
+                      }
+                    }
+                  }
+                },
+                "headerTemplate": "{{ i1 }}: {{ self.id }}"
+              },
+              "propertyOrder": 200,
+              "title": "currency",
+              "yutori": {
+                "points": [
+                  "Configure the in-game currency.",
+                  "You can define multiple currencies and configure each one with its own information (ID, name, icon, color, etc.).",
+                  "Currency is used to buy and sell items and to expand inventory capacity.",
+                  "The first currency is treated as the primary currency and is used when there is nothing specified for the currency ID (`coinId`) for an Item or capacity."
+                ],
+                "reference": "en/editor/general?id=currency"
+              }
+            },
+            "capacity": {
+              "type": "object",
+              "additionalProperties": false,
+              "format": "grid",
+              "required": [
+                "information",
+                "increasingRate",
+                "initialCost",
+                "initialCount",
+                "coinId",
+                "buyingLimit"
+              ],
+              "options": {
+                "disable_collapse": true,
+                "infoText": "Configure inventory capacity"
+              },
+              "properties": {
+                "information": {
+                  "type": "object",
+                  "additionalProperties": false,
+                  "format": "grid",
+                  "required": [
+                    "id",
+                    "name",
+                    "explanation",
+                    "icon",
+                    "color"
+                  ],
+                  "options": {
+                    "disable_collapse": true,
+                    "infoText": "Details"
+                  },
+                  "properties": {
+                    "id": {
+                      "type": "string",
+                      "default": "",
+                      "minLength": 1,
+                      "maxLength": 100,
+                      "pattern": "^[0-9a-zA-Z\\-]+$",
+                      "title": "ID",
+                      "options": {
+                        "infoText": "unique ID to identify an element"
+                      },
+                      "yutori": {
+                        "points": [
+                          "ID to uniquely identify each element.",
+                          "A string that identifies the element in the editor.",
+                          "For example, the ID specifies which Item is obtained when the Action is completed."
+                        ],
+                        "reference": "en/editor/information?id=ID"
+                      }
+                    },
+                    "name": {
+                      "type": "string",
+                      "maxLength": 20,
+                      "title": "Name",
+                      "options": {
+                        "infoText": "The name under which the element appears"
+                      },
+                      "yutori": {
+                        "points": [
+                          "The name of the element displayed in the game.",
+                          "Languages other than English can also be entered.",
+                          "Names that duplicate other elements are acceptable.",
+                          "If it is too long, the overflowing part will be omitted by `...` in the display during play."
+                        ],
+                        "reference": "en/editor/information?id=Name"
+                      }
+                    },
+                    "explanation": {
+                      "type": "string",
+                      "title": "explanatory note",
+                      "options": {
+                        "infoText": "Detailed description of the element"
+                      },
+                      "yutori": {
+                        "points": [
+                          "A description of the elements displayed in the game.",
+                          "Languages other than English can be entered. Even long sentences are all displayed.",
+                          "If there is nothing to explain, leave blank."
+                        ],
+                        "reference": "en/editor/information?id=explanatory note"
+                      }
+                    },
+                    "icon": {
+                      "type": "object",
+                      "additionalProperties": false,
+                      "format": "grid",
+                      "required": [
+                        "emoji",
+                        "iconify",
+                        "image"
+                      ],
+                      "options": {
+                        "disable_collapse": true,
+                        "infoText": "Configure icons to represent elements"
+                      },
+                      "properties": {
+                        "emoji": {
+                          "type": "string",
+                          "options": {
+                            "grid_columns": 4,
+                            "infoText": "Icon display with pictograms"
+                          },
+                          "title": "pictograph",
+                          "yutori": {
+                            "points": [
+                              "Display pictograms as icons.",
+                              "It can be converted from text to pictograms and configured quickly.",
+                              "For pictograms, enter Unicode pictograms as they are.",
+                              "Since the pictograms introduced in the execution environment are used, the display may differ slightly from user to user.",
+                              "Iconify allows you to configure emoji that are nothing specific to each environment",
+                              "It is possible to display characters other than pictograms, but it is Possible for the display to be corrupted if there is more than one character.",
+                              "For example, enter a pictogram such as `🗡️` or `⚔️`."
+                            ],
+                            "reference": "en/editor/information?id=pictograph"
+                          }
+                        },
+                        "iconify": {
+                          "type": "string",
+                          "default": "",
+                          "options": {
+                            "grid_columns": 4,
+                            "infoText": "Using the Iconify Icon Set"
+                          },
+                          "title": "Iconify",
+                          "yutori": {
+                            "points": [
+                              "An icon representing an element.",
+                              "Iconify is a service that provides various types of icons.",
+                              "If an image is configured, it will take precedence."
+                            ],
+                            "reference": "en/editor/information?id=Iconify"
+                          }
+                        },
+                        "image": {
+                          "type": "string",
+                          "default": "",
+                          "media": {
+                            "binaryEncoding": "base64",
+                            "type": "img/png"
+                          },
+                          "options": {
+                            "grid_columns": 4,
+                            "infoText": "Use any image file"
+                          },
+                          "title": "image",
+                          "yutori": {
+                            "points": [
+                              "An image representing an element.",
+                              "If the file size is large, it will be automatically resized.",
+                              "Unnecessary if Iconify or pictograms are configured."
+                            ],
+                            "reference": "en/editor/information?id=image"
+                          }
+                        },
+                        "delete": {
+                          "format": "button",
+                          "options": {
+                            "button": {
+                              "text": "Delete Image",
+                              "icon": "trash",
+                              "action": "deletePrevious"
+                            }
+                          }
+                        }
+                      },
+                      "title": "icon",
+                      "yutori": {
+                        "points": [
+                          "Icons can be configured as images, Iconify, or emoji.",
+                          "Iconify is a service that provides various types of icons.",
+                          "If more than one of these is configured, priority is given to images, Iconify, and pictograms, in that order."
+                        ],
+                        "reference": "en/editor/information?id=icon"
+                      }
+                    },
+                    "color": {
+                      "type": "string",
+                      "default": "#000000",
+                      "format": "color",
+                      "pattern": "(^#[0-9a-fA-F]{6}$)|(^$)",
+                      "title": "variety",
+                      "options": {
+                        "infoText": "Configure the display color of the element"
+                      },
+                      "yutori": {
+                        "points": [
+                          "As the element's color, it is applied to the element's icon and background color.",
+                          "Select from the editor's color picker."
+                        ],
+                        "reference": "en/editor/information?id=variety"
+                      }
+                    },
+                    "copy": {
+                      "type": "string",
+                      "format": "button",
+                      "options": {
+                        "button": {
+                          "text": "Copy Information",
+                          "icon": "copy",
+                          "action": "copyInformation"
+                        }
+                      }
+                    }
+                  },
+                  "title": "information",
+                  "description": "Configure basic information about the element (ID, name, icon, color, etc.)",
+                  "yutori": {
+                    "points": [
+                      "This is an item of basic information common to each element in the world (Category, Action, Item, Event, etc.).",
+                      "Each element is configured separately."
+                    ],
+                    "reference": "en/editor/information"
+                  }
+                },
+                "initialCount": {
+                  "type": "integer",
+                  "default": 10,
+                  "minimum": 0,
+                  "title": "Default value [pcs].",
+                  "options": {
+                    "infoText": "Initial inventory capacity (the number of different types of Items you can have)"
+                  },
+                  "yutori": {
+                    "points": [
+                      "This is the initial capacity (the number of different types of Items you can have) at the start of the game.",
+                      "If `0` is set, the capacity is unlimited."
+                    ],
+                    "reference": "en/editor/general?id=Default value [pcs]."
+                  }
+                },
+                "initialCost": {
+                  "type": "integer",
+                  "default": 100,
+                  "minimum": 1,
+                  "title": "Base price [coins].",
+                  "options": {
+                    "infoText": "Initial price to increase capacity by one"
+                  },
+                  "yutori": {
+                    "points": [
+                      "The base price (in coins) to increase inventory capacity by one slot.",
+                      "The actual price is calculated as \"Base Price x Percentage Increase ^ Number of Purchases Already Made\".",
+                      "Example: If the base price is 100 and the rate of increase is 1.2, the first coin will be 100 coins, the second 120 coins, and the third 144 coins."
+                    ],
+                    "reference": "en/editor/general?id=Base price [coins]."
+                  }
+                },
+                "increasingRate": {
+                  "type": "number",
+                  "default": 1.2,
+                  "minimum": 1,
+                  "title": "Percentage increase [times].",
+                  "options": {
+                    "infoText": "Percentage increase in capacity expansion costs"
+                  },
+                  "yutori": {
+                    "points": [
+                      "It is a multiplier for how much the cost of capacity expansion increases with the nth buy.",
+                      "For `1.0` the price is always the same, for `1.2` the price is 20% higher each time you buy.",
+                      "Formula: Base Price × Percentage Increase ^ Number of Purchases"
+                    ],
+                    "reference": "en/editor/general?id=Percentage increase [times]."
+                  }
+                },
+                "coinId": {
+                  "type": "string",
+                  "default": "",
+                  "pattern": "^[0-9a-zA-Z\\-]*$",
+                  "title": "Currency ID",
+                  "options": {
+                    "infoText": "ID of the currency used for capacity expansion"
+                  },
+                  "yutori": {
+                    "points": [
+                      "Specify the ID of the currency (coins) to be used for inventory capacity expansion.",
+                      "If left blank, the main currency (the first one listed under \"coins\") will be used."
+                    ],
+                    "reference": "en/editor/general?id=Currency ID"
+                  }
+                },
+                "buyingLimit": {
+                  "type": "integer",
+                  "default": 0,
+                  "minimum": -1,
+                  "title": "Purchase Limit [Times]",
+                  "options": {
+                    "infoText": "Maximum number of times you can buy storage"
+                  },
+                  "yutori": {
+                    "points": [
+                      "This is the maximum number of times you can buy storage capacity using currency.",
+                      "If you set it to `0`, you can buy unlimited things.",
+                      "If you set it to `-1`, you will no longer be able to buy.",
+                      "Capacity increases resulting from rewards are not subject to this limit."
+                    ],
+                    "reference": "en/editor/general?id=Purchase Limit [Times]"
+                  }
+                }
+              },
+              "propertyOrder": 201,
+              "title": "capacity",
+              "yutori": {
+                "points": [
+                  "Controls the maximum count of the types of Items a player can have.",
+                  "The number of each Item is controlled by the count of the type of Item you own, not by the number of Items you own.",
+                  "If `initialCount` is set to 0, the capacity is unlimited.",
+                  "Use the ID configured here when referring to capacity items in conditions or rewards."
+                ],
+                "reference": "en/editor/general?id=capacity"
+              }
+            },
+            "queue": {
+              "type": "object",
+              "additionalProperties": false,
+              "format": "grid",
+              "required": [
+                "information",
+                "increasingRate",
+                "initialCost",
+                "initialCount",
+                "coinId",
+                "buyingLimit"
+              ],
+              "options": {
+                "disable_collapse": true,
+                "infoText": "Configuring the Number of Slots for Consecutive Actions (Scheduling)"
+              },
+              "properties": {
+                "information": {
+                  "type": "object",
+                  "additionalProperties": false,
+                  "format": "grid",
+                  "required": [
+                    "id",
+                    "name",
+                    "explanation",
+                    "icon",
+                    "color"
+                  ],
+                  "options": {
+                    "disable_collapse": true,
+                    "infoText": "Details"
+                  },
+                  "properties": {
+                    "id": {
+                      "type": "string",
+                      "default": "",
+                      "minLength": 1,
+                      "maxLength": 100,
+                      "pattern": "^[0-9a-zA-Z\\-]+$",
+                      "title": "ID",
+                      "options": {
+                        "infoText": "unique ID to identify an element"
+                      },
+                      "yutori": {
+                        "points": [
+                          "ID to uniquely identify each element.",
+                          "A string that identifies the element in the editor.",
+                          "For example, the ID specifies which Item is obtained when the Action is completed."
+                        ],
+                        "reference": "en/editor/information?id=ID"
+                      }
+                    },
+                    "name": {
+                      "type": "string",
+                      "maxLength": 20,
+                      "title": "Name",
+                      "options": {
+                        "infoText": "The name under which the element appears"
+                      },
+                      "yutori": {
+                        "points": [
+                          "The name of the element displayed in the game.",
+                          "Languages other than English can also be entered.",
+                          "Names that duplicate other elements are acceptable.",
+                          "If it is too long, the overflowing part will be omitted by `...` in the display during play."
+                        ],
+                        "reference": "en/editor/information?id=Name"
+                      }
+                    },
+                    "explanation": {
+                      "type": "string",
+                      "title": "explanatory note",
+                      "options": {
+                        "infoText": "Detailed description of the element"
+                      },
+                      "yutori": {
+                        "points": [
+                          "A description of the elements displayed in the game.",
+                          "Languages other than English can be entered. Even long sentences are all displayed.",
+                          "If there is nothing to explain, leave blank."
+                        ],
+                        "reference": "en/editor/information?id=explanatory note"
+                      }
+                    },
+                    "icon": {
+                      "type": "object",
+                      "additionalProperties": false,
+                      "format": "grid",
+                      "required": [
+                        "emoji",
+                        "iconify",
+                        "image"
+                      ],
+                      "options": {
+                        "disable_collapse": true,
+                        "infoText": "Configure icons to represent elements"
+                      },
+                      "properties": {
+                        "emoji": {
+                          "type": "string",
+                          "options": {
+                            "grid_columns": 4,
+                            "infoText": "Icon display with pictograms"
+                          },
+                          "title": "pictograph",
+                          "yutori": {
+                            "points": [
+                              "Display pictograms as icons.",
+                              "It can be converted from text to pictograms and configured quickly.",
+                              "For pictograms, enter Unicode pictograms as they are.",
+                              "Since the pictograms introduced in the execution environment are used, the display may differ slightly from user to user.",
+                              "Iconify allows you to configure emoji that are nothing specific to each environment",
+                              "It is possible to display characters other than pictograms, but it is Possible for the display to be corrupted if there is more than one character.",
+                              "For example, enter a pictogram such as `🗡️` or `⚔️`."
+                            ],
+                            "reference": "en/editor/information?id=pictograph"
+                          }
+                        },
+                        "iconify": {
+                          "type": "string",
+                          "default": "",
+                          "options": {
+                            "grid_columns": 4,
+                            "infoText": "Using the Iconify Icon Set"
+                          },
+                          "title": "Iconify",
+                          "yutori": {
+                            "points": [
+                              "An icon representing an element.",
+                              "Iconify is a service that provides various types of icons.",
+                              "If an image is configured, it will take precedence."
+                            ],
+                            "reference": "en/editor/information?id=Iconify"
+                          }
+                        },
+                        "image": {
+                          "type": "string",
+                          "default": "",
+                          "media": {
+                            "binaryEncoding": "base64",
+                            "type": "img/png"
+                          },
+                          "options": {
+                            "grid_columns": 4,
+                            "infoText": "Use any image file"
+                          },
+                          "title": "image",
+                          "yutori": {
+                            "points": [
+                              "An image representing an element.",
+                              "If the file size is large, it will be automatically resized.",
+                              "Unnecessary if Iconify or pictograms are configured."
+                            ],
+                            "reference": "en/editor/information?id=image"
+                          }
+                        },
+                        "delete": {
+                          "format": "button",
+                          "options": {
+                            "button": {
+                              "text": "Delete Image",
+                              "icon": "trash",
+                              "action": "deletePrevious"
+                            }
+                          }
+                        }
+                      },
+                      "title": "icon",
+                      "yutori": {
+                        "points": [
+                          "Icons can be configured as images, Iconify, or emoji.",
+                          "Iconify is a service that provides various types of icons.",
+                          "If more than one of these is configured, priority is given to images, Iconify, and pictograms, in that order."
+                        ],
+                        "reference": "en/editor/information?id=icon"
+                      }
+                    },
+                    "color": {
+                      "type": "string",
+                      "default": "#000000",
+                      "format": "color",
+                      "pattern": "(^#[0-9a-fA-F]{6}$)|(^$)",
+                      "title": "variety",
+                      "options": {
+                        "infoText": "Configure the display color of the element"
+                      },
+                      "yutori": {
+                        "points": [
+                          "As the element's color, it is applied to the element's icon and background color.",
+                          "Select from the editor's color picker."
+                        ],
+                        "reference": "en/editor/information?id=variety"
+                      }
+                    },
+                    "copy": {
+                      "type": "string",
+                      "format": "button",
+                      "options": {
+                        "button": {
+                          "text": "Copy Information",
+                          "icon": "copy",
+                          "action": "copyInformation"
+                        }
+                      }
+                    }
+                  },
+                  "title": "information",
+                  "description": "Configure basic information about the element (ID, name, icon, color, etc.)",
+                  "yutori": {
+                    "points": [
+                      "This is an item of basic information common to each element in the world (Category, Action, Item, Event, etc.).",
+                      "Each element is configured separately."
+                    ],
+                    "reference": "en/editor/information"
+                  }
+                },
+                "initialCount": {
+                  "type": "integer",
+                  "default": 1,
+                  "minimum": 1,
+                  "title": "Default value [pcs].",
+                  "options": {
+                    "infoText": "Number of consecutive runs at the start of the game"
+                  },
+                  "yutori": {
+                    "points": [
+                      "This is the number of reservation slots available at the start of the game.",
+                      "The minimum value is `1` (there is no `0` = unlimited option, as with capacity)."
+                    ],
+                    "reference": "en/editor/general?id=Default value [pcs]."
+                  }
+                },
+                "initialCost": {
+                  "type": "integer",
+                  "default": 100,
+                  "minimum": 1,
+                  "title": "Base price [coins].",
+                  "options": {
+                    "infoText": "Initial price to add one slot"
+                  },
+                  "yutori": {
+                    "points": [
+                      "This is the base price (in coins) to add one slot for consecutive runs.",
+                      "The actual price is calculated as \"Base Price x Percentage Increase ^ Number of Purchases Already Made\".",
+                      "Example: If the base price is 100 and the rate of increase is 1.2, the first coin will be 100 coins, the second 120 coins, and the third 144 coins."
+                    ],
+                    "reference": "en/editor/general?id=Base price [coins]."
+                  }
+                },
+                "increasingRate": {
+                  "type": "number",
+                  "default": 1.2,
+                  "minimum": 1,
+                  "title": "Percentage increase [times].",
+                  "options": {
+                    "infoText": "Rate of increase in frame expansion costs"
+                  },
+                  "yutori": {
+                    "points": [
+                      "This is the multiplier that indicates how much the cost of expanding the slot increases with the nth buy.",
+                      "For `1.0` the price is always the same, for `1.2` the price is 20% higher each time you buy.",
+                      "Formula: Base Price × Percentage Increase ^ Number of Purchases"
+                    ],
+                    "reference": "en/editor/general?id=Percentage increase [times]."
+                  }
+                },
+                "coinId": {
+                  "type": "string",
+                  "default": "",
+                  "pattern": "^[0-9a-zA-Z\\-]*$",
+                  "title": "Currency ID",
+                  "options": {
+                    "infoText": "Currency ID used for expanding the limit"
+                  },
+                  "yutori": {
+                    "points": [
+                      "Specify the ID of the currency (coins) to be used for the price of extending the continuous execution window.",
+                      "If left blank, the main currency (the first one listed under \"coins\") will be used."
+                    ],
+                    "reference": "en/editor/general?id=Currency ID"
+                  }
+                },
+                "buyingLimit": {
+                  "type": "integer",
+                  "default": 0,
+                  "minimum": -1,
+                  "title": "Purchase Limit [Times]",
+                  "options": {
+                    "infoText": "Maximum number of times you can buy a slot"
+                  },
+                  "yutori": {
+                    "points": [
+                      "This is the maximum number of times you can buy a slot for consecutive runs using currency.",
+                      "If you set it to `0`, you can buy unlimited things.",
+                      "If you set it to `-1`, you will no longer be able to buy.",
+                      "Increases in the quota resulting from compensation are not subject to this cap."
+                    ],
+                    "reference": "en/editor/general?id=Purchase Limit [Times]"
+                  }
+                }
+              },
+              "propertyOrder": 202,
+              "title": "Queue",
+              "yutori": {
+                "points": [
+                  "Manages the count of slots available for executing actions in sequence (scheduling).",
+                  "In addition to buying slots with currency, just like storage capacity, you can also increase the number of slots by selecting specific Items from the queue as rewards for actions and events.",
+                  "When referencing items in the queue based on conditions or rewards, use the ID configured here."
+                ],
+                "reference": "en/editor/general?id=Queue"
+              }
+            },
+            "defaultCombat": {
+              "type": "object",
+              "additionalProperties": false,
+              "format": "grid",
+              "required": [
+                "attack",
+                "defence",
+                "accuracy",
+                "evasion"
+              ],
+              "options": {
+                "disable_collapse": true,
+                "infoText": "Details"
+              },
+              "properties": {
+                "attack": {
+                  "type": "number",
+                  "default": 0,
+                  "title": "Attack value [level difference].",
+                  "options": {
+                    "infoText": "Correction for level difference in stamina damage inflicted on the opponent."
+                  },
+                  "yutori": {
+                    "points": [
+                      "The higher the value, the more damage is done."
+                    ],
+                    "reference": "en/editor/combat?id=Attack value [level difference]."
+                  }
+                },
+                "defence": {
+                  "type": "number",
+                  "default": 0,
+                  "title": "Defence value [level difference].",
+                  "options": {
+                    "infoText": "Correction for level difference in stamina damage received from opponents."
+                  },
+                  "yutori": {
+                    "points": [
+                      "The higher the value, the less damage is taken."
+                    ],
+                    "reference": "en/editor/combat?id=Defence value [level difference]."
+                  }
+                },
+                "accuracy": {
+                  "type": "number",
+                  "default": 0,
+                  "title": "Accuracy [level difference].",
+                  "options": {
+                    "infoText": "Level difference correction to attack miss rate"
+                  },
+                  "yutori": {
+                    "points": [
+                      "The higher the value, the lower the miss rate."
+                    ],
+                    "reference": "en/editor/combat?id=Accuracy [level difference]."
+                  }
+                },
+                "evasion": {
+                  "type": "number",
+                  "default": 0,
+                  "title": "Evasion value [level difference].",
+                  "options": {
+                    "infoText": "Level difference correction to the evasion rate of the opponent's attacks"
+                  },
+                  "yutori": {
+                    "points": [
+                      "The higher the value, the easier it is to evade an opponent's attack."
+                    ],
+                    "reference": "en/editor/combat?id=Evasion value [level difference]."
+                  }
+                },
+                "restore": {
+                  "type": "number",
+                  "default": 0
+                }
+              },
+              "propertyOrder": 400,
+              "title": "combat value",
+              "description": "Default combat parameters common to all Actions",
+              "yutori": {
+                "points": [
+                  "The basic combat correction values that apply to all `stamina` type actions in common.",
+                  "The combat value (property) of each Action is added to this default value."
+                ],
+                "reference": "en/editor/combat"
+              }
+            }
+          },
+          "title": "general",
+          "description": "Basic game settings such as language, level settings, etc.",
+          "yutori": {
+            "reference": "en/editor/general"
+          }
+        },
+        "design": {
+          "type": "object",
+          "additionalProperties": false,
+          "format": "grid",
+          "required": [
+            "mainColor",
+            "subColor",
+            "background"
+          ],
+          "options": {
+            "disable_collapse": true,
+            "infoText": "Details"
+          },
+          "properties": {
+            "mainColor": {
+              "type": "string",
+              "default": "#000000",
+              "format": "color",
+              "pattern": "(^#[0-9a-fA-F]{6}$)|(^$)",
+              "title": "predominant color",
+              "options": {
+                "infoText": "Major Colors of the World"
+              },
+              "yutori": {
+                "points": [
+                  "Used as bar color.",
+                  "The opposite color of this is used for the bar shadows."
+                ],
+                "reference": "en/editor/design?id=predominant color"
+              }
+            },
+            "subColor": {
+              "type": "string",
+              "default": "#000000",
+              "format": "color",
+              "pattern": "(^#[0-9a-fA-F]{6}$)|(^$)",
+              "title": "supplementary color",
+              "options": {
+                "infoText": "Auxiliary background and text colors"
+              },
+              "yutori": {
+                "points": [
+                  "These colors are used as the background and text colors.",
+                  "Shades close to the main color will blend in."
+                ],
+                "reference": "en/editor/design?id=supplementary color"
+              }
+            },
+            "background": {
+              "type": "string",
+              "default": "",
+              "media": {
+                "binaryEncoding": "base64",
+                "type": "img/png"
+              },
+              "title": "background image",
+              "options": {
+                "infoText": "Background image for the entire game"
+              },
+              "yutori": {
+                "points": [
+                  "Configure the game background image.",
+                  "If nothing is configured for the image, the background will be a gradient based on the auxiliary color."
+                ],
+                "reference": "en/editor/design?id=background image"
+              }
+            },
+            "delete": {
+              "format": "button",
+              "options": {
+                "button": {
+                  "text": "Delete Image",
+                  "icon": "trash",
+                  "action": "deletePrevious"
+                }
+              }
+            }
+          },
+          "title": "design",
+          "description": "Configure the appearance of the world, including colors and fonts",
+          "yutori": {
+            "points": [
+              "This configures the display of worlds.",
+              "Regarding the overall design of the world, if there are individual configurations for each element, they will take precedence."
+            ],
+            "reference": "en/editor/design"
+          }
+        },
+        "development": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "version",
+            "memo",
+            "errors",
+            "timestamp",
+            "autosaveing"
+          ],
+          "options": {
+            "disable_collapse": true,
+            "infoText": "Details"
+          },
+          "properties": {
+            "version": {
+              "type": "string",
+              "readOnly": true,
+              "title": "version",
+              "options": {
+                "infoText": "Editor build version number"
+              },
+              "yutori": {
+                "points": [
+                  "The console version number at the time of world creation is automatically recorded.",
+                  "The developer cannot change this content."
+                ],
+                "reference": "en/editor/development?id=version"
+              }
+            },
+            "memo": {
+              "type": "array",
+              "format": "table",
+              "options": {
+                "infoText": "Memo records for developers"
+              },
+              "items": {
+                "type": "string"
+              },
+              "title": "memo",
+              "yutori": {
+                "points": [
+                  "Developers are free to include this information as a memo.",
+                  "It is not related to the publication of the game."
+                ],
+                "reference": "en/editor/development?id=memo"
+              }
+            },
+            "errors": {
+              "type": "array",
+              "format": "table",
+              "readOnly": true,
+              "options": {
+                "disable_array_add": true,
+                "disable_array_delete": true,
+                "disable_array_delete_all_rows": true,
+                "disable_array_delete_last_row": true,
+                "disable_array_reorder": true,
+                "infoText": "Error logging of validation results"
+              },
+              "items": {
+                "type": "string",
+                "readOnly": true
+              },
+              "title": "error",
+              "yutori": {
+                "points": [
+                  "The results of the world validation are automatically saved here.",
+                  "For example, an error will be displayed if there is a type of character that cannot be entered, or if a value is entered that exceeds the upper limit.",
+                  "The developer cannot change this content.",
+                  "Possible to store to the server when there are no errors stored here."
+                ],
+                "reference": "en/editor/development?id=error"
+              }
+            },
+            "timestamp": {
+              "type": "object",
+              "additionalProperties": false,
+              "required": [
+                "created",
+                "saved",
+                "published"
+              ],
+              "properties": {
+                "created": {
+                  "type": "string",
+                  "readOnly": true,
+                  "title": "creation-time",
+                  "options": {
+                    "infoText": "Time when the world was first created"
+                  },
+                  "yutori": {
+                    "points": [
+                      "The days when the world was first created."
+                    ],
+                    "reference": "en/editor/development?id=creation-time"
+                  }
+                },
+                "saved": {
+                  "type": "string",
+                  "readOnly": true,
+                  "title": "Save date",
+                  "options": {
+                    "infoText": "Last save execution time"
+                  },
+                  "yutori": {
+                    "points": [
+                      "The date and time the world was last saved."
+                    ],
+                    "reference": "en/editor/development?id=Save date"
+                  }
+                },
+                "published": {
+                  "type": "string",
+                  "readOnly": true,
+                  "title": "Release date",
+                  "options": {
+                    "infoText": "Time of last public execution"
+                  },
+                  "yutori": {
+                    "points": [
+                      "World was last published days."
+                    ],
+                    "reference": "en/editor/development?id=Release date"
+                  }
+                }
+              },
+              "title": "time-stamping",
+              "options": {
+                "infoText": "Creation, storage, and publication records"
+              },
+              "yutori": {
+                "points": [
+                  "The time when a world is created, saved, and published is automatically recorded.",
+                  "The developer cannot change this content."
+                ],
+                "reference": "en/editor/development?id=time-stamping"
+              }
+            },
+            "autosaveing": {
+              "type": "boolean",
+              "default": false,
+              "readOnly": true,
+              "format": "checkbox",
+              "title": "automatic saving",
+              "options": {
+                "infoText": "Enable/Disable auto save function"
+              },
+              "yutori": {
+                "points": [
+                  "Indicates whether the auto save function is enabled.",
+                  "The developer cannot change this content."
+                ],
+                "reference": "en/editor/development?id=automatic saving"
+              }
+            }
+          },
+          "title": "development",
+          "description": "Notes and error management during world development",
+          "yutori": {
+            "points": [
+              "It is used in the development of worlds.",
+              "It is related to the development and testing of this world and does not affect the content of the play.",
+              "Players will not be asked to confirm any details about the development."
+            ],
+            "reference": "en/editor/development"
+          }
+        }
+      },
+      "title": "Basic Configuration",
+      "description": "Basic configurations for the world in general",
+      "yutori": {
+        "points": [
+          "Configure the world's name, description, background, currency, capacity, max level of categories, experience increase rate, discount rate, standard combat parameters, etc.",
+          "These configurations affect the entire world."
+        ],
+        "reference": "en/editor/basic"
+      }
+    },
+    "categories": {
+      "type": "array",
+      "basicCategoryTitle": "Category",
+      "format": "tabs",
+      "options": {
+        "disable_collapse": true,
+        "infoText": "Details"
+      },
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "format": "categories",
+        "basicCategoryTitle": "Category",
+        "headerTemplate": "{{ i1 }}: {{ self.information.id }}",
+        "options": {
+          "disable_collapse": true
+        },
+        "required": [
+          "information",
+          "group",
+          "unlocked",
+          "requirements",
+          "equipmentGroups",
+          "numeric",
+          "standaloneProgress",
+          "background"
+        ],
+        "properties": {
+          "information": {
+            "type": "object",
+            "additionalProperties": false,
+            "format": "grid",
+            "required": [
+              "id",
+              "name",
+              "explanation",
+              "icon",
+              "color"
+            ],
+            "options": {
+              "disable_collapse": true,
+              "infoText": "Details"
+            },
+            "properties": {
+              "id": {
+                "type": "string",
+                "default": "",
+                "minLength": 1,
+                "maxLength": 100,
+                "pattern": "^[0-9a-zA-Z\\-]+$",
+                "title": "ID",
+                "options": {
+                  "infoText": "unique ID to identify an element"
+                },
+                "yutori": {
+                  "points": [
+                    "ID to uniquely identify each element.",
+                    "A string that identifies the element in the editor.",
+                    "For example, the ID specifies which Item is obtained when the Action is completed."
+                  ],
+                  "reference": "en/editor/information?id=ID"
+                }
+              },
+              "name": {
+                "type": "string",
+                "maxLength": 20,
+                "title": "Name",
+                "options": {
+                  "infoText": "The name under which the element appears"
+                },
+                "yutori": {
+                  "points": [
+                    "The name of the element displayed in the game.",
+                    "Languages other than English can also be entered.",
+                    "Names that duplicate other elements are acceptable.",
+                    "If it is too long, the overflowing part will be omitted by `...` in the display during play."
+                  ],
+                  "reference": "en/editor/information?id=Name"
+                }
+              },
+              "explanation": {
+                "type": "string",
+                "title": "explanatory note",
+                "options": {
+                  "infoText": "Detailed description of the element"
+                },
+                "yutori": {
+                  "points": [
+                    "A description of the elements displayed in the game.",
+                    "Languages other than English can be entered. Even long sentences are all displayed.",
+                    "If there is nothing to explain, leave blank."
+                  ],
+                  "reference": "en/editor/information?id=explanatory note"
+                }
+              },
+              "icon": {
+                "type": "object",
+                "additionalProperties": false,
+                "format": "grid",
+                "required": [
+                  "emoji",
+                  "iconify",
+                  "image"
+                ],
+                "options": {
+                  "disable_collapse": true,
+                  "infoText": "Configure icons to represent elements"
+                },
+                "properties": {
+                  "emoji": {
+                    "type": "string",
+                    "options": {
+                      "grid_columns": 4,
+                      "infoText": "Icon display with pictograms"
+                    },
+                    "title": "pictograph",
+                    "yutori": {
+                      "points": [
+                        "Display pictograms as icons.",
+                        "It can be converted from text to pictograms and configured quickly.",
+                        "For pictograms, enter Unicode pictograms as they are.",
+                        "Since the pictograms introduced in the execution environment are used, the display may differ slightly from user to user.",
+                        "Iconify allows you to configure emoji that are nothing specific to each environment",
+                        "It is possible to display characters other than pictograms, but it is Possible for the display to be corrupted if there is more than one character.",
+                        "For example, enter a pictogram such as `🗡️` or `⚔️`."
+                      ],
+                      "reference": "en/editor/information?id=pictograph"
+                    }
+                  },
+                  "iconify": {
+                    "type": "string",
+                    "default": "",
+                    "options": {
+                      "grid_columns": 4,
+                      "infoText": "Using the Iconify Icon Set"
+                    },
+                    "title": "Iconify",
+                    "yutori": {
+                      "points": [
+                        "An icon representing an element.",
+                        "Iconify is a service that provides various types of icons.",
+                        "If an image is configured, it will take precedence."
+                      ],
+                      "reference": "en/editor/information?id=Iconify"
+                    }
+                  },
+                  "image": {
+                    "type": "string",
+                    "default": "",
+                    "media": {
+                      "binaryEncoding": "base64",
+                      "type": "img/png"
+                    },
+                    "options": {
+                      "grid_columns": 4,
+                      "infoText": "Use any image file"
+                    },
+                    "title": "image",
+                    "yutori": {
+                      "points": [
+                        "An image representing an element.",
+                        "If the file size is large, it will be automatically resized.",
+                        "Unnecessary if Iconify or pictograms are configured."
+                      ],
+                      "reference": "en/editor/information?id=image"
+                    }
+                  },
+                  "delete": {
+                    "format": "button",
+                    "options": {
+                      "button": {
+                        "text": "Delete Image",
+                        "icon": "trash",
+                        "action": "deletePrevious"
+                      }
+                    }
+                  }
+                },
+                "title": "icon",
+                "yutori": {
+                  "points": [
+                    "Icons can be configured as images, Iconify, or emoji.",
+                    "Iconify is a service that provides various types of icons.",
+                    "If more than one of these is configured, priority is given to images, Iconify, and pictograms, in that order."
+                  ],
+                  "reference": "en/editor/information?id=icon"
+                }
+              },
+              "color": {
+                "type": "string",
+                "default": "#000000",
+                "format": "color",
+                "pattern": "(^#[0-9a-fA-F]{6}$)|(^$)",
+                "title": "variety",
+                "options": {
+                  "infoText": "Configure the display color of the element"
+                },
+                "yutori": {
+                  "points": [
+                    "As the element's color, it is applied to the element's icon and background color.",
+                    "Select from the editor's color picker."
+                  ],
+                  "reference": "en/editor/information?id=variety"
+                }
+              },
+              "copy": {
+                "type": "string",
+                "format": "button",
+                "options": {
+                  "button": {
+                    "text": "Copy Information",
+                    "icon": "copy",
+                    "action": "copyInformation"
+                  }
+                }
+              }
+            },
+            "title": "information",
+            "description": "Configure basic information about the element (ID, name, icon, color, etc.)",
+            "yutori": {
+              "points": [
+                "This is an item of basic information common to each element in the world (Category, Action, Item, Event, etc.).",
+                "Each element is configured separately."
+              ],
+              "reference": "en/editor/information"
+            }
+          },
+          "group": {
+            "type": "string",
+            "default": "",
+            "pattern": "^[0-9a-zA-Z\\-]*$",
+            "title": "group (usu. of people)",
+            "options": {
+              "infoText": "Display Group Classification of Category"
+            },
+            "yutori": {
+              "points": [
+                "Apply one of the groups configured in Basic.",
+                "A list of categories will be displayed in the order of the configured groups."
+              ],
+              "reference": "en/editor/category?id=group (usu. of people)"
+            }
+          },
+          "unlocked": {
+            "type": "string",
+            "enum": [
+              "secreted",
+              "hidden",
+              "hinted",
+              "released"
+            ],
+            "default": "hinted",
+            "options": {
+              "enum_titles": [
+                "Secreted: Completely hidden from all UI (not even as a hint) until all requirements are met",
+                "Hidden: Fully concealed (grayed out, no name) until referenced or conditions met",
+                "Hinted: Name shown as a teaser but not operable until released (default)",
+                "Released: Unlocked and operable from the start regardless of conditions"
+              ],
+              "infoText": "Initial Display and Release States of Elements (Automatically advance to a higher state when activation conditions are met)"
+            },
+            "title": "Initial Unlocked State",
+            "yutori": {
+              "points": [
+                "secreted: Will not appear on the UI at all until all requirements are met (it will not appear in Hints, and will be hidden in the list of requirements and rewards).",
+                "hidden: Remains completely hidden (with its name grayed out and unavailable for interaction) as long as it is not referenced by any unlocking elements and does not meet any requirements.",
+                "hinted (default): Only the name is displayed as a preview, but you cannot interact with it until it is unlocked.",
+                "released: The item is released and available for use from the start, regardless of conditions (formerly \"Display from the Start\")."
+              ],
+              "reference": "en/editor/category?id=Initial Unlocked State"
+            }
+          },
+          "requirements": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "additionalProperties": false,
+              "headerTemplate": "{{ i1 }}: {{ self.id }} [ {{ self.type }} ]",
+              "format": "grid",
+              "required": [
+                "type",
+                "id",
+                "count",
+                "chance",
+                "equipment"
+              ],
+              "options": {
+                "disable_collapse": true
+              },
+              "properties": {
+                "type": {
+                  "type": "string",
+                  "enum": [
+                    "category",
+                    "action",
+                    "item"
+                  ],
+                  "default": "item",
+                  "title": "Type",
+                  "options": {
+                    "infoText": "Type of element referenced as a condition"
+                  },
+                  "yutori": {
+                    "reference": "en/editor/requirement?id=Type"
+                  }
+                },
+                "id": {
+                  "type": "string",
+                  "pattern": "^[0-9a-zA-Z\\-]+$",
+                  "title": "ID of an element",
+                  "options": {
+                    "infoText": "ID of the element to be referenced as a condition"
+                  },
+                  "yutori": {
+                    "reference": "en/editor/requirement?id=ID of an element"
+                  }
+                },
+                "count": {
+                  "type": "integer",
+                  "minimum": 0,
+                  "default": 1,
+                  "title": "value",
+                  "options": {
+                    "infoText": "Necessary values for requirements"
+                  },
+                  "yutori": {
+                    "points": [
+                      "The condition is satisfied if the value is above the specified value."
+                    ],
+                    "reference": "en/editor/requirement?id=value"
+                  }
+                },
+                "chance": {
+                  "type": "number",
+                  "default": 1,
+                  "minimum": 0,
+                  "maximum": 1,
+                  "title": "Consumption probability [0-1].",
+                  "options": {
+                    "infoText": "Probability of Item being consumed (0-1, valid only if Type is Item)"
+                  },
+                  "yutori": {
+                    "points": [
+                      "The probability that an Item will be consumed when the condition is met and the Action is performed.",
+                      "Always consumed at `1`, 50% chance of consumption at `0.5`, and no consumption at `0`.",
+                      "The default value is `1` (always consumed).",
+                      "Invalid if Type is other than Item."
+                    ],
+                    "reference": "en/editor/requirement?id=Consumption probability [0-1]."
+                  }
+                },
+                "equipment": {
+                  "type": "boolean",
+                  "default": false,
+                  "format": "checkbox",
+                  "title": "Equipment",
+                  "options": {
+                    "infoText": "Requires that the Item be in the Equipment state (valid only if the Type is Item) or"
+                  },
+                  "yutori": {
+                    "points": [
+                      "When enabled, the Necessary requirements are that the Item be equipped, not just possessed.",
+                      "Invalid if Type is other than Item."
+                    ],
+                    "reference": "en/editor/requirement?id=Equipment"
+                  }
+                }
+              }
+            },
+            "options": {
+              "disable_collapse": true,
+              "infoText": "Details"
+            },
+            "title": "terms",
+            "description": "Necessary Requirements for Category Use",
+            "yutori": {
+              "points": [
+                "These are the conditions to be configured for each element by Category, Action, and Item.",
+                "If all configured conditions are not met, the operations shown in the table cannot be performed.",
+                "If the locked feature is enabled, the element itself will be hidden until the condition is met."
+              ],
+              "reference": "en/editor/requirement"
+            }
+          },
+          "equipmentGroups": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "pattern": "^[0-9a-zA-Z\\-]*$"
+            },
+            "options": {
+              "disable_collapse": true,
+              "infoText": "Designation of Possible Item Groups for Equipment in this Category"
+            },
+            "default": [
+              ""
+            ],
+            "uniqueItems": true,
+            "title": "Equipment Groups",
+            "yutori": {
+              "points": [
+                "A list of the group names of Items that can be equipped in this Category.",
+                "You can only equip items from the group that matches the group name you specify here.",
+                "If an empty string is specified, an item with an unconfigured (empty) group will be targeted for Equipment.",
+                "Only one Item can be equipped in the same group. When you equip a new Item, any existing Equipment in the same group will automatically be unequipped.",
+                "If you set the list to empty (0 pieces), you cannot equip anything."
+              ],
+              "reference": "en/editor/category?id=Equipment Groups"
+            }
+          },
+          "numeric": {
+            "type": "boolean",
+            "default": true,
+            "format": "checkbox",
+            "title": "Level Availability",
+            "options": {
+              "infoText": "Availability of Category level function"
+            },
+            "yutori": {
+              "points": [
+                "This is a flag to indicate whether or not this Category has a level.",
+                "If on, it has a level; if off, it does not.",
+                "An example would be to turn on categories based on experience, such as swordsmanship and magic, and turn off categories based on location, such as dungeons and blacksmith shops."
+              ],
+              "reference": "en/editor/category?id=Level Availability"
+            }
+          },
+          "standaloneProgress": {
+            "type": "boolean",
+            "default": false,
+            "format": "checkbox",
+            "title": "simultaneous progress",
+            "options": {
+              "infoText": "Configure parallel execution with other categories"
+            },
+            "yutori": {
+              "points": [
+                "This is a flag to indicate whether an Action in this Category can progress in parallel with an Action in another Category.",
+                "If on, it can progress simultaneously and independently of actions in other Categories.",
+                "If it is off, it cannot be performed at the same time as an Action in another Category that is also configured to be off. When you start a new Action in this Category, any other Progressing Actions in the Non-Standalone Category will be automatically aborted."
+              ],
+              "reference": "en/editor/category?id=simultaneous progress"
+            }
+          },
+          "background": {
+            "type": "string",
+            "default": "",
+            "media": {
+              "binaryEncoding": "base64",
+              "type": "img/png"
+            },
+            "title": "background",
+            "options": {
+              "infoText": "Category-specific background config"
+            },
+            "yutori": {
+              "points": [
+                "Configure the background for this Category.",
+                "When a Category is selected, the background image changes in conjunction with it.",
+                "If nothing is configured, the world background setting is used as is."
+              ],
+              "reference": "en/editor/category?id=background"
+            }
+          },
+          "delete": {
+            "format": "button",
+            "options": {
+              "button": {
+                "text": "Delete Image",
+                "icon": "trash",
+                "action": "deletePrevious"
+              }
+            }
+          }
+        }
+      },
+      "title": "Category",
+      "description": "A general framework for categorizing Actions and Items",
+      "yutori": {
+        "points": [
+          "Represents a large classification.",
+          "For example, it can be configured in any frame of mind, such as short range, long range, magic, dungeons, blacksmiths, and manufactories.",
+          "Actions and Items are placed directly down in the world and are associated with a Category ID."
+        ],
+        "reference": "en/editor/category"
+      }
+    },
+    "actions": {
+      "type": "array",
+      "basicCategoryTitle": "Action.",
+      "format": "tabs",
+      "options": {
+        "disable_collapse": true,
+        "infoText": "Details"
+      },
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "headerTemplate": "{{ i1 }}: {{ self.information.id }}",
+        "options": {
+          "disable_collapse": true
+        },
+        "format": "grid",
+        "required": [
+          "information",
+          "category",
+          "attribute",
+          "group",
+          "unlocked",
+          "seconds",
+          "level",
+          "experience",
+          "chance",
+          "maximum",
+          "requirements",
+          "acquisitions",
+          "progressType",
+          "property"
+        ],
+        "properties": {
+          "information": {
+            "type": "object",
+            "additionalProperties": false,
+            "format": "grid",
+            "required": [
+              "id",
+              "name",
+              "explanation",
+              "icon",
+              "color"
+            ],
+            "options": {
+              "disable_collapse": true,
+              "infoText": "Details"
+            },
+            "properties": {
+              "id": {
+                "type": "string",
+                "default": "",
+                "minLength": 1,
+                "maxLength": 100,
+                "pattern": "^[0-9a-zA-Z\\-]+$",
+                "title": "ID",
+                "options": {
+                  "infoText": "unique ID to identify an element"
+                },
+                "yutori": {
+                  "points": [
+                    "ID to uniquely identify each element.",
+                    "A string that identifies the element in the editor.",
+                    "For example, the ID specifies which Item is obtained when the Action is completed."
+                  ],
+                  "reference": "en/editor/information?id=ID"
+                }
+              },
+              "name": {
+                "type": "string",
+                "maxLength": 20,
+                "title": "Name",
+                "options": {
+                  "infoText": "The name under which the element appears"
+                },
+                "yutori": {
+                  "points": [
+                    "The name of the element displayed in the game.",
+                    "Languages other than English can also be entered.",
+                    "Names that duplicate other elements are acceptable.",
+                    "If it is too long, the overflowing part will be omitted by `...` in the display during play."
+                  ],
+                  "reference": "en/editor/information?id=Name"
+                }
+              },
+              "explanation": {
+                "type": "string",
+                "title": "explanatory note",
+                "options": {
+                  "infoText": "Detailed description of the element"
+                },
+                "yutori": {
+                  "points": [
+                    "A description of the elements displayed in the game.",
+                    "Languages other than English can be entered. Even long sentences are all displayed.",
+                    "If there is nothing to explain, leave blank."
+                  ],
+                  "reference": "en/editor/information?id=explanatory note"
+                }
+              },
+              "icon": {
+                "type": "object",
+                "additionalProperties": false,
+                "format": "grid",
+                "required": [
+                  "emoji",
+                  "iconify",
+                  "image"
+                ],
+                "options": {
+                  "disable_collapse": true,
+                  "infoText": "Configure icons to represent elements"
+                },
+                "properties": {
+                  "emoji": {
+                    "type": "string",
+                    "options": {
+                      "grid_columns": 4,
+                      "infoText": "Icon display with pictograms"
+                    },
+                    "title": "pictograph",
+                    "yutori": {
+                      "points": [
+                        "Display pictograms as icons.",
+                        "It can be converted from text to pictograms and configured quickly.",
+                        "For pictograms, enter Unicode pictograms as they are.",
+                        "Since the pictograms introduced in the execution environment are used, the display may differ slightly from user to user.",
+                        "Iconify allows you to configure emoji that are nothing specific to each environment",
+                        "It is possible to display characters other than pictograms, but it is Possible for the display to be corrupted if there is more than one character.",
+                        "For example, enter a pictogram such as `🗡️` or `⚔️`."
+                      ],
+                      "reference": "en/editor/information?id=pictograph"
+                    }
+                  },
+                  "iconify": {
+                    "type": "string",
+                    "default": "",
+                    "options": {
+                      "grid_columns": 4,
+                      "infoText": "Using the Iconify Icon Set"
+                    },
+                    "title": "Iconify",
+                    "yutori": {
+                      "points": [
+                        "An icon representing an element.",
+                        "Iconify is a service that provides various types of icons.",
+                        "If an image is configured, it will take precedence."
+                      ],
+                      "reference": "en/editor/information?id=Iconify"
+                    }
+                  },
+                  "image": {
+                    "type": "string",
+                    "default": "",
+                    "media": {
+                      "binaryEncoding": "base64",
+                      "type": "img/png"
+                    },
+                    "options": {
+                      "grid_columns": 4,
+                      "infoText": "Use any image file"
+                    },
+                    "title": "image",
+                    "yutori": {
+                      "points": [
+                        "An image representing an element.",
+                        "If the file size is large, it will be automatically resized.",
+                        "Unnecessary if Iconify or pictograms are configured."
+                      ],
+                      "reference": "en/editor/information?id=image"
+                    }
+                  },
+                  "delete": {
+                    "format": "button",
+                    "options": {
+                      "button": {
+                        "text": "Delete Image",
+                        "icon": "trash",
+                        "action": "deletePrevious"
+                      }
+                    }
+                  }
+                },
+                "title": "icon",
+                "yutori": {
+                  "points": [
+                    "Icons can be configured as images, Iconify, or emoji.",
+                    "Iconify is a service that provides various types of icons.",
+                    "If more than one of these is configured, priority is given to images, Iconify, and pictograms, in that order."
+                  ],
+                  "reference": "en/editor/information?id=icon"
+                }
+              },
+              "color": {
+                "type": "string",
+                "default": "#000000",
+                "format": "color",
+                "pattern": "(^#[0-9a-fA-F]{6}$)|(^$)",
+                "title": "variety",
+                "options": {
+                  "infoText": "Configure the display color of the element"
+                },
+                "yutori": {
+                  "points": [
+                    "As the element's color, it is applied to the element's icon and background color.",
+                    "Select from the editor's color picker."
+                  ],
+                  "reference": "en/editor/information?id=variety"
+                }
+              },
+              "copy": {
+                "type": "string",
+                "format": "button",
+                "options": {
+                  "button": {
+                    "text": "Copy Information",
+                    "icon": "copy",
+                    "action": "copyInformation"
+                  }
+                }
+              }
+            },
+            "title": "information",
+            "description": "Configure basic information about the element (ID, name, icon, color, etc.)",
+            "yutori": {
+              "points": [
+                "This is an item of basic information common to each element in the world (Category, Action, Item, Event, etc.).",
+                "Each element is configured separately."
+              ],
+              "reference": "en/editor/information"
+            }
+          },
+          "category": {
+            "type": "string",
+            "default": "",
+            "pattern": "^[0-9a-zA-Z\\-]*$",
+            "title": "Category",
+            "options": {
+              "infoText": "ID of the Category to which the Action belongs"
+            },
+            "yutori": {
+              "points": [
+                "Specify the ID of the Category to which this Action belongs."
+              ],
+              "reference": "en/editor/action?id=Category"
+            }
+          },
+          "attribute": {
+            "type": "string",
+            "maxLength": 20,
+            "title": "attribute",
+            "options": {
+              "infoText": "Action-specific attribute categories"
+            },
+            "yutori": {
+              "points": [
+                "Individual attributes (Categories) can be configured.",
+                "If left blank, the category to which it belongs will be taken over.",
+                "For example, if you configure an attribute called magic for an Action that belongs to the category of Demon's Castle individually, the level and properties of the magic category will be calculated and applied to the Action completion time and damage."
+              ],
+              "reference": "en/editor/action?id=attribute"
+            }
+          },
+          "group": {
+            "type": "string",
+            "default": "",
+            "pattern": "^[0-9a-zA-Z\\-]*$",
+            "title": "group (usu. of people)",
+            "options": {
+              "infoText": "Display Group Classification of Actions"
+            },
+            "yutori": {
+              "points": [
+                "Apply one of the groups configured in Basic.",
+                "A list of Actions will be displayed in the order of the configured groups."
+              ],
+              "reference": "en/editor/action?id=group (usu. of people)"
+            }
+          },
+          "unlocked": {
+            "type": "string",
+            "enum": [
+              "secreted",
+              "hidden",
+              "hinted",
+              "released"
+            ],
+            "default": "hinted",
+            "options": {
+              "enum_titles": [
+                "Secreted: Completely hidden from all UI (not even as a hint) until all requirements are met",
+                "Hidden: Fully concealed (grayed out, no name) until referenced or conditions met",
+                "Hinted: Name shown as a teaser but not operable until released (default)",
+                "Released: Unlocked and operable from the start regardless of conditions"
+              ],
+              "infoText": "Initial Display and Release States of Elements (Automatically advance to a higher state when activation conditions are met)"
+            },
+            "title": "Initial Unlocked State",
+            "yutori": {
+              "points": [
+                "secreted: Will not appear on the UI at all until all requirements are met (it will not appear in Hints, and will be hidden in the list of requirements and rewards).",
+                "hidden: Remains completely hidden (with its name grayed out and unavailable for interaction) as long as it is not referenced by any unlocking elements and does not meet any requirements.",
+                "hinted (default): Only the name is displayed as a preview, but you cannot interact with it until it is unlocked.",
+                "released: The item is released and available for use from the start, regardless of conditions (formerly \"Display from the Start\")."
+              ],
+              "reference": "en/editor/action?id=Initial Unlocked State"
+            }
+          },
+          "seconds": {
+            "type": "number",
+            "default": 2,
+            "minimum": 0,
+            "title": "Time required [seconds]",
+            "options": {
+              "infoText": "Typical time it takes to execute an Action"
+            },
+            "yutori": {
+              "points": [
+                "Necessary standard time (in seconds) to perform an Action once.",
+                "For the `stamina` Type, this is the time interval for one turn (one reduction of each other's stamina).",
+                "Actual execution will vary due to property calculations."
+              ],
+              "reference": "en/editor/action?id=Time required [seconds]"
+            }
+          },
+          "level": {
+            "type": "integer",
+            "default": 1,
+            "minimum": 1,
+            "title": "level",
+            "options": {
+              "infoText": "Difficulty level of Action"
+            },
+            "yutori": {
+              "points": [
+                "The level of difficulty of the Action is indicated by the level.",
+                "Calculate each property at run time compared to the player's level.",
+                "For example, performing an Action that is higher than your level will have a downside effect on your success rate.",
+                "If the conditions are met, the player's level can be less than this value."
+              ],
+              "reference": "en/editor/action?id=level"
+            }
+          },
+          "experience": {
+            "type": "number",
+            "default": 1,
+            "minimum": 0,
+            "title": "Experience [next level at 100].",
+            "options": {
+              "infoText": "Experience value acquired when an Action is successful"
+            },
+            "yutori": {
+              "points": [
+                "This is the standard experience value you acquire when you perform an Action once and succeed. 100 is equivalent to one level of experience.",
+                "In the case of combat, it is advisable to configure a larger number, since they are acquired when the opponent is victorious.",
+                "Actual execution will vary due to property calculations."
+              ],
+              "reference": "en/editor/action?id=Experience [next level at 100]."
+            }
+          },
+          "chance": {
+            "type": "number",
+            "default": 1,
+            "minimum": 0,
+            "maximum": 1,
+            "title": "Probability of success [0-1].",
+            "options": {
+              "infoText": "Probability of Success on Action Completion"
+            },
+            "yutori": {
+              "points": [
+                "The probability of success upon completion of the Action.",
+                "A value of `1` always indicates success, while a value of `0` always indicates failure.",
+                "In the event of failure, consumable items are consumed, but no reward or experience value is gained.",
+                "Actual execution will vary due to property calculations."
+              ],
+              "reference": "en/editor/action?id=Probability of success [0-1]."
+            }
+          },
+          "maximum": {
+            "type": "number",
+            "default": 0,
+            "minimum": 0,
+            "title": "Max. number of executions [times].",
+            "options": {
+              "infoText": "The maximum number of times an Action can be completed"
+            },
+            "yutori": {
+              "points": [
+                "The maximum number of times an Action can be completed successfully.",
+                "Unlimited for ``0``.",
+                "When the limit is reached, the Action becomes unexecutable."
+              ],
+              "reference": "en/editor/action?id=Max. number of executions [times]."
+            }
+          },
+          "requirements": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "additionalProperties": false,
+              "headerTemplate": "{{ i1 }}: {{ self.id }} [ {{ self.type }} ]",
+              "format": "grid",
+              "required": [
+                "type",
+                "id",
+                "count",
+                "chance",
+                "equipment"
+              ],
+              "options": {
+                "disable_collapse": true
+              },
+              "properties": {
+                "type": {
+                  "type": "string",
+                  "enum": [
+                    "category",
+                    "action",
+                    "item"
+                  ],
+                  "default": "item",
+                  "title": "Type",
+                  "options": {
+                    "infoText": "Type of element referenced as a condition"
+                  },
+                  "yutori": {
+                    "reference": "en/editor/requirement?id=Type"
+                  }
+                },
+                "id": {
+                  "type": "string",
+                  "pattern": "^[0-9a-zA-Z\\-]+$",
+                  "title": "ID of an element",
+                  "options": {
+                    "infoText": "ID of the element to be referenced as a condition"
+                  },
+                  "yutori": {
+                    "reference": "en/editor/requirement?id=ID of an element"
+                  }
+                },
+                "count": {
+                  "type": "integer",
+                  "minimum": 0,
+                  "default": 1,
+                  "title": "value",
+                  "options": {
+                    "infoText": "Necessary values for requirements"
+                  },
+                  "yutori": {
+                    "points": [
+                      "The condition is satisfied if the value is above the specified value."
+                    ],
+                    "reference": "en/editor/requirement?id=value"
+                  }
+                },
+                "chance": {
+                  "type": "number",
+                  "default": 1,
+                  "minimum": 0,
+                  "maximum": 1,
+                  "title": "Consumption probability [0-1].",
+                  "options": {
+                    "infoText": "Probability of Item being consumed (0-1, valid only if Type is Item)"
+                  },
+                  "yutori": {
+                    "points": [
+                      "The probability that an Item will be consumed when the condition is met and the Action is performed.",
+                      "Always consumed at `1`, 50% chance of consumption at `0.5`, and no consumption at `0`.",
+                      "The default value is `1` (always consumed).",
+                      "Invalid if Type is other than Item."
+                    ],
+                    "reference": "en/editor/requirement?id=Consumption probability [0-1]."
+                  }
+                },
+                "equipment": {
+                  "type": "boolean",
+                  "default": false,
+                  "format": "checkbox",
+                  "title": "Equipment",
+                  "options": {
+                    "infoText": "Requires that the Item be in the Equipment state (valid only if the Type is Item) or"
+                  },
+                  "yutori": {
+                    "points": [
+                      "When enabled, the Necessary requirements are that the Item be equipped, not just possessed.",
+                      "Invalid if Type is other than Item."
+                    ],
+                    "reference": "en/editor/requirement?id=Equipment"
+                  }
+                }
+              }
+            },
+            "options": {
+              "disable_collapse": true,
+              "infoText": "Details"
+            },
+            "title": "terms",
+            "description": "Necessary Requirements for Action Execution",
+            "yutori": {
+              "points": [
+                "These are the conditions to be configured for each element by Category, Action, and Item.",
+                "If all configured conditions are not met, the operations shown in the table cannot be performed.",
+                "If the locked feature is enabled, the element itself will be hidden until the condition is met."
+              ],
+              "reference": "en/editor/requirement"
+            }
+          },
+          "acquisitions": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "additionalProperties": false,
+              "headerTemplate": "{{ i1 }}: {{ self.id }} [ {{ self.type }} ]",
+              "format": "grid",
+              "required": [
+                "id",
+                "count",
+                "chance",
+                "type"
+              ],
+              "options": {
+                "disable_collapse": true
+              },
+              "properties": {
+                "type": {
+                  "type": "string",
+                  "enum": [
+                    "category",
+                    "action",
+                    "item"
+                  ],
+                  "default": "item",
+                  "title": "Type",
+                  "options": {
+                    "infoText": "Type of element to be acquired"
+                  },
+                  "yutori": {
+                    "reference": "en/editor/acquisition?id=Type"
+                  }
+                },
+                "id": {
+                  "type": "string",
+                  "pattern": "^[0-9a-zA-Z\\-]+$",
+                  "title": "ID of an element",
+                  "options": {
+                    "infoText": "ID identifying the element to be acquired"
+                  },
+                  "yutori": {
+                    "reference": "en/editor/acquisition?id=ID of an element"
+                  }
+                },
+                "count": {
+                  "type": "integer",
+                  "default": 1,
+                  "title": "value",
+                  "options": {
+                    "infoText": "Value to be obtained"
+                  },
+                  "yutori": {
+                    "points": [
+                      "Minus values configured will decrease the number of possessions, the number of times they have been performed, and their level. However, it will not go down to 0 or below.",
+                      "If an Item has a configured maximum ownership count (max), the number of possessions will not increase beyond that value.",
+                      "If the Type is Category, the value configured is added directly to the level (1 for 1 level, 0.5 for 0.5 level). The usual way to adjust this is to use the Action's experience value config. Unnecessary to configure this setting unless there is a special purpose."
+                    ],
+                    "reference": "en/editor/acquisition?id=value"
+                  }
+                },
+                "chance": {
+                  "type": "number",
+                  "default": 1,
+                  "minimum": -1,
+                  "maximum": 1,
+                  "title": "Probability [-1 to 1]",
+                  "options": {
+                    "infoText": "Probability of success in acquisition (negative values are evaluated only in the event of failure)"
+                  },
+                  "yutori": {
+                    "points": [
+                      "Configure the drop probability as a decimal value between -1 and 1. The absolute value is used to determine the probability.",
+                      "When the value is positive, it is evaluated only when there is success with the action; a value of `1` guarantees a reward, while a value of `0.5` results in a 50% chance of receiving a reward.",
+                      "When the value is negative, it is evaluated only in cases of action failure; a value of `-1` guarantees a drop, while a value of `-0.5` results in a 50% chance of a drop.",
+                      "If the value is `0`, it is not obtained in either a success or a failure scenario.",
+                      "The default value is `1` (always obtained upon success)."
+                    ],
+                    "reference": "en/editor/acquisition?id=Probability [-1 to 1]"
+                  }
+                }
+              }
+            },
+            "options": {
+              "disable_collapse": true,
+              "infoText": "Details"
+            },
+            "title": "acquisitions",
+            "description": "Reward for obtaining a successful Action",
+            "yutori": {
+              "points": [
+                "Configure the acquisition.",
+                "You can change the level of the Category as well as the Item, and the number of times the Action has been performed.",
+                "You can configure the probability of obtaining the product."
+              ],
+              "reference": "en/editor/acquisition"
+            }
+          },
+          "progressType": {
+            "type": "string",
+            "default": "persistent",
+            "enum": [
+              "persistent",
+              "single",
+              "snap",
+              "stamina"
+            ],
+            "options": {
+              "enum_titles": [
+                "Persistent: Continuous action",
+                "Single: Interruptible action",
+                "Snap: Momentary action",
+                "Stamina: Combat style action"
+              ],
+              "infoText": "Action Execution Type"
+            },
+            "title": "Progression Type",
+            "yutori": {
+              "points": [
+                "There are four types."
+              ],
+              "reference": "en/editor/action?id=Progression Type"
+            }
+          },
+          "property": {
+            "type": "object",
+            "additionalProperties": false,
+            "format": "grid",
+            "required": [
+              "attack",
+              "defence",
+              "accuracy",
+              "evasion"
+            ],
+            "options": {
+              "disable_collapse": true,
+              "infoText": "Details"
+            },
+            "properties": {
+              "attack": {
+                "type": "number",
+                "default": 0,
+                "title": "Attack value [level difference].",
+                "options": {
+                  "infoText": "Correction for level difference in stamina damage inflicted on the opponent."
+                },
+                "yutori": {
+                  "points": [
+                    "The higher the value, the more damage is done."
+                  ],
+                  "reference": "en/editor/combat?id=Attack value [level difference]."
+                }
+              },
+              "defence": {
+                "type": "number",
+                "default": 0,
+                "title": "Defence value [level difference].",
+                "options": {
+                  "infoText": "Correction for level difference in stamina damage received from opponents."
+                },
+                "yutori": {
+                  "points": [
+                    "The higher the value, the less damage is taken."
+                  ],
+                  "reference": "en/editor/combat?id=Defence value [level difference]."
+                }
+              },
+              "accuracy": {
+                "type": "number",
+                "default": 0,
+                "title": "Accuracy [level difference].",
+                "options": {
+                  "infoText": "Level difference correction to attack miss rate"
+                },
+                "yutori": {
+                  "points": [
+                    "The higher the value, the lower the miss rate."
+                  ],
+                  "reference": "en/editor/combat?id=Accuracy [level difference]."
+                }
+              },
+              "evasion": {
+                "type": "number",
+                "default": 0,
+                "title": "Evasion value [level difference].",
+                "options": {
+                  "infoText": "Level difference correction to the evasion rate of the opponent's attacks"
+                },
+                "yutori": {
+                  "points": [
+                    "The higher the value, the easier it is to evade an opponent's attack."
+                  ],
+                  "reference": "en/editor/combat?id=Evasion value [level difference]."
+                }
+              },
+              "restore": {
+                "type": "number",
+                "default": 0
+              }
+            },
+            "title": "combat value",
+            "description": "Configure combat correction values for stamina type Actions",
+            "yutori": {
+              "points": [
+                "Correction values valid only for `stamina` type Actions.",
+                "Each value is calculated as an additional correction to the level difference between the player and the Action.",
+                "For example, if the attack value is 10, the attack damage is calculated as if the player's level is 10 higher than the Action's level. If it is Minus, the correction is in the opposite direction.",
+                "If configured to `defaultCombat` in `general`, it will be the default combat parameter for the entire world."
+              ],
+              "reference": "en/editor/combat"
+            }
+          }
+        }
+      },
+      "title": "Action.",
+      "description": "Acting elements such as collecting, creating, and fighting",
+      "yutori": {
+        "points": [
+          "These elements represent actions such as collecting, creating, buying and selling, and fighting.",
+          "With each act, you gain experience value and your level goes up.",
+          "You can configure each act to consume or obtain an Item.",
+          "There are several types of patterns of behavior."
+        ],
+        "reference": "en/editor/action"
+      }
+    },
+    "items": {
+      "type": "array",
+      "basicCategoryTitle": "Item",
+      "format": "tabs",
+      "options": {
+        "disable_collapse": true,
+        "infoText": "Details"
+      },
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "format": "grid",
+        "headerTemplate": "{{ i1 }}: {{ self.information.id }}",
+        "options": {
+          "disable_collapse": true
+        },
+        "required": [
+          "information",
+          "category",
+          "group",
+          "unlocked",
+          "buyingValue",
+          "sellingValue",
+          "coinId",
+          "maximum",
+          "equipmentType",
+          "requirements",
+          "properties"
+        ],
+        "properties": {
+          "information": {
+            "type": "object",
+            "additionalProperties": false,
+            "format": "grid",
+            "required": [
+              "id",
+              "name",
+              "explanation",
+              "icon",
+              "color"
+            ],
+            "options": {
+              "disable_collapse": true,
+              "infoText": "Details"
+            },
+            "properties": {
+              "id": {
+                "type": "string",
+                "default": "",
+                "minLength": 1,
+                "maxLength": 100,
+                "pattern": "^[0-9a-zA-Z\\-]+$",
+                "title": "ID",
+                "options": {
+                  "infoText": "unique ID to identify an element"
+                },
+                "yutori": {
+                  "points": [
+                    "ID to uniquely identify each element.",
+                    "A string that identifies the element in the editor.",
+                    "For example, the ID specifies which Item is obtained when the Action is completed."
+                  ],
+                  "reference": "en/editor/information?id=ID"
+                }
+              },
+              "name": {
+                "type": "string",
+                "maxLength": 20,
+                "title": "Name",
+                "options": {
+                  "infoText": "The name under which the element appears"
+                },
+                "yutori": {
+                  "points": [
+                    "The name of the element displayed in the game.",
+                    "Languages other than English can also be entered.",
+                    "Names that duplicate other elements are acceptable.",
+                    "If it is too long, the overflowing part will be omitted by `...` in the display during play."
+                  ],
+                  "reference": "en/editor/information?id=Name"
+                }
+              },
+              "explanation": {
+                "type": "string",
+                "title": "explanatory note",
+                "options": {
+                  "infoText": "Detailed description of the element"
+                },
+                "yutori": {
+                  "points": [
+                    "A description of the elements displayed in the game.",
+                    "Languages other than English can be entered. Even long sentences are all displayed.",
+                    "If there is nothing to explain, leave blank."
+                  ],
+                  "reference": "en/editor/information?id=explanatory note"
+                }
+              },
+              "icon": {
+                "type": "object",
+                "additionalProperties": false,
+                "format": "grid",
+                "required": [
+                  "emoji",
+                  "iconify",
+                  "image"
+                ],
+                "options": {
+                  "disable_collapse": true,
+                  "infoText": "Configure icons to represent elements"
+                },
+                "properties": {
+                  "emoji": {
+                    "type": "string",
+                    "options": {
+                      "grid_columns": 4,
+                      "infoText": "Icon display with pictograms"
+                    },
+                    "title": "pictograph",
+                    "yutori": {
+                      "points": [
+                        "Display pictograms as icons.",
+                        "It can be converted from text to pictograms and configured quickly.",
+                        "For pictograms, enter Unicode pictograms as they are.",
+                        "Since the pictograms introduced in the execution environment are used, the display may differ slightly from user to user.",
+                        "Iconify allows you to configure emoji that are nothing specific to each environment",
+                        "It is possible to display characters other than pictograms, but it is Possible for the display to be corrupted if there is more than one character.",
+                        "For example, enter a pictogram such as `🗡️` or `⚔️`."
+                      ],
+                      "reference": "en/editor/information?id=pictograph"
+                    }
+                  },
+                  "iconify": {
+                    "type": "string",
+                    "default": "",
+                    "options": {
+                      "grid_columns": 4,
+                      "infoText": "Using the Iconify Icon Set"
+                    },
+                    "title": "Iconify",
+                    "yutori": {
+                      "points": [
+                        "An icon representing an element.",
+                        "Iconify is a service that provides various types of icons.",
+                        "If an image is configured, it will take precedence."
+                      ],
+                      "reference": "en/editor/information?id=Iconify"
+                    }
+                  },
+                  "image": {
+                    "type": "string",
+                    "default": "",
+                    "media": {
+                      "binaryEncoding": "base64",
+                      "type": "img/png"
+                    },
+                    "options": {
+                      "grid_columns": 4,
+                      "infoText": "Use any image file"
+                    },
+                    "title": "image",
+                    "yutori": {
+                      "points": [
+                        "An image representing an element.",
+                        "If the file size is large, it will be automatically resized.",
+                        "Unnecessary if Iconify or pictograms are configured."
+                      ],
+                      "reference": "en/editor/information?id=image"
+                    }
+                  },
+                  "delete": {
+                    "format": "button",
+                    "options": {
+                      "button": {
+                        "text": "Delete Image",
+                        "icon": "trash",
+                        "action": "deletePrevious"
+                      }
+                    }
+                  }
+                },
+                "title": "icon",
+                "yutori": {
+                  "points": [
+                    "Icons can be configured as images, Iconify, or emoji.",
+                    "Iconify is a service that provides various types of icons.",
+                    "If more than one of these is configured, priority is given to images, Iconify, and pictograms, in that order."
+                  ],
+                  "reference": "en/editor/information?id=icon"
+                }
+              },
+              "color": {
+                "type": "string",
+                "default": "#000000",
+                "format": "color",
+                "pattern": "(^#[0-9a-fA-F]{6}$)|(^$)",
+                "title": "variety",
+                "options": {
+                  "infoText": "Configure the display color of the element"
+                },
+                "yutori": {
+                  "points": [
+                    "As the element's color, it is applied to the element's icon and background color.",
+                    "Select from the editor's color picker."
+                  ],
+                  "reference": "en/editor/information?id=variety"
+                }
+              },
+              "copy": {
+                "type": "string",
+                "format": "button",
+                "options": {
+                  "button": {
+                    "text": "Copy Information",
+                    "icon": "copy",
+                    "action": "copyInformation"
+                  }
+                }
+              }
+            },
+            "title": "information",
+            "description": "Configure basic information about the element (ID, name, icon, color, etc.)",
+            "yutori": {
+              "points": [
+                "This is an item of basic information common to each element in the world (Category, Action, Item, Event, etc.).",
+                "Each element is configured separately."
+              ],
+              "reference": "en/editor/information"
+            }
+          },
+          "category": {
+            "type": "string",
+            "default": "",
+            "pattern": "^[0-9a-zA-Z\\-]*$",
+            "title": "Category",
+            "options": {
+              "infoText": "ID of the Category to which the Item belongs"
+            },
+            "yutori": {
+              "points": [
+                "Specify the ID of the Category to which this Item belongs."
+              ],
+              "reference": "en/editor/item?id=Category"
+            }
+          },
+          "group": {
+            "type": "string",
+            "default": "",
+            "pattern": "^[0-9a-zA-Z\\-]*$",
+            "title": "group (usu. of people)",
+            "options": {
+              "infoText": "Item Display Group Classification"
+            },
+            "yutori": {
+              "points": [
+                "Apply one of the groups configured in Basic.",
+                "A list of Items will be displayed in the order of the configured groups.",
+                "If left blank, no minutes will be grouped."
+              ],
+              "reference": "en/editor/item?id=group (usu. of people)"
+            }
+          },
+          "unlocked": {
+            "type": "string",
+            "enum": [
+              "secreted",
+              "hidden",
+              "hinted",
+              "released"
+            ],
+            "default": "hinted",
+            "options": {
+              "enum_titles": [
+                "Secreted: Completely hidden from all UI (not even as a hint) until all requirements are met",
+                "Hidden: Fully concealed (grayed out, no name) until referenced or conditions met",
+                "Hinted: Name shown as a teaser but not operable until released (default)",
+                "Released: Unlocked and operable from the start regardless of conditions"
+              ],
+              "infoText": "Initial Display and Release States of Elements (Automatically advance to a higher state when activation conditions are met)"
+            },
+            "title": "Initial Unlocked State",
+            "yutori": {
+              "points": [
+                "secreted: Will not appear on the UI at all until all requirements are met (it will not appear in Hints, and will be hidden in the list of requirements and rewards).",
+                "hidden: Remains completely hidden (with its name grayed out and unavailable for interaction) as long as it is not referenced by any unlocking elements and does not meet any requirements.",
+                "hinted (default): Only the name is displayed as a preview, but you cannot interact with it until it is unlocked.",
+                "released: The item is released and available for use from the start, regardless of conditions (formerly \"Display from the Start\")."
+              ],
+              "reference": "en/editor/item?id=Initial Unlocked State"
+            }
+          },
+          "buyingValue": {
+            "type": "integer",
+            "default": -1,
+            "title": "Purchase price [coins]",
+            "options": {
+              "infoText": "Configure the purchase price of the Item"
+            },
+            "yutori": {
+              "points": [
+                "If you have never owned the Item, you cannot buy it."
+              ],
+              "reference": "en/editor/item?id=Purchase price [coins]"
+            }
+          },
+          "sellingValue": {
+            "type": "integer",
+            "default": 0,
+            "minimum": 0,
+            "title": "Selling price [coins]",
+            "options": {
+              "infoText": "Configure the sale price of an Item"
+            },
+            "yutori": {
+              "points": [
+                "Configure the price at which the Item will be sold."
+              ],
+              "reference": "en/editor/item?id=Selling price [coins]"
+            }
+          },
+          "coinId": {
+            "type": "string",
+            "default": "",
+            "pattern": "^[0-9a-zA-Z\\-]*$",
+            "title": "Trading Currency ID",
+            "options": {
+              "infoText": "The ID of the currency used to buy and sell this item"
+            },
+            "yutori": {
+              "points": [
+                "Specify the ID of the currency (coins) used for both buy and sell values.",
+                "If left blank, the main currency (the first one listed under \"coins\") will be used."
+              ],
+              "reference": "en/editor/item?id=Trading Currency ID"
+            }
+          },
+          "maximum": {
+            "type": "number",
+            "default": 0,
+            "minimum": 0,
+            "title": "Max. owned count [pcs].",
+            "options": {
+              "infoText": "Limit on max count of items owned"
+            },
+            "yutori": {
+              "points": [
+                "If 0, there is no limit to the number that can be owned.",
+                "If the number is 1 or more, you can only own up to that count. If you have reached the up limit, acquiring more will not increase your own count."
+              ],
+              "reference": "en/editor/item?id=Max. owned count [pcs]."
+            }
+          },
+          "equipmentType": {
+            "type": "string",
+            "enum": [
+              "necessary",
+              "unnecessary",
+              "impossible",
+              "consumable"
+            ],
+            "default": "necessary",
+            "options": {
+              "enum_titles": [
+                "Necessary: Must be equipped",
+                "Unnecessary: Doesn't need to be equipped, always effective",
+                "Impossible: Cannot be equipped",
+                "Consumable: Consumed when used"
+              ],
+              "infoText": "Type configurations for Equipment, Effects, and Consumption of Items"
+            },
+            "title": "Equipment Type",
+            "yutori": {
+              "points": [
+                "Necessary for Possible Items to belong to the group specified in the category `equipmentGroups`.",
+                "Only one Item may be Equipment within the same group."
+              ],
+              "reference": "en/editor/item?id=Equipment Type"
+            }
+          },
+          "requirements": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "additionalProperties": false,
+              "headerTemplate": "{{ i1 }}: {{ self.id }} [ {{ self.type }} ]",
+              "format": "grid",
+              "required": [
+                "type",
+                "id",
+                "count",
+                "chance",
+                "equipment"
+              ],
+              "options": {
+                "disable_collapse": true
+              },
+              "properties": {
+                "type": {
+                  "type": "string",
+                  "enum": [
+                    "category",
+                    "action",
+                    "item"
+                  ],
+                  "default": "item",
+                  "title": "Type",
+                  "options": {
+                    "infoText": "Type of element referenced as a condition"
+                  },
+                  "yutori": {
+                    "reference": "en/editor/requirement?id=Type"
+                  }
+                },
+                "id": {
+                  "type": "string",
+                  "pattern": "^[0-9a-zA-Z\\-]+$",
+                  "title": "ID of an element",
+                  "options": {
+                    "infoText": "ID of the element to be referenced as a condition"
+                  },
+                  "yutori": {
+                    "reference": "en/editor/requirement?id=ID of an element"
+                  }
+                },
+                "count": {
+                  "type": "integer",
+                  "minimum": 0,
+                  "default": 1,
+                  "title": "value",
+                  "options": {
+                    "infoText": "Necessary values for requirements"
+                  },
+                  "yutori": {
+                    "points": [
+                      "The condition is satisfied if the value is above the specified value."
+                    ],
+                    "reference": "en/editor/requirement?id=value"
+                  }
+                },
+                "chance": {
+                  "type": "number",
+                  "default": 1,
+                  "minimum": 0,
+                  "maximum": 1,
+                  "title": "Consumption probability [0-1].",
+                  "options": {
+                    "infoText": "Probability of Item being consumed (0-1, valid only if Type is Item)"
+                  },
+                  "yutori": {
+                    "points": [
+                      "The probability that an Item will be consumed when the condition is met and the Action is performed.",
+                      "Always consumed at `1`, 50% chance of consumption at `0.5`, and no consumption at `0`.",
+                      "The default value is `1` (always consumed).",
+                      "Invalid if Type is other than Item."
+                    ],
+                    "reference": "en/editor/requirement?id=Consumption probability [0-1]."
+                  }
+                },
+                "equipment": {
+                  "type": "boolean",
+                  "default": false,
+                  "format": "checkbox",
+                  "title": "Equipment",
+                  "options": {
+                    "infoText": "Requires that the Item be in the Equipment state (valid only if the Type is Item) or"
+                  },
+                  "yutori": {
+                    "points": [
+                      "When enabled, the Necessary requirements are that the Item be equipped, not just possessed.",
+                      "Invalid if Type is other than Item."
+                    ],
+                    "reference": "en/editor/requirement?id=Equipment"
+                  }
+                }
+              }
+            },
+            "options": {
+              "disable_collapse": true,
+              "infoText": "Details"
+            },
+            "title": "terms",
+            "description": "Necessary Requirements to Use Item",
+            "yutori": {
+              "points": [
+                "These are the conditions to be configured for each element by Category, Action, and Item.",
+                "If all configured conditions are not met, the operations shown in the table cannot be performed.",
+                "If the locked feature is enabled, the element itself will be hidden until the condition is met."
+              ],
+              "reference": "en/editor/requirement"
+            }
+          },
+          "properties": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "additionalProperties": false,
+              "headerTemplate": "{{ i1 }}: {{ self.category }}",
+              "format": "grid",
+              "required": [
+                "category",
+                "attack",
+                "defence",
+                "accuracy",
+                "evasion",
+                "restore",
+                "speed",
+                "chance",
+                "experience"
+              ],
+              "options": {
+                "disable_collapse": true
+              },
+              "properties": {
+                "category": {
+                  "type": "string",
+                  "pattern": "^(\\*|[^*]*)$",
+                  "title": "Category",
+                  "options": {
+                    "infoText": "Specify the Category to which the property is applied"
+                  },
+                  "yutori": {
+                    "points": [
+                      "Configure the ID of the Category to which this property applies.",
+                      "If ``*`` is configured, it will be applied to all categories.",
+                      "If left blank, it will be applied to the Category to which the Item belongs."
+                    ],
+                    "reference": "en/editor/property?id=Category"
+                  }
+                },
+                "attack": {
+                  "type": "number",
+                  "default": 0,
+                  "title": "Attack value [level difference].",
+                  "options": {
+                    "infoText": "Correction to Stamina damage dealt to the opponent (only valid for stamina actions)"
+                  },
+                  "yutori": {
+                    "points": [
+                      "The attack damage is calculated as if the player's level were this value higher than the Action's level."
+                    ],
+                    "reference": "en/editor/property?id=Attack value [level difference]."
+                  }
+                },
+                "defence": {
+                  "type": "number",
+                  "default": 0,
+                  "title": "Defence value [level difference].",
+                  "options": {
+                    "infoText": "Correction to Stamina damage taken from an opponent (only valid for stamina Actions)."
+                  },
+                  "yutori": {
+                    "points": [
+                      "Damage is calculated as if the player's level were this value higher than the Action's level. The higher the value, the less the damage."
+                    ],
+                    "reference": "en/editor/property?id=Defence value [level difference]."
+                  }
+                },
+                "accuracy": {
+                  "type": "number",
+                  "default": 0,
+                  "title": "Accuracy [level difference].",
+                  "options": {
+                    "infoText": "Correction to attack miss rate (only valid for stamina Action)"
+                  },
+                  "yutori": {
+                    "points": [
+                      "The miss rate is calculated assuming that the player's level is this value higher than the Action's level. The higher the value, the lower the miss rate."
+                    ],
+                    "reference": "en/editor/property?id=Accuracy [level difference]."
+                  }
+                },
+                "evasion": {
+                  "type": "number",
+                  "default": 0,
+                  "title": "Evasion value [level difference].",
+                  "options": {
+                    "infoText": "Correction to the evasion rate of the opponent's attacks (only valid for stamina Actions)"
+                  },
+                  "yutori": {
+                    "points": [
+                      "The evasion is calculated assuming that the player's level is this value higher than the Action's level."
+                    ],
+                    "reference": "en/editor/property?id=Evasion value [level difference]."
+                  }
+                },
+                "restore": {
+                  "type": "number",
+                  "default": 0,
+                  "title": "Restoration value [level difference].",
+                  "options": {
+                    "infoText": "Correction to the amount of stamina restored (only valid for the stamina Action)"
+                  },
+                  "yutori": {
+                    "points": [
+                      "The amount of stamina restored is calculated assuming that the player's level is this value higher than the Action's level."
+                    ],
+                    "reference": "en/editor/property?id=Restoration value [level difference]."
+                  }
+                },
+                "speed": {
+                  "type": "number",
+                  "default": 0,
+                  "title": "Quickness [level difference].",
+                  "options": {
+                    "infoText": "Correction to Action Duration"
+                  },
+                  "yutori": {
+                    "points": [
+                      "The time required is calculated assuming that the player's level is this value higher than the Action's level. The higher the value, the shorter the time required."
+                    ],
+                    "reference": "en/editor/property?id=Quickness [level difference]."
+                  }
+                },
+                "chance": {
+                  "type": "number",
+                  "default": 0,
+                  "title": "Probability of success [level difference].",
+                  "options": {
+                    "infoText": "Correction to Action Success Probability"
+                  },
+                  "yutori": {
+                    "points": [
+                      "The action success probability is calculated assuming that the player's level is this value higher than the Action's level. The higher the value, the higher the success probability."
+                    ],
+                    "reference": "en/editor/property?id=Probability of success [level difference]."
+                  }
+                },
+                "experience": {
+                  "type": "number",
+                  "default": 0,
+                  "title": "Experience [difference in level].",
+                  "options": {
+                    "infoText": "Correction to acquired experience values"
+                  },
+                  "yutori": {
+                    "points": [
+                      "The experience is calculated as if the player's level were this value lower than the Action's level (the higher the Action's level, the more experience is gained, since the calculation is inverted)."
+                    ],
+                    "reference": "en/editor/property?id=Experience [difference in level]."
+                  }
+                }
+              }
+            },
+            "options": {
+              "disable_collapse": true,
+              "infoText": "Details"
+            },
+            "title": "properties",
+            "description": "Effects of Properties of Item",
+            "yutori": {
+              "points": [
+                "This is an item of effects that can be configured for an Item.",
+                "Items with an Equipment Type of `necessary` or `consumable` will only apply while equipping. For `unnecessary` items, the effect is applied only when you have the item in your possession.",
+                "The value of any of these items is calculated as an Adjustment for the difference in level between the player's level and the Action's level.",
+                "For example, if the attack value is 10, the attack is calculated as if the player's level is 10 higher than the Action's level. Minus values are the opposite.",
+                "ATTACK, DEFENCE, ACCURACY, EVASION, and RESTORE are only valid for `stamina` Type Actions."
+              ],
+              "reference": "en/editor/property"
+            }
+          }
+        }
+      },
+      "title": "Item",
+      "description": "Material elements such as Equipment and Consumables",
+      "yutori": {
+        "points": [
+          "These are elements related to owning things such as Equipment, Consumables, and Valuables.",
+          "Only one may be equipped in a Category, but it can also be made to be equipped with nothing.",
+          "There are also ways to use it like a variable."
+        ],
+        "reference": "en/editor/item"
+      }
+    },
+    "groups": {
+      "type": "array",
+      "basicCategoryTitle": "group (usu. of people)",
+      "format": "tabs",
+      "options": {
+        "disable_collapse": true,
+        "infoText": "Details"
+      },
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "format": "grid",
+        "required": [
+          "id",
+          "name",
+          "explanation",
+          "icon",
+          "color"
+        ],
+        "options": {
+          "disable_collapse": true
+        },
+        "properties": {
+          "id": {
+            "type": "string",
+            "default": "",
+            "minLength": 1,
+            "maxLength": 100,
+            "pattern": "^[0-9a-zA-Z\\-]+$",
+            "title": "ID",
+            "options": {
+              "infoText": "unique ID to identify an element"
+            },
+            "yutori": {
+              "points": [
+                "ID to uniquely identify each element.",
+                "A string that identifies the element in the editor.",
+                "For example, the ID specifies which Item is obtained when the Action is completed."
+              ],
+              "reference": "en/editor/group?id=ID"
+            }
+          },
+          "name": {
+            "type": "string",
+            "maxLength": 20,
+            "title": "Name",
+            "options": {
+              "infoText": "The name under which the element appears"
+            },
+            "yutori": {
+              "points": [
+                "The name of the element displayed in the game.",
+                "Languages other than English can also be entered.",
+                "Names that duplicate other elements are acceptable.",
+                "If it is too long, the overflowing part will be omitted by `...` in the display during play."
+              ],
+              "reference": "en/editor/group?id=Name"
+            }
+          },
+          "explanation": {
+            "type": "string",
+            "title": "explanatory note",
+            "options": {
+              "infoText": "Detailed description of the element"
+            },
+            "yutori": {
+              "points": [
+                "A description of the elements displayed in the game.",
+                "Languages other than English can be entered. Even long sentences are all displayed.",
+                "If there is nothing to explain, leave blank."
+              ],
+              "reference": "en/editor/group?id=explanatory note"
+            }
+          },
+          "icon": {
+            "type": "object",
+            "additionalProperties": false,
+            "format": "grid",
+            "required": [
+              "emoji",
+              "iconify",
+              "image"
+            ],
+            "options": {
+              "disable_collapse": true,
+              "infoText": "Configure icons to represent elements"
+            },
+            "properties": {
+              "emoji": {
+                "type": "string",
+                "options": {
+                  "grid_columns": 4,
+                  "infoText": "Icon display with pictograms"
+                },
+                "title": "pictograph",
+                "yutori": {
+                  "points": [
+                    "Display pictograms as icons.",
+                    "It can be converted from text to pictograms and configured quickly.",
+                    "For pictograms, enter Unicode pictograms as they are.",
+                    "Since the pictograms introduced in the execution environment are used, the display may differ slightly from user to user.",
+                    "Iconify allows you to configure emoji that are nothing specific to each environment",
+                    "It is possible to display characters other than pictograms, but it is Possible for the display to be corrupted if there is more than one character.",
+                    "For example, enter a pictogram such as `🗡️` or `⚔️`."
+                  ],
+                  "reference": "en/editor/group?id=pictograph"
+                }
+              },
+              "iconify": {
+                "type": "string",
+                "default": "",
+                "options": {
+                  "grid_columns": 4,
+                  "infoText": "Using the Iconify Icon Set"
+                },
+                "title": "Iconify",
+                "yutori": {
+                  "points": [
+                    "An icon representing an element.",
+                    "Iconify is a service that provides various types of icons.",
+                    "If an image is configured, it will take precedence."
+                  ],
+                  "reference": "en/editor/group?id=Iconify"
+                }
+              },
+              "image": {
+                "type": "string",
+                "default": "",
+                "media": {
+                  "binaryEncoding": "base64",
+                  "type": "img/png"
+                },
+                "options": {
+                  "grid_columns": 4,
+                  "infoText": "Use any image file"
+                },
+                "title": "image",
+                "yutori": {
+                  "points": [
+                    "An image representing an element.",
+                    "If the file size is large, it will be automatically resized.",
+                    "Unnecessary if Iconify or pictograms are configured."
+                  ],
+                  "reference": "en/editor/group?id=image"
+                }
+              },
+              "delete": {
+                "format": "button",
+                "options": {
+                  "button": {
+                    "text": "Delete Image",
+                    "icon": "trash",
+                    "action": "deletePrevious"
+                  }
+                }
+              }
+            },
+            "title": "icon",
+            "yutori": {
+              "points": [
+                "Icons can be configured as images, Iconify, or emoji.",
+                "Iconify is a service that provides various types of icons.",
+                "If more than one of these is configured, priority is given to images, Iconify, and pictograms, in that order."
+              ],
+              "reference": "en/editor/group?id=icon"
+            }
+          },
+          "color": {
+            "type": "string",
+            "default": "#000000",
+            "format": "color",
+            "pattern": "(^#[0-9a-fA-F]{6}$)|(^$)",
+            "title": "variety",
+            "options": {
+              "infoText": "Configure the display color of the element"
+            },
+            "yutori": {
+              "points": [
+                "As the element's color, it is applied to the element's icon and background color.",
+                "Select from the editor's color picker."
+              ],
+              "reference": "en/editor/group?id=variety"
+            }
+          },
+          "copy": {
+            "type": "string",
+            "format": "button",
+            "options": {
+              "button": {
+                "text": "Copy Information",
+                "icon": "copy",
+                "action": "copyInformation"
+              }
+            }
+          }
+        },
+        "headerTemplate": "{{ i1 }}: {{ self.id }}"
+      },
+      "title": "group (usu. of people)",
+      "description": "Define Display Groups for Categories, Actions, and Items",
+      "yutori": {
+        "points": [
+          "Define groups to control the order of display.",
+          "You can configure the groups defined here for each Category, Action, and Item.",
+          "Groups that are the same are displayed close together.",
+          "If left blank, no minutes will be grouped."
+        ],
+        "reference": "en/editor/group"
+      }
+    },
+    "events": {
+      "type": "array",
+      "basicCategoryTitle": "event",
+      "format": "tabs",
+      "options": {
+        "disable_collapse": true,
+        "infoText": "Details"
+      },
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "headerTemplate": "{{ i1 }}: {{ self.information.id }} [{{ self.timing }}]",
+        "options": {
+          "disable_collapse": true
+        },
+        "required": [
+          "information",
+          "timing",
+          "unlocked",
+          "requirements",
+          "acquisitions",
+          "group"
+        ],
+        "properties": {
+          "information": {
+            "type": "object",
+            "additionalProperties": false,
+            "format": "grid",
+            "required": [
+              "id",
+              "name",
+              "explanation",
+              "icon",
+              "color"
+            ],
+            "options": {
+              "disable_collapse": true,
+              "infoText": "Details"
+            },
+            "properties": {
+              "id": {
+                "type": "string",
+                "default": "",
+                "minLength": 1,
+                "maxLength": 100,
+                "pattern": "^[0-9a-zA-Z\\-]+$",
+                "title": "ID",
+                "options": {
+                  "infoText": "unique ID to identify an element"
+                },
+                "yutori": {
+                  "points": [
+                    "ID to uniquely identify each element.",
+                    "A string that identifies the element in the editor.",
+                    "For example, the ID specifies which Item is obtained when the Action is completed."
+                  ],
+                  "reference": "en/editor/information?id=ID"
+                }
+              },
+              "name": {
+                "type": "string",
+                "maxLength": 20,
+                "title": "Name",
+                "options": {
+                  "infoText": "The name under which the element appears"
+                },
+                "yutori": {
+                  "points": [
+                    "The name of the element displayed in the game.",
+                    "Languages other than English can also be entered.",
+                    "Names that duplicate other elements are acceptable.",
+                    "If it is too long, the overflowing part will be omitted by `...` in the display during play."
+                  ],
+                  "reference": "en/editor/information?id=Name"
+                }
+              },
+              "explanation": {
+                "type": "string",
+                "title": "explanatory note",
+                "options": {
+                  "infoText": "Detailed description of the element"
+                },
+                "yutori": {
+                  "points": [
+                    "A description of the elements displayed in the game.",
+                    "Languages other than English can be entered. Even long sentences are all displayed.",
+                    "If there is nothing to explain, leave blank."
+                  ],
+                  "reference": "en/editor/information?id=explanatory note"
+                }
+              },
+              "icon": {
+                "type": "object",
+                "additionalProperties": false,
+                "format": "grid",
+                "required": [
+                  "emoji",
+                  "iconify",
+                  "image"
+                ],
+                "options": {
+                  "disable_collapse": true,
+                  "infoText": "Configure icons to represent elements"
+                },
+                "properties": {
+                  "emoji": {
+                    "type": "string",
+                    "options": {
+                      "grid_columns": 4,
+                      "infoText": "Icon display with pictograms"
+                    },
+                    "title": "pictograph",
+                    "yutori": {
+                      "points": [
+                        "Display pictograms as icons.",
+                        "It can be converted from text to pictograms and configured quickly.",
+                        "For pictograms, enter Unicode pictograms as they are.",
+                        "Since the pictograms introduced in the execution environment are used, the display may differ slightly from user to user.",
+                        "Iconify allows you to configure emoji that are nothing specific to each environment",
+                        "It is possible to display characters other than pictograms, but it is Possible for the display to be corrupted if there is more than one character.",
+                        "For example, enter a pictogram such as `🗡️` or `⚔️`."
+                      ],
+                      "reference": "en/editor/information?id=pictograph"
+                    }
+                  },
+                  "iconify": {
+                    "type": "string",
+                    "default": "",
+                    "options": {
+                      "grid_columns": 4,
+                      "infoText": "Using the Iconify Icon Set"
+                    },
+                    "title": "Iconify",
+                    "yutori": {
+                      "points": [
+                        "An icon representing an element.",
+                        "Iconify is a service that provides various types of icons.",
+                        "If an image is configured, it will take precedence."
+                      ],
+                      "reference": "en/editor/information?id=Iconify"
+                    }
+                  },
+                  "image": {
+                    "type": "string",
+                    "default": "",
+                    "media": {
+                      "binaryEncoding": "base64",
+                      "type": "img/png"
+                    },
+                    "options": {
+                      "grid_columns": 4,
+                      "infoText": "Use any image file"
+                    },
+                    "title": "image",
+                    "yutori": {
+                      "points": [
+                        "An image representing an element.",
+                        "If the file size is large, it will be automatically resized.",
+                        "Unnecessary if Iconify or pictograms are configured."
+                      ],
+                      "reference": "en/editor/information?id=image"
+                    }
+                  },
+                  "delete": {
+                    "format": "button",
+                    "options": {
+                      "button": {
+                        "text": "Delete Image",
+                        "icon": "trash",
+                        "action": "deletePrevious"
+                      }
+                    }
+                  }
+                },
+                "title": "icon",
+                "yutori": {
+                  "points": [
+                    "Icons can be configured as images, Iconify, or emoji.",
+                    "Iconify is a service that provides various types of icons.",
+                    "If more than one of these is configured, priority is given to images, Iconify, and pictograms, in that order."
+                  ],
+                  "reference": "en/editor/information?id=icon"
+                }
+              },
+              "color": {
+                "type": "string",
+                "default": "#000000",
+                "format": "color",
+                "pattern": "(^#[0-9a-fA-F]{6}$)|(^$)",
+                "title": "variety",
+                "options": {
+                  "infoText": "Configure the display color of the element"
+                },
+                "yutori": {
+                  "points": [
+                    "As the element's color, it is applied to the element's icon and background color.",
+                    "Select from the editor's color picker."
+                  ],
+                  "reference": "en/editor/information?id=variety"
+                }
+              },
+              "copy": {
+                "type": "string",
+                "format": "button",
+                "options": {
+                  "button": {
+                    "text": "Copy Information",
+                    "icon": "copy",
+                    "action": "copyInformation"
+                  }
+                }
+              }
+            },
+            "title": "information",
+            "description": "Configure basic information about the element (ID, name, icon, color, etc.)",
+            "yutori": {
+              "points": [
+                "This is an item of basic information common to each element in the world (Category, Action, Item, Event, etc.).",
+                "Each element is configured separately."
+              ],
+              "reference": "en/editor/information"
+            }
+          },
+          "timing": {
+            "type": "string",
+            "enum": [
+              "matched",
+              "comebacked",
+              "gameovered",
+              "welcomed",
+              "completed",
+              "obtained"
+            ],
+            "default": "matched",
+            "options": {
+              "enum_titles": [
+                "Matched: When the set conditions are met",
+                "Comebacked: When the player returnss from offline",
+                "Gameovered: When the game is over due to combat",
+                "Welcomed: When the player first opens the world",
+                "Completed: When a player reaches the maximum level in all categories",
+                "Obtained: When a single action such as opening a treasure chest is completed"
+              ],
+              "infoText": "Configure the timing of event activation"
+            },
+            "title": "timing",
+            "yutori": {
+              "reference": "en/editor/event?id=timing"
+            }
+          },
+          "unlocked": {
+            "type": "string",
+            "enum": [
+              "secreted",
+              "hidden",
+              "hinted",
+              "released"
+            ],
+            "default": "hinted",
+            "options": {
+              "enum_titles": [
+                "Secreted: Completely hidden from all UI (not even as a hint) until all requirements are met",
+                "Hidden: Fully concealed (grayed out, no name) until referenced or conditions met",
+                "Hinted: Name shown as a teaser but not operable until released (default)",
+                "Released: Unlocked and operable from the start regardless of conditions"
+              ],
+              "infoText": "Initial display state of the event icon (triggering depends on timing; with this config, it will not trigger)"
+            },
+            "title": "Initial Display State",
+            "yutori": {
+              "points": [
+                "The conditions for triggering an event are determined by timing; this setting affects only the appearance of the list icon.",
+                "secreted: It will not appear in the event list at all until all requirements are met (though the event itself will still fire at the appropriate time).",
+                "hidden・hinted: The icon is displayed with a diagonal line through it to indicate that it is not unlocked.",
+                "Released: The strikethrough disappears, and it is displayed as \"Released.\""
+              ],
+              "reference": "en/editor/event?id=Initial Display State"
+            }
+          },
+          "requirements": {
+            "type": "array",
+            "format": "table",
+            "options": {
+              "disable_collapse": true,
+              "infoText": "Conditions for triggering events and granting rewards"
+            },
+            "items": {
+              "type": "object",
+              "additionalProperties": false,
+              "headerTemplate": "{{ i1 }}: {{ self.id }} [ {{ self.type }} ]",
+              "format": "grid",
+              "required": [
+                "type",
+                "id",
+                "count",
+                "chance",
+                "equipment"
+              ],
+              "options": {
+                "disable_collapse": true
+              },
+              "properties": {
+                "type": {
+                  "type": "string",
+                  "enum": [
+                    "category",
+                    "action",
+                    "item"
+                  ],
+                  "default": "item",
+                  "title": "Type",
+                  "options": {
+                    "infoText": "Type of element referenced as a condition"
+                  },
+                  "yutori": {
+                    "reference": "en/editor/event?id=Type"
+                  }
+                },
+                "id": {
+                  "type": "string",
+                  "pattern": "^[0-9a-zA-Z\\-]+$",
+                  "title": "ID of an element",
+                  "options": {
+                    "infoText": "ID of the element to be referenced as a condition"
+                  },
+                  "yutori": {
+                    "reference": "en/editor/event?id=ID of an element"
+                  }
+                },
+                "count": {
+                  "type": "integer",
+                  "minimum": 0,
+                  "default": 1,
+                  "title": "value",
+                  "options": {
+                    "infoText": "Necessary values for requirements"
+                  },
+                  "yutori": {
+                    "points": [
+                      "The condition is satisfied if the value is above the specified value."
+                    ],
+                    "reference": "en/editor/event?id=value"
+                  }
+                },
+                "chance": {
+                  "type": "number",
+                  "default": 0,
+                  "minimum": 0,
+                  "maximum": 1,
+                  "title": "Consumption probability [0-1].",
+                  "options": {
+                    "infoText": "Probability of Item being consumed (0-1, valid only if Type is Item)"
+                  },
+                  "yutori": {
+                    "points": [
+                      "The probability that an Item will be consumed when the condition is met and the Action is performed.",
+                      "Always consumed at `1`, 50% chance of consumption at `0.5`, and no consumption at `0`.",
+                      "The default value is `1` (always consumed).",
+                      "Invalid if Type is other than Item."
+                    ],
+                    "reference": "en/editor/event?id=Consumption probability [0-1]."
+                  }
+                },
+                "equipment": {
+                  "type": "boolean",
+                  "default": false,
+                  "format": "checkbox",
+                  "title": "Equipment",
+                  "options": {
+                    "infoText": "Requires that the Item be in the Equipment state (valid only if the Type is Item) or"
+                  },
+                  "yutori": {
+                    "points": [
+                      "When enabled, the Necessary requirements are that the Item be equipped, not just possessed.",
+                      "Invalid if Type is other than Item."
+                    ],
+                    "reference": "en/editor/event?id=Equipment"
+                  }
+                }
+              }
+            },
+            "title": "terms",
+            "yutori": {
+              "points": [
+                "This is the condition for activating the event or granting the reward.",
+                "With `matched`, the reward is earned only when this condition is met.",
+                "Except for `matched`, this action triggers when the timing condition is met. After that, you will receive a reward only when the conditions configured here are met."
+              ],
+              "reference": "en/editor/event?id=terms"
+            }
+          },
+          "acquisitions": {
+            "type": "array",
+            "format": "table",
+            "options": {
+              "disable_collapse": true,
+              "infoText": "Configure rewards when the event is triggered"
+            },
+            "items": {
+              "type": "object",
+              "additionalProperties": false,
+              "headerTemplate": "{{ i1 }}: {{ self.id }} [ {{ self.type }} ]",
+              "format": "grid",
+              "required": [
+                "id",
+                "count",
+                "chance",
+                "type"
+              ],
+              "options": {
+                "disable_collapse": true
+              },
+              "properties": {
+                "type": {
+                  "type": "string",
+                  "enum": [
+                    "category",
+                    "action",
+                    "item"
+                  ],
+                  "default": "item",
+                  "title": "Type",
+                  "options": {
+                    "infoText": "Type of element to be acquired"
+                  },
+                  "yutori": {
+                    "reference": "en/editor/event?id=Type"
+                  }
+                },
+                "id": {
+                  "type": "string",
+                  "pattern": "^[0-9a-zA-Z\\-]+$",
+                  "title": "ID of an element",
+                  "options": {
+                    "infoText": "ID identifying the element to be acquired"
+                  },
+                  "yutori": {
+                    "reference": "en/editor/event?id=ID of an element"
+                  }
+                },
+                "count": {
+                  "type": "integer",
+                  "default": 1,
+                  "title": "value",
+                  "options": {
+                    "infoText": "Value to be obtained"
+                  },
+                  "yutori": {
+                    "points": [
+                      "Minus values configured will decrease the number of possessions, the number of times they have been performed, and their level. However, it will not go down to 0 or below.",
+                      "If an Item has a configured maximum ownership count (max), the number of possessions will not increase beyond that value.",
+                      "If the Type is Category, the value configured is added directly to the level (1 for 1 level, 0.5 for 0.5 level). The usual way to adjust this is to use the Action's experience value config. Unnecessary to configure this setting unless there is a special purpose."
+                    ],
+                    "reference": "en/editor/event?id=value"
+                  }
+                },
+                "chance": {
+                  "type": "number",
+                  "default": 1,
+                  "minimum": -1,
+                  "maximum": 1,
+                  "title": "Probability [-1 to 1]",
+                  "options": {
+                    "infoText": "Probability of success in acquisition (negative values are evaluated only in the event of failure)"
+                  },
+                  "yutori": {
+                    "points": [
+                      "Configure the drop probability as a decimal value between -1 and 1. The absolute value is used to determine the probability.",
+                      "When the value is positive, it is evaluated only when there is success with the action; a value of `1` guarantees a reward, while a value of `0.5` results in a 50% chance of receiving a reward.",
+                      "When the value is negative, it is evaluated only in cases of action failure; a value of `-1` guarantees a drop, while a value of `-0.5` results in a 50% chance of a drop.",
+                      "If the value is `0`, it is not obtained in either a success or a failure scenario.",
+                      "The default value is `1` (always obtained upon success)."
+                    ],
+                    "reference": "en/editor/event?id=Probability [-1 to 1]"
+                  }
+                }
+              }
+            },
+            "title": "reward",
+            "yutori": {
+              "points": [
+                "This is the reward when the event is triggered.",
+                "With `matched`, you receive a reward only when the conditions are met and the action is triggered.",
+                "Except for `matched`, you earn a reward only when the timing condition is met and the conditions specified in `conditions` are satisfied.",
+                "You can configure the quantity to be minus. For example, if you set the quantity of items to minus in the case of `gameovered`, you will lose them when gameovered."
+              ],
+              "reference": "en/editor/event?id=reward"
+            }
+          },
+          "group": {
+            "type": "string",
+            "pattern": "^[0-9a-zA-Z\\-]*$",
+            "default": "",
+            "title": "task group",
+            "options": {
+              "infoText": "Group identifier of the task (currently unused)"
+            },
+            "yutori": {
+              "points": [
+                "This item is currently not in use. It is reserved for future enhancements."
+              ],
+              "reference": "en/editor/event?id=task group"
+            }
+          }
+        }
+      },
+      "title": "event",
+      "description": "Message and reward system triggered by conditions",
+      "yutori": {
+        "points": [
+          "It is triggered when the configured timing/conditions are met and displays a message.",
+          "It can be triggered at first startup, when the game is gameovered, when returning from offline, or when certain conditions are met.",
+          "When activated, it can change the level of the Category, the number of times the Action is performed, and the number of Items possessed."
+        ],
+        "reference": "en/editor/event"
+      }
+    },
+    "presets": {
+      "type": "array",
+      "basicCategoryTitle": "preset",
+      "format": "tabs",
+      "options": {
+        "disable_collapse": true,
+        "infoText": "Details"
+      },
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "format": "grid",
+        "required": [
+          "id",
+          "name",
+          "explanation",
+          "icon",
+          "color"
+        ],
+        "options": {
+          "disable_collapse": true
+        },
+        "properties": {
+          "id": {
+            "type": "string",
+            "default": "",
+            "minLength": 1,
+            "maxLength": 100,
+            "pattern": "^[0-9a-zA-Z\\-]+$",
+            "title": "ID",
+            "options": {
+              "infoText": "unique ID to identify an element"
+            },
+            "yutori": {
+              "points": [
+                "ID to uniquely identify each element.",
+                "A string that identifies the element in the editor.",
+                "For example, the ID specifies which Item is obtained when the Action is completed."
+              ],
+              "reference": "en/editor/preset?id=ID"
+            }
+          },
+          "name": {
+            "type": "string",
+            "maxLength": 20,
+            "title": "Name",
+            "options": {
+              "infoText": "The name under which the element appears"
+            },
+            "yutori": {
+              "points": [
+                "The name of the element displayed in the game.",
+                "Languages other than English can also be entered.",
+                "Names that duplicate other elements are acceptable.",
+                "If it is too long, the overflowing part will be omitted by `...` in the display during play."
+              ],
+              "reference": "en/editor/preset?id=Name"
+            }
+          },
+          "explanation": {
+            "type": "string",
+            "title": "explanatory note",
+            "options": {
+              "infoText": "Detailed description of the element"
+            },
+            "yutori": {
+              "points": [
+                "A description of the elements displayed in the game.",
+                "Languages other than English can be entered. Even long sentences are all displayed.",
+                "If there is nothing to explain, leave blank."
+              ],
+              "reference": "en/editor/preset?id=explanatory note"
+            }
+          },
+          "icon": {
+            "type": "object",
+            "additionalProperties": false,
+            "format": "grid",
+            "required": [
+              "emoji",
+              "iconify",
+              "image"
+            ],
+            "options": {
+              "disable_collapse": true,
+              "infoText": "Configure icons to represent elements"
+            },
+            "properties": {
+              "emoji": {
+                "type": "string",
+                "options": {
+                  "grid_columns": 4,
+                  "infoText": "Icon display with pictograms"
+                },
+                "title": "pictograph",
+                "yutori": {
+                  "points": [
+                    "Display pictograms as icons.",
+                    "It can be converted from text to pictograms and configured quickly.",
+                    "For pictograms, enter Unicode pictograms as they are.",
+                    "Since the pictograms introduced in the execution environment are used, the display may differ slightly from user to user.",
+                    "Iconify allows you to configure emoji that are nothing specific to each environment",
+                    "It is possible to display characters other than pictograms, but it is Possible for the display to be corrupted if there is more than one character.",
+                    "For example, enter a pictogram such as `🗡️` or `⚔️`."
+                  ],
+                  "reference": "en/editor/preset?id=pictograph"
+                }
+              },
+              "iconify": {
+                "type": "string",
+                "default": "",
+                "options": {
+                  "grid_columns": 4,
+                  "infoText": "Using the Iconify Icon Set"
+                },
+                "title": "Iconify",
+                "yutori": {
+                  "points": [
+                    "An icon representing an element.",
+                    "Iconify is a service that provides various types of icons.",
+                    "If an image is configured, it will take precedence."
+                  ],
+                  "reference": "en/editor/preset?id=Iconify"
+                }
+              },
+              "image": {
+                "type": "string",
+                "default": "",
+                "media": {
+                  "binaryEncoding": "base64",
+                  "type": "img/png"
+                },
+                "options": {
+                  "grid_columns": 4,
+                  "infoText": "Use any image file"
+                },
+                "title": "image",
+                "yutori": {
+                  "points": [
+                    "An image representing an element.",
+                    "If the file size is large, it will be automatically resized.",
+                    "Unnecessary if Iconify or pictograms are configured."
+                  ],
+                  "reference": "en/editor/preset?id=image"
+                }
+              },
+              "delete": {
+                "format": "button",
+                "options": {
+                  "button": {
+                    "text": "Delete Image",
+                    "icon": "trash",
+                    "action": "deletePrevious"
+                  }
+                }
+              }
+            },
+            "title": "icon",
+            "yutori": {
+              "points": [
+                "Icons can be configured as images, Iconify, or emoji.",
+                "Iconify is a service that provides various types of icons.",
+                "If more than one of these is configured, priority is given to images, Iconify, and pictograms, in that order."
+              ],
+              "reference": "en/editor/preset?id=icon"
+            }
+          },
+          "color": {
+            "type": "string",
+            "default": "#000000",
+            "format": "color",
+            "pattern": "(^#[0-9a-fA-F]{6}$)|(^$)",
+            "title": "variety",
+            "options": {
+              "infoText": "Configure the display color of the element"
+            },
+            "yutori": {
+              "points": [
+                "As the element's color, it is applied to the element's icon and background color.",
+                "Select from the editor's color picker."
+              ],
+              "reference": "en/editor/preset?id=variety"
+            }
+          },
+          "copy": {
+            "type": "string",
+            "format": "button",
+            "options": {
+              "button": {
+                "text": "Copy Information",
+                "icon": "copy",
+                "action": "copyInformation"
+              }
+            }
+          }
+        },
+        "headerTemplate": "{{ i1 }}: {{ self.id }}"
+      },
+      "title": "preset",
+      "description": "Customize the display of system elements",
+      "yutori": {
+        "points": [
+          "Replaces UI text and icons that are pre-loaded into the game engine (player).",
+          "Only those that match an existing preset by ID will be replaced.",
+          "Only the configured items will be replaced. For example, if you configure only an icon, the other items, such as name and color, will be replaced with the original."
+        ],
+        "reference": "en/editor/preset"
+      }
+    }
+  }
+}

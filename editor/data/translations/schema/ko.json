@@ -1,0 +1,2777 @@
+{
+  "type": "object",
+  "format": "categories",
+  "title": "Idle RPG - Editor",
+  "basicCategoryTitle": "Idle RPG - Editor",
+  "additionalProperties": false,
+  "required": [
+    "basic",
+    "categories",
+    "actions",
+    "items",
+    "groups",
+    "events",
+    "presets"
+  ],
+  "options": {
+    "disable_collapse": true
+  },
+  "properties": {
+    "basic": {
+      "type": "object",
+      "format": "categories",
+      "basicCategoryTitle": "기본 설정",
+      "additionalProperties": false,
+      "required": [
+        "overview",
+        "general",
+        "design",
+        "development"
+      ],
+      "options": {
+        "disable_collapse": true,
+        "infoText": "Details"
+      },
+      "properties": {
+        "overview": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "information",
+            "version",
+            "author",
+            "homepage",
+            "url",
+            "estimatedPlayingTime"
+          ],
+          "options": {
+            "disable_collapse": true,
+            "infoText": "Details"
+          },
+          "properties": {
+            "information": {
+              "type": "object",
+              "additionalProperties": false,
+              "format": "grid",
+              "required": [
+                "id",
+                "name",
+                "explanation",
+                "icon",
+                "color"
+              ],
+              "options": {
+                "disable_collapse": true
+              },
+              "properties": {
+                "id": {
+                  "type": "string",
+                  "default": "",
+                  "minLength": 1,
+                  "maxLength": 100,
+                  "pattern": "^[0-9a-zA-Z\\-]+$"
+                },
+                "name": {
+                  "type": "string",
+                  "maxLength": 20
+                },
+                "explanation": {
+                  "type": "string"
+                },
+                "icon": {
+                  "type": "object",
+                  "additionalProperties": false,
+                  "format": "grid",
+                  "required": [
+                    "emoji",
+                    "iconify",
+                    "image"
+                  ],
+                  "options": {
+                    "disable_collapse": true
+                  },
+                  "properties": {
+                    "emoji": {
+                      "type": "string",
+                      "options": {
+                        "grid_columns": 4
+                      }
+                    },
+                    "iconify": {
+                      "type": "string",
+                      "default": "",
+                      "options": {
+                        "grid_columns": 4
+                      }
+                    },
+                    "image": {
+                      "type": "string",
+                      "default": "",
+                      "media": {
+                        "binaryEncoding": "base64",
+                        "type": "img/png"
+                      },
+                      "options": {
+                        "grid_columns": 4
+                      }
+                    },
+                    "delete": {
+                      "format": "button",
+                      "options": {
+                        "button": {
+                          "text": "Delete Image",
+                          "icon": "trash",
+                          "action": "deletePrevious"
+                        }
+                      }
+                    }
+                  }
+                },
+                "color": {
+                  "type": "string",
+                  "default": "#000000",
+                  "format": "color",
+                  "pattern": "(^#[0-9a-fA-F]{6}$)|(^$)"
+                },
+                "copy": {
+                  "type": "string",
+                  "format": "button",
+                  "options": {
+                    "button": {
+                      "text": "Copy Information",
+                      "icon": "copy",
+                      "action": "copyInformation"
+                    }
+                  }
+                }
+              }
+            },
+            "version": {
+              "type": "number",
+              "default": 0,
+              "minimum": 0
+            },
+            "author": {
+              "type": "string",
+              "minLength": 3,
+              "maxLength": 20,
+              "pattern": "^[A-Za-z0-9 !?.,-]+$"
+            },
+            "homepage": {
+              "type": "string",
+              "default": "https://",
+              "format": "url",
+              "minLength": 0
+            },
+            "url": {
+              "type": "string",
+              "default": "https://",
+              "format": "url",
+              "minLength": 0
+            },
+            "estimatedPlayingTime": {
+              "type": "object",
+              "additionalProperties": false,
+              "format": "grid",
+              "required": [
+                "value",
+                "unit"
+              ],
+              "options": {
+                "disable_collapse": true
+              },
+              "properties": {
+                "value": {
+                  "type": "integer",
+                  "default": 1,
+                  "minimum": 1
+                },
+                "unit": {
+                  "type": "string",
+                  "enum": [
+                    "seconds",
+                    "minutes",
+                    "hours",
+                    "days",
+                    "years",
+                    "centuries",
+                    "endless"
+                  ],
+                  "default": "days"
+                }
+              }
+            }
+          },
+          "title": "개요",
+          "description": "월드 기본 정보 및 작가 정보",
+          "yutori": {
+            "points": [
+              "월드의 내용을 설명하는 항목입니다.",
+              "사용자가 월드 선택 시 쉽게 이해할 수 있도록 설정해야 합니다.",
+              "이러한 설정은 월드의 동작에 영향을 미치지 않습니다."
+            ],
+            "reference": "ko/editor/개요"
+          }
+        },
+        "general": {
+          "type": "object",
+          "additionalProperties": false,
+          "format": "grid",
+          "required": [
+            "offlineMaxHours",
+            "maxCategoryLevels",
+            "levelCommonRatio",
+            "language",
+            "translations",
+            "coins",
+            "capacity",
+            "queue",
+            "actionLevelLimit",
+            "defaultCombat"
+          ],
+          "options": {
+            "disable_collapse": true,
+            "infoText": "Details"
+          },
+          "properties": {
+            "offlineMaxHours": {
+              "type": "integer",
+              "default": 24,
+              "minimum": 0,
+              "maximum": 24,
+              "propertyOrder": 100
+            },
+            "maxCategoryLevels": {
+              "type": "integer",
+              "default": 100,
+              "minimum": 1,
+              "propertyOrder": 101
+            },
+            "actionLevelLimit": {
+              "type": "boolean",
+              "default": false,
+              "format": "checkbox",
+              "propertyOrder": 103
+            },
+            "levelCommonRatio": {
+              "type": "number",
+              "default": 1.05,
+              "minimum": 1,
+              "propertyOrder": 104
+            },
+            "language": {
+              "type": "string",
+              "default": "en",
+              "enum": [
+                "en",
+                "zh",
+                "es",
+                "pt",
+                "fr",
+                "ru",
+                "de",
+                "ja",
+                "id",
+                "ko"
+              ],
+              "propertyOrder": 106
+            },
+            "translations": {
+              "type": "boolean",
+              "default": false,
+              "format": "checkbox",
+              "propertyOrder": 107
+            },
+            "coins": {
+              "type": "array",
+              "minItems": 1,
+              "format": "tabs",
+              "options": {
+                "disable_collapse": true
+              },
+              "items": {
+                "type": "object",
+                "additionalProperties": false,
+                "format": "grid",
+                "required": [
+                  "id",
+                  "name",
+                  "explanation",
+                  "icon",
+                  "color"
+                ],
+                "options": {
+                  "disable_collapse": true
+                },
+                "properties": {
+                  "id": {
+                    "type": "string",
+                    "default": "",
+                    "minLength": 1,
+                    "maxLength": 100,
+                    "pattern": "^[0-9a-zA-Z\\-]+$"
+                  },
+                  "name": {
+                    "type": "string",
+                    "maxLength": 20
+                  },
+                  "explanation": {
+                    "type": "string"
+                  },
+                  "icon": {
+                    "type": "object",
+                    "additionalProperties": false,
+                    "format": "grid",
+                    "required": [
+                      "emoji",
+                      "iconify",
+                      "image"
+                    ],
+                    "options": {
+                      "disable_collapse": true
+                    },
+                    "properties": {
+                      "emoji": {
+                        "type": "string",
+                        "options": {
+                          "grid_columns": 4
+                        }
+                      },
+                      "iconify": {
+                        "type": "string",
+                        "default": "",
+                        "options": {
+                          "grid_columns": 4
+                        }
+                      },
+                      "image": {
+                        "type": "string",
+                        "default": "",
+                        "media": {
+                          "binaryEncoding": "base64",
+                          "type": "img/png"
+                        },
+                        "options": {
+                          "grid_columns": 4
+                        }
+                      },
+                      "delete": {
+                        "format": "button",
+                        "options": {
+                          "button": {
+                            "text": "Delete Image",
+                            "icon": "trash",
+                            "action": "deletePrevious"
+                          }
+                        }
+                      }
+                    }
+                  },
+                  "color": {
+                    "type": "string",
+                    "default": "#000000",
+                    "format": "color",
+                    "pattern": "(^#[0-9a-fA-F]{6}$)|(^$)"
+                  },
+                  "copy": {
+                    "type": "string",
+                    "format": "button",
+                    "options": {
+                      "button": {
+                        "text": "Copy Information",
+                        "icon": "copy",
+                        "action": "copyInformation"
+                      }
+                    }
+                  }
+                },
+                "headerTemplate": "{{ i1 }}: {{ self.id }}"
+              },
+              "propertyOrder": 200
+            },
+            "capacity": {
+              "type": "object",
+              "additionalProperties": false,
+              "format": "grid",
+              "required": [
+                "information",
+                "increasingRate",
+                "initialCost",
+                "initialCount",
+                "coinId",
+                "buyingLimit"
+              ],
+              "options": {
+                "disable_collapse": true
+              },
+              "properties": {
+                "information": {
+                  "type": "object",
+                  "additionalProperties": false,
+                  "format": "grid",
+                  "required": [
+                    "id",
+                    "name",
+                    "explanation",
+                    "icon",
+                    "color"
+                  ],
+                  "options": {
+                    "disable_collapse": true
+                  },
+                  "properties": {
+                    "id": {
+                      "type": "string",
+                      "default": "",
+                      "minLength": 1,
+                      "maxLength": 100,
+                      "pattern": "^[0-9a-zA-Z\\-]+$"
+                    },
+                    "name": {
+                      "type": "string",
+                      "maxLength": 20
+                    },
+                    "explanation": {
+                      "type": "string"
+                    },
+                    "icon": {
+                      "type": "object",
+                      "additionalProperties": false,
+                      "format": "grid",
+                      "required": [
+                        "emoji",
+                        "iconify",
+                        "image"
+                      ],
+                      "options": {
+                        "disable_collapse": true
+                      },
+                      "properties": {
+                        "emoji": {
+                          "type": "string",
+                          "options": {
+                            "grid_columns": 4
+                          }
+                        },
+                        "iconify": {
+                          "type": "string",
+                          "default": "",
+                          "options": {
+                            "grid_columns": 4
+                          }
+                        },
+                        "image": {
+                          "type": "string",
+                          "default": "",
+                          "media": {
+                            "binaryEncoding": "base64",
+                            "type": "img/png"
+                          },
+                          "options": {
+                            "grid_columns": 4
+                          }
+                        },
+                        "delete": {
+                          "format": "button",
+                          "options": {
+                            "button": {
+                              "text": "Delete Image",
+                              "icon": "trash",
+                              "action": "deletePrevious"
+                            }
+                          }
+                        }
+                      }
+                    },
+                    "color": {
+                      "type": "string",
+                      "default": "#000000",
+                      "format": "color",
+                      "pattern": "(^#[0-9a-fA-F]{6}$)|(^$)"
+                    },
+                    "copy": {
+                      "type": "string",
+                      "format": "button",
+                      "options": {
+                        "button": {
+                          "text": "Copy Information",
+                          "icon": "copy",
+                          "action": "copyInformation"
+                        }
+                      }
+                    }
+                  }
+                },
+                "initialCount": {
+                  "type": "integer",
+                  "default": 10,
+                  "minimum": 0
+                },
+                "initialCost": {
+                  "type": "integer",
+                  "default": 100,
+                  "minimum": 1
+                },
+                "increasingRate": {
+                  "type": "number",
+                  "default": 1.2,
+                  "minimum": 1
+                },
+                "coinId": {
+                  "type": "string",
+                  "default": "",
+                  "pattern": "^[0-9a-zA-Z\\-]*$"
+                },
+                "buyingLimit": {
+                  "type": "integer",
+                  "default": 0,
+                  "minimum": -1
+                }
+              },
+              "propertyOrder": 201
+            },
+            "queue": {
+              "type": "object",
+              "additionalProperties": false,
+              "format": "grid",
+              "required": [
+                "information",
+                "increasingRate",
+                "initialCost",
+                "initialCount",
+                "coinId",
+                "buyingLimit"
+              ],
+              "options": {
+                "disable_collapse": true
+              },
+              "properties": {
+                "information": {
+                  "type": "object",
+                  "additionalProperties": false,
+                  "format": "grid",
+                  "required": [
+                    "id",
+                    "name",
+                    "explanation",
+                    "icon",
+                    "color"
+                  ],
+                  "options": {
+                    "disable_collapse": true
+                  },
+                  "properties": {
+                    "id": {
+                      "type": "string",
+                      "default": "",
+                      "minLength": 1,
+                      "maxLength": 100,
+                      "pattern": "^[0-9a-zA-Z\\-]+$"
+                    },
+                    "name": {
+                      "type": "string",
+                      "maxLength": 20
+                    },
+                    "explanation": {
+                      "type": "string"
+                    },
+                    "icon": {
+                      "type": "object",
+                      "additionalProperties": false,
+                      "format": "grid",
+                      "required": [
+                        "emoji",
+                        "iconify",
+                        "image"
+                      ],
+                      "options": {
+                        "disable_collapse": true
+                      },
+                      "properties": {
+                        "emoji": {
+                          "type": "string",
+                          "options": {
+                            "grid_columns": 4
+                          }
+                        },
+                        "iconify": {
+                          "type": "string",
+                          "default": "",
+                          "options": {
+                            "grid_columns": 4
+                          }
+                        },
+                        "image": {
+                          "type": "string",
+                          "default": "",
+                          "media": {
+                            "binaryEncoding": "base64",
+                            "type": "img/png"
+                          },
+                          "options": {
+                            "grid_columns": 4
+                          }
+                        },
+                        "delete": {
+                          "format": "button",
+                          "options": {
+                            "button": {
+                              "text": "Delete Image",
+                              "icon": "trash",
+                              "action": "deletePrevious"
+                            }
+                          }
+                        }
+                      }
+                    },
+                    "color": {
+                      "type": "string",
+                      "default": "#000000",
+                      "format": "color",
+                      "pattern": "(^#[0-9a-fA-F]{6}$)|(^$)"
+                    },
+                    "copy": {
+                      "type": "string",
+                      "format": "button",
+                      "options": {
+                        "button": {
+                          "text": "Copy Information",
+                          "icon": "copy",
+                          "action": "copyInformation"
+                        }
+                      }
+                    }
+                  }
+                },
+                "initialCount": {
+                  "type": "integer",
+                  "default": 1,
+                  "minimum": 1
+                },
+                "initialCost": {
+                  "type": "integer",
+                  "default": 100,
+                  "minimum": 1
+                },
+                "increasingRate": {
+                  "type": "number",
+                  "default": 1.2,
+                  "minimum": 1
+                },
+                "coinId": {
+                  "type": "string",
+                  "default": "",
+                  "pattern": "^[0-9a-zA-Z\\-]*$"
+                },
+                "buyingLimit": {
+                  "type": "integer",
+                  "default": 0,
+                  "minimum": -1
+                }
+              },
+              "propertyOrder": 202
+            },
+            "defaultCombat": {
+              "type": "object",
+              "additionalProperties": false,
+              "format": "grid",
+              "required": [
+                "attack",
+                "defence",
+                "accuracy",
+                "evasion"
+              ],
+              "options": {
+                "disable_collapse": true
+              },
+              "properties": {
+                "attack": {
+                  "type": "number",
+                  "default": 0
+                },
+                "defence": {
+                  "type": "number",
+                  "default": 0
+                },
+                "accuracy": {
+                  "type": "number",
+                  "default": 0
+                },
+                "evasion": {
+                  "type": "number",
+                  "default": 0
+                },
+                "restore": {
+                  "type": "number",
+                  "default": 0
+                }
+              },
+              "propertyOrder": 400
+            }
+          },
+          "title": "일반",
+          "description": "언어, 레벨 설정 등의 기본적인 게임 설정",
+          "yutori": {
+            "reference": "ko/editor/일반"
+          }
+        },
+        "design": {
+          "type": "object",
+          "additionalProperties": false,
+          "format": "grid",
+          "required": [
+            "mainColor",
+            "subColor",
+            "background"
+          ],
+          "options": {
+            "disable_collapse": true,
+            "infoText": "Details"
+          },
+          "properties": {
+            "mainColor": {
+              "type": "string",
+              "default": "#000000",
+              "format": "color",
+              "pattern": "(^#[0-9a-fA-F]{6}$)|(^$)"
+            },
+            "subColor": {
+              "type": "string",
+              "default": "#000000",
+              "format": "color",
+              "pattern": "(^#[0-9a-fA-F]{6}$)|(^$)"
+            },
+            "background": {
+              "type": "string",
+              "default": "",
+              "media": {
+                "binaryEncoding": "base64",
+                "type": "img/png"
+              }
+            },
+            "delete": {
+              "format": "button",
+              "options": {
+                "button": {
+                  "text": "Delete Image",
+                  "icon": "trash",
+                  "action": "deletePrevious"
+                }
+              }
+            }
+          },
+          "title": "디자인",
+          "description": "월드의 색상, 폰트 등 외형 설정",
+          "yutori": {
+            "points": [
+              "월드 표시 관련 설정입니다.",
+              "월드 전체 디자인에 대한 것이지만, 각 요소에 개별 설정이 있는 경우 그 설정이 우선시됩니다."
+            ],
+            "reference": "ko/editor/디자인"
+          }
+        },
+        "development": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "version",
+            "memo",
+            "errors",
+            "timestamp",
+            "autosaveing"
+          ],
+          "options": {
+            "disable_collapse": true,
+            "infoText": "Details"
+          },
+          "properties": {
+            "version": {
+              "type": "string",
+              "readOnly": true
+            },
+            "memo": {
+              "type": "array",
+              "format": "table",
+              "options": {},
+              "items": {
+                "type": "string"
+              }
+            },
+            "errors": {
+              "type": "array",
+              "format": "table",
+              "readOnly": true,
+              "options": {
+                "disable_array_add": true,
+                "disable_array_delete": true,
+                "disable_array_delete_all_rows": true,
+                "disable_array_delete_last_row": true,
+                "disable_array_reorder": true
+              },
+              "items": {
+                "type": "string",
+                "readOnly": true
+              }
+            },
+            "timestamp": {
+              "type": "object",
+              "additionalProperties": false,
+              "required": [
+                "created",
+                "saved",
+                "published"
+              ],
+              "properties": {
+                "created": {
+                  "type": "string",
+                  "readOnly": true
+                },
+                "saved": {
+                  "type": "string",
+                  "readOnly": true
+                },
+                "published": {
+                  "type": "string",
+                  "readOnly": true
+                }
+              }
+            },
+            "autosaveing": {
+              "type": "boolean",
+              "default": false,
+              "readOnly": true,
+              "format": "checkbox"
+            }
+          },
+          "title": "개발",
+          "description": "월드 개발 시 메모 및 오류 관리",
+          "yutori": {
+            "points": [
+              "월드 개발 시 사용합니다.",
+              "이 월드의 개발 및 테스트에 참여한다고 해서 플레이 내용에 영향을 주지는 않습니다.",
+              "플레이어는 개발 관련 내용을 확인할 수 없습니다."
+            ],
+            "reference": "ko/editor/개발"
+          }
+        }
+      },
+      "title": "기본 설정",
+      "description": "월드 전반의 기본 설정 항목",
+      "yutori": {
+        "points": [
+          "월드 이름, 설명, 배경, 통화, 용량, 카테고리의 최대 레벨, 경험치 상승률, 할인율, 표준 전투 매개변수 등을 설정합니다.",
+          "이러한 설정은 월드 전체에 영향을 미칩니다."
+        ],
+        "reference": "ko/editor/basic"
+      }
+    },
+    "categories": {
+      "type": "array",
+      "basicCategoryTitle": "카테고리",
+      "format": "tabs",
+      "options": {
+        "disable_collapse": true,
+        "infoText": "Details"
+      },
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "format": "categories",
+        "basicCategoryTitle": "Category",
+        "headerTemplate": "{{ i1 }}: {{ self.information.id }}",
+        "options": {
+          "disable_collapse": true
+        },
+        "required": [
+          "information",
+          "group",
+          "unlocked",
+          "requirements",
+          "equipmentGroups",
+          "numeric",
+          "standaloneProgress",
+          "background"
+        ],
+        "properties": {
+          "information": {
+            "type": "object",
+            "additionalProperties": false,
+            "format": "grid",
+            "required": [
+              "id",
+              "name",
+              "explanation",
+              "icon",
+              "color"
+            ],
+            "options": {
+              "disable_collapse": true
+            },
+            "properties": {
+              "id": {
+                "type": "string",
+                "default": "",
+                "minLength": 1,
+                "maxLength": 100,
+                "pattern": "^[0-9a-zA-Z\\-]+$"
+              },
+              "name": {
+                "type": "string",
+                "maxLength": 20
+              },
+              "explanation": {
+                "type": "string"
+              },
+              "icon": {
+                "type": "object",
+                "additionalProperties": false,
+                "format": "grid",
+                "required": [
+                  "emoji",
+                  "iconify",
+                  "image"
+                ],
+                "options": {
+                  "disable_collapse": true
+                },
+                "properties": {
+                  "emoji": {
+                    "type": "string",
+                    "options": {
+                      "grid_columns": 4
+                    }
+                  },
+                  "iconify": {
+                    "type": "string",
+                    "default": "",
+                    "options": {
+                      "grid_columns": 4
+                    }
+                  },
+                  "image": {
+                    "type": "string",
+                    "default": "",
+                    "media": {
+                      "binaryEncoding": "base64",
+                      "type": "img/png"
+                    },
+                    "options": {
+                      "grid_columns": 4
+                    }
+                  },
+                  "delete": {
+                    "format": "button",
+                    "options": {
+                      "button": {
+                        "text": "Delete Image",
+                        "icon": "trash",
+                        "action": "deletePrevious"
+                      }
+                    }
+                  }
+                }
+              },
+              "color": {
+                "type": "string",
+                "default": "#000000",
+                "format": "color",
+                "pattern": "(^#[0-9a-fA-F]{6}$)|(^$)"
+              },
+              "copy": {
+                "type": "string",
+                "format": "button",
+                "options": {
+                  "button": {
+                    "text": "Copy Information",
+                    "icon": "copy",
+                    "action": "copyInformation"
+                  }
+                }
+              }
+            }
+          },
+          "group": {
+            "type": "string",
+            "default": "",
+            "pattern": "^[0-9a-zA-Z\\-]*$"
+          },
+          "unlocked": {
+            "type": "string",
+            "enum": [
+              "secreted",
+              "hidden",
+              "hinted",
+              "released"
+            ],
+            "default": "hinted",
+            "options": {
+              "enum_titles": [
+                "Secreted: Completely hidden from all UI (not even as a hint) until all requirements are met",
+                "Hidden: Fully concealed (grayed out, no name) until referenced or conditions met",
+                "Hinted: Name shown as a teaser but not operable until released (default)",
+                "Released: Unlocked and operable from the start regardless of conditions"
+              ]
+            }
+          },
+          "requirements": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "additionalProperties": false,
+              "headerTemplate": "{{ i1 }}: {{ self.id }} [ {{ self.type }} ]",
+              "format": "grid",
+              "required": [
+                "type",
+                "id",
+                "count",
+                "chance",
+                "equipment"
+              ],
+              "options": {
+                "disable_collapse": true
+              },
+              "properties": {
+                "type": {
+                  "type": "string",
+                  "enum": [
+                    "category",
+                    "action",
+                    "item"
+                  ],
+                  "default": "item"
+                },
+                "id": {
+                  "type": "string",
+                  "pattern": "^[0-9a-zA-Z\\-]+$"
+                },
+                "count": {
+                  "type": "integer",
+                  "minimum": 0,
+                  "default": 1
+                },
+                "chance": {
+                  "type": "number",
+                  "default": 1,
+                  "minimum": 0,
+                  "maximum": 1
+                },
+                "equipment": {
+                  "type": "boolean",
+                  "default": false,
+                  "format": "checkbox"
+                }
+              }
+            },
+            "options": {
+              "disable_collapse": true
+            }
+          },
+          "equipmentGroups": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "pattern": "^[0-9a-zA-Z\\-]*$"
+            },
+            "options": {
+              "disable_collapse": true
+            },
+            "default": [
+              ""
+            ],
+            "uniqueItems": true
+          },
+          "numeric": {
+            "type": "boolean",
+            "default": true,
+            "format": "checkbox"
+          },
+          "standaloneProgress": {
+            "type": "boolean",
+            "default": false,
+            "format": "checkbox"
+          },
+          "background": {
+            "type": "string",
+            "default": "",
+            "media": {
+              "binaryEncoding": "base64",
+              "type": "img/png"
+            }
+          },
+          "delete": {
+            "format": "button",
+            "options": {
+              "button": {
+                "text": "Delete Image",
+                "icon": "trash",
+                "action": "deletePrevious"
+              }
+            }
+          }
+        }
+      },
+      "title": "카테고리",
+      "description": "액션과 아이템을 분류하는 큰 틀",
+      "yutori": {
+        "points": [
+          "큰 분류를 나타냅니다.",
+          "예를 들어 근거리, 원거리, 마법, 던전, 대장간, 제작소 등 자유롭게 설정할 수 있다.",
+          "액션과 아이템은 월드 바로 아래에 배치되며, 카테고리 ID로 연관되어 있습니다."
+        ],
+        "reference": "ko/editor/카테고리"
+      }
+    },
+    "actions": {
+      "type": "array",
+      "basicCategoryTitle": "액션",
+      "format": "tabs",
+      "options": {
+        "disable_collapse": true,
+        "infoText": "Details"
+      },
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "headerTemplate": "{{ i1 }}: {{ self.information.id }}",
+        "options": {
+          "disable_collapse": true
+        },
+        "format": "grid",
+        "required": [
+          "information",
+          "category",
+          "attribute",
+          "group",
+          "unlocked",
+          "seconds",
+          "level",
+          "experience",
+          "chance",
+          "maximum",
+          "requirements",
+          "acquisitions",
+          "progressType",
+          "property"
+        ],
+        "properties": {
+          "information": {
+            "type": "object",
+            "additionalProperties": false,
+            "format": "grid",
+            "required": [
+              "id",
+              "name",
+              "explanation",
+              "icon",
+              "color"
+            ],
+            "options": {
+              "disable_collapse": true,
+              "infoText": "Details"
+            },
+            "properties": {
+              "id": {
+                "type": "string",
+                "default": "",
+                "minLength": 1,
+                "maxLength": 100,
+                "pattern": "^[0-9a-zA-Z\\-]+$"
+              },
+              "name": {
+                "type": "string",
+                "maxLength": 20
+              },
+              "explanation": {
+                "type": "string"
+              },
+              "icon": {
+                "type": "object",
+                "additionalProperties": false,
+                "format": "grid",
+                "required": [
+                  "emoji",
+                  "iconify",
+                  "image"
+                ],
+                "options": {
+                  "disable_collapse": true
+                },
+                "properties": {
+                  "emoji": {
+                    "type": "string",
+                    "options": {
+                      "grid_columns": 4
+                    }
+                  },
+                  "iconify": {
+                    "type": "string",
+                    "default": "",
+                    "options": {
+                      "grid_columns": 4
+                    }
+                  },
+                  "image": {
+                    "type": "string",
+                    "default": "",
+                    "media": {
+                      "binaryEncoding": "base64",
+                      "type": "img/png"
+                    },
+                    "options": {
+                      "grid_columns": 4
+                    }
+                  },
+                  "delete": {
+                    "format": "button",
+                    "options": {
+                      "button": {
+                        "text": "Delete Image",
+                        "icon": "trash",
+                        "action": "deletePrevious"
+                      }
+                    }
+                  }
+                }
+              },
+              "color": {
+                "type": "string",
+                "default": "#000000",
+                "format": "color",
+                "pattern": "(^#[0-9a-fA-F]{6}$)|(^$)"
+              },
+              "copy": {
+                "type": "string",
+                "format": "button",
+                "options": {
+                  "button": {
+                    "text": "Copy Information",
+                    "icon": "copy",
+                    "action": "copyInformation"
+                  }
+                }
+              }
+            },
+            "title": "인포메이션",
+            "description": "요소의 기본 정보(ID, 이름, 아이콘, 색상 등)를 설정합니다.",
+            "yutori": {
+              "points": [
+                "월드 내 각 요소(카테고리, 액션, 아이템, 이벤트 등)에 공통적으로 적용되는 기본 정보 항목입니다.",
+                "각 요소별로 개별적으로 설정합니다."
+              ],
+              "reference": "ko/editor/정보"
+            }
+          },
+          "category": {
+            "type": "string",
+            "default": "",
+            "pattern": "^[0-9a-zA-Z\\-]*$",
+            "title": "카테고리",
+            "options": {
+              "infoText": "액션이 속하는 카테고리의 ID"
+            },
+            "yutori": {
+              "points": [
+                "이 액션이 속한 카테고리의 ID를 지정합니다."
+              ],
+              "reference": "ko/editor/action?id=카테고리"
+            }
+          },
+          "attribute": {
+            "type": "string",
+            "maxLength": 20,
+            "title": "속성",
+            "options": {
+              "infoText": "액션 별 속성 카테고리"
+            },
+            "yutori": {
+              "points": [
+                "개별 속성(카테고리)을 설정할 수 있습니다.",
+                "비어있는 경우 해당 카테고리를 이어받습니다.",
+                "예를 들어, 마왕성이라는 카테고리에 속하는 액션에 마법이라는 속성을 개별적으로 설정하면, 액션 완료 시간이나 데미지에는 마법 카테고리의 레벨과 속성이 계산되어 적용된다."
+              ],
+              "reference": "ko/editor/action?id=속성"
+            }
+          },
+          "group": {
+            "type": "string",
+            "default": "",
+            "pattern": "^[0-9a-zA-Z\\-]*$",
+            "title": "그룹",
+            "options": {
+              "infoText": "액션의 표시 그룹 분류"
+            },
+            "yutori": {
+              "points": [
+                "기본 설정에서 설정한 그룹 중 하나를 맞춰주세요.",
+                "설정한 그룹 순서대로 액션 목록이 표시됩니다."
+              ],
+              "reference": "ko/editor/action?id=그룹"
+            }
+          },
+          "unlocked": {
+            "type": "string",
+            "enum": [
+              "secreted",
+              "hidden",
+              "hinted",
+              "released"
+            ],
+            "default": "hinted",
+            "options": {
+              "enum_titles": [
+                "Secreted: Completely hidden from all UI (not even as a hint) until all requirements are met",
+                "Hidden: Fully concealed (grayed out, no name) until referenced or conditions met",
+                "Hinted: Name shown as a teaser but not operable until released (default)",
+                "Released: Unlocked and operable from the start regardless of conditions"
+              ],
+              "infoText": "요소의 초기 표시·해제 상태 (발동 조건을 충족하면 자동으로 위 상태로 전환됨)"
+            },
+            "title": "초기 해제 상태",
+            "yutori": {
+              "points": [
+                "secreted: 모든 요구 사항을 충족할 때까지 UI에 전혀 표시되지 않습니다(힌트에도 나타나지 않으며, 요구 사항/보상 목록에서도 가려집니다).",
+                "hidden: 어떤 해제 요소에서도 참조되지 않고 요건도 충족되지 않은 동안에는 완전히 숨겨집니다(이름도 회색으로 표시되며 조작할 수 없음).",
+                "hinted(기본값): 이름만 미리 표시되지만, 잠금이 해제될 때까지는 조작할 수 없습니다.",
+                "released: 조건에 관계없이 처음부터 해제되어 조작할 수 있습니다(이전 ‘처음부터 표시’)."
+              ],
+              "reference": "ko/editor/action?id=초기 해제 상태"
+            }
+          },
+          "seconds": {
+            "type": "number",
+            "default": 2,
+            "minimum": 0,
+            "title": "소요 시간 [초].",
+            "options": {
+              "infoText": "액션 실행에 소요되는 표준 시간"
+            },
+            "yutori": {
+              "points": [
+                "액션을 한 번 수행하는 데 필요한 표준 시간(초)입니다.",
+                "스태미나` 타입의 경우, 1턴(서로의 스태미나를 1회 깎는 데 걸리는 시간 간격입니다.",
+                "속성 계산에 따라 실제 실행 시에는 변동이 있을 수 있습니다."
+              ],
+              "reference": "ko/editor/action?id=소요 시간 [초]."
+            }
+          },
+          "level": {
+            "type": "integer",
+            "default": 1,
+            "minimum": 1,
+            "title": "레벨",
+            "options": {
+              "infoText": "액션 난이도 레벨"
+            },
+            "yutori": {
+              "points": [
+                "액션의 난이도를 레벨로 표시합니다.",
+                "실행 시 플레이어의 레벨과 비교하여 각 속성을 계산합니다.",
+                "예를 들어 자신의 레벨보다 높은 액션을 수행하면 성공률이 낮아지는 등의 영향이 있습니다.",
+                "플레이어의 레벨이 이 값보다 작아도 조건만 충족하면 실행할 수 있습니다."
+              ],
+              "reference": "ko/editor/action?id=레벨"
+            }
+          },
+          "experience": {
+            "type": "number",
+            "default": 1,
+            "minimum": 0,
+            "title": "경험치[100으로 다음 레벨로 올라갑니다.]",
+            "options": {
+              "infoText": "액션 성공 시 획득하는 경험치"
+            },
+            "yutori": {
+              "points": [
+                "액션을 한 번 실행하고 성공했을 때 획득하는 표준 경험치이며, 100으로 1레벨 분량의 경험치입니다.",
+                "전투의 경우 상대에게 승리할 때 획득하기 때문에 많이 설정하는 것이 좋습니다.",
+                "속성 계산에 따라 실제 실행 시에는 변동이 있을 수 있습니다."
+              ],
+              "reference": "ko/editor/action?id=경험치[100으로 다음 레벨로 올라갑니다.]"
+            }
+          },
+          "chance": {
+            "type": "number",
+            "default": 1,
+            "minimum": 0,
+            "maximum": 1,
+            "title": "성공 확률[0-1].",
+            "options": {
+              "infoText": "액션 완료 시 성공 확률"
+            },
+            "yutori": {
+              "points": [
+                "액션 완료 시 성공할 확률입니다.",
+                "1`이면 항상 성공, `0`이면 항상 실패입니다.",
+                "실패 시 소비 아이템은 소모되지만, 보상이나 경험치는 얻을 수 없습니다.",
+                "속성 계산에 따라 실제 실행 시에는 변동이 있을 수 있습니다."
+              ],
+              "reference": "ko/editor/action?id=성공 확률[0-1]."
+            }
+          },
+          "maximum": {
+            "type": "number",
+            "default": 0,
+            "minimum": 0,
+            "title": "최대 실행 횟수[회]",
+            "options": {
+              "infoText": "액션을 완료할 수 있는 최대 횟수"
+            },
+            "yutori": {
+              "points": [
+                "액션이 성공적으로 완료될 수 있는 횟수의 상한선입니다.",
+                "0`의 경우 무제한입니다.",
+                "위 한도에 도달하면 액션을 실행할 수 없게 됩니다."
+              ],
+              "reference": "ko/editor/action?id=최대 실행 횟수[회]"
+            }
+          },
+          "requirements": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "additionalProperties": false,
+              "headerTemplate": "{{ i1 }}: {{ self.id }} [ {{ self.type }} ]",
+              "format": "grid",
+              "required": [
+                "type",
+                "id",
+                "count",
+                "chance",
+                "equipment"
+              ],
+              "options": {
+                "disable_collapse": true
+              },
+              "properties": {
+                "type": {
+                  "type": "string",
+                  "enum": [
+                    "category",
+                    "action",
+                    "item"
+                  ],
+                  "default": "item"
+                },
+                "id": {
+                  "type": "string",
+                  "pattern": "^[0-9a-zA-Z\\-]+$"
+                },
+                "count": {
+                  "type": "integer",
+                  "minimum": 0,
+                  "default": 1
+                },
+                "chance": {
+                  "type": "number",
+                  "default": 1,
+                  "minimum": 0,
+                  "maximum": 1
+                },
+                "equipment": {
+                  "type": "boolean",
+                  "default": false,
+                  "format": "checkbox"
+                }
+              }
+            },
+            "options": {
+              "disable_collapse": true,
+              "infoText": "Details"
+            },
+            "title": "조건",
+            "description": "액션 실행을 위한 요구사항",
+            "yutori": {
+              "points": [
+                "카테고리, 액션, 아이템별 각 요소에 설정하는 조건입니다.",
+                "설정한 조건이 모두 충족되지 않으면 표에 표시된 조작이 불가능합니다.",
+                "잠금 기능이 활성화된 경우, 조건을 충족할 때까지 요소 자체가 숨겨집니다."
+              ],
+              "reference": "ko/editor/요구사항"
+            }
+          },
+          "acquisitions": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "additionalProperties": false,
+              "headerTemplate": "{{ i1 }}: {{ self.id }} [ {{ self.type }} ]",
+              "format": "grid",
+              "required": [
+                "id",
+                "count",
+                "chance",
+                "type"
+              ],
+              "options": {
+                "disable_collapse": true
+              },
+              "properties": {
+                "type": {
+                  "type": "string",
+                  "enum": [
+                    "category",
+                    "action",
+                    "item"
+                  ],
+                  "default": "item"
+                },
+                "id": {
+                  "type": "string",
+                  "pattern": "^[0-9a-zA-Z\\-]+$"
+                },
+                "count": {
+                  "type": "integer",
+                  "default": 1
+                },
+                "chance": {
+                  "type": "number",
+                  "default": 1,
+                  "minimum": -1,
+                  "maximum": 1
+                }
+              }
+            },
+            "options": {
+              "disable_collapse": true,
+              "infoText": "Details"
+            },
+            "title": "획득",
+            "description": "액션 성공 시 획득 보상",
+            "yutori": {
+              "points": [
+                "획득물을 설정합니다.",
+                "아이템 외에도 카테고리의 레벨, 액션의 실행 횟수를 변경할 수 있습니다.",
+                "획득 확률을 설정할 수 있습니다."
+              ],
+              "reference": "ko/editor/인수"
+            }
+          },
+          "progressType": {
+            "type": "string",
+            "default": "persistent",
+            "enum": [
+              "persistent",
+              "single",
+              "snap",
+              "stamina"
+            ],
+            "options": {
+              "enum_titles": [
+                "Persistent: Continuous action",
+                "Single: Interruptible action",
+                "Snap: Momentary action",
+                "Stamina: Combat style action"
+              ],
+              "infoText": "액션 실행 타입"
+            },
+            "title": "진행 타입",
+            "yutori": {
+              "points": [
+                "4가지 종류가 있습니다."
+              ],
+              "reference": "ko/editor/action?id=진행 타입"
+            }
+          },
+          "property": {
+            "type": "object",
+            "additionalProperties": false,
+            "format": "grid",
+            "required": [
+              "attack",
+              "defence",
+              "accuracy",
+              "evasion"
+            ],
+            "options": {
+              "disable_collapse": true,
+              "infoText": "Details"
+            },
+            "properties": {
+              "attack": {
+                "type": "number",
+                "default": 0
+              },
+              "defence": {
+                "type": "number",
+                "default": 0
+              },
+              "accuracy": {
+                "type": "number",
+                "default": 0
+              },
+              "evasion": {
+                "type": "number",
+                "default": 0
+              },
+              "restore": {
+                "type": "number",
+                "default": 0
+              }
+            },
+            "title": "전투 값",
+            "description": "스태미너 타입 액션의 전투 보정 값 설정",
+            "yutori": {
+              "points": [
+                "stamina` 타입의 액션에서만 유효한 보정 값입니다.",
+                "각 값은 플레이어와 액션의 레벨 차이에 대한 추가 보정으로 계산됩니다.",
+                "예를 들어 공격 값이 10이라면 플레이어의 레벨이 액션의 레벨보다 10 높은 것으로 공격 대미지가 계산됩니다. 마이너스의 경우 역방향으로 보정됩니다.",
+                "일반`의 `defaultCombat`로 설정하면 월드 전체의 기본 전투 파라미터가 됩니다."
+              ],
+              "reference": "ko/editor/전투"
+            }
+          }
+        }
+      },
+      "title": "액션",
+      "description": "채집, 제작, 전투 등의 행동 요소",
+      "yutori": {
+        "points": [
+          "채집, 제작, 매매, 전투 등 행동을 나타내는 요소입니다.",
+          "행동을 할 때마다 경험치를 얻고 레벨이 올라갑니다.",
+          "행동할 때마다 아이템을 소비하거나 획득할 수 있도록 설정할 수 있습니다.",
+          "행동 패턴에는 몇 가지 유형이 있습니다."
+        ],
+        "reference": "ko/editor/action"
+      }
+    },
+    "items": {
+      "type": "array",
+      "basicCategoryTitle": "아이템",
+      "format": "tabs",
+      "options": {
+        "disable_collapse": true,
+        "infoText": "Details"
+      },
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "format": "grid",
+        "headerTemplate": "{{ i1 }}: {{ self.information.id }}",
+        "options": {
+          "disable_collapse": true
+        },
+        "required": [
+          "information",
+          "category",
+          "group",
+          "unlocked",
+          "buyingValue",
+          "sellingValue",
+          "coinId",
+          "maximum",
+          "equipmentType",
+          "requirements",
+          "properties"
+        ],
+        "properties": {
+          "information": {
+            "type": "object",
+            "additionalProperties": false,
+            "format": "grid",
+            "required": [
+              "id",
+              "name",
+              "explanation",
+              "icon",
+              "color"
+            ],
+            "options": {
+              "disable_collapse": true,
+              "infoText": "Details"
+            },
+            "properties": {
+              "id": {
+                "type": "string",
+                "default": "",
+                "minLength": 1,
+                "maxLength": 100,
+                "pattern": "^[0-9a-zA-Z\\-]+$"
+              },
+              "name": {
+                "type": "string",
+                "maxLength": 20
+              },
+              "explanation": {
+                "type": "string"
+              },
+              "icon": {
+                "type": "object",
+                "additionalProperties": false,
+                "format": "grid",
+                "required": [
+                  "emoji",
+                  "iconify",
+                  "image"
+                ],
+                "options": {
+                  "disable_collapse": true
+                },
+                "properties": {
+                  "emoji": {
+                    "type": "string",
+                    "options": {
+                      "grid_columns": 4
+                    }
+                  },
+                  "iconify": {
+                    "type": "string",
+                    "default": "",
+                    "options": {
+                      "grid_columns": 4
+                    }
+                  },
+                  "image": {
+                    "type": "string",
+                    "default": "",
+                    "media": {
+                      "binaryEncoding": "base64",
+                      "type": "img/png"
+                    },
+                    "options": {
+                      "grid_columns": 4
+                    }
+                  },
+                  "delete": {
+                    "format": "button",
+                    "options": {
+                      "button": {
+                        "text": "Delete Image",
+                        "icon": "trash",
+                        "action": "deletePrevious"
+                      }
+                    }
+                  }
+                }
+              },
+              "color": {
+                "type": "string",
+                "default": "#000000",
+                "format": "color",
+                "pattern": "(^#[0-9a-fA-F]{6}$)|(^$)"
+              },
+              "copy": {
+                "type": "string",
+                "format": "button",
+                "options": {
+                  "button": {
+                    "text": "Copy Information",
+                    "icon": "copy",
+                    "action": "copyInformation"
+                  }
+                }
+              }
+            },
+            "title": "인포메이션",
+            "description": "요소의 기본 정보(ID, 이름, 아이콘, 색상 등)를 설정합니다.",
+            "yutori": {
+              "points": [
+                "월드 내 각 요소(카테고리, 액션, 아이템, 이벤트 등)에 공통적으로 적용되는 기본 정보 항목입니다.",
+                "각 요소별로 개별적으로 설정합니다."
+              ],
+              "reference": "ko/editor/정보"
+            }
+          },
+          "category": {
+            "type": "string",
+            "default": "",
+            "pattern": "^[0-9a-zA-Z\\-]*$",
+            "title": "카테고리",
+            "options": {
+              "infoText": "아이템이 속한 카테고리의 ID"
+            },
+            "yutori": {
+              "points": [
+                "이 아이템이 속한 카테고리의 ID를 지정합니다."
+              ],
+              "reference": "ko/editor/item?id=카테고리"
+            }
+          },
+          "group": {
+            "type": "string",
+            "default": "",
+            "pattern": "^[0-9a-zA-Z\\-]*$",
+            "title": "그룹",
+            "options": {
+              "infoText": "아이템의 표시 그룹 분류"
+            },
+            "yutori": {
+              "points": [
+                "기본 설정에서 설정한 그룹 중 하나를 맞춰주세요.",
+                "설정한 그룹 순서대로 아이템 목록이 표시됩니다.",
+                "비어있는 경우 그룹화되지 않습니다."
+              ],
+              "reference": "ko/editor/item?id=그룹"
+            }
+          },
+          "unlocked": {
+            "type": "string",
+            "enum": [
+              "secreted",
+              "hidden",
+              "hinted",
+              "released"
+            ],
+            "default": "hinted",
+            "options": {
+              "enum_titles": [
+                "Secreted: Completely hidden from all UI (not even as a hint) until all requirements are met",
+                "Hidden: Fully concealed (grayed out, no name) until referenced or conditions met",
+                "Hinted: Name shown as a teaser but not operable until released (default)",
+                "Released: Unlocked and operable from the start regardless of conditions"
+              ],
+              "infoText": "요소의 초기 표시·해제 상태 (발동 조건을 충족하면 자동으로 위 상태로 전환됨)"
+            },
+            "title": "초기 해제 상태",
+            "yutori": {
+              "points": [
+                "secreted: 모든 요구 사항을 충족할 때까지 UI에 전혀 표시되지 않습니다(힌트에도 나타나지 않으며, 요구 사항/보상 목록에서도 가려집니다).",
+                "hidden: 어떤 해제 요소에서도 참조되지 않고 요건도 충족되지 않은 동안에는 완전히 숨겨집니다(이름도 회색으로 표시되며 조작할 수 없음).",
+                "hinted(기본값): 이름만 미리 표시되지만, 잠금이 해제될 때까지는 조작할 수 없습니다.",
+                "released: 조건에 관계없이 처음부터 해제되어 조작할 수 있습니다(이전 ‘처음부터 표시’)."
+              ],
+              "reference": "ko/editor/item?id=초기 해제 상태"
+            }
+          },
+          "buyingValue": {
+            "type": "integer",
+            "default": -1,
+            "title": "매수값[코인]",
+            "options": {
+              "infoText": "아이템 구매 가격 설정"
+            },
+            "yutori": {
+              "points": [
+                "해당 아이템을 소유한 적이 없음에도 불구하고 구매할 수 있는 것은 아니다."
+              ],
+              "reference": "ko/editor/item?id=매수값[코인]"
+            }
+          },
+          "sellingValue": {
+            "type": "integer",
+            "default": 0,
+            "minimum": 0,
+            "title": "판매값[코인]",
+            "options": {
+              "infoText": "아이템 판매 가격 설정"
+            },
+            "yutori": {
+              "points": [
+                "아이템을 판매할 때 가격을 설정합니다."
+              ],
+              "reference": "ko/editor/item?id=판매값[코인]"
+            }
+          },
+          "coinId": {
+            "type": "string",
+            "default": "",
+            "pattern": "^[0-9a-zA-Z\\-]*$",
+            "title": "取引通貨 ID",
+            "options": {
+              "infoText": "이 아이템의 매매에 사용되는 화폐의 ID"
+            },
+            "yutori": {
+              "points": [
+                "매수·매도 시 공통으로 사용하는 통화(coins)의 ID를 지정합니다.",
+                "공란인 경우 기본 통화(coins의 맨 앞)가 사용됩니다."
+              ],
+              "reference": "ko/editor/item?id=取引通貨 ID"
+            }
+          },
+          "maximum": {
+            "type": "number",
+            "default": 0,
+            "minimum": 0,
+            "title": "최대 소유 개수[개]",
+            "options": {
+              "infoText": "아이템 최대 소유 수 제한"
+            },
+            "yutori": {
+              "points": [
+                "0인 경우 소유할 수 있는 수에 제한이 없습니다.",
+                "1 이상일 경우 그 수까지만 소유할 수 있습니다. 위 한도에 도달한 경우, 추가로 획득해도 소유 수는 증가하지 않습니다."
+              ],
+              "reference": "ko/editor/item?id=최대 소유 개수[개]"
+            }
+          },
+          "equipmentType": {
+            "type": "string",
+            "enum": [
+              "necessary",
+              "unnecessary",
+              "impossible",
+              "consumable"
+            ],
+            "default": "necessary",
+            "options": {
+              "enum_titles": [
+                "Necessary: Must be equipped",
+                "Unnecessary: Doesn't need to be equipped, always effective",
+                "Impossible: Cannot be equipped",
+                "Consumable: Consumed when used"
+              ],
+              "infoText": "아이템의 장비, 효과, 소비에 관한 타입 설정"
+            },
+            "title": "장비 타입",
+            "yutori": {
+              "points": [
+                "장비 장착이 가능한 아이템은 카테고리 `equipmentGroups`에서 지정한 그룹에 속할 필요가 있습니다.",
+                "같은 그룹 내에서는 하나의 아이템만 장비할 수 있습니다."
+              ],
+              "reference": "ko/editor/item?id=장비 타입"
+            }
+          },
+          "requirements": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "additionalProperties": false,
+              "headerTemplate": "{{ i1 }}: {{ self.id }} [ {{ self.type }} ]",
+              "format": "grid",
+              "required": [
+                "type",
+                "id",
+                "count",
+                "chance",
+                "equipment"
+              ],
+              "options": {
+                "disable_collapse": true
+              },
+              "properties": {
+                "type": {
+                  "type": "string",
+                  "enum": [
+                    "category",
+                    "action",
+                    "item"
+                  ],
+                  "default": "item"
+                },
+                "id": {
+                  "type": "string",
+                  "pattern": "^[0-9a-zA-Z\\-]+$"
+                },
+                "count": {
+                  "type": "integer",
+                  "minimum": 0,
+                  "default": 1
+                },
+                "chance": {
+                  "type": "number",
+                  "default": 1,
+                  "minimum": 0,
+                  "maximum": 1
+                },
+                "equipment": {
+                  "type": "boolean",
+                  "default": false,
+                  "format": "checkbox"
+                }
+              }
+            },
+            "options": {
+              "disable_collapse": true,
+              "infoText": "Details"
+            },
+            "title": "조건",
+            "description": "아이템 사용에 필요한 요구사항",
+            "yutori": {
+              "points": [
+                "카테고리, 액션, 아이템별 각 요소에 설정하는 조건입니다.",
+                "설정한 조건이 모두 충족되지 않으면 표에 표시된 조작이 불가능합니다.",
+                "잠금 기능이 활성화된 경우, 조건을 충족할 때까지 요소 자체가 숨겨집니다."
+              ],
+              "reference": "ko/editor/요구사항"
+            }
+          },
+          "properties": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "additionalProperties": false,
+              "headerTemplate": "{{ i1 }}: {{ self.category }}",
+              "format": "grid",
+              "required": [
+                "category",
+                "attack",
+                "defence",
+                "accuracy",
+                "evasion",
+                "restore",
+                "speed",
+                "chance",
+                "experience"
+              ],
+              "options": {
+                "disable_collapse": true
+              },
+              "properties": {
+                "category": {
+                  "type": "string",
+                  "pattern": "^(\\*|[^*]*)$",
+                  "title": "카테고리",
+                  "options": {
+                    "infoText": "속성을 적용할 카테고리 지정"
+                  },
+                  "yutori": {
+                    "points": [
+                      "이 속성을 적용할 카테고리의 ID를 설정합니다.",
+                      "'*'를 설정하면 모든 카테고리에 적용됩니다.",
+                      "비어있는 경우 해당 아이템이 속한 카테고리에 적용됩니다."
+                    ],
+                    "reference": "ko/editor/property?id=카테고리"
+                  }
+                },
+                "attack": {
+                  "type": "number",
+                  "default": 0,
+                  "title": "공격 값[레벨 차이]",
+                  "options": {
+                    "infoText": "상대에게 주는 스태미나 피해 보정 (스태미나 액션만 유효)"
+                  },
+                  "yutori": {
+                    "points": [
+                      "플레이어의 레벨이 액션의 레벨보다 이 값만큼 높은 것으로 공격 대미지가 계산됩니다."
+                    ],
+                    "reference": "ko/editor/property?id=공격 값[레벨 차이]"
+                  }
+                },
+                "defence": {
+                  "type": "number",
+                  "default": 0,
+                  "title": "방어력 값[레벨차이]",
+                  "options": {
+                    "infoText": "상대에게 받는 스태미나 피해 보정 (스태미나 액션만 유효)"
+                  },
+                  "yutori": {
+                    "points": [
+                      "플레이어의 레벨이 액션의 레벨보다 이 값만큼 높은 것으로 데미지가 계산됩니다. 값이 높을수록 피해량이 감소합니다."
+                    ],
+                    "reference": "ko/editor/property?id=방어력 값[레벨차이]"
+                  }
+                },
+                "accuracy": {
+                  "type": "number",
+                  "default": 0,
+                  "title": "명중 값[레벨 차이]",
+                  "options": {
+                    "infoText": "공격 실수율 보정 (스태미너 액션에만 적용)"
+                  },
+                  "yutori": {
+                    "points": [
+                      "플레이어의 레벨이 액션의 레벨보다 이 값만큼 높은 것으로 간주하여 실수율을 계산합니다. 값이 높을수록 실수율이 낮아집니다."
+                    ],
+                    "reference": "ko/editor/property?id=명중 값[레벨 차이]"
+                  }
+                },
+                "evasion": {
+                  "type": "number",
+                  "default": 0,
+                  "title": "회피 값 [레벨 차이]",
+                  "options": {
+                    "infoText": "상대의 공격 회피율 보정 (스태미나 액션만 유효)"
+                  },
+                  "yutori": {
+                    "points": [
+                      "플레이어의 레벨이 액션의 레벨보다 이 값만큼 높은 것으로 회피율이 계산됩니다."
+                    ],
+                    "reference": "ko/editor/property?id=회피 값 [레벨 차이]"
+                  }
+                },
+                "restore": {
+                  "type": "number",
+                  "default": 0,
+                  "title": "회복 값[레벨 차이]",
+                  "options": {
+                    "infoText": "스태미나 회복량 보정 (스태미나 액션에만 적용)"
+                  },
+                  "yutori": {
+                    "points": [
+                      "플레이어의 레벨이 액션의 레벨보다 이 값만큼 높은 것으로 스태미나 회복량이 계산됩니다."
+                    ],
+                    "reference": "ko/editor/property?id=회복 값[레벨 차이]"
+                  }
+                },
+                "speed": {
+                  "type": "number",
+                  "default": 0,
+                  "title": "민첩성[레벨 차이]",
+                  "options": {
+                    "infoText": "액션 소요 시간에 대한 보정"
+                  },
+                  "yutori": {
+                    "points": [
+                      "플레이어의 레벨이 액션의 레벨보다 이 값만큼 높은 것으로 간주하여 소요 시간이 계산됩니다. 값이 높을수록 소요 시간이 단축됩니다."
+                    ],
+                    "reference": "ko/editor/property?id=민첩성[레벨 차이]"
+                  }
+                },
+                "chance": {
+                  "type": "number",
+                  "default": 0,
+                  "title": "성공확률[레벨 차이]",
+                  "options": {
+                    "infoText": "액션 성공 확률에 대한 보정"
+                  },
+                  "yutori": {
+                    "points": [
+                      "플레이어의 레벨이 액션의 레벨보다 이 값만큼 높은 것으로 액션 성공 확률이 계산됩니다. 값이 높을수록 성공 확률이 높아집니다."
+                    ],
+                    "reference": "ko/editor/property?id=성공확률[레벨 차이]"
+                  }
+                },
+                "experience": {
+                  "type": "number",
+                  "default": 0,
+                  "title": "경험치[레벨 차이]",
+                  "options": {
+                    "infoText": "획득 경험치에 대한 보정"
+                  },
+                  "yutori": {
+                    "points": [
+                      "플레이어의 레벨이 액션의 레벨보다 이 값만큼 낮은 것으로 경험치가 계산됩니다(계산이 반전되어 액션의 레벨이 높을수록 더 많은 경험치를 얻을 수 있습니다)."
+                    ],
+                    "reference": "ko/editor/property?id=경험치[레벨 차이]"
+                  }
+                }
+              }
+            },
+            "options": {
+              "disable_collapse": true,
+              "infoText": "Details"
+            },
+            "title": "속성",
+            "description": "아이템이 가진 속성 효과",
+            "yutori": {
+              "points": [
+                "아이템에 설정할 수 있는 효과 항목입니다.",
+                "장비 타입이 `necessary` 또는 `consumable`인 아이템은 장착 중일 때만 효과가 적용됩니다. unnecessary`은 소지하고 있는 것만으로도 효과가 적용됩니다.",
+                "두 항목의 값은 플레이어의 레벨과 액션의 레벨 차이를 조정하는 값으로 계산됩니다.",
+                "예를 들어 공격 값이 10이면 플레이어의 레벨이 액션의 레벨보다 10 높은 것으로 공격이 계산된다. 마이너스 값은 그 반대입니다.",
+                "공격, 방어, 정확도, 회피, 회복은 `체력` 타입의 액션에서만 유효하다."
+              ],
+              "reference": "ko/editor/property"
+            }
+          }
+        }
+      },
+      "title": "아이템",
+      "description": "장비 및 소비재 등의 물품 요소",
+      "yutori": {
+        "points": [
+          "장비, 소비재, 귀중품 등 물건의 소유와 관련된 요소입니다.",
+          "카테고리 내에서 1개만 장비할 수도 있고, 장비할 수 없음으로 설정할 수도 있습니다.",
+          "변수처럼 활용하는 방법도 있습니다."
+        ],
+        "reference": "ko/editor/item"
+      }
+    },
+    "groups": {
+      "type": "array",
+      "basicCategoryTitle": "그룹",
+      "format": "tabs",
+      "options": {
+        "disable_collapse": true,
+        "infoText": "Details"
+      },
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "format": "grid",
+        "required": [
+          "id",
+          "name",
+          "explanation",
+          "icon",
+          "color"
+        ],
+        "options": {
+          "disable_collapse": true
+        },
+        "properties": {
+          "id": {
+            "type": "string",
+            "default": "",
+            "minLength": 1,
+            "maxLength": 100,
+            "pattern": "^[0-9a-zA-Z\\-]+$"
+          },
+          "name": {
+            "type": "string",
+            "maxLength": 20
+          },
+          "explanation": {
+            "type": "string"
+          },
+          "icon": {
+            "type": "object",
+            "additionalProperties": false,
+            "format": "grid",
+            "required": [
+              "emoji",
+              "iconify",
+              "image"
+            ],
+            "options": {
+              "disable_collapse": true
+            },
+            "properties": {
+              "emoji": {
+                "type": "string",
+                "options": {
+                  "grid_columns": 4
+                }
+              },
+              "iconify": {
+                "type": "string",
+                "default": "",
+                "options": {
+                  "grid_columns": 4
+                }
+              },
+              "image": {
+                "type": "string",
+                "default": "",
+                "media": {
+                  "binaryEncoding": "base64",
+                  "type": "img/png"
+                },
+                "options": {
+                  "grid_columns": 4
+                }
+              },
+              "delete": {
+                "format": "button",
+                "options": {
+                  "button": {
+                    "text": "Delete Image",
+                    "icon": "trash",
+                    "action": "deletePrevious"
+                  }
+                }
+              }
+            }
+          },
+          "color": {
+            "type": "string",
+            "default": "#000000",
+            "format": "color",
+            "pattern": "(^#[0-9a-fA-F]{6}$)|(^$)"
+          },
+          "copy": {
+            "type": "string",
+            "format": "button",
+            "options": {
+              "button": {
+                "text": "Copy Information",
+                "icon": "copy",
+                "action": "copyInformation"
+              }
+            }
+          }
+        },
+        "headerTemplate": "{{ i1 }}: {{ self.id }}"
+      },
+      "title": "그룹",
+      "description": "카테고리, 액션, 아이템의 표시 그룹 정의",
+      "yutori": {
+        "points": [
+          "표시 순서를 제어하기 위한 그룹을 정의합니다.",
+          "각 카테고리, 액션, 아이템별로 여기에서 정의한 그룹을 설정할 수 있습니다.",
+          "그룹이 같은 것은 근처에 표시됩니다.",
+          "비어있는 경우 그룹화되지 않습니다."
+        ],
+        "reference": "ko/editor/그룹"
+      }
+    },
+    "events": {
+      "type": "array",
+      "basicCategoryTitle": "이벤트",
+      "format": "tabs",
+      "options": {
+        "disable_collapse": true,
+        "infoText": "Details"
+      },
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "headerTemplate": "{{ i1 }}: {{ self.information.id }} [{{ self.timing }}]",
+        "options": {
+          "disable_collapse": true
+        },
+        "required": [
+          "information",
+          "timing",
+          "unlocked",
+          "requirements",
+          "acquisitions",
+          "group"
+        ],
+        "properties": {
+          "information": {
+            "type": "object",
+            "additionalProperties": false,
+            "format": "grid",
+            "required": [
+              "id",
+              "name",
+              "explanation",
+              "icon",
+              "color"
+            ],
+            "options": {
+              "disable_collapse": true
+            },
+            "properties": {
+              "id": {
+                "type": "string",
+                "default": "",
+                "minLength": 1,
+                "maxLength": 100,
+                "pattern": "^[0-9a-zA-Z\\-]+$"
+              },
+              "name": {
+                "type": "string",
+                "maxLength": 20
+              },
+              "explanation": {
+                "type": "string"
+              },
+              "icon": {
+                "type": "object",
+                "additionalProperties": false,
+                "format": "grid",
+                "required": [
+                  "emoji",
+                  "iconify",
+                  "image"
+                ],
+                "options": {
+                  "disable_collapse": true
+                },
+                "properties": {
+                  "emoji": {
+                    "type": "string",
+                    "options": {
+                      "grid_columns": 4
+                    }
+                  },
+                  "iconify": {
+                    "type": "string",
+                    "default": "",
+                    "options": {
+                      "grid_columns": 4
+                    }
+                  },
+                  "image": {
+                    "type": "string",
+                    "default": "",
+                    "media": {
+                      "binaryEncoding": "base64",
+                      "type": "img/png"
+                    },
+                    "options": {
+                      "grid_columns": 4
+                    }
+                  },
+                  "delete": {
+                    "format": "button",
+                    "options": {
+                      "button": {
+                        "text": "Delete Image",
+                        "icon": "trash",
+                        "action": "deletePrevious"
+                      }
+                    }
+                  }
+                }
+              },
+              "color": {
+                "type": "string",
+                "default": "#000000",
+                "format": "color",
+                "pattern": "(^#[0-9a-fA-F]{6}$)|(^$)"
+              },
+              "copy": {
+                "type": "string",
+                "format": "button",
+                "options": {
+                  "button": {
+                    "text": "Copy Information",
+                    "icon": "copy",
+                    "action": "copyInformation"
+                  }
+                }
+              }
+            }
+          },
+          "timing": {
+            "type": "string",
+            "enum": [
+              "matched",
+              "comebacked",
+              "gameovered",
+              "welcomed",
+              "completed",
+              "obtained"
+            ],
+            "default": "matched",
+            "options": {
+              "enum_titles": [
+                "Matched: When the set conditions are met",
+                "Comebacked: When the player returnss from offline",
+                "Gameovered: When the game is over due to combat",
+                "Welcomed: When the player first opens the world",
+                "Completed: When a player reaches the maximum level in all categories",
+                "Obtained: When a single action such as opening a treasure chest is completed"
+              ]
+            }
+          },
+          "unlocked": {
+            "type": "string",
+            "enum": [
+              "secreted",
+              "hidden",
+              "hinted",
+              "released"
+            ],
+            "default": "hinted",
+            "options": {
+              "enum_titles": [
+                "Secreted: Completely hidden from all UI (not even as a hint) until all requirements are met",
+                "Hidden: Fully concealed (grayed out, no name) until referenced or conditions met",
+                "Hinted: Name shown as a teaser but not operable until released (default)",
+                "Released: Unlocked and operable from the start regardless of conditions"
+              ]
+            }
+          },
+          "requirements": {
+            "type": "array",
+            "format": "table",
+            "options": {
+              "disable_collapse": true
+            },
+            "items": {
+              "type": "object",
+              "additionalProperties": false,
+              "headerTemplate": "{{ i1 }}: {{ self.id }} [ {{ self.type }} ]",
+              "format": "grid",
+              "required": [
+                "type",
+                "id",
+                "count",
+                "chance",
+                "equipment"
+              ],
+              "options": {
+                "disable_collapse": true
+              },
+              "properties": {
+                "type": {
+                  "type": "string",
+                  "enum": [
+                    "category",
+                    "action",
+                    "item"
+                  ],
+                  "default": "item"
+                },
+                "id": {
+                  "type": "string",
+                  "pattern": "^[0-9a-zA-Z\\-]+$"
+                },
+                "count": {
+                  "type": "integer",
+                  "minimum": 0,
+                  "default": 1
+                },
+                "chance": {
+                  "type": "number",
+                  "default": 0,
+                  "minimum": 0,
+                  "maximum": 1
+                },
+                "equipment": {
+                  "type": "boolean",
+                  "default": false,
+                  "format": "checkbox"
+                }
+              }
+            }
+          },
+          "acquisitions": {
+            "type": "array",
+            "format": "table",
+            "options": {
+              "disable_collapse": true
+            },
+            "items": {
+              "type": "object",
+              "additionalProperties": false,
+              "headerTemplate": "{{ i1 }}: {{ self.id }} [ {{ self.type }} ]",
+              "format": "grid",
+              "required": [
+                "id",
+                "count",
+                "chance",
+                "type"
+              ],
+              "options": {
+                "disable_collapse": true
+              },
+              "properties": {
+                "type": {
+                  "type": "string",
+                  "enum": [
+                    "category",
+                    "action",
+                    "item"
+                  ],
+                  "default": "item"
+                },
+                "id": {
+                  "type": "string",
+                  "pattern": "^[0-9a-zA-Z\\-]+$"
+                },
+                "count": {
+                  "type": "integer",
+                  "default": 1
+                },
+                "chance": {
+                  "type": "number",
+                  "default": 1,
+                  "minimum": -1,
+                  "maximum": 1
+                }
+              }
+            }
+          },
+          "group": {
+            "type": "string",
+            "pattern": "^[0-9a-zA-Z\\-]*$",
+            "default": ""
+          }
+        }
+      },
+      "title": "이벤트",
+      "description": "조건에 따라 발동하는 메시지와 보상 시스템",
+      "yutori": {
+        "points": [
+          "설정한 타이밍과 조건에 일치할 때 발동하여 메시지를 표시합니다.",
+          "최초 실행 시, 게임 오버 시, 오프라인에서 복귀 시, 특정 조건 충족 시 등에 발동시킬 수 있다.",
+          "발동 시 카테고리 레벨, 액션 실행 횟수, 아이템 소지 수 등을 변경할 수 있습니다."
+        ],
+        "reference": "ko/editor/이벤트"
+      }
+    },
+    "presets": {
+      "type": "array",
+      "basicCategoryTitle": "프리셋",
+      "format": "tabs",
+      "options": {
+        "disable_collapse": true,
+        "infoText": "Details"
+      },
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "format": "grid",
+        "required": [
+          "id",
+          "name",
+          "explanation",
+          "icon",
+          "color"
+        ],
+        "options": {
+          "disable_collapse": true
+        },
+        "properties": {
+          "id": {
+            "type": "string",
+            "default": "",
+            "minLength": 1,
+            "maxLength": 100,
+            "pattern": "^[0-9a-zA-Z\\-]+$",
+            "title": "식별 ID",
+            "options": {
+              "infoText": "요소를 식별하기 위한 고유 ID"
+            },
+            "yutori": {
+              "points": [
+                "각 요소를 고유하게 식별하기 위한 ID입니다.",
+                "에디터에서 해당 요소를 판별하기 위한 문자열입니다.",
+                "예를 들어, 액션이 완료되면 어떤 아이템을 획득할 것인지를 ID로 지정합니다."
+              ],
+              "reference": "ko/editor/preset?id=식별 ID"
+            }
+          },
+          "name": {
+            "type": "string",
+            "maxLength": 20,
+            "title": "이름",
+            "options": {
+              "infoText": "요소의 표시되는 이름"
+            },
+            "yutori": {
+              "points": [
+                "게임에서 표시되는 요소의 이름입니다.",
+                "영어 이외의 언어도 입력할 수 있습니다.",
+                "다른 요소와 중복되는 이름도 괜찮습니다.",
+                "너무 길면 플레이 중 표시에서 튀어나온 부분은 `...`로 생략됩니다."
+              ],
+              "reference": "ko/editor/preset?id=이름"
+            }
+          },
+          "explanation": {
+            "type": "string",
+            "title": "설명문",
+            "options": {
+              "infoText": "요소에 대한 자세한 설명"
+            },
+            "yutori": {
+              "points": [
+                "게임에 표시되는 요소에 대한 설명입니다.",
+                "영어 이외의 언어도 입력할 수 있습니다. 긴 문장도 모두 표시됩니다.",
+                "설명이 없음은 비워둡니다."
+              ],
+              "reference": "ko/editor/preset?id=설명문"
+            }
+          },
+          "icon": {
+            "type": "object",
+            "additionalProperties": false,
+            "format": "grid",
+            "required": [
+              "emoji",
+              "iconify",
+              "image"
+            ],
+            "options": {
+              "disable_collapse": true,
+              "infoText": "요소를 나타내는 아이콘 설정"
+            },
+            "properties": {
+              "emoji": {
+                "type": "string",
+                "options": {
+                  "grid_columns": 4,
+                  "infoText": "이모티콘으로 아이콘 표시"
+                },
+                "title": "이모티콘",
+                "yutori": {
+                  "points": [
+                    "이모티콘을 아이콘으로 표시합니다.",
+                    "문자에서 이모티콘으로 변환하여 빠르게 설정할 수 있습니다.",
+                    "이모티콘은 유니코드 이모티콘을 그대로 입력하세요.",
+                    "실행 환경에 도입된 이모티콘을 사용하기 때문에 사용자에 따라 다소 다르게 표시될 수 있습니다.",
+                    "Iconify에서는 각 환경에 구애받지 않는 이모티콘을 설정할 수 있습니다.",
+                    "이모티콘 이외의 문자를 표시할 수 있지만, 문자 수가 많으면 표시가 깨질 수 있습니다.",
+                    "예를 들어 `🗡️`, `⚔️` 등의 이모티콘을 입력합니다."
+                  ],
+                  "reference": "ko/editor/preset?id=이모티콘"
+                }
+              },
+              "iconify": {
+                "type": "string",
+                "default": "",
+                "options": {
+                  "grid_columns": 4,
+                  "infoText": "Iconify 아이콘 세트 사용"
+                },
+                "title": "Iconify",
+                "yutori": {
+                  "points": [
+                    "요소를 나타내는 아이콘입니다.",
+                    "Iconify는 다양한 종류의 아이콘을 제공하는 서비스입니다.",
+                    "이미지를 설정한 경우 해당 이미지가 우선적으로 표시됩니다."
+                  ],
+                  "reference": "ko/editor/preset?id=Iconify"
+                }
+              },
+              "image": {
+                "type": "string",
+                "default": "",
+                "media": {
+                  "binaryEncoding": "base64",
+                  "type": "img/png"
+                },
+                "options": {
+                  "grid_columns": 4,
+                  "infoText": "임의의 이미지 파일 사용"
+                },
+                "title": "이미지",
+                "yutori": {
+                  "points": [
+                    "요소를 나타내는 이미지입니다.",
+                    "파일 크기가 클 경우 자동으로 크기가 조정됩니다.",
+                    "Iconify 또는 이모티콘을 설정한 경우에는 불필요합니다."
+                  ],
+                  "reference": "ko/editor/preset?id=이미지"
+                }
+              },
+              "delete": {
+                "format": "button",
+                "options": {
+                  "button": {
+                    "text": "Delete Image",
+                    "icon": "trash",
+                    "action": "deletePrevious"
+                  }
+                }
+              }
+            },
+            "title": "아이콘",
+            "yutori": {
+              "points": [
+                "아이콘은 이미지, Iconify, 이모티콘 중 하나를 설정할 수 있다.",
+                "Iconify는 다양한 종류의 아이콘을 제공하는 서비스입니다.",
+                "이 중 여러 개를 설정한 경우, 이미지, Iconify, 이모티콘 순으로 우선순위를 지정해 표시합니다."
+              ],
+              "reference": "ko/editor/preset?id=아이콘"
+            }
+          },
+          "color": {
+            "type": "string",
+            "default": "#000000",
+            "format": "color",
+            "pattern": "(^#[0-9a-fA-F]{6}$)|(^$)",
+            "title": "색상",
+            "options": {
+              "infoText": "요소의 표시 색상 설정"
+            },
+            "yutori": {
+              "points": [
+                "요소의 색상으로 요소의 아이콘과 배경색에 적용된다.",
+                "에디터의 색상 선택기에서 선택합니다."
+              ],
+              "reference": "ko/editor/preset?id=색상"
+            }
+          },
+          "copy": {
+            "type": "string",
+            "format": "button",
+            "options": {
+              "button": {
+                "text": "Copy Information",
+                "icon": "copy",
+                "action": "copyInformation"
+              }
+            }
+          }
+        },
+        "headerTemplate": "{{ i1 }}: {{ self.id }}"
+      },
+      "title": "프리셋",
+      "description": "시스템 요소 표시 사용자 정의하기",
+      "yutori": {
+        "points": [
+          "게임 엔진(플레이어)에 미리 내장된 UI 텍스트와 아이콘을 교체합니다.",
+          "ID가 기존 프리셋과 일치하는 ID로만 대체됩니다.",
+          "설정한 항목만 대체됩니다. 예를 들어 아이콘만 설정한 경우, 이름이나 색상 등 다른 항목은 원래의 항목이 사용됩니다."
+        ],
+        "reference": "ko/editor/preset"
+      }
+    }
+  }
+}

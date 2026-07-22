@@ -1,0 +1,4462 @@
+{
+  "type": "object",
+  "format": "categories",
+  "title": "Idle RPG - Editor",
+  "basicCategoryTitle": "Idle RPG - Editor",
+  "additionalProperties": false,
+  "required": [
+    "basic",
+    "categories",
+    "actions",
+    "items",
+    "groups",
+    "events",
+    "presets"
+  ],
+  "options": {
+    "disable_collapse": true
+  },
+  "properties": {
+    "basic": {
+      "type": "object",
+      "format": "categories",
+      "basicCategoryTitle": "基本設定",
+      "additionalProperties": false,
+      "required": [
+        "overview",
+        "general",
+        "design",
+        "development"
+      ],
+      "options": {
+        "disable_collapse": true,
+        "infoText": "Details"
+      },
+      "properties": {
+        "overview": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "information",
+            "version",
+            "author",
+            "homepage",
+            "url",
+            "estimatedPlayingTime"
+          ],
+          "options": {
+            "disable_collapse": true,
+            "infoText": "Details"
+          },
+          "properties": {
+            "information": {
+              "type": "object",
+              "additionalProperties": false,
+              "format": "grid",
+              "required": [
+                "id",
+                "name",
+                "explanation",
+                "icon",
+                "color"
+              ],
+              "options": {
+                "disable_collapse": true,
+                "infoText": "Details"
+              },
+              "properties": {
+                "id": {
+                  "type": "string",
+                  "default": "",
+                  "minLength": 1,
+                  "maxLength": 100,
+                  "pattern": "^[0-9a-zA-Z\\-]+$",
+                  "title": "識別ID",
+                  "options": {
+                    "infoText": "要素を識別するための一意なID"
+                  },
+                  "yutori": {
+                    "points": [
+                      "各要素を一意に識別するためのIDです。",
+                      "エディターにおいて、その要素を判別するための文字列です。",
+                      "例えば、アクションが完了した際にどのアイテムを入手するのか、IDで指定します。"
+                    ],
+                    "reference": "ja/editor/information?id=識別ID"
+                  }
+                },
+                "name": {
+                  "type": "string",
+                  "maxLength": 20,
+                  "title": "名前",
+                  "options": {
+                    "infoText": "要素の表示される名前"
+                  },
+                  "yutori": {
+                    "points": [
+                      "ゲームで表示される要素の名前です。",
+                      "英語以外の言語も入力できます。",
+                      "他の要素と重複する名前でも大丈夫です。",
+                      "長すぎる場合はプレイ中の表示ではみ出した箇所は`…`で省略されます。"
+                    ],
+                    "reference": "ja/editor/information?id=名前"
+                  }
+                },
+                "explanation": {
+                  "type": "string",
+                  "title": "説明文",
+                  "options": {
+                    "infoText": "要素の詳細説明"
+                  },
+                  "yutori": {
+                    "points": [
+                      "ゲームで表示される要素の説明文です。",
+                      "英語以外の言語も入力できます。長い文章でもすべて表示されます。",
+                      "説明がない場合は空欄にします。"
+                    ],
+                    "reference": "ja/editor/information?id=説明文"
+                  }
+                },
+                "icon": {
+                  "type": "object",
+                  "additionalProperties": false,
+                  "format": "grid",
+                  "required": [
+                    "emoji",
+                    "iconify",
+                    "image"
+                  ],
+                  "options": {
+                    "disable_collapse": true,
+                    "infoText": "要素を表すアイコンの設定"
+                  },
+                  "properties": {
+                    "emoji": {
+                      "type": "string",
+                      "options": {
+                        "grid_columns": 4,
+                        "infoText": "絵文字によるアイコン表示"
+                      },
+                      "title": "絵文字",
+                      "yutori": {
+                        "points": [
+                          "絵文字をアイコンとして表示します。",
+                          "文字から絵文字に変換して手早く設定することができます。",
+                          "絵文字は、Unicodeの絵文字をそのまま入力してください。",
+                          "実行環境に導入されている絵文字が使用されるため、ユーザーにより多少表示が異なります。",
+                          "Iconifyでは各環境に依存しない絵文字を設定することができます",
+                          "絵文字以外の文字を表示することができますが、文字が複数あると表示が崩れる可能性があります。",
+                          "例えば、`🗡️`や`⚔️`などの絵文字を入力します。"
+                        ],
+                        "reference": "ja/editor/information?id=絵文字"
+                      }
+                    },
+                    "iconify": {
+                      "type": "string",
+                      "default": "",
+                      "options": {
+                        "grid_columns": 4,
+                        "infoText": "Iconifyアイコンセットの使用"
+                      },
+                      "title": "Iconify",
+                      "yutori": {
+                        "points": [
+                          "要素を表すアイコンです。",
+                          "Iconifyとは様々な種類のアイコンを提供するサービスです。",
+                          "画像を設定した場合はそれが優先して表示されます。"
+                        ],
+                        "reference": "ja/editor/information?id=Iconify"
+                      }
+                    },
+                    "image": {
+                      "type": "string",
+                      "default": "",
+                      "media": {
+                        "binaryEncoding": "base64",
+                        "type": "img/png"
+                      },
+                      "options": {
+                        "grid_columns": 4,
+                        "infoText": "任意の画像ファイルを使用"
+                      },
+                      "title": "画像",
+                      "yutori": {
+                        "points": [
+                          "要素を表す画像です。",
+                          "ファイルサイズが大きい場合は自動的にリサイズされます。",
+                          "Iconify又は絵文字を設定した場合は不要です。"
+                        ],
+                        "reference": "ja/editor/information?id=画像"
+                      }
+                    },
+                    "delete": {
+                      "format": "button",
+                      "options": {
+                        "button": {
+                          "text": "Delete Image",
+                          "icon": "trash",
+                          "action": "deletePrevious"
+                        }
+                      }
+                    }
+                  },
+                  "title": "アイコン",
+                  "yutori": {
+                    "points": [
+                      "アイコンは、画像、Iconify、絵文字のいずれかを設定できます。",
+                      "Iconifyとは様々な種類のアイコンを提供するサービスです。",
+                      "これらのうち複数設定した場合は、画像、Iconify、絵文字の順に優先され表示されます。"
+                    ],
+                    "reference": "ja/editor/information?id=アイコン"
+                  }
+                },
+                "color": {
+                  "type": "string",
+                  "default": "#000000",
+                  "format": "color",
+                  "pattern": "(^#[0-9a-fA-F]{6}$)|(^$)",
+                  "title": "色",
+                  "options": {
+                    "infoText": "要素の表示色の設定"
+                  },
+                  "yutori": {
+                    "points": [
+                      "要素の色として、要素のアイコンと背景色に適応されます。",
+                      "エディターのカラーピッカーから選択します。"
+                    ],
+                    "reference": "ja/editor/information?id=色"
+                  }
+                },
+                "copy": {
+                  "type": "string",
+                  "format": "button",
+                  "options": {
+                    "button": {
+                      "text": "Copy Information",
+                      "icon": "copy",
+                      "action": "copyInformation"
+                    }
+                  }
+                }
+              },
+              "title": "インフォメーション",
+              "description": "要素の基本情報（ID、名前、アイコン、色など）の設定",
+              "yutori": {
+                "points": [
+                  "ワールド内の各要素（カテゴリー、アクション、アイテム、イベントなど）に共通する基本情報の項目です。",
+                  "それぞれの要素ごとに個別に設定します。"
+                ],
+                "reference": "ja/editor/information"
+              }
+            },
+            "version": {
+              "type": "number",
+              "default": 0,
+              "minimum": 0,
+              "title": "バージョン",
+              "options": {
+                "infoText": "ワールドのバージョン番号"
+              },
+              "yutori": {
+                "points": [
+                  "任意の数値（整数または小数点）を入力してください。",
+                  "一般的には整数部分はメジャーバージョン、少数部分はマイナーバージョンを表します。"
+                ],
+                "reference": "ja/editor/overview?id=バージョン"
+              }
+            },
+            "author": {
+              "type": "string",
+              "minLength": 3,
+              "maxLength": 20,
+              "pattern": "^[A-Za-z0-9 !?.,-]+$",
+              "title": "製作者名",
+              "options": {
+                "infoText": "ワールド制作者の名前"
+              },
+              "yutori": {
+                "points": [
+                  "ハンドルネームやニックネームを入力してください。"
+                ],
+                "reference": "ja/editor/overview?id=製作者名"
+              }
+            },
+            "homepage": {
+              "type": "string",
+              "default": "https://",
+              "format": "url",
+              "minLength": 0,
+              "title": "ホームページ",
+              "options": {
+                "infoText": "製作者のウェブサイトURL"
+              },
+              "yutori": {
+                "points": [
+                  "自分のホームページやSNSがある場合はそのURLを入力してください。",
+                  "プレイヤーはリンクにより、このURLを確認することができます。",
+                  "該当がない場合は空欄としてください。"
+                ],
+                "reference": "ja/editor/overview?id=ホームページ"
+              }
+            },
+            "url": {
+              "type": "string",
+              "default": "https://",
+              "format": "url",
+              "minLength": 0,
+              "title": "URL",
+              "options": {
+                "infoText": "ゲームのURL"
+              },
+              "yutori": {
+                "points": [
+                  "このワールドのゲームを配置するURLを入力してください。",
+                  "index.htmlのようなトップページのURLをドメインを含めて入力してください。",
+                  "適切なURLが記載されている場合はPWAとして動作します。",
+                  "PWAとは、インストールしてオフラインでも遊べるアプリのように動作する機能です。"
+                ],
+                "reference": "ja/editor/overview?id=URL"
+              }
+            },
+            "estimatedPlayingTime": {
+              "type": "object",
+              "additionalProperties": false,
+              "format": "grid",
+              "required": [
+                "value",
+                "unit"
+              ],
+              "options": {
+                "disable_collapse": true,
+                "infoText": "ワールドプレイ完了までの目安時間"
+              },
+              "properties": {
+                "value": {
+                  "type": "integer",
+                  "default": 1,
+                  "minimum": 1,
+                  "title": "値",
+                  "options": {
+                    "infoText": "プレイ時間の数値"
+                  },
+                  "yutori": {
+                    "reference": "ja/editor/overview?id=値"
+                  }
+                },
+                "unit": {
+                  "type": "string",
+                  "enum": [
+                    "seconds",
+                    "minutes",
+                    "hours",
+                    "days",
+                    "years",
+                    "centuries",
+                    "endless"
+                  ],
+                  "default": "days",
+                  "title": "単位",
+                  "options": {
+                    "infoText": "時間の単位（時間、分など）"
+                  },
+                  "yutori": {
+                    "reference": "ja/editor/overview?id=単位"
+                  }
+                }
+              },
+              "title": "推定プレイ時間",
+              "yutori": {
+                "points": [
+                  "ワールドのプレイを完結するのに必要な推定されるプレイ時間です。",
+                  "プレイヤーが遊ぶ際の目安として確認できます。",
+                  "あくまで参考の時間であり、何をワールドの完結とするかの明確な定義はありません。"
+                ],
+                "reference": "ja/editor/overview?id=推定プレイ時間"
+              }
+            }
+          },
+          "title": "概要",
+          "description": "ワールドの基本情報と製作者情報",
+          "yutori": {
+            "points": [
+              "ワールドの内容を説明する項目です。",
+              "ユーザーがワールドを選ぶ際にわかりやすいように設定してください。",
+              "これらの設定はワールドの動作には影響しません。"
+            ],
+            "reference": "ja/editor/overview"
+          }
+        },
+        "general": {
+          "type": "object",
+          "additionalProperties": false,
+          "format": "grid",
+          "required": [
+            "offlineMaxHours",
+            "maxCategoryLevels",
+            "levelCommonRatio",
+            "language",
+            "translations",
+            "coins",
+            "capacity",
+            "queue",
+            "actionLevelLimit",
+            "defaultCombat"
+          ],
+          "options": {
+            "disable_collapse": true,
+            "infoText": "Details"
+          },
+          "properties": {
+            "offlineMaxHours": {
+              "type": "integer",
+              "default": 24,
+              "minimum": 0,
+              "maximum": 24,
+              "propertyOrder": 100,
+              "title": "最大オフライン時間[時間]",
+              "options": {
+                "infoText": "オフライン進行の時間制限"
+              },
+              "yutori": {
+                "points": [
+                  "オフライン時の進行を最大何時間とするか設定します。",
+                  "例えば６時間とした場合は、６時間までのオフライン復帰のプロセスが処理されますが、それ以上の時間を空けてオフライン復帰してもオフライン時間は６時間として扱われます。",
+                  "０時間にした場合は、オフライン復帰時のプロセス処理は全く行われません。",
+                  "最大値は24時間です。"
+                ],
+                "reference": "ja/editor/general?id=最大オフライン時間[時間]"
+              }
+            },
+            "maxCategoryLevels": {
+              "type": "integer",
+              "default": 100,
+              "minimum": 1,
+              "propertyOrder": 101,
+              "title": "カテゴリーの最大レベル",
+              "options": {
+                "infoText": "各カテゴリーのレベル上限"
+              },
+              "yutori": {
+                "points": [
+                  "各カテゴリーの最大レベルを設定します。",
+                  "このレベルを超えて経験値を獲得した場合、各プロパティの計算にはここで設定する最大レベルが使われます。",
+                  "レベルのないカテゴリーではこの値は関係ありません。"
+                ],
+                "reference": "ja/editor/general?id=カテゴリーの最大レベル"
+              }
+            },
+            "actionLevelLimit": {
+              "type": "boolean",
+              "default": false,
+              "format": "checkbox",
+              "propertyOrder": 103,
+              "title": "アクションレベル制限",
+              "options": {
+                "infoText": "アクションの実行に同属性アクションの実行回数を要求"
+              },
+              "yutori": {
+                "points": [
+                  "有効の場合、各アクションの実行条件に同じ属性を持つアクションの実行回数が自動的に追加されます。",
+                  "必要回数はアクションのレベル値と同じです。",
+                  "属性が設定されていない場合は、所属するカテゴリーのIDが使用されます。"
+                ],
+                "reference": "ja/editor/general?id=アクションレベル制限"
+              }
+            },
+            "levelCommonRatio": {
+              "type": "number",
+              "default": 1.05,
+              "minimum": 1,
+              "propertyOrder": 104,
+              "title": "経験値の上昇率[倍]",
+              "options": {
+                "infoText": "レベルアップ難易度の増加率"
+              },
+              "yutori": {
+                "points": [
+                  "カテゴリーのレベルが上がるにつれて、次のレベルになるのに必要な経験値の上昇率です。",
+                  "この値を大きくすると難易度が上がります。",
+                  "次のレベルになるのに必要な経験値は(経験値の上昇率)^(現在のレベル-1)です。"
+                ],
+                "reference": "ja/editor/general?id=経験値の上昇率[倍]"
+              }
+            },
+            "language": {
+              "type": "string",
+              "default": "en",
+              "enum": [
+                "en",
+                "zh",
+                "es",
+                "pt",
+                "fr",
+                "ru",
+                "de",
+                "ja",
+                "id",
+                "ko"
+              ],
+              "propertyOrder": 106,
+              "title": "言語",
+              "options": {
+                "infoText": "ワールドの制作時の言語"
+              },
+              "yutori": {
+                "points": [
+                  "このワールドエディターで使用する言語を設定します。",
+                  "ユーザーがゲームを始めた時に最初に表示される言語です。"
+                ],
+                "reference": "ja/editor/general?id=言語"
+              }
+            },
+            "translations": {
+              "type": "boolean",
+              "default": false,
+              "format": "checkbox",
+              "propertyOrder": 107,
+              "title": "翻訳",
+              "options": {
+                "infoText": "多言語対応の翻訳を用意するか"
+              },
+              "yutori": {
+                "points": [
+                  "有効の場合は、ユーザーが任意の言語でプレイすることができます。",
+                  "無効の場合は、言語設定で選択した言語のみでプレイできます。",
+                  "翻訳を有効とする場合は、各言語の翻訳データを用意する必要があります。"
+                ],
+                "reference": "ja/editor/general?id=翻訳"
+              }
+            },
+            "coins": {
+              "type": "array",
+              "minItems": 1,
+              "format": "tabs",
+              "options": {
+                "disable_collapse": true,
+                "infoText": "ゲーム内で使用する通貨（コイン）の設定"
+              },
+              "items": {
+                "type": "object",
+                "additionalProperties": false,
+                "format": "grid",
+                "required": [
+                  "id",
+                  "name",
+                  "explanation",
+                  "icon",
+                  "color"
+                ],
+                "options": {
+                  "disable_collapse": true
+                },
+                "properties": {
+                  "id": {
+                    "type": "string",
+                    "default": "",
+                    "minLength": 1,
+                    "maxLength": 100,
+                    "pattern": "^[0-9a-zA-Z\\-]+$"
+                  },
+                  "name": {
+                    "type": "string",
+                    "maxLength": 20
+                  },
+                  "explanation": {
+                    "type": "string"
+                  },
+                  "icon": {
+                    "type": "object",
+                    "additionalProperties": false,
+                    "format": "grid",
+                    "required": [
+                      "emoji",
+                      "iconify",
+                      "image"
+                    ],
+                    "options": {
+                      "disable_collapse": true
+                    },
+                    "properties": {
+                      "emoji": {
+                        "type": "string",
+                        "options": {
+                          "grid_columns": 4
+                        }
+                      },
+                      "iconify": {
+                        "type": "string",
+                        "default": "",
+                        "options": {
+                          "grid_columns": 4
+                        }
+                      },
+                      "image": {
+                        "type": "string",
+                        "default": "",
+                        "media": {
+                          "binaryEncoding": "base64",
+                          "type": "img/png"
+                        },
+                        "options": {
+                          "grid_columns": 4
+                        }
+                      },
+                      "delete": {
+                        "format": "button",
+                        "options": {
+                          "button": {
+                            "text": "Delete Image",
+                            "icon": "trash",
+                            "action": "deletePrevious"
+                          }
+                        }
+                      }
+                    }
+                  },
+                  "color": {
+                    "type": "string",
+                    "default": "#000000",
+                    "format": "color",
+                    "pattern": "(^#[0-9a-fA-F]{6}$)|(^$)"
+                  },
+                  "copy": {
+                    "type": "string",
+                    "format": "button",
+                    "options": {
+                      "button": {
+                        "text": "Copy Information",
+                        "icon": "copy",
+                        "action": "copyInformation"
+                      }
+                    }
+                  }
+                },
+                "headerTemplate": "{{ i1 }}: {{ self.id }}"
+              },
+              "propertyOrder": 200,
+              "title": "通貨",
+              "yutori": {
+                "points": [
+                  "ゲーム内で使用される通貨を設定します。",
+                  "通貨は複数定義することができ、それぞれをインフォメーション（ID・名前・アイコン・色など）として設定します。",
+                  "通貨はアイテムの売買や、インベントリ容量の拡張に使用されます。",
+                  "先頭の通貨がメイン通貨として扱われ、アイテムや容量で通貨ID（`coinId`）が指定されていない場合に使用されます。"
+                ],
+                "reference": "ja/editor/general?id=通貨"
+              }
+            },
+            "capacity": {
+              "type": "object",
+              "additionalProperties": false,
+              "format": "grid",
+              "required": [
+                "information",
+                "increasingRate",
+                "initialCost",
+                "initialCount",
+                "coinId",
+                "buyingLimit"
+              ],
+              "options": {
+                "disable_collapse": true,
+                "infoText": "インベントリの容量設定"
+              },
+              "properties": {
+                "information": {
+                  "type": "object",
+                  "additionalProperties": false,
+                  "format": "grid",
+                  "required": [
+                    "id",
+                    "name",
+                    "explanation",
+                    "icon",
+                    "color"
+                  ],
+                  "options": {
+                    "disable_collapse": true,
+                    "infoText": "Details"
+                  },
+                  "properties": {
+                    "id": {
+                      "type": "string",
+                      "default": "",
+                      "minLength": 1,
+                      "maxLength": 100,
+                      "pattern": "^[0-9a-zA-Z\\-]+$",
+                      "title": "識別ID",
+                      "options": {
+                        "infoText": "要素を識別するための一意なID"
+                      },
+                      "yutori": {
+                        "points": [
+                          "各要素を一意に識別するためのIDです。",
+                          "エディターにおいて、その要素を判別するための文字列です。",
+                          "例えば、アクションが完了した際にどのアイテムを入手するのか、IDで指定します。"
+                        ],
+                        "reference": "ja/editor/information?id=識別ID"
+                      }
+                    },
+                    "name": {
+                      "type": "string",
+                      "maxLength": 20,
+                      "title": "名前",
+                      "options": {
+                        "infoText": "要素の表示される名前"
+                      },
+                      "yutori": {
+                        "points": [
+                          "ゲームで表示される要素の名前です。",
+                          "英語以外の言語も入力できます。",
+                          "他の要素と重複する名前でも大丈夫です。",
+                          "長すぎる場合はプレイ中の表示ではみ出した箇所は`…`で省略されます。"
+                        ],
+                        "reference": "ja/editor/information?id=名前"
+                      }
+                    },
+                    "explanation": {
+                      "type": "string",
+                      "title": "説明文",
+                      "options": {
+                        "infoText": "要素の詳細説明"
+                      },
+                      "yutori": {
+                        "points": [
+                          "ゲームで表示される要素の説明文です。",
+                          "英語以外の言語も入力できます。長い文章でもすべて表示されます。",
+                          "説明がない場合は空欄にします。"
+                        ],
+                        "reference": "ja/editor/information?id=説明文"
+                      }
+                    },
+                    "icon": {
+                      "type": "object",
+                      "additionalProperties": false,
+                      "format": "grid",
+                      "required": [
+                        "emoji",
+                        "iconify",
+                        "image"
+                      ],
+                      "options": {
+                        "disable_collapse": true,
+                        "infoText": "要素を表すアイコンの設定"
+                      },
+                      "properties": {
+                        "emoji": {
+                          "type": "string",
+                          "options": {
+                            "grid_columns": 4,
+                            "infoText": "絵文字によるアイコン表示"
+                          },
+                          "title": "絵文字",
+                          "yutori": {
+                            "points": [
+                              "絵文字をアイコンとして表示します。",
+                              "文字から絵文字に変換して手早く設定することができます。",
+                              "絵文字は、Unicodeの絵文字をそのまま入力してください。",
+                              "実行環境に導入されている絵文字が使用されるため、ユーザーにより多少表示が異なります。",
+                              "Iconifyでは各環境に依存しない絵文字を設定することができます",
+                              "絵文字以外の文字を表示することができますが、文字が複数あると表示が崩れる可能性があります。",
+                              "例えば、`🗡️`や`⚔️`などの絵文字を入力します。"
+                            ],
+                            "reference": "ja/editor/information?id=絵文字"
+                          }
+                        },
+                        "iconify": {
+                          "type": "string",
+                          "default": "",
+                          "options": {
+                            "grid_columns": 4,
+                            "infoText": "Iconifyアイコンセットの使用"
+                          },
+                          "title": "Iconify",
+                          "yutori": {
+                            "points": [
+                              "要素を表すアイコンです。",
+                              "Iconifyとは様々な種類のアイコンを提供するサービスです。",
+                              "画像を設定した場合はそれが優先して表示されます。"
+                            ],
+                            "reference": "ja/editor/information?id=Iconify"
+                          }
+                        },
+                        "image": {
+                          "type": "string",
+                          "default": "",
+                          "media": {
+                            "binaryEncoding": "base64",
+                            "type": "img/png"
+                          },
+                          "options": {
+                            "grid_columns": 4,
+                            "infoText": "任意の画像ファイルを使用"
+                          },
+                          "title": "画像",
+                          "yutori": {
+                            "points": [
+                              "要素を表す画像です。",
+                              "ファイルサイズが大きい場合は自動的にリサイズされます。",
+                              "Iconify又は絵文字を設定した場合は不要です。"
+                            ],
+                            "reference": "ja/editor/information?id=画像"
+                          }
+                        },
+                        "delete": {
+                          "format": "button",
+                          "options": {
+                            "button": {
+                              "text": "Delete Image",
+                              "icon": "trash",
+                              "action": "deletePrevious"
+                            }
+                          }
+                        }
+                      },
+                      "title": "アイコン",
+                      "yutori": {
+                        "points": [
+                          "アイコンは、画像、Iconify、絵文字のいずれかを設定できます。",
+                          "Iconifyとは様々な種類のアイコンを提供するサービスです。",
+                          "これらのうち複数設定した場合は、画像、Iconify、絵文字の順に優先され表示されます。"
+                        ],
+                        "reference": "ja/editor/information?id=アイコン"
+                      }
+                    },
+                    "color": {
+                      "type": "string",
+                      "default": "#000000",
+                      "format": "color",
+                      "pattern": "(^#[0-9a-fA-F]{6}$)|(^$)",
+                      "title": "色",
+                      "options": {
+                        "infoText": "要素の表示色の設定"
+                      },
+                      "yutori": {
+                        "points": [
+                          "要素の色として、要素のアイコンと背景色に適応されます。",
+                          "エディターのカラーピッカーから選択します。"
+                        ],
+                        "reference": "ja/editor/information?id=色"
+                      }
+                    },
+                    "copy": {
+                      "type": "string",
+                      "format": "button",
+                      "options": {
+                        "button": {
+                          "text": "Copy Information",
+                          "icon": "copy",
+                          "action": "copyInformation"
+                        }
+                      }
+                    }
+                  },
+                  "title": "インフォメーション",
+                  "description": "要素の基本情報（ID、名前、アイコン、色など）の設定",
+                  "yutori": {
+                    "points": [
+                      "ワールド内の各要素（カテゴリー、アクション、アイテム、イベントなど）に共通する基本情報の項目です。",
+                      "それぞれの要素ごとに個別に設定します。"
+                    ],
+                    "reference": "ja/editor/information"
+                  }
+                },
+                "initialCount": {
+                  "type": "integer",
+                  "default": 10,
+                  "minimum": 0,
+                  "title": "初期値[個]",
+                  "options": {
+                    "infoText": "初期インベントリ容量（所持できるアイテムの種類数）"
+                  },
+                  "yutori": {
+                    "points": [
+                      "ゲーム開始時の初期容量（所持できるアイテムの種類数）です。",
+                      "`0`にすると容量は無制限になります。"
+                    ],
+                    "reference": "ja/editor/general?id=初期値[個]"
+                  }
+                },
+                "initialCost": {
+                  "type": "integer",
+                  "default": 100,
+                  "minimum": 1,
+                  "title": "基本価格[コイン]",
+                  "options": {
+                    "infoText": "容量を1つ増やすための初期価格"
+                  },
+                  "yutori": {
+                    "points": [
+                      "インベントリ容量を1スロット増やすための基本価格（コイン）です。",
+                      "実際の価格は「基本価格 × 増加率^購入済み回数」で計算されます。",
+                      "例：基本価格100、増加率1.2の場合、1回目100コイン、2回目120コイン、3回目144コインとなります。"
+                    ],
+                    "reference": "ja/editor/general?id=基本価格[コイン]"
+                  }
+                },
+                "increasingRate": {
+                  "type": "number",
+                  "default": 1.2,
+                  "minimum": 1,
+                  "title": "増加率[倍]",
+                  "options": {
+                    "infoText": "容量拡張コストの増加率"
+                  },
+                  "yutori": {
+                    "points": [
+                      "容量拡張のコストがn回目の購入でどれだけ増加するかの倍率です。",
+                      "`1.0`の場合は常に同じ価格、`1.2`の場合は購入するたびに20%ずつ高くなります。",
+                      "計算式：基本価格 × 増加率^購入済み回数"
+                    ],
+                    "reference": "ja/editor/general?id=増加率[倍]"
+                  }
+                },
+                "coinId": {
+                  "type": "string",
+                  "default": "",
+                  "pattern": "^[0-9a-zA-Z\\-]*$",
+                  "title": "通貨ID",
+                  "options": {
+                    "infoText": "容量拡張に使う通貨のID"
+                  },
+                  "yutori": {
+                    "points": [
+                      "インベントリ容量の拡張価格に使う通貨（coins）のIDを指定します。",
+                      "空欄の場合はメイン通貨（coinsの先頭）が使われます。"
+                    ],
+                    "reference": "ja/editor/general?id=通貨ID"
+                  }
+                },
+                "buyingLimit": {
+                  "type": "integer",
+                  "default": 0,
+                  "minimum": -1,
+                  "title": "購入上限[回]",
+                  "options": {
+                    "infoText": "容量を購入できる最大回数"
+                  },
+                  "yutori": {
+                    "points": [
+                      "容量を通貨で購入できる回数の上限です。",
+                      "`0`にすると無制限に購入できます。",
+                      "`-1`にすると購入できなくなります。",
+                      "報酬による容量の増加はこの上限の対象外です。"
+                    ],
+                    "reference": "ja/editor/general?id=購入上限[回]"
+                  }
+                }
+              },
+              "propertyOrder": 201,
+              "title": "容量",
+              "yutori": {
+                "points": [
+                  "プレイヤーが所持できるアイテムの種類数の上限を管理します。",
+                  "各アイテムの所有数ではなく、所持しているアイテムの種類数で管理されます。",
+                  "`initialCount`を0にすると容量は無制限になります。",
+                  "条件や報酬で容量のアイテムを参照する場合は、ここで設定したIDを使用してください。"
+                ],
+                "reference": "ja/editor/general?id=容量"
+              }
+            },
+            "queue": {
+              "type": "object",
+              "additionalProperties": false,
+              "format": "grid",
+              "required": [
+                "information",
+                "increasingRate",
+                "initialCost",
+                "initialCount",
+                "coinId",
+                "buyingLimit"
+              ],
+              "options": {
+                "disable_collapse": true,
+                "infoText": "アクションの連続実行（予約）の枠数設定"
+              },
+              "properties": {
+                "information": {
+                  "type": "object",
+                  "additionalProperties": false,
+                  "format": "grid",
+                  "required": [
+                    "id",
+                    "name",
+                    "explanation",
+                    "icon",
+                    "color"
+                  ],
+                  "options": {
+                    "disable_collapse": true,
+                    "infoText": "Details"
+                  },
+                  "properties": {
+                    "id": {
+                      "type": "string",
+                      "default": "",
+                      "minLength": 1,
+                      "maxLength": 100,
+                      "pattern": "^[0-9a-zA-Z\\-]+$",
+                      "title": "識別ID",
+                      "options": {
+                        "infoText": "要素を識別するための一意なID"
+                      },
+                      "yutori": {
+                        "points": [
+                          "各要素を一意に識別するためのIDです。",
+                          "エディターにおいて、その要素を判別するための文字列です。",
+                          "例えば、アクションが完了した際にどのアイテムを入手するのか、IDで指定します。"
+                        ],
+                        "reference": "ja/editor/information?id=識別ID"
+                      }
+                    },
+                    "name": {
+                      "type": "string",
+                      "maxLength": 20,
+                      "title": "名前",
+                      "options": {
+                        "infoText": "要素の表示される名前"
+                      },
+                      "yutori": {
+                        "points": [
+                          "ゲームで表示される要素の名前です。",
+                          "英語以外の言語も入力できます。",
+                          "他の要素と重複する名前でも大丈夫です。",
+                          "長すぎる場合はプレイ中の表示ではみ出した箇所は`…`で省略されます。"
+                        ],
+                        "reference": "ja/editor/information?id=名前"
+                      }
+                    },
+                    "explanation": {
+                      "type": "string",
+                      "title": "説明文",
+                      "options": {
+                        "infoText": "要素の詳細説明"
+                      },
+                      "yutori": {
+                        "points": [
+                          "ゲームで表示される要素の説明文です。",
+                          "英語以外の言語も入力できます。長い文章でもすべて表示されます。",
+                          "説明がない場合は空欄にします。"
+                        ],
+                        "reference": "ja/editor/information?id=説明文"
+                      }
+                    },
+                    "icon": {
+                      "type": "object",
+                      "additionalProperties": false,
+                      "format": "grid",
+                      "required": [
+                        "emoji",
+                        "iconify",
+                        "image"
+                      ],
+                      "options": {
+                        "disable_collapse": true,
+                        "infoText": "要素を表すアイコンの設定"
+                      },
+                      "properties": {
+                        "emoji": {
+                          "type": "string",
+                          "options": {
+                            "grid_columns": 4,
+                            "infoText": "絵文字によるアイコン表示"
+                          },
+                          "title": "絵文字",
+                          "yutori": {
+                            "points": [
+                              "絵文字をアイコンとして表示します。",
+                              "文字から絵文字に変換して手早く設定することができます。",
+                              "絵文字は、Unicodeの絵文字をそのまま入力してください。",
+                              "実行環境に導入されている絵文字が使用されるため、ユーザーにより多少表示が異なります。",
+                              "Iconifyでは各環境に依存しない絵文字を設定することができます",
+                              "絵文字以外の文字を表示することができますが、文字が複数あると表示が崩れる可能性があります。",
+                              "例えば、`🗡️`や`⚔️`などの絵文字を入力します。"
+                            ],
+                            "reference": "ja/editor/information?id=絵文字"
+                          }
+                        },
+                        "iconify": {
+                          "type": "string",
+                          "default": "",
+                          "options": {
+                            "grid_columns": 4,
+                            "infoText": "Iconifyアイコンセットの使用"
+                          },
+                          "title": "Iconify",
+                          "yutori": {
+                            "points": [
+                              "要素を表すアイコンです。",
+                              "Iconifyとは様々な種類のアイコンを提供するサービスです。",
+                              "画像を設定した場合はそれが優先して表示されます。"
+                            ],
+                            "reference": "ja/editor/information?id=Iconify"
+                          }
+                        },
+                        "image": {
+                          "type": "string",
+                          "default": "",
+                          "media": {
+                            "binaryEncoding": "base64",
+                            "type": "img/png"
+                          },
+                          "options": {
+                            "grid_columns": 4,
+                            "infoText": "任意の画像ファイルを使用"
+                          },
+                          "title": "画像",
+                          "yutori": {
+                            "points": [
+                              "要素を表す画像です。",
+                              "ファイルサイズが大きい場合は自動的にリサイズされます。",
+                              "Iconify又は絵文字を設定した場合は不要です。"
+                            ],
+                            "reference": "ja/editor/information?id=画像"
+                          }
+                        },
+                        "delete": {
+                          "format": "button",
+                          "options": {
+                            "button": {
+                              "text": "Delete Image",
+                              "icon": "trash",
+                              "action": "deletePrevious"
+                            }
+                          }
+                        }
+                      },
+                      "title": "アイコン",
+                      "yutori": {
+                        "points": [
+                          "アイコンは、画像、Iconify、絵文字のいずれかを設定できます。",
+                          "Iconifyとは様々な種類のアイコンを提供するサービスです。",
+                          "これらのうち複数設定した場合は、画像、Iconify、絵文字の順に優先され表示されます。"
+                        ],
+                        "reference": "ja/editor/information?id=アイコン"
+                      }
+                    },
+                    "color": {
+                      "type": "string",
+                      "default": "#000000",
+                      "format": "color",
+                      "pattern": "(^#[0-9a-fA-F]{6}$)|(^$)",
+                      "title": "色",
+                      "options": {
+                        "infoText": "要素の表示色の設定"
+                      },
+                      "yutori": {
+                        "points": [
+                          "要素の色として、要素のアイコンと背景色に適応されます。",
+                          "エディターのカラーピッカーから選択します。"
+                        ],
+                        "reference": "ja/editor/information?id=色"
+                      }
+                    },
+                    "copy": {
+                      "type": "string",
+                      "format": "button",
+                      "options": {
+                        "button": {
+                          "text": "Copy Information",
+                          "icon": "copy",
+                          "action": "copyInformation"
+                        }
+                      }
+                    }
+                  },
+                  "title": "インフォメーション",
+                  "description": "要素の基本情報（ID、名前、アイコン、色など）の設定",
+                  "yutori": {
+                    "points": [
+                      "ワールド内の各要素（カテゴリー、アクション、アイテム、イベントなど）に共通する基本情報の項目です。",
+                      "それぞれの要素ごとに個別に設定します。"
+                    ],
+                    "reference": "ja/editor/information"
+                  }
+                },
+                "initialCount": {
+                  "type": "integer",
+                  "default": 1,
+                  "minimum": 1,
+                  "title": "初期値[個]",
+                  "options": {
+                    "infoText": "ゲーム開始時の連続実行の枠数"
+                  },
+                  "yutori": {
+                    "points": [
+                      "ゲーム開始時の予約枠数です。",
+                      "最小値は`1`です（容量のような`0`=無制限の扱いはありません）。"
+                    ],
+                    "reference": "ja/editor/general?id=初期値[個]"
+                  }
+                },
+                "initialCost": {
+                  "type": "integer",
+                  "default": 100,
+                  "minimum": 1,
+                  "title": "基本価格[コイン]",
+                  "options": {
+                    "infoText": "枠を1つ増やすための初期価格"
+                  },
+                  "yutori": {
+                    "points": [
+                      "連続実行の枠を1つ増やすための基本価格（コイン）です。",
+                      "実際の価格は「基本価格 × 増加率^購入済み回数」で計算されます。",
+                      "例：基本価格100、増加率1.2の場合、1回目100コイン、2回目120コイン、3回目144コインとなります。"
+                    ],
+                    "reference": "ja/editor/general?id=基本価格[コイン]"
+                  }
+                },
+                "increasingRate": {
+                  "type": "number",
+                  "default": 1.2,
+                  "minimum": 1,
+                  "title": "増加率[倍]",
+                  "options": {
+                    "infoText": "枠拡張コストの増加率"
+                  },
+                  "yutori": {
+                    "points": [
+                      "枠拡張のコストがn回目の購入でどれだけ増加するかの倍率です。",
+                      "`1.0`の場合は常に同じ価格、`1.2`の場合は購入するたびに20%ずつ高くなります。",
+                      "計算式：基本価格 × 増加率^購入済み回数"
+                    ],
+                    "reference": "ja/editor/general?id=増加率[倍]"
+                  }
+                },
+                "coinId": {
+                  "type": "string",
+                  "default": "",
+                  "pattern": "^[0-9a-zA-Z\\-]*$",
+                  "title": "通貨ID",
+                  "options": {
+                    "infoText": "枠拡張に使う通貨のID"
+                  },
+                  "yutori": {
+                    "points": [
+                      "連続実行の枠の拡張価格に使う通貨（coins）のIDを指定します。",
+                      "空欄の場合はメイン通貨（coinsの先頭）が使われます。"
+                    ],
+                    "reference": "ja/editor/general?id=通貨ID"
+                  }
+                },
+                "buyingLimit": {
+                  "type": "integer",
+                  "default": 0,
+                  "minimum": -1,
+                  "title": "購入上限[回]",
+                  "options": {
+                    "infoText": "枠を購入できる最大回数"
+                  },
+                  "yutori": {
+                    "points": [
+                      "連続実行の枠を通貨で購入できる回数の上限です。",
+                      "`0`にすると無制限に購入できます。",
+                      "`-1`にすると購入できなくなります。",
+                      "報酬による枠の増加はこの上限の対象外です。"
+                    ],
+                    "reference": "ja/editor/general?id=購入上限[回]"
+                  }
+                }
+              },
+              "propertyOrder": 202,
+              "title": "キュー",
+              "yutori": {
+                "points": [
+                  "アクションを連続実行（予約）するための枠数を管理します。",
+                  "枠数は容量と同様に通貨で購入できるほか、アクションやイベントの報酬でキューのアイテムを指定して増やすこともできます。",
+                  "条件や報酬でキューのアイテムを参照する場合は、ここで設定したIDを使用してください。"
+                ],
+                "reference": "ja/editor/general?id=キュー"
+              }
+            },
+            "defaultCombat": {
+              "type": "object",
+              "additionalProperties": false,
+              "format": "grid",
+              "required": [
+                "attack",
+                "defence",
+                "accuracy",
+                "evasion"
+              ],
+              "options": {
+                "disable_collapse": true,
+                "infoText": "Details"
+              },
+              "properties": {
+                "attack": {
+                  "type": "number",
+                  "default": 0,
+                  "title": "攻撃値[レベル差]",
+                  "options": {
+                    "infoText": "相手に与えるスタミナダメージへのレベル差補正"
+                  },
+                  "yutori": {
+                    "points": [
+                      "値が高いほどダメージが増加します。"
+                    ],
+                    "reference": "ja/editor/combat?id=攻撃値[レベル差]"
+                  }
+                },
+                "defence": {
+                  "type": "number",
+                  "default": 0,
+                  "title": "防御値[レベル差]",
+                  "options": {
+                    "infoText": "相手から受けるスタミナダメージへのレベル差補正"
+                  },
+                  "yutori": {
+                    "points": [
+                      "値が高いほど被ダメージが軽減されます。"
+                    ],
+                    "reference": "ja/editor/combat?id=防御値[レベル差]"
+                  }
+                },
+                "accuracy": {
+                  "type": "number",
+                  "default": 0,
+                  "title": "命中値[レベル差]",
+                  "options": {
+                    "infoText": "攻撃のミス率へのレベル差補正"
+                  },
+                  "yutori": {
+                    "points": [
+                      "値が高いほどミス率が低下します。"
+                    ],
+                    "reference": "ja/editor/combat?id=命中値[レベル差]"
+                  }
+                },
+                "evasion": {
+                  "type": "number",
+                  "default": 0,
+                  "title": "回避値[レベル差]",
+                  "options": {
+                    "infoText": "相手の攻撃の回避率へのレベル差補正"
+                  },
+                  "yutori": {
+                    "points": [
+                      "値が高いほど相手の攻撃を回避しやすくなります。"
+                    ],
+                    "reference": "ja/editor/combat?id=回避値[レベル差]"
+                  }
+                },
+                "restore": {
+                  "type": "number",
+                  "default": 0
+                }
+              },
+              "propertyOrder": 400,
+              "title": "戦闘値",
+              "description": "全アクション共通のデフォルト戦闘パラメータ",
+              "yutori": {
+                "points": [
+                  "全`stamina`タイプのアクションに共通して適用される基本的な戦闘補正値です。",
+                  "各アクションの戦闘値（property）はこのデフォルト値に加算されます。"
+                ],
+                "reference": "ja/editor/combat"
+              }
+            }
+          },
+          "title": "一般",
+          "description": "言語、レベル設定などの基本的なゲーム設定",
+          "yutori": {
+            "reference": "ja/editor/general"
+          }
+        },
+        "design": {
+          "type": "object",
+          "additionalProperties": false,
+          "format": "grid",
+          "required": [
+            "mainColor",
+            "subColor",
+            "background"
+          ],
+          "options": {
+            "disable_collapse": true,
+            "infoText": "Details"
+          },
+          "properties": {
+            "mainColor": {
+              "type": "string",
+              "default": "#000000",
+              "format": "color",
+              "pattern": "(^#[0-9a-fA-F]{6}$)|(^$)",
+              "title": "主色",
+              "options": {
+                "infoText": "ワールドの主要カラー"
+              },
+              "yutori": {
+                "points": [
+                  "バーの色として使用されます。",
+                  "バーの影にはこれの反対色が使用されます。"
+                ],
+                "reference": "ja/editor/design?id=主色"
+              }
+            },
+            "subColor": {
+              "type": "string",
+              "default": "#000000",
+              "format": "color",
+              "pattern": "(^#[0-9a-fA-F]{6}$)|(^$)",
+              "title": "補助色",
+              "options": {
+                "infoText": "背景と文字の補助カラー"
+              },
+              "yutori": {
+                "points": [
+                  "背景色と文字色として使用される色です。",
+                  "主色に近い色合いにすると馴染みます。"
+                ],
+                "reference": "ja/editor/design?id=補助色"
+              }
+            },
+            "background": {
+              "type": "string",
+              "default": "",
+              "media": {
+                "binaryEncoding": "base64",
+                "type": "img/png"
+              },
+              "title": "背景画像",
+              "options": {
+                "infoText": "ゲーム全体の背景画像"
+              },
+              "yutori": {
+                "points": [
+                  "ゲーム背景画像を設定します。",
+                  "画像を設定しない場合は、補助色を元にしたグラデーションの背景となります。"
+                ],
+                "reference": "ja/editor/design?id=背景画像"
+              }
+            },
+            "delete": {
+              "format": "button",
+              "options": {
+                "button": {
+                  "text": "Delete Image",
+                  "icon": "trash",
+                  "action": "deletePrevious"
+                }
+              }
+            }
+          },
+          "title": "デザイン",
+          "description": "ワールドの色やフォントなどの見た目設定",
+          "yutori": {
+            "points": [
+              "ワールドの表示についての設定です。",
+              "ワールド全体のデザインについてですが、各要素で個別の設定がある場合はそれが優先されます。"
+            ],
+            "reference": "ja/editor/design"
+          }
+        },
+        "development": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "version",
+            "memo",
+            "errors",
+            "timestamp",
+            "autosaveing"
+          ],
+          "options": {
+            "disable_collapse": true,
+            "infoText": "Details"
+          },
+          "properties": {
+            "version": {
+              "type": "string",
+              "readOnly": true,
+              "title": "バージョン",
+              "options": {
+                "infoText": "エディターのビルドバージョン番号"
+              },
+              "yutori": {
+                "points": [
+                  "ワールド作成時のconsoleのバージョン番号が自動的に記録されます。",
+                  "開発者はこの内容を変更できません。"
+                ],
+                "reference": "ja/editor/development?id=バージョン"
+              }
+            },
+            "memo": {
+              "type": "array",
+              "format": "table",
+              "options": {
+                "infoText": "開発者用のメモ記録"
+              },
+              "items": {
+                "type": "string"
+              },
+              "title": "メモ",
+              "yutori": {
+                "points": [
+                  "開発者が自由にメモとして記載できます。",
+                  "ゲームの公開には関連がありません。"
+                ],
+                "reference": "ja/editor/development?id=メモ"
+              }
+            },
+            "errors": {
+              "type": "array",
+              "format": "table",
+              "readOnly": true,
+              "options": {
+                "disable_array_add": true,
+                "disable_array_delete": true,
+                "disable_array_delete_all_rows": true,
+                "disable_array_delete_last_row": true,
+                "disable_array_reorder": true,
+                "infoText": "バリデーション結果のエラー記録"
+              },
+              "items": {
+                "type": "string",
+                "readOnly": true
+              },
+              "title": "エラー",
+              "yutori": {
+                "points": [
+                  "ワールドのバリデーションをした結果がここに自動的に保存されます。",
+                  "例えば入力できない文字の種類がある、上限を超えた数値を入力しているなどをエラーとして表示します。",
+                  "開発者はこの内容を変更できません。",
+                  "ここに保存されるエラーがない時にサーバーへの保管が可能です。"
+                ],
+                "reference": "ja/editor/development?id=エラー"
+              }
+            },
+            "timestamp": {
+              "type": "object",
+              "additionalProperties": false,
+              "required": [
+                "created",
+                "saved",
+                "published"
+              ],
+              "properties": {
+                "created": {
+                  "type": "string",
+                  "readOnly": true,
+                  "title": "作成日時",
+                  "options": {
+                    "infoText": "ワールドの初回作成時刻"
+                  },
+                  "yutori": {
+                    "points": [
+                      "ワールドが最初に作成された日時です。"
+                    ],
+                    "reference": "ja/editor/development?id=作成日時"
+                  }
+                },
+                "saved": {
+                  "type": "string",
+                  "readOnly": true,
+                  "title": "保存日時",
+                  "options": {
+                    "infoText": "最後の保存実行時刻"
+                  },
+                  "yutori": {
+                    "points": [
+                      "ワールドが最後に保存された日時です。"
+                    ],
+                    "reference": "ja/editor/development?id=保存日時"
+                  }
+                },
+                "published": {
+                  "type": "string",
+                  "readOnly": true,
+                  "title": "公開日時",
+                  "options": {
+                    "infoText": "最後の公開実行時刻"
+                  },
+                  "yutori": {
+                    "points": [
+                      "ワールドが最後に公開された日時です。"
+                    ],
+                    "reference": "ja/editor/development?id=公開日時"
+                  }
+                }
+              },
+              "title": "タイムスタンプ",
+              "options": {
+                "infoText": "作成・保存・公開の記録"
+              },
+              "yutori": {
+                "points": [
+                  "ワールドの作成、保存、公開の時刻が自動的に記録されます。",
+                  "開発者はこの内容を変更できません。"
+                ],
+                "reference": "ja/editor/development?id=タイムスタンプ"
+              }
+            },
+            "autosaveing": {
+              "type": "boolean",
+              "default": false,
+              "readOnly": true,
+              "format": "checkbox",
+              "title": "自動保存",
+              "options": {
+                "infoText": "自動保存機能の有効/無効"
+              },
+              "yutori": {
+                "points": [
+                  "自動保存機能が有効かどうかを示します。",
+                  "開発者はこの内容を変更できません。"
+                ],
+                "reference": "ja/editor/development?id=自動保存"
+              }
+            }
+          },
+          "title": "開発",
+          "description": "ワールド開発時のメモやエラー管理",
+          "yutori": {
+            "points": [
+              "ワールドの開発の際に使用します。",
+              "このワールドの開発やテストに関わることで、プレイの内容には影響ありません。",
+              "開発に関する内容をプレイヤーが確認することはありません。"
+            ],
+            "reference": "ja/editor/development"
+          }
+        }
+      },
+      "title": "基本設定",
+      "description": "ワールド全般の基本的な設定項目",
+      "yutori": {
+        "points": [
+          "ワールドの名前、説明、背景、通貨、容量、カテゴリーの最大レベル、経験値の上昇率、割引率、標準戦闘パラメータなどを設定します。",
+          "これらの設定はワールド全体に影響します。"
+        ],
+        "reference": "ja/editor/basic"
+      }
+    },
+    "categories": {
+      "type": "array",
+      "basicCategoryTitle": "カテゴリー",
+      "format": "tabs",
+      "options": {
+        "disable_collapse": true,
+        "infoText": "Details"
+      },
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "format": "categories",
+        "basicCategoryTitle": "Category",
+        "headerTemplate": "{{ i1 }}: {{ self.information.id }}",
+        "options": {
+          "disable_collapse": true
+        },
+        "required": [
+          "information",
+          "group",
+          "unlocked",
+          "requirements",
+          "equipmentGroups",
+          "numeric",
+          "standaloneProgress",
+          "background"
+        ],
+        "properties": {
+          "information": {
+            "type": "object",
+            "additionalProperties": false,
+            "format": "grid",
+            "required": [
+              "id",
+              "name",
+              "explanation",
+              "icon",
+              "color"
+            ],
+            "options": {
+              "disable_collapse": true,
+              "infoText": "Details"
+            },
+            "properties": {
+              "id": {
+                "type": "string",
+                "default": "",
+                "minLength": 1,
+                "maxLength": 100,
+                "pattern": "^[0-9a-zA-Z\\-]+$",
+                "title": "識別ID",
+                "options": {
+                  "infoText": "要素を識別するための一意なID"
+                },
+                "yutori": {
+                  "points": [
+                    "各要素を一意に識別するためのIDです。",
+                    "エディターにおいて、その要素を判別するための文字列です。",
+                    "例えば、アクションが完了した際にどのアイテムを入手するのか、IDで指定します。"
+                  ],
+                  "reference": "ja/editor/information?id=識別ID"
+                }
+              },
+              "name": {
+                "type": "string",
+                "maxLength": 20,
+                "title": "名前",
+                "options": {
+                  "infoText": "要素の表示される名前"
+                },
+                "yutori": {
+                  "points": [
+                    "ゲームで表示される要素の名前です。",
+                    "英語以外の言語も入力できます。",
+                    "他の要素と重複する名前でも大丈夫です。",
+                    "長すぎる場合はプレイ中の表示ではみ出した箇所は`…`で省略されます。"
+                  ],
+                  "reference": "ja/editor/information?id=名前"
+                }
+              },
+              "explanation": {
+                "type": "string",
+                "title": "説明文",
+                "options": {
+                  "infoText": "要素の詳細説明"
+                },
+                "yutori": {
+                  "points": [
+                    "ゲームで表示される要素の説明文です。",
+                    "英語以外の言語も入力できます。長い文章でもすべて表示されます。",
+                    "説明がない場合は空欄にします。"
+                  ],
+                  "reference": "ja/editor/information?id=説明文"
+                }
+              },
+              "icon": {
+                "type": "object",
+                "additionalProperties": false,
+                "format": "grid",
+                "required": [
+                  "emoji",
+                  "iconify",
+                  "image"
+                ],
+                "options": {
+                  "disable_collapse": true,
+                  "infoText": "要素を表すアイコンの設定"
+                },
+                "properties": {
+                  "emoji": {
+                    "type": "string",
+                    "options": {
+                      "grid_columns": 4,
+                      "infoText": "絵文字によるアイコン表示"
+                    },
+                    "title": "絵文字",
+                    "yutori": {
+                      "points": [
+                        "絵文字をアイコンとして表示します。",
+                        "文字から絵文字に変換して手早く設定することができます。",
+                        "絵文字は、Unicodeの絵文字をそのまま入力してください。",
+                        "実行環境に導入されている絵文字が使用されるため、ユーザーにより多少表示が異なります。",
+                        "Iconifyでは各環境に依存しない絵文字を設定することができます",
+                        "絵文字以外の文字を表示することができますが、文字が複数あると表示が崩れる可能性があります。",
+                        "例えば、`🗡️`や`⚔️`などの絵文字を入力します。"
+                      ],
+                      "reference": "ja/editor/information?id=絵文字"
+                    }
+                  },
+                  "iconify": {
+                    "type": "string",
+                    "default": "",
+                    "options": {
+                      "grid_columns": 4,
+                      "infoText": "Iconifyアイコンセットの使用"
+                    },
+                    "title": "Iconify",
+                    "yutori": {
+                      "points": [
+                        "要素を表すアイコンです。",
+                        "Iconifyとは様々な種類のアイコンを提供するサービスです。",
+                        "画像を設定した場合はそれが優先して表示されます。"
+                      ],
+                      "reference": "ja/editor/information?id=Iconify"
+                    }
+                  },
+                  "image": {
+                    "type": "string",
+                    "default": "",
+                    "media": {
+                      "binaryEncoding": "base64",
+                      "type": "img/png"
+                    },
+                    "options": {
+                      "grid_columns": 4,
+                      "infoText": "任意の画像ファイルを使用"
+                    },
+                    "title": "画像",
+                    "yutori": {
+                      "points": [
+                        "要素を表す画像です。",
+                        "ファイルサイズが大きい場合は自動的にリサイズされます。",
+                        "Iconify又は絵文字を設定した場合は不要です。"
+                      ],
+                      "reference": "ja/editor/information?id=画像"
+                    }
+                  },
+                  "delete": {
+                    "format": "button",
+                    "options": {
+                      "button": {
+                        "text": "Delete Image",
+                        "icon": "trash",
+                        "action": "deletePrevious"
+                      }
+                    }
+                  }
+                },
+                "title": "アイコン",
+                "yutori": {
+                  "points": [
+                    "アイコンは、画像、Iconify、絵文字のいずれかを設定できます。",
+                    "Iconifyとは様々な種類のアイコンを提供するサービスです。",
+                    "これらのうち複数設定した場合は、画像、Iconify、絵文字の順に優先され表示されます。"
+                  ],
+                  "reference": "ja/editor/information?id=アイコン"
+                }
+              },
+              "color": {
+                "type": "string",
+                "default": "#000000",
+                "format": "color",
+                "pattern": "(^#[0-9a-fA-F]{6}$)|(^$)",
+                "title": "色",
+                "options": {
+                  "infoText": "要素の表示色の設定"
+                },
+                "yutori": {
+                  "points": [
+                    "要素の色として、要素のアイコンと背景色に適応されます。",
+                    "エディターのカラーピッカーから選択します。"
+                  ],
+                  "reference": "ja/editor/information?id=色"
+                }
+              },
+              "copy": {
+                "type": "string",
+                "format": "button",
+                "options": {
+                  "button": {
+                    "text": "Copy Information",
+                    "icon": "copy",
+                    "action": "copyInformation"
+                  }
+                }
+              }
+            },
+            "title": "インフォメーション",
+            "description": "要素の基本情報（ID、名前、アイコン、色など）の設定",
+            "yutori": {
+              "points": [
+                "ワールド内の各要素（カテゴリー、アクション、アイテム、イベントなど）に共通する基本情報の項目です。",
+                "それぞれの要素ごとに個別に設定します。"
+              ],
+              "reference": "ja/editor/information"
+            }
+          },
+          "group": {
+            "type": "string",
+            "default": "",
+            "pattern": "^[0-9a-zA-Z\\-]*$",
+            "title": "グループ",
+            "options": {
+              "infoText": "カテゴリーの表示グループ分類"
+            },
+            "yutori": {
+              "points": [
+                "基本で設定したグループのいずれかを当てはめてください。",
+                "設定したグループ順にカテゴリーの一覧が表示されます。"
+              ],
+              "reference": "ja/editor/category?id=グループ"
+            }
+          },
+          "unlocked": {
+            "type": "string",
+            "enum": [
+              "secreted",
+              "hidden",
+              "hinted",
+              "released"
+            ],
+            "default": "hinted",
+            "options": {
+              "enum_titles": [
+                "Secreted: Completely hidden from all UI (not even as a hint) until all requirements are met",
+                "Hidden: Fully concealed (grayed out, no name) until referenced or conditions met",
+                "Hinted: Name shown as a teaser but not operable until released (default)",
+                "Released: Unlocked and operable from the start regardless of conditions"
+              ],
+              "infoText": "要素の初期表示・解放状態（発動要件を満たすと自動で上位状態へ）"
+            },
+            "title": "初期解放状態",
+            "yutori": {
+              "points": [
+                "secreted: 全requirementsを満たすまでUIに一切表示されません（ヒントにも出ず、要件/報酬の一覧でもマスクされます）。",
+                "hidden: どの解放要素からも参照されず要件も未達の間、完全に隠されます（名前もグレーアウト・操作不可）。",
+                "hinted（既定）: 名前だけ予告表示されますが、解放されるまで操作できません。",
+                "released: 条件に関係なく最初から解放され操作可能です（旧「最初から表示」）。"
+              ],
+              "reference": "ja/editor/category?id=初期解放状態"
+            }
+          },
+          "requirements": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "additionalProperties": false,
+              "headerTemplate": "{{ i1 }}: {{ self.id }} [ {{ self.type }} ]",
+              "format": "grid",
+              "required": [
+                "type",
+                "id",
+                "count",
+                "chance",
+                "equipment"
+              ],
+              "options": {
+                "disable_collapse": true
+              },
+              "properties": {
+                "type": {
+                  "type": "string",
+                  "enum": [
+                    "category",
+                    "action",
+                    "item"
+                  ],
+                  "default": "item",
+                  "title": "タイプ",
+                  "options": {
+                    "infoText": "条件として参照する要素の種類"
+                  },
+                  "yutori": {
+                    "reference": "ja/editor/requirement?id=タイプ"
+                  }
+                },
+                "id": {
+                  "type": "string",
+                  "pattern": "^[0-9a-zA-Z\\-]+$",
+                  "title": "要素のID",
+                  "options": {
+                    "infoText": "条件として参照する要素のID"
+                  },
+                  "yutori": {
+                    "reference": "ja/editor/requirement?id=要素のID"
+                  }
+                },
+                "count": {
+                  "type": "integer",
+                  "minimum": 0,
+                  "default": 1,
+                  "title": "値",
+                  "options": {
+                    "infoText": "条件に必要な数値"
+                  },
+                  "yutori": {
+                    "points": [
+                      "指定した値以上の場合に条件を満たします。"
+                    ],
+                    "reference": "ja/editor/requirement?id=値"
+                  }
+                },
+                "chance": {
+                  "type": "number",
+                  "default": 1,
+                  "minimum": 0,
+                  "maximum": 1,
+                  "title": "消費確率[0-1]",
+                  "options": {
+                    "infoText": "アイテムが消費される確率（0～1、タイプがアイテムの場合のみ有効）"
+                  },
+                  "yutori": {
+                    "points": [
+                      "条件を満たしてアクションが実行された際に、アイテムを消費する確率です。",
+                      "`1`で必ず消費、`0.5`で50%の確率で消費、`0`で消費しません。",
+                      "デフォルト値は`1`（必ず消費）です。",
+                      "タイプがアイテム以外の場合は無効です。"
+                    ],
+                    "reference": "ja/editor/requirement?id=消費確率[0-1]"
+                  }
+                },
+                "equipment": {
+                  "type": "boolean",
+                  "default": false,
+                  "format": "checkbox",
+                  "title": "装備",
+                  "options": {
+                    "infoText": "アイテムが装備状態であることを条件とするか（タイプがアイテムの場合のみ有効）"
+                  },
+                  "yutori": {
+                    "points": [
+                      "有効にすると、アイテムを所持しているだけでなく、装備していることが条件として必要になります。",
+                      "タイプがアイテム以外の場合は無効です。"
+                    ],
+                    "reference": "ja/editor/requirement?id=装備"
+                  }
+                }
+              }
+            },
+            "options": {
+              "disable_collapse": true,
+              "infoText": "Details"
+            },
+            "title": "条件",
+            "description": "カテゴリー利用に必要な条件",
+            "yutori": {
+              "points": [
+                "カテゴリー、アクション、アイテムごとの各要素に設定する条件です。",
+                "全ての設定した条件を満たさないと、表に示した操作ができません。",
+                "ロック機能が有効の場合は、条件を満たすまで要素自体が非表示になります。"
+              ],
+              "reference": "ja/editor/requirement"
+            }
+          },
+          "equipmentGroups": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "pattern": "^[0-9a-zA-Z\\-]*$"
+            },
+            "options": {
+              "disable_collapse": true,
+              "infoText": "このカテゴリーで装備可能なアイテムグループの指定"
+            },
+            "default": [
+              ""
+            ],
+            "uniqueItems": true,
+            "title": "装備グループ",
+            "yutori": {
+              "points": [
+                "このカテゴリーで装備できるアイテムのグループ名のリストです。",
+                "ここに指定したグループ名と一致するグループのアイテムのみ装備できます。",
+                "空の文字列を指定すると、グループ未設定（空）のアイテムが装備対象になります。",
+                "同じグループ内では1つのアイテムしか装備できません。新しいアイテムを装備すると、同グループの既存装備は自動的に解除されます。",
+                "空のリスト（0個）にすると何も装備できません。"
+              ],
+              "reference": "ja/editor/category?id=装備グループ"
+            }
+          },
+          "numeric": {
+            "type": "boolean",
+            "default": true,
+            "format": "checkbox",
+            "title": "レベルの有無",
+            "options": {
+              "infoText": "カテゴリーレベル機能の有無"
+            },
+            "yutori": {
+              "points": [
+                "このカテゴリーがレベルを持つかどうかのフラグです。",
+                "オンの場合はレベルを持ち、オフの場合は持ちません。",
+                "例として、剣技や魔法といった経験に基づくカテゴリーはオンにし、ダンジョンや鍛冶屋といった場所のカテゴリーはオフにするなどの使い方があります。"
+              ],
+              "reference": "ja/editor/category?id=レベルの有無"
+            }
+          },
+          "standaloneProgress": {
+            "type": "boolean",
+            "default": false,
+            "format": "checkbox",
+            "title": "同時進行",
+            "options": {
+              "infoText": "他カテゴリーとの並行実行設定"
+            },
+            "yutori": {
+              "points": [
+                "このカテゴリーのアクションが、他のカテゴリーのアクションと並行して進行できるかどうかのフラグです。",
+                "オンの場合は、他のカテゴリーのアクションとは独立して同時に進行できます。",
+                "オフの場合は、同じくオフに設定された他のカテゴリーのアクションと同時に実行できません。新たにこのカテゴリーのアクションを開始すると、他の非スタンドアロンカテゴリーで進行中のアクションは自動的に中止されます。"
+              ],
+              "reference": "ja/editor/category?id=同時進行"
+            }
+          },
+          "background": {
+            "type": "string",
+            "default": "",
+            "media": {
+              "binaryEncoding": "base64",
+              "type": "img/png"
+            },
+            "title": "背景",
+            "options": {
+              "infoText": "カテゴリー固有の背景設定"
+            },
+            "yutori": {
+              "points": [
+                "このカテゴリーの背景を設定します。",
+                "カテゴリーを選択されたときに、連動して背景画像が変更されます。",
+                "設定しない場合はワールドの背景設定がそのまま使用されます。"
+              ],
+              "reference": "ja/editor/category?id=背景"
+            }
+          },
+          "delete": {
+            "format": "button",
+            "options": {
+              "button": {
+                "text": "Delete Image",
+                "icon": "trash",
+                "action": "deletePrevious"
+              }
+            }
+          }
+        }
+      },
+      "title": "カテゴリー",
+      "description": "アクションやアイテムを分類する大枠",
+      "yutori": {
+        "points": [
+          "大きな分類を表します。",
+          "例えば、近距離、遠距離、魔法、ダンジョン、鍛冶屋、製作所など自由な枠で設定できます。",
+          "アクションやアイテムはワールド直下に配置され、カテゴリーIDで関連付けられます。"
+        ],
+        "reference": "ja/editor/category"
+      }
+    },
+    "actions": {
+      "type": "array",
+      "basicCategoryTitle": "アクション",
+      "format": "tabs",
+      "options": {
+        "disable_collapse": true,
+        "infoText": "Details"
+      },
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "headerTemplate": "{{ i1 }}: {{ self.information.id }}",
+        "options": {
+          "disable_collapse": true
+        },
+        "format": "grid",
+        "required": [
+          "information",
+          "category",
+          "attribute",
+          "group",
+          "unlocked",
+          "seconds",
+          "level",
+          "experience",
+          "chance",
+          "maximum",
+          "requirements",
+          "acquisitions",
+          "progressType",
+          "property"
+        ],
+        "properties": {
+          "information": {
+            "type": "object",
+            "additionalProperties": false,
+            "format": "grid",
+            "required": [
+              "id",
+              "name",
+              "explanation",
+              "icon",
+              "color"
+            ],
+            "options": {
+              "disable_collapse": true,
+              "infoText": "Details"
+            },
+            "properties": {
+              "id": {
+                "type": "string",
+                "default": "",
+                "minLength": 1,
+                "maxLength": 100,
+                "pattern": "^[0-9a-zA-Z\\-]+$",
+                "title": "識別ID",
+                "options": {
+                  "infoText": "要素を識別するための一意なID"
+                },
+                "yutori": {
+                  "points": [
+                    "各要素を一意に識別するためのIDです。",
+                    "エディターにおいて、その要素を判別するための文字列です。",
+                    "例えば、アクションが完了した際にどのアイテムを入手するのか、IDで指定します。"
+                  ],
+                  "reference": "ja/editor/information?id=識別ID"
+                }
+              },
+              "name": {
+                "type": "string",
+                "maxLength": 20,
+                "title": "名前",
+                "options": {
+                  "infoText": "要素の表示される名前"
+                },
+                "yutori": {
+                  "points": [
+                    "ゲームで表示される要素の名前です。",
+                    "英語以外の言語も入力できます。",
+                    "他の要素と重複する名前でも大丈夫です。",
+                    "長すぎる場合はプレイ中の表示ではみ出した箇所は`…`で省略されます。"
+                  ],
+                  "reference": "ja/editor/information?id=名前"
+                }
+              },
+              "explanation": {
+                "type": "string",
+                "title": "説明文",
+                "options": {
+                  "infoText": "要素の詳細説明"
+                },
+                "yutori": {
+                  "points": [
+                    "ゲームで表示される要素の説明文です。",
+                    "英語以外の言語も入力できます。長い文章でもすべて表示されます。",
+                    "説明がない場合は空欄にします。"
+                  ],
+                  "reference": "ja/editor/information?id=説明文"
+                }
+              },
+              "icon": {
+                "type": "object",
+                "additionalProperties": false,
+                "format": "grid",
+                "required": [
+                  "emoji",
+                  "iconify",
+                  "image"
+                ],
+                "options": {
+                  "disable_collapse": true,
+                  "infoText": "要素を表すアイコンの設定"
+                },
+                "properties": {
+                  "emoji": {
+                    "type": "string",
+                    "options": {
+                      "grid_columns": 4,
+                      "infoText": "絵文字によるアイコン表示"
+                    },
+                    "title": "絵文字",
+                    "yutori": {
+                      "points": [
+                        "絵文字をアイコンとして表示します。",
+                        "文字から絵文字に変換して手早く設定することができます。",
+                        "絵文字は、Unicodeの絵文字をそのまま入力してください。",
+                        "実行環境に導入されている絵文字が使用されるため、ユーザーにより多少表示が異なります。",
+                        "Iconifyでは各環境に依存しない絵文字を設定することができます",
+                        "絵文字以外の文字を表示することができますが、文字が複数あると表示が崩れる可能性があります。",
+                        "例えば、`🗡️`や`⚔️`などの絵文字を入力します。"
+                      ],
+                      "reference": "ja/editor/information?id=絵文字"
+                    }
+                  },
+                  "iconify": {
+                    "type": "string",
+                    "default": "",
+                    "options": {
+                      "grid_columns": 4,
+                      "infoText": "Iconifyアイコンセットの使用"
+                    },
+                    "title": "Iconify",
+                    "yutori": {
+                      "points": [
+                        "要素を表すアイコンです。",
+                        "Iconifyとは様々な種類のアイコンを提供するサービスです。",
+                        "画像を設定した場合はそれが優先して表示されます。"
+                      ],
+                      "reference": "ja/editor/information?id=Iconify"
+                    }
+                  },
+                  "image": {
+                    "type": "string",
+                    "default": "",
+                    "media": {
+                      "binaryEncoding": "base64",
+                      "type": "img/png"
+                    },
+                    "options": {
+                      "grid_columns": 4,
+                      "infoText": "任意の画像ファイルを使用"
+                    },
+                    "title": "画像",
+                    "yutori": {
+                      "points": [
+                        "要素を表す画像です。",
+                        "ファイルサイズが大きい場合は自動的にリサイズされます。",
+                        "Iconify又は絵文字を設定した場合は不要です。"
+                      ],
+                      "reference": "ja/editor/information?id=画像"
+                    }
+                  },
+                  "delete": {
+                    "format": "button",
+                    "options": {
+                      "button": {
+                        "text": "Delete Image",
+                        "icon": "trash",
+                        "action": "deletePrevious"
+                      }
+                    }
+                  }
+                },
+                "title": "アイコン",
+                "yutori": {
+                  "points": [
+                    "アイコンは、画像、Iconify、絵文字のいずれかを設定できます。",
+                    "Iconifyとは様々な種類のアイコンを提供するサービスです。",
+                    "これらのうち複数設定した場合は、画像、Iconify、絵文字の順に優先され表示されます。"
+                  ],
+                  "reference": "ja/editor/information?id=アイコン"
+                }
+              },
+              "color": {
+                "type": "string",
+                "default": "#000000",
+                "format": "color",
+                "pattern": "(^#[0-9a-fA-F]{6}$)|(^$)",
+                "title": "色",
+                "options": {
+                  "infoText": "要素の表示色の設定"
+                },
+                "yutori": {
+                  "points": [
+                    "要素の色として、要素のアイコンと背景色に適応されます。",
+                    "エディターのカラーピッカーから選択します。"
+                  ],
+                  "reference": "ja/editor/information?id=色"
+                }
+              },
+              "copy": {
+                "type": "string",
+                "format": "button",
+                "options": {
+                  "button": {
+                    "text": "Copy Information",
+                    "icon": "copy",
+                    "action": "copyInformation"
+                  }
+                }
+              }
+            },
+            "title": "インフォメーション",
+            "description": "要素の基本情報（ID、名前、アイコン、色など）の設定",
+            "yutori": {
+              "points": [
+                "ワールド内の各要素（カテゴリー、アクション、アイテム、イベントなど）に共通する基本情報の項目です。",
+                "それぞれの要素ごとに個別に設定します。"
+              ],
+              "reference": "ja/editor/information"
+            }
+          },
+          "category": {
+            "type": "string",
+            "default": "",
+            "pattern": "^[0-9a-zA-Z\\-]*$",
+            "title": "カテゴリー",
+            "options": {
+              "infoText": "アクションが所属するカテゴリーのID"
+            },
+            "yutori": {
+              "points": [
+                "このアクションが所属するカテゴリーのIDを指定します。"
+              ],
+              "reference": "ja/editor/action?id=カテゴリー"
+            }
+          },
+          "attribute": {
+            "type": "string",
+            "maxLength": 20,
+            "title": "属性",
+            "options": {
+              "infoText": "アクション固有の属性カテゴリー"
+            },
+            "yutori": {
+              "points": [
+                "個別の属性(カテゴリー)を設定できます。",
+                "空欄の場合は属するカテゴリーを引き継ぎます",
+                "例えば、魔王城というカテゴリーに属するアクションに個別に魔法という属性を設定した場合、アクション完了時間やダメージには魔法のカテゴリーのレベルやプロパティが計算され適応されます。"
+              ],
+              "reference": "ja/editor/action?id=属性"
+            }
+          },
+          "group": {
+            "type": "string",
+            "default": "",
+            "pattern": "^[0-9a-zA-Z\\-]*$",
+            "title": "グループ",
+            "options": {
+              "infoText": "アクションの表示グループ分類"
+            },
+            "yutori": {
+              "points": [
+                "基本で設定したグループのいずれかを当てはめて下さい。",
+                "設定したグループ順にアクションの一覧が表示されます。"
+              ],
+              "reference": "ja/editor/action?id=グループ"
+            }
+          },
+          "unlocked": {
+            "type": "string",
+            "enum": [
+              "secreted",
+              "hidden",
+              "hinted",
+              "released"
+            ],
+            "default": "hinted",
+            "options": {
+              "enum_titles": [
+                "Secreted: Completely hidden from all UI (not even as a hint) until all requirements are met",
+                "Hidden: Fully concealed (grayed out, no name) until referenced or conditions met",
+                "Hinted: Name shown as a teaser but not operable until released (default)",
+                "Released: Unlocked and operable from the start regardless of conditions"
+              ],
+              "infoText": "要素の初期表示・解放状態（発動要件を満たすと自動で上位状態へ）"
+            },
+            "title": "初期解放状態",
+            "yutori": {
+              "points": [
+                "secreted: 全requirementsを満たすまでUIに一切表示されません（ヒントにも出ず、要件/報酬の一覧でもマスクされます）。",
+                "hidden: どの解放要素からも参照されず要件も未達の間、完全に隠されます（名前もグレーアウト・操作不可）。",
+                "hinted（既定）: 名前だけ予告表示されますが、解放されるまで操作できません。",
+                "released: 条件に関係なく最初から解放され操作可能です（旧「最初から表示」）。"
+              ],
+              "reference": "ja/editor/action?id=初期解放状態"
+            }
+          },
+          "seconds": {
+            "type": "number",
+            "default": 2,
+            "minimum": 0,
+            "title": "所要時間[秒]",
+            "options": {
+              "infoText": "アクション実行にかかる標準の時間"
+            },
+            "yutori": {
+              "points": [
+                "アクションを一度行うのに必要な標準の時間（秒）です。",
+                "`stamina`タイプの場合は、1ターン（互いのスタミナを1回削る）にかかる時間間隔です。",
+                "プロパティの計算により実際の実行時には変動します。"
+              ],
+              "reference": "ja/editor/action?id=所要時間[秒]"
+            }
+          },
+          "level": {
+            "type": "integer",
+            "default": 1,
+            "minimum": 1,
+            "title": "レベル",
+            "options": {
+              "infoText": "アクションの難易度レベル"
+            },
+            "yutori": {
+              "points": [
+                "アクションの難易度をレベルで表します。",
+                "実行時にプレイヤーのレベルと比較して各プロパティを計算します。",
+                "例えば自分のレベルより高いアクションを実行すると、成功率が下がるなどの影響があります。",
+                "条件を満たしていれば、プレイヤーのレベルがこの値より小さくても実行はできます。"
+              ],
+              "reference": "ja/editor/action?id=レベル"
+            }
+          },
+          "experience": {
+            "type": "number",
+            "default": 1,
+            "minimum": 0,
+            "title": "経験値[100で次のレベル]",
+            "options": {
+              "infoText": "アクション成功時の獲得経験値"
+            },
+            "yutori": {
+              "points": [
+                "アクションを一度実行して成功した時に獲得する標準的な経験値です。100で1レベル分の経験値です。",
+                "戦闘の場合は相手に勝利した時に獲得するため、多めに設定するとよいでしょう。",
+                "プロパティの計算により実際の実行時には変動します。"
+              ],
+              "reference": "ja/editor/action?id=経験値[100で次のレベル]"
+            }
+          },
+          "chance": {
+            "type": "number",
+            "default": 1,
+            "minimum": 0,
+            "maximum": 1,
+            "title": "成功確率[0-1]",
+            "options": {
+              "infoText": "アクション完了時の成功確率"
+            },
+            "yutori": {
+              "points": [
+                "アクション完了時に成功する確率です。",
+                "`1`の場合は常に成功、`0`の場合は常に失敗します。",
+                "失敗時は消費アイテムは消費されますが、報酬や経験値は得られません。",
+                "プロパティの計算により実際の実行時には変動します。"
+              ],
+              "reference": "ja/editor/action?id=成功確率[0-1]"
+            }
+          },
+          "maximum": {
+            "type": "number",
+            "default": 0,
+            "minimum": 0,
+            "title": "最大実行回数[回]",
+            "options": {
+              "infoText": "アクションを完了できる最大回数"
+            },
+            "yutori": {
+              "points": [
+                "アクションが成功して完了できる回数の上限です。",
+                "`0`の場合は無制限です。",
+                "上限に達するとアクションは実行不可になります。"
+              ],
+              "reference": "ja/editor/action?id=最大実行回数[回]"
+            }
+          },
+          "requirements": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "additionalProperties": false,
+              "headerTemplate": "{{ i1 }}: {{ self.id }} [ {{ self.type }} ]",
+              "format": "grid",
+              "required": [
+                "type",
+                "id",
+                "count",
+                "chance",
+                "equipment"
+              ],
+              "options": {
+                "disable_collapse": true
+              },
+              "properties": {
+                "type": {
+                  "type": "string",
+                  "enum": [
+                    "category",
+                    "action",
+                    "item"
+                  ],
+                  "default": "item",
+                  "title": "タイプ",
+                  "options": {
+                    "infoText": "条件として参照する要素の種類"
+                  },
+                  "yutori": {
+                    "reference": "ja/editor/requirement?id=タイプ"
+                  }
+                },
+                "id": {
+                  "type": "string",
+                  "pattern": "^[0-9a-zA-Z\\-]+$",
+                  "title": "要素のID",
+                  "options": {
+                    "infoText": "条件として参照する要素のID"
+                  },
+                  "yutori": {
+                    "reference": "ja/editor/requirement?id=要素のID"
+                  }
+                },
+                "count": {
+                  "type": "integer",
+                  "minimum": 0,
+                  "default": 1,
+                  "title": "値",
+                  "options": {
+                    "infoText": "条件に必要な数値"
+                  },
+                  "yutori": {
+                    "points": [
+                      "指定した値以上の場合に条件を満たします。"
+                    ],
+                    "reference": "ja/editor/requirement?id=値"
+                  }
+                },
+                "chance": {
+                  "type": "number",
+                  "default": 1,
+                  "minimum": 0,
+                  "maximum": 1,
+                  "title": "消費確率[0-1]",
+                  "options": {
+                    "infoText": "アイテムが消費される確率（0～1、タイプがアイテムの場合のみ有効）"
+                  },
+                  "yutori": {
+                    "points": [
+                      "条件を満たしてアクションが実行された際に、アイテムを消費する確率です。",
+                      "`1`で必ず消費、`0.5`で50%の確率で消費、`0`で消費しません。",
+                      "デフォルト値は`1`（必ず消費）です。",
+                      "タイプがアイテム以外の場合は無効です。"
+                    ],
+                    "reference": "ja/editor/requirement?id=消費確率[0-1]"
+                  }
+                },
+                "equipment": {
+                  "type": "boolean",
+                  "default": false,
+                  "format": "checkbox",
+                  "title": "装備",
+                  "options": {
+                    "infoText": "アイテムが装備状態であることを条件とするか（タイプがアイテムの場合のみ有効）"
+                  },
+                  "yutori": {
+                    "points": [
+                      "有効にすると、アイテムを所持しているだけでなく、装備していることが条件として必要になります。",
+                      "タイプがアイテム以外の場合は無効です。"
+                    ],
+                    "reference": "ja/editor/requirement?id=装備"
+                  }
+                }
+              }
+            },
+            "options": {
+              "disable_collapse": true,
+              "infoText": "Details"
+            },
+            "title": "条件",
+            "description": "アクション実行に必要な条件",
+            "yutori": {
+              "points": [
+                "カテゴリー、アクション、アイテムごとの各要素に設定する条件です。",
+                "全ての設定した条件を満たさないと、表に示した操作ができません。",
+                "ロック機能が有効の場合は、条件を満たすまで要素自体が非表示になります。"
+              ],
+              "reference": "ja/editor/requirement"
+            }
+          },
+          "acquisitions": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "additionalProperties": false,
+              "headerTemplate": "{{ i1 }}: {{ self.id }} [ {{ self.type }} ]",
+              "format": "grid",
+              "required": [
+                "id",
+                "count",
+                "chance",
+                "type"
+              ],
+              "options": {
+                "disable_collapse": true
+              },
+              "properties": {
+                "type": {
+                  "type": "string",
+                  "enum": [
+                    "category",
+                    "action",
+                    "item"
+                  ],
+                  "default": "item",
+                  "title": "タイプ",
+                  "options": {
+                    "infoText": "取得する要素の種類"
+                  },
+                  "yutori": {
+                    "reference": "ja/editor/acquisition?id=タイプ"
+                  }
+                },
+                "id": {
+                  "type": "string",
+                  "pattern": "^[0-9a-zA-Z\\-]+$",
+                  "title": "要素のID",
+                  "options": {
+                    "infoText": "取得する要素を識別するID"
+                  },
+                  "yutori": {
+                    "reference": "ja/editor/acquisition?id=要素のID"
+                  }
+                },
+                "count": {
+                  "type": "integer",
+                  "default": 1,
+                  "title": "値",
+                  "options": {
+                    "infoText": "取得する数値"
+                  },
+                  "yutori": {
+                    "points": [
+                      "マイナスの値を設定すると、所持数や実行した回数、レベルを減少させます。ただし、０以下にはなりません。",
+                      "アイテムに最大所有数（maximum）が設定されている場合、その値を超えて所有数は増えません。",
+                      "タイプがカテゴリーの場合、設定した値がレベルに直接加算されます（1で1レベル、0.5で0.5レベル）。アクションの経験値設定で調整するのが通常の方法です。特殊な目的がない限りこの設定は不要です。"
+                    ],
+                    "reference": "ja/editor/acquisition?id=値"
+                  }
+                },
+                "chance": {
+                  "type": "number",
+                  "default": 1,
+                  "minimum": -1,
+                  "maximum": 1,
+                  "title": "確率[-1〜1]",
+                  "options": {
+                    "infoText": "取得が成功する確率（負値は失敗時のみ評価）"
+                  },
+                  "yutori": {
+                    "points": [
+                      "入手する確率を-1から1の小数で設定します。確率の判定には絶対値が使われます。",
+                      "値が正のときはアクション成功時のみ評価され、`1`で必ず入手、`0.5`で50%の確率で入手します。",
+                      "値が負のときはアクション失敗時のみ評価され、`-1`で必ず入手、`-0.5`で50%の確率で入手します。",
+                      "`0`では成功時・失敗時とも入手することはありません。",
+                      "デフォルト値は`1`（成功時に必ず入手）です。"
+                    ],
+                    "reference": "ja/editor/acquisition?id=確率[-1〜1]"
+                  }
+                }
+              }
+            },
+            "options": {
+              "disable_collapse": true,
+              "infoText": "Details"
+            },
+            "title": "獲得",
+            "description": "アクション成功時の取得報酬",
+            "yutori": {
+              "points": [
+                "取得物を設定します。",
+                "アイテムの他にカテゴリーのレベル、アクションの実行した回数を変更できます。",
+                "入手の確率を設定できます。"
+              ],
+              "reference": "ja/editor/acquisition"
+            }
+          },
+          "progressType": {
+            "type": "string",
+            "default": "persistent",
+            "enum": [
+              "persistent",
+              "single",
+              "snap",
+              "stamina"
+            ],
+            "options": {
+              "enum_titles": [
+                "Persistent: Continuous action",
+                "Single: Interruptible action",
+                "Snap: Momentary action",
+                "Stamina: Combat style action"
+              ],
+              "infoText": "アクションの実行タイプ"
+            },
+            "title": "進行タイプ",
+            "yutori": {
+              "points": [
+                "4つの種類があります。"
+              ],
+              "reference": "ja/editor/action?id=進行タイプ"
+            }
+          },
+          "property": {
+            "type": "object",
+            "additionalProperties": false,
+            "format": "grid",
+            "required": [
+              "attack",
+              "defence",
+              "accuracy",
+              "evasion"
+            ],
+            "options": {
+              "disable_collapse": true,
+              "infoText": "Details"
+            },
+            "properties": {
+              "attack": {
+                "type": "number",
+                "default": 0,
+                "title": "攻撃値[レベル差]",
+                "options": {
+                  "infoText": "相手に与えるスタミナダメージへのレベル差補正"
+                },
+                "yutori": {
+                  "points": [
+                    "値が高いほどダメージが増加します。"
+                  ],
+                  "reference": "ja/editor/combat?id=攻撃値[レベル差]"
+                }
+              },
+              "defence": {
+                "type": "number",
+                "default": 0,
+                "title": "防御値[レベル差]",
+                "options": {
+                  "infoText": "相手から受けるスタミナダメージへのレベル差補正"
+                },
+                "yutori": {
+                  "points": [
+                    "値が高いほど被ダメージが軽減されます。"
+                  ],
+                  "reference": "ja/editor/combat?id=防御値[レベル差]"
+                }
+              },
+              "accuracy": {
+                "type": "number",
+                "default": 0,
+                "title": "命中値[レベル差]",
+                "options": {
+                  "infoText": "攻撃のミス率へのレベル差補正"
+                },
+                "yutori": {
+                  "points": [
+                    "値が高いほどミス率が低下します。"
+                  ],
+                  "reference": "ja/editor/combat?id=命中値[レベル差]"
+                }
+              },
+              "evasion": {
+                "type": "number",
+                "default": 0,
+                "title": "回避値[レベル差]",
+                "options": {
+                  "infoText": "相手の攻撃の回避率へのレベル差補正"
+                },
+                "yutori": {
+                  "points": [
+                    "値が高いほど相手の攻撃を回避しやすくなります。"
+                  ],
+                  "reference": "ja/editor/combat?id=回避値[レベル差]"
+                }
+              },
+              "restore": {
+                "type": "number",
+                "default": 0
+              }
+            },
+            "title": "戦闘値",
+            "description": "stamina タイプのアクションにおける戦闘補正値の設定",
+            "yutori": {
+              "points": [
+                "`stamina`タイプのアクションでのみ有効な補正値です。",
+                "各値はプレイヤーとアクションのレベル差への追加補正として計算されます。",
+                "例えば攻撃値が10の場合、プレイヤーのレベルがアクションのレベルより10高いものとして攻撃ダメージが計算されます。マイナスの場合は逆方向の補正です。",
+                "`一般`の`defaultCombat`に設定した場合はワールド全体のデフォルト戦闘パラメータとなります。"
+              ],
+              "reference": "ja/editor/combat"
+            }
+          }
+        }
+      },
+      "title": "アクション",
+      "description": "採取、制作、戦闘などの行動要素",
+      "yutori": {
+        "points": [
+          "採取、制作、売買、戦闘など行動を表す要素です。",
+          "行動をするごとに経験値を得て、レベルが上がります。",
+          "行動するごとにアイテムを消費または入手する設定をすることができます。",
+          "行動のパターンにはいくつかの種類があります。"
+        ],
+        "reference": "ja/editor/action"
+      }
+    },
+    "items": {
+      "type": "array",
+      "basicCategoryTitle": "アイテム",
+      "format": "tabs",
+      "options": {
+        "disable_collapse": true,
+        "infoText": "Details"
+      },
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "format": "grid",
+        "headerTemplate": "{{ i1 }}: {{ self.information.id }}",
+        "options": {
+          "disable_collapse": true
+        },
+        "required": [
+          "information",
+          "category",
+          "group",
+          "unlocked",
+          "buyingValue",
+          "sellingValue",
+          "coinId",
+          "maximum",
+          "equipmentType",
+          "requirements",
+          "properties"
+        ],
+        "properties": {
+          "information": {
+            "type": "object",
+            "additionalProperties": false,
+            "format": "grid",
+            "required": [
+              "id",
+              "name",
+              "explanation",
+              "icon",
+              "color"
+            ],
+            "options": {
+              "disable_collapse": true,
+              "infoText": "Details"
+            },
+            "properties": {
+              "id": {
+                "type": "string",
+                "default": "",
+                "minLength": 1,
+                "maxLength": 100,
+                "pattern": "^[0-9a-zA-Z\\-]+$",
+                "title": "識別ID",
+                "options": {
+                  "infoText": "要素を識別するための一意なID"
+                },
+                "yutori": {
+                  "points": [
+                    "各要素を一意に識別するためのIDです。",
+                    "エディターにおいて、その要素を判別するための文字列です。",
+                    "例えば、アクションが完了した際にどのアイテムを入手するのか、IDで指定します。"
+                  ],
+                  "reference": "ja/editor/information?id=識別ID"
+                }
+              },
+              "name": {
+                "type": "string",
+                "maxLength": 20,
+                "title": "名前",
+                "options": {
+                  "infoText": "要素の表示される名前"
+                },
+                "yutori": {
+                  "points": [
+                    "ゲームで表示される要素の名前です。",
+                    "英語以外の言語も入力できます。",
+                    "他の要素と重複する名前でも大丈夫です。",
+                    "長すぎる場合はプレイ中の表示ではみ出した箇所は`…`で省略されます。"
+                  ],
+                  "reference": "ja/editor/information?id=名前"
+                }
+              },
+              "explanation": {
+                "type": "string",
+                "title": "説明文",
+                "options": {
+                  "infoText": "要素の詳細説明"
+                },
+                "yutori": {
+                  "points": [
+                    "ゲームで表示される要素の説明文です。",
+                    "英語以外の言語も入力できます。長い文章でもすべて表示されます。",
+                    "説明がない場合は空欄にします。"
+                  ],
+                  "reference": "ja/editor/information?id=説明文"
+                }
+              },
+              "icon": {
+                "type": "object",
+                "additionalProperties": false,
+                "format": "grid",
+                "required": [
+                  "emoji",
+                  "iconify",
+                  "image"
+                ],
+                "options": {
+                  "disable_collapse": true,
+                  "infoText": "要素を表すアイコンの設定"
+                },
+                "properties": {
+                  "emoji": {
+                    "type": "string",
+                    "options": {
+                      "grid_columns": 4,
+                      "infoText": "絵文字によるアイコン表示"
+                    },
+                    "title": "絵文字",
+                    "yutori": {
+                      "points": [
+                        "絵文字をアイコンとして表示します。",
+                        "文字から絵文字に変換して手早く設定することができます。",
+                        "絵文字は、Unicodeの絵文字をそのまま入力してください。",
+                        "実行環境に導入されている絵文字が使用されるため、ユーザーにより多少表示が異なります。",
+                        "Iconifyでは各環境に依存しない絵文字を設定することができます",
+                        "絵文字以外の文字を表示することができますが、文字が複数あると表示が崩れる可能性があります。",
+                        "例えば、`🗡️`や`⚔️`などの絵文字を入力します。"
+                      ],
+                      "reference": "ja/editor/information?id=絵文字"
+                    }
+                  },
+                  "iconify": {
+                    "type": "string",
+                    "default": "",
+                    "options": {
+                      "grid_columns": 4,
+                      "infoText": "Iconifyアイコンセットの使用"
+                    },
+                    "title": "Iconify",
+                    "yutori": {
+                      "points": [
+                        "要素を表すアイコンです。",
+                        "Iconifyとは様々な種類のアイコンを提供するサービスです。",
+                        "画像を設定した場合はそれが優先して表示されます。"
+                      ],
+                      "reference": "ja/editor/information?id=Iconify"
+                    }
+                  },
+                  "image": {
+                    "type": "string",
+                    "default": "",
+                    "media": {
+                      "binaryEncoding": "base64",
+                      "type": "img/png"
+                    },
+                    "options": {
+                      "grid_columns": 4,
+                      "infoText": "任意の画像ファイルを使用"
+                    },
+                    "title": "画像",
+                    "yutori": {
+                      "points": [
+                        "要素を表す画像です。",
+                        "ファイルサイズが大きい場合は自動的にリサイズされます。",
+                        "Iconify又は絵文字を設定した場合は不要です。"
+                      ],
+                      "reference": "ja/editor/information?id=画像"
+                    }
+                  },
+                  "delete": {
+                    "format": "button",
+                    "options": {
+                      "button": {
+                        "text": "Delete Image",
+                        "icon": "trash",
+                        "action": "deletePrevious"
+                      }
+                    }
+                  }
+                },
+                "title": "アイコン",
+                "yutori": {
+                  "points": [
+                    "アイコンは、画像、Iconify、絵文字のいずれかを設定できます。",
+                    "Iconifyとは様々な種類のアイコンを提供するサービスです。",
+                    "これらのうち複数設定した場合は、画像、Iconify、絵文字の順に優先され表示されます。"
+                  ],
+                  "reference": "ja/editor/information?id=アイコン"
+                }
+              },
+              "color": {
+                "type": "string",
+                "default": "#000000",
+                "format": "color",
+                "pattern": "(^#[0-9a-fA-F]{6}$)|(^$)",
+                "title": "色",
+                "options": {
+                  "infoText": "要素の表示色の設定"
+                },
+                "yutori": {
+                  "points": [
+                    "要素の色として、要素のアイコンと背景色に適応されます。",
+                    "エディターのカラーピッカーから選択します。"
+                  ],
+                  "reference": "ja/editor/information?id=色"
+                }
+              },
+              "copy": {
+                "type": "string",
+                "format": "button",
+                "options": {
+                  "button": {
+                    "text": "Copy Information",
+                    "icon": "copy",
+                    "action": "copyInformation"
+                  }
+                }
+              }
+            },
+            "title": "インフォメーション",
+            "description": "要素の基本情報（ID、名前、アイコン、色など）の設定",
+            "yutori": {
+              "points": [
+                "ワールド内の各要素（カテゴリー、アクション、アイテム、イベントなど）に共通する基本情報の項目です。",
+                "それぞれの要素ごとに個別に設定します。"
+              ],
+              "reference": "ja/editor/information"
+            }
+          },
+          "category": {
+            "type": "string",
+            "default": "",
+            "pattern": "^[0-9a-zA-Z\\-]*$",
+            "title": "カテゴリー",
+            "options": {
+              "infoText": "アイテムが所属するカテゴリーのID"
+            },
+            "yutori": {
+              "points": [
+                "このアイテムが所属するカテゴリーのIDを指定します。"
+              ],
+              "reference": "ja/editor/item?id=カテゴリー"
+            }
+          },
+          "group": {
+            "type": "string",
+            "default": "",
+            "pattern": "^[0-9a-zA-Z\\-]*$",
+            "title": "グループ",
+            "options": {
+              "infoText": "アイテムの表示グループ分類"
+            },
+            "yutori": {
+              "points": [
+                "基本で設定したグループのいずれかを当てはめて下さい。",
+                "設定したグループ順にアイテムの一覧が表示されます。",
+                "空欄の場合はグループ分けされません。"
+              ],
+              "reference": "ja/editor/item?id=グループ"
+            }
+          },
+          "unlocked": {
+            "type": "string",
+            "enum": [
+              "secreted",
+              "hidden",
+              "hinted",
+              "released"
+            ],
+            "default": "hinted",
+            "options": {
+              "enum_titles": [
+                "Secreted: Completely hidden from all UI (not even as a hint) until all requirements are met",
+                "Hidden: Fully concealed (grayed out, no name) until referenced or conditions met",
+                "Hinted: Name shown as a teaser but not operable until released (default)",
+                "Released: Unlocked and operable from the start regardless of conditions"
+              ],
+              "infoText": "要素の初期表示・解放状態（発動要件を満たすと自動で上位状態へ）"
+            },
+            "title": "初期解放状態",
+            "yutori": {
+              "points": [
+                "secreted: 全requirementsを満たすまでUIに一切表示されません（ヒントにも出ず、要件/報酬の一覧でもマスクされます）。",
+                "hidden: どの解放要素からも参照されず要件も未達の間、完全に隠されます（名前もグレーアウト・操作不可）。",
+                "hinted（既定）: 名前だけ予告表示されますが、解放されるまで操作できません。",
+                "released: 条件に関係なく最初から解放され操作可能です（旧「最初から表示」）。"
+              ],
+              "reference": "ja/editor/item?id=初期解放状態"
+            }
+          },
+          "buyingValue": {
+            "type": "integer",
+            "default": -1,
+            "title": "買値[コイン]",
+            "options": {
+              "infoText": "アイテムの購入価格設定"
+            },
+            "yutori": {
+              "points": [
+                "アイテムを所持したことがなければ買うことはできません。"
+              ],
+              "reference": "ja/editor/item?id=買値[コイン]"
+            }
+          },
+          "sellingValue": {
+            "type": "integer",
+            "default": 0,
+            "minimum": 0,
+            "title": "売値[コイン]",
+            "options": {
+              "infoText": "アイテムの売却価格設定"
+            },
+            "yutori": {
+              "points": [
+                "アイテムを売却する際の価格を設定します。"
+              ],
+              "reference": "ja/editor/item?id=売値[コイン]"
+            }
+          },
+          "coinId": {
+            "type": "string",
+            "default": "",
+            "pattern": "^[0-9a-zA-Z\\-]*$",
+            "title": "売買通貨ID",
+            "options": {
+              "infoText": "このアイテムの売買に使う通貨のID"
+            },
+            "yutori": {
+              "points": [
+                "買値・売値で共通して使う通貨（coins）のIDを指定します。",
+                "空欄の場合はメイン通貨（coinsの先頭）が使われます。"
+              ],
+              "reference": "ja/editor/item?id=売買通貨ID"
+            }
+          },
+          "maximum": {
+            "type": "number",
+            "default": 0,
+            "minimum": 0,
+            "title": "最大所有数[個]",
+            "options": {
+              "infoText": "アイテムの最大所有数制限"
+            },
+            "yutori": {
+              "points": [
+                "0の場合は所有できる数に制限がありません。",
+                "1以上の場合はその数までしか所有できません。上限に達している場合、さらに入手しても所有数は増えません。"
+              ],
+              "reference": "ja/editor/item?id=最大所有数[個]"
+            }
+          },
+          "equipmentType": {
+            "type": "string",
+            "enum": [
+              "necessary",
+              "unnecessary",
+              "impossible",
+              "consumable"
+            ],
+            "default": "necessary",
+            "options": {
+              "enum_titles": [
+                "Necessary: Must be equipped",
+                "Unnecessary: Doesn't need to be equipped, always effective",
+                "Impossible: Cannot be equipped",
+                "Consumable: Consumed when used"
+              ],
+              "infoText": "アイテムの装備・効果・消費に関するタイプ設定"
+            },
+            "title": "装備タイプ",
+            "yutori": {
+              "points": [
+                "装備可能なアイテムは、カテゴリーの`equipmentGroups`で指定されたグループに属している必要があります。",
+                "同じグループ内では1つのアイテムのみ装備できます。"
+              ],
+              "reference": "ja/editor/item?id=装備タイプ"
+            }
+          },
+          "requirements": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "additionalProperties": false,
+              "headerTemplate": "{{ i1 }}: {{ self.id }} [ {{ self.type }} ]",
+              "format": "grid",
+              "required": [
+                "type",
+                "id",
+                "count",
+                "chance",
+                "equipment"
+              ],
+              "options": {
+                "disable_collapse": true
+              },
+              "properties": {
+                "type": {
+                  "type": "string",
+                  "enum": [
+                    "category",
+                    "action",
+                    "item"
+                  ],
+                  "default": "item",
+                  "title": "タイプ",
+                  "options": {
+                    "infoText": "条件として参照する要素の種類"
+                  },
+                  "yutori": {
+                    "reference": "ja/editor/requirement?id=タイプ"
+                  }
+                },
+                "id": {
+                  "type": "string",
+                  "pattern": "^[0-9a-zA-Z\\-]+$",
+                  "title": "要素のID",
+                  "options": {
+                    "infoText": "条件として参照する要素のID"
+                  },
+                  "yutori": {
+                    "reference": "ja/editor/requirement?id=要素のID"
+                  }
+                },
+                "count": {
+                  "type": "integer",
+                  "minimum": 0,
+                  "default": 1,
+                  "title": "値",
+                  "options": {
+                    "infoText": "条件に必要な数値"
+                  },
+                  "yutori": {
+                    "points": [
+                      "指定した値以上の場合に条件を満たします。"
+                    ],
+                    "reference": "ja/editor/requirement?id=値"
+                  }
+                },
+                "chance": {
+                  "type": "number",
+                  "default": 1,
+                  "minimum": 0,
+                  "maximum": 1,
+                  "title": "消費確率[0-1]",
+                  "options": {
+                    "infoText": "アイテムが消費される確率（0～1、タイプがアイテムの場合のみ有効）"
+                  },
+                  "yutori": {
+                    "points": [
+                      "条件を満たしてアクションが実行された際に、アイテムを消費する確率です。",
+                      "`1`で必ず消費、`0.5`で50%の確率で消費、`0`で消費しません。",
+                      "デフォルト値は`1`（必ず消費）です。",
+                      "タイプがアイテム以外の場合は無効です。"
+                    ],
+                    "reference": "ja/editor/requirement?id=消費確率[0-1]"
+                  }
+                },
+                "equipment": {
+                  "type": "boolean",
+                  "default": false,
+                  "format": "checkbox",
+                  "title": "装備",
+                  "options": {
+                    "infoText": "アイテムが装備状態であることを条件とするか（タイプがアイテムの場合のみ有効）"
+                  },
+                  "yutori": {
+                    "points": [
+                      "有効にすると、アイテムを所持しているだけでなく、装備していることが条件として必要になります。",
+                      "タイプがアイテム以外の場合は無効です。"
+                    ],
+                    "reference": "ja/editor/requirement?id=装備"
+                  }
+                }
+              }
+            },
+            "options": {
+              "disable_collapse": true,
+              "infoText": "Details"
+            },
+            "title": "条件",
+            "description": "アイテム使用に必要な条件",
+            "yutori": {
+              "points": [
+                "カテゴリー、アクション、アイテムごとの各要素に設定する条件です。",
+                "全ての設定した条件を満たさないと、表に示した操作ができません。",
+                "ロック機能が有効の場合は、条件を満たすまで要素自体が非表示になります。"
+              ],
+              "reference": "ja/editor/requirement"
+            }
+          },
+          "properties": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "additionalProperties": false,
+              "headerTemplate": "{{ i1 }}: {{ self.category }}",
+              "format": "grid",
+              "required": [
+                "category",
+                "attack",
+                "defence",
+                "accuracy",
+                "evasion",
+                "restore",
+                "speed",
+                "chance",
+                "experience"
+              ],
+              "options": {
+                "disable_collapse": true
+              },
+              "properties": {
+                "category": {
+                  "type": "string",
+                  "pattern": "^(\\*|[^*]*)$",
+                  "title": "カテゴリー",
+                  "options": {
+                    "infoText": "プロパティを適用するカテゴリーの指定"
+                  },
+                  "yutori": {
+                    "points": [
+                      "このプロパティを適用するカテゴリーのIDを設定します。",
+                      "`*`を設定すると全カテゴリーに適用されます。",
+                      "空欄の場合はアイテムが属するカテゴリーに適用されます。"
+                    ],
+                    "reference": "ja/editor/property?id=カテゴリー"
+                  }
+                },
+                "attack": {
+                  "type": "number",
+                  "default": 0,
+                  "title": "攻撃値[レベル差]",
+                  "options": {
+                    "infoText": "相手に与えるスタミナダメージへの補正（stamina アクションのみ有効）"
+                  },
+                  "yutori": {
+                    "points": [
+                      "プレイヤーのレベルがアクションのレベルよりこの値だけ高いものとして攻撃ダメージが計算されます。"
+                    ],
+                    "reference": "ja/editor/property?id=攻撃値[レベル差]"
+                  }
+                },
+                "defence": {
+                  "type": "number",
+                  "default": 0,
+                  "title": "防御値[レベル差]",
+                  "options": {
+                    "infoText": "相手から受けるスタミナダメージへの補正（stamina アクションのみ有効）"
+                  },
+                  "yutori": {
+                    "points": [
+                      "プレイヤーのレベルがアクションのレベルよりこの値だけ高いものとして被ダメージが計算されます。値が高いほど被ダメージが軽減されます。"
+                    ],
+                    "reference": "ja/editor/property?id=防御値[レベル差]"
+                  }
+                },
+                "accuracy": {
+                  "type": "number",
+                  "default": 0,
+                  "title": "命中値[レベル差]",
+                  "options": {
+                    "infoText": "攻撃のミス率への補正（stamina アクションのみ有効）"
+                  },
+                  "yutori": {
+                    "points": [
+                      "プレイヤーのレベルがアクションのレベルよりこの値だけ高いものとしてミス率が計算されます。値が高いほどミス率が低下します。"
+                    ],
+                    "reference": "ja/editor/property?id=命中値[レベル差]"
+                  }
+                },
+                "evasion": {
+                  "type": "number",
+                  "default": 0,
+                  "title": "回避値[レベル差]",
+                  "options": {
+                    "infoText": "相手の攻撃の回避率への補正（stamina アクションのみ有効）"
+                  },
+                  "yutori": {
+                    "points": [
+                      "プレイヤーのレベルがアクションのレベルよりこの値だけ高いものとして回避率が計算されます。"
+                    ],
+                    "reference": "ja/editor/property?id=回避値[レベル差]"
+                  }
+                },
+                "restore": {
+                  "type": "number",
+                  "default": 0,
+                  "title": "回復値[レベル差]",
+                  "options": {
+                    "infoText": "スタミナ回復量への補正（stamina アクションのみ有効）"
+                  },
+                  "yutori": {
+                    "points": [
+                      "プレイヤーのレベルがアクションのレベルよりこの値だけ高いものとしてスタミナ回復量が計算されます。"
+                    ],
+                    "reference": "ja/editor/property?id=回復値[レベル差]"
+                  }
+                },
+                "speed": {
+                  "type": "number",
+                  "default": 0,
+                  "title": "素早さ[レベル差]",
+                  "options": {
+                    "infoText": "アクション所要時間への補正"
+                  },
+                  "yutori": {
+                    "points": [
+                      "プレイヤーのレベルがアクションのレベルよりこの値だけ高いものとして所要時間が計算されます。値が高いほど所要時間が短縮されます。"
+                    ],
+                    "reference": "ja/editor/property?id=素早さ[レベル差]"
+                  }
+                },
+                "chance": {
+                  "type": "number",
+                  "default": 0,
+                  "title": "成功確率[レベル差]",
+                  "options": {
+                    "infoText": "アクション成功確率への補正"
+                  },
+                  "yutori": {
+                    "points": [
+                      "プレイヤーのレベルがアクションのレベルよりこの値だけ高いものとしてアクション成功確率が計算されます。値が高いほど成功確率が増加します。"
+                    ],
+                    "reference": "ja/editor/property?id=成功確率[レベル差]"
+                  }
+                },
+                "experience": {
+                  "type": "number",
+                  "default": 0,
+                  "title": "経験値[レベル差]",
+                  "options": {
+                    "infoText": "獲得経験値への補正"
+                  },
+                  "yutori": {
+                    "points": [
+                      "プレイヤーのレベルがアクションのレベルよりこの値だけ低いものとして経験値が計算されます（計算が反転しているため、アクションのレベルが高いほど多くの経験値を得られます）。"
+                    ],
+                    "reference": "ja/editor/property?id=経験値[レベル差]"
+                  }
+                }
+              }
+            },
+            "options": {
+              "disable_collapse": true,
+              "infoText": "Details"
+            },
+            "title": "プロパティ",
+            "description": "アイテムが持つプロパティ効果",
+            "yutori": {
+              "points": [
+                "アイテムに設定できる効果の項目です。",
+                "装備タイプが`necessary`か`consumable`のアイテムは装備中のみ効果が適用されます。`unnecessary`は所持しているだけで効果が適用されます。",
+                "いずれの項目の数値もプレイヤーのレベルとアクションのレベルとのレベル差を調整するものとして計算されます。",
+                "例えば、攻撃値が10の場合、プレイヤーのレベルがアクションのレベルより10高いものとして攻撃が計算されます。マイナスの値はその逆です。",
+                "attack、defence、accuracy、evasion、restoreは`stamina`タイプのアクションでのみ有効です。"
+              ],
+              "reference": "ja/editor/property"
+            }
+          }
+        }
+      },
+      "title": "アイテム",
+      "description": "装備品や消費物などの物品要素",
+      "yutori": {
+        "points": [
+          "装備品、消費物、貴重品などの物の所有に関する要素です。",
+          "カテゴリー内で１つのみ装備することもできますが、装備できないようにもできます。",
+          "変数のような利用の仕方もあります。"
+        ],
+        "reference": "ja/editor/item"
+      }
+    },
+    "groups": {
+      "type": "array",
+      "basicCategoryTitle": "グループ",
+      "format": "tabs",
+      "options": {
+        "disable_collapse": true,
+        "infoText": "Details"
+      },
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "format": "grid",
+        "required": [
+          "id",
+          "name",
+          "explanation",
+          "icon",
+          "color"
+        ],
+        "options": {
+          "disable_collapse": true
+        },
+        "properties": {
+          "id": {
+            "type": "string",
+            "default": "",
+            "minLength": 1,
+            "maxLength": 100,
+            "pattern": "^[0-9a-zA-Z\\-]+$",
+            "title": "識別ID",
+            "options": {
+              "infoText": "要素を識別するための一意なID"
+            },
+            "yutori": {
+              "points": [
+                "各要素を一意に識別するためのIDです。",
+                "エディターにおいて、その要素を判別するための文字列です。",
+                "例えば、アクションが完了した際にどのアイテムを入手するのか、IDで指定します。"
+              ],
+              "reference": "ja/editor/group?id=識別ID"
+            }
+          },
+          "name": {
+            "type": "string",
+            "maxLength": 20,
+            "title": "名前",
+            "options": {
+              "infoText": "要素の表示される名前"
+            },
+            "yutori": {
+              "points": [
+                "ゲームで表示される要素の名前です。",
+                "英語以外の言語も入力できます。",
+                "他の要素と重複する名前でも大丈夫です。",
+                "長すぎる場合はプレイ中の表示ではみ出した箇所は`…`で省略されます。"
+              ],
+              "reference": "ja/editor/group?id=名前"
+            }
+          },
+          "explanation": {
+            "type": "string",
+            "title": "説明文",
+            "options": {
+              "infoText": "要素の詳細説明"
+            },
+            "yutori": {
+              "points": [
+                "ゲームで表示される要素の説明文です。",
+                "英語以外の言語も入力できます。長い文章でもすべて表示されます。",
+                "説明がない場合は空欄にします。"
+              ],
+              "reference": "ja/editor/group?id=説明文"
+            }
+          },
+          "icon": {
+            "type": "object",
+            "additionalProperties": false,
+            "format": "grid",
+            "required": [
+              "emoji",
+              "iconify",
+              "image"
+            ],
+            "options": {
+              "disable_collapse": true,
+              "infoText": "要素を表すアイコンの設定"
+            },
+            "properties": {
+              "emoji": {
+                "type": "string",
+                "options": {
+                  "grid_columns": 4,
+                  "infoText": "絵文字によるアイコン表示"
+                },
+                "title": "絵文字",
+                "yutori": {
+                  "points": [
+                    "絵文字をアイコンとして表示します。",
+                    "文字から絵文字に変換して手早く設定することができます。",
+                    "絵文字は、Unicodeの絵文字をそのまま入力してください。",
+                    "実行環境に導入されている絵文字が使用されるため、ユーザーにより多少表示が異なります。",
+                    "Iconifyでは各環境に依存しない絵文字を設定することができます",
+                    "絵文字以外の文字を表示することができますが、文字が複数あると表示が崩れる可能性があります。",
+                    "例えば、`🗡️`や`⚔️`などの絵文字を入力します。"
+                  ],
+                  "reference": "ja/editor/group?id=絵文字"
+                }
+              },
+              "iconify": {
+                "type": "string",
+                "default": "",
+                "options": {
+                  "grid_columns": 4,
+                  "infoText": "Iconifyアイコンセットの使用"
+                },
+                "title": "Iconify",
+                "yutori": {
+                  "points": [
+                    "要素を表すアイコンです。",
+                    "Iconifyとは様々な種類のアイコンを提供するサービスです。",
+                    "画像を設定した場合はそれが優先して表示されます。"
+                  ],
+                  "reference": "ja/editor/group?id=Iconify"
+                }
+              },
+              "image": {
+                "type": "string",
+                "default": "",
+                "media": {
+                  "binaryEncoding": "base64",
+                  "type": "img/png"
+                },
+                "options": {
+                  "grid_columns": 4,
+                  "infoText": "任意の画像ファイルを使用"
+                },
+                "title": "画像",
+                "yutori": {
+                  "points": [
+                    "要素を表す画像です。",
+                    "ファイルサイズが大きい場合は自動的にリサイズされます。",
+                    "Iconify又は絵文字を設定した場合は不要です。"
+                  ],
+                  "reference": "ja/editor/group?id=画像"
+                }
+              },
+              "delete": {
+                "format": "button",
+                "options": {
+                  "button": {
+                    "text": "Delete Image",
+                    "icon": "trash",
+                    "action": "deletePrevious"
+                  }
+                }
+              }
+            },
+            "title": "アイコン",
+            "yutori": {
+              "points": [
+                "アイコンは、画像、Iconify、絵文字のいずれかを設定できます。",
+                "Iconifyとは様々な種類のアイコンを提供するサービスです。",
+                "これらのうち複数設定した場合は、画像、Iconify、絵文字の順に優先され表示されます。"
+              ],
+              "reference": "ja/editor/group?id=アイコン"
+            }
+          },
+          "color": {
+            "type": "string",
+            "default": "#000000",
+            "format": "color",
+            "pattern": "(^#[0-9a-fA-F]{6}$)|(^$)",
+            "title": "色",
+            "options": {
+              "infoText": "要素の表示色の設定"
+            },
+            "yutori": {
+              "points": [
+                "要素の色として、要素のアイコンと背景色に適応されます。",
+                "エディターのカラーピッカーから選択します。"
+              ],
+              "reference": "ja/editor/group?id=色"
+            }
+          },
+          "copy": {
+            "type": "string",
+            "format": "button",
+            "options": {
+              "button": {
+                "text": "Copy Information",
+                "icon": "copy",
+                "action": "copyInformation"
+              }
+            }
+          }
+        },
+        "headerTemplate": "{{ i1 }}: {{ self.id }}"
+      },
+      "title": "グループ",
+      "description": "カテゴリー、アクション、アイテムの表示グループを定義",
+      "yutori": {
+        "points": [
+          "表示順を制御するためのグループを定義します。",
+          "各カテゴリー、アクション、アイテムでここで定義したグループを設定できます。",
+          "グループが同じものは近くに表示されます。",
+          "空欄の場合はグループ分けされません。"
+        ],
+        "reference": "ja/editor/group"
+      }
+    },
+    "events": {
+      "type": "array",
+      "basicCategoryTitle": "イベント",
+      "format": "tabs",
+      "options": {
+        "disable_collapse": true,
+        "infoText": "Details"
+      },
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "headerTemplate": "{{ i1 }}: {{ self.information.id }} [{{ self.timing }}]",
+        "options": {
+          "disable_collapse": true
+        },
+        "required": [
+          "information",
+          "timing",
+          "unlocked",
+          "requirements",
+          "acquisitions",
+          "group"
+        ],
+        "properties": {
+          "information": {
+            "type": "object",
+            "additionalProperties": false,
+            "format": "grid",
+            "required": [
+              "id",
+              "name",
+              "explanation",
+              "icon",
+              "color"
+            ],
+            "options": {
+              "disable_collapse": true,
+              "infoText": "Details"
+            },
+            "properties": {
+              "id": {
+                "type": "string",
+                "default": "",
+                "minLength": 1,
+                "maxLength": 100,
+                "pattern": "^[0-9a-zA-Z\\-]+$",
+                "title": "識別ID",
+                "options": {
+                  "infoText": "要素を識別するための一意なID"
+                },
+                "yutori": {
+                  "points": [
+                    "各要素を一意に識別するためのIDです。",
+                    "エディターにおいて、その要素を判別するための文字列です。",
+                    "例えば、アクションが完了した際にどのアイテムを入手するのか、IDで指定します。"
+                  ],
+                  "reference": "ja/editor/information?id=識別ID"
+                }
+              },
+              "name": {
+                "type": "string",
+                "maxLength": 20,
+                "title": "名前",
+                "options": {
+                  "infoText": "要素の表示される名前"
+                },
+                "yutori": {
+                  "points": [
+                    "ゲームで表示される要素の名前です。",
+                    "英語以外の言語も入力できます。",
+                    "他の要素と重複する名前でも大丈夫です。",
+                    "長すぎる場合はプレイ中の表示ではみ出した箇所は`…`で省略されます。"
+                  ],
+                  "reference": "ja/editor/information?id=名前"
+                }
+              },
+              "explanation": {
+                "type": "string",
+                "title": "説明文",
+                "options": {
+                  "infoText": "要素の詳細説明"
+                },
+                "yutori": {
+                  "points": [
+                    "ゲームで表示される要素の説明文です。",
+                    "英語以外の言語も入力できます。長い文章でもすべて表示されます。",
+                    "説明がない場合は空欄にします。"
+                  ],
+                  "reference": "ja/editor/information?id=説明文"
+                }
+              },
+              "icon": {
+                "type": "object",
+                "additionalProperties": false,
+                "format": "grid",
+                "required": [
+                  "emoji",
+                  "iconify",
+                  "image"
+                ],
+                "options": {
+                  "disable_collapse": true,
+                  "infoText": "要素を表すアイコンの設定"
+                },
+                "properties": {
+                  "emoji": {
+                    "type": "string",
+                    "options": {
+                      "grid_columns": 4,
+                      "infoText": "絵文字によるアイコン表示"
+                    },
+                    "title": "絵文字",
+                    "yutori": {
+                      "points": [
+                        "絵文字をアイコンとして表示します。",
+                        "文字から絵文字に変換して手早く設定することができます。",
+                        "絵文字は、Unicodeの絵文字をそのまま入力してください。",
+                        "実行環境に導入されている絵文字が使用されるため、ユーザーにより多少表示が異なります。",
+                        "Iconifyでは各環境に依存しない絵文字を設定することができます",
+                        "絵文字以外の文字を表示することができますが、文字が複数あると表示が崩れる可能性があります。",
+                        "例えば、`🗡️`や`⚔️`などの絵文字を入力します。"
+                      ],
+                      "reference": "ja/editor/information?id=絵文字"
+                    }
+                  },
+                  "iconify": {
+                    "type": "string",
+                    "default": "",
+                    "options": {
+                      "grid_columns": 4,
+                      "infoText": "Iconifyアイコンセットの使用"
+                    },
+                    "title": "Iconify",
+                    "yutori": {
+                      "points": [
+                        "要素を表すアイコンです。",
+                        "Iconifyとは様々な種類のアイコンを提供するサービスです。",
+                        "画像を設定した場合はそれが優先して表示されます。"
+                      ],
+                      "reference": "ja/editor/information?id=Iconify"
+                    }
+                  },
+                  "image": {
+                    "type": "string",
+                    "default": "",
+                    "media": {
+                      "binaryEncoding": "base64",
+                      "type": "img/png"
+                    },
+                    "options": {
+                      "grid_columns": 4,
+                      "infoText": "任意の画像ファイルを使用"
+                    },
+                    "title": "画像",
+                    "yutori": {
+                      "points": [
+                        "要素を表す画像です。",
+                        "ファイルサイズが大きい場合は自動的にリサイズされます。",
+                        "Iconify又は絵文字を設定した場合は不要です。"
+                      ],
+                      "reference": "ja/editor/information?id=画像"
+                    }
+                  },
+                  "delete": {
+                    "format": "button",
+                    "options": {
+                      "button": {
+                        "text": "Delete Image",
+                        "icon": "trash",
+                        "action": "deletePrevious"
+                      }
+                    }
+                  }
+                },
+                "title": "アイコン",
+                "yutori": {
+                  "points": [
+                    "アイコンは、画像、Iconify、絵文字のいずれかを設定できます。",
+                    "Iconifyとは様々な種類のアイコンを提供するサービスです。",
+                    "これらのうち複数設定した場合は、画像、Iconify、絵文字の順に優先され表示されます。"
+                  ],
+                  "reference": "ja/editor/information?id=アイコン"
+                }
+              },
+              "color": {
+                "type": "string",
+                "default": "#000000",
+                "format": "color",
+                "pattern": "(^#[0-9a-fA-F]{6}$)|(^$)",
+                "title": "色",
+                "options": {
+                  "infoText": "要素の表示色の設定"
+                },
+                "yutori": {
+                  "points": [
+                    "要素の色として、要素のアイコンと背景色に適応されます。",
+                    "エディターのカラーピッカーから選択します。"
+                  ],
+                  "reference": "ja/editor/information?id=色"
+                }
+              },
+              "copy": {
+                "type": "string",
+                "format": "button",
+                "options": {
+                  "button": {
+                    "text": "Copy Information",
+                    "icon": "copy",
+                    "action": "copyInformation"
+                  }
+                }
+              }
+            },
+            "title": "インフォメーション",
+            "description": "要素の基本情報（ID、名前、アイコン、色など）の設定",
+            "yutori": {
+              "points": [
+                "ワールド内の各要素（カテゴリー、アクション、アイテム、イベントなど）に共通する基本情報の項目です。",
+                "それぞれの要素ごとに個別に設定します。"
+              ],
+              "reference": "ja/editor/information"
+            }
+          },
+          "timing": {
+            "type": "string",
+            "enum": [
+              "matched",
+              "comebacked",
+              "gameovered",
+              "welcomed",
+              "completed",
+              "obtained"
+            ],
+            "default": "matched",
+            "options": {
+              "enum_titles": [
+                "Matched: When the set conditions are met",
+                "Comebacked: When the player returnss from offline",
+                "Gameovered: When the game is over due to combat",
+                "Welcomed: When the player first opens the world",
+                "Completed: When a player reaches the maximum level in all categories",
+                "Obtained: When a single action such as opening a treasure chest is completed"
+              ],
+              "infoText": "イベント発動のタイミング設定"
+            },
+            "title": "タイミング",
+            "yutori": {
+              "reference": "ja/editor/event?id=タイミング"
+            }
+          },
+          "unlocked": {
+            "type": "string",
+            "enum": [
+              "secreted",
+              "hidden",
+              "hinted",
+              "released"
+            ],
+            "default": "hinted",
+            "options": {
+              "enum_titles": [
+                "Secreted: Completely hidden from all UI (not even as a hint) until all requirements are met",
+                "Hidden: Fully concealed (grayed out, no name) until referenced or conditions met",
+                "Hinted: Name shown as a teaser but not operable until released (default)",
+                "Released: Unlocked and operable from the start regardless of conditions"
+              ],
+              "infoText": "イベントアイコンの初期表示状態（発火はタイミングで決まり、この設定では発火しません）"
+            },
+            "title": "初期表示状態",
+            "yutori": {
+              "points": [
+                "イベントの発火条件はタイミングで決まり、この項目は一覧アイコンの見た目のみに影響します。",
+                "secreted: 全requirementsを満たすまでイベント一覧に一切表示されません（発火自体はタイミングで起こります）。",
+                "hidden・hinted: アイコンに斜線が付き未解放として表示されます。",
+                "released: 斜線が消え解放済みとして表示されます。"
+              ],
+              "reference": "ja/editor/event?id=初期表示状態"
+            }
+          },
+          "requirements": {
+            "type": "array",
+            "format": "table",
+            "options": {
+              "disable_collapse": true,
+              "infoText": "イベント発動や報酬付与の条件"
+            },
+            "items": {
+              "type": "object",
+              "additionalProperties": false,
+              "headerTemplate": "{{ i1 }}: {{ self.id }} [ {{ self.type }} ]",
+              "format": "grid",
+              "required": [
+                "type",
+                "id",
+                "count",
+                "chance",
+                "equipment"
+              ],
+              "options": {
+                "disable_collapse": true
+              },
+              "properties": {
+                "type": {
+                  "type": "string",
+                  "enum": [
+                    "category",
+                    "action",
+                    "item"
+                  ],
+                  "default": "item",
+                  "title": "タイプ",
+                  "options": {
+                    "infoText": "条件として参照する要素の種類"
+                  },
+                  "yutori": {
+                    "reference": "ja/editor/event?id=タイプ"
+                  }
+                },
+                "id": {
+                  "type": "string",
+                  "pattern": "^[0-9a-zA-Z\\-]+$",
+                  "title": "要素のID",
+                  "options": {
+                    "infoText": "条件として参照する要素のID"
+                  },
+                  "yutori": {
+                    "reference": "ja/editor/event?id=要素のID"
+                  }
+                },
+                "count": {
+                  "type": "integer",
+                  "minimum": 0,
+                  "default": 1,
+                  "title": "値",
+                  "options": {
+                    "infoText": "条件に必要な数値"
+                  },
+                  "yutori": {
+                    "points": [
+                      "指定した値以上の場合に条件を満たします。"
+                    ],
+                    "reference": "ja/editor/event?id=値"
+                  }
+                },
+                "chance": {
+                  "type": "number",
+                  "default": 0,
+                  "minimum": 0,
+                  "maximum": 1,
+                  "title": "消費確率[0-1]",
+                  "options": {
+                    "infoText": "アイテムが消費される確率（0～1、タイプがアイテムの場合のみ有効）"
+                  },
+                  "yutori": {
+                    "points": [
+                      "条件を満たしてアクションが実行された際に、アイテムを消費する確率です。",
+                      "`1`で必ず消費、`0.5`で50%の確率で消費、`0`で消費しません。",
+                      "デフォルト値は`1`（必ず消費）です。",
+                      "タイプがアイテム以外の場合は無効です。"
+                    ],
+                    "reference": "ja/editor/event?id=消費確率[0-1]"
+                  }
+                },
+                "equipment": {
+                  "type": "boolean",
+                  "default": false,
+                  "format": "checkbox",
+                  "title": "装備",
+                  "options": {
+                    "infoText": "アイテムが装備状態であることを条件とするか（タイプがアイテムの場合のみ有効）"
+                  },
+                  "yutori": {
+                    "points": [
+                      "有効にすると、アイテムを所持しているだけでなく、装備していることが条件として必要になります。",
+                      "タイプがアイテム以外の場合は無効です。"
+                    ],
+                    "reference": "ja/editor/event?id=装備"
+                  }
+                }
+              }
+            },
+            "title": "条件",
+            "yutori": {
+              "points": [
+                "イベント発動又は報酬付与の条件です。",
+                "`matched`では、この条件を満たした時のみ発動し、報酬を獲得します。",
+                "`matched`以外のタイミングでは、タイミング条件が成立すると発動します。その後、ここで設定した条件を満たしている時にのみ報酬を獲得します。"
+              ],
+              "reference": "ja/editor/event?id=条件"
+            }
+          },
+          "acquisitions": {
+            "type": "array",
+            "format": "table",
+            "options": {
+              "disable_collapse": true,
+              "infoText": "イベント発動時の報酬設定"
+            },
+            "items": {
+              "type": "object",
+              "additionalProperties": false,
+              "headerTemplate": "{{ i1 }}: {{ self.id }} [ {{ self.type }} ]",
+              "format": "grid",
+              "required": [
+                "id",
+                "count",
+                "chance",
+                "type"
+              ],
+              "options": {
+                "disable_collapse": true
+              },
+              "properties": {
+                "type": {
+                  "type": "string",
+                  "enum": [
+                    "category",
+                    "action",
+                    "item"
+                  ],
+                  "default": "item",
+                  "title": "タイプ",
+                  "options": {
+                    "infoText": "取得する要素の種類"
+                  },
+                  "yutori": {
+                    "reference": "ja/editor/event?id=タイプ"
+                  }
+                },
+                "id": {
+                  "type": "string",
+                  "pattern": "^[0-9a-zA-Z\\-]+$",
+                  "title": "要素のID",
+                  "options": {
+                    "infoText": "取得する要素を識別するID"
+                  },
+                  "yutori": {
+                    "reference": "ja/editor/event?id=要素のID"
+                  }
+                },
+                "count": {
+                  "type": "integer",
+                  "default": 1,
+                  "title": "値",
+                  "options": {
+                    "infoText": "取得する数値"
+                  },
+                  "yutori": {
+                    "points": [
+                      "マイナスの値を設定すると、所持数や実行した回数、レベルを減少させます。ただし、０以下にはなりません。",
+                      "アイテムに最大所有数（maximum）が設定されている場合、その値を超えて所有数は増えません。",
+                      "タイプがカテゴリーの場合、設定した値がレベルに直接加算されます（1で1レベル、0.5で0.5レベル）。アクションの経験値設定で調整するのが通常の方法です。特殊な目的がない限りこの設定は不要です。"
+                    ],
+                    "reference": "ja/editor/event?id=値"
+                  }
+                },
+                "chance": {
+                  "type": "number",
+                  "default": 1,
+                  "minimum": -1,
+                  "maximum": 1,
+                  "title": "確率[-1〜1]",
+                  "options": {
+                    "infoText": "取得が成功する確率（負値は失敗時のみ評価）"
+                  },
+                  "yutori": {
+                    "points": [
+                      "入手する確率を-1から1の小数で設定します。確率の判定には絶対値が使われます。",
+                      "値が正のときはアクション成功時のみ評価され、`1`で必ず入手、`0.5`で50%の確率で入手します。",
+                      "値が負のときはアクション失敗時のみ評価され、`-1`で必ず入手、`-0.5`で50%の確率で入手します。",
+                      "`0`では成功時・失敗時とも入手することはありません。",
+                      "デフォルト値は`1`（成功時に必ず入手）です。"
+                    ],
+                    "reference": "ja/editor/event?id=確率[-1〜1]"
+                  }
+                }
+              }
+            },
+            "title": "報酬",
+            "yutori": {
+              "points": [
+                "イベントが発動した時の報酬です。",
+                "`matched`では、条件を満たして発動した時にのみ報酬を得ます。",
+                "`matched`以外では、タイミング条件が成立し、かつconditionsの条件を満たす時にのみ報酬を獲得します。",
+                "数量にマイナスを設定することができます。例えば`gameovered`の場合にアイテムの数量をマイナスにすれば、ゲームオーバー時にそれらを失います。"
+              ],
+              "reference": "ja/editor/event?id=報酬"
+            }
+          },
+          "group": {
+            "type": "string",
+            "pattern": "^[0-9a-zA-Z\\-]*$",
+            "default": "",
+            "title": "タスクグループ",
+            "options": {
+              "infoText": "タスクのグループ識別子（現在未使用）"
+            },
+            "yutori": {
+              "points": [
+                "現在この項目は使用されていません。将来の機能拡張のために予約されています。"
+              ],
+              "reference": "ja/editor/event?id=タスクグループ"
+            }
+          }
+        }
+      },
+      "title": "イベント",
+      "description": "条件に応じて発動するメッセージと報酬システム",
+      "yutori": {
+        "points": [
+          "設定したタイミング・条件に一致した時に発動して、メッセージを表示します。",
+          "初回起動時、ゲームオーバー時、オフラインから復帰した時、特定の条件を満たした時などに発動させることができます。",
+          "発動時にカテゴリーのレベル、アクションの実行回数、アイテムの所持数を変化させることができます。"
+        ],
+        "reference": "ja/editor/event"
+      }
+    },
+    "presets": {
+      "type": "array",
+      "basicCategoryTitle": "プリセット",
+      "format": "tabs",
+      "options": {
+        "disable_collapse": true,
+        "infoText": "Details"
+      },
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "format": "grid",
+        "required": [
+          "id",
+          "name",
+          "explanation",
+          "icon",
+          "color"
+        ],
+        "options": {
+          "disable_collapse": true
+        },
+        "properties": {
+          "id": {
+            "type": "string",
+            "default": "",
+            "minLength": 1,
+            "maxLength": 100,
+            "pattern": "^[0-9a-zA-Z\\-]+$",
+            "title": "識別ID",
+            "options": {
+              "infoText": "要素を識別するための一意なID"
+            },
+            "yutori": {
+              "points": [
+                "各要素を一意に識別するためのIDです。",
+                "エディターにおいて、その要素を判別するための文字列です。",
+                "例えば、アクションが完了した際にどのアイテムを入手するのか、IDで指定します。"
+              ],
+              "reference": "ja/editor/preset?id=識別ID"
+            }
+          },
+          "name": {
+            "type": "string",
+            "maxLength": 20,
+            "title": "名前",
+            "options": {
+              "infoText": "要素の表示される名前"
+            },
+            "yutori": {
+              "points": [
+                "ゲームで表示される要素の名前です。",
+                "英語以外の言語も入力できます。",
+                "他の要素と重複する名前でも大丈夫です。",
+                "長すぎる場合はプレイ中の表示ではみ出した箇所は`…`で省略されます。"
+              ],
+              "reference": "ja/editor/preset?id=名前"
+            }
+          },
+          "explanation": {
+            "type": "string",
+            "title": "説明文",
+            "options": {
+              "infoText": "要素の詳細説明"
+            },
+            "yutori": {
+              "points": [
+                "ゲームで表示される要素の説明文です。",
+                "英語以外の言語も入力できます。長い文章でもすべて表示されます。",
+                "説明がない場合は空欄にします。"
+              ],
+              "reference": "ja/editor/preset?id=説明文"
+            }
+          },
+          "icon": {
+            "type": "object",
+            "additionalProperties": false,
+            "format": "grid",
+            "required": [
+              "emoji",
+              "iconify",
+              "image"
+            ],
+            "options": {
+              "disable_collapse": true,
+              "infoText": "要素を表すアイコンの設定"
+            },
+            "properties": {
+              "emoji": {
+                "type": "string",
+                "options": {
+                  "grid_columns": 4,
+                  "infoText": "絵文字によるアイコン表示"
+                },
+                "title": "絵文字",
+                "yutori": {
+                  "points": [
+                    "絵文字をアイコンとして表示します。",
+                    "文字から絵文字に変換して手早く設定することができます。",
+                    "絵文字は、Unicodeの絵文字をそのまま入力してください。",
+                    "実行環境に導入されている絵文字が使用されるため、ユーザーにより多少表示が異なります。",
+                    "Iconifyでは各環境に依存しない絵文字を設定することができます",
+                    "絵文字以外の文字を表示することができますが、文字が複数あると表示が崩れる可能性があります。",
+                    "例えば、`🗡️`や`⚔️`などの絵文字を入力します。"
+                  ],
+                  "reference": "ja/editor/preset?id=絵文字"
+                }
+              },
+              "iconify": {
+                "type": "string",
+                "default": "",
+                "options": {
+                  "grid_columns": 4,
+                  "infoText": "Iconifyアイコンセットの使用"
+                },
+                "title": "Iconify",
+                "yutori": {
+                  "points": [
+                    "要素を表すアイコンです。",
+                    "Iconifyとは様々な種類のアイコンを提供するサービスです。",
+                    "画像を設定した場合はそれが優先して表示されます。"
+                  ],
+                  "reference": "ja/editor/preset?id=Iconify"
+                }
+              },
+              "image": {
+                "type": "string",
+                "default": "",
+                "media": {
+                  "binaryEncoding": "base64",
+                  "type": "img/png"
+                },
+                "options": {
+                  "grid_columns": 4,
+                  "infoText": "任意の画像ファイルを使用"
+                },
+                "title": "画像",
+                "yutori": {
+                  "points": [
+                    "要素を表す画像です。",
+                    "ファイルサイズが大きい場合は自動的にリサイズされます。",
+                    "Iconify又は絵文字を設定した場合は不要です。"
+                  ],
+                  "reference": "ja/editor/preset?id=画像"
+                }
+              },
+              "delete": {
+                "format": "button",
+                "options": {
+                  "button": {
+                    "text": "Delete Image",
+                    "icon": "trash",
+                    "action": "deletePrevious"
+                  }
+                }
+              }
+            },
+            "title": "アイコン",
+            "yutori": {
+              "points": [
+                "アイコンは、画像、Iconify、絵文字のいずれかを設定できます。",
+                "Iconifyとは様々な種類のアイコンを提供するサービスです。",
+                "これらのうち複数設定した場合は、画像、Iconify、絵文字の順に優先され表示されます。"
+              ],
+              "reference": "ja/editor/preset?id=アイコン"
+            }
+          },
+          "color": {
+            "type": "string",
+            "default": "#000000",
+            "format": "color",
+            "pattern": "(^#[0-9a-fA-F]{6}$)|(^$)",
+            "title": "色",
+            "options": {
+              "infoText": "要素の表示色の設定"
+            },
+            "yutori": {
+              "points": [
+                "要素の色として、要素のアイコンと背景色に適応されます。",
+                "エディターのカラーピッカーから選択します。"
+              ],
+              "reference": "ja/editor/preset?id=色"
+            }
+          },
+          "copy": {
+            "type": "string",
+            "format": "button",
+            "options": {
+              "button": {
+                "text": "Copy Information",
+                "icon": "copy",
+                "action": "copyInformation"
+              }
+            }
+          }
+        },
+        "headerTemplate": "{{ i1 }}: {{ self.id }}"
+      },
+      "title": "プリセット",
+      "description": "システム要素の表示カスタマイズ",
+      "yutori": {
+        "points": [
+          "ゲームエンジン（プレイヤー）にあらかじめ組み込まれているUIテキストやアイコンを差し替えます。",
+          "IDで既存のプリセットと一致するもののみ置き換えられます。",
+          "設定した項目のみ置き換わります。例えばアイコンだけ設定した場合、名前や色などその他の項目は元のものが使われます。"
+        ],
+        "reference": "ja/editor/preset"
+      }
+    }
+  }
+}
