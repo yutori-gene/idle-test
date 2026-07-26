@@ -549,7 +549,12 @@ to {
 			cursor: pointer;
 			display: flex;
 			align-items: center;
-			margin-left: ${sa.sm}px;
+			justify-content: center;
+			/* アイコン単体だと当たり判定が小さく押しにくい（特に折りたたみ後の再展開で押し損ねる）。
+			   行の高さいっぱい＋左右パディングでタップ領域を広げ、負マージンでアイコンの見た目位置は据え置く */
+			align-self: stretch;
+			padding: 0 ${sa.md}px;
+			margin-left: -${sa.md-sa.sm}px;
 		`,chevronInner:O`
 			display: inline-flex;
 			align-items: center;
