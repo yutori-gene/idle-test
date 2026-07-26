@@ -297,16 +297,28 @@ to {
 		display: flex;
 		align-items: center;
 		justify-content: center;
+		/* 枠いっぱいに広がってから中身を中央に置く。
+		   幅を中身任せ(shrink-wrap)にすると、img/svg/絵文字で
+		   インライン要素としての余白の付き方が変わり横位置がずれる */
+		width: 100%;
+		height: 100%;
 		line-height: 0;
 		`}
-	`,a=`image`in e?e:e.icon,o=zf(),s=a.emoji&&q(`span`,{css:o.emoji,children:a.emoji}),c=Z.check.debugMode(),l=a.image;a.image&&!c&&(l=(a.image.startsWith(`./`)||a.image.startsWith(`data:`),a.image));let u=l&&q(`img`,{src:l,height:t,css:o.image}),d=a.iconify&&q(Di,{icon:`yutori:${a.iconify.split(`:`).join(`_`)}`,inline:r,height:r?t:Math.round(t*Lf),css:o.iconify});return If(Ff,{children:[r&&` `,q(`span`,{css:i,children:u||d||s}),r&&` `]})}function zf(){return{emoji:O`
+	`,a=`image`in e?e:e.icon,o=zf(r),s=a.emoji&&q(`span`,{css:o.emoji,children:a.emoji}),c=Z.check.debugMode(),l=a.image;a.image&&!c&&(l=(a.image.startsWith(`./`)||a.image.startsWith(`data:`),a.image));let u=l&&q(`img`,{src:l,height:t,css:o.image}),d=a.iconify&&q(Di,{icon:`yutori:${a.iconify.split(`:`).join(`_`)}`,inline:r,height:r?t:Math.round(t*Lf),css:o.iconify});return If(Ff,{children:[r&&` `,q(`span`,{css:i,children:u||d||s}),r&&` `]})}function zf(e){let t=e?``:`
+		display: block;
+		flex-shrink: 0;
+	`;return{emoji:O`
 			font-size: 1em;
 			line-height: 1;
 			vertical-align: middle;
+			${e?``:`text-align: center;`}
+			${t}
 		`,image:O`
 			image-rendering: pixelated;
+			${t}
 		`,iconify:O`
 			overflow: visible;
+			${t}
 		`}}function Bf({children:e,href:t,active:n=!0}){D.isValidElement(e)&&e.type===D.Fragment&&(e=e.props.children);let r=Array.isArray(e),[i]=Sn(),a=i.indexOf(t)===0,o=r?void 0:D.cloneElement(e,{active:a,linked:n}),s=r?e.map((e,t)=>D.cloneElement(e,{active:a,key:`link-child-${t}`,linked:n})):void 0,c=o||s;return n?(0,F.jsx)(On,{href:t,onClick:e=>{a&&(e.preventDefault(),Q.scroll.slideColumn(t))},children:c}):(0,F.jsx)(F.Fragment,{children:c})}function Vf({height:e,fillRef:t}){let n=Hf(e);return q(`span`,{css:n.base,children:q(`span`,{css:n.fill,ref:t})})}function Hf(e){return{base:O`
 			display: block;
 			position: relative;
