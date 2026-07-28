@@ -113,6 +113,8 @@ Error generating stack: `+e.message+`
 		border-top-right-radius: 0;
 	`,tightUnit:O`
 		${cl}: 0px;
+	`,tightTop:O`
+		margin-top: calc(-1 * var(${cl}, ${sa.xs}px));
 	`,get locked(){return O`
 			text-decoration: line-through;
 			text-decoration-color: ${L.colors.faded};
@@ -575,7 +577,7 @@ to {
 			color: ${L.colors.saturated};
 		`,content:O`
 			overflow: hidden;
-		`}}var Gw=300,Kw={},qw={duration:Gw},Jw={duration:Gw,snappingDown:!0};function Yw({categoryId:e,active:t,type:n,havingTop:r=!1,havingBottom:i=!1}){let a=A(e),o=()=>a.user.progressing?.combat,s=()=>Xw(e,n),c=Q.hooks.useSmoothRef(()=>{switch(n){case`progress`:{let e=a.user.progressing;return e?.general.flag?X.progress.caluculateBarProgresing(e):0}case`level`:return Math.min(Math.floor(a.user.level)/N.basic.general.maxCategoryLevels,1);case`experience`:return a.user.level%1;case`thisside`:return(o()?.thissidePercentage??0)/100;case`opposite`:return(o()?.oppositePercentage??0)/100;default:return n()}},()=>{switch(n){case`progress`:return o()?qw:Kw;case`level`:case`experience`:return Jw;case`thisside`:case`opposite`:return qw;default:return Kw}}),[l,u]=(0,D.useState)(s),d=(0,D.useRef)(null);Q.hooks.useUpdate(()=>{u(s());let e=d.current;e&&(e.style.transform=`scaleX(${$.primitive.clamp(c.current,0,1)})`)});let f=Zw();return q(Gf,{children:l&&q(`span`,{css:[L.bar,f.base,t?L.active:void 0,r&&L.havingTop,i&&L.havingBottom],children:q(`span`,{css:f.percentage,ref:d})})})}function Xw(e,t){let n=A(e);switch(t){case`progress`:return n.user.progressing?.general.flag||!1;case`thisside`:case`opposite`:return!!n.user.progressing?.combat;default:return!0}}Zf(Yw,`bar`,e=>Xw(e.categoryId,e.type));function Zw(){return{base:O`
+		`}}var Gw=300,Kw={},qw={duration:Gw},Jw={duration:Gw,snappingDown:!0};function Yw({categoryId:e,active:t,type:n,havingTop:r=!1,havingBottom:i=!1}){let a=A(e),o=()=>a.user.progressing?.combat,s=()=>Xw(e,n),c=Q.hooks.useSmoothRef(()=>{switch(n){case`progress`:{let e=a.user.progressing;return e?.general.flag?X.progress.caluculateBarProgresing(e):0}case`level`:return Math.min(Math.floor(a.user.level)/N.basic.general.maxCategoryLevels,1);case`experience`:return a.user.level%1;case`thisside`:return(o()?.thissidePercentage??0)/100;case`opposite`:return(o()?.oppositePercentage??0)/100;default:return n()}},()=>{switch(n){case`progress`:return o()?qw:Kw;case`level`:case`experience`:return Jw;case`thisside`:case`opposite`:return qw;default:return Kw}}),[l,u]=(0,D.useState)(s),d=(0,D.useRef)(null);Q.hooks.useUpdate(()=>{u(s());let e=d.current;e&&(e.style.transform=`scaleX(${$.primitive.clamp(c.current,0,1)})`)});let f=Zw();return q(Gf,{children:l&&q(`span`,{css:[L.bar,f.base,t?L.active:void 0,r&&L.havingTop,r&&L.tightTop,i&&L.havingBottom],children:q(`span`,{css:f.percentage,ref:d})})})}function Xw(e,t){let n=A(e);switch(t){case`progress`:return n.user.progressing?.general.flag||!1;case`thisside`:case`opposite`:return!!n.user.progressing?.combat;default:return!0}}Zf(Yw,`bar`,e=>Xw(e.categoryId,e.type));function Zw(){return{base:O`
 			height: 3px;
 			min-height: 3px;
 		`,percentage:O`
