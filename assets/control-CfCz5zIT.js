@@ -63,8 +63,8 @@ Error generating stack: `+e.message+`
 		border-top-right-radius: 0;
 	`,getConnected:e=>{let t=cl(e);return O`
 			border-radius: ${t.topLeft}px ${t.topRight}px ${t.bottomRight}px ${t.bottomLeft}px;
-		`},getConnectedIcon:e=>{let t=cl(e);return O`
-			border-radius: ${t.topLeft}px ${t.topRight}px ${ol.borderRadius}px ${ol.borderRadius}px;
+		`},getConnectedIcon:e=>{let t=cl(e),n=e.havingRight?0:ol.borderRadius,r=e.havingLeft?0:ol.borderRadius;return O`
+			border-radius: ${t.topLeft}px ${t.topRight}px ${n}px ${r}px;
 		`},context:O`
 		display: flex;
 		align-items: center;
