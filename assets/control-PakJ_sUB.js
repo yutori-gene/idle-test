@@ -364,7 +364,7 @@ to {
 			/* background-color: rgba(71, 185, 113, 0.5); */
 			font-size: ${t}px;
 			left: ${e?5:Q.scroll.getGriderWidth().windowWidth-(t+5)}px;
-		`}}function pp({children:e,icon:t,omission:n=!1,anchoring:r=!1,alpha:i=1,size:a=1}){let o=e,s=mp(i,a,n),c=o.split(`/`);return Xf(Yf,{children:[t&&q(Qf,{information:t,size:fa.xs,inline:!0,alpha:i}),$.primitive.switches([r,c.length==2,!0],[q(`a`,{href:o,css:s.text,target:`_blank`,children:o}),Xf(Yf,{children:[q(`span`,{css:s.text,children:c[0]}),Xf(`span`,{css:[s.text,s.trade],children:[`/`,c[1]]})]}),q(`span`,{css:s.text,children:o})])]})}function mp(e,t,n){return{text:O`
+		`}}function pp({children:e,icon:t,omission:n=!1,anchoring:r=!1,alpha:i=1,size:a=1}){let o=e,s=mp(i,a,n),c=o.split(`/`);return Xf(Yf,{children:[t&&q(Qf,{information:t,size:fa.xs,inline:!0,alpha:i}),$.primitive.switches([r,c.length==2,!0],[q(`a`,{href:o,css:s.text,target:`_blank`,children:o}),Xf(Yf,{children:[q(`span`,{css:s.text,children:c[0].trimEnd()}),Xf(`span`,{css:[s.text,s.trade],children:[`/`,(c[1]??``).trimStart()]})]}),q(`span`,{css:s.text,children:o})])]})}function mp(e,t,n){return{text:O`
 			opacity: ${e};
 			font-size: ${da.body*t}px;
 			${n?`
@@ -377,6 +377,7 @@ to {
 			`:``}
 		`,trade:O`
 			opacity: 0.5;
+			margin-left: 0.25em;
 		`}}function hp({id:e,event:t,color:n,active:r=!0,havingTop:i=!1,havingBottom:a=!1,closingIcon:o=!1,displayName:s=void 0}){let c=A(e,s),l=A(`ok`,`OK?`),u=t[0]===`click`&&t[2],d=()=>{!r||t[0]!==`click`||t[1](e)},f=()=>{!r||t[0]!==`hold`||t[1](e,!0)},p=()=>{!r||t[0]!==`hold`||t[1](e,!1)},m=gp(r);return Xf(`span`,{css:[I.bar,m.button,i&&I.havingTop,a&&I.havingBottom],onClick:d,onPointerDown:f,onPointerUp:p,onPointerLeave:p,onPointerCancel:p,children:[Q.component.hasIcon(c?.information)&&q(`span`,{css:[I.getIcon(n),i&&I.noCurveIconTop,a&&I.noCurveIconBottom,o&&I.curveIconBottomRight],children:q(Qf,{information:c.information,size:fa.lg})}),q(`span`,{css:I.context,children:q(`span`,{css:m.title,children:u?l.information.name:c.information.name})})]})}tp(hp,`bar`,{hasIconFrame:!0});function gp(e){return{button:O`
 			cursor: ${e?`pointer`:`auto`};
 		`,title:O`
