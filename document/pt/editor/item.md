@@ -63,12 +63,13 @@ ___
 Configurações de tipo para Equipamento, efeitos e consumo de itens.
 - Os Itens Possíveis de serem equipados devem pertencer ao grupo especificado na Categoria `equipmentGroups`.
 - Somente um Item pode ser equipado em um mesmo grupo.
+- O efeito `unnecessary` é aplicado independentemente de o item estar com Equipamento ou não, e sua intensidade é proporcional à quantidade que você possui (nada se houver 0 itens; n vezes maior se houver n itens).
 
 |valor|Equipamento|Eficácia.|consumo|Exemplo.|
 |-|-|-|-|-|
-|`necessário`.|Necessário|equipando|nada|Espadas, armaduras e outros equipamentos.|
-|"consumível".|Necessário|equipando|Consumido quando as ações são realizadas|Itens que são consumidos para obter um efeito, como poções.|
-|"desnecessário".|Desnecessário|Em todos os momentos em que estiver de posse.|nada|Itens passivos que são eficazes pelo simples fato de tê-los.|
+|`necessário`.|Necessário|Apenas enquanto estiver equipando (1 unidade)|nada|Espadas, armaduras e outros equipamentos.|
+|"consumível".|Necessário|Apenas enquanto estiver equipando (1 unidade)|Consumido quando as ações são realizadas|Itens que são consumidos para obter um efeito, como poções.|
+|"desnecessário".|Desnecessário|Enquanto estiver em posse, sempre (proporcionalmente à quantidade em posse)|nada|Itens passivos que são eficazes pelo simples fato de tê-los.|
 |"impossível".|não permitido|nada|nada|Itens nada eficazes, como materiais e detritos.|
 ___
 

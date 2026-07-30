@@ -4,6 +4,8 @@ Personalización de la visualización de los elementos del sistema
 - Sustituye el texto y los iconos de la interfaz de usuario preintegrados en el motor del juego (jugador).
 - Sólo se sustituirán los que coincidan por ID con un preajuste existente.
 - Sólo se sustituirán los elementos que hayas configurado. Por ejemplo, si solo se configura el icono, los demás elementos, como el nombre y el color, utilizarán el original.
+- Las modificaciones de los nombres y las descripciones tienen prioridad sobre las traducciones de cada idioma integradas en el juego para los jugadores. Las cadenas modificadas se mostrarán tal cual en todos los idiomas.
+- Si deseas modificar el texto para cada idioma, activa la traducción y especifícalo en el archivo de traducción `translations/world` que se genera. Este tendrá la máxima prioridad.
 ___
 
 ## ID

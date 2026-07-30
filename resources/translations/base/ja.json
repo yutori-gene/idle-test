@@ -6,14 +6,22 @@
   "event": {},
   "preset": {
     "locked": {
-      "name": "ロック",
-      "explanation": "このエレメントは、条件が満たされたときにロックが解除される。"
+      "name": "ロック中",
+      "explanation": "条件を満たすと、この要素がアンロックされます。"
     },
     "max": {
-      "name": "マックス",
+      "name": "最大",
       "explanation": ""
     },
     "min": {
+      "name": "最小",
+      "explanation": ""
+    },
+    "maximum": {
+      "name": "最大",
+      "explanation": "この数を超えて保有したり、行使したりすることはできません。"
+    },
+    "minimum": {
       "name": "最小",
       "explanation": ""
     },
@@ -25,16 +33,24 @@
       "name": "購入数",
       "explanation": ""
     },
+    "purchase-limit": {
+      "name": "購入上限",
+      "explanation": "購入できる最大時間。"
+    },
+    "purchasable-count": {
+      "name": "購入可能",
+      "explanation": "まだ購入できる時間。"
+    },
     "total": {
       "name": "合計",
       "explanation": ""
     },
     "percentage": {
-      "name": "パーセント",
+      "name": "割合",
       "explanation": ""
     },
     "player": {
-      "name": "選手",
+      "name": "プレイヤー",
       "explanation": ""
     },
     "target": {
@@ -50,11 +66,11 @@
       "explanation": ""
     },
     "acquisition": {
-      "name": "買収",
+      "name": "獲得",
       "explanation": ""
     },
     "acquisitions": {
-      "name": "買収",
+      "name": "獲得",
       "explanation": ""
     },
     "results": {
@@ -90,7 +106,7 @@
       "explanation": ""
     },
     "days": {
-      "name": "日数",
+      "name": "日",
       "explanation": ""
     },
     "years": {
@@ -98,7 +114,7 @@
       "explanation": ""
     },
     "centuries": {
-      "name": "世紀",
+      "name": "数世紀",
       "explanation": ""
     },
     "endless": {
@@ -111,14 +127,14 @@
     },
     "failure": {
       "name": "失敗",
-      "explanation": ""
+      "explanation": "失敗"
     },
     "up": {
       "name": "上へ",
       "explanation": ""
     },
     "down": {
-      "name": "ダウン",
+      "name": "下へ",
       "explanation": ""
     },
     "question": {
@@ -127,10 +143,10 @@
     },
     "navigation": {
       "name": "ナビゲーション",
-      "explanation": "スワイプで列間の移動もできます。"
+      "explanation": "スワイプしてカラム間を移動することもできます。画面の左下にトップのボタンが表示されます。"
     },
     "navigation-back": {
-      "name": "バック",
+      "name": "戻る",
       "explanation": ""
     },
     "navigation-top": {
@@ -138,7 +154,27 @@
       "explanation": ""
     },
     "navigation-forward": {
-      "name": "フォワード",
+      "name": "進む",
+      "explanation": ""
+    },
+    "navigation-column": {
+      "name": "カラム",
+      "explanation": "このカラムの位置と、画面外にあるカラムを含めたカラムの合計数。"
+    },
+    "checked": {
+      "name": "確認済み",
+      "explanation": ""
+    },
+    "chevron-down": {
+      "name": "シェブロン・下",
+      "explanation": ""
+    },
+    "chevron-right": {
+      "name": "シェブロン右",
+      "explanation": ""
+    },
+    "selected": {
+      "name": "選択済み",
       "explanation": ""
     },
     "character": {
@@ -150,7 +186,7 @@
       "explanation": ""
     },
     "inventory": {
-      "name": "インベントリー",
+      "name": "インベントリ",
       "explanation": ""
     },
     "status": {
@@ -158,7 +194,7 @@
       "explanation": ""
     },
     "world": {
-      "name": "世界",
+      "name": "ワールド",
       "explanation": ""
     },
     "overview": {
@@ -169,12 +205,16 @@
       "name": "バージョン",
       "explanation": ""
     },
+    "license": {
+      "name": "ライセンス",
+      "explanation": ""
+    },
     "updated": {
-      "name": "更新",
+      "name": "更新日",
       "explanation": ""
     },
     "author": {
-      "name": "著者",
+      "name": "作者",
       "explanation": ""
     },
     "homepage": {
@@ -182,32 +222,32 @@
       "explanation": ""
     },
     "estimated-playing-time": {
-      "name": "推定プレー時間",
-      "explanation": "この世界を完成させることに要する時間は、著者が推定したものである。"
+      "name": "推定再生時間",
+      "explanation": "作者による、このワールドをコンプリートするのにかかる時間の推定値"
     },
     "console": {
       "name": "コンソール",
-      "explanation": "このゲームはアイドルRPGコンソールシステムで動作します。"
+      "explanation": "このゲームは「Idle RPG」コンソールシステム上で動作します。無料で一般に公開されているため、誰でもゲームを作成することができます。"
     },
     "general": {
       "name": "一般",
       "explanation": ""
     },
     "default-language": {
-      "name": "デフォルト言語",
+      "name": "既定の言語",
       "explanation": ""
     },
     "language-change-enable-general": {
-      "name": "言語変更 一般を有効にする",
-      "explanation": "コンフィギュレーションで他の言語に表示を変更することができます。"
+      "name": "言語の変更 有効 一般",
+      "explanation": "設定画面で、表示言語を変更することができます。"
     },
     "max-category-level": {
-      "name": "最大カテゴリーレベル",
-      "explanation": "各カテゴリーで達成できる最大レベル。"
+      "name": "最大カテゴリレベル",
+      "explanation": "各カテゴリで達成できる最高レベル。"
     },
     "level-common-ratio": {
-      "name": "レベル・コモン・レシオ",
-      "explanation": "レベルが上がるたびに、次のレベルに到達するために必要な経験点はいくらか。"
+      "name": "レベル　共通比率",
+      "explanation": "レベルアップするたびに、次のレベルに到達するにはどれくらいの経験値が必要ですか。"
     },
     "statistics": {
       "name": "統計",
@@ -218,88 +258,36 @@
       "explanation": ""
     },
     "amount-earned": {
-      "name": "獲得金額",
-      "explanation": "これまでに獲得したコインの総額。"
+      "name": "獲得額",
+      "explanation": "これまでに獲得したコインの合計数です。"
     },
     "time": {
       "name": "時間",
       "explanation": ""
     },
     "playing-time": {
-      "name": "プレー時間",
-      "explanation": "オフライン時間を含む、このゲームをプレイし始めてからの経過時間。"
+      "name": "再生時間",
+      "explanation": "このゲームのプレイ開始から経過した時間（オフライン時間を含む）。"
     },
     "item": {
-      "name": "項目",
+      "name": "アイテム",
       "explanation": ""
     },
     "count-now": {
-      "name": "カウント・ナウ",
-      "explanation": "現在所有しているアイテムの総数。"
+      "name": "今すぐカウント",
+      "explanation": "現在所有しているアイテムの合計数。"
     },
     "count-gained": {
       "name": "獲得カウント",
-      "explanation": "これまでに獲得したアイテムの総数。"
+      "explanation": "これまでに取得したアイテムの合計数。"
     },
     "total-level": {
-      "name": "トータル・レベル",
-      "explanation": "全カテゴリーの現在のレベルの合計。"
+      "name": "総合レベル",
+      "explanation": "すべてのカテゴリの現在のレベルの合計。"
     },
     "count-actioned": {
-      "name": "アクション数",
-      "explanation": "これまでに行われたアクションの総数。"
-    },
-    "config": {
-      "name": "コンフィグ",
-      "explanation": ""
-    },
-    "language": {
-      "name": "言語",
-      "explanation": ""
-    },
-    "selected-language": {
-      "name": "選択された言語",
-      "explanation": ""
-    },
-    "language-change-enable": {
-      "name": "言語変更の有効化",
-      "explanation": "表示言語を変更することができます。"
-    },
-    "language-change-unenable": {
-      "name": "言語変更不可",
-      "explanation": "表示可能な他の言語はありません。"
-    },
-    "showing-hint": {
-      "name": "ヒント",
-      "explanation": "操作方法を表示します。"
-    },
-    "showing-navigation": {
-      "name": "ナビゲーション",
-      "explanation": "カラム間を移動するためのボタンを表示します。"
-    },
-    "performing-highly": {
-      "name": "高いパフォーマンス",
-      "explanation": "更新頻度を上げる動作が重い場合はオフにすることをお勧めします。"
-    },
-    "export-game": {
-      "name": "輸出ゲーム",
-      "explanation": "ゲームデータがエクスポートされました。"
-    },
-    "import-game": {
-      "name": "輸入ゲーム",
-      "explanation": "ゲームデータがインポートされました。"
-    },
-    "import-mistake": {
-      "name": "輸入ミス",
-      "explanation": "ゲームデータのロードに失敗しました。"
-    },
-    "reset-game": {
-      "name": "リセットゲーム",
-      "explanation": "このワールドのすべての進捗データを削除する。"
-    },
-    "reset-alert": {
-      "name": "リセット・アラート",
-      "explanation": "ゲームをリセットすると、すべてのデータが消去されます。"
+      "name": "カウント処理済み",
+      "explanation": "これまでに実行されたアクションの合計数。"
     },
     "win": {
       "name": "勝利",
@@ -310,8 +298,8 @@
       "explanation": ""
     },
     "acceleration": {
-      "name": "加速",
-      "explanation": "ゲーム中の時間を高速化します。アクションの実行時間が遅いときに速度を上げすぎると、処理が追いつかず、アプリがフリーズします。"
+      "name": "加速度",
+      "explanation": "ゲーム内の時間が早くなります。ただし、アクションの実行時間が長い場合に速度を過度に上げると、処理が追いつかなくなり、アプリがフリーズしたりクラッシュしたりする可能性があるため、ご注意ください。"
     },
     "multiplier": {
       "name": "乗数",
@@ -323,62 +311,66 @@
     },
     "adjustment": {
       "name": "調整",
-      "explanation": "所有するアイテムの数やカテゴリーレベルを増減する。"
+      "explanation": "所有しているアイテムの数やカテゴリレベルを増減させます。"
     },
     "adjustment-type": {
       "name": "タイプ",
       "explanation": ""
     },
     "adjustment-category": {
-      "name": "カテゴリー",
-      "explanation": "カテゴリーのレベルを調整します。"
+      "name": "カテゴリ",
+      "explanation": "カテゴリのレベルを調整します。たとえば、+5に設定すると、5レベルが追加されます。"
     },
     "adjustment-action": {
       "name": "アクション",
-      "explanation": "これにより、アクションの実行回数が増減します。"
+      "explanation": "これにより、そのアクションが実行された回数が増減します。ただし、アクションのコンプリートによって獲得した報酬は反映されません。"
     },
     "adjustment-item": {
-      "name": "項目",
-      "explanation": "所有するアイテムの数を増減する。"
+      "name": "アイテム",
+      "explanation": "所有しているアイテムの数を増減させます。"
     },
     "adjustment-id": {
-      "name": "身分証明書",
-      "explanation": "対象タイプのIDを指定する。"
+      "name": "ID",
+      "explanation": "ターゲットタイプのIDを指定してください。空欄のままにすると、すべてのIDに対して加算および減算が調整されます。"
     },
     "adjustment-sign": {
-      "name": "サイン",
+      "name": "符号",
       "explanation": ""
     },
     "adjustment-plus": {
       "name": "プラス",
-      "explanation": "指定された数値を加算する。"
+      "explanation": "指定された値を加算します。"
     },
     "adjustment-minus": {
       "name": "マイナス",
-      "explanation": "指定された数値を減算する。"
+      "explanation": "指定された数値を引きます。"
     },
     "adjustment-count": {
       "name": "カウント",
-      "explanation": "増減する数字。"
+      "explanation": "増減させる数値。記号を使って、増やすか減らすかを指定してください。"
     },
     "adjustment-adjust": {
       "name": "調整",
-      "explanation": "指定された条件下で調整が行われる。"
+      "explanation": "調整は、指定された条件下で行われます。"
     },
     "pwa": {
-      "name": "PWAのインストール",
-      "explanation": "PWA（Progressive Web App）をインストールする。"
+      "name": "PWAをインストールする",
+      "explanation": "プログレッシブ・ウェブ・アプリ（PWA）をインストールします。"
     },
     "go-top": {
-      "name": "このページのトップへ",
+      "name": "ページトップへ",
       "explanation": ""
     },
+    "iconify": {
+      "name": "アイコン化",
+      "explanation": "このゲームでは、iconifyが提供するアイコンセットを使用しています。制作に関わったすべての方々に感謝申し上げます。"
+    },
     "category": {
-      "name": "カテゴリー",
+      "name": "カテゴリ",
       "explanation": ""
     },
     "categories": {
-      "name": "カテゴリー",
+      "name": "カテゴリ",
       "explanation": ""
     },
     "level": {
@@ -390,24 +382,24 @@
       "explanation": ""
     },
     "element": {
-      "name": "エレメント",
+      "name": "要素",
       "explanation": ""
     },
     "standalone": {
       "name": "スタンドアロン",
-      "explanation": "他のカテゴリーのアクションの進行に関係なく、独立して実行される。"
+      "explanation": "他のカテゴリでのアクションの進捗状況にかかわらず、独立して実行されます。"
     },
     "action": {
       "name": "アクション",
       "explanation": ""
     },
     "actions": {
-      "name": "行動",
+      "name": "アクション",
       "explanation": ""
     },
     "attribute": {
       "name": "属性",
-      "explanation": "このアクションの特定の属性。"
+      "explanation": "このアクションの固有の属性です。カテゴリのプロパティがこのアクションの属性に適用されます。また、この属性には経験値も付与されます。"
     },
     "progress": {
       "name": "進捗状況",
@@ -434,39 +426,39 @@
       "explanation": ""
     },
     "progress-type": {
-      "name": "プログレス・タイプ",
+      "name": "進行タイプ",
       "explanation": ""
     },
     "persistent": {
-      "name": "永続的",
-      "explanation": "一連の行動を行う、行動を完了するたびに報酬を得る。"
+      "name": "永続的な",
+      "explanation": "一連のアクションを実行し、アクションをコンプリートするたびに報酬がもらえます。"
     },
     "single": {
       "name": "シングル",
-      "explanation": "アクションは一度しか実行できず、途中で中断しても進行状況は保存される。"
+      "explanation": "各アクションは1回のみ実行可能ですが、途中で中断しても進行状況は保存されます。"
     },
     "snap": {
       "name": "スナップ",
-      "explanation": "アクションは即座に完了する。"
+      "explanation": "アクションは瞬時に完了します。"
     },
     "stamina": {
       "name": "スタミナ",
-      "explanation": "各アクションでプレイヤーとターゲットのスタミナが減少します。"
+      "explanation": "アクションを行うたびに、プレイヤーとターゲットのスタミナが減ります。ターゲットのスタミナが尽きると勝利となり、プレイヤーのスタミナが尽きるとゲームオーバーとなります。ゲームオーバーになると、失うものはなしですが、進行中のアクションはすべて中断されます。"
     },
     "enable-count": {
       "name": "カウントを有効にする",
       "explanation": ""
     },
     "estimated-time": {
-      "name": "所要時間",
+      "name": "所要時間の目安",
       "explanation": ""
     },
     "completed-count": {
-      "name": "完了カウント",
+      "name": "コンプリート数",
       "explanation": ""
     },
     "current-count": {
-      "name": "現在のカウント",
+      "name": "現在の数",
       "explanation": ""
     },
     "elapsed-time": {
@@ -478,7 +470,7 @@
       "explanation": ""
     },
     "each-time": {
-      "name": "毎回",
+      "name": "そのたびに",
       "explanation": ""
     },
     "next-time": {
@@ -486,15 +478,15 @@
       "explanation": ""
     },
     "rest-count": {
-      "name": "休息回数",
+      "name": "残りカウント",
       "explanation": ""
     },
     "act": {
-      "name": "行為",
+      "name": "法",
       "explanation": ""
     },
     "start": {
-      "name": "スタート",
+      "name": "開始",
       "explanation": ""
     },
     "end": {
@@ -502,19 +494,31 @@
       "explanation": ""
     },
     "stop": {
-      "name": "ストップ",
+      "name": "停止",
       "explanation": ""
+    },
+    "reserve": {
+      "name": "予約",
+      "explanation": "このアクションを予約キューに追加し、順次実行するようにします。"
+    },
+    "reorder": {
+      "name": "再注文",
+      "explanation": "この予約済みアクションを、キュー内の選択した位置に移動します。"
+    },
+    "position": {
+      "name": "キュー内の位置",
+      "explanation": "予約待ちリストから希望の順番を選択してください。"
     },
     "items": {
       "name": "アイテム",
       "explanation": ""
     },
     "equipping": {
-      "name": "装備",
+      "name": "装備中",
       "explanation": ""
     },
     "unequipping": {
-      "name": "艤装解除",
+      "name": "装備解除中",
       "explanation": ""
     },
     "equip": {
@@ -522,7 +526,7 @@
       "explanation": ""
     },
     "equipment": {
-      "name": "設備",
+      "name": "装備",
       "explanation": ""
     },
     "unequip": {
@@ -530,80 +534,108 @@
       "explanation": ""
     },
     "nothing": {
-      "name": "何もない",
+      "name": "なし",
       "explanation": ""
     },
     "own": {
-      "name": "所有権",
+      "name": "所有",
       "explanation": "このアイテムを所有しているかどうか。"
     },
     "own-count": {
-      "name": "カウント",
+      "name": "所有カウント",
       "explanation": "このアイテムを所有しているかどうか。"
     },
     "recovery": {
-      "name": "リカバリー",
-      "explanation": "所有できるのは1つだけだ。"
+      "name": "回復",
+      "explanation": "所有できるのは1つだけです。"
     },
     "unique": {
       "name": "ユニーク",
-      "explanation": "所有できるのは1つだけだ。"
+      "explanation": "所有できるのは1つだけです。"
     },
     "equipment-type": {
-      "name": "設備",
-      "explanation": "アイテムの装備タイプ。"
+      "name": "装備",
+      "explanation": "そのアイテムの装備タイプ。"
     },
     "necessary-item": {
       "name": "必要",
-      "explanation": "アイテムを装備すると効果がある。"
+      "explanation": "そのアイテムを装備すると、効果が発動します。"
     },
     "unnecessary-item": {
       "name": "不要",
-      "explanation": "アイテムを装備することはできないが、持っているだけで効果がある。"
+      "explanation": "このアイテムは装備することはできませんが、所持しているだけで効果が発動します。その効果は、所有している数だけ倍増します。"
     },
     "impossible-item": {
       "name": "不可能",
-      "explanation": "このアイテムは装備できない。"
+      "explanation": "このアイテムは装備できません。"
     },
     "consumable-item": {
       "name": "消耗品",
-      "explanation": "装備すると効果があるが、行動を起こすたびに消費される。"
+      "explanation": "装備すると効果を発揮しますが、アクションを行うたびに消費されます。"
     },
     "buy": {
       "name": "購入",
-      "explanation": "購入時の商品の価値。"
+      "explanation": "購入時のアイテムの値。"
     },
     "buying-value": {
-      "name": "購買価値",
-      "explanation": "購入時の商品の価値。"
+      "name": "購入の価値",
+      "explanation": "購入時のアイテムの値。"
     },
     "sell": {
-      "name": "売る",
-      "explanation": "販売する際の商品の価値。"
+      "name": "売却",
+      "explanation": "そのアイテムを売却する際の値。"
+    },
+    "selling": {
+      "name": "売却",
+      "explanation": ""
+    },
+    "kind": {
+      "name": "種類",
+      "explanation": ""
     },
     "selling-value": {
-      "name": "販売価格",
-      "explanation": "販売する際の商品の価値。"
+      "name": "売却の価値",
+      "explanation": "そのアイテムを売却する際の値。"
     },
     "trade": {
-      "name": "貿易",
+      "name": "交換",
       "explanation": ""
     },
     "trade-failed": {
-      "name": "貿易の失敗",
-      "explanation": "貿易は失敗した。"
+      "name": "交換に失敗しました",
+      "explanation": "交換に失敗しました。"
     },
     "capacity-full": {
-      "name": "キャパシティ・フル",
-      "explanation": "在庫は満杯。"
+      "name": "定員満員",
+      "explanation": "インベントリ容量が満杯です。"
+    },
+    "queue-full": {
+      "name": "キューが満杯です",
+      "explanation": "予約待ちリストは満員です。"
+    },
+    "already-queued": {
+      "name": "すでにキューに入っています",
+      "explanation": "このアクションはすでに実行中か、予約済みです。"
+    },
+    "purchase-limit-reached": {
+      "name": "購入上限に達しました",
+      "explanation": "購入上限に達しました。"
+    },
+    "completed-maximum": {
+      "name": "コンプリート最大値",
+      "explanation": "完了回数が上限に達しました。"
     },
     "relationship": {
-      "name": "人間関係",
+      "name": "関係",
       "explanation": ""
     },
     "relationships": {
-      "name": "人間関係",
+      "name": "関係",
       "explanation": ""
+    },
+    "requirement-equipment": {
+      "name": "必要条件の装備",
+      "explanation": "このアイテムは装備する必要があります。"
     },
     "property": {
       "name": "プロパティ",
@@ -615,283 +647,311 @@
     },
     "attack": {
       "name": "攻撃",
-      "explanation": "ターゲットにダメージを与える。"
+      "explanation": "ターゲットへのダメージ。"
     },
     "defence": {
-      "name": "ディフェンス",
-      "explanation": "ターゲットからのダメージ"
+      "name": "防御",
+      "explanation": "ターゲットからのダメージ。"
     },
     "accuracy": {
       "name": "精度",
-      "explanation": "モンスターにダメージを与える確率"
+      "explanation": "モンスターにダメージを与える確率。"
     },
     "evasion": {
       "name": "回避",
-      "explanation": "モンスターからダメージを受ける確率"
+      "explanation": "モンスターからダメージを受ける確率。"
     },
     "restore": {
-      "name": "リストア",
-      "explanation": "戦闘中の回復量に影響する。"
+      "name": "回復",
+      "explanation": "戦闘中の回復量に影響します。"
     },
     "speed": {
-      "name": "スピード",
-      "explanation": "アクションのスピードに影響する。"
+      "name": "速度",
+      "explanation": "アクションの速度に影響します。"
     },
-    "double": {
-      "name": "ダブル",
-      "explanation": "獲得額が2倍になる確率。"
+    "chance": {
+      "name": "チャンス",
+      "explanation": "このアクションは成功する可能性もありますが、失敗した場合は報酬も経験値も得られません。"
     },
     "experience": {
       "name": "経験",
-      "explanation": "行動によって得られる経験点に影響する。"
+      "explanation": "アクションから得られる経験値に影響します。"
     },
     "correction": {
-      "name": "訂正",
-      "explanation": "機器やアイテムの影響による修正。"
+      "name": "補正",
+      "explanation": "装備やアイテムの影響による補正。"
     },
     "value": {
-      "name": "価値",
+      "name": "値",
       "explanation": ""
     },
     "resources": {
-      "name": "リソース",
+      "name": "資源",
       "explanation": ""
     },
     "base-value": {
-      "name": "基準値",
-      "explanation": "このゲームやアクションには独特の価値がある。"
+      "name": "基本値",
+      "explanation": "このゲームまたはアクションに対するユニークな値。"
     },
     "level-gap": {
-      "name": "レベル・ギャップ",
-      "explanation": "数値計算については「レベル」ブロックを参照。"
+      "name": "レベル差",
+      "explanation": "数値計算については、「レベル」ブロックを参照してください。"
     },
     "reflected-value": {
-      "name": "反映された価値",
-      "explanation": "基準値」「レベル・ギャップ」に基づく最終的な計算値。"
+      "name": "反映された値",
+      "explanation": "「基本値」と「レベル差」に基づいて算出された最終値。"
     },
     "level-gap-property": {
-      "name": "レベル・ギャップ物件",
-      "explanation": "レベルギャップ」の値は、このブロック内の各値の合計である。"
+      "name": "レベル差のプロパティ",
+      "explanation": "「レベル差」の値は、このブロック内の各値の合計です。"
     },
     "level-gap-category": {
-      "name": "レベル・ギャップ・カテゴリー",
-      "explanation": "プレイヤーのカテゴリのレベルから、このアクションのレベルを引いたもの。"
+      "name": "レベル差のカテゴリ",
+      "explanation": "プレイヤーのカテゴリレベルから、このアクションのレベルをマイナスした値。ただし、「経験値」の場合は、状況が逆になります。"
     },
     "level-gap-action": {
-      "name": "レベル・ギャップ・アクション",
-      "explanation": "進捗タイプがスタミナの場合、このアクションが設定するユニークな値です。"
+      "name": "レベル差へのアクション",
+      "explanation": "進行タイプが「スタミナ」の場合、このアクションによって設定されるユニークな値です。"
     },
     "level-gap-item": {
-      "name": "レベル・ギャップ項目",
-      "explanation": "装備による補正値、または装備していなくても効果があるアイテムによる補正値です。"
+      "name": "レベル差アイテム",
+      "explanation": "これは、装備しているアイテム、あるいは装備していなくても効果を発揮するアイテムによる補正値です。"
     },
     "no-status": {
       "name": "ステータスなし",
-      "explanation": "ステータスカテゴリーはありません。"
+      "explanation": "利用可能なステータスカテゴリはありません。"
     },
     "targeting-all-categories": {
-      "name": "すべてのカテゴリーを対象とする",
-      "explanation": "この特性の修正はすべてのカテゴリーに適用される。"
+      "name": "すべてのカテゴリを対象とする",
+      "explanation": "このプロパティの補正は、すべてのカテゴリに適用されます。"
     },
     "hint-language-0": {
-      "name": "ヒント言語 0",
-      "explanation": "ゲームで表示される言語を切り替えます。"
+      "name": "ヒント 言語 0",
+      "explanation": "ゲーム内で表示される言語を切り替えます。"
     },
     "hint-language-1": {
-      "name": "ヒント言語1",
-      "explanation": "これは、作成者が翻訳を提供した場合のみ有効です。"
+      "name": "ヒント 言語 1",
+      "explanation": "これは、作成者が翻訳を提供している場合にのみ有効です。"
     },
     "hint-event-0": {
-      "name": "ヒント イベント0",
-      "explanation": "条件を満たすと発動。"
+      "name": "ヒントイベント 0",
+      "explanation": "条件が満たされたときに発動します。"
     },
     "hint-event-1": {
       "name": "ヒント イベント1",
-      "explanation": "発動時にメッセージが表示されたり、アイテムがもらえたり減ったりする。"
+      "explanation": "アクティブ化された際や、アイテムが獲得・減少した際などにメッセージが表示されます。"
     },
     "hint-debug-0": {
-      "name": "ヒント・デバッグ 0",
-      "explanation": "デバッグ中にのみ表示される。"
+      "name": "ヒント デバッグ 0",
+      "explanation": "これはデバッグ中にのみ表示されます。"
     },
     "hint-debug-1": {
-      "name": "ヒント・デバッグ1",
-      "explanation": "ゲームが公開され、配布される際には表示されません。"
+      "name": "ヒント デバッグ 1",
+      "explanation": "ゲームが公開・配布される際には表示されません。"
     },
     "hint-config-0": {
-      "name": "コンフィグ0",
-      "explanation": "ゲームの表示や処理に関する設定を行う。"
+      "name": "ヒント設定 0",
+      "explanation": "ゲームの表示や処理に関する設定を行います。"
     },
     "hint-config-1": {
-      "name": "コンフィグ1",
-      "explanation": "ゲームデータの入出力、リセットが可能。"
+      "name": "ヒント設定 1",
+      "explanation": "ゲームデータの入出力やリセットが可能です。"
     },
     "hint-statistics-0": {
-      "name": "ヒント統計 0",
-      "explanation": "これまでの試合経過を確認することができる。"
+      "name": "ヒントの統計 0",
+      "explanation": "これまでのゲームの進行状況を確認できます。"
     },
     "hint-general-0": {
-      "name": "ヒント 一般 0",
-      "explanation": "この世界の難易度やユニークな設定を確認することができる。"
+      "name": "ヒント（一般） 0",
+      "explanation": "このワールドの難易度やユニークな設定を確認できます。"
     },
     "hint-overview-0": {
       "name": "ヒントの概要 0",
-      "explanation": "このゲームの世界（世界観、設定）について確認できる。"
+      "explanation": "このゲームのワールドや設定について確認することができます。"
     },
     "hint-overview-1": {
       "name": "ヒントの概要 1",
-      "explanation": "また、このゲームを実行しているコンソール（システム）を確認することができます。"
+      "explanation": "また、このゲームを実行しているコンソール（システム）を確認することもできます。"
     },
     "hint-correction-0": {
-      "name": "ヒント 訂正 0",
-      "explanation": "このカテゴリーでは、特定のプロパティの修正を見ることができます。"
+      "name": "ヒントの補正 0",
+      "explanation": "このカテゴリ内の特定のプロパティに対する補正内容を確認できます。"
     },
     "hint-correction-1": {
-      "name": "ヒント訂正1",
-      "explanation": "補正はアイテムの影響によるものです。"
+      "name": "ヒントの補正 1",
+      "explanation": "この補正は、そのアイテムの影響によるものです。そのアイテムをご確認ください。"
     },
     "hint-properties-0": {
-      "name": "プロパ 0",
-      "explanation": "以下は、各カテゴリーに設定されているプロパティの一覧である。"
+      "name": "ヒントのプロパティ 0",
+      "explanation": "以下は、各カテゴリごとに設定されたプロパティの一覧です。"
     },
     "hint-properties-1": {
-      "name": "ヒント プロパティ 1",
-      "explanation": "プロパティとは、アクションの実行に影響を与える要素である。"
+      "name": "ヒントのプロパティ 1",
+      "explanation": "プロパティとは、アクションの実行に影響を与える要素のことです。"
     },
     "hint-properties-2": {
-      "name": "ヒント プロパティ 2",
-      "explanation": "その効果は、アイテムを装備することで、補われる。"
+      "name": "ヒントのプロパティ 2",
+      "explanation": "その効果は、そのアイテムを装備することで相殺されます。（一部のアイテムは装備する必要がありません。）"
     },
     "hint-property-0": {
-      "name": "プロパ 0",
-      "explanation": "プロパティとは、アクションの実行に影響を与える要素である。"
+      "name": "ヒント プロパティ 0",
+      "explanation": "プロパティとは、アクションの実行に影響を与える要素のことです。"
     },
     "hint-property-1": {
-      "name": "ヒント物件1",
-      "explanation": "最終値は、割り当てられた初期値から、カテゴリー、レベルアクションに設定された、装備アイテムの補正を考慮して計算されます。"
+      "name": "ヒント プロパティ 1",
+      "explanation": "最終値は、割り当てられた初期値に基づき、カテゴリレベル、アクションに設定されたレベル、および装備アイテムによる補正を考慮して算出されます。"
     },
     "hint-trade-0": {
-      "name": "ヒント・トレード0",
-      "explanation": "売買できない商品もあります。"
+      "name": "ヒント トレード 0",
+      "explanation": "一部のアイテムは購入・売却できません。"
     },
     "hint-trade-1": {
-      "name": "ヒント・トレード1",
-      "explanation": "ロックされたアイテムは売買できない。"
+      "name": "ヒント：トレード1",
+      "explanation": "ロックされたアイテムは、購入や売却できません。"
     },
     "hint-items-0": {
-      "name": "ヒント項目 0",
-      "explanation": "しでアイテムの装備を切り替える。"
+      "name": "ヒントアイテム 0",
+      "explanation": "長押しすると、そのアイテムの装備を切り替えることができます。"
     },
     "hint-items-1": {
-      "name": "ヒント項目1",
-      "explanation": "リスト内のアイテムは1つだけ装備できます。"
+      "name": "ヒントアイテム 1",
+      "explanation": "リスト内のアイテムは1つしか装備できません。（そのアイテムが「装備可能」なカテゴリに設定されている場合）"
     },
     "hint-items-2": {
-      "name": "ヒント項目2",
-      "explanation": "解除条件を満たさないものはロックされ、詳細を見ることができない。"
+      "name": "ヒントアイテム 2",
+      "explanation": "公開条件を満たしていないアイテムはロックされ、詳細を表示することはできません。"
     },
     "hint-item-0": {
-      "name": "ヒント項目0",
-      "explanation": "アイテムとは、機材、消耗品、貴重品など、モノの所有に関する要素である。"
+      "name": "ヒント アイテム 0",
+      "explanation": "「アイテム」とは、装備品、消耗品、貴重品などの物品の所持に関連する要素のことです。"
     },
     "hint-item-1": {
-      "name": "ヒント項目1",
-      "explanation": "装備できるアイテムは、1つのカテゴリーから1つのみです。"
+      "name": "ヒント アイテム1",
+      "explanation": "1つのカテゴリから装備できるのは1つのアイテムのみです。（そのアイテムがカテゴリとして装備可能に設定されている場合）"
     },
     "hint-item-2": {
-      "name": "ヒント項目2",
-      "explanation": "解除条件を満たさないものはロックされ、詳細を見ることができない。"
+      "name": "ヒント アイテム2",
+      "explanation": "公開条件を満たしていないアイテムはロックされ、詳細を表示することはできません。"
     },
     "hint-act-0": {
-      "name": "ヒント Act 0",
-      "explanation": "アクションを開始または停止する。"
+      "name": "ヒント アクター0",
+      "explanation": "アクションを開始または停止します。"
     },
     "hint-act-1": {
-      "name": "第1ヒント幕",
-      "explanation": "実行回数を指定できる。"
+      "name": "ヒント 第1幕",
+      "explanation": "処刑の回数を指定することができます。"
+    },
+    "hint-queue-0": {
+      "name": "ヒントキュー 0",
+      "explanation": "バーを長押しすると、キューから削除されます。"
     },
     "hint-actions-0": {
-      "name": "ヒント・アクション 0",
-      "explanation": "しばしばしでアクションの実行が切り替わる。"
+      "name": "ヒントのアクション 0",
+      "explanation": "長押しすると、アクションの実行が切り替わります。"
     },
     "hint-actions-1": {
-      "name": "ヒントアクション1",
-      "explanation": "1つのカテゴリーで実行できるのは1つの項目のみ。"
+      "name": "ヒント：アクション 1",
+      "explanation": "1つのカテゴリにつき、1つのアイテムしか実行できません。"
     },
     "hint-actions-2": {
-      "name": "ヒント・アクション2",
-      "explanation": "カテゴリーによっては、複数のカテゴリーのアクションを同時に進めることができる。"
+      "name": "ヒント：アクション 2",
+      "explanation": "カテゴリによっては、複数のカテゴリでのアクションを同時に進行させることができるものもあります。"
     },
     "hint-actions-3": {
-      "name": "ヒント・アクション3",
-      "explanation": "解除条件を満たさないアクションはロックされ、詳細を見ることはできない。"
+      "name": "ヒント：アクション 3",
+      "explanation": "リリース条件を満たしていないアクションはロックされ、詳細を確認することはできません。"
     },
     "hint-action-0": {
-      "name": "ヒント アクション0",
-      "explanation": "各行動は経験値を獲得し、経験値のレベルを上げることができる。"
+      "name": "ヒント アクション 0",
+      "explanation": "それぞれのアクションによって経験値を獲得し、経験レベルを上げることができる。"
     },
     "hint-action-1": {
-      "name": "ヒント・アクション1",
-      "explanation": "各アクションはアイテムを消費または取得する。"
+      "name": "ヒント：アクション1",
+      "explanation": "各アクションでは、アイテムを消費するか、入手します。"
     },
     "hint-action-2": {
-      "name": "ヒント・アクション2",
-      "explanation": "解除条件を満たさないアクションはロックされ、詳細を見ることはできない。"
+      "name": "ヒント：アクション2",
+      "explanation": "リリース条件を満たしていないアクションはロックされ、詳細を確認することはできません。"
     },
     "hint-category-0": {
-      "name": "ヒント カテゴリー0",
-      "explanation": "アクションとアイテムをまとめる要素である。"
+      "name": "ヒント カテゴリ 0",
+      "explanation": "これは、アクションとアイテムを結びつける要素です。"
     },
     "hint-status-0": {
-      "name": "ヒント ステータス 0",
-      "explanation": "カテゴリー補正値のみが表示される。"
+      "name": "ヒントのステータス 0",
+      "explanation": "アイテムごとのカテゴリ補正値のみが表示されます。"
     },
     "hint-status-1": {
-      "name": "ヒント ステータス 1",
-      "explanation": "実行するアクションによって、さらに他の補正がある。"
+      "name": "ヒントのステータス 1",
+      "explanation": "実行するアクションに応じて、他にも補正事項があります。"
     },
     "hint-inventory-0": {
-      "name": "ヒント・インベントリ 0",
-      "explanation": "しでアイテムの装備を切り替える。"
+      "name": "ヒントのインベントリ 0",
+      "explanation": "長押しすると、そのアイテムの装備を切り替えることができます。"
     },
     "hint-activity-0": {
-      "name": "アクティビティ0",
-      "explanation": "しばしばしでアクションの実行が切り替わる。"
+      "name": "ヒント アクティビティ 0",
+      "explanation": "長押しすると、アクションの実行が切り替わります。"
     },
     "hint-character-0": {
-      "name": "ヒント文字0",
-      "explanation": "この内容は、カテゴリーを操作して表示されるものと同じである。"
+      "name": "ヒント キャラクター 0",
+      "explanation": "このコンテンツは、カテゴリを操作した際に表示される内容と同じです。"
     },
     "hint-player-0": {
-      "name": "プレーヤー0",
-      "explanation": "デフォルトでは、同じ説明が各列の下にヒントとして表示される。"
+      "name": "ヒント：プレイヤー0",
+      "explanation": "デフォルトでは、各カラムの下部に同じ説明文がヒントとして表示されます。"
     },
     "hint-player-1": {
-      "name": "プレーヤー1",
-      "explanation": "ヒントは"
+      "name": "ヒント：プレイヤー1",
+      "explanation": "以下の設定を行うことで、ヒントを非表示にすることができます"
     },
     "event": {
       "name": "イベント",
       "explanation": ""
     },
+    "timing": {
+      "name": "タイミング",
+      "explanation": ""
+    },
     "matched": {
-      "name": "一致",
-      "explanation": "条件は満たされている。"
+      "name": "マッチング",
+      "explanation": "条件が満たされました。"
     },
     "comebacked": {
       "name": "カムバック",
-      "explanation": "おかえりなさい離れている間の進捗状況"
+      "explanation": "お帰りなさい！ご不在中の進行状況は以下の通りです："
     },
     "gameovered": {
       "name": "ゲームオーバー",
-      "explanation": "ゲームオーバーです。"
+      "explanation": "ゲームオーバーです。進行状況がリセットされました。"
     },
     "completed": {
-      "name": "完成",
-      "explanation": "おめでとう！全カテゴリーを終了しました。"
+      "name": "コンプリート",
+      "explanation": "おめでとうございます！すべてのカテゴリをコンプリートしました。"
     },
     "welcomed": {
-      "name": "歓迎",
-      "explanation": "この世界へようこそ"
+      "name": "ウエルカム",
+      "explanation": "このワールドへようこそ！"
+    },
+    "obtained": {
+      "name": "取得済み",
+      "explanation": "獲得したものは以下の通りです："
+    },
+    "achieved": {
+      "name": "達成",
+      "explanation": ""
+    },
+    "task": {
+      "name": "タスク",
+      "explanation": ""
+    },
+    "tasks": {
+      "name": "タスク",
+      "explanation": ""
+    },
+    "missions": {
+      "name": "ミッション",
+      "explanation": ""
     },
     "language-en": {
       "name": "英語",
@@ -910,7 +970,7 @@
       "explanation": ""
     },
     "language-fr": {
-      "name": "フランセ",
+      "name": "フランス語",
       "explanation": ""
     },
     "language-ru": {
@@ -934,8 +994,76 @@
       "explanation": ""
     },
     "language-mistaked": {
-      "name": "言葉の間違い",
+      "name": "言語の誤り",
       "explanation": ""
+    },
+    "config": {
+      "name": "設定",
+      "explanation": ""
+    },
+    "language": {
+      "name": "言語",
+      "explanation": ""
+    },
+    "selected-language": {
+      "name": "選択した言語",
+      "explanation": ""
+    },
+    "language-change-enable": {
+      "name": "言語変更を有効にする",
+      "explanation": "表示される言語を変更することができます。"
+    },
+    "language-change-unenable": {
+      "name": "言語の変更を無効にする",
+      "explanation": "表示可能な他の言語はありません。"
+    },
+    "category-shortcut": {
+      "name": "カテゴリのショートカット",
+      "explanation": "カテゴリを開くと、アクションやアイテムのリストも表示されます。"
+    },
+    "showing-hint": {
+      "name": "ヒント",
+      "explanation": "操作手順を表示します。"
+    },
+    "showing-navigation": {
+      "name": "ナビゲーション",
+      "explanation": "カラム間を移動するためのボタンが表示されます。ボタンを表示せずに、スワイプしてカラム間を移動することもできます。"
+    },
+    "performing-highly": {
+      "name": "高いパフォーマンスを発揮する",
+      "explanation": "更新頻度を高めます。処理負荷が高い場合は、この機能をオフにすることをお勧めします。各アクションの実行時間には影響しません。"
+    },
+    "export-game": {
+      "name": "ゲームをエクスポート",
+      "explanation": "ゲームデータがエクスポートされました。"
+    },
+    "import-game": {
+      "name": "ゲームをインポート",
+      "explanation": "ゲームデータがインポートされました。"
+    },
+    "import-mistake": {
+      "name": "インポート時の誤り",
+      "explanation": "ゲームデータの読み込みに失敗しました。"
+    },
+    "reset-game": {
+      "name": "ゲームをリセット",
+      "explanation": "このワールドの進行状況データをすべて削除します。このアクションは元に戻せません。本当にファイルを削除してよいか確認の上、入力欄に「DELETE」と入力してください。（デバッグモードでは不要）"
+    },
+    "reset-really": {
+      "name": "本当？",
+      "explanation": ""
+    },
+    "reset-alert": {
+      "name": "アラートのリセット",
+      "explanation": "ゲームをリセットすると、すべてのデータが消去されます。本当にゲームをリセットしますか？"
+    },
+    "reset-debug-mode": {
+      "name": "デバッグモードをリセット",
+      "explanation": "デバッグモードでは、確認欄への入力は必要ありません。"
+    },
+    "force-restart": {
+      "name": "強制再起動",
+      "explanation": "アプリを再読み込みします。画面の反応が鈍くなったり、フリーズしたりした場合は、これをご利用ください。進行状況には影響しません。"
     }
   }
 }

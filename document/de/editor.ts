@@ -103,7 +103,7 @@ export const miscellaneous: Markdown = {
 export const property: Type.Property = {
 	title: "Eigenschaften",
 	summary: "Konfiguration der Auswirkungen eines Gegenstands.",
-	points: ["Dies ist ein Effekt, der für den Gegenstand konfiguriert werden kann.", "Gegenstände mit dem Typ `Notwendig` oder `Verbrauchbar` gelten nur, solange sie ausgerüstet sind. Bei `unnötigen` Gegenständen wird der Effekt nur angewendet, wenn sie im Besitz sind.", "Die Werte für beide Gegenstände werden als Anpassen an den Level-Unterschied zwischen dem Level des Spielers und dem Level der Aktion berechnet.", "Wenn der Wert für den Angriff beispielsweise 10 beträgt, wird der Angriff so berechnet, als ob das Level des Spielers 10 höher wäre als das Level der Aktion. Minus-Werte sind das Gegenteil.", "ANGRIFF, VERTEIDIGUNG, GENAUIGKEIT, BEWÄHRUNG und WIEDERHERSTELLUNG gelten nur für Aktionen vom Typ `Ausdauer`."],
+	points: ["Dies ist ein Effekt, der für den Gegenstand konfiguriert werden kann.", "Bei Gegenständen mit den Ausrüstungstypen `necessary` oder `consumable` wird der Effekt nur angewendet, während sie mit der Ausrüstung getragen werden. Bei Gegenständen vom Typ `unnecessary` wird der Effekt bereits durch den bloßen Besitz angewendet, wobei die Stärke des Effekts proportional zur Anzahl der besessenen Gegenstände ist (bei 2 Gegenständen also doppelt so stark).", "Da sich der Effekt von `unnecessary` direkt aus der Anzahl der besessenen Gegenstände ergibt, stellt `maximum` (maximale Anzahl) die Obergrenze des Effekts dar. Bitte passen Sie die Konfiguration entsprechend in Abstimmung mit `maximum` an, um ein ausgewogenes Spiel zu gewährleisten.", "Die Werte für beide Gegenstände werden als Anpassen an den Level-Unterschied zwischen dem Level des Spielers und dem Level der Aktion berechnet.", "Wenn der Wert für den Angriff beispielsweise 10 beträgt, wird der Angriff so berechnet, als ob das Level des Spielers 10 höher wäre als das Level der Aktion. Minus-Werte sind das Gegenteil.", "ANGRIFF, VERTEIDIGUNG, GENAUIGKEIT, BEWÄHRUNG und WIEDERHERSTELLUNG gelten nur für Aktionen vom Typ `Ausdauer`."],
 	list: [
 		["Eigenschaften", "Details zur Wirksamkeit."],
 		["Geschwindigkeit", "Verringert die Zeit, die für eine Aktion benötigt wird. Die benötigte Zeit variiert umgekehrt mit dem Level-Unterschied."],
@@ -139,7 +139,7 @@ export const property: Type.Property = {
 		evasion: {
 			title: "Wert des Ausweichens [Level-Unterschied].",
 			summary: "Korrektur der Rate des Ausweichens bei gegnerischen Angriffen (gilt nur für Ausdaueraktionen).",
-			points: ["Die Ausweichrate wird unter der Annahme berechnet, dass der Level des Spielers so viel höher ist als der Level der Aktion."],
+			points: ["Die Ausweichrate wird so berechnet, als wäre das Level des Spielers um diesen Wert höher als das Level der Aktion. Je höher dieser Wert ist, desto leichter lassen sich die Angriffe des Gegners ausweichen."],
 		},
 		restore: {
 			title: "Wert des Wiederherstellens [Level-Differenz].",
@@ -415,7 +415,7 @@ export const preset: Type.Information = {
 	...information,
 	title: "Voreinstellung",
 	summary: "Anpassen der Anzeige von Systemelementen",
-	points: ["Ersetzt UI-Text und -Symbole, die bereits in die Spiel-Engine (Spieler) integriert sind.", "Es werden nur diejenigen ersetzt, die mit einer vorhandenen Voreinstellung nach ID übereinstimmen.", "Nur die Elemente, die Sie konfigurieren, werden ersetzt. Wenn zum Beispiel nur das Symbol konfiguriert ist, werden die anderen Elemente wie Name und Farbe durch das Original ersetzt."],
+	points: ["Ersetzt UI-Text und -Symbole, die bereits in die Spiel-Engine (Spieler) integriert sind.", "Es werden nur diejenigen ersetzt, die mit einer vorhandenen Voreinstellung nach ID übereinstimmen.", "Nur die Elemente, die Sie konfigurieren, werden ersetzt. Wenn zum Beispiel nur das Symbol konfiguriert ist, werden die anderen Elemente wie Name und Farbe durch das Original ersetzt.", "Das Überschreiben von Namen und Beschreibungen hat Vorrang vor den im Spieler integrierten Übersetzungen in die jeweiligen Sprachen. Die überschriebenen Zeichenfolgen werden unverändert in allen Sprachen angezeigt.", "Wenn Sie den Wortlaut für jede Sprache anpassen möchten, legen Sie dies in der Übersetzungsdatei `translations/world` fest, die bei aktivierter Übersetzungsfunktion ausgegeben wird. Diese hat höchste Priorität."],
 	options: {
 		label: "Voreinstellung",
 	},
@@ -531,12 +531,12 @@ export const item: Type.Item = {
 		equipmentType: {
 			title: "Typ der Ausrüstung",
 			summary: "Typ-Einstellungen für Ausrüstung, Effekte und Verbrauch von Gegenständen.",
-			points: ["Gegenstände, die ausgerüstet werden können, müssen zu der in der Kategorie `equipmentGroups` angegebenen Gruppe gehören.", "Innerhalb der gleichen Gruppe kann nur ein Gegenstand ausgerüstet werden."],
+			points: ["Gegenstände, die ausgerüstet werden können, müssen zu der in der Kategorie `equipmentGroups` angegebenen Gruppe gehören.", "Innerhalb der gleichen Gruppe kann nur ein Gegenstand ausgerüstet werden.", "„unnecessary“ entfaltet seine Wirkung unabhängig davon, ob die Ausrüstung angelegt ist oder nicht, und die Stärke des Effekts ist proportional zur Anzahl der besessenen Gegenstände (bei 0 Stück keine Wirkung, bei n Stück n-fache Wirkung)."],
 			list: [
 				["Wert", "Ausrüstung", "Effektivität.", "Verbrauch", "Beispiel."],
-				["notwendig\".", "Notwendig", "Ausrüstung", "Nichts", "Schwerter, Rüstungen und andere Ausrüstung."],
-				["verbrauchbar\".", "Notwendig", "Ausrüstung", "Verbraucht bei der Durchführung von Aktionen", "Gegenstände, die verbraucht werden, um eine Wirkung zu erzielen, z. B. Tränke."],
-				["Unnötig\".", "unnötig", "Zu jeder Zeit, während sie im Besitz sind.", "Nichts", "Passive Gegenstände, die allein dadurch wirksam sind, dass man sie hat."],
+				["notwendig\".", "Notwendig", "Nur während der Ausrüstung (1 Stück)", "Nichts", "Schwerter, Rüstungen und andere Ausrüstung."],
+				["verbrauchbar\".", "Notwendig", "Nur während der Ausrüstung (1 Stück)", "Verbraucht bei der Durchführung von Aktionen", "Gegenstände, die verbraucht werden, um eine Wirkung zu erzielen, z. B. Tränke."],
+				["Unnötig\".", "unnötig", "Solange man sie besitzt, immer (proportional zur Anzahl im Besitz)", "Nichts", "Passive Gegenstände, die allein dadurch wirksam sind, dass man sie hat."],
 				["Unmöglich\".", "nicht erlaubt", "Nichts", "Nichts", "Nicht wirksame Gegenstände wie Materialien und Schutt."],
 			],
 		},

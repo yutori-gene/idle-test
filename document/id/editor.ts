@@ -103,7 +103,7 @@ export const miscellaneous: Markdown = {
 export const property: Type.Property = {
 	title: "properti",
 	summary: "Konfigurasi efek yang dimiliki Item.",
-	points: ["Ini adalah item efek yang dapat dikonfigurasi pada item.", "Item dengan tipe Peralatan `perlu` atau `bisa dikonsumsi` hanya berlaku saat dilengkapi. Untuk item `tidak perlu`, efeknya hanya berlaku saat dimiliki.", "Nilai untuk kedua item dihitung sebagai penyesuaian untuk perbedaan level antara level pemain dan level Aksi.", "Misalnya, jika nilai serangan adalah 10, serangan dihitung seolah-olah level pemain 10 lebih tinggi dari level Aksi. Nilai minus adalah kebalikannya.", "SERANGAN, PERTAHANAN, KETEPATAN, PENGHINDARAN dan PEMULIHAN hanya berlaku untuk aksi tipe `stamina`."],
+	points: ["Ini adalah item efek yang dapat dikonfigurasi pada item.", "Efek item dengan tipe perlengkapan `necessary` atau `consumable` hanya berlaku saat item tersebut sedang dikenakan. Untuk item dengan tipe `unnecessary`, efeknya berlaku hanya dengan memilikinya, dan besarnya efek sebanding dengan jumlah yang dimiliki (jika memiliki 2 buah, efeknya menjadi 2 kali lipat).", "Karena efek `unnecessary` menggunakan jumlah yang dimiliki sebagai faktor pengganda, maka `maximum` (jumlah maksimum yang dimiliki) menjadi batas atas efek tersebut. Saat menyesuaikan keseimbangan, harap lakukan konfigurasi nilai ini bersamaan dengan `maximum`.", "Nilai untuk kedua item dihitung sebagai penyesuaian untuk perbedaan level antara level pemain dan level Aksi.", "Misalnya, jika nilai serangan adalah 10, serangan dihitung seolah-olah level pemain 10 lebih tinggi dari level Aksi. Nilai minus adalah kebalikannya.", "SERANGAN, PERTAHANAN, KETEPATAN, PENGHINDARAN dan PEMULIHAN hanya berlaku untuk aksi tipe `stamina`."],
 	list: [
 		["properti", "Rincian efektivitas."],
 		["kecepatan", "Mengurangi waktu yang diperlukan untuk suatu aksi. Waktu yang diperlukan bervariasi secara terbalik dengan perbedaan level."],
@@ -139,7 +139,7 @@ export const property: Type.Property = {
 		evasion: {
 			title: "Nilai penghindaran [perbedaan level].",
 			summary: "Koreksi tingkat penghindaran serangan lawan (hanya berlaku untuk aksi stamina).",
-			points: ["Tingkat penghindaran dihitung dengan asumsi bahwa level pemain jauh lebih tinggi daripada level Aksi."],
+			points: ["Level penghindaran dihitung dengan menganggap level pemain lebih tinggi dari level Aksi sebesar nilai ini. Semakin tinggi nilainya, semakin mudah untuk menghindari serangan lawan."],
 		},
 		restore: {
 			title: "Nilai pemulihan [perbedaan level].",
@@ -415,7 +415,7 @@ export const preset: Type.Information = {
 	...information,
 	title: "preset",
 	summary: "Menyesuaikan tampilan elemen sistem",
-	points: ["Mengganti teks dan ikon UI yang sudah terintegrasi ke dalam mesin game (pemain).", "Hanya yang cocok dengan preset yang ada berdasarkan ID yang akan diganti.", "Hanya item yang telah Anda konfigurasi yang akan diganti. Contohnya, jika hanya ikon yang dilakukan konfigurasi, item lain seperti nama dan warna akan menggunakan yang asli."],
+	points: ["Mengganti teks dan ikon UI yang sudah terintegrasi ke dalam mesin game (pemain).", "Hanya yang cocok dengan preset yang ada berdasarkan ID yang akan diganti.", "Hanya item yang telah Anda konfigurasi yang akan diganti. Contohnya, jika hanya ikon yang dilakukan konfigurasi, item lain seperti nama dan warna akan menggunakan yang asli.", "Penggantian nama dan deskripsi akan diprioritaskan daripada terjemahan dalam setiap bahasa yang sudah ada di dalam game untuk pemain. Teks yang diganti akan ditampilkan apa adanya di semua bahasa.", "Jika Anda ingin mengubah teks untuk setiap bahasa, aktifkan fitur terjemahan dan tentukan dalam berkas terjemahan `translations/world` yang dihasilkan. Berkas tersebut akan menjadi prioritas utama."],
 	options: {
 		label: "preset",
 	},
@@ -531,12 +531,12 @@ export const item: Type.Item = {
 		equipmentType: {
 			title: "Tipe Peralatan",
 			summary: "Konfigurasi tipe untuk peralatan, efek, dan konsumsi Item.",
-			points: ["Item yang dapat dilengkapi diperlukan untuk termasuk dalam grup yang ditentukan dalam Kategori `equipmentGroups`.", "Hanya satu item yang dapat dilengkapi dalam grup yang sama."],
+			points: ["Item yang dapat dilengkapi diperlukan untuk termasuk dalam grup yang ditentukan dalam Kategori `equipmentGroups`.", "Hanya satu item yang dapat dilengkapi dalam grup yang sama.", "`unnecessary` akan memberikan efek terlepas dari apakah Peralatan tersebut dimiliki atau tidak, dan besaran efeknya sebanding dengan jumlah yang dimiliki (tidak ada efek jika jumlahnya 0, dan efeknya berlipat ganda sebanyak n kali jika jumlahnya n)."],
 			list: [
 				["nilai", "Peralatan", "Efektivitas.", "konsumsi", "Contoh."],
-				["'perlu'.", "Diperlukan", "melengkapi", "tidak ada", "Pedang, baju besi, dan peralatan lainnya."],
-				["'habis pakai'.", "Diperlukan", "melengkapi", "Dikonsumsi saat aksi dilakukan", "Item yang dikonsumsi untuk mendapatkan efek, seperti ramuan."],
-				["'tidak perlu'.", "Tidak perlu", "Setiap saat saat memegang kamera.", "tidak ada", "Item pasif yang efektif hanya dengan memilikinya."],
+				["'perlu'.", "Diperlukan", "Hanya saat melengkapi (1 buah)", "tidak ada", "Pedang, baju besi, dan peralatan lainnya."],
+				["'habis pakai'.", "Diperlukan", "Hanya saat melengkapi (1 buah)", "Dikonsumsi saat aksi dilakukan", "Item yang dikonsumsi untuk mendapatkan efek, seperti ramuan."],
+				["'tidak perlu'.", "Tidak perlu", "Selama dibawa, selalu (berbanding lurus dengan jumlah yang dibawa)", "tidak ada", "Item pasif yang efektif hanya dengan memilikinya."],
 				["'tidak mungkin'.", "tidak diperbolehkan", "tidak ada", "tidak ada", "Item-item yang tidak ada seperti material dan puing-puing."],
 			],
 		},

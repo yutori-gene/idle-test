@@ -2,7 +2,8 @@
 # Eigenschaften
 Konfiguration der Auswirkungen eines Gegenstands.
 - Dies ist ein Effekt, der für den Gegenstand konfiguriert werden kann.
-- Gegenstände mit dem Typ `Notwendig` oder `Verbrauchbar` gelten nur, solange sie ausgerüstet sind. Bei `unnötigen` Gegenständen wird der Effekt nur angewendet, wenn sie im Besitz sind.
+- Bei Gegenständen mit den Ausrüstungstypen `necessary` oder `consumable` wird der Effekt nur angewendet, während sie mit der Ausrüstung getragen werden. Bei Gegenständen vom Typ `unnecessary` wird der Effekt bereits durch den bloßen Besitz angewendet, wobei die Stärke des Effekts proportional zur Anzahl der besessenen Gegenstände ist (bei 2 Gegenständen also doppelt so stark).
+- Da sich der Effekt von `unnecessary` direkt aus der Anzahl der besessenen Gegenstände ergibt, stellt `maximum` (maximale Anzahl) die Obergrenze des Effekts dar. Bitte passen Sie die Konfiguration entsprechend in Abstimmung mit `maximum` an, um ein ausgewogenes Spiel zu gewährleisten.
 - Die Werte für beide Gegenstände werden als Anpassen an den Level-Unterschied zwischen dem Level des Spielers und dem Level der Aktion berechnet.
 - Wenn der Wert für den Angriff beispielsweise 10 beträgt, wird der Angriff so berechnet, als ob das Level des Spielers 10 höher wäre als das Level der Aktion. Minus-Werte sind das Gegenteil.
 - ANGRIFF, VERTEIDIGUNG, GENAUIGKEIT, BEWÄHRUNG und WIEDERHERSTELLUNG gelten nur für Aktionen vom Typ `Ausdauer`.
@@ -43,7 +44,7 @@ ___
 
 ## Wert des Ausweichens [Level-Unterschied].
 Korrektur der Rate des Ausweichens bei gegnerischen Angriffen (gilt nur für Ausdaueraktionen).
-- Die Ausweichrate wird unter der Annahme berechnet, dass der Level des Spielers so viel höher ist als der Level der Aktion.
+- Die Ausweichrate wird so berechnet, als wäre das Level des Spielers um diesen Wert höher als das Level der Aktion. Je höher dieser Wert ist, desto leichter lassen sich die Angriffe des Gegners ausweichen.
 ___
 
 ## Wert des Wiederherstellens [Level-Differenz].

@@ -2,7 +2,8 @@
 # properties
 Configuring the Effects of an Item
 - This is an item of effects that can be configured for an Item.
-- Items with an Equipment Type of `necessary` or `consumable` will only apply while equipping. For `unnecessary` items, the effect is applied only when you have the item in your possession.
+- Items with a Type of `necessary` or `consumable` apply their effects while equipped, but they apply their effects simply by being in your inventory, and the effect strength is proportional to the number of items you have (e.g., having 2 items doubles the effect).
+- Since the effect of `unnecessary` is based on the number of items you have—which directly determines the multiplier—`maximum` (the maximum number of items you can hold) serves as the upper limit for this effect. When balancing the game, please configure this setting in conjunction with `maximum`.
 - The value of any of these items is calculated as an Adjustment for the difference in level between the player's level and the Action's level.
 - For example, if the attack value is 10, the attack is calculated as if the player's level is 10 higher than the Action's level. Minus values are the opposite.
 - ATTACK, DEFENCE, ACCURACY, EVASION, and RESTORE are only valid for `stamina` Type Actions.
@@ -43,7 +44,7 @@ ___
 
 ## Evasion value [level difference].
 Correction to the evasion rate of the opponent's attacks (only valid for stamina Actions)
-- The evasion is calculated assuming that the player's level is this value higher than the Action's level.
+- The evasion rate is calculated as if the player's level were this value higher than the Action's level. The higher this value, the easier it is to evade the opponent's attacks.
 ___
 
 ## Restoration value [level difference].

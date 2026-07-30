@@ -4,6 +4,8 @@ Anpassen der Anzeige von Systemelementen
 - Ersetzt UI-Text und -Symbole, die bereits in die Spiel-Engine (Spieler) integriert sind.
 - Es werden nur diejenigen ersetzt, die mit einer vorhandenen Voreinstellung nach ID übereinstimmen.
 - Nur die Elemente, die Sie konfigurieren, werden ersetzt. Wenn zum Beispiel nur das Symbol konfiguriert ist, werden die anderen Elemente wie Name und Farbe durch das Original ersetzt.
+- Das Überschreiben von Namen und Beschreibungen hat Vorrang vor den im Spieler integrierten Übersetzungen in die jeweiligen Sprachen. Die überschriebenen Zeichenfolgen werden unverändert in allen Sprachen angezeigt.
+- Wenn Sie den Wortlaut für jede Sprache anpassen möchten, legen Sie dies in der Übersetzungsdatei `translations/world` fest, die bei aktivierter Übersetzungsfunktion ausgegeben wird. Diese hat höchste Priorität.
 ___
 
 ## ID

@@ -103,7 +103,7 @@ export const miscellaneous: Markdown = {
 export const property: Type.Property = {
 	title: "propriedades",
 	summary: "Configuração dos efeitos de um Item.",
-	points: ["Esse é um item de efeito que pode ser configurado no Item.", "Itens com um Tipo de Equipamento \"necessário\" ou \"consumível\" só são aplicados enquanto equipados. Para itens \"desnecessários\", o efeito só é aplicado enquanto estiverem em sua posse.", "Os valores de ambos os itens são calculados como um Ajustado para a diferença de nível entre o nível do jogador e o nível da Ação.", "Por exemplo, se o valor de ataque for 10, o ataque será calculado como se o nível do jogador fosse 10 mais alto do que o nível da Ação. Os valores Menos são o oposto.", "ATTACK, DEFENCE, ACCURACY, EVASION e RESTORE são válidos apenas para ações do Tipo `stamina`."],
+	points: ["Esse é um item de efeito que pode ser configurado no Item.", "Os itens cujo tipo de equipamento seja `necessary` ou `consumable` têm seus efeitos aplicados apenas enquanto estiverem equipados. Os itens `unnecessary` têm seus efeitos aplicados simplesmente por estarem em seu inventário, e a intensidade do efeito é proporcional à quantidade que você possui (se tiver 2, o efeito será o dobro).", "Como o efeito de `unnecessary` é calculado com base no número de itens em posse, o `maximum` (número máximo de itens) representa o limite máximo desse efeito. Ao ajustar o equilíbrio, faça a configuração desse valor em conjunto com o `maximum`.", "Os valores de ambos os itens são calculados como um Ajustado para a diferença de nível entre o nível do jogador e o nível da Ação.", "Por exemplo, se o valor de ataque for 10, o ataque será calculado como se o nível do jogador fosse 10 mais alto do que o nível da Ação. Os valores Menos são o oposto.", "ATTACK, DEFENCE, ACCURACY, EVASION e RESTORE são válidos apenas para ações do Tipo `stamina`."],
 	list: [
 		["propriedades", "Detalhes da eficácia."],
 		["velocidade", "Reduz o tempo necessário para uma Ação. O tempo necessário varia inversamente com a diferença de nível."],
@@ -139,7 +139,7 @@ export const property: Type.Property = {
 		evasion: {
 			title: "Valor de evasão [diferença de nível].",
 			summary: "Correção da taxa de evasão dos ataques do oponente (válida apenas para ações de resistência).",
-			points: ["A taxa de evasão é calculada presumindo-se que o nível do jogador seja esse valor maior do que o nível da Ação."],
+			points: ["A taxa de esquiva é calculada considerando que o nível do jogador é exatamente esse valor acima do nível da Ação. Quanto maior for esse valor, mais fácil será esquivar os ataques do adversário."],
 		},
 		restore: {
 			title: "Valor restaurado [diferença de nível].",
@@ -415,7 +415,7 @@ export const preset: Type.Information = {
 	...information,
 	title: "predefinido",
 	summary: "Personalização da exibição dos elementos do sistema",
-	points: ["Substitui o texto e os ícones da interface do usuário pré-integrados ao mecanismo de jogo (jogador).", "Somente aqueles que correspondem a uma predefinição existente por ID serão substituídos.", "Somente os itens que você configurar serão substituídos. Por exemplo, se apenas o ícone estiver configurado, os outros itens, como nome e cor, usarão o original."],
+	points: ["Substitui o texto e os ícones da interface do usuário pré-integrados ao mecanismo de jogo (jogador).", "Somente aqueles que correspondem a uma predefinição existente por ID serão substituídos.", "Somente os itens que você configurar serão substituídos. Por exemplo, se apenas o ícone estiver configurado, os outros itens, como nome e cor, usarão o original.", "A substituição de nomes e descrições tem prioridade sobre as traduções em cada idioma incorporado ao jogo para os jogadores. As sequências de caracteres substituídas serão exibidas exatamente como estão em todos os idiomas.", "Se desejar alterar o texto para cada idioma, ative a tradução e especifique-o no arquivo de tradução `translations/world` gerado. Esse arquivo terá prioridade máxima."],
 	options: {
 		label: "predefinido",
 	},
@@ -531,12 +531,12 @@ export const item: Type.Item = {
 		equipmentType: {
 			title: "Tipo de Equipamento",
 			summary: "Configurações de tipo para Equipamento, efeitos e consumo de itens.",
-			points: ["Os Itens Possíveis de serem equipados devem pertencer ao grupo especificado na Categoria `equipmentGroups`.", "Somente um Item pode ser equipado em um mesmo grupo."],
+			points: ["Os Itens Possíveis de serem equipados devem pertencer ao grupo especificado na Categoria `equipmentGroups`.", "Somente um Item pode ser equipado em um mesmo grupo.", "O efeito `unnecessary` é aplicado independentemente de o item estar com Equipamento ou não, e sua intensidade é proporcional à quantidade que você possui (nada se houver 0 itens; n vezes maior se houver n itens)."],
 			list: [
 				["valor", "Equipamento", "Eficácia.", "consumo", "Exemplo."],
-				["`necessário`.", "Necessário", "equipando", "nada", "Espadas, armaduras e outros equipamentos."],
-				["\"consumível\".", "Necessário", "equipando", "Consumido quando as ações são realizadas", "Itens que são consumidos para obter um efeito, como poções."],
-				["\"desnecessário\".", "Desnecessário", "Em todos os momentos em que estiver de posse.", "nada", "Itens passivos que são eficazes pelo simples fato de tê-los."],
+				["`necessário`.", "Necessário", "Apenas enquanto estiver equipando (1 unidade)", "nada", "Espadas, armaduras e outros equipamentos."],
+				["\"consumível\".", "Necessário", "Apenas enquanto estiver equipando (1 unidade)", "Consumido quando as ações são realizadas", "Itens que são consumidos para obter um efeito, como poções."],
+				["\"desnecessário\".", "Desnecessário", "Enquanto estiver em posse, sempre (proporcionalmente à quantidade em posse)", "nada", "Itens passivos que são eficazes pelo simples fato de tê-los."],
 				["\"impossível\".", "não permitido", "nada", "nada", "Itens nada eficazes, como materiais e detritos."],
 			],
 		},

@@ -17,6 +17,14 @@
 			"name": "Min",
 			"explanation": ""
 		},
+		"maximum": {
+			"name": "Maximum",
+			"explanation": "You may not possess or exercise more than this number."
+		},
+		"minimum": {
+			"name": "Minimum",
+			"explanation": ""
+		},
 		"count": {
 			"name": "Count",
 			"explanation": ""
@@ -24,6 +32,14 @@
 		"purchased-count": {
 			"name": "Purchased Count",
 			"explanation": ""
+		},
+		"purchase-limit": {
+			"name": "Purchase Limit",
+			"explanation": "The maximum number of times you can purchase."
+		},
+		"purchasable-count": {
+			"name": "Purchasable",
+			"explanation": "The number of times you can still purchase."
 		},
 		"total": {
 			"name": "Total",
@@ -111,7 +127,7 @@
 		},
 		"failure": {
 			"name": "Failure",
-			"explanation": ""
+			"explanation": "failure"
 		},
 		"up": {
 			"name": "Up",
@@ -141,6 +157,26 @@
 			"name": "Forward",
 			"explanation": ""
 		},
+		"navigation-column": {
+			"name": "Column",
+			"explanation": "The position of this column and the total number of columns, including those outside the screen."
+		},
+		"checked": {
+			"name": "Checked",
+			"explanation": ""
+		},
+		"chevron-down": {
+			"name": "Chevron Down",
+			"explanation": ""
+		},
+		"chevron-right": {
+			"name": "Chevron Right",
+			"explanation": ""
+		},
+		"selected": {
+			"name": "Selected",
+			"explanation": ""
+		},
 		"character": {
 			"name": "Character",
 			"explanation": ""
@@ -167,6 +203,10 @@
 		},
 		"version": {
 			"name": "Version",
+			"explanation": ""
+		},
+		"license": {
+			"name": "License",
 			"explanation": ""
 		},
 		"updated": {
@@ -249,58 +289,6 @@
 			"name": "Count Actioned",
 			"explanation": "The total number of actions performed so far."
 		},
-		"config": {
-			"name": "Config",
-			"explanation": ""
-		},
-		"language": {
-			"name": "Language",
-			"explanation": ""
-		},
-		"selected-language": {
-			"name": "Selected Language",
-			"explanation": ""
-		},
-		"language-change-enable": {
-			"name": "Language Change Enable",
-			"explanation": "You can change the language displayed."
-		},
-		"language-change-unenable": {
-			"name": "Language Change Unenable",
-			"explanation": "There are no other languages ​​available to display."
-		},
-		"showing-hint": {
-			"name": "Hint",
-			"explanation": "Displays instructions for the operation."
-		},
-		"showing-navigation": {
-			"name": "Navigation",
-			"explanation": "Displays buttons for moving between columns. You can also swipe to move between columns without displaying them."
-		},
-		"performing-highly": {
-			"name": "Performing Highly",
-			"explanation": "Increases the update frequency. If the operation is heavy, we recommend turning it off. It does not affect the execution time of each action."
-		},
-		"export-game": {
-			"name": "Export Game",
-			"explanation": "The game data has been exported."
-		},
-		"import-game": {
-			"name": "Import Game",
-			"explanation": "The game data has been imported."
-		},
-		"import-mistake": {
-			"name": "Import Mistake",
-			"explanation": "Failed to load game data."
-		},
-		"reset-game": {
-			"name": "Reset Game",
-			"explanation": "Deletes all progress data for this world. This action cannot be undone."
-		},
-		"reset-alert": {
-			"name": "Reset Alert",
-			"explanation": "Resetting the game will erase all data. Are you sure you want to reset the game?"
-		},
 		"win": {
 			"name": "Win",
 			"explanation": ""
@@ -372,6 +360,10 @@
 		"go-top": {
 			"name": "Go Top",
 			"explanation": ""
+		},
+		"iconify": {
+			"name": "Iconify",
+			"explanation": "This game uses icon sets provided by iconify. I would like to thank everyone involved in the production."
 		},
 		"category": {
 			"name": "Category",
@@ -505,6 +497,18 @@
 			"name": "Stop",
 			"explanation": ""
 		},
+		"reserve": {
+			"name": "Reserve",
+			"explanation": "Add this action to the reservation queue for sequential execution."
+		},
+		"reorder": {
+			"name": "Reorder",
+			"explanation": "Move this reserved action to the selected position in the queue."
+		},
+		"position": {
+			"name": "Queue Position",
+			"explanation": "Select the position in the reservation queue."
+		},
 		"items": {
 			"name": "Items",
 			"explanation": ""
@@ -559,7 +563,7 @@
 		},
 		"unnecessary-item": {
 			"name": "Unnecessary",
-			"explanation": "You cannot equip the item, but just having it in your possession will have effects."
+			"explanation": "You cannot equip the item, but just having it in your possession will have effects. The effect is multiplied by the number you own."
 		},
 		"impossible-item": {
 			"name": "Impossible",
@@ -581,6 +585,14 @@
 			"name": "Sell",
 			"explanation": "The value of the item when selling."
 		},
+		"selling": {
+			"name": "Selling",
+			"explanation": ""
+		},
+		"kind": {
+			"name": "Kind",
+			"explanation": ""
+		},
 		"selling-value": {
 			"name": "Selling Value",
 			"explanation": "The value of the item when selling."
@@ -597,6 +609,22 @@
 			"name": "Capacity Full",
 			"explanation": "Inventory capacity full."
 		},
+		"queue-full": {
+			"name": "Queue Full",
+			"explanation": "Reservation queue is full."
+		},
+		"already-queued": {
+			"name": "Already Queued",
+			"explanation": "This action is already running or reserved."
+		},
+		"purchase-limit-reached": {
+			"name": "Purchase Limit Reached",
+			"explanation": "Purchase limit reached."
+		},
+		"completed-maximum": {
+			"name": "Completed Maximum",
+			"explanation": "You have reached the maximum number of completions."
+		},
 		"relationship": {
 			"name": "Relationship",
 			"explanation": ""
@@ -604,6 +632,10 @@
 		"relationships": {
 			"name": "Relationships",
 			"explanation": ""
+		},
+		"requirement-equipment": {
+			"name": "Requirement Equipment",
+			"explanation": "This item must be equipped."
 		},
 		"property": {
 			"name": "Property",
@@ -637,9 +669,9 @@
 			"name": "Speed",
 			"explanation": "Affects the speed of the action."
 		},
-		"double": {
-			"name": "Double",
-			"explanation": "Probability that the amount of acquired items will be doubled."
+		"chance": {
+			"name": "Chance",
+			"explanation": "The action can be successful, but if it fails you will not receive any rewards or experience points."
 		},
 		"experience": {
 			"name": "Experience",
@@ -809,6 +841,10 @@
 			"name": "Hint Act 1",
 			"explanation": "The number of executions can be specified."
 		},
+		"hint-queue-0": {
+			"name": "Hint Queue 0",
+			"explanation": "A long press on a bar removes it from the queue."
+		},
 		"hint-actions-0": {
 			"name": "Hint Actions 0",
 			"explanation": "A long press toggles the execution of the action."
@@ -873,6 +909,10 @@
 			"name": "Event",
 			"explanation": ""
 		},
+		"timing": {
+			"name": "Timing",
+			"explanation": ""
+		},
 		"matched": {
 			"name": "Matched",
 			"explanation": "Conditions have been met."
@@ -892,6 +932,26 @@
 		"welcomed": {
 			"name": "Welcomed",
 			"explanation": "Welcome to this world!"
+		},
+		"obtained": {
+			"name": "Obtained",
+			"explanation": "You obtained:"
+		},
+		"achieved": {
+			"name": "Achieved",
+			"explanation": ""
+		},
+		"task": {
+			"name": "Task",
+			"explanation": ""
+		},
+		"tasks": {
+			"name": "Tasks",
+			"explanation": ""
+		},
+		"missions": {
+			"name": "Missions",
+			"explanation": ""
 		},
 		"language-en": {
 			"name": "English",
@@ -936,6 +996,74 @@
 		"language-mistaked": {
 			"name": "Language Mistaked",
 			"explanation": ""
+		},
+		"config": {
+			"name": "Config",
+			"explanation": ""
+		},
+		"language": {
+			"name": "Language",
+			"explanation": ""
+		},
+		"selected-language": {
+			"name": "Selected Language",
+			"explanation": ""
+		},
+		"language-change-enable": {
+			"name": "Language Change Enable",
+			"explanation": "You can change the language displayed."
+		},
+		"language-change-unenable": {
+			"name": "Language Change Unenable",
+			"explanation": "There are no other languages ​​available to display."
+		},
+		"category-shortcut": {
+			"name": "Category Shortcut",
+			"explanation": "When you open a category, a list of actions or items will also be displayed."
+		},
+		"showing-hint": {
+			"name": "Hint",
+			"explanation": "Displays instructions for the operation."
+		},
+		"showing-navigation": {
+			"name": "Navigation",
+			"explanation": "Displays buttons for moving between columns. You can also swipe to move between columns without displaying them."
+		},
+		"performing-highly": {
+			"name": "Performing Highly",
+			"explanation": "Increases the update frequency. If the operation is heavy, we recommend turning it off. It does not affect the execution time of each action."
+		},
+		"export-game": {
+			"name": "Export Game",
+			"explanation": "The game data has been exported."
+		},
+		"import-game": {
+			"name": "Import Game",
+			"explanation": "The game data has been imported."
+		},
+		"import-mistake": {
+			"name": "Import Mistake",
+			"explanation": "Failed to load game data."
+		},
+		"reset-game": {
+			"name": "Reset Game",
+			"explanation": "Deletes all progress data for this world. This action cannot be undone. Please confirm that you really want to delete the file, then enter 'DELETE' in the input field. (Not required in debug mode)"
+		},
+		"reset-really": {
+			"name": "Really?",
+			"explanation": ""
+		},
+		"reset-alert": {
+			"name": "Reset Alert",
+			"explanation": "Resetting the game will erase all data. Are you sure you want to reset the game?"
+		},
+		"reset-debug-mode": {
+			"name": "Reset Debug Mode",
+			"explanation": "In debug mode, no input is required in the confirmation field."
+		},
+		"force-restart": {
+			"name": "Force Restart",
+			"explanation": "Reloads the app. Use this if the display becomes unresponsive or stuck. Your progress is not affected."
 		}
 	}
 }

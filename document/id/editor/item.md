@@ -63,12 +63,13 @@ ___
 Konfigurasi tipe untuk peralatan, efek, dan konsumsi Item.
 - Item yang dapat dilengkapi diperlukan untuk termasuk dalam grup yang ditentukan dalam Kategori `equipmentGroups`.
 - Hanya satu item yang dapat dilengkapi dalam grup yang sama.
+- `unnecessary` akan memberikan efek terlepas dari apakah Peralatan tersebut dimiliki atau tidak, dan besaran efeknya sebanding dengan jumlah yang dimiliki (tidak ada efek jika jumlahnya 0, dan efeknya berlipat ganda sebanyak n kali jika jumlahnya n).
 
 |nilai|Peralatan|Efektivitas.|konsumsi|Contoh.|
 |-|-|-|-|-|
-|'perlu'.|Diperlukan|melengkapi|tidak ada|Pedang, baju besi, dan peralatan lainnya.|
-|'habis pakai'.|Diperlukan|melengkapi|Dikonsumsi saat aksi dilakukan|Item yang dikonsumsi untuk mendapatkan efek, seperti ramuan.|
-|'tidak perlu'.|Tidak perlu|Setiap saat saat memegang kamera.|tidak ada|Item pasif yang efektif hanya dengan memilikinya.|
+|'perlu'.|Diperlukan|Hanya saat melengkapi (1 buah)|tidak ada|Pedang, baju besi, dan peralatan lainnya.|
+|'habis pakai'.|Diperlukan|Hanya saat melengkapi (1 buah)|Dikonsumsi saat aksi dilakukan|Item yang dikonsumsi untuk mendapatkan efek, seperti ramuan.|
+|'tidak perlu'.|Tidak perlu|Selama dibawa, selalu (berbanding lurus dengan jumlah yang dibawa)|tidak ada|Item pasif yang efektif hanya dengan memilikinya.|
 |'tidak mungkin'.|tidak diperbolehkan|tidak ada|tidak ada|Item-item yang tidak ada seperti material dan puing-puing.|
 ___
 

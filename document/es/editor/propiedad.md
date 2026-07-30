@@ -2,7 +2,8 @@
 # propiedades
 Configuración de los efectos que tiene un Artículo.
 - Este es un Artículo de efecto que puede ser configurado en el Artículo.
-- Los Artículos con un Tipo de Equipamiento `necesario` o `consumible` sólo se aplican mientras están equipados. En el caso de los objetos "innecesarios", el efecto sólo se aplica mientras se poseen.
+- Los efectos de los artículos cuyo tipo de equipamiento sea «necessary» o «consumable» solo se aplican mientras se están equipando. En el caso de los artículos «unnecessary», el efecto se aplica con solo llevarlos en el inventario, y su intensidad es proporcional al número de unidades que se tengan (si se tienen 2, el efecto se duplica).
+- Dado que el efecto de `unnecessary` se calcula multiplicando directamente el número de unidades que se tienen, `maximum` (el número máximo de unidades) constituye el límite máximo de dicho efecto. A la hora de equilibrar el juego, configúralo junto con `maximum`.
 - Los valores de ambos elementos se calculan como un ajuste por la diferencia de nivel entre el nivel del jugador y el nivel de la Acción.
 - Por ejemplo, si el valor de ataque es 10, el ataque se calcula como si el nivel del jugador fuera 10 superior al nivel de la Acción. Menos valores son lo contrario.
 - ATAQUE, DEFENSA, PRECISIÓN, EVASIÓN y RESTAURACIÓN sólo son válidos para acciones de tipo "resistencia".
@@ -43,7 +44,7 @@ ___
 
 ## Valor de evasión [diferencia de nivel].
 Corrección de la tasa de evasión de los ataques del adversario (sólo válida para acciones de resistencia).
-- El índice de evasión se calcula suponiendo que el nivel del jugador es así de alto que el nivel de la Acción.
+- La tasa de evasión se calcula como si el nivel del jugador fuera superior al nivel de la acción en este valor. Cuanto mayor sea el valor, más fácil resultará evadir los ataques del rival.
 ___
 
 ## Valor de restauración [diferencia de nivel].

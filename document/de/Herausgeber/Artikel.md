@@ -63,12 +63,13 @@ ___
 Typ-Einstellungen für Ausrüstung, Effekte und Verbrauch von Gegenständen.
 - Gegenstände, die ausgerüstet werden können, müssen zu der in der Kategorie `equipmentGroups` angegebenen Gruppe gehören.
 - Innerhalb der gleichen Gruppe kann nur ein Gegenstand ausgerüstet werden.
+- „unnecessary“ entfaltet seine Wirkung unabhängig davon, ob die Ausrüstung angelegt ist oder nicht, und die Stärke des Effekts ist proportional zur Anzahl der besessenen Gegenstände (bei 0 Stück keine Wirkung, bei n Stück n-fache Wirkung).
 
 |Wert|Ausrüstung|Effektivität.|Verbrauch|Beispiel.|
 |-|-|-|-|-|
-|notwendig".|Notwendig|Ausrüstung|Nichts|Schwerter, Rüstungen und andere Ausrüstung.|
-|verbrauchbar".|Notwendig|Ausrüstung|Verbraucht bei der Durchführung von Aktionen|Gegenstände, die verbraucht werden, um eine Wirkung zu erzielen, z. B. Tränke.|
-|Unnötig".|unnötig|Zu jeder Zeit, während sie im Besitz sind.|Nichts|Passive Gegenstände, die allein dadurch wirksam sind, dass man sie hat.|
+|notwendig".|Notwendig|Nur während der Ausrüstung (1 Stück)|Nichts|Schwerter, Rüstungen und andere Ausrüstung.|
+|verbrauchbar".|Notwendig|Nur während der Ausrüstung (1 Stück)|Verbraucht bei der Durchführung von Aktionen|Gegenstände, die verbraucht werden, um eine Wirkung zu erzielen, z. B. Tränke.|
+|Unnötig".|unnötig|Solange man sie besitzt, immer (proportional zur Anzahl im Besitz)|Nichts|Passive Gegenstände, die allein dadurch wirksam sind, dass man sie hat.|
 |Unmöglich".|nicht erlaubt|Nichts|Nichts|Nicht wirksame Gegenstände wie Materialien und Schutt.|
 ___
 

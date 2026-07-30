@@ -3213,7 +3213,7 @@
             "options": {
               "enum_titles": [
                 "Necessary: Must be equipped",
-                "Unnecessary: Doesn't need to be equipped, always effective",
+                "Unnecessary: Doesn't need to be equipped, always effective, scales with the number owned",
                 "Impossible: Cannot be equipped",
                 "Consumable: Consumed when used"
               ],
@@ -3223,7 +3223,8 @@
             "yutori": {
               "points": [
                 "Necessary for Possible Items to belong to the group specified in the category `equipmentGroups`.",
-                "Only one Item may be Equipment within the same group."
+                "Only one Item may be Equipment within the same group.",
+                "`unnecessary` takes effect regardless of whether the item is equipped with Equipment, and the effect strength is proportional to the number of items held (nothing with 0 items; n times the effect with n items)."
               ],
               "reference": "en/editor/item?id=Equipment Type"
             }
@@ -3429,7 +3430,7 @@
                   },
                   "yutori": {
                     "points": [
-                      "The evasion is calculated assuming that the player's level is this value higher than the Action's level."
+                      "The evasion rate is calculated as if the player's level were this value higher than the Action's level. The higher this value, the easier it is to evade the opponent's attacks."
                     ],
                     "reference": "en/editor/property?id=Evasion value [level difference]."
                   }
@@ -3501,7 +3502,8 @@
             "yutori": {
               "points": [
                 "This is an item of effects that can be configured for an Item.",
-                "Items with an Equipment Type of `necessary` or `consumable` will only apply while equipping. For `unnecessary` items, the effect is applied only when you have the item in your possession.",
+                "Items with a Type of `necessary` or `consumable` apply their effects while equipped, but they apply their effects simply by being in your inventory, and the effect strength is proportional to the number of items you have (e.g., having 2 items doubles the effect).",
+                "Since the effect of `unnecessary` is based on the number of items you have—which directly determines the multiplier—`maximum` (the maximum number of items you can hold) serves as the upper limit for this effect. When balancing the game, please configure this setting in conjunction with `maximum`.",
                 "The value of any of these items is calculated as an Adjustment for the difference in level between the player's level and the Action's level.",
                 "For example, if the attack value is 10, the attack is calculated as if the player's level is 10 higher than the Action's level. Minus values are the opposite.",
                 "ATTACK, DEFENCE, ACCURACY, EVASION, and RESTORE are only valid for `stamina` Type Actions."
@@ -4453,7 +4455,9 @@
         "points": [
           "Replaces UI text and icons that are pre-loaded into the game engine (player).",
           "Only those that match an existing preset by ID will be replaced.",
-          "Only the configured items will be replaced. For example, if you configure only an icon, the other items, such as name and color, will be replaced with the original."
+          "Only the configured items will be replaced. For example, if you configure only an icon, the other items, such as name and color, will be replaced with the original.",
+          "Overrides to names and descriptions take precedence over the translations for each language built into the player. The overridden strings will be displayed as-is in all languages.",
+          "If you want to change the text for each language, enable translation and specify the text in the `translations/world` translation file that is generated. That file takes precedence over all others."
         ],
         "reference": "en/editor/preset"
       }

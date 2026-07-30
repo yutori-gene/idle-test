@@ -103,7 +103,7 @@ export const miscellaneous: Markdown = {
 export const property: Type.Property = {
 	title: "properties",
 	summary: "Configuring the Effects of an Item",
-	points: ["This is an item of effects that can be configured for an Item.", "Items with an Equipment Type of `necessary` or `consumable` will only apply while equipping. For `unnecessary` items, the effect is applied only when you have the item in your possession.", "The value of any of these items is calculated as an Adjustment for the difference in level between the player's level and the Action's level.", "For example, if the attack value is 10, the attack is calculated as if the player's level is 10 higher than the Action's level. Minus values are the opposite.", "ATTACK, DEFENCE, ACCURACY, EVASION, and RESTORE are only valid for `stamina` Type Actions."],
+	points: ["This is an item of effects that can be configured for an Item.", "Items with a Type of `necessary` or `consumable` apply their effects while equipped, but they apply their effects simply by being in your inventory, and the effect strength is proportional to the number of items you have (e.g., having 2 items doubles the effect).", "Since the effect of `unnecessary` is based on the number of items you have—which directly determines the multiplier—`maximum` (the maximum number of items you can hold) serves as the upper limit for this effect. When balancing the game, please configure this setting in conjunction with `maximum`.", "The value of any of these items is calculated as an Adjustment for the difference in level between the player's level and the Action's level.", "For example, if the attack value is 10, the attack is calculated as if the player's level is 10 higher than the Action's level. Minus values are the opposite.", "ATTACK, DEFENCE, ACCURACY, EVASION, and RESTORE are only valid for `stamina` Type Actions."],
 	list: [
 		["properties", "Details of Effects"],
 		["speed", "Reduces the time required for an Action. The time required changes inversely proportional to the difference in level."],
@@ -139,7 +139,7 @@ export const property: Type.Property = {
 		evasion: {
 			title: "Evasion value [level difference].",
 			summary: "Correction to the evasion rate of the opponent's attacks (only valid for stamina Actions)",
-			points: ["The evasion is calculated assuming that the player's level is this value higher than the Action's level."],
+			points: ["The evasion rate is calculated as if the player's level were this value higher than the Action's level. The higher this value, the easier it is to evade the opponent's attacks."],
 		},
 		restore: {
 			title: "Restoration value [level difference].",
@@ -415,7 +415,7 @@ export const preset: Type.Information = {
 	...information,
 	title: "preset",
 	summary: "Customize the display of system elements",
-	points: ["Replaces UI text and icons that are pre-loaded into the game engine (player).", "Only those that match an existing preset by ID will be replaced.", "Only the configured items will be replaced. For example, if you configure only an icon, the other items, such as name and color, will be replaced with the original."],
+	points: ["Replaces UI text and icons that are pre-loaded into the game engine (player).", "Only those that match an existing preset by ID will be replaced.", "Only the configured items will be replaced. For example, if you configure only an icon, the other items, such as name and color, will be replaced with the original.", "Overrides to names and descriptions take precedence over the translations for each language built into the player. The overridden strings will be displayed as-is in all languages.", "If you want to change the text for each language, enable translation and specify the text in the `translations/world` translation file that is generated. That file takes precedence over all others."],
 	options: {
 		label: "preset",
 	},
@@ -531,12 +531,12 @@ export const item: Type.Item = {
 		equipmentType: {
 			title: "Equipment Type",
 			summary: "Type configurations for Equipment, Effects, and Consumption of Items",
-			points: ["Necessary for Possible Items to belong to the group specified in the category `equipmentGroups`.", "Only one Item may be Equipment within the same group."],
+			points: ["Necessary for Possible Items to belong to the group specified in the category `equipmentGroups`.", "Only one Item may be Equipment within the same group.", "`unnecessary` takes effect regardless of whether the item is equipped with Equipment, and the effect strength is proportional to the number of items held (nothing with 0 items; n times the effect with n items)."],
 			list: [
 				["value", "Equipment", "Effectiveness", "consumption", "Example"],
-				["`necessary`.", "Necessary", "Only while Equipping", "nothing", "Equipment such as swords and armor"],
-				["`consumable`.", "Necessary", "Only while Equipping", "Consumed when Action is executed", "Items that are consumed for effect, such as potions"],
-				["`unnecessary`.", "Unnecessary", "Always in possession", "nothing", "Passive Items that are effective just by having them."],
+				["`necessary`.", "Necessary", "Only during equipping (1 unit)", "nothing", "Equipment such as swords and armor"],
+				["`consumable`.", "Necessary", "Only during equipping (1 unit)", "Consumed when Action is executed", "Items that are consumed for effect, such as potions"],
+				["`unnecessary`.", "Unnecessary", "While in your inventory, it is always active (proportional to the number you have)", "nothing", "Passive Items that are effective just by having them."],
 				["`impossible`.", "not allowed", "nothing", "nothing", "Items that have no effect, such as materials and debris"],
 			],
 		},

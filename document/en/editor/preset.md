@@ -4,6 +4,8 @@ Customize the display of system elements
 - Replaces UI text and icons that are pre-loaded into the game engine (player).
 - Only those that match an existing preset by ID will be replaced.
 - Only the configured items will be replaced. For example, if you configure only an icon, the other items, such as name and color, will be replaced with the original.
+- Overrides to names and descriptions take precedence over the translations for each language built into the player. The overridden strings will be displayed as-is in all languages.
+- If you want to change the text for each language, enable translation and specify the text in the `translations/world` translation file that is generated. That file takes precedence over all others.
 ___
 
 ## ID

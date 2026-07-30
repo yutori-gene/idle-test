@@ -2,7 +2,8 @@
 # propriétés
 Configuration des effets d'un Objet.
 - Il s'agit d'un effet qui peut être configuré sur l'Objet.
-- Les objets dont le type d'équipement est `nécessaire` ou `consommable` ne s'appliquent que lorsqu'ils sont équipés. Pour les objets `nécessaires`, l'effet ne s'applique que lorsqu'ils sont en possession de l'objet.
+- Les objets dont le type d'équipement est « `necessary` » ou « `consumable` » ne produisent leur effet que lors de l'équipement. Ceux de type « `unnecessary` » produisent leur effet simplement en étant en possession, et l'intensité de l'effet est proportionnelle au nombre d'objets possédés (si vous en possédez 2, l'effet est doublé).
+- L'effet « `unnecessary` » se traduisant par un multiplicateur égal au nombre d'objets détenus, la valeur « `maximum` » (nombre maximal d'objets détenus) constitue la limite supérieure de cet effet. Veuillez effectuer la configuration de ce paramètre en fonction de la valeur « `maximum` » lorsque vous réglez l'équilibre du jeu.
 - Les valeurs des deux éléments sont calculées comme un ajustement de la différence de niveau entre le niveau du joueur et le niveau de l'action.
 - Par exemple, si la valeur d'attaque est de 10, l'attaque est calculée comme si le niveau du joueur était supérieur de 10 au niveau de l'Action. Les valeurs négatives sont l'inverse.
 - ATTACK, DEFENCE, ACCURACY, EVASION et RESTORE ne sont valables que pour les actions de type `stamina`.
@@ -43,7 +44,7 @@ ___
 
 ## Valeur d'évasion [différence de niveau].
 Correction du taux d'évasion des attaques de l'adversaire (valable uniquement pour les actions d'endurance).
-- Le taux d'évasion est calculé en supposant que le niveau du joueur est supérieur d'autant au niveau de l'Action.
+- Le taux d'évasion est calculé en considérant que le niveau du joueur est supérieur de cette valeur à celui de l'action. Plus cette valeur est élevée, plus il est facile d'esquiver les attaques de l'adversaire.
 ___
 
 ## Valeur de restauration [différence de niveau].

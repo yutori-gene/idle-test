@@ -1624,7 +1624,7 @@
             "options": {
               "enum_titles": [
                 "Necessary: Must be equipped",
-                "Unnecessary: Doesn't need to be equipped, always effective",
+                "Unnecessary: Doesn't need to be equipped, always effective, scales with the number owned",
                 "Impossible: Cannot be equipped",
                 "Consumable: Consumed when used"
               ]
@@ -2270,7 +2270,9 @@
         "points": [
           "替换预先集成到游戏引擎（玩家）中的用户界面文本和图标。",
           "只有通过 ID 与现有预设匹配的预设才会被替换。",
-          "只有您配置的项目才会被替换。例如，如果只配置了图标，名称和颜色等其他项目将使用原来的。"
+          "只有您配置的项目才会被替换。例如，如果只配置了图标，名称和颜色等其他项目将使用原来的。",
+          "名称和说明的覆盖内容将优先于玩家内置的各语言翻译。被覆盖的字符串将以原样显示在所有语言中。",
+          "如果希望根据不同语言更改文本内容，请启用翻译功能，并在生成的`translations/world`翻译文件中进行指定。该文件具有最高优先级。"
         ],
         "reference": "zh/editor/预置"
       }

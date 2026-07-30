@@ -17,13 +17,29 @@
       "name": "Mínimo",
       "explanation": ""
     },
+    "maximum": {
+      "name": "Máximo",
+      "explanation": "No puedes poseer ni ejercer más de este número."
+    },
+    "minimum": {
+      "name": "Mínimo",
+      "explanation": ""
+    },
     "count": {
-      "name": "Cuenta",
+      "name": "Contar",
       "explanation": ""
     },
     "purchased-count": {
-      "name": "Recuento de compras",
+      "name": "Número de unidades compradas",
       "explanation": ""
+    },
+    "purchase-limit": {
+      "name": "Límite de compra",
+      "explanation": "El número máximo de veces que puedes comprar."
+    },
+    "purchasable-count": {
+      "name": "Disponible para su compra",
+      "explanation": "El tiempo que aún puedes comprar."
     },
     "total": {
       "name": "Total",
@@ -70,11 +86,11 @@
       "explanation": ""
     },
     "on": {
-      "name": "En",
+      "name": "El",
       "explanation": ""
     },
     "off": {
-      "name": "Fuera de",
+      "name": "Desactivado",
       "explanation": ""
     },
     "seconds": {
@@ -82,7 +98,7 @@
       "explanation": ""
     },
     "minutes": {
-      "name": "Actas",
+      "name": "Acta",
       "explanation": ""
     },
     "hours": {
@@ -110,8 +126,8 @@
       "explanation": ""
     },
     "failure": {
-      "name": "Fallo",
-      "explanation": ""
+      "name": "Fracaso",
+      "explanation": "fracaso"
     },
     "up": {
       "name": "Arriba",
@@ -127,10 +143,10 @@
     },
     "navigation": {
       "name": "Navegación",
-      "explanation": "También puede desplazarse entre columnas deslizando el dedo. El botón superior aparece en la parte inferior izquierda de la pantalla."
+      "explanation": "También puedes desplazarte entre columnas deslizando el dedo. El botón arriba aparece en la parte inferior izquierda de la pantalla."
     },
     "navigation-back": {
-      "name": "Volver",
+      "name": "Atrás",
       "explanation": ""
     },
     "navigation-top": {
@@ -141,8 +157,28 @@
       "name": "Adelante",
       "explanation": ""
     },
+    "navigation-column": {
+      "name": "Columna",
+      "explanation": "La posición de esta columna y el número total de columnas, incluidas las que quedan fuera de la pantalla."
+    },
+    "checked": {
+      "name": "Marcado",
+      "explanation": ""
+    },
+    "chevron-down": {
+      "name": "Chevron abajo",
+      "explanation": ""
+    },
+    "chevron-right": {
+      "name": "Chevron a la derecha",
+      "explanation": ""
+    },
+    "selected": {
+      "name": "Seleccionado",
+      "explanation": ""
+    },
     "character": {
-      "name": "Carácter",
+      "name": "Personaje",
       "explanation": ""
     },
     "activity": {
@@ -162,11 +198,15 @@
       "explanation": ""
     },
     "overview": {
-      "name": "Visión general",
+      "name": "Resumen",
       "explanation": ""
     },
     "version": {
       "name": "Versión",
+      "explanation": ""
+    },
+    "license": {
+      "name": "Licencia",
       "explanation": ""
     },
     "updated": {
@@ -182,32 +222,32 @@
       "explanation": ""
     },
     "estimated-playing-time": {
-      "name": "Tiempo estimado de juego",
-      "explanation": "Tiempo estimado por el autor para completar este mundo"
+      "name": "Tiempo estimado de la reproducción",
+      "explanation": "El tiempo que se tarda en completar este mundo, según la estimación del autor"
     },
     "console": {
       "name": "Consola",
-      "explanation": "Este juego funciona en el sistema de consola Idle RPG. Es gratuito y abierto al público, por lo que cualquiera puede crear juegos."
+      "explanation": "Este juego funciona con el sistema de consola inactivo RPG. Es gratuito y de acceso público, por lo que cualquiera puede crear juegos."
     },
     "general": {
       "name": "General",
       "explanation": ""
     },
     "default-language": {
-      "name": "Idioma por defecto",
+      "name": "Idioma predeterminado",
       "explanation": ""
     },
     "language-change-enable-general": {
-      "name": "Cambio de idioma Activar General",
-      "explanation": "Puedes cambiar la pantalla a otro idioma en la configuración."
+      "name": "Cambiar idioma Activar opciones generales",
+      "explanation": "Puedes cambiar el idioma de la interfaz en la configuración."
     },
     "max-category-level": {
-      "name": "Categoría máxima Nivel",
+      "name": "Nivel máximo de categoría",
       "explanation": "El nivel máximo que se puede alcanzar en cada categoría."
     },
     "level-common-ratio": {
-      "name": "Nivel Ratio común",
-      "explanation": "Cuántos puntos de experiencia se necesitan para alcanzar el siguiente nivel cada vez que se gana un nivel."
+      "name": "Nivel Relación común",
+      "explanation": "¿Cuántos puntos de experiencia se necesitan para pasar al siguiente nivel cada vez que subes de nivel?"
     },
     "statistics": {
       "name": "Estadísticas",
@@ -218,7 +258,7 @@
       "explanation": ""
     },
     "amount-earned": {
-      "name": "Importe ganado",
+      "name": "Importe percibido",
       "explanation": "La cantidad total de monedas que has ganado hasta ahora."
     },
     "time": {
@@ -227,7 +267,7 @@
     },
     "playing-time": {
       "name": "Tiempo de juego",
-      "explanation": "El tiempo transcurrido desde que empezaste a jugar a este juego, incluido el tiempo sin conexión."
+      "explanation": "El tiempo transcurrido desde que comenzaste a jugar a este juego, incluido el tiempo sin conexión."
     },
     "item": {
       "name": "Artículo",
@@ -235,74 +275,22 @@
     },
     "count-now": {
       "name": "Contar ahora",
-      "explanation": "El número total de artículos que posees actualmente."
+      "explanation": "El número total de artículos que tienes actualmente."
     },
     "count-gained": {
-      "name": "Recuento Ganado",
-      "explanation": "El número total de artículos adquiridos hasta el momento."
+      "name": "Puntos conseguidos",
+      "explanation": "El número total de artículos adquiridos hasta la fecha."
     },
     "total-level": {
       "name": "Nivel total",
       "explanation": "La suma de los niveles actuales de todas las categorías."
     },
     "count-actioned": {
-      "name": "Recuento Efectuado",
-      "explanation": "El número total de acciones realizadas hasta el momento."
-    },
-    "config": {
-      "name": "Configurar",
-      "explanation": ""
-    },
-    "language": {
-      "name": "Idioma",
-      "explanation": ""
-    },
-    "selected-language": {
-      "name": "Idioma seleccionado",
-      "explanation": ""
-    },
-    "language-change-enable": {
-      "name": "Activar cambio de idioma",
-      "explanation": "Puedes cambiar el idioma mostrado."
-    },
-    "language-change-unenable": {
-      "name": "Cambio de idioma desactivado",
-      "explanation": "No hay otros idiomas disponibles para mostrar."
-    },
-    "showing-hint": {
-      "name": "Sugerencia",
-      "explanation": "Muestra las instrucciones de la operación."
-    },
-    "showing-navigation": {
-      "name": "Navegación",
-      "explanation": "Muestra los botones para desplazarte entre columnas. También puedes deslizar el dedo para desplazarte entre columnas sin mostrarlas."
-    },
-    "performing-highly": {
-      "name": "Alto rendimiento",
-      "explanation": "Aumenta la frecuencia de actualización. Si la operación es pesada, se recomienda desactivarla. No afecta al tiempo de ejecución de cada acción."
-    },
-    "export-game": {
-      "name": "Juego de exportación",
-      "explanation": "Se han exportado los datos del juego."
-    },
-    "import-game": {
-      "name": "Juego de importación",
-      "explanation": "Se han importado los datos del juego."
-    },
-    "import-mistake": {
-      "name": "Error de importación",
-      "explanation": "Error al cargar los datos del juego."
-    },
-    "reset-game": {
-      "name": "Reiniciar Juego",
-      "explanation": "Borra todos los datos de progreso de este mundo. Esta acción no se puede deshacer."
-    },
-    "reset-alert": {
-      "name": "Restablecer la alerta",
-      "explanation": "Al reiniciar el juego se borrarán todos los datos. ¿Estás seguro de que quieres reiniciar el juego?"
+      "name": "Acción realizada",
+      "explanation": "El número total de acciones realizadas hasta ahora."
     },
     "win": {
-      "name": "Gana",
+      "name": "Ganar",
       "explanation": ""
     },
     "debug": {
@@ -311,7 +299,7 @@
     },
     "acceleration": {
       "name": "Aceleración",
-      "explanation": "Acelera el tiempo en el juego. Ten en cuenta que si aumentas demasiado la velocidad cuando el tiempo de ejecución de la acción es lento, el procesamiento no podrá seguir el ritmo y la app se congelará o se bloqueará."
+      "explanation": "Acelera el tiempo en el juego. Ten en cuenta que, si aumentas demasiado la velocidad cuando el tiempo de ejecución de las acciones es lento, el procesamiento no podrá seguir el ritmo y la aplicación se bloqueará o se cerrará de forma inesperada."
     },
     "multiplier": {
       "name": "Multiplicador",
@@ -322,8 +310,8 @@
       "explanation": ""
     },
     "adjustment": {
-      "name": "Ajuste",
-      "explanation": "Aumenta o disminuye el número de artículos en propiedad o el nivel de categoría."
+      "name": "Ajustar",
+      "explanation": "Aumenta o reduce el número de artículos que se poseen o el nivel de las categorías."
     },
     "adjustment-type": {
       "name": "Tipo",
@@ -331,22 +319,22 @@
     },
     "adjustment-category": {
       "name": "Categoría",
-      "explanation": "Ajuste el nivel de la categoría. Por ejemplo, si lo ajusta a +5, se añadirán 5 niveles."
+      "explanation": "Ajusta el nivel de la categoría. Por ejemplo, si lo fijas en +5, se añadirán 5 niveles."
     },
     "adjustment-action": {
       "name": "Acción",
-      "explanation": "Esto aumentará o disminuirá el número de veces que se ha realizado la acción. Sin embargo, no reflejará ninguna recompensa obtenida al completar la acción."
+      "explanation": "Esto aumentará o reducirá el número de veces que se ha realizado la acción. Sin embargo, no reflejará las recompensas obtenidas al completar la acción."
     },
     "adjustment-item": {
       "name": "Artículo",
-      "explanation": "Aumenta o disminuye el número de objetos que posees."
+      "explanation": "Aumenta o reduce el número de artículos que tienes."
     },
     "adjustment-id": {
       "name": "ID",
-      "explanation": "Especifique el ID del tipo de destino. Si se deja en blanco, la suma y la resta se ajustarán para todos los ID."
+      "explanation": "Indica el ID del tipo de objetivo. Si se deja en blanco, la suma y la resta se ajustarán para todos los ID."
     },
     "adjustment-sign": {
-      "name": "Firma",
+      "name": "Signo",
       "explanation": ""
     },
     "adjustment-plus": {
@@ -355,23 +343,27 @@
     },
     "adjustment-minus": {
       "name": "Menos",
-      "explanation": "Resta el número especificado."
+      "explanation": "Resta el número indicado."
     },
     "adjustment-count": {
-      "name": "Cuenta",
-      "explanation": "El número a aumentar o disminuir. Especifique si desea aumentar o disminuir con un símbolo."
+      "name": "Contar",
+      "explanation": "El número que se va a aumentar o disminuir. Indica si se va a aumentar o disminuir mediante un símbolo."
     },
     "adjustment-adjust": {
       "name": "Ajustar",
       "explanation": "Los ajustes se realizan en las condiciones especificadas."
     },
     "pwa": {
-      "name": "Instalar PWA",
-      "explanation": "Instalar la aplicación web progresiva (PWA)."
+      "name": "Instalar la PWA",
+      "explanation": "Instala la aplicación web progresiva (PWA)."
     },
     "go-top": {
       "name": "Ir arriba",
       "explanation": ""
+    },
+    "iconify": {
+      "name": "Convertir en icono",
+      "explanation": "Este juego utiliza conjuntos de iconos proporcionados por iconify. Me gustaría dar las gracias a todas las personas que han participado en su creación."
     },
     "category": {
       "name": "Categoría",
@@ -395,7 +387,7 @@
     },
     "standalone": {
       "name": "Independiente",
-      "explanation": "Se ejecuta de forma independiente, independientemente del progreso de las acciones en otras categorías."
+      "explanation": "Funciona de forma independiente, al margen de cómo avancen las acciones de otras categorías."
     },
     "action": {
       "name": "Acción",
@@ -407,10 +399,10 @@
     },
     "attribute": {
       "name": "Atributo",
-      "explanation": "Atributos específicos de esta acción. Las propiedades de categoría se aplican a los atributos de esta acción. También se asignan puntos de experiencia a este atributo."
+      "explanation": "Atributos específicos de esta acción. Las propiedades de las categorías se aplican a los atributos de esta acción. Además, se asignan puntos de experiencia a este atributo."
     },
     "progress": {
-      "name": "Progreso",
+      "name": "Avances",
       "explanation": ""
     },
     "progressing": {
@@ -430,7 +422,7 @@
       "explanation": ""
     },
     "idle": {
-      "name": "Ocioso",
+      "name": "Inactivo",
       "explanation": ""
     },
     "progress-type": {
@@ -439,11 +431,11 @@
     },
     "persistent": {
       "name": "Persistente",
-      "explanation": "Realizas una serie de acciones, y cada vez que completas una acción obtienes una recompensa."
+      "explanation": "Realizas una serie de acciones y, cada vez que completas una acción, obtienes una recompensa."
     },
     "single": {
       "name": "Único",
-      "explanation": "Sólo puedes realizar una acción una vez, y tu progreso se guardará aunque la interrumpas a mitad de camino."
+      "explanation": "Solo puedes realizar una acción una vez, y tu progreso se guardará aunque la interrumpas a mitad de camino."
     },
     "snap": {
       "name": "Instantáneo",
@@ -451,10 +443,10 @@
     },
     "stamina": {
       "name": "Resistencia",
-      "explanation": "Cada acción reduce la resistencia del jugador y del objetivo. Cuando se agota la resistencia del objetivo, ganas, y cuando se agota la resistencia del jugador, se acaba la partida. Cuando el juego termina, no tienes nada que perder, pero todo el progreso de las acciones se interrumpe."
+      "explanation": "Cada acción reduce la resistencia del jugador y del objetivo. Cuando la resistencia del objetivo se agota, ganas; y cuando se agota la resistencia del jugador, la partida termina. Cuando la partida termina, no tienes nada que perder, pero se interrumpe todo el progreso de la acción."
     },
     "enable-count": {
-      "name": "Habilitar recuento",
+      "name": "Activar contar",
       "explanation": ""
     },
     "estimated-time": {
@@ -486,15 +478,15 @@
       "explanation": ""
     },
     "rest-count": {
-      "name": "Descanso",
+      "name": "Recuento de reposo",
       "explanation": ""
     },
     "act": {
-      "name": "Actuar",
+      "name": "Ley",
       "explanation": ""
     },
     "start": {
-      "name": "Inicio",
+      "name": "Comenzar",
       "explanation": ""
     },
     "end": {
@@ -505,6 +497,18 @@
       "name": "Detener",
       "explanation": ""
     },
+    "reserve": {
+      "name": "Reserva",
+      "explanation": "Añade esta acción a la cola de reservas para su ejecución secuencial."
+    },
+    "reorder": {
+      "name": "Reordenar",
+      "explanation": "Mueve esta acción reservada a la posición seleccionada en la cola."
+    },
+    "position": {
+      "name": "Posición en la cola",
+      "explanation": "Selecciona la posición en la cola de reservas."
+    },
     "items": {
       "name": "Artículos",
       "explanation": ""
@@ -514,7 +518,7 @@
       "explanation": ""
     },
     "unequipping": {
-      "name": "Desequipamiento",
+      "name": "Desequipando",
       "explanation": ""
     },
     "equip": {
@@ -535,38 +539,38 @@
     },
     "own": {
       "name": "Propio",
-      "explanation": "Si posee este artículo."
+      "explanation": "¿Tienes este artículo?"
     },
     "own-count": {
       "name": "Recuento propio",
-      "explanation": "Si posee este artículo."
+      "explanation": "¿Tienes este artículo?"
     },
     "recovery": {
       "name": "Recuperación",
-      "explanation": "Sólo puedes tener uno."
+      "explanation": "Solo puedes tener uno propio."
     },
     "unique": {
       "name": "Único",
-      "explanation": "Sólo puedes tener uno."
+      "explanation": "Solo puedes tener uno propio."
     },
     "equipment-type": {
       "name": "Equipamiento",
-      "explanation": "El tipo de equipo del artículo."
+      "explanation": "El tipo de equipamiento del artículo."
     },
     "necessary-item": {
       "name": "Necesario",
-      "explanation": "Equipar el objeto tendrá efectos."
+      "explanation": "Equipar el artículo tendrá sus efectos."
     },
     "unnecessary-item": {
       "name": "Innecesario",
-      "explanation": "No puedes equipar el objeto, pero el mero hecho de tenerlo en tu poder tendrá efectos."
+      "explanation": "No puedes equiparte el artículo, pero el mero hecho de tenerlo en tu poder ya te proporcionará efectos. El efecto se multiplica por el número de artículos propios que tengas."
     },
     "impossible-item": {
       "name": "Imposible",
-      "explanation": "Este objeto no se puede equipar."
+      "explanation": "Este artículo no se puede equipar."
     },
     "consumable-item": {
-      "name": "Consumibles",
+      "name": "Consumible",
       "explanation": "Cuando se equipa, tiene un efecto, pero se consume cada vez que realizas una acción."
     },
     "buy": {
@@ -578,24 +582,48 @@
       "explanation": "El valor del artículo en el momento de la compra."
     },
     "sell": {
-      "name": "Vendedor",
-      "explanation": "El valor del artículo en el momento de la venta."
+      "name": "Vender",
+      "explanation": "El valor del artículo cuando se vende."
+    },
+    "selling": {
+      "name": "Venda",
+      "explanation": ""
+    },
+    "kind": {
+      "name": "Tipo",
+      "explanation": ""
     },
     "selling-value": {
       "name": "Valor de venta",
-      "explanation": "El valor del artículo en el momento de la venta."
+      "explanation": "El valor del artículo cuando se vende."
     },
     "trade": {
-      "name": "Comercio",
+      "name": "Comerciar",
       "explanation": ""
     },
     "trade-failed": {
-      "name": "Comercio fracasado",
-      "explanation": "El comercio fracasó."
+      "name": "La operación ha fallado",
+      "explanation": "La operación no se ha realizado."
     },
     "capacity-full": {
-      "name": "Capacidad máxima",
-      "explanation": "Capacidad de inventario completa."
+      "name": "Aforo completo",
+      "explanation": "El inventario está al máximo."
+    },
+    "queue-full": {
+      "name": "Cola llena",
+      "explanation": "La cola de reservas está llena."
+    },
+    "already-queued": {
+      "name": "Ya está en la cola",
+      "explanation": "Esta acción ya se está ejecutando o está reservada."
+    },
+    "purchase-limit-reached": {
+      "name": "Se ha alcanzado el límite de compra",
+      "explanation": "Se ha alcanzado el límite de compra."
+    },
+    "completed-maximum": {
+      "name": "Completado Máximo",
+      "explanation": "Has alcanzado el número máximo de finalizaciones completadas."
     },
     "relationship": {
       "name": "Relación",
@@ -604,6 +632,10 @@
     "relationships": {
       "name": "Relaciones",
       "explanation": ""
+    },
+    "requirement-equipment": {
+      "name": "Equipo de equipamiento necesario",
+      "explanation": "Este artículo debe equiparse."
     },
     "property": {
       "name": "Propiedad",
@@ -614,40 +646,40 @@
       "explanation": ""
     },
     "attack": {
-      "name": "Ataque",
+      "name": "Attaque",
       "explanation": "Daño al objetivo."
     },
     "defence": {
       "name": "Defensa",
-      "explanation": "Daño del objetivo."
+      "explanation": "Daño infligido por el objetivo."
     },
     "accuracy": {
       "name": "Precisión",
-      "explanation": "Probabilidad de dañar al monstruo."
+      "explanation": "Probabilidad de que el monstruo cause daño."
     },
     "evasion": {
       "name": "Evasión",
-      "explanation": "Probabilidad de recibir daño del monstruo."
+      "explanation": "Probabilidad de recibir daño de un monstruo."
     },
     "restore": {
       "name": "Restaurar",
-      "explanation": "Afecta a la cantidad de recuperación durante la batalla."
+      "explanation": "Influye en la cantidad de recuperación durante el combate."
     },
     "speed": {
       "name": "Velocidad",
-      "explanation": "Afecta a la velocidad de la acción."
+      "explanation": "Influye en la velocidad de la acción."
     },
-    "double": {
-      "name": "Doble",
-      "explanation": "Probabilidad de que se duplique la cantidad de artículos adquiridos."
+    "chance": {
+      "name": "Chance",
+      "explanation": "La acción puede tener éxito, pero si falla, no recibirás ninguna recompensa ni puntos de experiencia."
     },
     "experience": {
       "name": "Experiencia",
-      "explanation": "Afecta a los puntos de experiencia obtenidos de las acciones."
+      "explanation": "Influye en los puntos de experiencia que se obtienen al realizar acciones."
     },
     "correction": {
       "name": "Corrección",
-      "explanation": "Correcciones debidas a efectos de equipos y artículos."
+      "explanation": "Correcciones debidas a los efectos del equipamiento y los artículos."
     },
     "value": {
       "name": "Valor",
@@ -658,240 +690,268 @@
       "explanation": ""
     },
     "base-value": {
-      "name": "Valor de base",
+      "name": "Valor base",
       "explanation": "Un valor único para este juego o acción."
     },
     "level-gap": {
       "name": "Diferencia de nivel",
-      "explanation": "Para los cálculos numéricos, véase el bloque \"Nivel\"."
+      "explanation": "Para los cálculos numéricos, consulta el bloque «Nivel»."
     },
     "reflected-value": {
       "name": "Valor reflejado",
-      "explanation": "El valor final calculado a partir del \"Valor base\" y la \"Brecha de nivel\"."
+      "explanation": "El valor final calculado a partir del «valor base» y la «diferencia de nivel»."
     },
     "level-gap-property": {
-      "name": "Propiedad de Level Gap",
-      "explanation": "El valor \"Level Gap\" es la suma de cada valor dentro de este bloque."
+      "name": "Propiedad de diferencia de nivel",
+      "explanation": "El valor de la «diferencia de nivel» es la suma de cada uno de los valores de este bloque."
     },
     "level-gap-category": {
-      "name": "Nivel Brecha Categoría",
-      "explanation": "El nivel de la categoría del jugador menos el nivel de esta acción. En el caso de la \"experiencia\", la situación se invierte."
+      "name": "Categoría de diferencia de nivel",
+      "explanation": "El nivel de la categoría del jugador menos el nivel de esta acción. En el caso de la «experiencia», la situación es al revés."
     },
     "level-gap-action": {
-      "name": "Nivel Brecha Acción",
-      "explanation": "Cuando el tipo de progreso es resistencia, este es el único valor que establece esta acción."
+      "name": "Acciones para reducir la brecha de nivel",
+      "explanation": "Cuando el tipo de progreso es «resistencia», este es el valor único que establece esta acción."
     },
     "level-gap-item": {
-      "name": "Brecha de nivel Elemento",
-      "explanation": "Es el valor de corrección de los objetos equipados, o de los objetos que tienen efecto aunque no estén equipados."
+      "name": "Artículo de diferencia de nivel",
+      "explanation": "Este es el valor de corrección de los artículos equipados, o de aquellos que tienen un efecto aunque no estén equipados."
     },
     "no-status": {
       "name": "Sin estado",
       "explanation": "No hay categorías de estado disponibles."
     },
     "targeting-all-categories": {
-      "name": "Todas las categorías",
-      "explanation": "Esta corrección de la propiedad se aplica a todas las categorías."
+      "name": "Dirigido a todas las categorías",
+      "explanation": "Esta corrección de propiedades se aplica a todas las categorías."
     },
     "hint-language-0": {
-      "name": "Sugerencia Lengua 0",
-      "explanation": "Cambia el idioma mostrado en el juego."
+      "name": "Pista: Idioma 0",
+      "explanation": "Permite cambiar el idioma que se muestra en el juego."
     },
     "hint-language-1": {
-      "name": "Sugerencia Lengua 1",
-      "explanation": "Esto sólo es válido si el creador ha proporcionado una traducción."
+      "name": "Pista: Idioma 1",
+      "explanation": "Esto solo es válido si el autor ha facilitado una traducción."
     },
     "hint-event-0": {
-      "name": "Pista Evento 0",
+      "name": "Pista del evento 0",
       "explanation": "Se activa cuando se cumplen las condiciones."
     },
     "hint-event-1": {
-      "name": "Pista Evento 1",
-      "explanation": "Se muestran mensajes cuando se activa, se dan o reducen artículos, etc."
+      "name": "Pista del evento 1",
+      "explanation": "Cuando se activa, aparecen mensajes, se otorgan o se restan artículos, etc."
     },
     "hint-debug-0": {
-      "name": "Sugerencia Depurar 0",
-      "explanation": "Sólo se muestra durante la depuración."
+      "name": "Pista para depurar 0",
+      "explanation": "Solo se muestra durante la depuración."
     },
     "hint-debug-1": {
-      "name": "Sugerencia Depuración 1",
-      "explanation": "No se mostrará cuando se publique y distribuya el juego."
+      "name": "Pista de depuración 1",
+      "explanation": "No aparecerá cuando el juego se publique y se distribuya."
     },
     "hint-config-0": {
-      "name": "Sugerencia Configuración 0",
+      "name": "Configuración de pistas 0",
       "explanation": "Configura los ajustes relacionados con la visualización y el procesamiento del juego."
     },
     "hint-config-1": {
-      "name": "Sugerencia Configuración 1",
-      "explanation": "Los datos del juego se pueden introducir/sacar y restablecer."
+      "name": "Configuración de pistas 1",
+      "explanation": "Los datos del juego se pueden introducir, exportar y restablecer."
     },
     "hint-statistics-0": {
-      "name": "Sugerencia Estadística 0",
-      "explanation": "Puedes consultar el progreso del juego hasta el momento."
+      "name": "Estadísticas de pistas 0",
+      "explanation": "Puedes consultar el progreso del partido hasta ahora."
     },
     "hint-general-0": {
-      "name": "Sugerencia general 0",
-      "explanation": "Puedes comprobar el nivel de dificultad y la configuración única de este mundo."
+      "name": "Pista general 0",
+      "explanation": "Puedes consultar el nivel de dificultad y los ajustes únicos de este mundo."
     },
     "hint-overview-0": {
-      "name": "Resumen de pistas 0",
-      "explanation": "Puedes informarte sobre el mundo (visión del mundo, ambientación) de este juego."
+      "name": "Resumen de la pista 0",
+      "explanation": "Puedes informarte sobre el mundo (la visión del mundo, el escenario) de este juego."
     },
     "hint-overview-1": {
-      "name": "Resumen de pistas 1",
-      "explanation": "También puedes comprobar la consola (sistema) que ejecuta este juego."
+      "name": "Resumen de la pista 1",
+      "explanation": "También puedes consultar la consola (sistema) en la que se ejecuta este juego."
     },
     "hint-correction-0": {
-      "name": "Sugerencia Corrección 0",
-      "explanation": "En esta categoría puede ver correcciones para propiedades específicas."
+      "name": "Corrección de la pista 0",
+      "explanation": "En esta categoría puedes ver las correcciones correspondientes a propiedades concretas."
     },
     "hint-correction-1": {
-      "name": "Sugerencia Corrección 1",
-      "explanation": "La corrección se debe al efecto del artículo. Puede comprobar el artículo."
+      "name": "Corrección de la pista 1",
+      "explanation": "La corrección se debe al efecto de ese artículo. Puedes comprobarlo."
     },
     "hint-properties-0": {
       "name": "Propiedades de la pista 0",
-      "explanation": "A continuación se enumeran las propiedades establecidas para cada categoría."
+      "explanation": "A continuación se muestra una lista de las propiedades establecidas para cada categoría."
     },
     "hint-properties-1": {
-      "name": "Sugerencia Propiedades 1",
-      "explanation": "Una propiedad es un elemento que afecta a la ejecución de una acción."
+      "name": "Propiedades de las pistas 1",
+      "explanation": "Una propiedad es un elemento que influye en la ejecución de una acción."
     },
     "hint-properties-2": {
-      "name": "Sugerencia Propiedades 2",
-      "explanation": "El efecto se compensa equipando el objeto. (Algunos objetos no necesitan equiparse)."
+      "name": "Propiedades de las pistas 2",
+      "explanation": "El efecto se compensa al equipar el artículo. (Algunos artículos no es necesario equiparlos.)"
     },
     "hint-property-0": {
-      "name": "Sugerencia Propiedad 0",
-      "explanation": "Una propiedad es un elemento que afecta a la ejecución de una acción."
+      "name": "Propiedad de la pista 0",
+      "explanation": "Una propiedad es un elemento que influye en la ejecución de una acción."
     },
     "hint-property-1": {
-      "name": "Sugerencia Propiedad 1",
-      "explanation": "El valor final se calcula a partir del valor inicial asignado, teniendo en cuenta el nivel de la categoría, el nivel fijado para la acción y la corrección de los elementos equipados."
+      "name": "Pista 1",
+      "explanation": "El valor final se calcula a partir del valor inicial asignado, teniendo en cuenta el nivel de categoría, el nivel establecido para la acción y la corrección correspondiente a los artículos equipados."
     },
     "hint-trade-0": {
-      "name": "Pista Comercio 0",
-      "explanation": "Algunos artículos no pueden comprarse ni venderse."
+      "name": "Pista de comercio 0",
+      "explanation": "Algunos artículos no se pueden comprar ni vender."
     },
     "hint-trade-1": {
-      "name": "Pista Comercio 1",
-      "explanation": "Los objetos bloqueados no se pueden comprar ni vender."
+      "name": "Pista: Intercambio 1",
+      "explanation": "Los artículos bloqueados no se pueden comprar ni vender."
     },
     "hint-items-0": {
-      "name": "Sugerencia 0",
-      "explanation": "Mantén pulsado para cambiar el equipamiento del objeto."
+      "name": "Pistas: 0",
+      "explanation": "Mantén pulsado para cambiar el equipamiento del artículo."
     },
     "hint-items-1": {
-      "name": "Pistas 1",
-      "explanation": "Sólo se puede equipar un objeto de la lista. (Si el objeto está configurado para ser equipable como categoría)."
+      "name": "Pistas: Artículos 1",
+      "explanation": "Solo se puede equipar un artículo de la lista. (Si el artículo está configurado para poder equiparse como categoría)"
     },
     "hint-items-2": {
-      "name": "Pistas 2",
-      "explanation": "Los artículos que no cumplen las condiciones de liberación se bloquean y no pueden verse en detalle."
+      "name": "Pistas: Artículos 2",
+      "explanation": "Los artículos que no cumplen las condiciones de liberación quedan bloqueados y no se pueden consultar en detalle."
     },
     "hint-item-0": {
-      "name": "Pista Elemento 0",
-      "explanation": "Los artículos son elementos relacionados con la posesión de objetos como equipos, consumibles y objetos de valor."
+      "name": "Pista n.º 0",
+      "explanation": "Los artículos son elementos relacionados con la posesión de objetos, como equipamiento, consumibles y objetos de valor."
     },
     "hint-item-1": {
-      "name": "Pista 1",
-      "explanation": "Sólo se puede equipar un objeto de una categoría. (Si está configurado para ser equipable como categoría)."
+      "name": "Pista n.º 1",
+      "explanation": "Solo se puede equipar un artículo de cada categoría. (Siempre que esté configurado para poder equiparse como categoría)"
     },
     "hint-item-2": {
-      "name": "Pista 2",
-      "explanation": "Los artículos que no cumplen las condiciones de liberación se bloquean y no pueden verse en detalle."
+      "name": "Pista n.º 2",
+      "explanation": "Los artículos que no cumplen las condiciones de liberación quedan bloqueados y no se pueden consultar en detalle."
     },
     "hint-act-0": {
-      "name": "Pista Acto 0",
-      "explanation": "Iniciar o detener una acción."
+      "name": "Pista, Acto 0",
+      "explanation": "Comenzar o detener una acción."
     },
     "hint-act-1": {
-      "name": "Pista Acto 1",
+      "name": "Pista del Acto I",
       "explanation": "Se puede especificar el número de ejecuciones."
     },
+    "hint-queue-0": {
+      "name": "Pista de sugerencias 0",
+      "explanation": "Si la barra está activada, se elimina de la cola."
+    },
     "hint-actions-0": {
-      "name": "Acciones de sugerencia 0",
-      "explanation": "Una pulsación larga alterna la ejecución de la acción."
+      "name": "Pistas y acciones 0",
+      "explanation": "Al mantener pulsado el botón, se activa o desactiva la acción."
     },
     "hint-actions-1": {
-      "name": "Acciones indirectas 1",
-      "explanation": "Sólo se puede ejecutar un elemento de una categoría."
+      "name": "Acciones de pista 1",
+      "explanation": "Solo se puede ejecutar un artículo de cada categoría."
     },
     "hint-actions-2": {
-      "name": "Acciones indirectas 2",
-      "explanation": "Algunas categorías permiten acciones en más de una categoría para proceder simultáneamente."
+      "name": "Pistas y acciones 2",
+      "explanation": "En algunas categorías, las acciones de más de una categoría pueden llevarse a cabo simultáneamente."
     },
     "hint-actions-3": {
-      "name": "Sugerencia Acciones 3",
-      "explanation": "Las acciones que no cumplen las condiciones de liberación se bloquean y no pueden verse en detalle."
+      "name": "Acciones de pista 3",
+      "explanation": "Las acciones que no cumplen las condiciones de liberación quedan bloqueadas y no se pueden consultar en detalle."
     },
     "hint-action-0": {
-      "name": "Sugerencia Acción 0",
-      "explanation": "Cada acción puede ganar experiencia y aumentar el nivel de experiencia."
+      "name": "Pista: Acción 0",
+      "explanation": "Cada acción puede aportar experiencia y aumentar el nivel de experiencia."
     },
     "hint-action-1": {
-      "name": "Sugerencia Acción 1",
-      "explanation": "Cada acción consume u obtiene un objeto."
+      "name": "Pista: Acción 1",
+      "explanation": "Cada acción consume u obtiene un artículo."
     },
     "hint-action-2": {
-      "name": "Pista Acción 2",
-      "explanation": "Las acciones que no cumplen las condiciones de liberación se bloquean y no pueden verse en detalle."
+      "name": "Pista: Acción 2",
+      "explanation": "Las acciones que no cumplen las condiciones de liberación quedan bloqueadas y no se pueden consultar en detalle."
     },
     "hint-category-0": {
-      "name": "Pista Categoría 0",
-      "explanation": "Es un elemento que reúne acciones y elementos."
+      "name": "Categoría de pistas 0",
+      "explanation": "Es un elemento que aúna acciones y artículos."
     },
     "hint-status-0": {
-      "name": "Sugerencia Estado 0",
-      "explanation": "Sólo se muestra el valor de corrección de la categoría por artículo."
+      "name": "Estado de la pista: 0",
+      "explanation": "Solo se muestra el valor de corrección de categoría por artículo."
     },
     "hint-status-1": {
-      "name": "Sugerencia Estado 1",
-      "explanation": "Existen otras correcciones en función de la acción a realizar."
+      "name": "Estado de la pista 1",
+      "explanation": "Hay otras correcciones adicionales en función de la acción que se vaya a realizar."
     },
     "hint-inventory-0": {
-      "name": "Pista Inventario 0",
-      "explanation": "Mantén pulsado para cambiar el equipamiento del objeto."
+      "name": "Inventario de pistas 0",
+      "explanation": "Mantén pulsado para cambiar el equipamiento del artículo."
     },
     "hint-activity-0": {
-      "name": "Pista Actividad 0",
-      "explanation": "Una pulsación larga alterna la ejecución de la acción."
+      "name": "Pista: Actividad 0",
+      "explanation": "Al mantener pulsado el botón, se activa o desactiva la acción."
     },
     "hint-character-0": {
-      "name": "Sugerencia Carácter 0",
-      "explanation": "Este contenido es idéntico al que se muestra al operar con una categoría."
+      "name": "Carácter de pista 0",
+      "explanation": "Este contenido es idéntico al que se muestra al acceder a una categoría."
     },
     "hint-player-0": {
-      "name": "Pista Jugador 0",
-      "explanation": "Por defecto, la misma descripción aparece como pista en la parte inferior de cada columna."
+      "name": "Pista para el jugador 0",
+      "explanation": "Por defecto, esa misma descripción aparece como pista al pie de cada columna."
     },
     "hint-player-1": {
-      "name": "Pista Jugador 1",
-      "explanation": "Las sugerencias pueden ocultarse configurando"
+      "name": "Pista para el jugador 1",
+      "explanation": "Las pistas se pueden ocultar configurando"
     },
     "event": {
       "name": "Evento",
       "explanation": ""
     },
+    "timing": {
+      "name": "Tiempo",
+      "explanation": ""
+    },
     "matched": {
-      "name": "Emparejado",
+      "name": "Coincidido",
       "explanation": "Se han cumplido las condiciones."
     },
     "comebacked": {
-      "name": "Regresó",
-      "explanation": "¡Bienvenido de nuevo! Progresos durante tu ausencia:"
+      "name": "Regresado",
+      "explanation": "¡Bienvenido de nuevo! Novedades mientras no estabas:"
     },
     "gameovered": {
       "name": "Juego terminado",
-      "explanation": "Se acabó el juego. Tu progreso se ha reiniciado."
+      "explanation": "Se ha acabado el juego. Tu progreso se ha restablecido."
     },
     "completed": {
       "name": "Completado",
-      "explanation": "Enhorabuena. Ha completado todas las categorías."
+      "explanation": "¡Enhorabuena! Has completado todas las categorías."
     },
     "welcomed": {
       "name": "Bienvenido",
-      "explanation": "Bienvenido a este mundo."
+      "explanation": "¡Bienvenido a este mundo!"
+    },
+    "obtained": {
+      "name": "Obtenido",
+      "explanation": "Has obtenido:"
+    },
+    "achieved": {
+      "name": "Logrado",
+      "explanation": ""
+    },
+    "task": {
+      "name": "Tarea",
+      "explanation": ""
+    },
+    "tasks": {
+      "name": "Tareas",
+      "explanation": ""
+    },
+    "missions": {
+      "name": "Misiones",
+      "explanation": ""
     },
     "language-en": {
       "name": "Inglés",
@@ -902,7 +962,7 @@
       "explanation": ""
     },
     "language-es": {
-      "name": "Inglés",
+      "name": "Español",
       "explanation": ""
     },
     "language-pt": {
@@ -934,8 +994,76 @@
       "explanation": ""
     },
     "language-mistaked": {
-      "name": "Lenguaje equivocado",
+      "name": "Error de idioma",
       "explanation": ""
+    },
+    "config": {
+      "name": "Configuración",
+      "explanation": ""
+    },
+    "language": {
+      "name": "Idioma",
+      "explanation": ""
+    },
+    "selected-language": {
+      "name": "Idioma seleccionado",
+      "explanation": ""
+    },
+    "language-change-enable": {
+      "name": "Habilitar cambio de idioma",
+      "explanation": "Puedes cambiar el idioma en el que se muestra la información."
+    },
+    "language-change-unenable": {
+      "name": "Desactivar el cambio de idioma",
+      "explanation": "No hay otros idiomas disponibles para la visualización."
+    },
+    "category-shortcut": {
+      "name": "Acceso directo a la categoría de la categoría",
+      "explanation": "Al abrir una categoría, también se mostrará una lista de acciones o artículos."
+    },
+    "showing-hint": {
+      "name": "Pista",
+      "explanation": "Muestra las instrucciones de funcionamiento."
+    },
+    "showing-navigation": {
+      "name": "Navegación",
+      "explanation": "Muestra botones para desplazarse entre columnas. También puedes deslizar el dedo para desplazarte entre columnas sin que se muestren dichos botones."
+    },
+    "performing-highly": {
+      "name": "Rendimiento excelente",
+      "explanation": "Aumenta la frecuencia de actualización. Si la operación es pesada, recomendamos desactivarla. No afecta al tiempo de ejecución de cada acción."
+    },
+    "export-game": {
+      "name": "Exportar juego",
+      "explanation": "Se han exportado los datos del juego."
+    },
+    "import-game": {
+      "name": "Importar juego",
+      "explanation": "Se han importado los datos del juego."
+    },
+    "import-mistake": {
+      "name": "Error de importación",
+      "explanation": "No se han podido cargar los datos del juego."
+    },
+    "reset-game": {
+      "name": "Reiniciar partida",
+      "explanation": "Elimina todos los datos de progreso de este mundo. Esta acción no se puede deshacer. Confirma que realmente deseas eliminar el archivo y, a continuación, escribe «DELETE» en el campo de entrada. (No es necesario en modo de depuración)"
+    },
+    "reset-really": {
+      "name": "¿En serio?",
+      "explanation": ""
+    },
+    "reset-alert": {
+      "name": "Restablecer alerta",
+      "explanation": "Al restablecer el juego se borrarán todos los datos. ¿Estás seguro de que quieres restablecer el juego?"
+    },
+    "reset-debug-mode": {
+      "name": "Restablecer el modo de depuración",
+      "explanation": "En el modo de depuración, no hay requisitos para introducir nada en el campo de confirmación."
+    },
+    "force-restart": {
+      "name": "Reinicio forzado",
+      "explanation": "Recarga la aplicación. Utiliza esta opción si la pantalla deja de responder o se bloquea. Tu progreso no se verá afectado."
     }
   }
 }

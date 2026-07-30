@@ -63,12 +63,13 @@ ___
 Configuration Type pour l'équipement, les effets et la consommation des objets.
 - Les objets qui peuvent être équipés doivent appartenir au groupe spécifié dans la Catégorie `equipmentGroups`.
 - Un seul Objet peut être équipé au sein d'un même groupe.
+- L'effet « unnecessary » s'applique que l'équipement soit présent ou non, et son intensité est proportionnelle au nombre d'objets possédés (rien si l'on en possède 0, effet multiplié par n si l'on en possède n).
 
 |valeur|Équipement|Efficacité.|la consommation|Exemple.|
 |-|-|-|-|-|
-|`nécessaire`.|Nécessaire|équipement|rien|Épées, armures et autres équipements.|
-|`consommable`.|Nécessaire|équipement|Consommé lors de l'exécution des actions|Objets que l'on consomme pour obtenir un effet, comme les potions.|
-|`nécessaire`.|Inutile|À tout moment, pendant qu'il est en possession de l'appareil.|rien|Les objets passifs qui sont efficaces du simple fait de les avoir.|
+|`nécessaire`.|Nécessaire|Uniquement lors de l'équipement (1 unité)|rien|Épées, armures et autres équipements.|
+|`consommable`.|Nécessaire|Uniquement lors de l'équipement (1 unité)|Consommé lors de l'exécution des actions|Objets que l'on consomme pour obtenir un effet, comme les potions.|
+|`nécessaire`.|Inutile|Tant que vous les possédez, en permanence (proportionnellement au nombre que vous possédez)|rien|Les objets passifs qui sont efficaces du simple fait de les avoir.|
 |`impossible`.|non autorisé|rien|rien|Les objets inefficaces tels que les matériaux et les débris.|
 ___
 

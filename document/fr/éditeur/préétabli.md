@@ -4,6 +4,8 @@ Personnalisation de l'affichage des éléments du système
 - Remplace le texte et les icônes de l'interface utilisateur pré-intégrés dans le moteur de jeu (joueur).
 - Seuls ceux qui correspondent à un préréglage existant par ID seront remplacés.
 - Seuls les éléments que vous avez configurés seront remplacés. Par exemple, si seule l'icône est configurée, les autres éléments tels que le nom et la couleur utiliseront l'original.
+- Les remplacements apportés aux noms et aux descriptions ont priorité sur les traductions intégrées par les joueurs pour chaque langue. Les chaînes de caractères remplacées s'affichent telles quelles dans toutes les langues.
+- Si vous souhaitez modifier le libellé pour chaque langue, activez la traduction et spécifiez-le dans le fichier de traduction `translations/world` généré. Ce fichier aura la priorité absolue.
 ___
 
 ## ID

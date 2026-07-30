@@ -103,7 +103,7 @@ export const miscellaneous: Markdown = {
 export const property: Type.Property = {
 	title: "propiedades",
 	summary: "Configuración de los efectos que tiene un Artículo.",
-	points: ["Este es un Artículo de efecto que puede ser configurado en el Artículo.", "Los Artículos con un Tipo de Equipamiento `necesario` o `consumible` sólo se aplican mientras están equipados. En el caso de los objetos \"innecesarios\", el efecto sólo se aplica mientras se poseen.", "Los valores de ambos elementos se calculan como un ajuste por la diferencia de nivel entre el nivel del jugador y el nivel de la Acción.", "Por ejemplo, si el valor de ataque es 10, el ataque se calcula como si el nivel del jugador fuera 10 superior al nivel de la Acción. Menos valores son lo contrario.", "ATAQUE, DEFENSA, PRECISIÓN, EVASIÓN y RESTAURACIÓN sólo son válidos para acciones de tipo \"resistencia\"."],
+	points: ["Este es un Artículo de efecto que puede ser configurado en el Artículo.", "Los efectos de los artículos cuyo tipo de equipamiento sea «necessary» o «consumable» solo se aplican mientras se están equipando. En el caso de los artículos «unnecessary», el efecto se aplica con solo llevarlos en el inventario, y su intensidad es proporcional al número de unidades que se tengan (si se tienen 2, el efecto se duplica).", "Dado que el efecto de `unnecessary` se calcula multiplicando directamente el número de unidades que se tienen, `maximum` (el número máximo de unidades) constituye el límite máximo de dicho efecto. A la hora de equilibrar el juego, configúralo junto con `maximum`.", "Los valores de ambos elementos se calculan como un ajuste por la diferencia de nivel entre el nivel del jugador y el nivel de la Acción.", "Por ejemplo, si el valor de ataque es 10, el ataque se calcula como si el nivel del jugador fuera 10 superior al nivel de la Acción. Menos valores son lo contrario.", "ATAQUE, DEFENSA, PRECISIÓN, EVASIÓN y RESTAURACIÓN sólo son válidos para acciones de tipo \"resistencia\"."],
 	list: [
 		["propiedades", "Detalles de la eficacia."],
 		["velocidad", "Reduce el tiempo necesario para realizar una Acción. El tiempo necesario varía inversamente a la diferencia de nivel."],
@@ -139,7 +139,7 @@ export const property: Type.Property = {
 		evasion: {
 			title: "Valor de evasión [diferencia de nivel].",
 			summary: "Corrección de la tasa de evasión de los ataques del adversario (sólo válida para acciones de resistencia).",
-			points: ["El índice de evasión se calcula suponiendo que el nivel del jugador es así de alto que el nivel de la Acción."],
+			points: ["La tasa de evasión se calcula como si el nivel del jugador fuera superior al nivel de la acción en este valor. Cuanto mayor sea el valor, más fácil resultará evadir los ataques del rival."],
 		},
 		restore: {
 			title: "Valor de restauración [diferencia de nivel].",
@@ -415,7 +415,7 @@ export const preset: Type.Information = {
 	...information,
 	title: "preajustado",
 	summary: "Personalización de la visualización de los elementos del sistema",
-	points: ["Sustituye el texto y los iconos de la interfaz de usuario preintegrados en el motor del juego (jugador).", "Sólo se sustituirán los que coincidan por ID con un preajuste existente.", "Sólo se sustituirán los elementos que hayas configurado. Por ejemplo, si solo se configura el icono, los demás elementos, como el nombre y el color, utilizarán el original."],
+	points: ["Sustituye el texto y los iconos de la interfaz de usuario preintegrados en el motor del juego (jugador).", "Sólo se sustituirán los que coincidan por ID con un preajuste existente.", "Sólo se sustituirán los elementos que hayas configurado. Por ejemplo, si solo se configura el icono, los demás elementos, como el nombre y el color, utilizarán el original.", "Las modificaciones de los nombres y las descripciones tienen prioridad sobre las traducciones de cada idioma integradas en el juego para los jugadores. Las cadenas modificadas se mostrarán tal cual en todos los idiomas.", "Si deseas modificar el texto para cada idioma, activa la traducción y especifícalo en el archivo de traducción `translations/world` que se genera. Este tendrá la máxima prioridad."],
 	options: {
 		label: "preajustado",
 	},
@@ -531,12 +531,12 @@ export const item: Type.Item = {
 		equipmentType: {
 			title: "Tipo de Equipamiento",
 			summary: "Tipo de configuración para el Equipamiento, efectos y consumo de Artículos.",
-			points: ["Los Artículos Posibles de Equipamiento deben pertenecer al grupo especificado en la Categoría `equipmentGroups`.", "Sólo se puede equipar un objeto dentro del mismo grupo."],
+			points: ["Los Artículos Posibles de Equipamiento deben pertenecer al grupo especificado en la Categoría `equipmentGroups`.", "Sólo se puede equipar un objeto dentro del mismo grupo.", "El efecto «unnecessary» se aplica independientemente de si se tiene equipado o no, y su intensidad es proporcional al número de unidades que se posean (nada si se tiene 0; n veces mayor si se tiene n)."],
 			list: [
 				["valor", "Equipamiento", "Eficacia.", "consumo", "Ejemplo."],
-				["`necesario`.", "Necesario", "equipando", "nada", "Espadas, armaduras y otros Equipamientos."],
-				["\"consumible\".", "Necesario", "equipando", "Se consume al realizar las Acciones", "Artículos que se consumen para obtener un efecto, como las pociones."],
-				["\"innecesario\".", "Innecesario", "En todo momento mientras esté en posesión.", "nada", "Artículos pasivos que son efectivos por el mero hecho de tenerlos."],
+				["`necesario`.", "Necesario", "Equipando (1 unidad)", "nada", "Espadas, armaduras y otros Equipamientos."],
+				["\"consumible\".", "Necesario", "Equipando (1 unidad)", "Se consume al realizar las Acciones", "Artículos que se consumen para obtener un efecto, como las pociones."],
+				["\"innecesario\".", "Innecesario", "Mientras se tenga en poder, siempre (en proporción a la cantidad que se posea)", "nada", "Artículos pasivos que son efectivos por el mero hecho de tenerlos."],
 				["\"imposible\".", "no autorizado", "nada", "nada", "Artículos inútiles como materiales y escombros."],
 			],
 		},

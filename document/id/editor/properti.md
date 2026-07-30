@@ -2,7 +2,8 @@
 # properti
 Konfigurasi efek yang dimiliki Item.
 - Ini adalah item efek yang dapat dikonfigurasi pada item.
-- Item dengan tipe Peralatan `perlu` atau `bisa dikonsumsi` hanya berlaku saat dilengkapi. Untuk item `tidak perlu`, efeknya hanya berlaku saat dimiliki.
+- Efek item dengan tipe perlengkapan `necessary` atau `consumable` hanya berlaku saat item tersebut sedang dikenakan. Untuk item dengan tipe `unnecessary`, efeknya berlaku hanya dengan memilikinya, dan besarnya efek sebanding dengan jumlah yang dimiliki (jika memiliki 2 buah, efeknya menjadi 2 kali lipat).
+- Karena efek `unnecessary` menggunakan jumlah yang dimiliki sebagai faktor pengganda, maka `maximum` (jumlah maksimum yang dimiliki) menjadi batas atas efek tersebut. Saat menyesuaikan keseimbangan, harap lakukan konfigurasi nilai ini bersamaan dengan `maximum`.
 - Nilai untuk kedua item dihitung sebagai penyesuaian untuk perbedaan level antara level pemain dan level Aksi.
 - Misalnya, jika nilai serangan adalah 10, serangan dihitung seolah-olah level pemain 10 lebih tinggi dari level Aksi. Nilai minus adalah kebalikannya.
 - SERANGAN, PERTAHANAN, KETEPATAN, PENGHINDARAN dan PEMULIHAN hanya berlaku untuk aksi tipe `stamina`.
@@ -43,7 +44,7 @@ ___
 
 ## Nilai penghindaran [perbedaan level].
 Koreksi tingkat penghindaran serangan lawan (hanya berlaku untuk aksi stamina).
-- Tingkat penghindaran dihitung dengan asumsi bahwa level pemain jauh lebih tinggi daripada level Aksi.
+- Level penghindaran dihitung dengan menganggap level pemain lebih tinggi dari level Aksi sebesar nilai ini. Semakin tinggi nilainya, semakin mudah untuk menghindari serangan lawan.
 ___
 
 ## Nilai pemulihan [perbedaan level].

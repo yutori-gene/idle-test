@@ -103,7 +103,7 @@ export const miscellaneous: Markdown = {
 export const property: Type.Property = {
 	title: "propriétés",
 	summary: "Configuration des effets d'un Objet.",
-	points: ["Il s'agit d'un effet qui peut être configuré sur l'Objet.", "Les objets dont le type d'équipement est `nécessaire` ou `consommable` ne s'appliquent que lorsqu'ils sont équipés. Pour les objets `nécessaires`, l'effet ne s'applique que lorsqu'ils sont en possession de l'objet.", "Les valeurs des deux éléments sont calculées comme un ajustement de la différence de niveau entre le niveau du joueur et le niveau de l'action.", "Par exemple, si la valeur d'attaque est de 10, l'attaque est calculée comme si le niveau du joueur était supérieur de 10 au niveau de l'Action. Les valeurs négatives sont l'inverse.", "ATTACK, DEFENCE, ACCURACY, EVASION et RESTORE ne sont valables que pour les actions de type `stamina`."],
+	points: ["Il s'agit d'un effet qui peut être configuré sur l'Objet.", "Les objets dont le type d'équipement est « `necessary` » ou « `consumable` » ne produisent leur effet que lors de l'équipement. Ceux de type « `unnecessary` » produisent leur effet simplement en étant en possession, et l'intensité de l'effet est proportionnelle au nombre d'objets possédés (si vous en possédez 2, l'effet est doublé).", "L'effet « `unnecessary` » se traduisant par un multiplicateur égal au nombre d'objets détenus, la valeur « `maximum` » (nombre maximal d'objets détenus) constitue la limite supérieure de cet effet. Veuillez effectuer la configuration de ce paramètre en fonction de la valeur « `maximum` » lorsque vous réglez l'équilibre du jeu.", "Les valeurs des deux éléments sont calculées comme un ajustement de la différence de niveau entre le niveau du joueur et le niveau de l'action.", "Par exemple, si la valeur d'attaque est de 10, l'attaque est calculée comme si le niveau du joueur était supérieur de 10 au niveau de l'Action. Les valeurs négatives sont l'inverse.", "ATTACK, DEFENCE, ACCURACY, EVASION et RESTORE ne sont valables que pour les actions de type `stamina`."],
 	list: [
 		["propriétés", "Détails de l'efficacité."],
 		["vitesse", "Réduit le temps nécessaire à une action. Le temps nécessaire varie inversement à la différence de niveau."],
@@ -139,7 +139,7 @@ export const property: Type.Property = {
 		evasion: {
 			title: "Valeur d'évasion [différence de niveau].",
 			summary: "Correction du taux d'évasion des attaques de l'adversaire (valable uniquement pour les actions d'endurance).",
-			points: ["Le taux d'évasion est calculé en supposant que le niveau du joueur est supérieur d'autant au niveau de l'Action."],
+			points: ["Le taux d'évasion est calculé en considérant que le niveau du joueur est supérieur de cette valeur à celui de l'action. Plus cette valeur est élevée, plus il est facile d'esquiver les attaques de l'adversaire."],
 		},
 		restore: {
 			title: "Valeur de restauration [différence de niveau].",
@@ -415,7 +415,7 @@ export const preset: Type.Information = {
 	...information,
 	title: "préétabli",
 	summary: "Personnalisation de l'affichage des éléments du système",
-	points: ["Remplace le texte et les icônes de l'interface utilisateur pré-intégrés dans le moteur de jeu (joueur).", "Seuls ceux qui correspondent à un préréglage existant par ID seront remplacés.", "Seuls les éléments que vous avez configurés seront remplacés. Par exemple, si seule l'icône est configurée, les autres éléments tels que le nom et la couleur utiliseront l'original."],
+	points: ["Remplace le texte et les icônes de l'interface utilisateur pré-intégrés dans le moteur de jeu (joueur).", "Seuls ceux qui correspondent à un préréglage existant par ID seront remplacés.", "Seuls les éléments que vous avez configurés seront remplacés. Par exemple, si seule l'icône est configurée, les autres éléments tels que le nom et la couleur utiliseront l'original.", "Les remplacements apportés aux noms et aux descriptions ont priorité sur les traductions intégrées par les joueurs pour chaque langue. Les chaînes de caractères remplacées s'affichent telles quelles dans toutes les langues.", "Si vous souhaitez modifier le libellé pour chaque langue, activez la traduction et spécifiez-le dans le fichier de traduction `translations/world` généré. Ce fichier aura la priorité absolue."],
 	options: {
 		label: "préétabli",
 	},
@@ -531,12 +531,12 @@ export const item: Type.Item = {
 		equipmentType: {
 			title: "Type d'équipement",
 			summary: "Configuration Type pour l'équipement, les effets et la consommation des objets.",
-			points: ["Les objets qui peuvent être équipés doivent appartenir au groupe spécifié dans la Catégorie `equipmentGroups`.", "Un seul Objet peut être équipé au sein d'un même groupe."],
+			points: ["Les objets qui peuvent être équipés doivent appartenir au groupe spécifié dans la Catégorie `equipmentGroups`.", "Un seul Objet peut être équipé au sein d'un même groupe.", "L'effet « unnecessary » s'applique que l'équipement soit présent ou non, et son intensité est proportionnelle au nombre d'objets possédés (rien si l'on en possède 0, effet multiplié par n si l'on en possède n)."],
 			list: [
 				["valeur", "Équipement", "Efficacité.", "la consommation", "Exemple."],
-				["`nécessaire`.", "Nécessaire", "équipement", "rien", "Épées, armures et autres équipements."],
-				["`consommable`.", "Nécessaire", "équipement", "Consommé lors de l'exécution des actions", "Objets que l'on consomme pour obtenir un effet, comme les potions."],
-				["`nécessaire`.", "Inutile", "À tout moment, pendant qu'il est en possession de l'appareil.", "rien", "Les objets passifs qui sont efficaces du simple fait de les avoir."],
+				["`nécessaire`.", "Nécessaire", "Uniquement lors de l'équipement (1 unité)", "rien", "Épées, armures et autres équipements."],
+				["`consommable`.", "Nécessaire", "Uniquement lors de l'équipement (1 unité)", "Consommé lors de l'exécution des actions", "Objets que l'on consomme pour obtenir un effet, comme les potions."],
+				["`nécessaire`.", "Inutile", "Tant que vous les possédez, en permanence (proportionnellement au nombre que vous possédez)", "rien", "Les objets passifs qui sont efficaces du simple fait de les avoir."],
 				["`impossible`.", "non autorisé", "rien", "rien", "Les objets inefficaces tels que les matériaux et les débris."],
 			],
 		},

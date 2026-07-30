@@ -1709,7 +1709,7 @@
             "options": {
               "enum_titles": [
                 "Necessary: Must be equipped",
-                "Unnecessary: Doesn't need to be equipped, always effective",
+                "Unnecessary: Doesn't need to be equipped, always effective, scales with the number owned",
                 "Impossible: Cannot be equipped",
                 "Consumable: Consumed when used"
               ],
@@ -1719,7 +1719,8 @@
             "yutori": {
               "points": [
                 "Os Itens Possíveis de serem equipados devem pertencer ao grupo especificado na Categoria `equipmentGroups`.",
-                "Somente um Item pode ser equipado em um mesmo grupo."
+                "Somente um Item pode ser equipado em um mesmo grupo.",
+                "O efeito `unnecessary` é aplicado independentemente de o item estar com Equipamento ou não, e sua intensidade é proporcional à quantidade que você possui (nada se houver 0 itens; n vezes maior se houver n itens)."
               ],
               "reference": "pt/editor/item?id=Tipo de Equipamento"
             }
@@ -1857,7 +1858,8 @@
             "yutori": {
               "points": [
                 "Esse é um item de efeito que pode ser configurado no Item.",
-                "Itens com um Tipo de Equipamento \"necessário\" ou \"consumível\" só são aplicados enquanto equipados. Para itens \"desnecessários\", o efeito só é aplicado enquanto estiverem em sua posse.",
+                "Os itens cujo tipo de equipamento seja `necessary` ou `consumable` têm seus efeitos aplicados apenas enquanto estiverem equipados. Os itens `unnecessary` têm seus efeitos aplicados simplesmente por estarem em seu inventário, e a intensidade do efeito é proporcional à quantidade que você possui (se tiver 2, o efeito será o dobro).",
+                "Como o efeito de `unnecessary` é calculado com base no número de itens em posse, o `maximum` (número máximo de itens) representa o limite máximo desse efeito. Ao ajustar o equilíbrio, faça a configuração desse valor em conjunto com o `maximum`.",
                 "Os valores de ambos os itens são calculados como um Ajustado para a diferença de nível entre o nível do jogador e o nível da Ação.",
                 "Por exemplo, se o valor de ataque for 10, o ataque será calculado como se o nível do jogador fosse 10 mais alto do que o nível da Ação. Os valores Menos são o oposto.",
                 "ATTACK, DEFENCE, ACCURACY, EVASION e RESTORE são válidos apenas para ações do Tipo `stamina`."
@@ -2388,7 +2390,9 @@
         "points": [
           "Substitui o texto e os ícones da interface do usuário pré-integrados ao mecanismo de jogo (jogador).",
           "Somente aqueles que correspondem a uma predefinição existente por ID serão substituídos.",
-          "Somente os itens que você configurar serão substituídos. Por exemplo, se apenas o ícone estiver configurado, os outros itens, como nome e cor, usarão o original."
+          "Somente os itens que você configurar serão substituídos. Por exemplo, se apenas o ícone estiver configurado, os outros itens, como nome e cor, usarão o original.",
+          "A substituição de nomes e descrições tem prioridade sobre as traduções em cada idioma incorporado ao jogo para os jogadores. As sequências de caracteres substituídas serão exibidas exatamente como estão em todos os idiomas.",
+          "Se desejar alterar o texto para cada idioma, ative a tradução e especifique-o no arquivo de tradução `translations/world` gerado. Esse arquivo terá prioridade máxima."
         ],
         "reference": "pt/editor/predefinido"
       }

@@ -4,6 +4,8 @@ Menyesuaikan tampilan elemen sistem
 - Mengganti teks dan ikon UI yang sudah terintegrasi ke dalam mesin game (pemain).
 - Hanya yang cocok dengan preset yang ada berdasarkan ID yang akan diganti.
 - Hanya item yang telah Anda konfigurasi yang akan diganti. Contohnya, jika hanya ikon yang dilakukan konfigurasi, item lain seperti nama dan warna akan menggunakan yang asli.
+- Penggantian nama dan deskripsi akan diprioritaskan daripada terjemahan dalam setiap bahasa yang sudah ada di dalam game untuk pemain. Teks yang diganti akan ditampilkan apa adanya di semua bahasa.
+- Jika Anda ingin mengubah teks untuk setiap bahasa, aktifkan fitur terjemahan dan tentukan dalam berkas terjemahan `translations/world` yang dihasilkan. Berkas tersebut akan menjadi prioritas utama.
 ___
 
 ## ID

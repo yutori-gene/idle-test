@@ -4,6 +4,8 @@ Personalização da exibição dos elementos do sistema
 - Substitui o texto e os ícones da interface do usuário pré-integrados ao mecanismo de jogo (jogador).
 - Somente aqueles que correspondem a uma predefinição existente por ID serão substituídos.
 - Somente os itens que você configurar serão substituídos. Por exemplo, se apenas o ícone estiver configurado, os outros itens, como nome e cor, usarão o original.
+- A substituição de nomes e descrições tem prioridade sobre as traduções em cada idioma incorporado ao jogo para os jogadores. As sequências de caracteres substituídas serão exibidas exatamente como estão em todos os idiomas.
+- Se desejar alterar o texto para cada idioma, ative a tradução e especifique-o no arquivo de tradução `translations/world` gerado. Esse arquivo terá prioridade máxima.
 ___
 
 ## ID
