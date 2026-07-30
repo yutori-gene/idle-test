@@ -453,6 +453,7 @@ to {
 			text-align: center;
 			background-color: ${I.colors.faded};
 			border-radius: ${ua.sm}px;
+			color: ${I.colors.text};
 			input::placeholder {
 				color: ${I.colors.text};
 			}
@@ -468,8 +469,9 @@ to {
 			text-align: center;
 			background-color: rgba(255, 255, 255, 0.25);
 			border-radius: ${ua.sm}px;
+			color: ${I.colors.text};
 			input::placeholder {
-				color: white;
+				color: ${I.colors.text};
 			}
 		`}}function Op({value:e,max:t,min:n=0,infinity:r=!1,changeHandler:i,color:a,havingTop:o=!1,havingBottom:s=!1}){let c=r?t+1:t,l=r&&e===2**53-1?c:$.primitive.clamp(e,n,t),u=e=>{let n=Number(e.target.value);i(r&&n>t?2**53-1:n)},d=jp(a,c>n?(l-n)/(c-n)*100:0);return q(`span`,{css:[I.bar,o&&I.havingTop,s&&I.havingBottom],children:Xf(`span`,{css:I.context,children:[q(`input`,{type:`range`,min:n,max:c,step:`1`,value:l,css:d.slider,onChange:e=>u(e)}),r&&q(`span`,{css:[d.infinity,e===2**53-1&&d.selected],children:`∞`})]})})}tp(Op,`bar`);var kp=5,Ap=14;function jp(e,t){let n=e||I.colors.saturated;return{slider:O`
 			flex-grow: 2;
