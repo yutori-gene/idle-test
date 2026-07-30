@@ -12,14 +12,14 @@
 				margin: 0;
 				padding: 0;
 				background-color: #000000;
+				/* iOSの100vhはlvh（ツールバー非表示時の高さ）なので、可視領域より約90px高くなり
+				   文書がスクロール可能になってしまう。svhは常に可視領域以下なので溢れない */
 				min-height: 100vh;
-			}
-			body {
-				/* SafeAreaInsetを削除 - 100dvhと併用すると高さが超過する */
+				min-height: 100svh;
 			}
 		</style>
-		<script type="module" crossorigin src="./script/index-DsojFAh7.js"></script>
-		<link rel="stylesheet" crossorigin href="./script/index-O1By-QQr.css">
+		<script type="module" crossorigin src="./script/index-B2l28rE_.js"></script>
+		<link rel="stylesheet" crossorigin href="./script/index-4Wqx70ix.css">
 	</head>
 	<body>
 		<div id="root"></div>
