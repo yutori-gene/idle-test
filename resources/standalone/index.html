@@ -2,7 +2,9 @@
 <html lang="en">
 	<head>
 		<meta charset="UTF-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+		<!-- maximum-scale/user-scalable: 入力欄フォーカス時の自動ズームを抑止する。ズームはビジュアル
+		     ビューポートを縮めてレイアウト実測値を汚染するため（editor/index.html と同じ指定） -->
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" />
 		<title>Idle RPG Player</title>
 		<style>
 			/* ページ読み込み前の背景色（JavaScriptで上書きされる） */
@@ -16,7 +18,7 @@
 				/* SafeAreaInsetを削除 - 100dvhと併用すると高さが超過する */
 			}
 		</style>
-		<script type="module" crossorigin src="./script/index-CMWnRwQc.js"></script>
+		<script type="module" crossorigin src="./script/index-DsojFAh7.js"></script>
 		<link rel="stylesheet" crossorigin href="./script/index-O1By-QQr.css">
 	</head>
 	<body>
