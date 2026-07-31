@@ -743,15 +743,20 @@ export const design: Type.Design = {
 	summary: "Konfigurationen für das visuelle Erscheinungsbild, wie z. B. Farben und Schriftarten der Welt.",
 	points: ["Konfigurationen für die Anzeige der Welten.", "Wenn es individuelle Konfigurationen für jedes Element gibt, haben diese Vorrang vor dem Gesamtdesign der Welt."],
 	children: {
-		mainColor: {
+		barColor: {
 			title: "vorherrschende Farbe",
 			summary: "Die wichtigsten Farben der Welt",
 			points: ["Wird als Balkenfarbe verwendet.", "Die entgegengesetzte Farbe davon wird für die Balkenschatten verwendet."],
 		},
-		subColor: {
+		textColor: {
 			title: "ergänzende Farbe",
 			summary: "Hilfsfarben für Hintergrund und Text",
 			points: ["Farbe, die als Hintergrund- und Textfarbe verwendet wird.", "Farbtöne, die der Hauptfarbe nahe kommen, mischen sich."],
+		},
+		shadowColor: {
+			title: "影色",
+			summary: "バーの影のカラー",
+			points: ["バーやヘッダーに落ちる影の色として使用されます。", "バー色よりも暗い色にすると自然な影になります。"],
 		},
 		background: {
 			title: "Hintergrundbild",

@@ -1368,8 +1368,9 @@
           "additionalProperties": false,
           "format": "grid",
           "required": [
-            "mainColor",
-            "subColor",
+            "barColor",
+            "textColor",
+            "shadowColor",
             "background"
           ],
           "options": {
@@ -1377,38 +1378,56 @@
             "infoText": "Details"
           },
           "properties": {
-            "mainColor": {
+            "barColor": {
               "type": "string",
               "default": "#000000",
               "format": "color",
               "pattern": "(^#[0-9a-fA-F]{6}$)|(^$)",
-              "title": "主色",
+              "title": "バー色",
               "options": {
-                "infoText": "ワールドの主要カラー"
+                "infoText": "バーの背景となるカラー"
               },
               "yutori": {
                 "points": [
-                  "バーの色として使用されます。",
-                  "バーの影にはこれの反対色が使用されます。"
+                  "バーの背景色として使用されます。",
+                  "画面全体の下地にもなる色のため、選択中の行やスクロールバーの色もこの色から作られます。"
                 ],
-                "reference": "ja/editor/design?id=主色"
+                "reference": "ja/editor/design?id=バー色"
               }
             },
-            "subColor": {
+            "textColor": {
               "type": "string",
               "default": "#000000",
               "format": "color",
               "pattern": "(^#[0-9a-fA-F]{6}$)|(^$)",
-              "title": "補助色",
+              "title": "文字色",
               "options": {
-                "infoText": "背景と文字の補助カラー"
+                "infoText": "文字と背景のカラー"
               },
               "yutori": {
                 "points": [
-                  "背景色と文字色として使用される色です。",
-                  "主色に近い色合いにすると馴染みます。"
+                  "文字色として使用されます。",
+                  "背景画像を設定しない場合は、この色を元にしたグラデーションが背景になります。",
+                  "バー色との明暗の差を大きくとると文字が読みやすくなります。"
                 ],
-                "reference": "ja/editor/design?id=補助色"
+                "reference": "ja/editor/design?id=文字色"
+              }
+            },
+            "shadowColor": {
+              "type": "string",
+              "default": "#000000",
+              "format": "color",
+              "pattern": "(^#[0-9a-fA-F]{6}$)|(^$)",
+              "title": "影色",
+              "options": {
+                "infoText": "バーの影のカラー"
+              },
+              "yutori": {
+                "points": [
+                  "バーやヘッダーに落ちる影の色として使用されます。",
+                  "バー色よりも暗い色にすると自然な影になります。"
+                ],
+                "reference": "ja/editor/design?id=影色"
               }
             },
             "background": {
@@ -1425,7 +1444,7 @@
               "yutori": {
                 "points": [
                   "ゲーム背景画像を設定します。",
-                  "画像を設定しない場合は、補助色を元にしたグラデーションの背景となります。"
+                  "画像を設定しない場合は、文字色を元にしたグラデーションの背景となります。"
                 ],
                 "reference": "ja/editor/design?id=背景画像"
               }

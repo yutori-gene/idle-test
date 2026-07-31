@@ -720,8 +720,9 @@
           "additionalProperties": false,
           "format": "grid",
           "required": [
-            "mainColor",
-            "subColor",
+            "barColor",
+            "textColor",
+            "shadowColor",
             "background"
           ],
           "options": {
@@ -729,13 +730,19 @@
             "infoText": "Details"
           },
           "properties": {
-            "mainColor": {
+            "barColor": {
               "type": "string",
               "default": "#000000",
               "format": "color",
               "pattern": "(^#[0-9a-fA-F]{6}$)|(^$)"
             },
-            "subColor": {
+            "textColor": {
+              "type": "string",
+              "default": "#000000",
+              "format": "color",
+              "pattern": "(^#[0-9a-fA-F]{6}$)|(^$)"
+            },
+            "shadowColor": {
               "type": "string",
               "default": "#000000",
               "format": "color",

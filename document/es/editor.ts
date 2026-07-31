@@ -743,15 +743,20 @@ export const design: Type.Design = {
 	summary: "Configuración del aspecto visual, como los colores del mundo y los tipos de letra.",
 	points: ["Configuración de la visualización de mundos.", "En cuanto al diseño global del mundo, si hay configuraciones individuales para cada elemento, tienen preferencia."],
 	children: {
-		mainColor: {
+		barColor: {
 			title: "color predominante",
 			summary: "Principales colores del mundo",
 			points: ["Se utiliza como color de barra.", "El color opuesto se utiliza para las sombras de las barras."],
 		},
-		subColor: {
+		textColor: {
 			title: "color suplementario",
 			summary: "Colores auxiliares para el fondo y el texto",
 			points: ["Color utilizado como fondo y color del texto.", "Los tonos próximos al color principal se difuminarán."],
+		},
+		shadowColor: {
+			title: "影色",
+			summary: "バーの影のカラー",
+			points: ["バーやヘッダーに落ちる影の色として使用されます。", "バー色よりも暗い色にすると自然な影になります。"],
 		},
 		background: {
 			title: "imagen de fondo",

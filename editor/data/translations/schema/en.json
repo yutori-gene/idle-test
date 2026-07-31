@@ -1368,8 +1368,9 @@
           "additionalProperties": false,
           "format": "grid",
           "required": [
-            "mainColor",
-            "subColor",
+            "barColor",
+            "textColor",
+            "shadowColor",
             "background"
           ],
           "options": {
@@ -1377,7 +1378,7 @@
             "infoText": "Details"
           },
           "properties": {
-            "mainColor": {
+            "barColor": {
               "type": "string",
               "default": "#000000",
               "format": "color",
@@ -1394,7 +1395,7 @@
                 "reference": "en/editor/design?id=predominant color"
               }
             },
-            "subColor": {
+            "textColor": {
               "type": "string",
               "default": "#000000",
               "format": "color",
@@ -1409,6 +1410,23 @@
                   "Shades close to the main color will blend in."
                 ],
                 "reference": "en/editor/design?id=supplementary color"
+              }
+            },
+            "shadowColor": {
+              "type": "string",
+              "default": "#000000",
+              "format": "color",
+              "pattern": "(^#[0-9a-fA-F]{6}$)|(^$)",
+              "title": "影色",
+              "options": {
+                "infoText": "バーの影のカラー"
+              },
+              "yutori": {
+                "points": [
+                  "バーやヘッダーに落ちる影の色として使用されます。",
+                  "バー色よりも暗い色にすると自然な影になります。"
+                ],
+                "reference": "en/editor/design?id=影色"
               }
             },
             "background": {

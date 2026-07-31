@@ -17,6 +17,12 @@ Colores auxiliares para el fondo y el texto
 - Los tonos próximos al color principal se difuminarán.
 ___
 
+## 影色
+バーの影のカラー
+- バーやヘッダーに落ちる影の色として使用されます。
+- バー色よりも暗い色にすると自然な影になります。
+___
+
 ## imagen de fondo
 Imagen de fondo para todo el juego
 - Configura la imagen de fondo del juego.

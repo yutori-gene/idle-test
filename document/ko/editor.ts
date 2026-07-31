@@ -743,15 +743,20 @@ export const design: Type.Design = {
 	summary: "월드의 색상, 폰트 등 외형 설정",
 	points: ["월드 표시 관련 설정입니다.", "월드 전체 디자인에 대한 것이지만, 각 요소에 개별 설정이 있는 경우 그 설정이 우선시됩니다."],
 	children: {
-		mainColor: {
+		barColor: {
 			title: "주요 색상",
 			summary: "월드의 주요 색상",
 			points: ["바의 색상으로 사용됩니다.", "바의 그림자에는 이 색과 반대되는 색이 사용된다."],
 		},
-		subColor: {
+		textColor: {
 			title: "보조 색상",
 			summary: "배경 및 문자 보조 색상",
 			points: ["배경색과 글자색으로 사용되는 색상입니다.", "주색에 가까운 색조로 하면 잘 어울립니다."],
+		},
+		shadowColor: {
+			title: "影色",
+			summary: "バーの影のカラー",
+			points: ["バーやヘッダーに落ちる影の色として使用されます。", "バー色よりも暗い色にすると自然な影になります。"],
 		},
 		background: {
 			title: "배경 이미지",

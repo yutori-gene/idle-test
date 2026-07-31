@@ -17,6 +17,12 @@ Warna tambahan untuk latar belakang dan teks
 - Nuansa yang mendekati warna utama akan menyatu.
 ___
 
+## 影色
+バーの影のカラー
+- バーやヘッダーに落ちる影の色として使用されます。
+- バー色よりも暗い色にすると自然な影になります。
+___
+
 ## gambar latar belakang
 Gambar latar belakang untuk seluruh permainan
 - Konfigurasi gambar latar belakang game.

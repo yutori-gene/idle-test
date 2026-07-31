@@ -17,6 +17,12 @@ Couleurs auxiliaires pour l'arrière-plan et le texte
 - Les teintes proches de la couleur principale se fondent dans la masse.
 ___
 
+## 影色
+バーの影のカラー
+- バーやヘッダーに落ちる影の色として使用されます。
+- バー色よりも暗い色にすると自然な影になります。
+___
+
 ## image de fond
 Image de fond pour l'ensemble du jeu
 - Configure l'image d'arrière-plan du jeu.

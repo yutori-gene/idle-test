@@ -17,6 +17,12 @@ Auxiliary background and text colors
 - Shades close to the main color will blend in.
 ___
 
+## 影色
+バーの影のカラー
+- バーやヘッダーに落ちる影の色として使用されます。
+- バー色よりも暗い色にすると自然な影になります。
+___
+
 ## background image
 Background image for the entire game
 - Configure the game background image.

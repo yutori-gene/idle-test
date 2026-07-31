@@ -743,15 +743,20 @@ export const design: Type.Design = {
 	summary: "视觉外观配置，如世界颜色和字体。",
 	points: ["有关世界显示的配置。", "关于整个世界的设计，如果每个元素都有单独的配置，则以这些配置为准。"],
 	children: {
-		mainColor: {
+		barColor: {
 			title: "主色调",
 			summary: "世界主要颜色",
 			points: ["用作条形色。", "条形阴影则使用与之相反的颜色。"],
 		},
-		subColor: {
+		textColor: {
 			title: "辅色",
 			summary: "背景和文字的辅助颜色",
 			points: ["用作背景和文本颜色的颜色。", "与主色调相近的色调会融为一体。"],
+		},
+		shadowColor: {
+			title: "影色",
+			summary: "バーの影のカラー",
+			points: ["バーやヘッダーに落ちる影の色として使用されます。", "バー色よりも暗い色にすると自然な影になります。"],
 		},
 		background: {
 			title: "背景图片",

@@ -17,6 +17,12 @@ Hilfsfarben für Hintergrund und Text
 - Farbtöne, die der Hauptfarbe nahe kommen, mischen sich.
 ___
 
+## 影色
+バーの影のカラー
+- バーやヘッダーに落ちる影の色として使用されます。
+- バー色よりも暗い色にすると自然な影になります。
+___
+
 ## Hintergrundbild
 Hintergrundbild für das gesamte Spiel
 - Konfiguriert das Hintergrundbild des Spiels.

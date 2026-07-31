@@ -743,15 +743,20 @@ export const design: Type.Design = {
 	summary: "Konfigurasi tampilan visual seperti warna dunia dan font.",
 	points: ["Konfigurasi tentang tampilan dunia.", "Mengenai desain dunia secara keseluruhan, jika ada konfigurasi individual untuk tiap elemen, maka konfigurasi tersebut yang diutamakan."],
 	children: {
-		mainColor: {
+		barColor: {
 			title: "warna dominan",
 			summary: "Warna-warna utama dunia",
 			points: ["Digunakan sebagai warna batang.", "Warna yang berlawanan dengan warna ini digunakan untuk bayangan batang."],
 		},
-		subColor: {
+		textColor: {
 			title: "warna tambahan",
 			summary: "Warna tambahan untuk latar belakang dan teks",
 			points: ["Warna yang digunakan sebagai latar belakang dan warna teks.", "Nuansa yang mendekati warna utama akan menyatu."],
+		},
+		shadowColor: {
+			title: "影色",
+			summary: "バーの影のカラー",
+			points: ["バーやヘッダーに落ちる影の色として使用されます。", "バー色よりも暗い色にすると自然な影になります。"],
 		},
 		background: {
 			title: "gambar latar belakang",

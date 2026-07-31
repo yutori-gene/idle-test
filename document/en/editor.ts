@@ -743,15 +743,20 @@ export const design: Type.Design = {
 	summary: "Configure the appearance of the world, including colors and fonts",
 	points: ["This configures the display of worlds.", "Regarding the overall design of the world, if there are individual configurations for each element, they will take precedence."],
 	children: {
-		mainColor: {
+		barColor: {
 			title: "predominant color",
 			summary: "Major Colors of the World",
 			points: ["Used as bar color.", "The opposite color of this is used for the bar shadows."],
 		},
-		subColor: {
+		textColor: {
 			title: "supplementary color",
 			summary: "Auxiliary background and text colors",
 			points: ["These colors are used as the background and text colors.", "Shades close to the main color will blend in."],
+		},
+		shadowColor: {
+			title: "影色",
+			summary: "バーの影のカラー",
+			points: ["バーやヘッダーに落ちる影の色として使用されます。", "バー色よりも暗い色にすると自然な影になります。"],
 		},
 		background: {
 			title: "background image",
