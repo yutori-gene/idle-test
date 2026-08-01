@@ -427,6 +427,11 @@ export const event: Type.Event = {
 	points: ["Se activa cuando se cumplen los tiempos/condiciones configurados y se muestra un mensaje.", "Puede activarse al iniciarse por primera vez, cuando el juego terminado, al volver de estar desactivado o cuando se cumplen determinadas condiciones.", "Puede cambiar el nivel de la Categoría, el número de Acciones realizadas y el Artículo que se posee cuando se activa."],
 	children: {
 		information: information,
+		category: {
+			title: "カテゴリー",
+			summary: "タスクが所属するカテゴリーのID",
+			points: ["このイベントをタスクとして所属させるカテゴリーのIDを指定します。", "設定すると、プレイヤーのカテゴリーの画面にタスクの一覧が追加され、ミッションの一覧でもカテゴリーごとにまとめて表示されます。", "空欄の場合はどのカテゴリーにも属さず、ミッションの一覧の先頭にまとめて表示されます。", "タイミングが`matched`のイベントのみ表示に使われます。それ以外のタイミングでは設定しても表示に影響しません。"],
+		},
 		timing: {
 			title: "cronometraje",
 			summary: "Configuración del tiempo de activación de eventos.",

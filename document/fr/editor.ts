@@ -427,6 +427,11 @@ export const event: Type.Event = {
 	points: ["Il se déclenche lorsque les délais/conditions configurés sont remplis et qu'un message s'affiche.", "Il peut être déclenché au premier démarrage, lorsque le jeu est terminé, au retour d'un jeu désactivé ou lorsque certaines conditions sont remplies.", "Il peut modifier le niveau de la catégorie, le nombre d'actions effectuées et le nombre d'objets possédés lorsqu'il est activé."],
 	children: {
 		information: information,
+		category: {
+			title: "カテゴリー",
+			summary: "タスクが所属するカテゴリーのID",
+			points: ["このイベントをタスクとして所属させるカテゴリーのIDを指定します。", "設定すると、プレイヤーのカテゴリーの画面にタスクの一覧が追加され、ミッションの一覧でもカテゴリーごとにまとめて表示されます。", "空欄の場合はどのカテゴリーにも属さず、ミッションの一覧の先頭にまとめて表示されます。", "タイミングが`matched`のイベントのみ表示に使われます。それ以外のタイミングでは設定しても表示に影響しません。"],
+		},
 		timing: {
 			title: "timing",
 			summary: "Configuration du moment de déclenchement des événements.",

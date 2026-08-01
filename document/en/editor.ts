@@ -427,6 +427,11 @@ export const event: Type.Event = {
 	points: ["It is triggered when the configured timing/conditions are met and displays a message.", "It can be triggered at first startup, when the game is gameovered, when returning from offline, or when certain conditions are met.", "When activated, it can change the level of the Category, the number of times the Action is performed, and the number of Items possessed."],
 	children: {
 		information: information,
+		category: {
+			title: "カテゴリー",
+			summary: "タスクが所属するカテゴリーのID",
+			points: ["このイベントをタスクとして所属させるカテゴリーのIDを指定します。", "設定すると、プレイヤーのカテゴリーの画面にタスクの一覧が追加され、ミッションの一覧でもカテゴリーごとにまとめて表示されます。", "空欄の場合はどのカテゴリーにも属さず、ミッションの一覧の先頭にまとめて表示されます。", "タイミングが`matched`のイベントのみ表示に使われます。それ以外のタイミングでは設定しても表示に影響しません。"],
+		},
 		timing: {
 			title: "timing",
 			summary: "Configure the timing of event activation",

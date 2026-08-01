@@ -427,6 +427,11 @@ export const event: Type.Event = {
 	points: ["Hal ini dipicu ketika konfigurasi waktu/kondisi terpenuhi dan pesan ditampilkan.", "Hal ini dapat dipicu pada saat pertama kali memulai, ketika permainan berakhir, ketika kembali dari mati, atau ketika kondisi tertentu terpenuhi.", "Hal ini dapat mengubah level Kategori, jumlah aksi yang dilakukan dan jumlah Item yang dimiliki ketika diaktifkan."],
 	children: {
 		information: information,
+		category: {
+			title: "カテゴリー",
+			summary: "タスクが所属するカテゴリーのID",
+			points: ["このイベントをタスクとして所属させるカテゴリーのIDを指定します。", "設定すると、プレイヤーのカテゴリーの画面にタスクの一覧が追加され、ミッションの一覧でもカテゴリーごとにまとめて表示されます。", "空欄の場合はどのカテゴリーにも属さず、ミッションの一覧の先頭にまとめて表示されます。", "タイミングが`matched`のイベントのみ表示に使われます。それ以外のタイミングでは設定しても表示に影響しません。"],
+		},
 		timing: {
 			title: "waktu",
 			summary: "Konfigurasi waktu pemicuan acara.",
