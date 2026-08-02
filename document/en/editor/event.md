@@ -9,6 +9,14 @@ ___
 ## [_information_](en/editor/information)
 ___
 
+## Category
+The ID of the category to which the task belongs
+- Specify the ID of the category to which this event should be assigned as a task.
+- Once configured, a list of tasks will be added to the player's category screen, and they will also be grouped by category in the mission list.
+- If left blank, the mission will not be assigned to any Category and will be grouped together and displayed at the top of the mission list.
+- Only events with a timing of `matched` are used for display. Even if you configure settings for other timings, they will not affect the display.
+___
+
 ## timing
 Configure the timing of event activation
 
@@ -109,5 +117,9 @@ Probability of success in acquisition (negative values are evaluated only in the
 ___
 
 ## task group
-Group identifier of the task (currently unused)
-- This item is currently not in use. It is reserved for future enhancements.
+Task Display Group Categories
+- Apply one of the groups configured in Basic.
+- The list of tasks is displayed in the order of the groups you have configured.
+- Items are displayed within categories, further organized into groups.
+- If left blank, no minutes will be grouped.
+- [_general_](en/editor/general)

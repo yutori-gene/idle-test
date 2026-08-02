@@ -9,6 +9,14 @@ ___
 ## [_informações_](pt/editor/informações)
 ___
 
+## Categoria.
+ID da categoria à qual a tarefa pertence
+- Especifique o ID da categoria à qual este evento será atribuído como tarefa.
+- Ao definir essa configuração, uma lista de tarefas será adicionada à tela de categorias do jogador, e ela também será exibida agrupada por categoria na lista de missões.
+- Se o campo estiver em branco, a missão não pertencerá a nenhuma categoria e será exibida agrupada no início da lista de missões.
+- Apenas os eventos com o tempo `matched` são utilizados para exibição. Em outros momentos, mesmo com configuração, não afetam a exibição.
+___
+
 ## tempo
 Configuração do tempo de acionamento do evento.
 
@@ -109,5 +117,9 @@ Probabilidade de sucesso na obtenção (valores negativos são avaliados apenas 
 ___
 
 ## grupo de trabalho
-Identificador de grupo da tarefa (atualmente não utilizado)
-- Esse item não está sendo usado no momento. Ele está reservado para aprimoramentos futuros.
+Classificação dos grupos de exibição de tarefas
+- Aplique um dos grupos configurados no Basic.
+- A lista de tarefas é exibida na ordem da configuração dos grupos.
+- Dentro da categoria, os itens são exibidos divididos em grupos.
+- Se for deixado em branco, nenhum agrupamento será feito.
+- [_general_](pt/editor/geral)

@@ -9,6 +9,14 @@ ___
 ## [_l'information_](fr/éditeur/l'information)
 ___
 
+## Catégorie.
+ID de la catégorie à laquelle appartient la tâche
+- Indiquez l'ID de la catégorie à laquelle cet événement doit être rattaché en tant que tâche.
+- Une fois la configuration activée, une liste des tâches s'ajoute à l'écran des catégories du joueur, et celles-ci s'affichent également regroupées par catégorie dans la liste des missions.
+- Si le champ est vide, la mission n'appartient à aucune catégorie et s'affiche en tête de la liste des missions.
+- Seuls les événements dont le timing est « matched » sont utilisés pour l'affichage. Pour les autres timings, même si vous effectuez la configuration, cela n'aura aucune incidence sur l'affichage.
+___
+
 ## timing
 Configuration du moment de déclenchement des événements.
 
@@ -109,5 +117,9 @@ Probabilité de succès de l'acquisition (les valeurs négatives ne sont prises 
 ___
 
 ## groupe de travail
-Identifiant de groupe de la tâche (actuellement inutilisé)
-- Cet élément n'est actuellement pas utilisé. Il est réservé pour des améliorations futures.
+Classification des tâches par groupe d'affichage
+- Appliquer l'un des groupes configurés dans Basic.
+- La liste des tâches s'affiche dans l'ordre des groupes de configuration que vous avez définis.
+- Ils sont classés par catégorie, puis par groupe au sein de chaque catégorie.
+- Si elle est laissée vide, aucun regroupement n'est effectué.
+- [_general_](fr/éditeur/général)

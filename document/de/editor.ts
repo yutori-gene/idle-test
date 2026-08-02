@@ -386,7 +386,7 @@ export const information: Type.Information = {
 				"Erbe von den Eltern": {
 					title: "Vererbung von übergeordneten Elementen",
 					summary: "Übernahme der Farbkonfigurationen des übergeordneten Elements.",
-					points: ["Wenn leer, wird die im übergeordneten Element konfigurierte Farbe übernommen.", "Die Hierarchie der Typen für die einzelnen Elemente sieht wie folgt aus", "Wenn eine Aktion beispielsweise eine individuelle Konfiguration hat, wird diese verwendet, wenn die Aktion keine individuelle Konfiguration hat, wird die Farbe der Kategorie oder der Welt verwendet."],
+					points: ["Wenn leer, wird die im übergeordneten Element konfigurierte Farbe übernommen.", "Die Hierarchie der Typen für die einzelnen Elemente sieht wie folgt aus", "Wenn eine Aktion beispielsweise eine individuelle Konfiguration hat, wird diese verwendet, wenn die Aktion keine individuelle Konfiguration hat, wird die Farbe der Kategorie oder der Welt verwendet.", "Wenn für ein Ereignis ebenfalls eine Kategorie konfiguriert ist, übernimmt es – genau wie Aktionen und Gegenstände – die Farbe dieser Kategorie."],
 					quote: typeTree,
 					links: { type: "Typ" },
 				},
@@ -428,9 +428,9 @@ export const event: Type.Event = {
 	children: {
 		information: information,
 		category: {
-			title: "カテゴリー",
-			summary: "タスクが所属するカテゴリーのID",
-			points: ["このイベントをタスクとして所属させるカテゴリーのIDを指定します。", "設定すると、プレイヤーのカテゴリーの画面にタスクの一覧が追加され、ミッションの一覧でもカテゴリーごとにまとめて表示されます。", "空欄の場合はどのカテゴリーにも属さず、ミッションの一覧の先頭にまとめて表示されます。", "タイミングが`matched`のイベントのみ表示に使われます。それ以外のタイミングでは設定しても表示に影響しません。"],
+			title: "Kategorie.",
+			summary: "ID der Kategorie, zu der die Aufgabe gehört",
+			points: ["Geben Sie die ID der Kategorie an, der dieses Ereignis als Aufgabe zugeordnet werden soll.", "Wenn Sie diese Konfiguration vornehmen, wird auf dem Bildschirm „Kategorien der Spieler“ eine Liste der Aufgaben hinzugefügt, und auch in der Missionsliste werden diese nach Kategorien geordnet angezeigt.", "Wenn das Feld leer ist, gehört die Mission zu keiner Kategorie und wird am Anfang der Missionsliste zusammengefasst angezeigt.", "Nur Ereignisse mit dem Timing `matched` werden in der Anzeige berücksichtigt. Bei anderen Timings hat die Konfiguration keinen Einfluss auf die Anzeige, auch wenn sie festgelegt wird."],
 		},
 		timing: {
 			title: "Zeitmessung",
@@ -464,8 +464,9 @@ export const event: Type.Event = {
 		},
 		group: {
 			title: "Arbeitsgruppe",
-			summary: "Gruppenkennung der Aufgabe (derzeit unbenutzt)",
-			points: ["Dieses Element wird derzeit nicht verwendet. Er ist für zukünftige Erweiterungen reserviert."],
+			summary: "Anzeige, Gruppierung und Klassifizierung von Aufgaben",
+			points: ["Wenden Sie eine der in Basic konfigurierten Gruppen an.", "Die Aufgaben werden in der Reihenfolge der Konfigurationen angezeigt.", "Innerhalb der Kategorien werden die Einträge weiter in Gruppen unterteilt und angezeigt.", "Bleibt sie leer, wird keine Gruppierung vorgenommen."],
+			links: { general: "allgemein" },
 		},
 	},
 	options: {
@@ -749,24 +750,24 @@ export const design: Type.Design = {
 	points: ["Konfigurationen für die Anzeige der Welten.", "Wenn es individuelle Konfigurationen für jedes Element gibt, haben diese Vorrang vor dem Gesamtdesign der Welt."],
 	children: {
 		barColor: {
-			title: "vorherrschende Farbe",
-			summary: "Die wichtigsten Farben der Welt",
-			points: ["Wird als Balkenfarbe verwendet.", "Die entgegengesetzte Farbe davon wird für die Balkenschatten verwendet."],
+			title: "Balkenfarbe",
+			summary: "Hintergrundfarbe der Leiste",
+			points: ["Wird als Hintergrundfarbe für die Leiste verwendet.", "Da diese Farbe als Hintergrund für den gesamten Bildschirm dient, werden auch die Farben der ausgewählten Zeile und der Bildlaufleiste auf dieser Grundlage festgelegt."],
 		},
 		textColor: {
-			title: "ergänzende Farbe",
-			summary: "Hilfsfarben für Hintergrund und Text",
-			points: ["Farbe, die als Hintergrund- und Textfarbe verwendet wird.", "Farbtöne, die der Hauptfarbe nahe kommen, mischen sich."],
+			title: "Textfarbe",
+			summary: "Farbe der Schrift und des Hintergrunds",
+			points: ["Wird als Schriftfarbe verwendet.", "Wenn Sie keine Konfiguration für ein Hintergrundbild durchführen, wird ein Farbverlauf auf Basis dieser Farbe als Hintergrund verwendet.", "Wenn man den Kontrast zur Hintergrundfarbe stark erhöht, lassen sich die Buchstaben leichter lesen."],
 		},
 		shadowColor: {
-			title: "影色",
-			summary: "バーの影のカラー",
-			points: ["バーやヘッダーに落ちる影の色として使用されます。", "バー色よりも暗い色にすると自然な影になります。"],
+			title: "Schattenfarbe",
+			summary: "Farbe des Balkenschattens",
+			points: ["Wird als Farbe für die Schatten verwendet, die auf die Leiste und die Kopfzeile fallen.", "Wenn Sie eine Farbe wählen, die dunkler ist als die der Leiste, entstehen natürliche Schatten."],
 		},
 		background: {
 			title: "Hintergrundbild",
 			summary: "Hintergrundbild für das gesamte Spiel",
-			points: ["Konfiguriert das Hintergrundbild des Spiels.", "Wird kein Bild konfiguriert, ist der Hintergrund ein Farbverlauf auf der Basis der Hilfsfarbe."],
+			points: ["Konfiguriert das Hintergrundbild des Spiels.", "Wenn keine Konfiguration für ein Bild vorgenommen wird, wird ein Hintergrund mit einem Farbverlauf verwendet, der auf der Schriftfarbe basiert."],
 		},
 	},
 	options: {

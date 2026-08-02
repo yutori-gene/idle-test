@@ -5,25 +5,26 @@ Configurações de aparência visual, como cores e fontes do mundo.
 - Com relação ao design geral do mundo, se houver configurações individuais para cada elemento, elas terão precedência.
 ___
 
-## cor predominante
-Principais cores do mundo
-- Usado como cor de barra.
-- A cor oposta a essa é usada para as sombras da barra.
+## Cor da barra
+Cor de fundo da barra
+- É usado como cor de fundo da barra.
+- Como essa cor serve de fundo baixo para toda a tela, a cor da linha selecionada e da barra de rolagem também é derivada dessa cor.
 ___
 
-## cor suplementar
-Cores auxiliares para fundo e texto
-- Cor usada como cor de fundo e de texto.
-- Os tons próximos à cor principal se misturam.
+## Cor da fonte
+Cor da fonte e do fundo
+- É usado como cor da fonte.
+- Se você não realizar a configuração de uma imagem de fundo, será utilizado um gradiente baseado nessa cor como fundo.
+- Se você aumentar bastante o contraste com a cor da barra, o texto fica mais fácil de ler.
 ___
 
-## 影色
-バーの影のカラー
-- バーやヘッダーに落ちる影の色として使用されます。
-- バー色よりも暗い色にすると自然な影になります。
+## Cor da sombra
+Cor da sombra da barra
+- É usada como cor da sombra projetada nas barras e nos cabeçalhos.
+- Se você escolher uma cor mais escura do que a da barra, o efeito de sombra ficará mais natural.
 ___
 
 ## imagem de fundo
 Imagem de fundo para todo o jogo
 - Configura a imagem de fundo do jogo.
-- Se nada for configurado, o plano de fundo será um gradiente baseado na cor auxiliar.
+- Caso não haja configuração de imagem, o fundo será um gradiente baseado na cor da fonte.

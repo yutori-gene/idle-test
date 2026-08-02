@@ -188,10 +188,20 @@ export const action: Markdown = {
 
 // category
 
+export const tasks: Markdown = {
+	title: "작업",
+	summary: "카테고리 내 작업 목록",
+	points: ["이 카테고리에 할당된 작업 목록입니다.", "과제를 선택하면 달성 조건과 보상을 확인할 수 있습니다.", "카테고리에 할 일이 하나도 없는 경우 표시되지 않습니다."],
+	options: {
+		preset: "작업",
+	},
+};
+
 export const category: Markdown = {
 	title: "카테고리",
 	summary: "다양한 요소들을 모아놓은 것",
 	points: ["액션과 아이템을 정리한 요소입니다."],
+	children: { tasks: tasks },
 	options: {
 		label: "카테고리",
 		preset: "카테고리",
@@ -226,11 +236,20 @@ export const activity: Markdown = {
 	},
 };
 
+export const missions: Markdown = {
+	title: "미션",
+	summary: "모든 작업 목록",
+	points: ["카테고리별로 정리되어 표시됩니다.", "카테고리가 설정되지 않은 작업은 맨 앞에 한꺼번에 표시됩니다.", "완료된 작업에는 체크 표시가 나타납니다."],
+	options: {
+		preset: "임무",
+	},
+};
+
 export const character: Markdown = {
 	title: "캐릭터",
 	summary: "주인공의 상황 확인 및 조작",
 	points: ["이 내용은 카테고리를 조작하여 표시되는 내용과 동일합니다."],
-	children: { activity: activity, inventory: inventory, status: status },
+	children: { activity: activity, inventory: inventory, status: status, missions: missions },
 	options: {
 		label: "캐릭터",
 		preset: "캐릭터",

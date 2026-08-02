@@ -9,6 +9,14 @@ ___
 ## [_informasi_](id/editor/informasi)
 ___
 
+## Kategori.
+ID Kategori tempat tugas tersebut berada
+- Tentukan ID kategori tempat acara ini akan dimasukkan sebagai tugas.
+- Setelah diatur dalam konfigurasi, daftar tugas akan ditambahkan ke layar kategori pemain, dan dalam daftar misi pun akan ditampilkan secara terkelompok berdasarkan kategori.
+- Jika dibiarkan kosong, misi tersebut tidak akan termasuk dalam kategori mana pun dan akan ditampilkan secara terpisah di bagian atas daftar misi.
+- Hanya acara dengan waktu `matched` yang digunakan untuk tampilan. Pada waktu lain, konfigurasi apa pun tidak akan memengaruhi tampilan.
+___
+
 ## waktu
 Konfigurasi waktu pemicuan acara.
 
@@ -109,5 +117,9 @@ Probabilitas keberhasilan perolehan yang sukses (nilai negatif hanya dievaluasi 
 ___
 
 ## kelompok tugas
-Pengidentifikasi grup tugas (saat ini tidak digunakan)
-- Item ini saat ini tidak digunakan. Item ini dicadangkan untuk penyempurnaan di masa mendatang.
+Klasifikasi kelompok tampilan tugas
+- Terapkan salah satu grup yang konfigurasi di Basic.
+- Daftar tugas akan ditampilkan sesuai urutan konfigurasi grup yang telah ditetapkan.
+- Di dalam kategori tersebut, hasilnya akan ditampilkan berdasarkan kelompok-kelompoknya.
+- Jika dibiarkan kosong, tidak ada pengelompokan yang dibuat.
+- [_general_](id/editor/umum)

@@ -18,3 +18,10 @@ ___
 Lista de todas as propriedades
 - São mostrados apenas os valores de correção da Categoria por Item.
 - Dependendo da Ação a ser realizada, há outras correções.
+___
+
+## Missão
+Lista de todas as tarefas
+- Eles são exibidos agrupados por categoria.
+- As tarefas sem configuração de categoria são exibidas agrupadas no início da lista.
+- As tarefas concluídas são marcadas com um sinal de visto.

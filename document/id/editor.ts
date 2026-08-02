@@ -386,7 +386,7 @@ export const information: Type.Information = {
 				"warisan-dari-orangtua": {
 					title: "Pewarisan dari elemen induk",
 					summary: "Mengambil alih konfigurasi warna elemen.",
-					points: ["Jika kosong, warna konfigurasi dalam elemen akan diambil alih.", "Hirarki tipe untuk elemen adalah sebagai berikut", "Sebagai contoh, jika sebuah aksi memiliki konfigurasi warna individual, maka warna tersebut akan digunakan, sedangkan jika aksi tidak ada konfigurasi warna individual, maka kategori atau warna dunia yang akan digunakan."],
+					points: ["Jika kosong, warna konfigurasi dalam elemen akan diambil alih.", "Hirarki tipe untuk elemen adalah sebagai berikut", "Sebagai contoh, jika sebuah aksi memiliki konfigurasi warna individual, maka warna tersebut akan digunakan, sedangkan jika aksi tidak ada konfigurasi warna individual, maka kategori atau warna dunia yang akan digunakan.", "Jika acara juga memiliki kategori, maka acara tersebut akan mewarisi warna kategori tersebut, sama seperti Aksi dan Item."],
 					quote: typeTree,
 					links: { type: "Jenis" },
 				},
@@ -428,9 +428,9 @@ export const event: Type.Event = {
 	children: {
 		information: information,
 		category: {
-			title: "カテゴリー",
-			summary: "タスクが所属するカテゴリーのID",
-			points: ["このイベントをタスクとして所属させるカテゴリーのIDを指定します。", "設定すると、プレイヤーのカテゴリーの画面にタスクの一覧が追加され、ミッションの一覧でもカテゴリーごとにまとめて表示されます。", "空欄の場合はどのカテゴリーにも属さず、ミッションの一覧の先頭にまとめて表示されます。", "タイミングが`matched`のイベントのみ表示に使われます。それ以外のタイミングでは設定しても表示に影響しません。"],
+			title: "Kategori.",
+			summary: "ID Kategori tempat tugas tersebut berada",
+			points: ["Tentukan ID kategori tempat acara ini akan dimasukkan sebagai tugas.", "Setelah diatur dalam konfigurasi, daftar tugas akan ditambahkan ke layar kategori pemain, dan dalam daftar misi pun akan ditampilkan secara terkelompok berdasarkan kategori.", "Jika dibiarkan kosong, misi tersebut tidak akan termasuk dalam kategori mana pun dan akan ditampilkan secara terpisah di bagian atas daftar misi.", "Hanya acara dengan waktu `matched` yang digunakan untuk tampilan. Pada waktu lain, konfigurasi apa pun tidak akan memengaruhi tampilan."],
 		},
 		timing: {
 			title: "waktu",
@@ -464,8 +464,9 @@ export const event: Type.Event = {
 		},
 		group: {
 			title: "kelompok tugas",
-			summary: "Pengidentifikasi grup tugas (saat ini tidak digunakan)",
-			points: ["Item ini saat ini tidak digunakan. Item ini dicadangkan untuk penyempurnaan di masa mendatang."],
+			summary: "Klasifikasi kelompok tampilan tugas",
+			points: ["Terapkan salah satu grup yang konfigurasi di Basic.", "Daftar tugas akan ditampilkan sesuai urutan konfigurasi grup yang telah ditetapkan.", "Di dalam kategori tersebut, hasilnya akan ditampilkan berdasarkan kelompok-kelompoknya.", "Jika dibiarkan kosong, tidak ada pengelompokan yang dibuat."],
+			links: { general: "umum" },
 		},
 	},
 	options: {
@@ -749,24 +750,24 @@ export const design: Type.Design = {
 	points: ["Konfigurasi tentang tampilan dunia.", "Mengenai desain dunia secara keseluruhan, jika ada konfigurasi individual untuk tiap elemen, maka konfigurasi tersebut yang diutamakan."],
 	children: {
 		barColor: {
-			title: "warna dominan",
-			summary: "Warna-warna utama dunia",
-			points: ["Digunakan sebagai warna batang.", "Warna yang berlawanan dengan warna ini digunakan untuk bayangan batang."],
+			title: "Warna bilah",
+			summary: "Warna latar belakang bar",
+			points: ["Digunakan sebagai warna latar belakang bar.", "Karena warna ini juga berfungsi sebagai latar belakang bawah layar, warna baris yang sedang dipilih maupun bilah gulir juga dibuat berdasarkan warna ini."],
 		},
 		textColor: {
-			title: "warna tambahan",
-			summary: "Warna tambahan untuk latar belakang dan teks",
-			points: ["Warna yang digunakan sebagai latar belakang dan warna teks.", "Nuansa yang mendekati warna utama akan menyatu."],
+			title: "Warna huruf",
+			summary: "Warna teks dan latar belakang",
+			points: ["Digunakan sebagai warna teks.", "Jika tidak ada konfigurasi untuk gambar latar belakang, gradasi yang didasarkan pada warna ini akan menjadi latar belakangnya.", "Jika perbedaan kecerahan antara latar belakang dan teks dibuat lebih kontras, teks akan lebih mudah dibaca."],
 		},
 		shadowColor: {
-			title: "影色",
-			summary: "バーの影のカラー",
-			points: ["バーやヘッダーに落ちる影の色として使用されます。", "バー色よりも暗い色にすると自然な影になります。"],
+			title: "Warna Bayangan",
+			summary: "Warna bayangan di bar",
+			points: ["Warna ini digunakan sebagai warna bayangan yang jatuh pada bilah dan header.", "Jika warnanya dibuat lebih gelap daripada warna bilah, bayangannya akan terlihat lebih alami."],
 		},
 		background: {
 			title: "gambar latar belakang",
 			summary: "Gambar latar belakang untuk seluruh permainan",
-			points: ["Konfigurasi gambar latar belakang game.", "Jika tidak ada gambar yang dikonfigurasi, latar belakang adalah gradien berdasarkan warna tambahan."],
+			points: ["Konfigurasi gambar latar belakang game.", "Jika tidak ada konfigurasi gambar, latar belakangnya akan berupa gradasi warna yang didasarkan pada warna teks."],
 		},
 	},
 	options: {

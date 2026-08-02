@@ -386,7 +386,7 @@ export const information: Type.Information = {
 				"heritage-from-parent": {
 					title: "inheriting from a parent element",
 					summary: "Inherit the color config of the parent element",
-					points: ["If left blank, the color configured on the parent element is taken over.", "The hierarchy of types for each element is as follows", "For example, if an Action has an individual color configured, it will be used, but if nothing is configured for the Action, the Category or World color will be used."],
+					points: ["If left blank, the color configured on the parent element is taken over.", "The hierarchy of types for each element is as follows", "For example, if an Action has an individual color configured, it will be used, but if nothing is configured for the Action, the Category or World color will be used.", "If an event has a category configured for it, it will inherit the color of that category, just like Actions and Items."],
 					quote: typeTree,
 					links: { type: "type" },
 				},
@@ -428,9 +428,9 @@ export const event: Type.Event = {
 	children: {
 		information: information,
 		category: {
-			title: "カテゴリー",
-			summary: "タスクが所属するカテゴリーのID",
-			points: ["このイベントをタスクとして所属させるカテゴリーのIDを指定します。", "設定すると、プレイヤーのカテゴリーの画面にタスクの一覧が追加され、ミッションの一覧でもカテゴリーごとにまとめて表示されます。", "空欄の場合はどのカテゴリーにも属さず、ミッションの一覧の先頭にまとめて表示されます。", "タイミングが`matched`のイベントのみ表示に使われます。それ以外のタイミングでは設定しても表示に影響しません。"],
+			title: "Category",
+			summary: "The ID of the category to which the task belongs",
+			points: ["Specify the ID of the category to which this event should be assigned as a task.", "Once configured, a list of tasks will be added to the player's category screen, and they will also be grouped by category in the mission list.", "If left blank, the mission will not be assigned to any Category and will be grouped together and displayed at the top of the mission list.", "Only events with a timing of `matched` are used for display. Even if you configure settings for other timings, they will not affect the display."],
 		},
 		timing: {
 			title: "timing",
@@ -464,8 +464,9 @@ export const event: Type.Event = {
 		},
 		group: {
 			title: "task group",
-			summary: "Group identifier of the task (currently unused)",
-			points: ["This item is currently not in use. It is reserved for future enhancements."],
+			summary: "Task Display Group Categories",
+			points: ["Apply one of the groups configured in Basic.", "The list of tasks is displayed in the order of the groups you have configured.", "Items are displayed within categories, further organized into groups.", "If left blank, no minutes will be grouped."],
+			links: { general: "general" },
 		},
 	},
 	options: {
@@ -749,24 +750,24 @@ export const design: Type.Design = {
 	points: ["This configures the display of worlds.", "Regarding the overall design of the world, if there are individual configurations for each element, they will take precedence."],
 	children: {
 		barColor: {
-			title: "predominant color",
-			summary: "Major Colors of the World",
-			points: ["Used as bar color.", "The opposite color of this is used for the bar shadows."],
+			title: "Bar Color",
+			summary: "The background color of the bar",
+			points: ["It is used as the background color for the bar.", "Since this color serves as the background for the entire screen, the colors of the selected row and the scroll bar are also derived from it."],
 		},
 		textColor: {
-			title: "supplementary color",
-			summary: "Auxiliary background and text colors",
-			points: ["These colors are used as the background and text colors.", "Shades close to the main color will blend in."],
+			title: "Text Color",
+			summary: "Text and Background Colors",
+			points: ["It is used as the text color.", "If nothing is configured for a background image, a gradient based on this color will be used as the background.", "Making the contrast between the bar color and the background color more pronounced makes the text easier to read."],
 		},
 		shadowColor: {
-			title: "影色",
-			summary: "バーの影のカラー",
-			points: ["バーやヘッダーに落ちる影の色として使用されます。", "バー色よりも暗い色にすると自然な影になります。"],
+			title: "Shadow Color",
+			summary: "The Color of the Bar's Shadow",
+			points: ["It is used as the color of the shadows cast on the bars and headers.", "If you choose a color darker than the bar color, it will create a natural shadow."],
 		},
 		background: {
 			title: "background image",
 			summary: "Background image for the entire game",
-			points: ["Configure the game background image.", "If nothing is configured for the image, the background will be a gradient based on the auxiliary color."],
+			points: ["Configure the game background image.", "If nothing is configured for an image, the background will be a gradient based on the text color."],
 		},
 	},
 	options: {

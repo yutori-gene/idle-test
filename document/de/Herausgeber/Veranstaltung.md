@@ -9,6 +9,14 @@ ___
 ## [_Informationen_](de/Herausgeber/Informationen)
 ___
 
+## Kategorie.
+ID der Kategorie, zu der die Aufgabe gehört
+- Geben Sie die ID der Kategorie an, der dieses Ereignis als Aufgabe zugeordnet werden soll.
+- Wenn Sie diese Konfiguration vornehmen, wird auf dem Bildschirm „Kategorien der Spieler“ eine Liste der Aufgaben hinzugefügt, und auch in der Missionsliste werden diese nach Kategorien geordnet angezeigt.
+- Wenn das Feld leer ist, gehört die Mission zu keiner Kategorie und wird am Anfang der Missionsliste zusammengefasst angezeigt.
+- Nur Ereignisse mit dem Timing `matched` werden in der Anzeige berücksichtigt. Bei anderen Timings hat die Konfiguration keinen Einfluss auf die Anzeige, auch wenn sie festgelegt wird.
+___
+
 ## Zeitmessung
 Konfiguration des Zeitpunkts der Auslösung von Ereignissen.
 
@@ -109,5 +117,9 @@ Wahrscheinlichkeit eines Erfolgs beim Abruf (negative Werte werden nur bei einem
 ___
 
 ## Arbeitsgruppe
-Gruppenkennung der Aufgabe (derzeit unbenutzt)
-- Dieses Element wird derzeit nicht verwendet. Er ist für zukünftige Erweiterungen reserviert.
+Anzeige, Gruppierung und Klassifizierung von Aufgaben
+- Wenden Sie eine der in Basic konfigurierten Gruppen an.
+- Die Aufgaben werden in der Reihenfolge der Konfigurationen angezeigt.
+- Innerhalb der Kategorien werden die Einträge weiter in Gruppen unterteilt und angezeigt.
+- Bleibt sie leer, wird keine Gruppierung vorgenommen.
+- [_general_](de/Herausgeber/allgemein)

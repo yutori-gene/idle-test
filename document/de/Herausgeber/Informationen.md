@@ -111,6 +111,7 @@ ___
 - Wenn leer, wird die im übergeordneten Element konfigurierte Farbe übernommen.
 - Die Hierarchie der Typen für die einzelnen Elemente sieht wie folgt aus
 - Wenn eine Aktion beispielsweise eine individuelle Konfiguration hat, wird diese verwendet, wenn die Aktion keine individuelle Konfiguration hat, wird die Farbe der Kategorie oder der Welt verwendet.
+- Wenn für ein Ereignis ebenfalls eine Kategorie konfiguriert ist, übernimmt es – genau wie Aktionen und Gegenstände – die Farbe dieser Kategorie.
 ```
 world
 ├── category

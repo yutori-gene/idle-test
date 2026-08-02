@@ -114,6 +114,7 @@ Asumir la configuración de color del elemento padre.
 - Si está en blanco, se toma el color configurado en el elemento padre.
 - La jerarquía de tipos de cada elemento es la siguiente
 - Por ejemplo, si una Acción tiene una configuración de color individual, se utilizará, mientras que si la Acción no tiene una configuración de color individual, se utilizará el color de la Categoría o del Mundo.
+- Si también se ha realizado la configuración de una categoría para el evento, este adoptará el color de dicha categoría, al igual que las Acciones y los artículos.
 ```
 world
 ├── category

@@ -5,25 +5,26 @@ Configure the appearance of the world, including colors and fonts
 - Regarding the overall design of the world, if there are individual configurations for each element, they will take precedence.
 ___
 
-## predominant color
-Major Colors of the World
-- Used as bar color.
-- The opposite color of this is used for the bar shadows.
+## Bar Color
+The background color of the bar
+- It is used as the background color for the bar.
+- Since this color serves as the background for the entire screen, the colors of the selected row and the scroll bar are also derived from it.
 ___
 
-## supplementary color
-Auxiliary background and text colors
-- These colors are used as the background and text colors.
-- Shades close to the main color will blend in.
+## Text Color
+Text and Background Colors
+- It is used as the text color.
+- If nothing is configured for a background image, a gradient based on this color will be used as the background.
+- Making the contrast between the bar color and the background color more pronounced makes the text easier to read.
 ___
 
-## 影色
-バーの影のカラー
-- バーやヘッダーに落ちる影の色として使用されます。
-- バー色よりも暗い色にすると自然な影になります。
+## Shadow Color
+The Color of the Bar's Shadow
+- It is used as the color of the shadows cast on the bars and headers.
+- If you choose a color darker than the bar color, it will create a natural shadow.
 ___
 
 ## background image
 Background image for the entire game
 - Configure the game background image.
-- If nothing is configured for the image, the background will be a gradient based on the auxiliary color.
+- If nothing is configured for an image, the background will be a gradient based on the text color.

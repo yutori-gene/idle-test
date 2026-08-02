@@ -113,6 +113,7 @@ Inherit the color config of the parent element
 - If left blank, the color configured on the parent element is taken over.
 - The hierarchy of types for each element is as follows
 - For example, if an Action has an individual color configured, it will be used, but if nothing is configured for the Action, the Category or World color will be used.
+- If an event has a category configured for it, it will inherit the color of that category, just like Actions and Items.
 ```
 world
 ├── category

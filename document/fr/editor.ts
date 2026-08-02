@@ -386,7 +386,7 @@ export const information: Type.Information = {
 				"héritage des parents": {
 					title: "Héritage des éléments parents",
 					summary: "Reprendre les configurations de couleur de l'élément parent.",
-					points: ["Si elle est vide, la couleur configurée dans l'élément parent est reprise.", "La hiérarchie des types pour chaque élément est la suivante", "Par exemple, si une action dispose d'une configuration de couleurs individuelles, celle-ci sera utilisée, tandis que si l'action ne dispose pas d'une configuration de couleurs individuelles, la couleur de la catégorie ou du monde sera utilisée."],
+					points: ["Si elle est vide, la couleur configurée dans l'élément parent est reprise.", "La hiérarchie des types pour chaque élément est la suivante", "Par exemple, si une action dispose d'une configuration de couleurs individuelles, celle-ci sera utilisée, tandis que si l'action ne dispose pas d'une configuration de couleurs individuelles, la couleur de la catégorie ou du monde sera utilisée.", "Si un événement est également associé à une catégorie, il reprend la couleur de cette catégorie, tout comme les actions et les objets."],
 					quote: typeTree,
 					links: { type: "type" },
 				},
@@ -428,9 +428,9 @@ export const event: Type.Event = {
 	children: {
 		information: information,
 		category: {
-			title: "カテゴリー",
-			summary: "タスクが所属するカテゴリーのID",
-			points: ["このイベントをタスクとして所属させるカテゴリーのIDを指定します。", "設定すると、プレイヤーのカテゴリーの画面にタスクの一覧が追加され、ミッションの一覧でもカテゴリーごとにまとめて表示されます。", "空欄の場合はどのカテゴリーにも属さず、ミッションの一覧の先頭にまとめて表示されます。", "タイミングが`matched`のイベントのみ表示に使われます。それ以外のタイミングでは設定しても表示に影響しません。"],
+			title: "Catégorie.",
+			summary: "ID de la catégorie à laquelle appartient la tâche",
+			points: ["Indiquez l'ID de la catégorie à laquelle cet événement doit être rattaché en tant que tâche.", "Une fois la configuration activée, une liste des tâches s'ajoute à l'écran des catégories du joueur, et celles-ci s'affichent également regroupées par catégorie dans la liste des missions.", "Si le champ est vide, la mission n'appartient à aucune catégorie et s'affiche en tête de la liste des missions.", "Seuls les événements dont le timing est « matched » sont utilisés pour l'affichage. Pour les autres timings, même si vous effectuez la configuration, cela n'aura aucune incidence sur l'affichage."],
 		},
 		timing: {
 			title: "timing",
@@ -464,8 +464,9 @@ export const event: Type.Event = {
 		},
 		group: {
 			title: "groupe de travail",
-			summary: "Identifiant de groupe de la tâche (actuellement inutilisé)",
-			points: ["Cet élément n'est actuellement pas utilisé. Il est réservé pour des améliorations futures."],
+			summary: "Classification des tâches par groupe d'affichage",
+			points: ["Appliquer l'un des groupes configurés dans Basic.", "La liste des tâches s'affiche dans l'ordre des groupes de configuration que vous avez définis.", "Ils sont classés par catégorie, puis par groupe au sein de chaque catégorie.", "Si elle est laissée vide, aucun regroupement n'est effectué."],
+			links: { general: "général" },
 		},
 	},
 	options: {
@@ -749,24 +750,24 @@ export const design: Type.Design = {
 	points: ["Configuration de l'affichage des mondes.", "En ce qui concerne la conception globale du monde, s'il existe des configurations individuelles pour chaque élément, elles ont la priorité."],
 	children: {
 		barColor: {
-			title: "couleur dominante",
-			summary: "Principales couleurs du monde",
-			points: ["Utilisé comme couleur de bar.", "La couleur opposée est utilisée pour les ombres de la barre."],
+			title: "Couleur de la barre",
+			summary: "Couleur d'arrière-plan de la barre",
+			points: ["Elle sert de couleur d'arrière-plan pour la barre.", "Comme il s'agit de la couleur de fond de l'ensemble de l'écran, la couleur de la ligne sélectionnée et celle de la barre de défilement sont également dérivées de cette couleur."],
 		},
 		textColor: {
-			title: "couleur supplémentaire",
-			summary: "Couleurs auxiliaires pour l'arrière-plan et le texte",
-			points: ["Couleur utilisée comme couleur d'arrière-plan et de texte.", "Les teintes proches de la couleur principale se fondent dans la masse."],
+			title: "Couleur du texte",
+			summary: "Couleur du texte et de l'arrière-plan",
+			points: ["Il est utilisé comme couleur de texte.", "Si rien n'est défini pour l'image d'arrière-plan, un dégradé basé sur cette couleur servira d'arrière-plan.", "En augmentant le contraste entre la couleur de la barre et celle du texte, celui-ci devient plus lisible."],
 		},
 		shadowColor: {
-			title: "影色",
-			summary: "バーの影のカラー",
-			points: ["バーやヘッダーに落ちる影の色として使用されます。", "バー色よりも暗い色にすると自然な影になります。"],
+			title: "Couleur de l'ombre",
+			summary: "Couleur de l'ombre de la barre",
+			points: ["Elle est utilisée comme couleur pour les ombres projetées sur les barres et les en-têtes.", "En choisissant une couleur plus foncée que celle de la barre, vous obtiendrez une ombre plus naturelle."],
 		},
 		background: {
 			title: "image de fond",
 			summary: "Image de fond pour l'ensemble du jeu",
-			points: ["Configure l'image d'arrière-plan du jeu.", "Si aucune image n'est configurée, l'arrière-plan est un dégradé basé sur la couleur auxiliaire."],
+			points: ["Configure l'image d'arrière-plan du jeu.", "Si rien n'est configuré pour l'image, l'arrière-plan sera un dégradé basé sur la couleur du texte."],
 		},
 	},
 	options: {

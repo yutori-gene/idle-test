@@ -188,10 +188,20 @@ export const action: Markdown = {
 
 // category
 
+export const tasks: Markdown = {
+	title: "任务",
+	summary: "该类别中的任务列表",
+	points: ["以下是分配到此类别中的任务列表。", "选择任务后，即可查看完成条件和奖励。", "如果该类别下无任务，则不会显示。"],
+	options: {
+		preset: "任务",
+	},
+};
+
 export const category: Markdown = {
 	title: "类别",
 	summary: "各种元素的汇编。",
 	points: ["这是一个汇集动作和物品的元素。"],
+	children: { tasks: tasks },
 	options: {
 		label: "类别",
 		preset: "类别",
@@ -226,11 +236,20 @@ export const activity: Markdown = {
 	},
 };
 
+export const missions: Markdown = {
+	title: "使命",
+	summary: "所有任务列表",
+	points: ["将按类别汇总显示。", "未配置类别的任务将汇总显示在最前面。", "已完成的任务上会打上勾。"],
+	options: {
+		preset: "任务",
+	},
+};
+
 export const character: Markdown = {
 	title: "角色",
 	summary: "确定和操作主人公的情况。",
 	points: ["这些内容与操作类别所显示的内容相同。"],
-	children: { activity: activity, inventory: inventory, status: status },
+	children: { activity: activity, inventory: inventory, status: status, missions: missions },
 	options: {
 		label: "性状",
 		preset: "性状",

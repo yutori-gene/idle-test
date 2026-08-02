@@ -111,6 +111,7 @@ Mengambil alih konfigurasi warna elemen.
 - Jika kosong, warna konfigurasi dalam elemen akan diambil alih.
 - Hirarki tipe untuk elemen adalah sebagai berikut
 - Sebagai contoh, jika sebuah aksi memiliki konfigurasi warna individual, maka warna tersebut akan digunakan, sedangkan jika aksi tidak ada konfigurasi warna individual, maka kategori atau warna dunia yang akan digunakan.
+- Jika acara juga memiliki kategori, maka acara tersebut akan mewarisi warna kategori tersebut, sama seperti Aksi dan Item.
 ```
 world
 ├── category

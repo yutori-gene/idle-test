@@ -188,10 +188,20 @@ export const action: Markdown = {
 
 // category
 
+export const tasks: Markdown = {
+	title: "Задача",
+	summary: "Список задач в категории",
+	points: ["Это список задач, отнесённых к данной категории.", "Выбрав задание, вы сможете ознакомиться с условиями его выполнения и вознаграждением.", "Если в Категории ничего нет задач, она не отображается."],
+	options: {
+		preset: "задачи",
+	},
+};
+
 export const category: Markdown = {
 	title: "Категория.",
 	summary: "Компиляция из различных элементов.",
 	points: ["Это элемент, объединяющий действия и предметы."],
+	children: { tasks: tasks },
 	options: {
 		label: "категория",
 		preset: "категория",
@@ -226,11 +236,20 @@ export const activity: Markdown = {
 	},
 };
 
+export const missions: Markdown = {
+	title: "Миссия",
+	summary: "Список всех задач",
+	points: ["Они отображаются сгруппированными по категориям.", "Задачи, для которых не указана категория, отображаются в начале списка.", "Выполненные задачи отмечаются галочкой."],
+	options: {
+		preset: "миссии",
+	},
+};
+
 export const character: Markdown = {
 	title: "персонаж",
 	summary: "Идентификация и работа с ситуацией протагониста.",
 	points: ["Это содержимое идентично тому, что отображается при работе с категорией."],
-	children: { activity: activity, inventory: inventory, status: status },
+	children: { activity: activity, inventory: inventory, status: status, missions: missions },
 	options: {
 		label: "персонаж",
 		preset: "персонаж",

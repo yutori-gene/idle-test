@@ -18,3 +18,10 @@ ___
 Liste aller Eigenschaften
 - Es werden nur die Korrekturwerte der Kategorie pro Gegenstand angezeigt.
 - Je nach der durchzuführenden Aktion gibt es noch weitere Korrekturen.
+___
+
+## Mission
+Liste aller Aufgaben
+- Die Ergebnisse werden nach Kategorien geordnet angezeigt.
+- Aufgaben, für die keine Kategorie konfiguriert ist, werden am Anfang zusammengefasst angezeigt.
+- Erledigte Aufgaben werden mit einem Häkchen markiert.

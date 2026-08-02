@@ -18,3 +18,10 @@ ___
 Lista de todas las propiedades
 - Sólo se muestran los valores de corrección por Categoría por Artículo.
 - Dependiendo de la Acción a realizar, existen otras correcciones.
+___
+
+## Misión
+Lista de todas las tareas
+- Se muestran agrupados por categorías.
+- Las tareas a las que no se haya configurado ninguna categoría se muestran agrupadas al principio.
+- Las tareas completadas se marcan con una casilla.

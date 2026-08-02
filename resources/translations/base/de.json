@@ -10,7 +10,7 @@
       "explanation": "Dieses Element wird freigeschaltet, sobald die Bedingungen erfüllt sind."
     },
     "max": {
-      "name": "max",
+      "name": "max.",
       "explanation": ""
     },
     "min": {
@@ -35,14 +35,14 @@
     },
     "purchase-limit": {
       "name": "Kauflimit",
-      "explanation": "Die maximale Anzahl an Käufen, die Sie in einer Zeit tätigen können."
+      "explanation": "Die maximale Anzahl an Käufen, die Sie innerhalb eines bestimmten Zeitraums tätigen können."
     },
     "purchasable-count": {
       "name": "Erhältlich",
-      "explanation": "Die Zeit, die Sie noch für Käufe haben."
+      "explanation": "Die Zeit, die Ihnen noch für Einkäufe bleibt."
     },
     "total": {
-      "name": "gesamt",
+      "name": "insgesamt",
       "explanation": ""
     },
     "percentage": {
@@ -159,7 +159,7 @@
     },
     "navigation-column": {
       "name": "Spalte",
-      "explanation": "Die Position dieser Spalten und die gesamtzahl der Spalten, einschließlich derjenigen, die außerhalb des Bildschirms liegen."
+      "explanation": "Die Position dieser Spalten und die Gesamtzahl der Spalten, einschließlich derjenigen, die außerhalb des Bildschirms liegen."
     },
     "checked": {
       "name": "Angekreuzt",
@@ -186,7 +186,7 @@
       "explanation": ""
     },
     "inventory": {
-      "name": "Inventar",
+      "name": "Bestandsverzeichnis",
       "explanation": ""
     },
     "status": {
@@ -227,7 +227,7 @@
     },
     "console": {
       "name": "Konsole",
-      "explanation": "Dieses Spiel läuft auf der Idle-RPG-Konsole. Sie ist kostenlos und öffentlich zugänglich, sodass jeder Spiele erstellen kann."
+      "explanation": "Dieses Spiel läuft auf der RPG-Konsole im Leerlauf. Sie ist kostenlos und öffentlich zugänglich, sodass jeder Spiele erstellen kann."
     },
     "general": {
       "name": "Allgemein",
@@ -242,12 +242,12 @@
       "explanation": "In den Einstellungen können Sie die Sprache ändern."
     },
     "max-category-level": {
-      "name": "Maximale Kategorieebene",
+      "name": "Höchste Kategorieebene",
       "explanation": "Das höchste Level, das in jeder Kategorie erreicht werden kann."
     },
     "level-common-ratio": {
       "name": "Level Häufigkeit Verhältnis",
-      "explanation": "Wie viele Erfahrungspunkte sind erforderlich, um jedes Mal, wenn man ein Level aufsteigt, das nächste Level zu erreichen?"
+      "explanation": "Wie viele Erfahrungspunkte sind erforderlich, um bei jedem Levelaufstieg das nächste Level zu erreichen?"
     },
     "statistics": {
       "name": "Statistiken",
@@ -259,7 +259,7 @@
     },
     "amount-earned": {
       "name": "Verdienst",
-      "explanation": "Die gesamtzahl der Münzen, die du bisher verdient hast."
+      "explanation": "Die Gesamtzahl der Münzen, die du bisher verdient hast."
     },
     "time": {
       "name": "Zeit",
@@ -275,19 +275,19 @@
     },
     "count-now": {
       "name": "Jetzt zählen",
-      "explanation": "Die gesamtzahl der Gegenstände, die Sie derzeit besitzen."
+      "explanation": "Die Gesamtzahl der Gegenstände, die Sie derzeit besitzen."
     },
     "count-gained": {
-      "name": "Gewonnene Punkte",
-      "explanation": "Die gesamtzahl der bisher erworbenen Gegenstände."
+      "name": "Erzielte Punkte",
+      "explanation": "Die Gesamtzahl der bisher erworbenen Gegenstände."
     },
     "total-level": {
       "name": "Gesamt-Level",
       "explanation": "Die Summe der aktuellen Level aller Kategorien."
     },
     "count-actioned": {
-      "name": "Anklagepunkt abgehandelt",
-      "explanation": "Die gesamtzahl der bisher durchgeführten Aktionen."
+      "name": "Anklagepunkt behandelt",
+      "explanation": "Die Gesamtzahl der bisher durchgeführten Aktionen."
     },
     "win": {
       "name": "Sieg",
@@ -299,7 +299,7 @@
     },
     "acceleration": {
       "name": "Beschleunigung",
-      "explanation": "Beschleunigt die Zeit im Spiel. Bitte beachten Sie: Wenn Sie die Geschwindigkeit bei langsamer Ausführungszeit der Aktionen zu stark erhöhen, kann die Verarbeitung nicht mehr mithalten, und die App friert ein oder stürzt ab."
+      "explanation": "Beschleunigt die Zeit im Spiel. Bitte beachten Sie: Wenn Sie die Geschwindigkeit bei langsamer Ausführung der Aktionen zu stark erhöhen, kann die Verarbeitung nicht mehr mithalten, und die App friert ein oder stürzt ab."
     },
     "multiplier": {
       "name": "Multiplikator",
@@ -331,7 +331,7 @@
     },
     "adjustment-id": {
       "name": "ID",
-      "explanation": "Geben Sie die ID des Ziel-Typs an. Wenn dieses Feld leer bleibt, werden die Addition und die Subtraktion für alle IDs angepasst."
+      "explanation": "Geben Sie die ID des Zieltyps an. Wenn dieses Feld leer bleibt, werden die Addition und die Subtraktion für alle IDs angepasst."
     },
     "adjustment-sign": {
       "name": "Zeichen",
@@ -339,7 +339,7 @@
     },
     "adjustment-plus": {
       "name": "Plus",
-      "explanation": "Fügt den angegebenen numerischen Wert hinzu."
+      "explanation": "Führt den angegebenen numerischen Wert hinzu."
     },
     "adjustment-minus": {
       "name": "Minus",
@@ -351,14 +351,14 @@
     },
     "adjustment-adjust": {
       "name": "Anpassen",
-      "explanation": "Das Anpassen erfolgt unter den festgelegten Bedingungen."
+      "explanation": "Die Anpassung erfolgt unter den festgelegten Bedingungen."
     },
     "pwa": {
       "name": "PWA installieren",
       "explanation": "Progressive Web App (PWA) installieren."
     },
     "go-top": {
-      "name": "Nach Oben",
+      "name": "Nach oben",
       "explanation": ""
     },
     "iconify": {
@@ -438,19 +438,19 @@
       "explanation": "Du kannst eine Aktion nur einmal ausführen, und dein Fortschritt wird gespeichert, auch wenn du sie vorzeitig abbrichst."
     },
     "snap": {
-      "name": "Schnapp",
+      "name": "Schnapps",
       "explanation": "Die Aktion wird sofort abgeschlossen."
     },
     "stamina": {
       "name": "Ausdauer",
-      "explanation": "Jede Aktion verringert die Ausdauer des Spielers und des Ziels. Wenn die Ausdauer des Ziels aufgebraucht ist, erreichst du den Sieg, und wenn die Ausdauer des Spielers aufgebraucht ist, ist das Spiel vorbei. Wenn das Spiel vorbei ist, hast du nichts mehr zu verlieren, aber der gesamte Spielfortschritt wird unterbrochen."
+      "explanation": "Jede Aktion verringert die Ausdauer des Spielers und des Ziels. Wenn die Ausdauer des Ziels aufgebraucht ist, gewinnst du, und wenn die Ausdauer des Spielers aufgebraucht ist, ist das Spiel vorbei. Wenn das Spiel vorbei ist, hast du nichts mehr zu verlieren, aber der gesamte Spielfortschritt wird unterbrochen."
     },
     "enable-count": {
       "name": "Zählen aktivieren",
       "explanation": ""
     },
     "estimated-time": {
-      "name": "Voraussichtliche Zeit",
+      "name": "Voraussichtliche Dauer",
       "explanation": ""
     },
     "completed-count": {
@@ -458,7 +458,7 @@
       "explanation": ""
     },
     "current-count": {
-      "name": "Aktueller Stand des Zählens",
+      "name": "Aktueller Stand der Auszählung",
       "explanation": ""
     },
     "elapsed-time": {
@@ -478,7 +478,7 @@
       "explanation": ""
     },
     "rest-count": {
-      "name": "Restenanzahl",
+      "name": "Restanzahl",
       "explanation": ""
     },
     "act": {
@@ -502,7 +502,7 @@
       "explanation": "Fügen Sie diese Aktion der Reservierungswarteschlange zur sequenziellen Ausführung hinzu."
     },
     "reorder": {
-      "name": "Neu bestellen",
+      "name": "Erneut bestellen",
       "explanation": "Verschieben Sie diese reservierte Aktion an die ausgewählte Position in der Warteschlange."
     },
     "position": {
@@ -555,7 +555,7 @@
     },
     "equipment-type": {
       "name": "Ausrüstung",
-      "explanation": "Der Typ der Ausrüstung des Gegenstands."
+      "explanation": "Der Ausrüstungstyp des Gegenstands."
     },
     "necessary-item": {
       "name": "Notwendig",
@@ -563,58 +563,58 @@
     },
     "unnecessary-item": {
       "name": "Unnötig",
-      "explanation": "Du kannst den Gegenstand nicht ausrüsten, aber allein der Besitz hat bereits Auswirkungen. Der Effekt wird mit der Anzahl der Gegenstände multipliziert, die du besitzt."
+      "explanation": "Du kannst den Gegenstand nicht anlegen, aber schon allein der Besitz hat Auswirkungen. Der Effekt wird mit der Anzahl der Gegenstände multipliziert, die du besitzt."
     },
     "impossible-item": {
       "name": "Unmöglich",
       "explanation": "Dieser Gegenstand kann nicht ausgerüstet werden."
     },
     "consumable-item": {
-      "name": "Verbrauchbar",
-      "explanation": "Wenn es mit Ausrüstung ausgerüstet ist, entfaltet es seine Wirkung, wird jedoch bei jeder Aktion verbraucht."
+      "name": "Verbrauchsmaterial",
+      "explanation": "Wenn es mit Ausrüstung ausgestattet ist, entfaltet es seine Wirkung, wird jedoch bei jeder Aktion verbraucht."
     },
     "buy": {
       "name": "Kaufen",
-      "explanation": "Der Wert des Gegenstands zum Zeitpunkt des Kaufens."
+      "explanation": "Der Wert des Gegenstands zum Zeitpunkt des Kaufs."
     },
     "buying-value": {
-      "name": "Wert des Kaufs",
-      "explanation": "Der Wert des Gegenstands zum Zeitpunkt des Kaufens."
+      "name": "Kaufwert",
+      "explanation": "Der Wert des Gegenstands zum Zeitpunkt des Kaufs."
     },
     "sell": {
       "name": "Verkaufen",
-      "explanation": "Der Wert des Gegenstands beim Verkaufen."
+      "explanation": "Der Wert des Gegenstands beim Verkauf."
     },
     "selling": {
       "name": "Verkaufen",
       "explanation": ""
     },
     "kind": {
-      "name": "Art",
+      "name": "Kunst",
       "explanation": ""
     },
     "selling-value": {
-      "name": "Wert des Verkaufs",
-      "explanation": "Der Wert des Gegenstands beim Verkaufen."
+      "name": "Verkaufswert",
+      "explanation": "Der Wert des Gegenstands beim Verkauf."
     },
     "trade": {
       "name": "Handeln",
       "explanation": ""
     },
     "trade-failed": {
-      "name": "Handeln fehlgeschlagen",
-      "explanation": "Das Handeln ist fehlgeschlagen."
+      "name": "Transaktion fehlgeschlagen",
+      "explanation": "Der Vorgang ist fehlgeschlagen."
     },
     "capacity-full": {
       "name": "Ausgebucht",
-      "explanation": "Inventar-Kapazität ausgeschöpft."
+      "explanation": "Lagerkapazität ausgeschöpft."
     },
     "queue-full": {
       "name": "Warteschlange voll",
       "explanation": "Die Reservierungswarteschlange ist voll."
     },
     "already-queued": {
-      "name": "Bereits in der Warteschlange",
+      "name": "Steht bereits in der Warteschlange",
       "explanation": "Diese Aktion wird bereits ausgeführt oder ist reserviert."
     },
     "purchase-limit-reached": {
@@ -623,7 +623,7 @@
     },
     "completed-maximum": {
       "name": "Abgeschlossenes Maximum",
-      "explanation": "Sie haben die maximale Anzahl an Abgeschlossenen Durchläufen erreicht."
+      "explanation": "Sie haben die maximale Anzahl an abgeschlossenen Durchläufen erreicht."
     },
     "relationship": {
       "name": "Beziehung",
@@ -663,7 +663,7 @@
     },
     "restore": {
       "name": "Wiederherstellen",
-      "explanation": "Beeinflusst die Menge an Wiederherstellung im Kampf."
+      "explanation": "Beeinflusst den Umfang der Regeneration im Kampf."
     },
     "speed": {
       "name": "Geschwindigkeit",
@@ -671,7 +671,7 @@
     },
     "chance": {
       "name": "Zufall",
-      "explanation": "Die Aktion kann einen Erfolg bringen, aber wenn sie fehlschlägt, erhältst du weder Belohnungen noch Erfahrung."
+      "explanation": "Die Aktion kann erfolgreich sein, aber wenn sie fehlschlägt, erhältst du weder Belohnungen noch Erfahrungspunkte."
     },
     "experience": {
       "name": "Erfahrung",
@@ -695,7 +695,7 @@
     },
     "level-gap": {
       "name": "Level-Unterschied",
-      "explanation": "Informationen zu numerischen Berechnungen finden Sie im Block „Level“."
+      "explanation": "Informationen zu numerischen Berechnungen finden Sie im Abschnitt „Level“."
     },
     "reflected-value": {
       "name": "Reflektierter Wert",
@@ -710,15 +710,15 @@
       "explanation": "Die Stufe der Kategorie des Spielers minus die Stufe dieser Aktion. Bei „Erfahrung“ ist die Situation umgekehrt."
     },
     "level-gap-action": {
-      "name": "Aktionen zur Schließung von Leistungslücken",
-      "explanation": "Wenn es sich bei dem Typ des Fortschritts um „Ausdauer“ handelt, ist dies der einzigartige Wert, den diese Aktion festlegt."
+      "name": "Maßnahmen zur Schließung von Leistungslücken",
+      "explanation": "Wenn es sich bei der Art des Fortschritts um „Ausdauer“ handelt, ist dies der einzigartige Wert, den diese Aktion festlegt."
     },
     "level-gap-item": {
       "name": "Level-Lücke – Gegenstand",
       "explanation": "Dies ist der Korrekturwert von ausgerüsteten Gegenständen oder von Gegenständen, die auch dann eine Wirkung haben, wenn sie nicht ausgerüstet sind."
     },
     "no-status": {
-      "name": "Keine Status",
+      "name": "Kein Status",
       "explanation": "Es gibt keine Statuskategorien."
     },
     "targeting-all-categories": {
@@ -731,7 +731,7 @@
     },
     "hint-language-1": {
       "name": "Hinweis Sprache 1",
-      "explanation": "Dies gilt nur, wenn der Urheber eine Übersetzung bereitgestellt hat."
+      "explanation": "Dies gilt nur, wenn der Urheber eine Übersetzung zur Verfügung gestellt hat."
     },
     "hint-event-0": {
       "name": "Hinweis-Ereignis 0",
@@ -743,23 +743,23 @@
     },
     "hint-debug-0": {
       "name": "Hinweis Debug 0",
-      "explanation": "Es wird nur während der Debug-Phase angezeigt."
+      "explanation": "Dies wird nur während der Debug-Phase angezeigt."
     },
     "hint-debug-1": {
       "name": "Hinweis Debug 1",
       "explanation": "Es wird nicht angezeigt, wenn das Spiel veröffentlicht und vertrieben wird."
     },
     "hint-config-0": {
-      "name": "Hinweis Konfiguration 0",
-      "explanation": "Konfigurieren Sie die Einstellungen für die Darstellung und Verarbeitung des Spiels."
+      "name": "Hinweis zur Konfiguration 0",
+      "explanation": "Konfigurieren Sie die Einstellungen für die Darstellung und die Spielabwicklung."
     },
     "hint-config-1": {
-      "name": "Hinweis Konfiguration 1",
+      "name": "Hinweis zur Konfiguration 1",
       "explanation": "Spieldaten können eingegeben, ausgegeben und zurückgesetzt werden."
     },
     "hint-statistics-0": {
       "name": "Hinweis-Statistiken 0",
-      "explanation": "Du kannst dir den bisherigen Fortschritt des Spiels ansehen."
+      "explanation": "Du kannst dir den bisherigen Spielfortschritt ansehen."
     },
     "hint-general-0": {
       "name": "Hinweis Allgemein 0",
@@ -791,7 +791,7 @@
     },
     "hint-properties-2": {
       "name": "Hinweis: Eigenschaften 2",
-      "explanation": "Der Effekt wird durch die Ausrüstung des Gegenstands ausgeglichen. (Einige Gegenstände müssen nicht ausgerüstet werden.)"
+      "explanation": "Der Effekt wird durch das Ausrüsten des Gegenstands ausgeglichen. (Einige Gegenstände müssen nicht ausgerüstet werden.)"
     },
     "hint-property-0": {
       "name": "Hinweis-Eigenschaft 0",
@@ -799,7 +799,7 @@
     },
     "hint-property-1": {
       "name": "Hinweis Eigenschaft 1",
-      "explanation": "Der Wert wird ausgehend vom zugewiesenen Anfangswert berechnet, wobei die Kategorieebene, die für die Aktion festgelegte Stufe und die Korrektur für ausgerüstete Gegenstände berücksichtigt werden."
+      "explanation": "Der Wert wird auf der Grundlage des zugewiesenen Anfangswerts berechnet, wobei die Kategorieebene, die für die Aktion festgelegte Stufe und die Korrektur für ausgerüstete Gegenstände berücksichtigt werden."
     },
     "hint-trade-0": {
       "name": "Hinweis Handel 0",
@@ -815,30 +815,30 @@
     },
     "hint-items-1": {
       "name": "Hinweis 1",
-      "explanation": "Es kann jeweils nur ein Gegenstand aus der Liste ausgerüstet werden. (Sofern der Gegenstand als „ausrüstbar“ in der Kategorie „Ausrüstung“ gekennzeichnet ist.)"
+      "explanation": "Es kann jeweils nur ein Gegenstand aus der Liste ausgerüstet werden. (Sofern der Gegenstand in der Kategorie „Ausrüstung“ als „ausrüstbar“ gekennzeichnet ist.)"
     },
     "hint-items-2": {
       "name": "Hinweise 2",
-      "explanation": "Gegenstände, die die Freigabebedingungen nicht erfüllen, sind gesperrt und können nicht im Detail eingesehen werden."
+      "explanation": "Objekte, die die Freigabebedingungen nicht erfüllen, sind gesperrt und können nicht im Detail eingesehen werden."
     },
     "hint-item-0": {
       "name": "Hinweis Nr. 0",
-      "explanation": "Bei „Items“ handelt es sich um Elemente, die mit dem Besitz von Gegenständen wie Ausrüstung, Verbrauchbaren und Wertsachen zusammenhängen."
+      "explanation": "Unter „Gegenstände“ versteht man Elemente, die mit dem Besitz von Gegenständen wie Ausrüstung, Verbrauchsgütern und Wertsachen zusammenhängen."
     },
     "hint-item-1": {
       "name": "Hinweis 1",
-      "explanation": "Es kann jeweils nur ein Gegenstand aus einer Kategorie ausgerüstet werden. (Sofern dieser als Kategorie als ausrüstbar festgelegt ist)"
+      "explanation": "Es kann jeweils nur ein Gegenstand aus einer Kategorie ausgerüstet werden. (Sofern diese Kategorie als ausrüstbar festgelegt ist)"
     },
     "hint-item-2": {
       "name": "Hinweis Nr. 2",
-      "explanation": "Gegenstände, die die Freigabebedingungen nicht erfüllen, sind gesperrt und können nicht im Detail eingesehen werden."
+      "explanation": "Objekte, die die Freigabebedingungen nicht erfüllen, sind gesperrt und können nicht im Detail eingesehen werden."
     },
     "hint-act-0": {
       "name": "Hinweis Akt 0",
       "explanation": "Eine Aktion starten oder beenden."
     },
     "hint-act-1": {
-      "name": "Hinweis, 1. Akt",
+      "name": "Anmerkung, 1. Akt",
       "explanation": "Die Anzahl der Ausführungen kann festgelegt werden."
     },
     "hint-queue-0": {
@@ -851,11 +851,11 @@
     },
     "hint-actions-1": {
       "name": "Hinweis: Aktionen 1",
-      "explanation": "In einer Kategorie kann jeweils nur ein Gegenstand ausgeführt werden."
+      "explanation": "In einer Kategorie darf jeweils nur ein Gegenstand aufgeführt werden."
     },
     "hint-actions-2": {
       "name": "Hinweis: Aktionen 2",
-      "explanation": "In einigen Kategorien können Aktionen in mehreren Kategorien gleichzeitig ablaufen."
+      "explanation": "In einigen Kategorien können Aktionen gleichzeitig in mehreren Kategorien stattfinden."
     },
     "hint-actions-3": {
       "name": "Hinweis: Aktionen 3",
@@ -886,7 +886,7 @@
       "explanation": "Je nach der auszuführenden Aktion sind weitere Korrekturen erforderlich."
     },
     "hint-inventory-0": {
-      "name": "Hinweis-Inventar 0",
+      "name": "Hinweis-Verzeichnis 0",
       "explanation": "Halten Sie die Taste gedrückt, um die Ausrüstung des Gegenstands zu wechseln."
     },
     "hint-activity-0": {
@@ -894,7 +894,7 @@
       "explanation": "Durch langes Drücken wird die Ausführung der Aktion umgeschaltet."
     },
     "hint-character-0": {
-      "name": "Hinweiszeichen 0",
+      "name": "Hinweisschild 0",
       "explanation": "Dieser Inhalt entspricht genau dem, was beim Aufrufen einer Kategorie angezeigt wird."
     },
     "hint-player-0": {
@@ -919,11 +919,11 @@
     },
     "comebacked": {
       "name": "Zurückgekehrt",
-      "explanation": "Willkommen zurück! Der Fortschritt während deiner Abwesenheit:"
+      "explanation": "Willkommen zurück! Die Fortschritte während deiner Abwesenheit:"
     },
     "gameovered": {
       "name": "Spiel vorbei",
-      "explanation": "Das Spiel ist vorbei. Dein Fortschritt wurde zurückgesetzt."
+      "explanation": "Das Spiel ist vorbei. Dein Spielstand wurde zurückgesetzt."
     },
     "completed": {
       "name": "Abgeschlossen",
@@ -1031,7 +1031,7 @@
     },
     "performing-highly": {
       "name": "Hervorragende Leistung",
-      "explanation": "Erhöht die Aktualisierungshäufigkeit. Bei rechenintensiven Vorgängen empfehlen wir, diese Funktion auszuschalten. Die Zeit für die Ausführung der einzelnen Aktionen wird dadurch nicht beeinflusst."
+      "explanation": "Erhöht die Aktualisierungshäufigkeit. Bei rechenintensiven Vorgängen empfehlen wir, diese Funktion zu deaktivieren. Die Ausführungszeit der einzelnen Aktionen wird dadurch nicht beeinflusst."
     },
     "export-game": {
       "name": "Spiel exportieren",
@@ -1059,7 +1059,7 @@
     },
     "reset-debug-mode": {
       "name": "Debug-Modus zurücksetzen",
-      "explanation": "Im Debug-Modus muss im Bestätigungsfeld keine Eingabe erfolgen."
+      "explanation": "Im Debug-Modus muss im Bestätigungsfeld nichts eingegeben werden."
     },
     "force-restart": {
       "name": "Neustart erzwingen",

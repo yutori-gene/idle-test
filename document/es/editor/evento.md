@@ -9,6 +9,14 @@ ___
 ## [_información_](es/editor/información)
 ___
 
+## Categoría.
+El ID de la categoría a la que pertenece la tarea
+- Especifica el ID de la categoría a la que se asignará este evento como tarea.
+- Una vez realizada la configuración, se añadirá una lista de tareas a la pantalla de categorías del jugador y, en la lista de misiones, estas se mostrarán agrupadas por categorías.
+- Si se deja en blanco, no se incluirá en ninguna categoría y aparecerá agrupado al principio de la lista de misiones.
+- Solo se utilizan para la visualización los eventos con el valor de sincronización «`matched`». En cualquier otro caso, aunque se realice la configuración, no afectará a la visualización.
+___
+
 ## cronometraje
 Configuración del tiempo de activación de eventos.
 
@@ -109,5 +117,9 @@ Probabilidad de que la obtención alcance el éxito (los valores negativos solo 
 ___
 
 ## grupo de trabajo
-Identificador de grupo de la tarea (actualmente no se utiliza)
-- Este elemento no está actualmente en uso. Está reservado para futuras mejoras.
+Clasificación de los grupos de visualización de tareas
+- Aplique uno de los grupos configurados en Básico.
+- La lista de tareas se muestra según el orden de la configuración de los grupos.
+- Dentro de cada categoría, se muestran divididos en grupos.
+- Si se deja en blanco, no se realiza ninguna agrupación.
+- [_general_](es/editor/general)

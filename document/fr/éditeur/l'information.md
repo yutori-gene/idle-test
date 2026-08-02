@@ -111,6 +111,7 @@ Reprendre les configurations de couleur de l'élément parent.
 - Si elle est vide, la couleur configurée dans l'élément parent est reprise.
 - La hiérarchie des types pour chaque élément est la suivante
 - Par exemple, si une action dispose d'une configuration de couleurs individuelles, celle-ci sera utilisée, tandis que si l'action ne dispose pas d'une configuration de couleurs individuelles, la couleur de la catégorie ou du monde sera utilisée.
+- Si un événement est également associé à une catégorie, il reprend la couleur de cette catégorie, tout comme les actions et les objets.
 ```
 world
 ├── category

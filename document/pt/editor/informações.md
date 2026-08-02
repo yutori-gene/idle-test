@@ -111,6 +111,7 @@ Assumir as configurações de cor do elemento pai.
 - Se estiver em branco, a cor configurada no elemento pai será assumida.
 - A hierarquia de tipos para cada elemento é a seguinte
 - Por exemplo, se uma ação tiver uma configuração de cor individual, ela será usada, ao passo que se a ação não tiver uma configuração de cor individual, será usada a Categoria ou a cor do mundo.
+- Se o evento também tiver uma configuração de categoria, ele herdará a cor dessa categoria, da mesma forma que as Ações e os Itens.
 ```
 world
 ├── category

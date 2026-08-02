@@ -188,10 +188,20 @@ export const action: Markdown = {
 
 // category
 
+export const tasks: Markdown = {
+	title: "Aufgabe",
+	summary: "Liste der Aufgaben in dieser Kategorie",
+	points: ["Dies ist eine Liste der dieser Kategorie zugeordneten Aufgaben.", "Wenn Sie eine Aufgabe auswählen, können Sie die Bedingungen für den Abschluss und die Belohnung einsehen.", "Wenn eine Kategorie nichts enthält, wird sie nicht angezeigt."],
+	options: {
+		preset: "Aufgaben",
+	},
+};
+
 export const category: Markdown = {
 	title: "Kategorie.",
 	summary: "Eine Zusammenstellung von verschiedenen Elementen.",
 	points: ["Dies ist ein Element, das Aktionen und Gegenstände zusammenführt."],
+	children: { tasks: tasks },
 	options: {
 		label: "Kategorie",
 		preset: "Kategorie",
@@ -226,11 +236,20 @@ export const activity: Markdown = {
 	},
 };
 
+export const missions: Markdown = {
+	title: "Mission",
+	summary: "Liste aller Aufgaben",
+	points: ["Die Ergebnisse werden nach Kategorien geordnet angezeigt.", "Aufgaben, für die keine Kategorie konfiguriert ist, werden am Anfang zusammengefasst angezeigt.", "Erledigte Aufgaben werden mit einem Häkchen markiert."],
+	options: {
+		preset: "Missionen",
+	},
+};
+
 export const character: Markdown = {
 	title: "Charakter",
 	summary: "Identifizierung und Beeinflussung der Situation des Protagonisten.",
 	points: ["Dieser Inhalt ist identisch mit dem, der bei der Bedienung der Kategorie angezeigt wird."],
-	children: { activity: activity, inventory: inventory, status: status },
+	children: { activity: activity, inventory: inventory, status: status, missions: missions },
 	options: {
 		label: "Zeichen",
 		preset: "Zeichen",

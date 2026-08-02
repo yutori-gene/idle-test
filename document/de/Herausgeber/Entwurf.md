@@ -5,25 +5,26 @@ Konfigurationen für das visuelle Erscheinungsbild, wie z. B. Farben und Schrift
 - Wenn es individuelle Konfigurationen für jedes Element gibt, haben diese Vorrang vor dem Gesamtdesign der Welt.
 ___
 
-## vorherrschende Farbe
-Die wichtigsten Farben der Welt
-- Wird als Balkenfarbe verwendet.
-- Die entgegengesetzte Farbe davon wird für die Balkenschatten verwendet.
+## Balkenfarbe
+Hintergrundfarbe der Leiste
+- Wird als Hintergrundfarbe für die Leiste verwendet.
+- Da diese Farbe als Hintergrund für den gesamten Bildschirm dient, werden auch die Farben der ausgewählten Zeile und der Bildlaufleiste auf dieser Grundlage festgelegt.
 ___
 
-## ergänzende Farbe
-Hilfsfarben für Hintergrund und Text
-- Farbe, die als Hintergrund- und Textfarbe verwendet wird.
-- Farbtöne, die der Hauptfarbe nahe kommen, mischen sich.
+## Textfarbe
+Farbe der Schrift und des Hintergrunds
+- Wird als Schriftfarbe verwendet.
+- Wenn Sie keine Konfiguration für ein Hintergrundbild durchführen, wird ein Farbverlauf auf Basis dieser Farbe als Hintergrund verwendet.
+- Wenn man den Kontrast zur Hintergrundfarbe stark erhöht, lassen sich die Buchstaben leichter lesen.
 ___
 
-## 影色
-バーの影のカラー
-- バーやヘッダーに落ちる影の色として使用されます。
-- バー色よりも暗い色にすると自然な影になります。
+## Schattenfarbe
+Farbe des Balkenschattens
+- Wird als Farbe für die Schatten verwendet, die auf die Leiste und die Kopfzeile fallen.
+- Wenn Sie eine Farbe wählen, die dunkler ist als die der Leiste, entstehen natürliche Schatten.
 ___
 
 ## Hintergrundbild
 Hintergrundbild für das gesamte Spiel
 - Konfiguriert das Hintergrundbild des Spiels.
-- Wird kein Bild konfiguriert, ist der Hintergrund ein Farbverlauf auf der Basis der Hilfsfarbe.
+- Wenn keine Konfiguration für ein Bild vorgenommen wird, wird ein Hintergrund mit einem Farbverlauf verwendet, der auf der Schriftfarbe basiert.

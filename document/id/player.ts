@@ -188,10 +188,20 @@ export const action: Markdown = {
 
 // category
 
+export const tasks: Markdown = {
+	title: "Tugas",
+	summary: "Daftar tugas dalam kategori",
+	points: ["Berikut adalah daftar tugas yang ditugaskan ke Kategori ini.", "Setelah memilih tugas, Anda dapat memeriksa persyaratan penyelesaian dan hadiahnya.", "Jika tidak ada satu pun tugas dalam kategori tersebut, kategori tersebut tidak akan ditampilkan."],
+	options: {
+		preset: "tugas",
+	},
+};
+
 export const category: Markdown = {
 	title: "Kategori.",
 	summary: "Kompilasi berbagai elemen.",
 	points: ["Ini adalah elemen yang menyatukan aksi dan item."],
+	children: { tasks: tasks },
 	options: {
 		label: "kategori",
 		preset: "kategori",
@@ -226,11 +236,20 @@ export const activity: Markdown = {
 	},
 };
 
+export const missions: Markdown = {
+	title: "Misi",
+	summary: "Daftar semua tugas",
+	points: ["Hasilnya akan ditampilkan secara terkelompok berdasarkan kategori.", "Tugas yang tidak ada konfigurasi kategori akan ditampilkan secara terpusat di bagian atas.", "Tugas yang telah diselesaikan akan ditandai dengan tanda centang."],
+	options: {
+		preset: "misi",
+	},
+};
+
 export const character: Markdown = {
 	title: "karakter",
 	summary: "Identifikasi dan pengoperasian situasi protagonis.",
 	points: ["Konten ini identik dengan apa yang ditampilkan dengan mengoperasikan Kategori."],
-	children: { activity: activity, inventory: inventory, status: status },
+	children: { activity: activity, inventory: inventory, status: status, missions: missions },
 	options: {
 		label: "karakter",
 		preset: "karakter",

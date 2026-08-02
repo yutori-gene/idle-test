@@ -18,3 +18,10 @@ ___
 Daftar semua properti
 - Hanya nilai koreksi kategori per item yang ditampilkan.
 - Tergantung pada aksi yang akan dilakukan, terdapat koreksi lainnya.
+___
+
+## Misi
+Daftar semua tugas
+- Hasilnya akan ditampilkan secara terkelompok berdasarkan kategori.
+- Tugas yang tidak ada konfigurasi kategori akan ditampilkan secara terpusat di bagian atas.
+- Tugas yang telah diselesaikan akan ditandai dengan tanda centang.

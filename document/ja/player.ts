@@ -188,10 +188,20 @@ export const action: Markdown = {
 
 // category
 
+export const tasks: Markdown = {
+	title: "タスク",
+	summary: "カテゴリー内のタスクの一覧",
+	points: ["このカテゴリーに割り当てられたタスクの一覧です。", "タスクを選ぶと、達成条件と報酬を確認できます。", "カテゴリーにタスクが1つもない場合は表示されません。"],
+	options: {
+		preset: "tasks",
+	},
+};
+
 export const category: Markdown = {
 	title: "カテゴリー",
 	summary: "様々な要素をまとめたもの",
 	points: ["アクションやアイテムをまとめた要素です。"],
+	children: { tasks: tasks },
 	options: {
 		label: "category",
 		preset: "category",
@@ -226,11 +236,20 @@ export const activity: Markdown = {
 	},
 };
 
+export const missions: Markdown = {
+	title: "ミッション",
+	summary: "すべてのタスクの一覧",
+	points: ["カテゴリーごとにまとめて表示されます。", "カテゴリーが設定されていないタスクは先頭にまとめて表示されます。", "達成済みのタスクにはチェックの印が付きます。"],
+	options: {
+		preset: "missions",
+	},
+};
+
 export const character: Markdown = {
 	title: "キャラクター",
 	summary: "主人公の状況の確認と操作",
 	points: ["この内容はカテゴリーを操作して表示される内容と同一です。"],
-	children: { activity: activity, inventory: inventory, status: status },
+	children: { activity: activity, inventory: inventory, status: status, missions: missions },
 	options: {
 		label: "character",
 		preset: "character",

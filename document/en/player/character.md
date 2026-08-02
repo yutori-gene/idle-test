@@ -18,3 +18,10 @@ ___
 List of all properties
 - Only the value of the correction of the Category by Item is shown.
 - There are further other corrections depending on the Action to be performed.
+___
+
+## Mission
+List of All Tasks
+- They are grouped and displayed by category.
+- Tasks without a category are grouped together and displayed at the top.
+- Completed tasks are marked with a check mark.

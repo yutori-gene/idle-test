@@ -30,7 +30,7 @@
       "explanation": ""
     },
     "purchased-count": {
-      "name": "구매 카운트",
+      "name": "구매 횟수",
       "explanation": ""
     },
     "purchase-limit": {
@@ -39,7 +39,7 @@
     },
     "purchasable-count": {
       "name": "구매 가능",
-      "explanation": "아직 구매할 수 있는 시간입니다."
+      "explanation": "아직 구매할 시간이 남아 있습니다."
     },
     "total": {
       "name": "합계",
@@ -74,7 +74,7 @@
       "explanation": ""
     },
     "results": {
-      "name": "結果",
+      "name": "결과",
       "explanation": ""
     },
     "yes": {
@@ -159,7 +159,7 @@
     },
     "navigation-column": {
       "name": "칼럼",
-      "explanation": "이 칼럼의 위치와 화면 밖에 있는 칼럼을 포함한 합계 칼럼 수."
+      "explanation": "이 열의 위치와 화면 밖에 있는 열을 포함한 총 열 수."
     },
     "checked": {
       "name": "확인됨",
@@ -227,7 +227,7 @@
     },
     "console": {
       "name": "콘솔",
-      "explanation": "이 게임은 Idle RPG 콘솔 시스템에서 실행됩니다. 이 시스템은 무료이며 누구나 이용할 수 있으므로, 누구나 게임을 제작할 수 있습니다."
+      "explanation": "이 게임은 대기 RPG 콘솔 시스템에서 실행됩니다. 이 시스템은 무료이며 누구나 이용할 수 있으므로, 누구나 게임을 제작할 수 있습니다."
     },
     "general": {
       "name": "일반",
@@ -238,11 +238,11 @@
       "explanation": ""
     },
     "language-change-enable-general": {
-      "name": "언어 변경 활성화 일반",
+      "name": "언어 변경 활성화 - 일반",
       "explanation": "설정에서 표시 언어를 다른 언어로 변경할 수 있습니다."
     },
     "max-category-level": {
-      "name": "최대 카테고리 레벨",
+      "name": "최대 카테고리 수준",
       "explanation": "각 카테고리에서 달성할 수 있는 최고 레벨."
     },
     "level-common-ratio": {
@@ -259,7 +259,7 @@
     },
     "amount-earned": {
       "name": "수령 금액",
-      "explanation": "지금까지 획득한 코인의 합계입니다."
+      "explanation": "지금까지 획득한 코인의 총합입니다."
     },
     "time": {
       "name": "시간",
@@ -274,20 +274,20 @@
       "explanation": ""
     },
     "count-now": {
-      "name": "지금 수해보세요",
-      "explanation": "현재 소유하고 있는 아이템의 합계 수입니다."
+      "name": "지금 한번 해보세요",
+      "explanation": "현재 보유하고 있는 아이템의 총 개수입니다."
     },
     "count-gained": {
       "name": "획득한 카운트",
-      "explanation": "지금까지 확보한 아이템의 합계 수."
+      "explanation": "지금까지 확보한 아이템의 총 개수."
     },
     "total-level": {
-      "name": "합계 레벨",
+      "name": "총 레벨",
       "explanation": "모든 카테고리의 현재 레벨 합계."
     },
     "count-actioned": {
       "name": "조치 완료",
-      "explanation": "지금까지 수행된 액션의 합계 개수."
+      "explanation": "지금까지 수행된 액션의 총 개수."
     },
     "win": {
       "name": "승리",
@@ -310,11 +310,11 @@
       "explanation": ""
     },
     "adjustment": {
-      "name": "調整",
+      "name": "조정",
       "explanation": "소유한 아이템의 수나 카테고리 레벨을 높이거나 낮춥니다."
     },
     "adjustment-type": {
-      "name": "타입",
+      "name": "유형",
       "explanation": ""
     },
     "adjustment-category": {
@@ -323,7 +323,7 @@
     },
     "adjustment-action": {
       "name": "액션",
-      "explanation": "이렇게 하면 해당 액션이 수행된 횟수가 증가하거나 감소합니다. 다만, 액션을 완료했을 때 획득한 보상은 반영되지 않습니다."
+      "explanation": "이렇게 하면 해당 액션이 수행된 횟수가 늘어나거나 줄어듭니다. 다만, 액션을 완료했을 때 얻은 보상은 반영되지 않습니다."
     },
     "adjustment-item": {
       "name": "아이템",
@@ -331,7 +331,7 @@
     },
     "adjustment-id": {
       "name": "ID",
-      "explanation": "타겟 유형의 ID를 지정하십시오. 비워 두면 모든 ID에 대해 덧셈과 뺄셈이 조정됩니다."
+      "explanation": "대상 유형의 ID를 지정하십시오. 비워 두면 모든 ID에 대해 덧셈과 뺄셈이 조정됩니다."
     },
     "adjustment-sign": {
       "name": "부호",
@@ -363,7 +363,7 @@
     },
     "iconify": {
       "name": "아이콘화",
-      "explanation": "이 게임은 iconify에서 제공하는 아이콘 세트를 사용합니다. 제작에 참여해주신 모든 분께 감사의 말씀을 전합니다."
+      "explanation": "이 게임은 iconify에서 제공하는 아이콘 세트를 사용합니다. 제작에 참여해 주신 모든 분께 감사의 말씀을 전합니다."
     },
     "category": {
       "name": "카테고리",
@@ -387,7 +387,7 @@
     },
     "standalone": {
       "name": "독립형",
-      "explanation": "다른 카테고리의 액션 진행 상황과 관계없이 독립적으로 실행됩니다."
+      "explanation": "다른 카테고리의 작업 진행 상황과 관계없이 독립적으로 실행됩니다."
     },
     "action": {
       "name": "액션",
@@ -430,7 +430,7 @@
       "explanation": ""
     },
     "persistent": {
-      "name": "지속적",
+      "name": "지속적인",
       "explanation": "일련의 액션을 수행하게 되며, 액션을 완료할 때마다 보상을 받게 됩니다."
     },
     "single": {
@@ -443,7 +443,7 @@
     },
     "stamina": {
       "name": "스태미나",
-      "explanation": "각 액션은 플레이어와 타겟의 스태미나를 감소시킵니다. 타겟의 스태미나가 바닥나면 플레이어가 승리하고, 플레이어의 스태미나가 바닥나면 게임이 종료됩니다. 게임이 종료되면 잃을 것은 없지만, 진행 중이던 모든 액션은 중단됩니다."
+      "explanation": "각 액션은 플레이어와 대상의 체력을 감소시킵니다. 대상의 체력이 바닥나면 플레이어가 승리하고, 플레이어의 체력이 바닥나면 게임이 종료됩니다. 게임이 종료되어도 잃을 것은 없지만, 진행 중이던 모든 액션은 중단됩니다."
     },
     "enable-count": {
       "name": "카운트 활성화",
@@ -478,7 +478,7 @@
       "explanation": ""
     },
     "rest-count": {
-      "name": "잔여 카운트",
+      "name": "남은 횟수",
       "explanation": ""
     },
     "act": {
@@ -499,11 +499,11 @@
     },
     "reserve": {
       "name": "예약",
-      "explanation": "이 액션을 예약 대기열에 추가하여 순차적으로 실행하도록 하십시오."
+      "explanation": "이 작업을 예약 대기열에 추가하여 순차적으로 실행되도록 하십시오."
     },
     "reorder": {
       "name": "재주문",
-      "explanation": "이 예약된 액션을 대기열의 선택한 위치로 이동합니다."
+      "explanation": "이 예약된 작업을 대기열의 선택한 위치로 이동합니다."
     },
     "position": {
       "name": "대기 순위",
@@ -559,7 +559,7 @@
     },
     "necessary-item": {
       "name": "필요",
-      "explanation": "해당 아이템을 장착 중이면 효과가 발동됩니다."
+      "explanation": "해당 아이템을 장착하고 있으면 효과가 발동됩니다."
     },
     "unnecessary-item": {
       "name": "불필요",
@@ -567,7 +567,7 @@
     },
     "impossible-item": {
       "name": "불가능",
-      "explanation": "이 아이템은 장비할 수 없습니다."
+      "explanation": "이 아이템은 장착할 수 없습니다."
     },
     "consumable-item": {
       "name": "소모품",
@@ -575,15 +575,15 @@
     },
     "buy": {
       "name": "구매하기",
-      "explanation": "구매 시 해당 아이템의 값."
+      "explanation": "구매 시 해당 아이템의 가격."
     },
     "buying-value": {
       "name": "구매 가치",
-      "explanation": "구매 시 해당 아이템의 값."
+      "explanation": "구매 시 해당 아이템의 가격."
     },
     "sell": {
       "name": "판매",
-      "explanation": "판매 시 해당 아이템의 값."
+      "explanation": "판매 시 해당 아이템의 가격."
     },
     "selling": {
       "name": "판매",
@@ -595,10 +595,10 @@
     },
     "selling-value": {
       "name": "판매 가치",
-      "explanation": "판매 시 해당 아이템의 값."
+      "explanation": "판매 시 해당 아이템의 가격."
     },
     "trade": {
-      "name": "取引",
+      "name": "거래",
       "explanation": ""
     },
     "trade-failed": {
@@ -615,7 +615,7 @@
     },
     "already-queued": {
       "name": "이미 대기 중",
-      "explanation": "이 액션은 이미 실행 중이거나 예약되어 있습니다."
+      "explanation": "이 작업은 이미 실행 중이거나 예약되어 있습니다."
     },
     "purchase-limit-reached": {
       "name": "구매 한도 초과",
@@ -634,7 +634,7 @@
       "explanation": ""
     },
     "requirement-equipment": {
-      "name": "요구사항 장비",
+      "name": "필수 장비",
       "explanation": "이 아이템은 반드시 장착해야 합니다."
     },
     "property": {
@@ -647,7 +647,7 @@
     },
     "attack": {
       "name": "공격",
-      "explanation": "타겟에게 피해를 입힙니다."
+      "explanation": "대상에게 피해를 줍니다."
     },
     "defence": {
       "name": "방어",
@@ -671,11 +671,11 @@
     },
     "chance": {
       "name": "찬스",
-      "explanation": "이 액션은 성공할 수도 있지만, 실패할 경우 보상을 받거나 경험치를 획득할 수 없습니다."
+      "explanation": "이 행동은 성공할 수도 있지만, 실패할 경우 보상을 받거나 경험치를 얻을 수 없습니다."
     },
     "experience": {
       "name": "경력",
-      "explanation": "액션으로 얻는 경험치에 영향을 미칩니다."
+      "explanation": "액션을 통해 얻는 경험치에 영향을 미칩니다."
     },
     "correction": {
       "name": "보정",
@@ -707,10 +707,10 @@
     },
     "level-gap-category": {
       "name": "레벨 격차 카테고리",
-      "explanation": "플레이어의 카테고리 레벨에서 해당 액션의 레벨을 마이너스한 값입니다. “경험치”의 경우에는 상황이 반대로 적용됩니다."
+      "explanation": "플레이어의 카테고리 레벨에서 해당 액션의 레벨을 뺀 값입니다. “경험치”의 경우에는 상황이 반대로 적용됩니다."
     },
     "level-gap-action": {
-      "name": "레벨 격차 대응 액션",
+      "name": "레벨 격차에 대응하는 조치",
       "explanation": "진행 유형이 스태미나일 때, 이 액션이 설정하는 고유 값입니다."
     },
     "level-gap-item": {
@@ -722,7 +722,7 @@
       "explanation": "사용 가능한 상태 카테고리가 없습니다."
     },
     "targeting-all-categories": {
-      "name": "모든 카테고리 타겟",
+      "name": "모든 카테고리 대상",
       "explanation": "이 속성 보정은 모든 카테고리에 적용됩니다."
     },
     "hint-language-0": {
@@ -739,11 +739,11 @@
     },
     "hint-event-1": {
       "name": "힌트 이벤트 1",
-      "explanation": "활성화되거나 아이템을 획득하거나 감소할 때 등의 상황에서 메시지가 표시됩니다."
+      "explanation": "활성화되거나 아이템을 획득하거나 소모될 때 등의 상황에서 메시지가 표시됩니다."
     },
     "hint-debug-0": {
       "name": "힌트 디버그 0",
-      "explanation": "디버그 중에만 표시됩니다."
+      "explanation": "디버깅 중에만 표시됩니다."
     },
     "hint-debug-1": {
       "name": "힌트 디버그 1",
@@ -767,7 +767,7 @@
     },
     "hint-overview-0": {
       "name": "힌트 개요 0",
-      "explanation": "이 게임의 월드관(세계관, 배경)에 대해 확인해 보실 수 있습니다."
+      "explanation": "이 게임의 세계관(배경)에 대해 확인해 보실 수 있습니다."
     },
     "hint-overview-1": {
       "name": "힌트 개요 1",
@@ -779,7 +779,7 @@
     },
     "hint-correction-1": {
       "name": "힌트 보정 1",
-      "explanation": "이 보정은 해당 아이템의 영향 때문입니다. 해당 아이템을 확인해 보시기 바랍니다."
+      "explanation": "이 보정은 해당 아이템의 영향 때문입니다. 해당 아이템을 확인해 주시기 바랍니다."
     },
     "hint-properties-0": {
       "name": "힌트 속성 0",
@@ -799,7 +799,7 @@
     },
     "hint-property-1": {
       "name": "힌트 속성 1",
-      "explanation": "최종 값은 할당된 초기 값을 바탕으로, 카테고리 레벨, 해당 액션에 설정된 레벨, 그리고 장착된 아이템에 대한 보정치를 고려하여 계산됩니다."
+      "explanation": "최종 값은 할당된 초기 값을 바탕으로, 카테고리 레벨, 해당 액션에 설정된 레벨, 그리고 장착된 아이템의 보정치를 고려하여 계산됩니다."
     },
     "hint-trade-0": {
       "name": "힌트 거래 0",
@@ -811,7 +811,7 @@
     },
     "hint-items-0": {
       "name": "힌트 아이템 0",
-      "explanation": "길게 누르면 아이템의 장비를 장착할 수 있습니다."
+      "explanation": "길게 누르면 아이템을 장비할 수 있습니다."
     },
     "hint-items-1": {
       "name": "힌트 아이템 1",
@@ -823,11 +823,11 @@
     },
     "hint-item-0": {
       "name": "힌트 아이템 0",
-      "explanation": "‘아이템’은 장비, 소모품, 귀중품 등 물품을 보유하는 것과 관련된 요소를 말합니다."
+      "explanation": "‘아이템’은 장비, 소모품, 귀중품 등 물품을 소지하는 것과 관련된 요소를 말합니다."
     },
     "hint-item-1": {
       "name": "힌트 1번",
-      "explanation": "한 카테고리당 하나의 아이템만 장착할 수 있습니다. (해당 카테고리가 장비 가능하도록 설정된 경우)"
+      "explanation": "카테고리당 하나의 아이템만 장착할 수 있습니다. (해당 카테고리가 장비 가능하도록 설정된 경우)"
     },
     "hint-item-2": {
       "name": "힌트 2번",
@@ -835,7 +835,7 @@
     },
     "hint-act-0": {
       "name": "힌트 액트 0",
-      "explanation": "액션을 시작하거나 정지합니다."
+      "explanation": "액션을 시작하거나 중지합니다."
     },
     "hint-act-1": {
       "name": "힌트 1막",
@@ -847,15 +847,15 @@
     },
     "hint-actions-0": {
       "name": "힌트 액션 0",
-      "explanation": "길게 누르면 해당 액션의 실행 여부가 전환됩니다."
+      "explanation": "길게 누르면 해당 동작의 실행 여부가 전환됩니다."
     },
     "hint-actions-1": {
       "name": "힌트: 액션 1",
-      "explanation": "한 카테고리에서는 하나의 아이템만 실행할 수 있습니다."
+      "explanation": "한 카테고리에서는 하나의 항목만 실행할 수 있습니다."
     },
     "hint-actions-2": {
       "name": "힌트: 액션 2",
-      "explanation": "일부 카테고리의 경우, 여러 카테고리에서 진행되는 액션을 동시에 진행할 수 있습니다."
+      "explanation": "일부 카테고리의 경우, 여러 카테고리에서 진행되는 작업을 동시에 진행할 수 있습니다."
     },
     "hint-actions-3": {
       "name": "힌트: 액션 3",
@@ -863,7 +863,7 @@
     },
     "hint-action-0": {
       "name": "힌트 액션 0",
-      "explanation": "각 액션마다 경험치를 획득하여 경험 레벨을 올릴 수 있습니다."
+      "explanation": "각 액션을 수행할 때마다 경험치를 획득하여 레벨을 올릴 수 있습니다."
     },
     "hint-action-1": {
       "name": "힌트: 액션 1",
@@ -875,7 +875,7 @@
     },
     "hint-category-0": {
       "name": "힌트 카테고리 0",
-      "explanation": "이는 액션과 아이템을 하나로 묶어주는 요소입니다."
+      "explanation": "이는 액션과 아이템을 하나로 연결해 주는 요소입니다."
     },
     "hint-status-0": {
       "name": "힌트 상태 0",
@@ -883,23 +883,23 @@
     },
     "hint-status-1": {
       "name": "힌트 상태 1",
-      "explanation": "수행할 액션에 따라 그 밖에도 추가적인 보정 사항이 있습니다."
+      "explanation": "수행할 작업에 따라 그 외에도 추가적인 보정 사항이 있습니다."
     },
     "hint-inventory-0": {
       "name": "힌트 인벤토리 0",
-      "explanation": "길게 누르면 아이템의 장비를 장착할 수 있습니다."
+      "explanation": "길게 누르면 아이템을 장비할 수 있습니다."
     },
     "hint-activity-0": {
       "name": "힌트 활동 0",
-      "explanation": "길게 누르면 해당 액션의 실행 여부가 전환됩니다."
+      "explanation": "길게 누르면 해당 동작의 실행 여부가 전환됩니다."
     },
     "hint-character-0": {
-      "name": "힌트: 0번째 캐릭터",
-      "explanation": "이 콘텐츠는 카테고리를 실행했을 때 표시되는 내용과 동일합니다."
+      "name": "힌트: 0번째 문자",
+      "explanation": "이 콘텐츠는 해당 카테고리를 실행했을 때 표시되는 내용과 동일합니다."
     },
     "hint-player-0": {
       "name": "힌트: 플레이어 0",
-      "explanation": "기본적으로 각 칼럼 하단에는 동일한 설명이 힌트로 표시됩니다."
+      "explanation": "기본적으로 각 열 하단에는 동일한 설명이 힌트로 표시됩니다."
     },
     "hint-player-1": {
       "name": "힌트: 플레이어 1",
@@ -918,7 +918,7 @@
       "explanation": "조건이 충족되었습니다."
     },
     "comebacked": {
-      "name": "복귀했다",
+      "name": "돌아왔다",
       "explanation": "다시 오신 것을 환영합니다! 자리를 비우신 동안의 진행 상황은 다음과 같습니다:"
     },
     "gameovered": {
@@ -958,7 +958,7 @@
       "explanation": ""
     },
     "language-zh": {
-      "name": "중국어 (간체)",
+      "name": "중국어(간체)",
       "explanation": ""
     },
     "language-es": {
@@ -1023,15 +1023,15 @@
     },
     "showing-hint": {
       "name": "힌트",
-      "explanation": "작동 방법에 대한 안내를 표시합니다."
+      "explanation": "사용 방법에 대한 안내를 표시합니다."
     },
     "showing-navigation": {
       "name": "내비게이션",
-      "explanation": "칼럼 간을 이동할 수 있는 버튼이 표시됩니다. 버튼을 표시하지 않고도 스와이프하여 칼럼 간을 이동할 수 있습니다."
+      "explanation": "열 사이를 이동할 수 있는 버튼이 표시됩니다. 버튼을 표시하지 않아도 스와이프하여 열 사이를 이동할 수 있습니다."
     },
     "performing-highly": {
       "name": "뛰어난 성과",
-      "explanation": "업데이트 빈도를 높입니다. 작업 부하가 큰 경우에는 이 기능을 꺼짐 상태로 유지하는 것이 좋습니다. 각 액션의 실행 시간에는 영향을 미치지 않습니다."
+      "explanation": "업데이트 빈도를 높입니다. 작업 부하가 큰 경우에는 이 기능을 비활성화 상태로 유지하는 것이 좋습니다. 각 작업의 실행 시간에는 영향을 미치지 않습니다."
     },
     "export-game": {
       "name": "게임 내보내기",
@@ -1039,18 +1039,18 @@
     },
     "import-game": {
       "name": "게임 가져오기",
-      "explanation": "게임 데이터가 가져왔습니다."
+      "explanation": "게임 데이터가 불러왔습니다."
     },
     "import-mistake": {
       "name": "가져오기 오류",
-      "explanation": "게임 데이터를 불러오지 못했습니다."
+      "explanation": "게임 데이터를 불러올 수 없습니다."
     },
     "reset-game": {
       "name": "게임 초기화",
-      "explanation": "이 월드의 모든 진행 상황을 삭제합니다. 이 액션은 되돌릴 수 없습니다. 파일을 정말로 삭제할지 확인한 후, 입력란에 'DELETE'를 입력해 주세요. (디버그 모드에서는 필요 없음)"
+      "explanation": "이 월드의 모든 진행 상황을 삭제합니다. 이 작업은 되돌릴 수 없습니다. 파일을 정말로 삭제할지 확인한 후, 입력란에 'DELETE'를 입력해 주세요. (디버그 모드에서는 필요 없음)"
     },
     "reset-really": {
-      "name": "정말요?",
+      "name": "정말이에요?",
       "explanation": ""
     },
     "reset-alert": {
@@ -1059,11 +1059,11 @@
     },
     "reset-debug-mode": {
       "name": "디버그 모드 초기화",
-      "explanation": "디버그 모드에서는 확인 입력란에 아무것도 입력할 요구사항이 없습니다."
+      "explanation": "디버그 모드에서는 확인 입력란에 아무것도 입력할 필요가 없습니다."
     },
     "force-restart": {
       "name": "강제 재시작",
-      "explanation": "앱을 다시 로드합니다. 화면이 반응하지 않거나 멈춘 경우 이 기능을 사용하세요. 진행 상황에는 영향을 미치지 않습니다."
+      "explanation": "앱을 다시 불러옵니다. 화면이 반응하지 않거나 멈춘 경우 이 기능을 사용하세요. 진행 상황에는 영향을 미치지 않습니다."
     }
   }
 }
