@@ -11,7 +11,7 @@ Classification de base des mondes
 |[_action_](fr/éditeur/action)|Des éléments d'action tels que la collecte, la fabrication et le combat.|
 |[_article_](fr/éditeur/article)|Éléments de biens tels que les équipements et les consommables|
 |[_groupe_](fr/éditeur/groupe)|Définir des groupes d'affichage pour les catégories, les actions et les objets|
-|[_événement_](fr/éditeur/événement)|Système de messages et de récompenses déclenché par des conditions.|
+|[_tâche_](fr/éditeur/tâche)|Missions qui sont considérées comme accomplies lorsque les conditions sont remplies|
 |[_préétabli_](fr/éditeur/préétabli)|Personnalisation de l'affichage des éléments du système|
 ```
 world
@@ -19,6 +19,6 @@ world
 ├── action
 ├── item
 ├── group
-├── event
+├── task
 └── preset
 ```

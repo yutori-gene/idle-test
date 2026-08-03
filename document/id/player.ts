@@ -13,8 +13,8 @@ export const language: Markdown = {
 
 export const event: Markdown = {
 	title: "acara",
-	summary: "Sistem berbasis kondisi.",
-	points: ["Dipicu ketika kondisi terpenuhi.", "Pesan ditampilkan ketika diaktifkan, item diberikan atau dikurangi, dll."],
+	summary: "Sistem yang beroperasi pada waktu tertentu",
+	points: ["Fitur ini akan aktif pada waktu-waktu tertentu, seperti saat kembali ke permainan atau saat permainan berakhir.", "Saat diaktifkan, layar ini akan muncul, dan hadiah akan diberikan secara otomatis bersamaan dengan pesan tersebut.", "Tugas adalah sesuatu yang harus dipenuhi syarat-syaratnya dan diselesaikan, sedangkan imbalan akan diterima sendiri."],
 	options: {
 		preset: "acara",
 		label: "acara",
@@ -191,7 +191,7 @@ export const action: Markdown = {
 export const tasks: Markdown = {
 	title: "Tugas",
 	summary: "Daftar tugas dalam kategori",
-	points: ["Berikut adalah daftar tugas yang ditugaskan ke Kategori ini.", "Setelah memilih tugas, Anda dapat memeriksa persyaratan penyelesaian dan hadiahnya.", "Jika tidak ada satu pun tugas dalam kategori tersebut, kategori tersebut tidak akan ditampilkan."],
+	points: ["このカテゴリーに割り当てられたタスクの一覧です。", "タスクを選ぶと、達成条件と報酬を確認できます。", "報酬が未受け取りのタスクにはリボンが付きます。選んで獲得を押すと受け取れます。", "持てるアイテムの種類が上限に達している時は受け取れません。整理してから受け取り直します。", "カテゴリーにタスクが1つもない場合は表示されません。"],
 	options: {
 		preset: "tugas",
 	},
@@ -239,7 +239,7 @@ export const activity: Markdown = {
 export const missions: Markdown = {
 	title: "Misi",
 	summary: "Daftar semua tugas",
-	points: ["Hasilnya akan ditampilkan secara terkelompok berdasarkan kategori.", "Tugas yang tidak ada konfigurasi kategori akan ditampilkan secara terpusat di bagian atas.", "Tugas yang telah diselesaikan akan ditandai dengan tanda centang."],
+	points: ["カテゴリーごとにまとめて表示されます。", "カテゴリーが設定されていないタスクは先頭にまとめて表示されます。", "達成済みのタスクにはチェックの印が付きます。", "報酬が未受け取りのタスクにはリボンが付きます。選んで獲得を押すと受け取れます。", "一度達成したタスクは、その後に条件を満たさなくなっても達成のまま残ります。"],
 	options: {
 		preset: "misi",
 	},

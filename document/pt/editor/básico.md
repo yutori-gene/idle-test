@@ -9,6 +9,7 @@ Itens básicos de configuração para o mundo em geral.
 |[_visão geral_](pt/editor/visão geral)|Informações básicas sobre o mundo e seus autores|
 |[_geral_](pt/editor/geral)|Configurações básicas do jogo, incluindo configurações de idioma e nível|
 |[_design_](pt/editor/design)|Configurações de aparência visual, como cores e fontes do mundo.|
+|[_evento_](pt/editor/evento)|Mensagens e recompensas que são ativadas em momentos específicos|
 |[_desenvolvimento_](pt/editor/desenvolvimento)|Gerenciamento de notas e erros durante o desenvolvimento do mundo|
 ___
 
@@ -19,6 +20,9 @@ ___
 ___
 
 ## [_design_](pt/editor/design)
+___
+
+## [_Evento_](pt/editor/evento)
 ___
 
 ## [_desenvolvimento_](pt/editor/desenvolvimento)

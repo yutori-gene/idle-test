@@ -9,7 +9,7 @@ world
 ├── action
 ├── item
 ├── group
-├── event
+├── task
 └── preset
 `;
 
@@ -421,45 +421,39 @@ export const preset: Type.Information = {
 	},
 };
 
-export const event: Type.Event = {
-	title: "事件",
-	summary: "由条件触发的信息和奖励系统。",
-	points: ["当满足配置的时间/条件时就会触发，并显示一条信息。", "它可以在首次启动、游戏结束、关机返回或满足特定条件时触发。", "它可以改变类别的等级、执行动作的次数以及激活时拥有的物品计数。"],
+export const task: Type.Event = {
+	title: "任务",
+	summary: "满足条件即可完成的任务",
+	points: ["配置了条件后，当满足这些条件时即视为达成，屏幕上部会显示一条提示信息。", "将显示在玩家任务列表和类别任务列表中。", "奖励不会自动发放。玩家需打开任务并点击“获取”按钮后才能获取。", "在领取报酬之前，列表栏上会显示一条丝带，表示该报酬尚未领取。", "通过获取，可以改变类别等级、动作执行次数以及物品持有数量。", "对于希望在首次启动或游戏结束等非特定条件下触发的事件，请在“基本设置”中的“事件”中配置。"],
+	links: { event: "事件" },
 	children: {
 		information: information,
 		category: {
 			title: "类别",
 			summary: "任务所属类别的ID",
-			points: ["指定将此事件作为任务归入的类别ID。", "配置后，任务列表将添加到玩家类别页面中，并在任务列表中按类别汇总显示。", "如果留空，则表示不属于任何类别，将统一显示在任务列表的最前端。", "仅当时机为`matched`时，该事件才会用于显示。在其他时机下，即使进行了配置，也不会影响显示。"],
+			points: ["指定该任务所属类别的ID。", "配置后，任务列表将添加到玩家类别页面中，并在任务列表中按类别汇总显示。", "如果留空，则表示不属于任何类别，将统一显示在任务列表的最前端。"],
 		},
 		timing: {
 			title: "时间安排",
-			summary: "配置事件触发的时间。",
-			list: [
-				["时间安排", "激活条件", "复"],
-				["匹配", "首次满足 CONDITIONS（条件）中配置的条件时。", "只一次"],
-				["`comebacked`。", "当一个人从关机状态返回超过一秒，且有动作正在进行中时。", "时常"],
-				["游戏结束了", "玩家在战斗中耐力耗尽时。", "时常"],
-				["`已完成`。", "当达到所有类别的最大等级（maxCategoryLevels）时。", "只一次"],
-				["欢迎`.", "当我刚刚开始这个世界的时候。", "只一次"],
-				["`obtained`", "完成或确认单个类型的动作（如宝箱等）时。若满足条件，还将获得事件奖励", "时常"],
-			],
+			summary: "任务触发时机（固定为`matched`）",
+			points: ["任务在`matched`（满足配置条件时）状态下是固定的，无法编辑。", "奖励只能领取一次，一旦领取，该成就状态将保持不变。", "如果希望在其他时间点触发，请在“基本设置”中的“事件”中配置。"],
+			links: { event: "事件" },
 		},
 		unlocked: {
 			title: "初始显示状态",
-			summary: "事件图标的初始显示状态（触发与否取决于时机，在此配置下不会触发）",
-			points: ["事件的触发条件由时间决定，此选项仅影响列表图标的外观。", "secreted：在满足所有要求之前，该事件绝不会显示在事件列表中（但事件本身仍会按既定时间触发）。", "hidden・hinted：图标上会显示斜线，表示该内容尚未解锁。", "已发布：斜线消失，显示为“已发布”。"],
+			summary: "任务图标的初始显示状态（是否达成取决于条件，在此配置下不会达成）",
+			points: ["タスクの達成条件はrequirementsで決まり、この項目は一覧アイコンの見た目のみに影響します。", "secreted: 全requirementsを満たすまでタスクの一覧に一切表示されません（達成自体は条件で起こります）。", "hidden・hinted: アイコンに斜線が付き未解放として表示されます。", "released: 斜線が消え解放済みとして表示されます。", "一度達成したタスクは一覧から消えず、その後に条件を満たさなくなっても達成のまま表示されます。"],
 		},
 		requirements: {
 			title: "条款和条件",
-			summary: "触发事件和给予奖励的条件。",
-			points: ["触发事件或给予奖励的条件。", "在`matched`中，只有满足该条件时才会触发，并获取奖励。", "除`matched`以外的时机，当时机条件成立时，该效果将触发。此后，仅当满足在此处配置的条件时，才能获取奖励。"],
+			summary: "任务完成的条件",
+			points: ["タスクを達成させる条件です。", "この条件を満たすと達成になり、報酬を受け取れるようになります。", "一度達成すると、その後に条件を満たさなくなっても達成のままで、報酬もいつでも受け取れます。", "条件を設定していないタスクは達成しません。"],
 			children: requirement.children,
 		},
 		acquisitions: {
 			title: "报酬",
-			summary: "触发事件时的奖励配置。",
-			points: ["这是事件触发时的奖励。", "在`matched`中，只有在满足条件并触发时，才能获得奖励。", "除`matched`之外，只有在满足时机条件且符合conditions的条件时，才能获取奖励。", "您可以将计数配置为负值。例如，如果您在 \"游戏结束 \"时将物品的计数设为负值，那么游戏结束时您将失去这些物品。"],
+			summary: "任务完成时的奖励配置",
+			points: ["達成したタスクを開き、獲得のバーを押した時に受け取れる報酬です。", "カテゴリーのレベル、アクションの実行回数、アイテムの所持数を変化させることができます。", "数量にマイナスを設定することもできます。", "報酬を設定していないタスクは獲得のバーが出ず、達成した時点で完了になります。", "持てるアイテムの種類が上限に達している時は受け取れません。整理してから受け取り直します。"],
 			children: acquisition.children,
 		},
 		group: {
@@ -470,7 +464,7 @@ export const event: Type.Event = {
 		},
 	},
 	options: {
-		label: "事件",
+		label: "任务",
 	},
 };
 
@@ -681,7 +675,7 @@ export const type: Markdown = {
 	title: "类型。",
 	summary: "世界的基本分类",
 	points: ["世界由六种类型组成。", "所有元素都放在世界的正下方。", "动作和物品与所属类别的 ID 关联。"],
-	list: expandList("类型。", [category, action, item, group, event, preset]),
+	list: expandList("类型。", [category, action, item, group, task, preset]),
 	quote: typeTree,
 	options: {
 		label: "类型",
@@ -972,15 +966,83 @@ export const overview: Type.Overview = {
 	},
 };
 
+// タイミングごとの固定イベント。項目の説明はタスクと共通で、タイミング固有の説明だけ差し替える
+const toFixedEvent = (title: string, summary: string, points: string[], timingPoints: string[]): Type.Event => ({
+	title,
+	summary,
+	points,
+	children: {
+		...task.children,
+		category: {
+			title: "类别",
+			summary: "事件期间不会使用",
+			points: ["由于不会显示在任务列表中，因此不指定所属类别。", "编辑器中未显示输入框。"],
+		},
+		timing: {
+			title: "时间安排",
+			summary: "事件触发的时机（固定）",
+			points: timingPoints,
+		},
+		unlocked: {
+			title: "初始显示状态",
+			summary: "事件图标的初始显示状态（触发与否取决于时机，在此配置下不会触发）",
+			points: ["事件的触发条件由时机决定，此选项仅影响图标的外观。", "secreted：在满足所有要求之前，图标不会显示（但触发本身会根据时机发生）。", "hidden・hinted：图标上会显示斜线，表示该内容尚未解锁。", "已发布：斜线消失，显示为“已发布”。"],
+		},
+		requirements: {
+			title: "条款和条件",
+			summary: "获取报酬的条件",
+			points: ["当条件成立时，事件将触发，并打开专用界面显示相关内容。", "只有在触发时满足此处配置的条件，才能获取奖励。", "如果未配置条件，则每次触发时都会获取奖励。"],
+			children: requirement.children,
+		},
+		acquisitions: {
+			title: "报酬",
+			summary: "触发事件时的奖励配置。",
+			points: ["这是在时机合适且满足条件时获得的奖励。", "与任务不同，无需进行领取操作，在触发的同时会自动获取。", "可以为数量配置负值。例如，在游戏结束时将物品数量配置为负数，玩家就会失去这些物品。"],
+			children: acquisition.children,
+		},
+		group: {
+			title: "工作组",
+			summary: "事件期间不会使用",
+			points: ["由于任务列表中无组指定功能，因此不使用组指定功能。", "编辑器中未显示输入框。"],
+		},
+	},
+});
+
+export const event: Type.Events = {
+	title: "事件",
+	summary: "在特定时间点触发的消息和奖励",
+	points: ["在首次进入世界或游戏结束等特定时刻，该功能会自动触发并打开专用界面。", "每个时间点都预设了一个选项，既不能添加也不能删除。不使用的时间点请保持空白。", "不会显示在任务列表中。符合条件即可视为完成的项，请在任务中配置。", "奖励将在触发时自动获取。无需像完成任务那样进行领取操作，也没有相应的提示条。", "它可以改变类别的等级、执行动作的次数以及激活时拥有的物品计数。", "如果将名称、说明和图标留空，玩家将使用播放器内置的默认文字和图标。"],
+	list: [
+		["时间安排", "激活条件", "复"],
+		["`comebacked`。", "当一个人从关机状态返回超过一秒，且有动作正在进行中时。", "时常"],
+		["游戏结束了", "玩家在战斗中耐力耗尽时。", "时常"],
+		["欢迎`.", "当我刚刚开始这个世界的时候。", "只一次"],
+		["`已完成`。", "当达到所有类别的最大等级（maxCategoryLevels）时。", "只一次"],
+		["`obtained`", "当完成了单一类型的动作（如宝箱等）或确认了这些动作时", "时常"],
+	],
+	links: { task: "任务" },
+	children: {
+		comebacked: toFixedEvent("恢复时", "在关机状态恢复时触发", ["当设备离线超过1秒后恢复连接，且存在进行中的动作时，该效果将触发。", "将与分离期间的进度总结一同显示。"], ["该字段已被固定为`comebacked`，无法编辑。", "每次复活时都会反复触发。"]),
+		gameovered: toFixedEvent("游戏结束时", "在战斗中耐力耗尽时触发", ["当玩家在战斗中耐力耗尽时触发。", "如果在奖励数量中配置减值，就可以让游戏结束时产生相应代价。"], ["该值被固定为`gameovered`，无法编辑。", "每次游戏结束时都会反复触发。"]),
+		welcomed: toFixedEvent("首次开始时", "首次打开世界时触发", ["在首次启动该世界时触发。", "用于说明世界观，以及在游戏开始时发放准备物品。"], ["该字段被固定为`welcomed`，无法编辑。", "仅在首次启动时触发一次。"]),
+		completed: toFixedEvent("通关时", "当所有类别达到最大等级时触发", ["当所有类别的等级达到最大值（maxCategoryLevels）时触发。", "非数值类别的项目将从判定中排除。"], ["该字段被设置为`completed`，无法编辑。", "仅在满足条件时触发一次。"]),
+		obtained: toFixedEvent("单次动作完成时", "在完成宝箱等单次动作时触发", ["在完成或确认单个类型的动作（如宝箱等）时触发。", "除了该动作本身的奖励外，还可以额外追加此处配置的奖励。"], ["该字段被固定为`obtained`，无法编辑。", "每次完成单次动作后，该效果都会反复触发。"]),
+	},
+	options: {
+		label: "事件",
+	},
+};
+
 export const basic: Type.Basic = {
 	title: "基本配置",
 	summary: "一般世界的基本配置项目。",
 	points: ["配置世界的名称、描述、背景、货币、容量、类别的最大等级、经验增加率、折扣率、标准战斗参数等。", "这些配置会影响整个世界。"],
-	list: expandList("名字", [overview, general, design, development]),
+	list: expandList("名字", [overview, general, design, event, development]),
 	children: {
 		overview: overview,
 		general: general,
 		design: design,
+		events: event,
 		development: development,
 	},
 	options: {
@@ -1002,7 +1064,7 @@ export const world: Type.World = {
 		actions: { ...action, options: { ...action.options, array: true } },
 		items: { ...item, options: { ...item.options, array: true } },
 		groups: { ...group, options: { ...group.options, array: true } },
-		events: { ...event, options: { ...event.options, array: true } },
+		tasks: { ...task, options: { ...task.options, array: true } },
 		presets: { ...preset, options: { ...preset.options, array: true } },
 	},
 	options: {
@@ -1030,8 +1092,8 @@ export const tree: Tree = {
 	title: editor,
 	twig: [
 		{ title: world }, 
-		{ title: basic, twig: [overview, general, design, development] }, 
-		{ title: type, twig: [category, action, item, group, event, preset] }, 
+		{ title: basic, twig: [overview, general, design, event, development] },
+		{ title: type, twig: [category, action, item, group, task, preset] },
 		{ title: component, twig: [information, requirement, acquisition, combat, property] }, 
 		{ title: miscellaneous, twig: [translation] }
 	],

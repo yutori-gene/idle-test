@@ -25,3 +25,5 @@ Daftar semua tugas
 - Hasilnya akan ditampilkan secara terkelompok berdasarkan kategori.
 - Tugas yang tidak ada konfigurasi kategori akan ditampilkan secara terpusat di bagian atas.
 - Tugas yang telah diselesaikan akan ditandai dengan tanda centang.
+- Tugas yang hadiahnya belum diterima akan ditandai dengan pita. Pilih tugas tersebut, lalu tekan tombol "Akuisisi" untuk menerimanya.
+- Tugas yang telah diselesaikan namun kemudian tidak lagi memenuhi syarat akan ditandai dengan garis miring pada ikonnya dan Kembali ke status "belum diselesaikan".

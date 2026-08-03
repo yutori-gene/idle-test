@@ -11,7 +11,7 @@
 |[_action_](ja/editor/action)|採取、制作、戦闘などの行動要素|
 |[_item_](ja/editor/item)|装備品や消費物などの物品要素|
 |[_group_](ja/editor/group)|カテゴリー、アクション、アイテムの表示グループを定義|
-|[_event_](ja/editor/event)|条件に応じて発動するメッセージと報酬システム|
+|[_task_](ja/editor/task)|条件を満たすと達成になるミッション|
 |[_preset_](ja/editor/preset)|システム要素の表示カスタマイズ|
 ```
 world
@@ -19,6 +19,6 @@ world
 ├── action
 ├── item
 ├── group
-├── event
+├── task
 └── preset
 ```

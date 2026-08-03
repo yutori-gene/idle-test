@@ -9,6 +9,7 @@ Item konfigurasi dasar untuk dunia secara umum.
 |[_gambaran umum_](id/editor/gambaran umum)|Informasi dasar tentang dunia dan penulisnya|
 |[_umum_](id/editor/umum)|Konfigurasi dasar game, termasuk konfigurasi bahasa dan level|
 |[_desain_](id/editor/desain)|Konfigurasi tampilan visual seperti warna dunia dan font.|
+|[_acara_](id/editor/acara)|Pesan dan hadiah yang muncul pada waktu tertentu|
 |[_pengembangan_](id/editor/pengembangan)|Catatan dan manajemen kesalahan selama pengembangan dunia|
 ___
 
@@ -19,6 +20,9 @@ ___
 ___
 
 ## [_desain_](id/editor/desain)
+___
+
+## [_acara_](id/editor/acara)
 ___
 
 ## [_pengembangan_](id/editor/pengembangan)

@@ -13,8 +13,8 @@ export const language: Markdown = {
 
 export const event: Markdown = {
 	title: "event",
-	summary: "System to occur according to conditions",
-	points: ["Triggered when conditions are met.", "A message is displayed when it is activated, and items are given or reduced."],
+	summary: "A system that runs at set intervals",
+	points: ["It triggers at specific times, such as when you return to the game or when you become gameovered.", "When activated, this screen will open, and the reward will be automatically granted along with a message.", "A task is something you complete by meeting certain conditions, and you receive the reward yourself."],
 	options: {
 		preset: "event",
 		label: "event",
@@ -191,7 +191,7 @@ export const action: Markdown = {
 export const tasks: Markdown = {
 	title: "Task",
 	summary: "List of tasks in this category",
-	points: ["This is a list of tasks assigned to this category.", "When you select a task, you can view its completion requirements and rewards.", "If there are no tasks in a category, it will not be displayed."],
+	points: ["このカテゴリーに割り当てられたタスクの一覧です。", "タスクを選ぶと、達成条件と報酬を確認できます。", "報酬が未受け取りのタスクにはリボンが付きます。選んで獲得を押すと受け取れます。", "持てるアイテムの種類が上限に達している時は受け取れません。整理してから受け取り直します。", "カテゴリーにタスクが1つもない場合は表示されません。"],
 	options: {
 		preset: "tasks",
 	},
@@ -239,7 +239,7 @@ export const activity: Markdown = {
 export const missions: Markdown = {
 	title: "Mission",
 	summary: "List of All Tasks",
-	points: ["They are grouped and displayed by category.", "Tasks without a category are grouped together and displayed at the top.", "Completed tasks are marked with a check mark."],
+	points: ["カテゴリーごとにまとめて表示されます。", "カテゴリーが設定されていないタスクは先頭にまとめて表示されます。", "達成済みのタスクにはチェックの印が付きます。", "報酬が未受け取りのタスクにはリボンが付きます。選んで獲得を押すと受け取れます。", "一度達成したタスクは、その後に条件を満たさなくなっても達成のまま残ります。"],
 	options: {
 		preset: "missions",
 	},

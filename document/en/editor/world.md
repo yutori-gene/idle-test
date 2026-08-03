@@ -21,7 +21,7 @@ ___
 ## [_group (usu. of people)_](en/editor/group)
 ___
 
-## [_event_](en/editor/event)
+## [_Task_](en/editor/task)
 ___
 
 ## [_preset_](en/editor/preset)

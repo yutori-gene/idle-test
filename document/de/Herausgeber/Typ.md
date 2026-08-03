@@ -11,7 +11,7 @@ Grundlegende Minuten-Klassifizierung der Welten
 |[_Aktion_](de/Herausgeber/Aktion)|Elemente des Handelns wie Sammeln, Herstellen und Kämpfen.|
 |[_Artikel_](de/Herausgeber/Artikel)|Güterelemente wie Ausrüstung und Verbrauchsgüter|
 |[_Gruppe_](de/Herausgeber/Gruppe)|Definieren Sie Anzeigegruppen für Kategorien, Aktionen und Gegenstände|
-|[_Veranstaltung_](de/Herausgeber/Veranstaltung)|Nachrichten- und Belohnungssystem, das durch Bedingungen ausgelöst wird.|
+|[_Aufgabe_](de/Herausgeber/Aufgabe)|Missionen, die als abgeschlossen gelten, sobald die Bedingungen erfüllt sind|
 |[_Voreinstellung_](de/Herausgeber/Voreinstellung)|Anpassen der Anzeige von Systemelementen|
 ```
 world
@@ -19,6 +19,6 @@ world
 ├── action
 ├── item
 ├── group
-├── event
+├── task
 └── preset
 ```

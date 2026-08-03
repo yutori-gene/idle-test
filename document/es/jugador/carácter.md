@@ -25,3 +25,5 @@ Lista de todas las tareas
 - Se muestran agrupados por categorías.
 - Las tareas a las que no se haya configurado ninguna categoría se muestran agrupadas al principio.
 - Las tareas completadas se marcan con una casilla.
+- Las tareas cuya recompensa aún no se haya recibido aparecerán marcadas con una cinta. Para recibirla, selecciona la tarea y pulsa «Obtener».
+- Las tareas que, tras haberse completado, dejen de cumplir los requisitos, aparecerán con una línea diagonal en el icono y volverán a aparecer en la sección de tareas pendientes.

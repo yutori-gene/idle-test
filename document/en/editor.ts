@@ -9,7 +9,7 @@ world
 ├── action
 ├── item
 ├── group
-├── event
+├── task
 └── preset
 `;
 
@@ -421,45 +421,39 @@ export const preset: Type.Information = {
 	},
 };
 
-export const event: Type.Event = {
-	title: "event",
-	summary: "Message and reward system triggered by conditions",
-	points: ["It is triggered when the configured timing/conditions are met and displays a message.", "It can be triggered at first startup, when the game is gameovered, when returning from offline, or when certain conditions are met.", "When activated, it can change the level of the Category, the number of times the Action is performed, and the number of Items possessed."],
+export const task: Type.Event = {
+	title: "Task",
+	summary: "Missions that are completed when certain conditions are met",
+	points: ["When the configured conditions are met, the goal is achieved, and a message appears at the top of the screen.", "It will appear in the list of player missions and the list of tasks by Category.", "Rewards are not awarded automatically. Players receive them when they open a task and tap the \"Claim\" button.", "Until you receive the reward, a ribbon will appear on the list bar to indicate that it is still unclaimed.", "By making acquisitions, you can change the category level, the number of times an action has been performed, and the number of Items you possess.", "For events you want to trigger at times other than those specified by conditions—such as when the game is first launched or when the gameovered state is reached—config them in the Basic Settings events."],
+	links: { event: "event" },
 	children: {
 		information: information,
 		category: {
 			title: "Category",
 			summary: "The ID of the category to which the task belongs",
-			points: ["Specify the ID of the category to which this event should be assigned as a task.", "Once configured, a list of tasks will be added to the player's category screen, and they will also be grouped by category in the mission list.", "If left blank, the mission will not be assigned to any Category and will be grouped together and displayed at the top of the mission list.", "Only events with a timing of `matched` are used for display. Even if you configure settings for other timings, they will not affect the display."],
+			points: ["Specify the ID of the Category to which this task belongs.", "Once configured, a list of tasks will be added to the player's category screen, and they will also be grouped by category in the mission list.", "If left blank, the mission will not be assigned to any Category and will be grouped together and displayed at the top of the mission list."],
 		},
 		timing: {
 			title: "timing",
-			summary: "Configure the timing of event activation",
-			list: [
-				["timing", "activation condition", "repeat"],
-				["`matched`.", "The first time a condition configured in CONDITIONS is met", "only once"],
-				["`comebacked`.", "When you return from offline for more than 1 second and there is an Action in progressing.", "many times"],
-				["`gameovered`.", "When a player's stamina runs out in battle.", "many times"],
-				["`completed`.", "When the maximum value (maxCategoryLevels) is reached for the level of all categories", "only once"],
-				["`welcomed`.", "When I first started this world.", "only once"],
-				["`obtained`", "When you complete or confirm a single-type action (such as a treasure chest). If you meet the requirements, event rewards will also be added.", "many times"],
-			],
+			summary: "Task Trigger Timing (Fixed at `matched`)",
+			points: ["The task is locked at `matched` (when the configured conditions are met) and cannot be edited.", "You can receive the reward only once, and once you receive it, the achievement status will remain unchanged.", "For events you want to trigger at other times, configure them in the Basic Settings > Events section."],
+			links: { event: "event" },
 		},
 		unlocked: {
 			title: "Initial Display State",
-			summary: "Initial display state of the event icon (triggering depends on timing; with this config, it will not trigger)",
-			points: ["The conditions for triggering an event are determined by timing; this setting affects only the appearance of the list icon.", "secreted: It will not appear in the event list at all until all requirements are met (though the event itself will still fire at the appropriate time).", "hidden・hinted: The icon is displayed with a diagonal line through it to indicate that it is not unlocked.", "Released: The strikethrough disappears, and it is displayed as \"Released.\""],
+			summary: "Initial display state of the task icon (whether it is marked as completed depends on certain conditions; with this config, it will not be marked as completed)",
+			points: ["タスクの達成条件はrequirementsで決まり、この項目は一覧アイコンの見た目のみに影響します。", "secreted: 全requirementsを満たすまでタスクの一覧に一切表示されません（達成自体は条件で起こります）。", "hidden・hinted: アイコンに斜線が付き未解放として表示されます。", "released: 斜線が消え解放済みとして表示されます。", "一度達成したタスクは一覧から消えず、その後に条件を満たさなくなっても達成のまま表示されます。"],
 		},
 		requirements: {
 			title: "terms",
-			summary: "Conditions for triggering events and granting rewards",
-			points: ["This is the condition for activating the event or granting the reward.", "With `matched`, the reward is earned only when this condition is met.", "Except for `matched`, this action triggers when the timing condition is met. After that, you will receive a reward only when the conditions configured here are met."],
+			summary: "Conditions for Completing a Task",
+			points: ["タスクを達成させる条件です。", "この条件を満たすと達成になり、報酬を受け取れるようになります。", "一度達成すると、その後に条件を満たさなくなっても達成のままで、報酬もいつでも受け取れます。", "条件を設定していないタスクは達成しません。"],
 			children: requirement.children,
 		},
 		acquisitions: {
 			title: "reward",
-			summary: "Configure rewards when the event is triggered",
-			points: ["This is the reward when the event is triggered.", "With `matched`, you receive a reward only when the conditions are met and the action is triggered.", "Except for `matched`, you earn a reward only when the timing condition is met and the conditions specified in `conditions` are satisfied.", "You can configure the quantity to be minus. For example, if you set the quantity of items to minus in the case of `gameovered`, you will lose them when gameovered."],
+			summary: "Configuring Rewards for Completed Tasks",
+			points: ["達成したタスクを開き、獲得のバーを押した時に受け取れる報酬です。", "カテゴリーのレベル、アクションの実行回数、アイテムの所持数を変化させることができます。", "数量にマイナスを設定することもできます。", "報酬を設定していないタスクは獲得のバーが出ず、達成した時点で完了になります。", "持てるアイテムの種類が上限に達している時は受け取れません。整理してから受け取り直します。"],
 			children: acquisition.children,
 		},
 		group: {
@@ -470,7 +464,7 @@ export const event: Type.Event = {
 		},
 	},
 	options: {
-		label: "event",
+		label: "task",
 	},
 };
 
@@ -681,7 +675,7 @@ export const type: Markdown = {
 	title: "Type",
 	summary: "Basic Classification of Worlds",
 	points: ["A world consists of six Types.", "All elements are placed directly down in world.", "Actions and Items are associated with the ID of the Category to which they belong."],
-	list: expandList("Type", [category, action, item, group, event, preset]),
+	list: expandList("Type", [category, action, item, group, task, preset]),
 	quote: typeTree,
 	options: {
 		label: "type",
@@ -972,15 +966,83 @@ export const overview: Type.Overview = {
 	},
 };
 
+// タイミングごとの固定イベント。項目の説明はタスクと共通で、タイミング固有の説明だけ差し替える
+const toFixedEvent = (title: string, summary: string, points: string[], timingPoints: string[]): Type.Event => ({
+	title,
+	summary,
+	points,
+	children: {
+		...task.children,
+		category: {
+			title: "Category",
+			summary: "We will not use it at the event.",
+			points: ["Since it will not appear in the list of missions or tasks, I will not specify a category for it.", "The input field does not appear in the editor."],
+		},
+		timing: {
+			title: "timing",
+			summary: "When the event triggers (fixed)",
+			points: timingPoints,
+		},
+		unlocked: {
+			title: "Initial Display State",
+			summary: "Initial display state of the event icon (triggering depends on timing; with this config, it will not trigger)",
+			points: ["The conditions for triggering an event are determined by timing; this setting affects only the icon's appearance.", "secreted: The icon will not be displayed until all requirements are met (though the event itself will occur at the appropriate time).", "hidden・hinted: The icon is displayed with a diagonal line through it to indicate that it is not unlocked.", "Released: The strikethrough disappears, and it is displayed as \"Released.\""],
+		},
+		requirements: {
+			title: "terms",
+			summary: "Conditions for Earning Rewards",
+			points: ["When the condition is met, the event is triggered, and a dedicated screen opens to display the details.", "You will receive the reward only if the conditions configured here are met when the ability is activated.", "If nothing is configured, you'll receive a reward every time it triggers."],
+			children: requirement.children,
+		},
+		acquisitions: {
+			title: "reward",
+			summary: "Configure rewards when the event is triggered",
+			points: ["This is a reward you receive when the timing is right and the conditions are met.", "Unlike tasks, you don't need to perform any action to receive it; you automatically obtain it as soon as it is triggered.", "You can configure a negative quantity. For example, if you configure the quantity of an item to a negative value when the gameover event occurs, you will lose those items."],
+			children: acquisition.children,
+		},
+		group: {
+			title: "task group",
+			summary: "We will not use it at the event.",
+			points: ["Since it does not appear in the list of missions or tasks, we do not use group assignments.", "The input field does not appear in the editor."],
+		},
+	},
+});
+
+export const event: Type.Events = {
+	title: "event",
+	summary: "Messages and Rewards Triggered at Specific Times",
+	points: ["It triggers at specific times—such as when you first open a world or when you get gameovered—and opens a dedicated screen.", "One is provided for each timing, and you cannot add or remove them. Leave the fields blank for timings you won't use.", "It will not appear in the list of missions or tasks. Tasks that are marked as completed once certain conditions are met should be configured as tasks.", "Rewards are automatically acquired as soon as they are triggered. There is no action required to claim them, such as completing a task, and no ribbon appears.", "When activated, it can change the level of the Category, the number of times the Action is performed, and the number of Items possessed.", "If you leave the Name, Description, and Icon fields blank, the player will use its built-in default text and icon."],
+	list: [
+		["timing", "activation condition", "repeat"],
+		["`comebacked`.", "When you return from offline for more than 1 second and there is an Action in progressing.", "many times"],
+		["`gameovered`.", "When a player's stamina runs out in battle.", "many times"],
+		["`welcomed`.", "When I first started this world.", "only once"],
+		["`completed`.", "When the maximum value (maxCategoryLevels) is reached for the level of all categories", "only once"],
+		["`obtained`", "When you complete or confirm a single-type action (such as a treasure chest)", "many times"],
+	],
+	links: { task: "task" },
+	children: {
+		comebacked: toFixedEvent("Upon Return", "Triggers when you come back online", ["This triggers when you return from offline status after more than 1 second has elapsed and there is an action that is progressing.", "It will be displayed along with a summary of the progress made while you were away."], ["It is set to `comebacked` and cannot be edited.", "It activates every time you return, as many times as needed."]),
+		gameovered: toFixedEvent("When the game is gameovered", "Triggers when you run out of stamina during battle", ["This ability activates when the player runs out of stamina during combat.", "If you configure the reward amount to a negative value, you can make it the penalty for gameoveredness."], ["It is set to `gameovered` and cannot be edited.", "It triggers every time you become gameovered, as many times as necessary."]),
+		welcomed: toFixedEvent("When starting for the first time", "Triggers when you open the world for the first time", ["This effect triggers the first time you launch this world.", "This is used to explain the game's world and to hand out the starter items as the game starts."], ["It is set to `welcomed` and cannot be edited.", "This occurs only once, when the application is launched for the first time."]),
+		completed: toFixedEvent("Upon completion", "Triggers when all categories reach their max level", ["This triggers when the level of all categories reaches the max value (maxCategoryLevels).", "Categories that are not numeric are excluded from the evaluation."], ["It is set to `completed` and cannot be edited.", "It triggers only once when the conditions are met."]),
+		obtained: toFixedEvent("Upon completion of a single-step action", "Triggered when you complete a one-time action, such as opening a treasure chest", ["This effect triggers when you complete or confirm a single-type action (such as opening a treasure chest).", "In addition to the reward for the Action itself, you can add the reward configured here."], ["It is set to `obtained` and cannot be edited.", "It triggers as many times as you like every time you complete a single-use action."]),
+	},
+	options: {
+		label: "event",
+	},
+};
+
 export const basic: Type.Basic = {
 	title: "Basic Configuration",
 	summary: "Basic configurations for the world in general",
 	points: ["Configure the world's name, description, background, currency, capacity, max level of categories, experience increase rate, discount rate, standard combat parameters, etc.", "These configurations affect the entire world."],
-	list: expandList("name", [overview, general, design, development]),
+	list: expandList("name", [overview, general, design, event, development]),
 	children: {
 		overview: overview,
 		general: general,
 		design: design,
+		events: event,
 		development: development,
 	},
 	options: {
@@ -1002,7 +1064,7 @@ export const world: Type.World = {
 		actions: { ...action, options: { ...action.options, array: true } },
 		items: { ...item, options: { ...item.options, array: true } },
 		groups: { ...group, options: { ...group.options, array: true } },
-		events: { ...event, options: { ...event.options, array: true } },
+		tasks: { ...task, options: { ...task.options, array: true } },
 		presets: { ...preset, options: { ...preset.options, array: true } },
 	},
 	options: {
@@ -1030,8 +1092,8 @@ export const tree: Tree = {
 	title: editor,
 	twig: [
 		{ title: world }, 
-		{ title: basic, twig: [overview, general, design, development] }, 
-		{ title: type, twig: [category, action, item, group, event, preset] }, 
+		{ title: basic, twig: [overview, general, design, event, development] },
+		{ title: type, twig: [category, action, item, group, task, preset] },
 		{ title: component, twig: [information, requirement, acquisition, combat, property] }, 
 		{ title: miscellaneous, twig: [translation] }
 	],

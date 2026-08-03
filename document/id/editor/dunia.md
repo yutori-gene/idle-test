@@ -21,7 +21,7 @@ ___
 ## [_kelompok (usu. orang)_](id/editor/kelompok)
 ___
 
-## [_acara_](id/editor/acara)
+## [_Tugas_](id/editor/tugas)
 ___
 
 ## [_preset_](id/editor/preset)

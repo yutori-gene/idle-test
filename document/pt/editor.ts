@@ -9,7 +9,7 @@ world
 ├── action
 ├── item
 ├── group
-├── event
+├── task
 └── preset
 `;
 
@@ -421,45 +421,39 @@ export const preset: Type.Information = {
 	},
 };
 
-export const event: Type.Event = {
-	title: "Evento",
-	summary: "Sistema de mensagens e recompensas acionado por condições.",
-	points: ["Ele é acionado quando as condições/tempo configurados são atendidos e uma mensagem é exibida.", "Ele pode ser acionado na primeira inicialização, quando o jogo termina, ao retornar de um jogo desligado ou quando determinadas condições são atendidas.", "Ele pode alterar o nível da Categoria, o número de Ações realizadas e o número de Itens possuídos quando ativado."],
+export const task: Type.Event = {
+	title: "Tarefa",
+	summary: "Missões que são consideradas concluídas quando as condições são atendidas",
+	points: ["Quando as configurações definidas forem atendidas, a meta será alcançada e uma mensagem será exibida na parte da cima da tela.", "Será exibido na lista de missões do jogador e na lista de tarefas da Categoria.", "A recompensa não é concedida automaticamente. O jogador a recebe ao abrir a tarefa e clicar na barra de aquisições.", "Até que a remuneração seja recebida, uma fita aparecerá na barra da lista, indicando que ela ainda não foi recebida.", "Ao realizar aquisições de itens, é possível alterar o nível da Categoria, o número de vezes que uma Ação foi executada e a quantidade de itens em posse.", "Os eventos que você deseja acionar em momentos que não sejam os previstos, como na primeira inicialização ou quando o jogo é terminado, devem ser configurados nos eventos das configurações básicas."],
+	links: { event: "evento" },
 	children: {
 		information: information,
 		category: {
 			title: "Categoria.",
 			summary: "ID da categoria à qual a tarefa pertence",
-			points: ["Especifique o ID da categoria à qual este evento será atribuído como tarefa.", "Ao definir essa configuração, uma lista de tarefas será adicionada à tela de categorias do jogador, e ela também será exibida agrupada por categoria na lista de missões.", "Se o campo estiver em branco, a missão não pertencerá a nenhuma categoria e será exibida agrupada no início da lista de missões.", "Apenas os eventos com o tempo `matched` são utilizados para exibição. Em outros momentos, mesmo com configuração, não afetam a exibição."],
+			points: ["Especifique o ID da categoria à qual esta tarefa deve ser atribuída.", "Ao definir essa configuração, uma lista de tarefas será adicionada à tela de categorias do jogador, e ela também será exibida agrupada por categoria na lista de missões.", "Se o campo estiver em branco, a missão não pertencerá a nenhuma categoria e será exibida agrupada no início da lista de missões."],
 		},
 		timing: {
 			title: "tempo",
-			summary: "Configuração do tempo de acionamento do evento.",
-			list: [
-				["tempo", "condição de ativação", "repetir"],
-				["`matched`.", "Quando as condições configuradas em CONDIÇÕES são atendidas pela primeira vez.", "apenas uma vez"],
-				["`comebacked`.", "Quando uma pessoa retorna do desligado por mais de um segundo e há uma Ação em progresso.", "frequentemente"],
-				["`gameovered`.", "Quando a resistência do jogador se esgota na batalha.", "frequentemente"],
-				["`completed`.", "Quando o nível máximo de todas as Categorias (maxCategoryLevels) for atingido.", "apenas uma vez"],
-				["`welcomed`.", "Quando comecei neste mundo.", "apenas uma vez"],
-				["`obtained`", "Ao concluir ou confirmar uma Ação de um único tipo (como baús, etc.). Se os requisitos forem atendidos, as recompensas do evento também serão adicionadas.", "frequentemente"],
-			],
+			summary: "Momento de acionamento da tarefa (fixo em `matched`)",
+			points: ["A tarefa está definida como `matched` (quando a configuração das condições for atendida) e não pode ser editada.", "A recompensa só pode ser recebida uma vez; depois de recebida, o status de “concluído” permanece inalterado.", "Aquilo que você deseja ativar em outros momentos deve ser configurado nos eventos das configurações básicas."],
+			links: { event: "evento" },
 		},
 		unlocked: {
 			title: "Estado inicial de exibição",
-			summary: "Estado inicial de exibição do ícone do evento (a ativação depende do momento certo; com essa configuração, ele não é ativado)",
-			points: ["As condições de acionamento do evento são determinadas pelo momento, e este item afeta apenas a aparência do ícone da lista.", "secreted: Não será exibido na lista de eventos até que todos os requisitos sejam atendidos (embora o evento em si seja acionado no momento certo).", "oculto/sugerido: o ícone aparece com uma barra e é exibido como não desbloqueado.", "liberado: a barra é removida e o item é exibido como liberado."],
+			summary: "Estado inicial de exibição do ícone da tarefa (a conclusão depende de condições; com esta configuração, a tarefa não será considerada concluída)",
+			points: ["タスクの達成条件はrequirementsで決まり、この項目は一覧アイコンの見た目のみに影響します。", "secreted: 全requirementsを満たすまでタスクの一覧に一切表示されません（達成自体は条件で起こります）。", "hidden・hinted: アイコンに斜線が付き未解放として表示されます。", "released: 斜線が消え解放済みとして表示されます。", "一度達成したタスクは一覧から消えず、その後に条件を満たさなくなっても達成のまま表示されます。"],
 		},
 		requirements: {
 			title: "termos e condições",
-			summary: "Condições para acionar eventos e conceder recompensas.",
-			points: ["Condições para acionar eventos ou conceder recompensas.", "No `matched`, a ação é acionada e a recompensa é obtida somente quando essa condição for atendida.", "Exceto no momento `matched`, a ação é acionada quando a condição de tempo for satisfeita. Depois disso, a recompensa será obtida somente quando as configurações definidas aqui forem atendidas."],
+			summary: "Condições para a conclusão da tarefa",
+			points: ["タスクを達成させる条件です。", "この条件を満たすと達成になり、報酬を受け取れるようになります。", "一度達成すると、その後に条件を満たさなくなっても達成のままで、報酬もいつでも受け取れます。", "条件を設定していないタスクは達成しません。"],
 			children: requirement.children,
 		},
 		acquisitions: {
 			title: "prêmio",
-			summary: "Configurações de recompensa quando o evento é acionado.",
-			points: ["Essa é a recompensa quando o evento é acionado.", "No `matched`, você recebe a recompensa somente quando as condições são atendidas e a ação é acionada.", "Exceto no caso de `matched`, a recompensa só será obtida quando a condição de tempo for satisfeita e as condições definidas em `conditions` forem atendidas.", "Você pode configurar a quantidade com um valor Menos. Por exemplo, se você contar a quantidade de Itens com um valor Menos quando `gameovered`, você os perderá quando o jogo terminado."],
+			summary: "Configuração de recompensas ao concluir tarefas",
+			points: ["達成したタスクを開き、獲得のバーを押した時に受け取れる報酬です。", "カテゴリーのレベル、アクションの実行回数、アイテムの所持数を変化させることができます。", "数量にマイナスを設定することもできます。", "報酬を設定していないタスクは獲得のバーが出ず、達成した時点で完了になります。", "持てるアイテムの種類が上限に達している時は受け取れません。整理してから受け取り直します。"],
 			children: acquisition.children,
 		},
 		group: {
@@ -470,7 +464,7 @@ export const event: Type.Event = {
 		},
 	},
 	options: {
-		label: "evento",
+		label: "tarefa",
 	},
 };
 
@@ -681,7 +675,7 @@ export const type: Markdown = {
 	title: "Tipo.",
 	summary: "Classificação básica dos mundos",
 	points: ["Os mundos consistem em seis tipos.", "Todos os elementos são colocados diretamente abaixo do mundo.", "As Ações e os Itens são associados ao ID da Categoria à qual pertencem."],
-	list: expandList("Tipo.", [category, action, item, group, event, preset]),
+	list: expandList("Tipo.", [category, action, item, group, task, preset]),
 	quote: typeTree,
 	options: {
 		label: "tipo",
@@ -972,15 +966,83 @@ export const overview: Type.Overview = {
 	},
 };
 
+// タイミングごとの固定イベント。項目の説明はタスクと共通で、タイミング固有の説明だけ差し替える
+const toFixedEvent = (title: string, summary: string, points: string[], timingPoints: string[]): Type.Event => ({
+	title,
+	summary,
+	points,
+	children: {
+		...task.children,
+		category: {
+			title: "Categoria.",
+			summary: "Não será utilizado no evento",
+			points: ["Como não aparece na lista de missões e tarefas, não vou especificar a categoria à qual pertence.", "No editor, o campo de entrada não é exibido."],
+		},
+		timing: {
+			title: "tempo",
+			summary: "Momento em que o evento é acionado (fixo)",
+			points: timingPoints,
+		},
+		unlocked: {
+			title: "Estado inicial de exibição",
+			summary: "Estado inicial de exibição do ícone do evento (a ativação depende do momento certo; com essa configuração, ele não é ativado)",
+			points: ["As condições de acionamento do evento são determinadas pelo momento, e este item afeta apenas a aparência do ícone.", "secreted: O ícone não será exibido até que todos os requisitos sejam atendidos (embora a ativação em si ocorra no momento certo).", "oculto/sugerido: o ícone aparece com uma barra e é exibido como não desbloqueado.", "liberado: a barra é removida e o item é exibido como liberado."],
+		},
+		requirements: {
+			title: "termos e condições",
+			summary: "Condições para receber a remuneração",
+			points: ["Quando a condição for atendida, o evento será acionado e uma tela específica será aberta para exibir o conteúdo.", "A recompensa só será adquirida se, no momento da ativação, as configurações definidas aqui forem atendidas.", "Caso não tenha feito nenhuma configuração, você receberá uma recompensa sempre que ela for ativada."],
+			children: requirement.children,
+		},
+		acquisitions: {
+			title: "prêmio",
+			summary: "Configurações de recompensa quando o evento é acionado.",
+			points: ["É a recompensa obtida quando o momento certo se dá e as condições são atendidas.", "Ao contrário das tarefas, não é necessário realizar nenhuma ação para recebê-lo; ele é adquirido automaticamente assim que é ativado.", "É possível definir valores negativos para a quantidade. Por exemplo, se você definir a quantidade de Itens como negativa quando o jogo terminar, você os perderá."],
+			children: acquisition.children,
+		},
+		group: {
+			title: "grupo de trabalho",
+			summary: "Não será utilizado no evento",
+			points: ["Como não aparece na lista de missões e tarefas, não utilizamos a designação de grupo.", "No editor, o campo de entrada não é exibido."],
+		},
+	},
+});
+
+export const event: Type.Events = {
+	title: "Evento",
+	summary: "Mensagens e recompensas que são ativadas em momentos específicos",
+	points: ["Ele é acionado em momentos específicos, como ao abrir um mundo pela primeira vez ou ao terminar o jogo, e abre uma tela exclusiva.", "Há um campo para cada momento, e não é possível adicionar nem excluir campos. Nos momentos em que não for utilizado, deixe o campo em branco.", "Não será exibido na lista de missões ou tarefas. Aquilo que será considerado concluído ao atender às condições deve ser configurado como uma tarefa.", "A recompensa é adquirida automaticamente assim que for ativada. Não há nenhuma ação necessária para realizar as aquisições, como em uma tarefa, nem nenhuma faixa de notificação.", "Ele pode alterar o nível da Categoria, o número de Ações realizadas e o número de Itens possuídos quando ativado.", "Se você deixar os campos “Nome”, “Descrição” e “Ícone” em branco, serão utilizados o texto e o ícone padrão integrados ao jogador."],
+	list: [
+		["tempo", "condição de ativação", "repetir"],
+		["`comebacked`.", "Quando uma pessoa retorna do desligado por mais de um segundo e há uma Ação em progresso.", "frequentemente"],
+		["`gameovered`.", "Quando a resistência do jogador se esgota na batalha.", "frequentemente"],
+		["`welcomed`.", "Quando comecei neste mundo.", "apenas uma vez"],
+		["`completed`.", "Quando o nível máximo de todas as Categorias (maxCategoryLevels) for atingido.", "apenas uma vez"],
+		["`obtained`", "Ao concluir ou confirmar uma Ação de um único tipo (como baús, etc.)", "frequentemente"],
+	],
+	links: { task: "tarefa" },
+	children: {
+		comebacked: toFixedEvent("No momento do retorno", "É acionado ao retornar do modo desligado", ["É acionado quando o usuário retorna ao modo online após mais de 1 segundo desligado e há uma Ação em andamento.", "Será exibido juntamente com um resumo do progresso durante o período em que esteve ausente."], ["Está definido como `comebacked` e não pode ser editado.", "É ativado quantas vezes forem necessárias sempre que você retornar."]),
+		gameovered: toFixedEvent("Quando o jogo termina", "É ativado quando a resistência se esgota durante o combate", ["É ativado quando a resistência do jogador se esgota durante o combate.", "Se você definir uma configuração com um valor negativo para a quantidade de recompensa, poderá estabelecer uma penalidade em caso de jogo terminado."], ["Está definido como `gameovered` e não pode ser editado.", "É ativado quantas vezes forem necessárias sempre que o jogo terminado."]),
+		welcomed: toFixedEvent("Na primeira vez que começar", "É ativado ao abrir o mundo pela primeira vez", ["Isso é acionado na primeira vez que você inicia este mundo.", "É usado para explicar o universo da história e para entregar os itens iniciais aos jogadores ao começar o jogo."], ["Está definido como `welcomed` e não pode ser editado.", "É acionado apenas uma vez, na primeira inicialização."]),
+		completed: toFixedEvent("Ao concluir o jogo", "É ativado quando todas as categorias atingirem o nível máximo", ["É acionado quando o nível de todas as categorias atinge o valor máximo (maxCategoryLevels).", "As categorias que não forem numéricas serão excluídas da avaliação."], ["Está definido como `completed` e não pode ser editado.", "É acionado apenas uma vez quando as condições forem atendidas."]),
+		obtained: toFixedEvent("Ao concluir uma Ação pontual", "É ativado ao concluir uma ação pontual, como abrir um baú", ["É acionado quando você conclui ou confirma uma Ação de um único tipo (como um baú, por exemplo).", "Além da recompensa pela Ação em si, é possível adicionar a recompensa da configuração aqui."], ["Está definido como `obtained` e não pode ser editado.", "É ativado quantas vezes forem necessárias sempre que uma Ação pontual for concluída."]),
+	},
+	options: {
+		label: "evento",
+	},
+};
+
 export const basic: Type.Basic = {
 	title: "Configuração básica",
 	summary: "Itens básicos de configuração para o mundo em geral.",
 	points: ["Configure o nome do mundo, a descrição, o plano de fundo, a moeda, a capacidade, o nível máximo de Categorias, a taxa de aumento de experiência, a taxa de desconto, os parâmetros de combate padrão, etc.", "Essas configurações afetam o mundo inteiro."],
-	list: expandList("nome", [overview, general, design, development]),
+	list: expandList("nome", [overview, general, design, event, development]),
 	children: {
 		overview: overview,
 		general: general,
 		design: design,
+		events: event,
 		development: development,
 	},
 	options: {
@@ -1002,7 +1064,7 @@ export const world: Type.World = {
 		actions: { ...action, options: { ...action.options, array: true } },
 		items: { ...item, options: { ...item.options, array: true } },
 		groups: { ...group, options: { ...group.options, array: true } },
-		events: { ...event, options: { ...event.options, array: true } },
+		tasks: { ...task, options: { ...task.options, array: true } },
 		presets: { ...preset, options: { ...preset.options, array: true } },
 	},
 	options: {
@@ -1030,8 +1092,8 @@ export const tree: Tree = {
 	title: editor,
 	twig: [
 		{ title: world }, 
-		{ title: basic, twig: [overview, general, design, development] }, 
-		{ title: type, twig: [category, action, item, group, event, preset] }, 
+		{ title: basic, twig: [overview, general, design, event, development] },
+		{ title: type, twig: [category, action, item, group, task, preset] },
 		{ title: component, twig: [information, requirement, acquisition, combat, property] }, 
 		{ title: miscellaneous, twig: [translation] }
 	],

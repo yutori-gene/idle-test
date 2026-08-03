@@ -21,7 +21,7 @@ ___
 ## [_Gruppe (z.B. von Personen)_](de/Herausgeber/Gruppe)
 ___
 
-## [_Ereignis_](de/Herausgeber/Veranstaltung)
+## [_Aufgabe_](de/Herausgeber/Aufgabe)
 ___
 
 ## [_Voreinstellung_](de/Herausgeber/Voreinstellung)

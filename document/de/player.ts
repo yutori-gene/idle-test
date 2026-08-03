@@ -13,8 +13,8 @@ export const language: Markdown = {
 
 export const event: Markdown = {
 	title: "Ereignis",
-	summary: "Zustandsorientierte Systeme.",
-	points: ["Wird ausgelöst, wenn die Bedingungen erfüllt sind.", "Es werden Meldungen angezeigt, wenn sie aktiviert werden, Gegenstände gegeben oder reduziert werden, usw."],
+	summary: "Ein System, das zu festgelegten Zeitpunkten ausgelöst wird",
+	points: ["Es wird zu festgelegten Zeitpunkten ausgelöst, beispielsweise bei der Rückkehr ins Spiel oder beim Spiel vorbei sein.", "Wenn die Funktion ausgelöst wird, öffnet sich dieser Bildschirm, und die Belohnung wird zusammen mit einer Meldung automatisch ausgezahlt.", "Eine Aufgabe ist etwas, das man erfüllt, wenn man die Bedingungen erfüllt, und die Belohnung erhält man selbst."],
 	options: {
 		preset: "Veranstaltung",
 		label: "Veranstaltung",
@@ -191,7 +191,7 @@ export const action: Markdown = {
 export const tasks: Markdown = {
 	title: "Aufgabe",
 	summary: "Liste der Aufgaben in dieser Kategorie",
-	points: ["Dies ist eine Liste der dieser Kategorie zugeordneten Aufgaben.", "Wenn Sie eine Aufgabe auswählen, können Sie die Bedingungen für den Abschluss und die Belohnung einsehen.", "Wenn eine Kategorie nichts enthält, wird sie nicht angezeigt."],
+	points: ["このカテゴリーに割り当てられたタスクの一覧です。", "タスクを選ぶと、達成条件と報酬を確認できます。", "報酬が未受け取りのタスクにはリボンが付きます。選んで獲得を押すと受け取れます。", "持てるアイテムの種類が上限に達している時は受け取れません。整理してから受け取り直します。", "カテゴリーにタスクが1つもない場合は表示されません。"],
 	options: {
 		preset: "Aufgaben",
 	},
@@ -239,7 +239,7 @@ export const activity: Markdown = {
 export const missions: Markdown = {
 	title: "Mission",
 	summary: "Liste aller Aufgaben",
-	points: ["Die Ergebnisse werden nach Kategorien geordnet angezeigt.", "Aufgaben, für die keine Kategorie konfiguriert ist, werden am Anfang zusammengefasst angezeigt.", "Erledigte Aufgaben werden mit einem Häkchen markiert."],
+	points: ["カテゴリーごとにまとめて表示されます。", "カテゴリーが設定されていないタスクは先頭にまとめて表示されます。", "達成済みのタスクにはチェックの印が付きます。", "報酬が未受け取りのタスクにはリボンが付きます。選んで獲得を押すと受け取れます。", "一度達成したタスクは、その後に条件を満たさなくなっても達成のまま残ります。"],
 	options: {
 		preset: "Missionen",
 	},

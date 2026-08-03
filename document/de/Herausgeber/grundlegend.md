@@ -9,6 +9,7 @@ Grundlegende Konfigurationselemente für die Welt im Allgemeinen.
 |[_Übersicht_](de/Herausgeber/Übersicht)|Grundlegende Informationen über die Welt und ihre Autoren|
 |[_allgemein_](de/Herausgeber/allgemein)|Grundlegende Spieleinstellungen, einschließlich Sprache und Level-Einstellungen|
 |[_Entwurf_](de/Herausgeber/Entwurf)|Konfigurationen für das visuelle Erscheinungsbild, wie z. B. Farben und Schriftarten der Welt.|
+|[_Veranstaltung_](de/Herausgeber/Veranstaltung)|Nachrichten und Belohnungen, die zu festgelegten Zeitpunkten ausgelöst werden|
 |[_Entwicklung_](de/Herausgeber/Entwicklung)|Hinweise und Fehlermanagement bei der Entwicklung der Welt|
 ___
 
@@ -19,6 +20,9 @@ ___
 ___
 
 ## [_Entwurf_](de/Herausgeber/Entwurf)
+___
+
+## [_Ereignis_](de/Herausgeber/Veranstaltung)
 ___
 
 ## [_Entwicklung_](de/Herausgeber/Entwicklung)

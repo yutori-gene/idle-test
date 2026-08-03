@@ -11,7 +11,7 @@ Klasifikasi dasar dunia
 |[_tindakan_](id/editor/tindakan)|Elemen bertindak seperti mengumpulkan, membuat, dan bertarung.|
 |[_item_](id/editor/item)|Elemen-elemen barang seperti peralatan dan bahan habis pakai|
 |[_kelompok_](id/editor/kelompok)|Menetapkan grup tampilan untuk kategori, aksi, dan item|
-|[_acara_](id/editor/acara)|Sistem pesan dan penghargaan yang dipicu oleh kondisi.|
+|[_tugas_](id/editor/tugas)|Misi yang akan dianggap berhasil jika syarat-syaratnya terpenuhi|
 |[_preset_](id/editor/preset)|Menyesuaikan tampilan elemen sistem|
 ```
 world
@@ -19,6 +19,6 @@ world
 ├── action
 ├── item
 ├── group
-├── event
+├── task
 └── preset
 ```

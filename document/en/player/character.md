@@ -25,3 +25,5 @@ List of All Tasks
 - They are grouped and displayed by category.
 - Tasks without a category are grouped together and displayed at the top.
 - Completed tasks are marked with a check mark.
+- Tasks for which you haven't yet received your reward will be marked with a ribbon. Select the task and tap "Claim" to receive your reward.
+- Tasks that no longer meet the conditions after being completed will have a line through their icon and will revert to "Uncompleted" status.

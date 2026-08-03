@@ -9,6 +9,7 @@
 |[_vue d'ensemble_](fr/éditeur/vue d'ensemble)|Informations de base sur le monde et ses auteurs|
 |[_général_](fr/éditeur/général)|Paramètres de base du jeu, y compris les paramètres de langue et de niveau|
 |[_conception_](fr/éditeur/conception)|Les configurations de l'apparence visuelle, telles que les couleurs du monde et les polices de caractères.|
+|[_événement_](fr/éditeur/événement)|Messages et récompenses déclenchés à des moments précis|
 |[_développement_](fr/éditeur/développement)|Gestion des notes et des erreurs pendant le développement du monde|
 ___
 
@@ -19,6 +20,9 @@ ___
 ___
 
 ## [_conception_](fr/éditeur/conception)
+___
+
+## [_Événement_](fr/éditeur/événement)
 ___
 
 ## [_développement_](fr/éditeur/développement)

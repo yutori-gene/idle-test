@@ -21,7 +21,7 @@ ___
 ## [_groupe (habituellement de personnes)_](fr/éditeur/groupe)
 ___
 
-## [_Événement_](fr/éditeur/événement)
+## [_Tâche_](fr/éditeur/tâche)
 ___
 
 ## [_préétabli_](fr/éditeur/préétabli)

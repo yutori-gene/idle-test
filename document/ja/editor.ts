@@ -9,7 +9,7 @@ world
 ├── action
 ├── item
 ├── group
-├── event
+├── task
 └── preset
 `;
 
@@ -421,45 +421,39 @@ export const preset: Type.Information = {
 	},
 };
 
-export const event: Type.Event = {
-	title: "イベント",
-	summary: "条件に応じて発動するメッセージと報酬システム",
-	points: ["設定したタイミング・条件に一致した時に発動して、メッセージを表示します。", "初回起動時、ゲームオーバー時、オフラインから復帰した時、特定の条件を満たした時などに発動させることができます。", "発動時にカテゴリーのレベル、アクションの実行回数、アイテムの所持数を変化させることができます。"],
+export const task: Type.Event = {
+	title: "タスク",
+	summary: "条件を満たすと達成になるミッション",
+	points: ["設定した条件を満たすと達成になり、画面の上部にメッセージが表示されます。", "プレイヤーのミッションの一覧と、カテゴリーのタスクの一覧に表示されます。", "報酬は自動では渡されません。プレイヤーがタスクを開いて獲得のバーを押した時に受け取ります。", "報酬を受け取るまでは、一覧のバーにリボンが付いて未受け取りであることを示します。", "獲得でカテゴリーのレベル、アクションの実行回数、アイテムの所持数を変化させることができます。", "初回起動時やゲームオーバー時など、条件以外のタイミングで発動させたいものは基本設定のイベントで設定します。"],
+	links: { event: "event" },
 	children: {
 		information: information,
 		category: {
 			title: "カテゴリー",
 			summary: "タスクが所属するカテゴリーのID",
-			points: ["このイベントをタスクとして所属させるカテゴリーのIDを指定します。", "設定すると、プレイヤーのカテゴリーの画面にタスクの一覧が追加され、ミッションの一覧でもカテゴリーごとにまとめて表示されます。", "空欄の場合はどのカテゴリーにも属さず、ミッションの一覧の先頭にまとめて表示されます。", "タイミングが`matched`のイベントのみ表示に使われます。それ以外のタイミングでは設定しても表示に影響しません。"],
+			points: ["このタスクを所属させるカテゴリーのIDを指定します。", "設定すると、プレイヤーのカテゴリーの画面にタスクの一覧が追加され、ミッションの一覧でもカテゴリーごとにまとめて表示されます。", "空欄の場合はどのカテゴリーにも属さず、ミッションの一覧の先頭にまとめて表示されます。"],
 		},
 		timing: {
 			title: "タイミング",
-			summary: "イベント発動のタイミング設定",
-			list: [
-				["タイミング", "発動条件", "繰り返し"],
-				["`matched`", "conditionsで設定した条件を初めて満たした時", "一度のみ"],
-				["`comebacked`", "オフラインから1秒以上経過して復帰し、かつ進行中のアクションがあった時", "何度も"],
-				["`gameovered`", "戦闘でプレイヤーのスタミナがなくなった時", "何度も"],
-				["`completed`", "全カテゴリーのレベルが最大値（maxCategoryLevels）に達した時", "一度のみ"],
-				["`welcomed`", "このワールドを初めて起動した時", "一度のみ"],
-				["`obtained`", "single種別のアクション（宝箱など）を完了・確認した時。requirementsを満たせばイベント報酬も加算", "何度も"],
-			],
+			summary: "タスク発動のタイミング（`matched`固定）",
+			points: ["タスクは`matched`（設定した条件を満たした時）で固定されており、編集できません。", "報酬を受け取れるのは一度だけで、受け取ると以後は達成のまま変化しません。", "それ以外のタイミングで発動させたいものは、基本設定のイベントで設定します。"],
+			links: { event: "event" },
 		},
 		unlocked: {
 			title: "初期表示状態",
-			summary: "イベントアイコンの初期表示状態（発火はタイミングで決まり、この設定では発火しません）",
-			points: ["イベントの発火条件はタイミングで決まり、この項目は一覧アイコンの見た目のみに影響します。", "secreted: 全requirementsを満たすまでイベント一覧に一切表示されません（発火自体はタイミングで起こります）。", "hidden・hinted: アイコンに斜線が付き未解放として表示されます。", "released: 斜線が消え解放済みとして表示されます。"],
+			summary: "タスクアイコンの初期表示状態（達成は条件で決まり、この設定では達成しません）",
+			points: ["タスクの達成条件はrequirementsで決まり、この項目は一覧アイコンの見た目のみに影響します。", "secreted: 全requirementsを満たすまでタスクの一覧に一切表示されません（達成自体は条件で起こります）。", "hidden・hinted: アイコンに斜線が付き未解放として表示されます。", "released: 斜線が消え解放済みとして表示されます。", "一度達成したタスクは一覧から消えず、その後に条件を満たさなくなっても達成のまま表示されます。"],
 		},
 		requirements: {
 			title: "条件",
-			summary: "イベント発動や報酬付与の条件",
-			points: ["イベント発動又は報酬付与の条件です。", "`matched`では、この条件を満たした時のみ発動し、報酬を獲得します。", "`matched`以外のタイミングでは、タイミング条件が成立すると発動します。その後、ここで設定した条件を満たしている時にのみ報酬を獲得します。"],
+			summary: "タスク達成の条件",
+			points: ["タスクを達成させる条件です。", "この条件を満たすと達成になり、報酬を受け取れるようになります。", "一度達成すると、その後に条件を満たさなくなっても達成のままで、報酬もいつでも受け取れます。", "条件を設定していないタスクは達成しません。"],
 			children: requirement.children,
 		},
 		acquisitions: {
 			title: "報酬",
-			summary: "イベント発動時の報酬設定",
-			points: ["イベントが発動した時の報酬です。", "`matched`では、条件を満たして発動した時にのみ報酬を得ます。", "`matched`以外では、タイミング条件が成立し、かつconditionsの条件を満たす時にのみ報酬を獲得します。", "数量にマイナスを設定することができます。例えば`gameovered`の場合にアイテムの数量をマイナスにすれば、ゲームオーバー時にそれらを失います。"],
+			summary: "タスク達成時の報酬設定",
+			points: ["達成したタスクを開き、獲得のバーを押した時に受け取れる報酬です。", "カテゴリーのレベル、アクションの実行回数、アイテムの所持数を変化させることができます。", "数量にマイナスを設定することもできます。", "報酬を設定していないタスクは獲得のバーが出ず、達成した時点で完了になります。", "持てるアイテムの種類が上限に達している時は受け取れません。整理してから受け取り直します。"],
 			children: acquisition.children,
 		},
 		group: {
@@ -470,7 +464,7 @@ export const event: Type.Event = {
 		},
 	},
 	options: {
-		label: "event",
+		label: "task",
 	},
 };
 
@@ -681,7 +675,7 @@ export const type: Markdown = {
 	title: "タイプ",
 	summary: "ワールドの基本的な分類",
 	points: ["ワールドは6つのタイプで構成されます。", "すべての要素はワールド直下に配置されます。", "アクションとアイテムは所属するカテゴリーのIDで関連付けられます。"],
-	list: expandList("タイプ", [category, action, item, group, event, preset]),
+	list: expandList("タイプ", [category, action, item, group, task, preset]),
 	quote: typeTree,
 	options: {
 		label: "type",
@@ -972,15 +966,83 @@ export const overview: Type.Overview = {
 	},
 };
 
+// タイミングごとの固定イベント。項目の説明はタスクと共通で、タイミング固有の説明だけ差し替える
+const toFixedEvent = (title: string, summary: string, points: string[], timingPoints: string[]): Type.Event => ({
+	title,
+	summary,
+	points,
+	children: {
+		...task.children,
+		category: {
+			title: "カテゴリー",
+			summary: "イベントでは使用しません",
+			points: ["ミッションやタスクの一覧に表示されないため、所属するカテゴリーは指定しません。", "エディターでは入力欄が表示されません。"],
+		},
+		timing: {
+			title: "タイミング",
+			summary: "イベントが発動するタイミング（固定）",
+			points: timingPoints,
+		},
+		unlocked: {
+			title: "初期表示状態",
+			summary: "イベントアイコンの初期表示状態（発火はタイミングで決まり、この設定では発火しません）",
+			points: ["イベントの発火条件はタイミングで決まり、この項目はアイコンの見た目のみに影響します。", "secreted: 全requirementsを満たすまでアイコンが表示されません（発火自体はタイミングで起こります）。", "hidden・hinted: アイコンに斜線が付き未解放として表示されます。", "released: 斜線が消え解放済みとして表示されます。"],
+		},
+		requirements: {
+			title: "条件",
+			summary: "報酬を獲得する条件",
+			points: ["タイミングが成立するとイベントは発動し、専用の画面を開いて内容を表示します。", "報酬は、発動時にここで設定した条件を満たしている場合にのみ獲得します。", "条件を設定していない場合は、発動するたびに報酬を獲得します。"],
+			children: requirement.children,
+		},
+		acquisitions: {
+			title: "報酬",
+			summary: "イベント発動時の報酬設定",
+			points: ["タイミングが成立し、かつ条件を満たしている時に得られる報酬です。", "タスクと違って受け取る操作は要らず、発動と同時に自動で獲得します。", "数量にマイナスを設定することができます。例えばゲームオーバー時にアイテムの数量をマイナスにすれば、それらを失います。"],
+			children: acquisition.children,
+		},
+		group: {
+			title: "タスクグループ",
+			summary: "イベントでは使用しません",
+			points: ["ミッションやタスクの一覧に表示されないため、グループの指定は使いません。", "エディターでは入力欄が表示されません。"],
+		},
+	},
+});
+
+export const event: Type.Events = {
+	title: "イベント",
+	summary: "決まったタイミングで発動するメッセージと報酬",
+	points: ["ワールドを初めて開いた時やゲームオーバーになった時など、決まったタイミングで発動して専用の画面を開きます。", "タイミングごとに1つずつ用意されており、追加も削除もできません。使わないタイミングは空欄のままにします。", "ミッションやタスクの一覧には表示されません。条件を満たすと達成になるものはタスクで設定します。", "報酬は発動と同時に自動で獲得します。タスクのような受け取りの操作もリボンもありません。", "発動時にカテゴリーのレベル、アクションの実行回数、アイテムの所持数を変化させることができます。", "名前・説明・アイコンを空欄にすると、プレイヤーに内蔵されている既定の文言とアイコンが使われます。"],
+	list: [
+		["タイミング", "発動条件", "繰り返し"],
+		["`comebacked`", "オフラインから1秒以上経過して復帰し、かつ進行中のアクションがあった時", "何度も"],
+		["`gameovered`", "戦闘でプレイヤーのスタミナがなくなった時", "何度も"],
+		["`welcomed`", "このワールドを初めて起動した時", "一度のみ"],
+		["`completed`", "全カテゴリーのレベルが最大値（maxCategoryLevels）に達した時", "一度のみ"],
+		["`obtained`", "single種別のアクション（宝箱など）を完了・確認した時", "何度も"],
+	],
+	links: { task: "task" },
+	children: {
+		comebacked: toFixedEvent("復帰時", "オフラインから復帰した時に発動", ["オフラインから1秒以上経過して復帰し、かつ進行中のアクションがあった時に発動します。", "離れているあいだの進行のまとめと一緒に表示されます。"], ["`comebacked`で固定されており、編集できません。", "復帰するたびに何度でも発動します。"]),
+		gameovered: toFixedEvent("ゲームオーバー時", "戦闘でスタミナがなくなった時に発動", ["戦闘でプレイヤーのスタミナがなくなった時に発動します。", "報酬の数量にマイナスを設定すれば、ゲームオーバーの代償を持たせることができます。"], ["`gameovered`で固定されており、編集できません。", "ゲームオーバーになるたびに何度でも発動します。"]),
+		welcomed: toFixedEvent("初回開始時", "ワールドを初めて開いた時に発動", ["このワールドを初めて起動した時に発動します。", "世界観の説明や、開始時に渡す支度品の受け渡しに使います。"], ["`welcomed`で固定されており、編集できません。", "初回の起動時に一度だけ発動します。"]),
+		completed: toFixedEvent("クリア時", "全カテゴリーが最大レベルに達した時に発動", ["全カテゴリーのレベルが最大値（maxCategoryLevels）に達した時に発動します。", "numeric（数値）でないカテゴリーは判定から除かれます。"], ["`completed`で固定されており、編集できません。", "条件を満たした時に一度だけ発動します。"]),
+		obtained: toFixedEvent("単発アクション完了時", "宝箱などの単発アクションを完了した時に発動", ["single種別のアクション（宝箱など）を完了・確認した時に発動します。", "アクション自体の報酬とは別に、ここで設定した報酬を上乗せできます。"], ["`obtained`で固定されており、編集できません。", "単発アクションを完了するたびに何度でも発動します。"]),
+	},
+	options: {
+		label: "event",
+	},
+};
+
 export const basic: Type.Basic = {
 	title: "基本設定",
 	summary: "ワールド全般の基本的な設定項目",
 	points: ["ワールドの名前、説明、背景、通貨、容量、カテゴリーの最大レベル、経験値の上昇率、割引率、標準戦闘パラメータなどを設定します。", "これらの設定はワールド全体に影響します。"],
-	list: expandList("名称", [overview, general, design, development]),
+	list: expandList("名称", [overview, general, design, event, development]),
 	children: {
 		overview: overview,
 		general: general,
 		design: design,
+		events: event,
 		development: development,
 	},
 	options: {
@@ -1002,7 +1064,7 @@ export const world: Type.World = {
 		actions: { ...action, options: { ...action.options, array: true } },
 		items: { ...item, options: { ...item.options, array: true } },
 		groups: { ...group, options: { ...group.options, array: true } },
-		events: { ...event, options: { ...event.options, array: true } },
+		tasks: { ...task, options: { ...task.options, array: true } },
 		presets: { ...preset, options: { ...preset.options, array: true } },
 	},
 	options: {
@@ -1030,8 +1092,8 @@ export const tree: Tree = {
 	title: editor,
 	twig: [
 		{ title: world }, 
-		{ title: basic, twig: [overview, general, design, development] }, 
-		{ title: type, twig: [category, action, item, group, event, preset] }, 
+		{ title: basic, twig: [overview, general, design, event, development] },
+		{ title: type, twig: [category, action, item, group, task, preset] },
 		{ title: component, twig: [information, requirement, acquisition, combat, property] }, 
 		{ title: miscellaneous, twig: [translation] }
 	],

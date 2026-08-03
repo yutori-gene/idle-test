@@ -9,7 +9,7 @@ world
 ├── action
 ├── item
 ├── group
-├── event
+├── task
 └── preset
 `;
 
@@ -421,45 +421,39 @@ export const preset: Type.Information = {
 	},
 };
 
-export const event: Type.Event = {
-	title: "이벤트",
-	summary: "조건에 따라 발동하는 메시지와 보상 시스템",
-	points: ["설정한 타이밍과 조건에 일치할 때 발동하여 메시지를 표시합니다.", "최초 실행 시, 게임 오버 시, 오프라인에서 복귀 시, 특정 조건 충족 시 등에 발동시킬 수 있다.", "발동 시 카테고리 레벨, 액션 실행 횟수, 아이템 소지 수 등을 변경할 수 있습니다."],
+export const task: Type.Event = {
+	title: "작업",
+	summary: "조건을 충족하면 달성되는 미션",
+	points: ["설정한 조건을 충족하면 달성으로 처리되며, 화면 위에 메시지가 표시됩니다.", "플레이어의 미션 목록과 카테고리별 과제 목록에 표시됩니다.", "보상은 자동으로 지급되지 않습니다. 플레이어가 과제를 열고 획득 버튼을 누를 때 수령하게 됩니다.", "보상을 수령하기 전까지는 목록의 막대에 리본이 표시되어 미수령 상태임을 나타냅니다.", "획득을 통해 카테고리의 레벨, 액션 실행 횟수, 아이템 소지 수를 변경할 수 있습니다.", "첫 실행 시나 게임 오버 시 등, 특정 조건 이외의 시점에 발동시키고 싶은 항목은 기본 설정의 이벤트에서 설정합니다."],
+	links: { event: "이벤트" },
 	children: {
 		information: information,
 		category: {
 			title: "카테고리",
 			summary: "작업이 속한 카테고리의 ID",
-			points: ["이 이벤트를 작업으로 할당할 카테고리의 ID를 지정합니다.", "설정하면 플레이어 카테고리 화면에 작업 목록이 추가되며, 미션 목록에서도 카테고리별로 정리되어 표시됩니다.", "공란인 경우 어떤 카테고리에도 속하지 않으며, 미션 목록의 맨 앞에 한꺼번에 표시됩니다.", "`matched` 타이밍의 이벤트만 표시에 사용됩니다. 그 외의 타이밍에서는 설정을 해도 표시에 영향을 미치지 않습니다."],
+			points: ["이 작업을 할당할 카테고리의 ID를 지정합니다.", "설정하면 플레이어 카테고리 화면에 작업 목록이 추가되며, 미션 목록에서도 카테고리별로 정리되어 표시됩니다.", "공란인 경우 어떤 카테고리에도 속하지 않으며, 미션 목록의 맨 앞에 한꺼번에 표시됩니다."],
 		},
 		timing: {
 			title: "타이밍",
-			summary: "이벤트 발동 타이밍 설정",
-			list: [
-				["타이밍", "발동 조건", "반복"],
-				["`matched`", "CONDITIONS에서 설정한 조건을 처음 충족했을 때", "한 번만"],
-				["`comebacked`", "오프라인에서 1초 이상 꺼짐 후 복귀하고 진행 중인 액션이 있는 경우", "여러 번"],
-				["`gameovered`", "전투에서 플레이어의 스태미나가 바닥났을 때", "여러 번"],
-				["`completed`", "모든 카테고리의 레벨이 최대 값(maxCategoryLevels)에 도달하면", "한 번만"],
-				["`welcomed`", "이 월드를 처음 시작했을 때", "한 번만"],
-				["`obtained`", "single 유형의 액션(보물상자 등)을 완료하거나 확인했을 때. requirements를 충족하면 이벤트 보상도 추가됩니다.", "여러 번"],
-			],
+			summary: "작업 실행 시점 (`matched` 고정)",
+			points: ["작업은 `matched`(설정한 조건을 충족했을 때)로 고정되어 있어 편집할 수 없습니다.", "보상은 한 번만 받을 수 있으며, 한 번 받으면 그 이후로는 달성 상태로 고정됩니다.", "그 외의 시점에 발동시키고 싶은 것은 기본 설정의 이벤트에서 설정합니다."],
+			links: { event: "이벤트" },
 		},
 		unlocked: {
 			title: "초기 표시 상태",
-			summary: "이벤트 아이콘의 초기 표시 상태 (발동 여부는 타이밍에 따라 결정되며, 이 설정에서는 발동하지 않습니다)",
-			points: ["이벤트의 발동 조건은 타이밍에 따라 결정되며, 이 항목은 목록 아이콘의 외관에만 영향을 미칩니다.", "secreted: 모든 요구 사항을 충족할 때까지 이벤트 목록에 전혀 표시되지 않습니다(이벤트 발생 자체는 타이밍에 따라 일어납니다).", "hidden・hinted: 아이콘에 가로줄이 표시되어 잠금 상태로 나타납니다.", "released: 사선이 사라지고 '해제됨'으로 표시됩니다."],
+			summary: "작업 아이콘의 초기 표시 상태 (달성 여부는 조건에 따라 결정되며, 이 설정에서는 달성되지 않습니다)",
+			points: ["タスクの達成条件はrequirementsで決まり、この項目は一覧アイコンの見た目のみに影響します。", "secreted: 全requirementsを満たすまでタスクの一覧に一切表示されません（達成自体は条件で起こります）。", "hidden・hinted: アイコンに斜線が付き未解放として表示されます。", "released: 斜線が消え解放済みとして表示されます。", "一度達成したタスクは一覧から消えず、その後に条件を満たさなくなっても達成のまま表示されます。"],
 		},
 		requirements: {
 			title: "조건",
-			summary: "이벤트 발동 및 보상 지급 조건",
-			points: ["이벤트 발동 또는 보상 부여 조건입니다.", "`matched`에서는 이 조건을 충족할 때만 발동되어 보상을 획득합니다.", "`matched` 이외의 시점에서는, 타이밍 조건이 성립하면 발동합니다. 그 후, 여기서 설정한 조건을 충족할 때에만 보상을 획득합니다."],
+			summary: "과제 달성 조건",
+			points: ["タスクを達成させる条件です。", "この条件を満たすと達成になり、報酬を受け取れるようになります。", "一度達成すると、その後に条件を満たさなくなっても達成のままで、報酬もいつでも受け取れます。", "条件を設定していないタスクは達成しません。"],
 			children: requirement.children,
 		},
 		acquisitions: {
 			title: "보상",
-			summary: "이벤트 발동 시 보상 설정",
-			points: ["이벤트가 발동했을 때의 보상입니다.", "`matched`에서는 조건을 충족하여 발동되었을 때에만 보상을 받습니다.", "`matched` 이외의 경우, 타이밍 조건이 성립하고 conditions의 조건을 모두 충족할 때에만 보상을 획득합니다.", "수량에 마이너스를 설정할 수 있습니다. 예를 들어 `게임오버`의 경우 아이템의 수량을 마이너스로 설정하면 게임 오버 시 아이템이 사라지게 됩니다."],
+			summary: "과제 달성 시 보상 설정",
+			points: ["達成したタスクを開き、獲得のバーを押した時に受け取れる報酬です。", "カテゴリーのレベル、アクションの実行回数、アイテムの所持数を変化させることができます。", "数量にマイナスを設定することもできます。", "報酬を設定していないタスクは獲得のバーが出ず、達成した時点で完了になります。", "持てるアイテムの種類が上限に達している時は受け取れません。整理してから受け取り直します。"],
 			children: acquisition.children,
 		},
 		group: {
@@ -470,7 +464,7 @@ export const event: Type.Event = {
 		},
 	},
 	options: {
-		label: "이벤트",
+		label: "작업",
 	},
 };
 
@@ -681,7 +675,7 @@ export const type: Markdown = {
 	title: "타입",
 	summary: "월드의 기본 분류",
 	points: ["월드는 총 6가지 타입으로 구성된다.", "모든 요소는 월드 바로 아래에 배치됩니다.", "액션과 아이템은 해당 카테고리의 ID로 연관되어 있습니다."],
-	list: expandList("타입", [category, action, item, group, event, preset]),
+	list: expandList("타입", [category, action, item, group, task, preset]),
 	quote: typeTree,
 	options: {
 		label: "유형",
@@ -972,15 +966,83 @@ export const overview: Type.Overview = {
 	},
 };
 
+// タイミングごとの固定イベント。項目の説明はタスクと共通で、タイミング固有の説明だけ差し替える
+const toFixedEvent = (title: string, summary: string, points: string[], timingPoints: string[]): Type.Event => ({
+	title,
+	summary,
+	points,
+	children: {
+		...task.children,
+		category: {
+			title: "카테고리",
+			summary: "이벤트에서는 사용하지 않습니다",
+			points: ["미션이나 작업 목록에 표시되지 않으므로, 소속 카테고리는 지정하지 않습니다.", "편집기에서는 입력란이 표시되지 않습니다."],
+		},
+		timing: {
+			title: "타이밍",
+			summary: "이벤트가 발동되는 시점 (고정)",
+			points: timingPoints,
+		},
+		unlocked: {
+			title: "초기 표시 상태",
+			summary: "이벤트 아이콘의 초기 표시 상태 (발동 여부는 타이밍에 따라 결정되며, 이 설정에서는 발동하지 않습니다)",
+			points: ["이벤트의 발동 조건은 타이밍에 따라 결정되며, 이 항목은 아이콘의 외관에만 영향을 미칩니다.", "secreted: 모든 요구 사항을 충족할 때까지 아이콘이 표시되지 않습니다(발동 자체는 타이밍에 따라 발생합니다).", "hidden・hinted: 아이콘에 가로줄이 표시되어 잠금 상태로 나타납니다.", "released: 사선이 사라지고 '해제됨'으로 표시됩니다."],
+		},
+		requirements: {
+			title: "조건",
+			summary: "보상을 획득하기 위한 조건",
+			points: ["타이밍이 맞으면 이벤트가 발동되며, 전용 화면이 열려 내용이 표시됩니다.", "보상은 발동 시, 여기에 설정한 조건을 충족하는 경우에만 획득합니다.", "조건을 설정하지 않은 경우, 발동할 때마다 보상을 획득합니다."],
+			children: requirement.children,
+		},
+		acquisitions: {
+			title: "보상",
+			summary: "이벤트 발동 시 보상 설정",
+			points: ["타이밍이 맞고, 조건을 충족할 때 얻을 수 있는 보상입니다.", "과제와 달리 수령할 필요가 없으며, 발동과 동시에 자동으로 획득됩니다.", "수량에 마이너스 값을 설정할 수 있습니다. 예를 들어, 게임 오버 시 아이템 수량을 마이너스로 설정하면 해당 아이템을 잃게 됩니다."],
+			children: acquisition.children,
+		},
+		group: {
+			title: "태스크 그룹",
+			summary: "이벤트에서는 사용하지 않습니다",
+			points: ["미션이나 작업 목록에 표시되지 않으므로 그룹 지정은 사용하지 않습니다.", "편집기에서는 입력란이 표시되지 않습니다."],
+		},
+	},
+});
+
+export const event: Type.Events = {
+	title: "이벤트",
+	summary: "정해진 시점에 발동되는 메시지와 보상",
+	points: ["월드를 처음 실행했을 때나 게임 오버가 되었을 때 등, 정해진 시점에 발동되어 전용 화면이 열립니다.", "각 타이밍마다 하나씩 준비되어 있으며, 추가나 삭제는 할 수 없습니다. 사용하지 않는 타이밍은 공란으로 둡니다.", "미션이나 작업 목록에는 표시되지 않습니다. 조건을 충족하면 달성으로 처리되는 항목은 작업으로 설정합니다.", "보상은 발동과 동시에 자동으로 획득됩니다. 태스크와 같은 수령 절차나 리본도 없습니다.", "발동 시 카테고리 레벨, 액션 실행 횟수, 아이템 소지 수 등을 변경할 수 있습니다.", "이름·설명·아이콘을 비워두면, 플레이어에 내장된 기본 문구와 아이콘이 사용됩니다."],
+	list: [
+		["타이밍", "발동 조건", "반복"],
+		["`comebacked`", "오프라인에서 1초 이상 꺼짐 후 복귀하고 진행 중인 액션이 있는 경우", "여러 번"],
+		["`gameovered`", "전투에서 플레이어의 스태미나가 바닥났을 때", "여러 번"],
+		["`welcomed`", "이 월드를 처음 시작했을 때", "한 번만"],
+		["`completed`", "모든 카테고리의 레벨이 최대 값(maxCategoryLevels)에 도달하면", "한 번만"],
+		["`obtained`", "특정 유형의 액션(보물상자 등)을 완료하거나 확인했을 때", "여러 번"],
+	],
+	links: { task: "작업" },
+	children: {
+		comebacked: toFixedEvent("복귀 시", "오프라인 상태에서 복귀했을 때 발동", ["오프라인 상태에서 1초 이상 경과한 후 다시 접속했을 때, 진행 중인 액션이 있을 경우 발동합니다.", "떨어져 있는 동안의 진행 상황 요약과 함께 표시됩니다."], ["`comebacked`로 고정되어 있어 편집할 수 없습니다.", "복귀할 때마다 몇 번이고 발동합니다."]),
+		gameovered: toFixedEvent("게임 오버 시", "전투 중 스태미나가 바닥났을 때 발동", ["전투 중 플레이어의 스태미나가 바닥났을 때 발동합니다.", "보상의 수량에 마이너스 값을 설정하면, 게임 오버 시 대가를 치르게 할 수 있습니다."], ["`gameovered`로 고정되어 있어 편집할 수 없습니다.", "게임 오버가 될 때마다 몇 번이고 발동합니다."]),
+		welcomed: toFixedEvent("처음 시작할 때", "월드를 처음 열었을 때 발동", ["이 월드를 처음 실행할 때 발동합니다.", "세계관 설명이나, 시작 시에 전달하는 준비물을 건네는 데 사용합니다."], ["`welcomed`로 고정되어 있어 편집할 수 없습니다.", "처음 실행할 때 한 번만 발동됩니다."]),
+		completed: toFixedEvent("클리어 시", "모든 카테고리가 최대 레벨에 도달했을 때 발동", ["모든 카테고리의 레벨이 최대값(maxCategoryLevels)에 도달했을 때 발동합니다.", "숫자가 아닌 카테고리는 판정에서 제외됩니다."], ["`completed`로 고정되어 있어 편집할 수 없습니다.", "조건을 충족했을 때 한 번만 발동합니다."]),
+		obtained: toFixedEvent("단발 액션 완료 시", "보물상자 등 일회성 액션을 완료했을 때 발동", ["single 유형의 액션(보물상자 등)을 완료하거나 확인했을 때 발동합니다.", "액션 자체의 보상과 별도로, 여기에서 설정한 보상을 추가로 지급할 수 있습니다."], ["`obtained`로 고정되어 있어 편집할 수 없습니다.", "단발 액션을 완료할 때마다 몇 번이고 발동됩니다."]),
+	},
+	options: {
+		label: "이벤트",
+	},
+};
+
 export const basic: Type.Basic = {
 	title: "기본 설정",
 	summary: "월드 전반의 기본 설정 항목",
 	points: ["월드 이름, 설명, 배경, 통화, 용량, 카테고리의 최대 레벨, 경험치 상승률, 할인율, 표준 전투 매개변수 등을 설정합니다.", "이러한 설정은 월드 전체에 영향을 미칩니다."],
-	list: expandList("명칭", [overview, general, design, development]),
+	list: expandList("명칭", [overview, general, design, event, development]),
 	children: {
 		overview: overview,
 		general: general,
 		design: design,
+		events: event,
 		development: development,
 	},
 	options: {
@@ -1002,7 +1064,7 @@ export const world: Type.World = {
 		actions: { ...action, options: { ...action.options, array: true } },
 		items: { ...item, options: { ...item.options, array: true } },
 		groups: { ...group, options: { ...group.options, array: true } },
-		events: { ...event, options: { ...event.options, array: true } },
+		tasks: { ...task, options: { ...task.options, array: true } },
 		presets: { ...preset, options: { ...preset.options, array: true } },
 	},
 	options: {
@@ -1030,8 +1092,8 @@ export const tree: Tree = {
 	title: editor,
 	twig: [
 		{ title: world }, 
-		{ title: basic, twig: [overview, general, design, development] }, 
-		{ title: type, twig: [category, action, item, group, event, preset] }, 
+		{ title: basic, twig: [overview, general, design, event, development] },
+		{ title: type, twig: [category, action, item, group, task, preset] },
 		{ title: component, twig: [information, requirement, acquisition, combat, property] }, 
 		{ title: miscellaneous, twig: [translation] }
 	],

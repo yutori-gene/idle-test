@@ -9,6 +9,7 @@
 |[_overview_](ja/editor/overview)|ワールドの基本情報と製作者情報|
 |[_general_](ja/editor/general)|言語、レベル設定などの基本的なゲーム設定|
 |[_design_](ja/editor/design)|ワールドの色やフォントなどの見た目設定|
+|[_event_](ja/editor/event)|決まったタイミングで発動するメッセージと報酬|
 |[_development_](ja/editor/development)|ワールド開発時のメモやエラー管理|
 ___
 
@@ -19,6 +20,9 @@ ___
 ___
 
 ## [_デザイン_](ja/editor/design)
+___
+
+## [_イベント_](ja/editor/event)
 ___
 
 ## [_開発_](ja/editor/development)

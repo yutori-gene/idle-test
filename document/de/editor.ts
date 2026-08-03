@@ -9,7 +9,7 @@ world
 ├── action
 ├── item
 ├── group
-├── event
+├── task
 └── preset
 `;
 
@@ -421,45 +421,39 @@ export const preset: Type.Information = {
 	},
 };
 
-export const event: Type.Event = {
-	title: "Ereignis",
-	summary: "Nachrichten- und Belohnungssystem, das durch Bedingungen ausgelöst wird.",
-	points: ["Sie wird ausgelöst, wenn die eingestellten Zeitpunkte/Bedingungen erfüllt sind, und es wird eine Meldung angezeigt.", "Sie kann beim ersten Start, nach dem Spiel vorbei, bei der Rückkehr aus dem Aus ausgelöst werden, oder wenn bestimmte Bedingungen erfüllt sind.", "Er kann das Level der Kategorie, die Anzahl der durchgeführten Aktionen und die Anzahl der Gegenstände, die er bei der Aktivierung besitzt, verändern."],
+export const task: Type.Event = {
+	title: "Aufgabe",
+	summary: "Missionen, die als abgeschlossen gelten, sobald die Bedingungen erfüllt sind",
+	points: ["Wenn die Konfiguration der Bedingungen erfüllt ist, gilt die Aufgabe als erledigt, und auf dem oberen Bildschirmrand wird eine Meldung angezeigt.", "Sie werden in der Liste der Spieler-Missionen und in der Liste der Aufgaben nach Kategorie angezeigt.", "Die Belohnung wird nicht automatisch ausgezahlt. Der Spieler erhält sie, wenn er die Aufgabe öffnet und auf den Button für Erwerbungen tippt.", "Bis zur Auszahlung der Vergütung wird die Liste mit einem Band gekennzeichnet, um anzuzeigen, dass sie noch nicht entgegengenommen wurde.", "Durch Erwerbungen kannst du das Level der Kategorie, die Anzahl der ausgeführten Aktionen und die Anzahl der besessenen Gegenstände verändern.", "Elemente, die zu anderen Zeitpunkten als den festgelegten Bedingungen – beispielsweise beim ersten Start oder beim Spiel vorbei – ausgelöst werden sollen, werden in der Konfiguration unter „Ereignisse“ konfiguriert."],
+	links: { event: "Veranstaltung" },
 	children: {
 		information: information,
 		category: {
 			title: "Kategorie.",
 			summary: "ID der Kategorie, zu der die Aufgabe gehört",
-			points: ["Geben Sie die ID der Kategorie an, der dieses Ereignis als Aufgabe zugeordnet werden soll.", "Wenn Sie diese Konfiguration vornehmen, wird auf dem Bildschirm „Kategorien der Spieler“ eine Liste der Aufgaben hinzugefügt, und auch in der Missionsliste werden diese nach Kategorien geordnet angezeigt.", "Wenn das Feld leer ist, gehört die Mission zu keiner Kategorie und wird am Anfang der Missionsliste zusammengefasst angezeigt.", "Nur Ereignisse mit dem Timing `matched` werden in der Anzeige berücksichtigt. Bei anderen Timings hat die Konfiguration keinen Einfluss auf die Anzeige, auch wenn sie festgelegt wird."],
+			points: ["Geben Sie die ID der Kategorie an, der diese Aufgabe zugeordnet werden soll.", "Wenn Sie diese Konfiguration vornehmen, wird auf dem Bildschirm „Kategorien der Spieler“ eine Liste der Aufgaben hinzugefügt, und auch in der Missionsliste werden diese nach Kategorien geordnet angezeigt.", "Wenn das Feld leer ist, gehört die Mission zu keiner Kategorie und wird am Anfang der Missionsliste zusammengefasst angezeigt."],
 		},
 		timing: {
 			title: "Zeitmessung",
-			summary: "Konfiguration des Zeitpunkts der Auslösung von Ereignissen.",
-			list: [
-				["Zeitmessung", "Aktivierungsbedingung", "wiederholen"],
-				["übereinstimmen\".", "Wenn die in CONDITIONS festgelegten Bedingungen zum ersten Mal erfüllt sind.", "nur einmal"],
-				["zurückgekommen\".", "Wenn eine Person für mehr als eine Sekunde aus dem Internet zurückkehrt und eine Aktion im Läuft ist.", "oft"],
-				["`Gameovered`.", "Wenn die Ausdauer des Spielers im Kampf zu Ende geht.", "oft"],
-				["abgeschlossen\".", "Wenn der max. Level aller Kategorien (maxCategoryLevels) erreicht ist.", "nur einmal"],
-				["willkommen\".", "Als ich mit dieser Welt anfing.", "nur einmal"],
-				["`obtained`", "Wenn eine Aktion einer bestimmten Art (z. B. Schatztruhe) abgeschlossen oder bestätigt wurde. Sofern die Voraussetzungen erfüllt sind, werden auch die Belohnungen des Ereignisses gutgeschrieben.", "oft"],
-			],
+			summary: "Zeitpunkt der Aufgabenauslösung (fest auf `matched` gesetzt)",
+			points: ["Die Aufgabe ist auf „`matched`“ (wenn die Konfiguration die festgelegten Bedingungen erfüllt) festgelegt und kann nicht bearbeitet werden.", "Die Belohnung kann nur einmal erhalten werden; sobald sie entgegengenommen wurde, bleibt der Status „erreicht“ unverändert.", "Alles, was zu einem anderen Zeitpunkt ausgelöst werden soll, wird in den Grundeinstellungen unter „Ereignisse“ konfiguriert."],
+			links: { event: "Veranstaltung" },
 		},
 		unlocked: {
 			title: "Anfangsanzeige",
-			summary: "Standardanzeige des Ereignis-Symbols (die Auslösung hängt vom Zeitpunkt ab; bei dieser Konfiguration wird das Ereignis nicht ausgelöst)",
-			points: ["Die Auslösebedingungen für das Ereignis werden durch den Zeitpunkt bestimmt; dieser Eintrag wirkt sich lediglich auf das Aussehen des Listen-Symbols aus.", "secreted: Wird erst dann in der Liste der Ereignisse angezeigt, wenn alle Anforderungen erfüllt sind (die Auslösung selbst erfolgt jedoch zum vorgesehenen Zeitpunkt).", "hidden・hinted: Das Symbol wird mit einem Schrägstrich versehen und als „noch nicht freigeschaltet“ angezeigt.", "Freigegeben: Die Durchstreichung verschwindet und der Eintrag wird als freigegeben angezeigt."],
+			summary: "Anfangsstatus des Aufgaben-Symbols (ob die Aufgabe als erledigt gilt, hängt von bestimmten Bedingungen ab; bei dieser Konfiguration gilt sie als nicht erledigt)",
+			points: ["タスクの達成条件はrequirementsで決まり、この項目は一覧アイコンの見た目のみに影響します。", "secreted: 全requirementsを満たすまでタスクの一覧に一切表示されません（達成自体は条件で起こります）。", "hidden・hinted: アイコンに斜線が付き未解放として表示されます。", "released: 斜線が消え解放済みとして表示されます。", "一度達成したタスクは一覧から消えず、その後に条件を満たさなくなっても達成のまま表示されます。"],
 		},
 		requirements: {
 			title: "Bedingungen und Konditionen",
-			summary: "Bedingungen für die Auslösung von Ereignissen und die Gewährung von Belohnungen.",
-			points: ["Bedingungen für die Auslösung von Ereignissen oder die Gewährung von Belohnungen.", "Bei „matched“ werden die Erwerbungen nur dann ausgezahlt, wenn diese Bedingung erfüllt ist.", "Außer bei „matched“ wird die Aktion ausgelöst, sobald die zeitlichen Bedingungen erfüllt sind. Anschließend erfolgt der Erwerb der Belohnung nur dann, wenn die Konfiguration der Bedingungen erfüllt ist."],
+			summary: "Bedingungen für den Abschluss der Aufgabe",
+			points: ["タスクを達成させる条件です。", "この条件を満たすと達成になり、報酬を受け取れるようになります。", "一度達成すると、その後に条件を満たさなくなっても達成のままで、報酬もいつでも受け取れます。", "条件を設定していないタスクは達成しません。"],
 			children: requirement.children,
 		},
 		acquisitions: {
 			title: "Belohnung",
-			summary: "Konfiguration der Belohnung, wenn das Ereignis ausgelöst wird.",
-			points: ["Dies ist die Belohnung, wenn das Ereignis ausgelöst wird.", "Bei „matched“ erhalten Sie eine Belohnung nur dann, wenn die Bedingungen erfüllt sind und die Aktion ausgelöst wird.", "Außer bei `matched` erfolgt der Erwerb nur dann, wenn die zeitlichen Bedingungen erfüllt sind und zudem die Bedingungen unter „conditions“ erfüllt sind.", "Sie können die Anzahl auf einen negativen Wert zählen. Wenn Sie z. B. die Anzahl der Gegenstände auf einen negativen Wert zählen, wenn Sie `gameovered` sind, verlieren Sie sie, wenn das Spiel vorbei ist."],
+			summary: "Konfiguration der Belohnung bei Erledigung einer Aufgabe",
+			points: ["達成したタスクを開き、獲得のバーを押した時に受け取れる報酬です。", "カテゴリーのレベル、アクションの実行回数、アイテムの所持数を変化させることができます。", "数量にマイナスを設定することもできます。", "報酬を設定していないタスクは獲得のバーが出ず、達成した時点で完了になります。", "持てるアイテムの種類が上限に達している時は受け取れません。整理してから受け取り直します。"],
 			children: acquisition.children,
 		},
 		group: {
@@ -470,7 +464,7 @@ export const event: Type.Event = {
 		},
 	},
 	options: {
-		label: "Veranstaltung",
+		label: "Aufgabe",
 	},
 };
 
@@ -681,7 +675,7 @@ export const type: Markdown = {
 	title: "Typ.",
 	summary: "Grundlegende Minuten-Klassifizierung der Welten",
 	points: ["Es gibt sechs Arten von Welten.", "Alle Elemente befinden sich direkt ab der Welt.", "Aktionen und Gegenstände werden mit der ID der Kategorie, zu der sie gehören, verknüpft."],
-	list: expandList("Typ.", [category, action, item, group, event, preset]),
+	list: expandList("Typ.", [category, action, item, group, task, preset]),
 	quote: typeTree,
 	options: {
 		label: "Typ",
@@ -972,15 +966,83 @@ export const overview: Type.Overview = {
 	},
 };
 
+// タイミングごとの固定イベント。項目の説明はタスクと共通で、タイミング固有の説明だけ差し替える
+const toFixedEvent = (title: string, summary: string, points: string[], timingPoints: string[]): Type.Event => ({
+	title,
+	summary,
+	points,
+	children: {
+		...task.children,
+		category: {
+			title: "Kategorie.",
+			summary: "Wird bei dem Ereignis nicht verwendet",
+			points: ["Da dies nicht in der Liste der Missionen und Aufgaben angezeigt wird, wird keine zugehörige Kategorie angegeben.", "Im Editor wird das Eingabefeld nicht angezeigt."],
+		},
+		timing: {
+			title: "Zeitmessung",
+			summary: "Zeitpunkt der Auslösung des Ereignisses (festgelegt)",
+			points: timingPoints,
+		},
+		unlocked: {
+			title: "Anfangsanzeige",
+			summary: "Standardanzeige des Ereignis-Symbols (die Auslösung hängt vom Zeitpunkt ab; bei dieser Konfiguration wird das Ereignis nicht ausgelöst)",
+			points: ["Die Auslösebedingungen für das Ereignis werden durch den Zeitpunkt bestimmt; dieser Punkt wirkt sich lediglich auf das Aussehen des Symbols aus.", "secreted: Das Symbol wird erst angezeigt, wenn alle Voraussetzungen erfüllt sind (die Auslösung selbst erfolgt zeitabhängig).", "hidden・hinted: Das Symbol wird mit einem Schrägstrich versehen und als „noch nicht freigeschaltet“ angezeigt.", "Freigegeben: Die Durchstreichung verschwindet und der Eintrag wird als freigegeben angezeigt."],
+		},
+		requirements: {
+			title: "Bedingungen und Konditionen",
+			summary: "Bedingungen für den Erwerb einer Vergütung",
+			points: ["Sobald die Bedingung erfüllt ist, wird das Ereignis ausgelöst und ein spezieller Bildschirm geöffnet, auf dem der Inhalt angezeigt wird.", "Die Belohnung wird nur dann erworben, wenn zum Zeitpunkt der Auslösung die hier vorgenommenen Konfigurationen erfüllt sind.", "Wenn keine Konfiguration vorgenommen wurde, erhalten Sie bei jeder Auslösung Erwerbungen."],
+			children: requirement.children,
+		},
+		acquisitions: {
+			title: "Belohnung",
+			summary: "Konfiguration der Belohnung, wenn das Ereignis ausgelöst wird.",
+			points: ["Dies ist eine Belohnung, die man erhält, wenn der richtige Zeitpunkt erreicht ist und die Bedingungen erfüllt sind.", "Im Gegensatz zu Aufgaben sind keine Empfangsvorgänge erforderlich; die Erwerbungen erfolgen automatisch bei Aktivierung.", "Sie können für die Anzahl einen negativen Wert festlegen. Wenn Sie beispielsweise beim Spiel vorbei die Anzahl der Gegenstände auf einen negativen Wert setzen, gehen diese verloren."],
+			children: acquisition.children,
+		},
+		group: {
+			title: "Arbeitsgruppe",
+			summary: "Wird bei dem Ereignis nicht verwendet",
+			points: ["Da dies nicht in der Liste der Missionen und Aufgaben angezeigt wird, wird die Gruppenzuordnung nicht verwendet.", "Im Editor wird das Eingabefeld nicht angezeigt."],
+		},
+	},
+});
+
+export const event: Type.Events = {
+	title: "Ereignis",
+	summary: "Nachrichten und Belohnungen, die zu festgelegten Zeitpunkten ausgelöst werden",
+	points: ["Zu bestimmten Zeitpunkten, beispielsweise beim ersten Öffnen einer Welt oder wenn das Spiel vorbei ist, wird diese Funktion ausgelöst und ein spezieller Bildschirm geöffnet.", "Für jeden Zeitpunkt ist jeweils ein Feld vorgesehen; es können weder weitere hinzugefügt noch entfernt werden. Felder für nicht verwendete Zeitpunkte bleiben leer.", "Sie werden nicht in der Liste der Missionen und Aufgaben angezeigt. Aufgaben, die als erledigt gelten, sobald bestimmte Bedingungen erfüllt sind, werden als Aufgaben in der Konfiguration festgelegt.", "Die Belohnung wird automatisch bei Aktivierung erworben. Es gibt weder einen Vorgang zum Abholen wie bei Aufgaben noch ein Band.", "Er kann das Level der Kategorie, die Anzahl der durchgeführten Aktionen und die Anzahl der Gegenstände, die er bei der Aktivierung besitzt, verändern.", "Wenn Sie die Felder „Name“, „Beschreibung“ und „Symbol“ leer lassen, werden die bei den Spielern integrierten Standardtexte und -symbole verwendet."],
+	list: [
+		["Zeitmessung", "Aktivierungsbedingung", "wiederholen"],
+		["zurückgekommen\".", "Wenn eine Person für mehr als eine Sekunde aus dem Internet zurückkehrt und eine Aktion im Läuft ist.", "oft"],
+		["`Gameovered`.", "Wenn die Ausdauer des Spielers im Kampf zu Ende geht.", "oft"],
+		["willkommen\".", "Als ich mit dieser Welt anfing.", "nur einmal"],
+		["abgeschlossen\".", "Wenn der max. Level aller Kategorien (maxCategoryLevels) erreicht ist.", "nur einmal"],
+		["`obtained`", "Wenn eine bestimmte Aktion (z. B. eine Schatzkiste) abgeschlossen bzw. bestätigt wurde", "oft"],
+	],
+	links: { task: "Aufgabe" },
+	children: {
+		comebacked: toFixedEvent("Bei der Rückkehr", "Wird ausgelöst, wenn man wieder online ist", ["Diese Funktion wird ausgelöst, wenn nach einer Offline-Phase von mehr als einer Sekunde die Verbindung wiederhergestellt wird und zu diesem Zeitpunkt eine Aktion läuft.", "Es wird zusammen mit einer Zusammenfassung des Fortschritts während der Abwesenheit angezeigt."], ["Der Wert ist auf „comebacked“ festgelegt und kann nicht bearbeitet werden.", "Diese Funktion wird bei jeder Rückkehr so oft wie nötig ausgelöst."]),
+		gameovered: toFixedEvent("Bei Spiel vorbei", "Wird ausgelöst, wenn die Ausdauer im Kampf aufgebraucht ist", ["Diese Funktion wird ausgelöst, wenn die Ausdauer des Spielers im Kampf aufgebraucht ist.", "Wenn Sie für die Belohnungsmenge ein Minus festlegen, können Sie damit eine Strafe für das Spiel vorbei einführen."], ["Der Wert ist auf `gameovered` festgelegt und kann nicht bearbeitet werden.", "Diese Funktion wird jedes Mal ausgelöst, wenn das Spiel vorbei ist – und zwar so oft wie nötig."]),
+		welcomed: toFixedEvent("Beim ersten Start", "Wird ausgelöst, wenn die Welt zum ersten Mal geöffnet wird", ["Diese Funktion wird ausgelöst, wenn diese Welt zum ersten Mal gestartet wird.", "Dies dient zur Erläuterung des Spieluniversums und zur Übergabe der Ausrüstung, die beim Start des Spiels ausgehändigt wird."], ["Der Wert ist auf „welcomed“ festgelegt und kann nicht bearbeitet werden.", "Diese Funktion wird nur einmal beim ersten Start ausgelöst."]),
+		completed: toFixedEvent("Nach Abschluss des Spiels", "Wird ausgelöst, wenn alle Kategorien das max. Level erreicht haben", ["Diese Funktion wird ausgelöst, wenn das Level aller Kategorien den Maximalwert (maxCategoryLevels) erreicht hat.", "Kategorien, die nicht numerisch sind, werden bei der Auswertung ausgeschlossen."], ["Der Wert ist auf „completed“ festgelegt und kann nicht bearbeitet werden.", "Wird nur einmal ausgelöst, wenn die Bedingungen erfüllt sind."]),
+		obtained: toFixedEvent("Nach Abschluss einer einzelnen Aktion", "Wird ausgelöst, wenn eine einmalige Aktion wie das Öffnen einer Schatzkiste abgeschlossen wurde", ["Wird ausgelöst, wenn eine Aktion einer bestimmten Art (z. B. eine Schatztruhe) abgeschlossen oder bestätigt wurde.", "Zusätzlich zu der Belohnung für die Aktion selbst können Sie die hier festgelegte Belohnung auf die Aktion aufaddieren."], ["Der Wert ist auf `obtained` festgelegt und kann nicht bearbeitet werden.", "Wird nach jedem Abschluss einer Einzelaktion beliebig oft ausgelöst."]),
+	},
+	options: {
+		label: "Veranstaltung",
+	},
+};
+
 export const basic: Type.Basic = {
 	title: "Grundeinstellung",
 	summary: "Grundlegende Konfigurationselemente für die Welt im Allgemeinen.",
 	points: ["Konfiguration des Namens der Welt, der Beschreibung, des Hintergrunds, der Währung, der Kapazität, des maximalen Levels der Kategorien, der Rate des Erfahrungszuwachses, des Rabatts, der Standard-Kampfparameter, usw.", "Diese Konfigurationen wirken sich auf die gesamte Welt aus."],
-	list: expandList("Name", [overview, general, design, development]),
+	list: expandList("Name", [overview, general, design, event, development]),
 	children: {
 		overview: overview,
 		general: general,
 		design: design,
+		events: event,
 		development: development,
 	},
 	options: {
@@ -1002,7 +1064,7 @@ export const world: Type.World = {
 		actions: { ...action, options: { ...action.options, array: true } },
 		items: { ...item, options: { ...item.options, array: true } },
 		groups: { ...group, options: { ...group.options, array: true } },
-		events: { ...event, options: { ...event.options, array: true } },
+		tasks: { ...task, options: { ...task.options, array: true } },
 		presets: { ...preset, options: { ...preset.options, array: true } },
 	},
 	options: {
@@ -1030,8 +1092,8 @@ export const tree: Tree = {
 	title: editor,
 	twig: [
 		{ title: world }, 
-		{ title: basic, twig: [overview, general, design, development] }, 
-		{ title: type, twig: [category, action, item, group, event, preset] }, 
+		{ title: basic, twig: [overview, general, design, event, development] },
+		{ title: type, twig: [category, action, item, group, task, preset] },
 		{ title: component, twig: [information, requirement, acquisition, combat, property] }, 
 		{ title: miscellaneous, twig: [translation] }
 	],

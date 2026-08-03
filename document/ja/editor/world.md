@@ -21,7 +21,7 @@ ___
 ## [_グループ_](ja/editor/group)
 ___
 
-## [_イベント_](ja/editor/event)
+## [_タスク_](ja/editor/task)
 ___
 
 ## [_プリセット_](ja/editor/preset)

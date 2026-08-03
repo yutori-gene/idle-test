@@ -120,7 +120,7 @@ world
 ├── action
 ├── item
 ├── group
-├── event
+├── task
 └── preset
 ```
 - [_type_](de/Herausgeber/Typ)

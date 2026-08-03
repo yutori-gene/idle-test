@@ -11,7 +11,7 @@ Basic Classification of Worlds
 |[_action_](en/editor/action)|Acting elements such as collecting, creating, and fighting|
 |[_item_](en/editor/item)|Material elements such as Equipment and Consumables|
 |[_group_](en/editor/group)|Define Display Groups for Categories, Actions, and Items|
-|[_event_](en/editor/event)|Message and reward system triggered by conditions|
+|[_task_](en/editor/task)|Missions that are completed when certain conditions are met|
 |[_preset_](en/editor/preset)|Customize the display of system elements|
 ```
 world
@@ -19,6 +19,6 @@ world
 ├── action
 ├── item
 ├── group
-├── event
+├── task
 └── preset
 ```

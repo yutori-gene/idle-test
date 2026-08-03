@@ -25,3 +25,5 @@ Lista de todas as tarefas
 - Eles são exibidos agrupados por categoria.
 - As tarefas sem configuração de categoria são exibidas agrupadas no início da lista.
 - As tarefas concluídas são marcadas com um sinal de visto.
+- As tarefas cuja recompensa ainda não foi recebida são marcadas com uma fita. Basta selecioná-las e clicar em “Receber” para obtê-la.
+- As tarefas que, após terem sido concluídas, deixarem de atender aos critérios, terão um ícone com uma barra diagonal e voltarão ao status de “não concluídas”.

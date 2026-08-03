@@ -1,51 +1,60 @@
 
 # Ereignis
-Nachrichten- und Belohnungssystem, das durch Bedingungen ausgelöst wird.
-- Sie wird ausgelöst, wenn die eingestellten Zeitpunkte/Bedingungen erfüllt sind, und es wird eine Meldung angezeigt.
-- Sie kann beim ersten Start, nach dem Spiel vorbei, bei der Rückkehr aus dem Aus ausgelöst werden, oder wenn bestimmte Bedingungen erfüllt sind.
+Nachrichten und Belohnungen, die zu festgelegten Zeitpunkten ausgelöst werden
+- Zu bestimmten Zeitpunkten, beispielsweise beim ersten Öffnen einer Welt oder wenn das Spiel vorbei ist, wird diese Funktion ausgelöst und ein spezieller Bildschirm geöffnet.
+- Für jeden Zeitpunkt ist jeweils ein Feld vorgesehen; es können weder weitere hinzugefügt noch entfernt werden. Felder für nicht verwendete Zeitpunkte bleiben leer.
+- Sie werden nicht in der Liste der Missionen und Aufgaben angezeigt. Aufgaben, die als erledigt gelten, sobald bestimmte Bedingungen erfüllt sind, werden als Aufgaben in der Konfiguration festgelegt.
+- Die Belohnung wird automatisch bei Aktivierung erworben. Es gibt weder einen Vorgang zum Abholen wie bei Aufgaben noch ein Band.
 - Er kann das Level der Kategorie, die Anzahl der durchgeführten Aktionen und die Anzahl der Gegenstände, die er bei der Aktivierung besitzt, verändern.
-___
-
-## [_Informationen_](de/Herausgeber/Informationen)
-___
-
-## Kategorie.
-ID der Kategorie, zu der die Aufgabe gehört
-- Geben Sie die ID der Kategorie an, der dieses Ereignis als Aufgabe zugeordnet werden soll.
-- Wenn Sie diese Konfiguration vornehmen, wird auf dem Bildschirm „Kategorien der Spieler“ eine Liste der Aufgaben hinzugefügt, und auch in der Missionsliste werden diese nach Kategorien geordnet angezeigt.
-- Wenn das Feld leer ist, gehört die Mission zu keiner Kategorie und wird am Anfang der Missionsliste zusammengefasst angezeigt.
-- Nur Ereignisse mit dem Timing `matched` werden in der Anzeige berücksichtigt. Bei anderen Timings hat die Konfiguration keinen Einfluss auf die Anzeige, auch wenn sie festgelegt wird.
-___
-
-## Zeitmessung
-Konfiguration des Zeitpunkts der Auslösung von Ereignissen.
+- Wenn Sie die Felder „Name“, „Beschreibung“ und „Symbol“ leer lassen, werden die bei den Spielern integrierten Standardtexte und -symbole verwendet.
 
 |Zeitmessung|Aktivierungsbedingung|wiederholen|
 |-|-|-|
-|übereinstimmen".|Wenn die in CONDITIONS festgelegten Bedingungen zum ersten Mal erfüllt sind.|nur einmal|
 |zurückgekommen".|Wenn eine Person für mehr als eine Sekunde aus dem Internet zurückkehrt und eine Aktion im Läuft ist.|oft|
 |`Gameovered`.|Wenn die Ausdauer des Spielers im Kampf zu Ende geht.|oft|
-|abgeschlossen".|Wenn der max. Level aller Kategorien (maxCategoryLevels) erreicht ist.|nur einmal|
 |willkommen".|Als ich mit dieser Welt anfing.|nur einmal|
-|`obtained`|Wenn eine Aktion einer bestimmten Art (z. B. Schatztruhe) abgeschlossen oder bestätigt wurde. Sofern die Voraussetzungen erfüllt sind, werden auch die Belohnungen des Ereignisses gutgeschrieben.|oft|
+|abgeschlossen".|Wenn der max. Level aller Kategorien (maxCategoryLevels) erreicht ist.|nur einmal|
+|`obtained`|Wenn eine bestimmte Aktion (z. B. eine Schatzkiste) abgeschlossen bzw. bestätigt wurde|oft|
+- [_task_](de/Herausgeber/Aufgabe)
 ___
 
-## Anfangsanzeige
+## Bei der Rückkehr
+Wird ausgelöst, wenn man wieder online ist
+- Diese Funktion wird ausgelöst, wenn nach einer Offline-Phase von mehr als einer Sekunde die Verbindung wiederhergestellt wird und zu diesem Zeitpunkt eine Aktion läuft.
+- Es wird zusammen mit einer Zusammenfassung des Fortschritts während der Abwesenheit angezeigt.
+___
+
+### [_Informationen_](de/Herausgeber/Informationen)
+___
+
+### Kategorie.
+Wird bei dem Ereignis nicht verwendet
+- Da dies nicht in der Liste der Missionen und Aufgaben angezeigt wird, wird keine zugehörige Kategorie angegeben.
+- Im Editor wird das Eingabefeld nicht angezeigt.
+___
+
+### Zeitmessung
+Zeitpunkt der Auslösung des Ereignisses (festgelegt)
+- Der Wert ist auf „comebacked“ festgelegt und kann nicht bearbeitet werden.
+- Diese Funktion wird bei jeder Rückkehr so oft wie nötig ausgelöst.
+___
+
+### Anfangsanzeige
 Standardanzeige des Ereignis-Symbols (die Auslösung hängt vom Zeitpunkt ab; bei dieser Konfiguration wird das Ereignis nicht ausgelöst)
-- Die Auslösebedingungen für das Ereignis werden durch den Zeitpunkt bestimmt; dieser Eintrag wirkt sich lediglich auf das Aussehen des Listen-Symbols aus.
-- secreted: Wird erst dann in der Liste der Ereignisse angezeigt, wenn alle Anforderungen erfüllt sind (die Auslösung selbst erfolgt jedoch zum vorgesehenen Zeitpunkt).
+- Die Auslösebedingungen für das Ereignis werden durch den Zeitpunkt bestimmt; dieser Punkt wirkt sich lediglich auf das Aussehen des Symbols aus.
+- secreted: Das Symbol wird erst angezeigt, wenn alle Voraussetzungen erfüllt sind (die Auslösung selbst erfolgt zeitabhängig).
 - hidden・hinted: Das Symbol wird mit einem Schrägstrich versehen und als „noch nicht freigeschaltet“ angezeigt.
 - Freigegeben: Die Durchstreichung verschwindet und der Eintrag wird als freigegeben angezeigt.
 ___
 
-## Bedingungen und Konditionen
-Bedingungen für die Auslösung von Ereignissen und die Gewährung von Belohnungen.
-- Bedingungen für die Auslösung von Ereignissen oder die Gewährung von Belohnungen.
-- Bei „matched“ werden die Erwerbungen nur dann ausgezahlt, wenn diese Bedingung erfüllt ist.
-- Außer bei „matched“ wird die Aktion ausgelöst, sobald die zeitlichen Bedingungen erfüllt sind. Anschließend erfolgt der Erwerb der Belohnung nur dann, wenn die Konfiguration der Bedingungen erfüllt ist.
+### Bedingungen und Konditionen
+Bedingungen für den Erwerb einer Vergütung
+- Sobald die Bedingung erfüllt ist, wird das Ereignis ausgelöst und ein spezieller Bildschirm geöffnet, auf dem der Inhalt angezeigt wird.
+- Die Belohnung wird nur dann erworben, wenn zum Zeitpunkt der Auslösung die hier vorgenommenen Konfigurationen erfüllt sind.
+- Wenn keine Konfiguration vorgenommen wurde, erhalten Sie bei jeder Auslösung Erwerbungen.
 ___
 
-### Typ.
+#### Typ.
 Art des Elements, auf das als Bedingung verwiesen wird.
 
 |Typ.|Referenzierte Werte|
@@ -55,16 +64,16 @@ Art des Elements, auf das als Bedingung verwiesen wird.
 |Gegenstand|Anzahl der gehaltenen Gegenstände.|
 ___
 
-### ID des Elements
+#### ID des Elements
 ID des Elements, auf das sich die Bedingung bezieht.
 ___
 
-### Wert
+#### Wert
 Notwendige numerische Werte für Anforderungen.
 - Die Bedingung ist erfüllt, wenn der Wert größer als oder gleich dem angegebenen Wert ist.
 ___
 
-### Verbrauchswahrscheinlichkeit [0-1].
+#### Verbrauchswahrscheinlichkeit [0-1].
 Wahrscheinlichkeit, dass ein Gegenstand konsumiert wird (0-1, nur gültig, wenn der Typ Gegenstand ist).
 - Die Wahrscheinlichkeit, dass ein Gegenstand konsumiert wird, wenn die Bedingung erfüllt ist und die Aktion durchgeführt wird.
 - Verbrauch immer bei "1", 50 % Wahrscheinlichkeit des Verbrauchs bei "0,5" und kein Verbrauch bei "0".
@@ -72,21 +81,20 @@ Wahrscheinlichkeit, dass ein Gegenstand konsumiert wird (0-1, nur gültig, wenn 
 - Ungültig, wenn der Typ nicht der Gegenstand ist.
 ___
 
-### Ausrüstung
+#### Ausrüstung
 Erfordert, dass sich der Gegenstand in Ausrüstung befindet (nur gültig, wenn der Typ Gegenstand ist) oder
 - Wenn er aktiviert ist, muss der Gegenstand sowohl ausgerüstet als auch besessen werden.
 - Ungültig, wenn der Typ nicht der Gegenstand ist.
 ___
 
-## Belohnung
+### Belohnung
 Konfiguration der Belohnung, wenn das Ereignis ausgelöst wird.
-- Dies ist die Belohnung, wenn das Ereignis ausgelöst wird.
-- Bei „matched“ erhalten Sie eine Belohnung nur dann, wenn die Bedingungen erfüllt sind und die Aktion ausgelöst wird.
-- Außer bei `matched` erfolgt der Erwerb nur dann, wenn die zeitlichen Bedingungen erfüllt sind und zudem die Bedingungen unter „conditions“ erfüllt sind.
-- Sie können die Anzahl auf einen negativen Wert zählen. Wenn Sie z. B. die Anzahl der Gegenstände auf einen negativen Wert zählen, wenn Sie `gameovered` sind, verlieren Sie sie, wenn das Spiel vorbei ist.
+- Dies ist eine Belohnung, die man erhält, wenn der richtige Zeitpunkt erreicht ist und die Bedingungen erfüllt sind.
+- Im Gegensatz zu Aufgaben sind keine Empfangsvorgänge erforderlich; die Erwerbungen erfolgen automatisch bei Aktivierung.
+- Sie können für die Anzahl einen negativen Wert festlegen. Wenn Sie beispielsweise beim Spiel vorbei die Anzahl der Gegenstände auf einen negativen Wert setzen, gehen diese verloren.
 ___
 
-### Typ.
+#### Typ.
 Art des zu erwerbenden Elements.
 
 |Typ.|Was wird erworben.|
@@ -96,18 +104,18 @@ Art des zu erwerbenden Elements.
 |Gegenstand|Anzahl der Besitztümer|
 ___
 
-### ID des Elements
+#### ID des Elements
 ID, die das zu erwerbende Element identifiziert.
 ___
 
-### Wert
+#### Wert
 Zu ermittelnde numerische Werte
 - Minus-Werte verringern die Anzahl der Besitztümer, die Anzahl der Durchführungen und ihr Level. Er kann jedoch nicht kleiner als 0 sein.
 - Wenn ein Gegenstand eine maximale Anzahl von Besitztümern hat (Maximum), wird die Anzahl der Besitztümer nicht über diesen Wert hinaus erhöht.
 - Ist der Typ eine Kategorie, wird der eingestellte Wert direkt zum Level addiert (1 für 1 Level, 0,5 für 0,5 Level). Der übliche Weg, dies anzupassen, ist die Konfiguration des Erfahrungs-Wertes der Aktion. Diese Konfiguration ist nicht notwendig, es sei denn, es gibt einen besonderen Zweck.
 ___
 
-### Wahrscheinlichkeit [-1 bis 1]
+#### Wahrscheinlichkeit [-1 bis 1]
 Wahrscheinlichkeit eines Erfolgs beim Abruf (negative Werte werden nur bei einem Fehler ausgewertet)
 - Die Wahrscheinlichkeit, dass etwas erhalten wird, wird als Dezimalzahl zwischen -1 und 1 konfiguriert. Zur Bestimmung der Wahrscheinlichkeit wird der Wert herangezogen.
 - Ist der Wert positiv, wird er nur bei Erfolg der Aktion ausgewertet: Bei `1` wird der Gegenstand garantiert erhalten, bei `0,5` mit einer Wahrscheinlichkeit von 50 %.
@@ -116,10 +124,455 @@ Wahrscheinlichkeit eines Erfolgs beim Abruf (negative Werte werden nur bei einem
 - Der Standardwert ist `1` (wird bei Erfolg immer abgerufen).
 ___
 
-## Arbeitsgruppe
-Anzeige, Gruppierung und Klassifizierung von Aufgaben
-- Wenden Sie eine der in Basic konfigurierten Gruppen an.
-- Die Aufgaben werden in der Reihenfolge der Konfigurationen angezeigt.
-- Innerhalb der Kategorien werden die Einträge weiter in Gruppen unterteilt und angezeigt.
-- Bleibt sie leer, wird keine Gruppierung vorgenommen.
-- [_general_](de/Herausgeber/allgemein)
+### Arbeitsgruppe
+Wird bei dem Ereignis nicht verwendet
+- Da dies nicht in der Liste der Missionen und Aufgaben angezeigt wird, wird die Gruppenzuordnung nicht verwendet.
+- Im Editor wird das Eingabefeld nicht angezeigt.
+___
+
+## Bei Spiel vorbei
+Wird ausgelöst, wenn die Ausdauer im Kampf aufgebraucht ist
+- Diese Funktion wird ausgelöst, wenn die Ausdauer des Spielers im Kampf aufgebraucht ist.
+- Wenn Sie für die Belohnungsmenge ein Minus festlegen, können Sie damit eine Strafe für das Spiel vorbei einführen.
+___
+
+### [_Informationen_](de/Herausgeber/Informationen)
+___
+
+### Kategorie.
+Wird bei dem Ereignis nicht verwendet
+- Da dies nicht in der Liste der Missionen und Aufgaben angezeigt wird, wird keine zugehörige Kategorie angegeben.
+- Im Editor wird das Eingabefeld nicht angezeigt.
+___
+
+### Zeitmessung
+Zeitpunkt der Auslösung des Ereignisses (festgelegt)
+- Der Wert ist auf `gameovered` festgelegt und kann nicht bearbeitet werden.
+- Diese Funktion wird jedes Mal ausgelöst, wenn das Spiel vorbei ist – und zwar so oft wie nötig.
+___
+
+### Anfangsanzeige
+Standardanzeige des Ereignis-Symbols (die Auslösung hängt vom Zeitpunkt ab; bei dieser Konfiguration wird das Ereignis nicht ausgelöst)
+- Die Auslösebedingungen für das Ereignis werden durch den Zeitpunkt bestimmt; dieser Punkt wirkt sich lediglich auf das Aussehen des Symbols aus.
+- secreted: Das Symbol wird erst angezeigt, wenn alle Voraussetzungen erfüllt sind (die Auslösung selbst erfolgt zeitabhängig).
+- hidden・hinted: Das Symbol wird mit einem Schrägstrich versehen und als „noch nicht freigeschaltet“ angezeigt.
+- Freigegeben: Die Durchstreichung verschwindet und der Eintrag wird als freigegeben angezeigt.
+___
+
+### Bedingungen und Konditionen
+Bedingungen für den Erwerb einer Vergütung
+- Sobald die Bedingung erfüllt ist, wird das Ereignis ausgelöst und ein spezieller Bildschirm geöffnet, auf dem der Inhalt angezeigt wird.
+- Die Belohnung wird nur dann erworben, wenn zum Zeitpunkt der Auslösung die hier vorgenommenen Konfigurationen erfüllt sind.
+- Wenn keine Konfiguration vorgenommen wurde, erhalten Sie bei jeder Auslösung Erwerbungen.
+___
+
+#### Typ.
+Art des Elements, auf das als Bedingung verwiesen wird.
+
+|Typ.|Referenzierte Werte|
+|-|-|
+|Kategorie.|Level der Kategorie.|
+|Aktion.|Zählt, wie oft die Aktion durchgeführt wurde.|
+|Gegenstand|Anzahl der gehaltenen Gegenstände.|
+___
+
+#### ID des Elements
+ID des Elements, auf das sich die Bedingung bezieht.
+___
+
+#### Wert
+Notwendige numerische Werte für Anforderungen.
+- Die Bedingung ist erfüllt, wenn der Wert größer als oder gleich dem angegebenen Wert ist.
+___
+
+#### Verbrauchswahrscheinlichkeit [0-1].
+Wahrscheinlichkeit, dass ein Gegenstand konsumiert wird (0-1, nur gültig, wenn der Typ Gegenstand ist).
+- Die Wahrscheinlichkeit, dass ein Gegenstand konsumiert wird, wenn die Bedingung erfüllt ist und die Aktion durchgeführt wird.
+- Verbrauch immer bei "1", 50 % Wahrscheinlichkeit des Verbrauchs bei "0,5" und kein Verbrauch bei "0".
+- Der Standardwert ist "1" (immer verbraucht).
+- Ungültig, wenn der Typ nicht der Gegenstand ist.
+___
+
+#### Ausrüstung
+Erfordert, dass sich der Gegenstand in Ausrüstung befindet (nur gültig, wenn der Typ Gegenstand ist) oder
+- Wenn er aktiviert ist, muss der Gegenstand sowohl ausgerüstet als auch besessen werden.
+- Ungültig, wenn der Typ nicht der Gegenstand ist.
+___
+
+### Belohnung
+Konfiguration der Belohnung, wenn das Ereignis ausgelöst wird.
+- Dies ist eine Belohnung, die man erhält, wenn der richtige Zeitpunkt erreicht ist und die Bedingungen erfüllt sind.
+- Im Gegensatz zu Aufgaben sind keine Empfangsvorgänge erforderlich; die Erwerbungen erfolgen automatisch bei Aktivierung.
+- Sie können für die Anzahl einen negativen Wert festlegen. Wenn Sie beispielsweise beim Spiel vorbei die Anzahl der Gegenstände auf einen negativen Wert setzen, gehen diese verloren.
+___
+
+#### Typ.
+Art des zu erwerbenden Elements.
+
+|Typ.|Was wird erworben.|
+|-|-|
+|Kategorie.|Level (Erfahrungsumrechnung hinzugefügt)|
+|Aktion.|Anzahl der Ausführungsvorgänge.|
+|Gegenstand|Anzahl der Besitztümer|
+___
+
+#### ID des Elements
+ID, die das zu erwerbende Element identifiziert.
+___
+
+#### Wert
+Zu ermittelnde numerische Werte
+- Minus-Werte verringern die Anzahl der Besitztümer, die Anzahl der Durchführungen und ihr Level. Er kann jedoch nicht kleiner als 0 sein.
+- Wenn ein Gegenstand eine maximale Anzahl von Besitztümern hat (Maximum), wird die Anzahl der Besitztümer nicht über diesen Wert hinaus erhöht.
+- Ist der Typ eine Kategorie, wird der eingestellte Wert direkt zum Level addiert (1 für 1 Level, 0,5 für 0,5 Level). Der übliche Weg, dies anzupassen, ist die Konfiguration des Erfahrungs-Wertes der Aktion. Diese Konfiguration ist nicht notwendig, es sei denn, es gibt einen besonderen Zweck.
+___
+
+#### Wahrscheinlichkeit [-1 bis 1]
+Wahrscheinlichkeit eines Erfolgs beim Abruf (negative Werte werden nur bei einem Fehler ausgewertet)
+- Die Wahrscheinlichkeit, dass etwas erhalten wird, wird als Dezimalzahl zwischen -1 und 1 konfiguriert. Zur Bestimmung der Wahrscheinlichkeit wird der Wert herangezogen.
+- Ist der Wert positiv, wird er nur bei Erfolg der Aktion ausgewertet: Bei `1` wird der Gegenstand garantiert erhalten, bei `0,5` mit einer Wahrscheinlichkeit von 50 %.
+- Bei negativen Werten wird die Bewertung nur bei Fehlern der Aktion vorgenommen: Bei `-1` wird der Gegenstand garantiert erhalten, bei `-0,5` mit einer Wahrscheinlichkeit von 50 %.
+- Bei `0` wird der Wert weder bei Erfolg noch bei Fehler zurückgegeben.
+- Der Standardwert ist `1` (wird bei Erfolg immer abgerufen).
+___
+
+### Arbeitsgruppe
+Wird bei dem Ereignis nicht verwendet
+- Da dies nicht in der Liste der Missionen und Aufgaben angezeigt wird, wird die Gruppenzuordnung nicht verwendet.
+- Im Editor wird das Eingabefeld nicht angezeigt.
+___
+
+## Beim ersten Start
+Wird ausgelöst, wenn die Welt zum ersten Mal geöffnet wird
+- Diese Funktion wird ausgelöst, wenn diese Welt zum ersten Mal gestartet wird.
+- Dies dient zur Erläuterung des Spieluniversums und zur Übergabe der Ausrüstung, die beim Start des Spiels ausgehändigt wird.
+___
+
+### [_Informationen_](de/Herausgeber/Informationen)
+___
+
+### Kategorie.
+Wird bei dem Ereignis nicht verwendet
+- Da dies nicht in der Liste der Missionen und Aufgaben angezeigt wird, wird keine zugehörige Kategorie angegeben.
+- Im Editor wird das Eingabefeld nicht angezeigt.
+___
+
+### Zeitmessung
+Zeitpunkt der Auslösung des Ereignisses (festgelegt)
+- Der Wert ist auf „welcomed“ festgelegt und kann nicht bearbeitet werden.
+- Diese Funktion wird nur einmal beim ersten Start ausgelöst.
+___
+
+### Anfangsanzeige
+Standardanzeige des Ereignis-Symbols (die Auslösung hängt vom Zeitpunkt ab; bei dieser Konfiguration wird das Ereignis nicht ausgelöst)
+- Die Auslösebedingungen für das Ereignis werden durch den Zeitpunkt bestimmt; dieser Punkt wirkt sich lediglich auf das Aussehen des Symbols aus.
+- secreted: Das Symbol wird erst angezeigt, wenn alle Voraussetzungen erfüllt sind (die Auslösung selbst erfolgt zeitabhängig).
+- hidden・hinted: Das Symbol wird mit einem Schrägstrich versehen und als „noch nicht freigeschaltet“ angezeigt.
+- Freigegeben: Die Durchstreichung verschwindet und der Eintrag wird als freigegeben angezeigt.
+___
+
+### Bedingungen und Konditionen
+Bedingungen für den Erwerb einer Vergütung
+- Sobald die Bedingung erfüllt ist, wird das Ereignis ausgelöst und ein spezieller Bildschirm geöffnet, auf dem der Inhalt angezeigt wird.
+- Die Belohnung wird nur dann erworben, wenn zum Zeitpunkt der Auslösung die hier vorgenommenen Konfigurationen erfüllt sind.
+- Wenn keine Konfiguration vorgenommen wurde, erhalten Sie bei jeder Auslösung Erwerbungen.
+___
+
+#### Typ.
+Art des Elements, auf das als Bedingung verwiesen wird.
+
+|Typ.|Referenzierte Werte|
+|-|-|
+|Kategorie.|Level der Kategorie.|
+|Aktion.|Zählt, wie oft die Aktion durchgeführt wurde.|
+|Gegenstand|Anzahl der gehaltenen Gegenstände.|
+___
+
+#### ID des Elements
+ID des Elements, auf das sich die Bedingung bezieht.
+___
+
+#### Wert
+Notwendige numerische Werte für Anforderungen.
+- Die Bedingung ist erfüllt, wenn der Wert größer als oder gleich dem angegebenen Wert ist.
+___
+
+#### Verbrauchswahrscheinlichkeit [0-1].
+Wahrscheinlichkeit, dass ein Gegenstand konsumiert wird (0-1, nur gültig, wenn der Typ Gegenstand ist).
+- Die Wahrscheinlichkeit, dass ein Gegenstand konsumiert wird, wenn die Bedingung erfüllt ist und die Aktion durchgeführt wird.
+- Verbrauch immer bei "1", 50 % Wahrscheinlichkeit des Verbrauchs bei "0,5" und kein Verbrauch bei "0".
+- Der Standardwert ist "1" (immer verbraucht).
+- Ungültig, wenn der Typ nicht der Gegenstand ist.
+___
+
+#### Ausrüstung
+Erfordert, dass sich der Gegenstand in Ausrüstung befindet (nur gültig, wenn der Typ Gegenstand ist) oder
+- Wenn er aktiviert ist, muss der Gegenstand sowohl ausgerüstet als auch besessen werden.
+- Ungültig, wenn der Typ nicht der Gegenstand ist.
+___
+
+### Belohnung
+Konfiguration der Belohnung, wenn das Ereignis ausgelöst wird.
+- Dies ist eine Belohnung, die man erhält, wenn der richtige Zeitpunkt erreicht ist und die Bedingungen erfüllt sind.
+- Im Gegensatz zu Aufgaben sind keine Empfangsvorgänge erforderlich; die Erwerbungen erfolgen automatisch bei Aktivierung.
+- Sie können für die Anzahl einen negativen Wert festlegen. Wenn Sie beispielsweise beim Spiel vorbei die Anzahl der Gegenstände auf einen negativen Wert setzen, gehen diese verloren.
+___
+
+#### Typ.
+Art des zu erwerbenden Elements.
+
+|Typ.|Was wird erworben.|
+|-|-|
+|Kategorie.|Level (Erfahrungsumrechnung hinzugefügt)|
+|Aktion.|Anzahl der Ausführungsvorgänge.|
+|Gegenstand|Anzahl der Besitztümer|
+___
+
+#### ID des Elements
+ID, die das zu erwerbende Element identifiziert.
+___
+
+#### Wert
+Zu ermittelnde numerische Werte
+- Minus-Werte verringern die Anzahl der Besitztümer, die Anzahl der Durchführungen und ihr Level. Er kann jedoch nicht kleiner als 0 sein.
+- Wenn ein Gegenstand eine maximale Anzahl von Besitztümern hat (Maximum), wird die Anzahl der Besitztümer nicht über diesen Wert hinaus erhöht.
+- Ist der Typ eine Kategorie, wird der eingestellte Wert direkt zum Level addiert (1 für 1 Level, 0,5 für 0,5 Level). Der übliche Weg, dies anzupassen, ist die Konfiguration des Erfahrungs-Wertes der Aktion. Diese Konfiguration ist nicht notwendig, es sei denn, es gibt einen besonderen Zweck.
+___
+
+#### Wahrscheinlichkeit [-1 bis 1]
+Wahrscheinlichkeit eines Erfolgs beim Abruf (negative Werte werden nur bei einem Fehler ausgewertet)
+- Die Wahrscheinlichkeit, dass etwas erhalten wird, wird als Dezimalzahl zwischen -1 und 1 konfiguriert. Zur Bestimmung der Wahrscheinlichkeit wird der Wert herangezogen.
+- Ist der Wert positiv, wird er nur bei Erfolg der Aktion ausgewertet: Bei `1` wird der Gegenstand garantiert erhalten, bei `0,5` mit einer Wahrscheinlichkeit von 50 %.
+- Bei negativen Werten wird die Bewertung nur bei Fehlern der Aktion vorgenommen: Bei `-1` wird der Gegenstand garantiert erhalten, bei `-0,5` mit einer Wahrscheinlichkeit von 50 %.
+- Bei `0` wird der Wert weder bei Erfolg noch bei Fehler zurückgegeben.
+- Der Standardwert ist `1` (wird bei Erfolg immer abgerufen).
+___
+
+### Arbeitsgruppe
+Wird bei dem Ereignis nicht verwendet
+- Da dies nicht in der Liste der Missionen und Aufgaben angezeigt wird, wird die Gruppenzuordnung nicht verwendet.
+- Im Editor wird das Eingabefeld nicht angezeigt.
+___
+
+## Nach Abschluss des Spiels
+Wird ausgelöst, wenn alle Kategorien das max. Level erreicht haben
+- Diese Funktion wird ausgelöst, wenn das Level aller Kategorien den Maximalwert (maxCategoryLevels) erreicht hat.
+- Kategorien, die nicht numerisch sind, werden bei der Auswertung ausgeschlossen.
+___
+
+### [_Informationen_](de/Herausgeber/Informationen)
+___
+
+### Kategorie.
+Wird bei dem Ereignis nicht verwendet
+- Da dies nicht in der Liste der Missionen und Aufgaben angezeigt wird, wird keine zugehörige Kategorie angegeben.
+- Im Editor wird das Eingabefeld nicht angezeigt.
+___
+
+### Zeitmessung
+Zeitpunkt der Auslösung des Ereignisses (festgelegt)
+- Der Wert ist auf „completed“ festgelegt und kann nicht bearbeitet werden.
+- Wird nur einmal ausgelöst, wenn die Bedingungen erfüllt sind.
+___
+
+### Anfangsanzeige
+Standardanzeige des Ereignis-Symbols (die Auslösung hängt vom Zeitpunkt ab; bei dieser Konfiguration wird das Ereignis nicht ausgelöst)
+- Die Auslösebedingungen für das Ereignis werden durch den Zeitpunkt bestimmt; dieser Punkt wirkt sich lediglich auf das Aussehen des Symbols aus.
+- secreted: Das Symbol wird erst angezeigt, wenn alle Voraussetzungen erfüllt sind (die Auslösung selbst erfolgt zeitabhängig).
+- hidden・hinted: Das Symbol wird mit einem Schrägstrich versehen und als „noch nicht freigeschaltet“ angezeigt.
+- Freigegeben: Die Durchstreichung verschwindet und der Eintrag wird als freigegeben angezeigt.
+___
+
+### Bedingungen und Konditionen
+Bedingungen für den Erwerb einer Vergütung
+- Sobald die Bedingung erfüllt ist, wird das Ereignis ausgelöst und ein spezieller Bildschirm geöffnet, auf dem der Inhalt angezeigt wird.
+- Die Belohnung wird nur dann erworben, wenn zum Zeitpunkt der Auslösung die hier vorgenommenen Konfigurationen erfüllt sind.
+- Wenn keine Konfiguration vorgenommen wurde, erhalten Sie bei jeder Auslösung Erwerbungen.
+___
+
+#### Typ.
+Art des Elements, auf das als Bedingung verwiesen wird.
+
+|Typ.|Referenzierte Werte|
+|-|-|
+|Kategorie.|Level der Kategorie.|
+|Aktion.|Zählt, wie oft die Aktion durchgeführt wurde.|
+|Gegenstand|Anzahl der gehaltenen Gegenstände.|
+___
+
+#### ID des Elements
+ID des Elements, auf das sich die Bedingung bezieht.
+___
+
+#### Wert
+Notwendige numerische Werte für Anforderungen.
+- Die Bedingung ist erfüllt, wenn der Wert größer als oder gleich dem angegebenen Wert ist.
+___
+
+#### Verbrauchswahrscheinlichkeit [0-1].
+Wahrscheinlichkeit, dass ein Gegenstand konsumiert wird (0-1, nur gültig, wenn der Typ Gegenstand ist).
+- Die Wahrscheinlichkeit, dass ein Gegenstand konsumiert wird, wenn die Bedingung erfüllt ist und die Aktion durchgeführt wird.
+- Verbrauch immer bei "1", 50 % Wahrscheinlichkeit des Verbrauchs bei "0,5" und kein Verbrauch bei "0".
+- Der Standardwert ist "1" (immer verbraucht).
+- Ungültig, wenn der Typ nicht der Gegenstand ist.
+___
+
+#### Ausrüstung
+Erfordert, dass sich der Gegenstand in Ausrüstung befindet (nur gültig, wenn der Typ Gegenstand ist) oder
+- Wenn er aktiviert ist, muss der Gegenstand sowohl ausgerüstet als auch besessen werden.
+- Ungültig, wenn der Typ nicht der Gegenstand ist.
+___
+
+### Belohnung
+Konfiguration der Belohnung, wenn das Ereignis ausgelöst wird.
+- Dies ist eine Belohnung, die man erhält, wenn der richtige Zeitpunkt erreicht ist und die Bedingungen erfüllt sind.
+- Im Gegensatz zu Aufgaben sind keine Empfangsvorgänge erforderlich; die Erwerbungen erfolgen automatisch bei Aktivierung.
+- Sie können für die Anzahl einen negativen Wert festlegen. Wenn Sie beispielsweise beim Spiel vorbei die Anzahl der Gegenstände auf einen negativen Wert setzen, gehen diese verloren.
+___
+
+#### Typ.
+Art des zu erwerbenden Elements.
+
+|Typ.|Was wird erworben.|
+|-|-|
+|Kategorie.|Level (Erfahrungsumrechnung hinzugefügt)|
+|Aktion.|Anzahl der Ausführungsvorgänge.|
+|Gegenstand|Anzahl der Besitztümer|
+___
+
+#### ID des Elements
+ID, die das zu erwerbende Element identifiziert.
+___
+
+#### Wert
+Zu ermittelnde numerische Werte
+- Minus-Werte verringern die Anzahl der Besitztümer, die Anzahl der Durchführungen und ihr Level. Er kann jedoch nicht kleiner als 0 sein.
+- Wenn ein Gegenstand eine maximale Anzahl von Besitztümern hat (Maximum), wird die Anzahl der Besitztümer nicht über diesen Wert hinaus erhöht.
+- Ist der Typ eine Kategorie, wird der eingestellte Wert direkt zum Level addiert (1 für 1 Level, 0,5 für 0,5 Level). Der übliche Weg, dies anzupassen, ist die Konfiguration des Erfahrungs-Wertes der Aktion. Diese Konfiguration ist nicht notwendig, es sei denn, es gibt einen besonderen Zweck.
+___
+
+#### Wahrscheinlichkeit [-1 bis 1]
+Wahrscheinlichkeit eines Erfolgs beim Abruf (negative Werte werden nur bei einem Fehler ausgewertet)
+- Die Wahrscheinlichkeit, dass etwas erhalten wird, wird als Dezimalzahl zwischen -1 und 1 konfiguriert. Zur Bestimmung der Wahrscheinlichkeit wird der Wert herangezogen.
+- Ist der Wert positiv, wird er nur bei Erfolg der Aktion ausgewertet: Bei `1` wird der Gegenstand garantiert erhalten, bei `0,5` mit einer Wahrscheinlichkeit von 50 %.
+- Bei negativen Werten wird die Bewertung nur bei Fehlern der Aktion vorgenommen: Bei `-1` wird der Gegenstand garantiert erhalten, bei `-0,5` mit einer Wahrscheinlichkeit von 50 %.
+- Bei `0` wird der Wert weder bei Erfolg noch bei Fehler zurückgegeben.
+- Der Standardwert ist `1` (wird bei Erfolg immer abgerufen).
+___
+
+### Arbeitsgruppe
+Wird bei dem Ereignis nicht verwendet
+- Da dies nicht in der Liste der Missionen und Aufgaben angezeigt wird, wird die Gruppenzuordnung nicht verwendet.
+- Im Editor wird das Eingabefeld nicht angezeigt.
+___
+
+## Nach Abschluss einer einzelnen Aktion
+Wird ausgelöst, wenn eine einmalige Aktion wie das Öffnen einer Schatzkiste abgeschlossen wurde
+- Wird ausgelöst, wenn eine Aktion einer bestimmten Art (z. B. eine Schatztruhe) abgeschlossen oder bestätigt wurde.
+- Zusätzlich zu der Belohnung für die Aktion selbst können Sie die hier festgelegte Belohnung auf die Aktion aufaddieren.
+___
+
+### [_Informationen_](de/Herausgeber/Informationen)
+___
+
+### Kategorie.
+Wird bei dem Ereignis nicht verwendet
+- Da dies nicht in der Liste der Missionen und Aufgaben angezeigt wird, wird keine zugehörige Kategorie angegeben.
+- Im Editor wird das Eingabefeld nicht angezeigt.
+___
+
+### Zeitmessung
+Zeitpunkt der Auslösung des Ereignisses (festgelegt)
+- Der Wert ist auf `obtained` festgelegt und kann nicht bearbeitet werden.
+- Wird nach jedem Abschluss einer Einzelaktion beliebig oft ausgelöst.
+___
+
+### Anfangsanzeige
+Standardanzeige des Ereignis-Symbols (die Auslösung hängt vom Zeitpunkt ab; bei dieser Konfiguration wird das Ereignis nicht ausgelöst)
+- Die Auslösebedingungen für das Ereignis werden durch den Zeitpunkt bestimmt; dieser Punkt wirkt sich lediglich auf das Aussehen des Symbols aus.
+- secreted: Das Symbol wird erst angezeigt, wenn alle Voraussetzungen erfüllt sind (die Auslösung selbst erfolgt zeitabhängig).
+- hidden・hinted: Das Symbol wird mit einem Schrägstrich versehen und als „noch nicht freigeschaltet“ angezeigt.
+- Freigegeben: Die Durchstreichung verschwindet und der Eintrag wird als freigegeben angezeigt.
+___
+
+### Bedingungen und Konditionen
+Bedingungen für den Erwerb einer Vergütung
+- Sobald die Bedingung erfüllt ist, wird das Ereignis ausgelöst und ein spezieller Bildschirm geöffnet, auf dem der Inhalt angezeigt wird.
+- Die Belohnung wird nur dann erworben, wenn zum Zeitpunkt der Auslösung die hier vorgenommenen Konfigurationen erfüllt sind.
+- Wenn keine Konfiguration vorgenommen wurde, erhalten Sie bei jeder Auslösung Erwerbungen.
+___
+
+#### Typ.
+Art des Elements, auf das als Bedingung verwiesen wird.
+
+|Typ.|Referenzierte Werte|
+|-|-|
+|Kategorie.|Level der Kategorie.|
+|Aktion.|Zählt, wie oft die Aktion durchgeführt wurde.|
+|Gegenstand|Anzahl der gehaltenen Gegenstände.|
+___
+
+#### ID des Elements
+ID des Elements, auf das sich die Bedingung bezieht.
+___
+
+#### Wert
+Notwendige numerische Werte für Anforderungen.
+- Die Bedingung ist erfüllt, wenn der Wert größer als oder gleich dem angegebenen Wert ist.
+___
+
+#### Verbrauchswahrscheinlichkeit [0-1].
+Wahrscheinlichkeit, dass ein Gegenstand konsumiert wird (0-1, nur gültig, wenn der Typ Gegenstand ist).
+- Die Wahrscheinlichkeit, dass ein Gegenstand konsumiert wird, wenn die Bedingung erfüllt ist und die Aktion durchgeführt wird.
+- Verbrauch immer bei "1", 50 % Wahrscheinlichkeit des Verbrauchs bei "0,5" und kein Verbrauch bei "0".
+- Der Standardwert ist "1" (immer verbraucht).
+- Ungültig, wenn der Typ nicht der Gegenstand ist.
+___
+
+#### Ausrüstung
+Erfordert, dass sich der Gegenstand in Ausrüstung befindet (nur gültig, wenn der Typ Gegenstand ist) oder
+- Wenn er aktiviert ist, muss der Gegenstand sowohl ausgerüstet als auch besessen werden.
+- Ungültig, wenn der Typ nicht der Gegenstand ist.
+___
+
+### Belohnung
+Konfiguration der Belohnung, wenn das Ereignis ausgelöst wird.
+- Dies ist eine Belohnung, die man erhält, wenn der richtige Zeitpunkt erreicht ist und die Bedingungen erfüllt sind.
+- Im Gegensatz zu Aufgaben sind keine Empfangsvorgänge erforderlich; die Erwerbungen erfolgen automatisch bei Aktivierung.
+- Sie können für die Anzahl einen negativen Wert festlegen. Wenn Sie beispielsweise beim Spiel vorbei die Anzahl der Gegenstände auf einen negativen Wert setzen, gehen diese verloren.
+___
+
+#### Typ.
+Art des zu erwerbenden Elements.
+
+|Typ.|Was wird erworben.|
+|-|-|
+|Kategorie.|Level (Erfahrungsumrechnung hinzugefügt)|
+|Aktion.|Anzahl der Ausführungsvorgänge.|
+|Gegenstand|Anzahl der Besitztümer|
+___
+
+#### ID des Elements
+ID, die das zu erwerbende Element identifiziert.
+___
+
+#### Wert
+Zu ermittelnde numerische Werte
+- Minus-Werte verringern die Anzahl der Besitztümer, die Anzahl der Durchführungen und ihr Level. Er kann jedoch nicht kleiner als 0 sein.
+- Wenn ein Gegenstand eine maximale Anzahl von Besitztümern hat (Maximum), wird die Anzahl der Besitztümer nicht über diesen Wert hinaus erhöht.
+- Ist der Typ eine Kategorie, wird der eingestellte Wert direkt zum Level addiert (1 für 1 Level, 0,5 für 0,5 Level). Der übliche Weg, dies anzupassen, ist die Konfiguration des Erfahrungs-Wertes der Aktion. Diese Konfiguration ist nicht notwendig, es sei denn, es gibt einen besonderen Zweck.
+___
+
+#### Wahrscheinlichkeit [-1 bis 1]
+Wahrscheinlichkeit eines Erfolgs beim Abruf (negative Werte werden nur bei einem Fehler ausgewertet)
+- Die Wahrscheinlichkeit, dass etwas erhalten wird, wird als Dezimalzahl zwischen -1 und 1 konfiguriert. Zur Bestimmung der Wahrscheinlichkeit wird der Wert herangezogen.
+- Ist der Wert positiv, wird er nur bei Erfolg der Aktion ausgewertet: Bei `1` wird der Gegenstand garantiert erhalten, bei `0,5` mit einer Wahrscheinlichkeit von 50 %.
+- Bei negativen Werten wird die Bewertung nur bei Fehlern der Aktion vorgenommen: Bei `-1` wird der Gegenstand garantiert erhalten, bei `-0,5` mit einer Wahrscheinlichkeit von 50 %.
+- Bei `0` wird der Wert weder bei Erfolg noch bei Fehler zurückgegeben.
+- Der Standardwert ist `1` (wird bei Erfolg immer abgerufen).
+___
+
+### Arbeitsgruppe
+Wird bei dem Ereignis nicht verwendet
+- Da dies nicht in der Liste der Missionen und Aufgaben angezeigt wird, wird die Gruppenzuordnung nicht verwendet.
+- Im Editor wird das Eingabefeld nicht angezeigt.

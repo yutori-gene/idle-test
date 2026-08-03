@@ -13,8 +13,8 @@ export const language: Markdown = {
 
 export const event: Markdown = {
 	title: "Événement",
-	summary: "Systèmes basés sur l'état.",
-	points: ["Déclenché lorsque les conditions sont remplies.", "Des messages s'affichent lorsqu'ils sont activés, des objets sont donnés ou réduits, etc."],
+	summary: "Système se déclenchant à des moments prédéfinis",
+	points: ["Elle se déclenche à des moments précis, par exemple lors d'un retour au jeu ou lors du jeu terminé.", "Une fois activée, cette fenêtre s'ouvre et la récompense est automatiquement attribuée, accompagnée d'un message.", "Une tâche est une action que l'on accomplit en remplissant certaines conditions, et c'est vous-même qui en recevez la récompense."],
 	options: {
 		preset: "événement",
 		label: "événement",
@@ -191,7 +191,7 @@ export const action: Markdown = {
 export const tasks: Markdown = {
 	title: "Tâche",
 	summary: "Liste des tâches de la catégorie",
-	points: ["Voici la liste des tâches attribuées à cette catégorie.", "Lorsque vous sélectionnez une tâche, vous pouvez consulter les conditions à remplir et la récompense correspondante.", "Si une catégorie ne contient rien, elle n'apparaîtra pas."],
+	points: ["このカテゴリーに割り当てられたタスクの一覧です。", "タスクを選ぶと、達成条件と報酬を確認できます。", "報酬が未受け取りのタスクにはリボンが付きます。選んで獲得を押すと受け取れます。", "持てるアイテムの種類が上限に達している時は受け取れません。整理してから受け取り直します。", "カテゴリーにタスクが1つもない場合は表示されません。"],
 	options: {
 		preset: "tâches",
 	},
@@ -239,7 +239,7 @@ export const activity: Markdown = {
 export const missions: Markdown = {
 	title: "Mission",
 	summary: "Liste de toutes les tâches",
-	points: ["Ils sont regroupés par catégorie.", "Les tâches pour lesquelles aucune configuration de catégorie n'a été effectuée sont regroupées et affichées en début de liste.", "Les tâches terminées sont cochées."],
+	points: ["カテゴリーごとにまとめて表示されます。", "カテゴリーが設定されていないタスクは先頭にまとめて表示されます。", "達成済みのタスクにはチェックの印が付きます。", "報酬が未受け取りのタスクにはリボンが付きます。選んで獲得を押すと受け取れます。", "一度達成したタスクは、その後に条件を満たさなくなっても達成のまま残ります。"],
 	options: {
 		preset: "missions",
 	},

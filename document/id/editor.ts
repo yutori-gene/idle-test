@@ -9,7 +9,7 @@ world
 ├── action
 ├── item
 ├── group
-├── event
+├── task
 └── preset
 `;
 
@@ -421,45 +421,39 @@ export const preset: Type.Information = {
 	},
 };
 
-export const event: Type.Event = {
-	title: "acara",
-	summary: "Sistem pesan dan penghargaan yang dipicu oleh kondisi.",
-	points: ["Hal ini dipicu ketika konfigurasi waktu/kondisi terpenuhi dan pesan ditampilkan.", "Hal ini dapat dipicu pada saat pertama kali memulai, ketika permainan berakhir, ketika kembali dari mati, atau ketika kondisi tertentu terpenuhi.", "Hal ini dapat mengubah level Kategori, jumlah aksi yang dilakukan dan jumlah Item yang dimiliki ketika diaktifkan."],
+export const task: Type.Event = {
+	title: "Tugas",
+	summary: "Misi yang akan dianggap berhasil jika syarat-syaratnya terpenuhi",
+	points: ["Jika memenuhi konfigurasi yang telah ditetapkan, maka target tercapai, dan pesan akan ditampilkan di bagian atas layar.", "Akan ditampilkan dalam daftar misi pemain dan daftar tugas berdasarkan Kategori.", "Hadiah tidak diberikan secara otomatis. Pemain akan menerimanya saat membuka tugas dan menekan tombol \"Akuisisi\".", "Sampai imbalan tersebut diterima, bilah pada daftar akan ditandai dengan pita untuk menunjukkan bahwa imbalan tersebut belum diterima.", "Dengan proses akuisisi, Anda dapat mengubah level Kategori, jumlah kali pelaksanaan Aksi, dan jumlah Item yang dimiliki.", "Untuk hal-hal yang ingin diaktifkan pada waktu-waktu di luar kondisi tertentu, seperti saat pertama kali dijalankan atau saat permainan berakhir, lakukan konfigurasi melalui acara di pengaturan dasar."],
+	links: { event: "acara" },
 	children: {
 		information: information,
 		category: {
 			title: "Kategori.",
 			summary: "ID Kategori tempat tugas tersebut berada",
-			points: ["Tentukan ID kategori tempat acara ini akan dimasukkan sebagai tugas.", "Setelah diatur dalam konfigurasi, daftar tugas akan ditambahkan ke layar kategori pemain, dan dalam daftar misi pun akan ditampilkan secara terkelompok berdasarkan kategori.", "Jika dibiarkan kosong, misi tersebut tidak akan termasuk dalam kategori mana pun dan akan ditampilkan secara terpisah di bagian atas daftar misi.", "Hanya acara dengan waktu `matched` yang digunakan untuk tampilan. Pada waktu lain, konfigurasi apa pun tidak akan memengaruhi tampilan."],
+			points: ["Tentukan ID Kategori tempat tugas ini akan dimasukkan.", "Setelah diatur dalam konfigurasi, daftar tugas akan ditambahkan ke layar kategori pemain, dan dalam daftar misi pun akan ditampilkan secara terkelompok berdasarkan kategori.", "Jika dibiarkan kosong, misi tersebut tidak akan termasuk dalam kategori mana pun dan akan ditampilkan secara terpisah di bagian atas daftar misi."],
 		},
 		timing: {
 			title: "waktu",
-			summary: "Konfigurasi waktu pemicuan acara.",
-			list: [
-				["waktu", "kondisi aktivasi", "ulangi"],
-				["'cocok'.", "Ketika konfigurasi yang ditetapkan dalam KONDISI terpenuhi untuk pertama kalinya.", "hanya sekali"],
-				["'kembali lagi'.", "Ketika seseorang kembali dari offline selama lebih dari satu detik dan ada aksi yang sedang berlangsung.", "sering"],
-				["`gameovered`.", "Ketika stamina pemain habis dalam pertempuran.", "sering"],
-				["`selesai`.", "Ketika level maksimum semua kategori (maxCategoryLevels) tercapai.", "hanya sekali"],
-				["\"Selamat datang\".", "Ketika saya pertama kali memulai dunia ini.", "hanya sekali"],
-				["`obtained`", "Saat menyelesaikan atau memverifikasi aksi jenis single (seperti peti harta karun, dll.). Jika persyaratan terpenuhi, hadiah acara juga akan ditambahkan", "sering"],
-			],
+			summary: "Waktu pemicu tugas (tetap `matched`)",
+			points: ["Tugas dalam konfigurasi `matched` (ketika memenuhi kondisi yang telah dikonfigurasi) dan tidak dapat diedit.", "Hadiah hanya dapat diterima satu kali, dan setelah diterima, status pencapaiannya tidak akan berubah lagi.", "Untuk hal-hal yang ingin diaktifkan pada waktu lain, lakukan konfigurasi melalui acara di pengaturan dasar."],
+			links: { event: "acara" },
 		},
 		unlocked: {
 			title: "Tampilan awal",
-			summary: "Status tampilan awal ikon acara (pemicuan ditentukan oleh waktu, dan dengan konfigurasi ini, ikon tidak akan dipicu)",
-			points: ["Kondisi pemicu acara ditentukan oleh waktu, dan opsi ini hanya memengaruhi tampilan ikon daftar.", "secreted: Tidak akan ditampilkan sama sekali di daftar acara sampai semua persyaratan terpenuhi (meskipun pemicunya sendiri terjadi sesuai waktu yang ditentukan).", "hidden・hinted: Ikon tersebut akan ditampilkan dengan garis miring sebagai tanda belum dibuka.", "dirilis: Garis miring akan hilang dan ditampilkan sebagai \"telah dibebaskan\"."],
+			summary: "Status tampilan awal ikon tugas (penyelesaian ditentukan oleh kondisi, dan dengan konfigurasi ini, tugas tidak akan dianggap selesai)",
+			points: ["タスクの達成条件はrequirementsで決まり、この項目は一覧アイコンの見た目のみに影響します。", "secreted: 全requirementsを満たすまでタスクの一覧に一切表示されません（達成自体は条件で起こります）。", "hidden・hinted: アイコンに斜線が付き未解放として表示されます。", "released: 斜線が消え解放済みとして表示されます。", "一度達成したタスクは一覧から消えず、その後に条件を満たさなくなっても達成のまま表示されます。"],
 		},
 		requirements: {
 			title: "syarat dan ketentuan",
-			summary: "Ketentuan untuk memicu acara dan pemberian hadiah.",
-			points: ["Ketentuan untuk memicu acara atau pemberian hadiah.", "`matched` hanya akan aktif dan Anda akan mendapatkan hadiah jika kondisi ini terpenuhi.", "Selain pada saat `matched`, efek ini akan terpicu jika kondisi waktu terpenuhi. Setelah itu, akuisisi hadiah hanya akan terjadi jika memenuhi konfigurasi yang ditetapkan di sini."],
+			summary: "Syarat penyelesaian tugas",
+			points: ["タスクを達成させる条件です。", "この条件を満たすと達成になり、報酬を受け取れるようになります。", "一度達成すると、その後に条件を満たさなくなっても達成のままで、報酬もいつでも受け取れます。", "条件を設定していないタスクは達成しません。"],
 			children: requirement.children,
 		},
 		acquisitions: {
 			title: "hadiah",
-			summary: "Konfigurasi hadiah saat acara dipicu.",
-			points: ["Ini adalah hadiah ketika acara dipicu.", "Pada `matched`, Anda hanya akan mendapatkan hadiah jika kondisi terpenuhi dan fitur tersebut diaktifkan.", "Selain `matched`, akuisisi hadiah hanya akan terjadi jika kondisi waktu terpenuhi dan syarat-syarat dalam `conditions` juga terpenuhi.", "Anda dapat melakukan konfigurasi kuantitas ke nilai Minus. Misalnya, jika Anda mengatur jumlah Item ke nilai Minus saat `gameovered`, Anda akan kehilangan Item tersebut saat permainan berakhir."],
+			summary: "Konfigurasi Hadiah Saat Tugas Selesai",
+			points: ["達成したタスクを開き、獲得のバーを押した時に受け取れる報酬です。", "カテゴリーのレベル、アクションの実行回数、アイテムの所持数を変化させることができます。", "数量にマイナスを設定することもできます。", "報酬を設定していないタスクは獲得のバーが出ず、達成した時点で完了になります。", "持てるアイテムの種類が上限に達している時は受け取れません。整理してから受け取り直します。"],
 			children: acquisition.children,
 		},
 		group: {
@@ -470,7 +464,7 @@ export const event: Type.Event = {
 		},
 	},
 	options: {
-		label: "acara",
+		label: "tugas",
 	},
 };
 
@@ -681,7 +675,7 @@ export const type: Markdown = {
 	title: "Tipe",
 	summary: "Klasifikasi dasar dunia",
 	points: ["Dunia terdiri dari enam tipe.", "Semua elemen ditempatkan langsung dibawah dunia.", "Aksi dan Item dikaitkan dengan ID dari Kategori yang menjadi miliknya."],
-	list: expandList("Tipe", [category, action, item, group, event, preset]),
+	list: expandList("Tipe", [category, action, item, group, task, preset]),
 	quote: typeTree,
 	options: {
 		label: "Jenis",
@@ -972,15 +966,83 @@ export const overview: Type.Overview = {
 	},
 };
 
+// タイミングごとの固定イベント。項目の説明はタスクと共通で、タイミング固有の説明だけ差し替える
+const toFixedEvent = (title: string, summary: string, points: string[], timingPoints: string[]): Type.Event => ({
+	title,
+	summary,
+	points,
+	children: {
+		...task.children,
+		category: {
+			title: "Kategori.",
+			summary: "Tidak akan digunakan dalam acara tersebut",
+			points: ["Karena tidak ditampilkan dalam daftar misi atau tugas, kategori yang terkait tidak akan ditentukan.", "Di editor, kolom input tidak ditampilkan."],
+		},
+		timing: {
+			title: "waktu",
+			summary: "Waktu pemicu acara (tetap)",
+			points: timingPoints,
+		},
+		unlocked: {
+			title: "Tampilan awal",
+			summary: "Status tampilan awal ikon acara (pemicuan ditentukan oleh waktu, dan dengan konfigurasi ini, ikon tidak akan dipicu)",
+			points: ["Kondisi pemicu acara ditentukan oleh waktu, dan opsi ini hanya memengaruhi tampilan ikon.", "secreted: Ikon tidak akan ditampilkan sampai semua persyaratan terpenuhi (meskipun pemicunya sendiri terjadi sesuai waktu yang ditentukan).", "hidden・hinted: Ikon tersebut akan ditampilkan dengan garis miring sebagai tanda belum dibuka.", "dirilis: Garis miring akan hilang dan ditampilkan sebagai \"telah dibebaskan\"."],
+		},
+		requirements: {
+			title: "syarat dan ketentuan",
+			summary: "Syarat untuk mendapatkan imbalan dalam proses akuisisi",
+			points: ["Jika waktu yang tepat terpenuhi, acara tersebut akan terpicu, dan layar khusus akan terbuka untuk menampilkan isinya.", "Akuisisi imbalan hanya akan terjadi jika, pada saat diaktifkan, konfigurasi yang ditetapkan di sini terpenuhi.", "Jika tidak ada konfigurasi apa pun, Anda akan mendapatkan hadiah setiap kali fitur ini diaktifkan."],
+			children: requirement.children,
+		},
+		acquisitions: {
+			title: "hadiah",
+			summary: "Konfigurasi hadiah saat acara dipicu.",
+			points: ["Ini adalah imbalan yang diperoleh ketika waktu yang tepat terpenuhi dan syarat-syaratnya terpenuhi.", "Berbeda dengan tugas, Anda tidak perlu melakukan tindakan apa pun untuk menerimanya; akuisisi akan dilakukan secara otomatis begitu fitur tersebut diaktifkan.", "Anda dapat melakukan konfigurasi nilai negatif untuk jumlah. Misalnya, jika Anda melakukan konfigurasi untuk membuat jumlah item menjadi negatif saat permainan berakhir, Anda akan kehilangan item-item tersebut."],
+			children: acquisition.children,
+		},
+		group: {
+			title: "kelompok tugas",
+			summary: "Tidak akan digunakan dalam acara tersebut",
+			points: ["Karena tidak ada daftar misi atau tugas, kami tidak menggunakan penunjukan grup.", "Di editor, kolom input tidak ditampilkan."],
+		},
+	},
+});
+
+export const event: Type.Events = {
+	title: "acara",
+	summary: "Pesan dan hadiah yang muncul pada waktu tertentu",
+	points: ["Fitur ini akan aktif pada waktu-waktu tertentu, seperti saat pertama kali membuka dunia atau saat permainan berakhir, dan akan membuka layar khusus.", "Tersedia satu per satu untuk setiap waktu, dan tidak dapat ditambahkan maupun dihapus. Untuk waktu yang tidak digunakan, biarkan kolomnya kosong.", "Tidak akan ditampilkan dalam daftar misi atau tugas. Hal-hal yang akan dianggap tercapai jika memenuhi syarat tertentu harus dikonfigurasi sebagai tugas.", "Akuisisi imbalan akan dilakukan secara otomatis begitu fitur tersebut diaktifkan. Tidak ada langkah pengambilan seperti pada tugas, dan tidak ada pita pemberitahuan.", "Hal ini dapat mengubah level Kategori, jumlah aksi yang dilakukan dan jumlah Item yang dimiliki ketika diaktifkan.", "Jika kolom nama, deskripsi, dan ikon dibiarkan kosong, teks dan ikon default yang sudah ada di dalam game akan digunakan oleh pemain."],
+	list: [
+		["waktu", "kondisi aktivasi", "ulangi"],
+		["'kembali lagi'.", "Ketika seseorang kembali dari offline selama lebih dari satu detik dan ada aksi yang sedang berlangsung.", "sering"],
+		["`gameovered`.", "Ketika stamina pemain habis dalam pertempuran.", "sering"],
+		["\"Selamat datang\".", "Ketika saya pertama kali memulai dunia ini.", "hanya sekali"],
+		["`selesai`.", "Ketika level maksimum semua kategori (maxCategoryLevels) tercapai.", "hanya sekali"],
+		["`obtained`", "Saat menyelesaikan atau memeriksa Aksi jenis tunggal (seperti peti harta karun, dll.)", "sering"],
+	],
+	links: { task: "tugas" },
+	children: {
+		comebacked: toFixedEvent("Saat kembali", "Berlaku saat kembali dari mode offline", ["Fitur ini akan aktif ketika perangkat kembali online setelah lebih dari 1 detik dalam keadaan offline, dan terdapat aksi yang sedang berlangsung.", "Akan ditampilkan bersamaan dengan ringkasan kemajuan selama periode terpisah tersebut."], ["Telah ditetapkan sebagai `comebacked` dan tidak dapat diedit.", "Akan aktif berulang kali setiap kali Anda kembali."]),
+		gameovered: toFixedEvent("Saat permainan berakhir", "Diaktifkan saat stamina habis dalam pertempuran", ["Fitur ini akan aktif saat stamina pemain habis dalam pertempuran.", "Dengan melakukan konfigurasi nilai negatif pada jumlah hadiah, Anda dapat menetapkan konsekuensi saat permainan berakhir."], ["Telah ditetapkan sebagai `gameovered` dan tidak dapat diedit.", "Fitur ini akan aktif berulang kali setiap kali permainan berakhir."]),
+		welcomed: toFixedEvent("Saat pertama kali mulai", "Berlaku saat pertama kali membuka dunia", ["Fitur ini akan aktif saat Anda menjalankan dunia ini untuk pertama kalinya.", "Ini digunakan untuk menjelaskan latar cerita serta menyerahkan perlengkapan yang diberikan saat mulai bermain."], ["Telah ditetapkan sebagai `welcomed` dan tidak dapat diedit.", "Fitur ini hanya akan aktif sekali saat pertama kali dijalankan."]),
+		completed: toFixedEvent("Saat berhasil diselesaikan", "Berlaku saat semua kategori telah mencapai level maks", ["Fitur ini akan aktif ketika level semua kategori telah mencapai nilai maksimum (maxCategoryLevels).", "Kategori yang bukan numerik akan dikecualikan dari penilaian."], ["Telah ditetapkan sebagai `completed` dan tidak dapat diedit.", "Fitur ini hanya akan aktif sekali saat syarat-syaratnya terpenuhi."]),
+		obtained: toFixedEvent("Saat aksi tunggal selesai", "Terpicu saat menyelesaikan aksi tunggal seperti membuka peti harta karun", ["Aksi ini akan terpicu saat Anda menyelesaikan atau memeriksa aksi jenis tunggal (seperti peti harta karun, dll.).", "Selain imbalan dari Aksi itu sendiri, Anda dapat menambahkan imbalan yang dikonfigurasi di sini."], ["`obtained` telah ditetapkan dan tidak dapat diedit.", "Akan terpicu berulang kali setiap kali aksi tunggal diselesaikan."]),
+	},
+	options: {
+		label: "acara",
+	},
+};
+
 export const basic: Type.Basic = {
 	title: "konfigurasi dasar",
 	summary: "Item konfigurasi dasar untuk dunia secara umum.",
 	points: ["Konfigurasi nama dunia, deskripsi, latar belakang, mata uang, kapasitas, level maks kategori, tingkat peningkatan pengalaman, tingkat diskon, parameter pertarungan standar, dll.", "Konfigurasi ini memengaruhi seluruh dunia."],
-	list: expandList("nama", [overview, general, design, development]),
+	list: expandList("nama", [overview, general, design, event, development]),
 	children: {
 		overview: overview,
 		general: general,
 		design: design,
+		events: event,
 		development: development,
 	},
 	options: {
@@ -1002,7 +1064,7 @@ export const world: Type.World = {
 		actions: { ...action, options: { ...action.options, array: true } },
 		items: { ...item, options: { ...item.options, array: true } },
 		groups: { ...group, options: { ...group.options, array: true } },
-		events: { ...event, options: { ...event.options, array: true } },
+		tasks: { ...task, options: { ...task.options, array: true } },
 		presets: { ...preset, options: { ...preset.options, array: true } },
 	},
 	options: {
@@ -1030,8 +1092,8 @@ export const tree: Tree = {
 	title: editor,
 	twig: [
 		{ title: world }, 
-		{ title: basic, twig: [overview, general, design, development] }, 
-		{ title: type, twig: [category, action, item, group, event, preset] }, 
+		{ title: basic, twig: [overview, general, design, event, development] },
+		{ title: type, twig: [category, action, item, group, task, preset] },
 		{ title: component, twig: [information, requirement, acquisition, combat, property] }, 
 		{ title: miscellaneous, twig: [translation] }
 	],
