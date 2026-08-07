@@ -14,7 +14,7 @@ Preparar traducciones multilingües o
 - Si se activa, los usuarios pueden jugar en cualquier idioma.
 - Si está desactivada, sólo podrás reproducir en el idioma seleccionado en la configuración de idioma.
 - Si la traducción está activada, Necesario proporcionar los datos traducidos para cada idioma.
-- [_translation_](es/editor/traducción)
+- [_translation_](es/editor/translation)
 ___
 
 ## Tiempo máximo desactivado [horas].
@@ -23,7 +23,7 @@ Límites de tiempo para el progreso desactivado.
 - Por ejemplo, si se establecen 6 horas, se procesará el proceso de volver a estar desconectado hasta 6 horas, pero si se permite más tiempo para volver a estar desconectado, el tiempo de desconexión se tratará como 6 horas.
 - Si se fijan 0 horas, no se produce ningún proceso al volver a estar desactivado.
 - El valor máximo es de 24 horas.
-- [_category_](es/editor/categoría)
+- [_category_](es/editor/category)
 ___
 
 ## Nivel máx. de Categoría
@@ -31,16 +31,16 @@ Nivel límite para cada Categoría.
 - Configura el nivel máx. para cada Categoría.
 - Si se adquiere experiencia por encima de este nivel, en el cálculo de cada propiedad se utilizará el nivel máximo aquí configurado.
 - Este valor no es relevante para las Categorías sin niveles.
-- [_category_](es/editor/categoría)
+- [_category_](es/editor/category)
 ___
 
 ## función de bloqueado
 Ocultar elementos hasta que se cumplan los requisitos
 - Si está activada, el Artículo de Acción de Categoría se oculta mientras no se haya utilizado o poseído nada y no se hayan cumplido los requisitos.
 - Si se desactiva, todos los elementos se muestran desde el principio, pero no se pueden ejecutar ni equipar hasta que se cumplan los requisitos.
-- [_category_](es/editor/categoría)
-- [_action_](es/editor/acción)
-- [_item_](es/editor/artículo)
+- [_category_](es/editor/category)
+- [_action_](es/editor/action)
+- [_item_](es/editor/item)
 ___
 
 ## divisa
@@ -49,26 +49,26 @@ Configuración de la moneda (monedas) que se utiliza en el juego
 - Se pueden definir varias monedas y realizar la configuración de cada una de ellas con sus datos (ID, nombre, icono, color, etc.).
 - La moneda se utiliza para comprar y vender artículos, así como para ampliar la capacidad del inventario.
 - La moneda que aparece en primer lugar se considera la moneda principal y se utiliza cuando no se especifica el ID de moneda (`coinId`) en los artículos o en la capacidad.
-- [_information_](es/editor/información)
-- [_item_](es/editor/artículo)
+- [_information_](es/editor/information)
+- [_item_](es/editor/item)
 ___
 
 ## capacidad
 Configuración de la capacidad de inventario.
 - Controla el número máximo de tipos diferentes de Artículos que puede tener un jugador.
 - Cada Artículo se controla por el número de tipos de Artículos que tiene, no por el número de Artículos propios.
-- Establecer `initialCount` a 0 significa capacidad ilimitada.
+- Si se establece `initialCount` en 0, la capacidad pasa a ser ilimitada.
 - Cuando se refiera a Artículos de capacidad en condiciones o recompensas, utilice el ID configurado aquí.
-- [_item_](es/editor/artículo)
+- [_item_](es/editor/item)
 ___
 
-### [_información_](es/editor/información)
+### [_información_](es/editor/information)
 ___
 
 ### Valor por defecto [pcs].
 Capacidad inicial de inventario (número de Artículos diferentes que se pueden contar)
 - Capacidad inicial (número de Artículos diferentes que se pueden poseer) al comenzar la partida.
-- Si se establece `0`, la capacidad es ilimitada.
+- Si se establece en `0`, la capacidad pasa a ser ilimitada.
 ___
 
 ### Precio base [monedas].
@@ -81,7 +81,7 @@ ___
 ### Porcentaje de aumento [veces].
 Incremento porcentual de los costes de ampliación de capacidad
 - Es un multiplicador de cuánto aumenta el coste de la ampliación de capacidad con la enésima compra.
-- Para `1.0` el precio es siempre el mismo, para `1.2` el precio es un 20% más alto cada vez que se compra.
+- Con `1.0` el precio siempre es el mismo y con `1.2` sube un 20% en cada compra.
 - Fórmula: precio base x porcentaje de incremento ^ número de veces que se ha comprado
 
 |tasa de aumento|1ª adición.|5º aumento.|10º aumento.|Aumento de 100.|Aumento 1000.|
@@ -112,10 +112,10 @@ Configuración del número de ranuras para la ejecución consecutiva (programada
 - Gestiona el número de espacios disponibles para la ejecución consecutiva (programada) de acciones.
 - El número de casillas, al igual que la capacidad, se puede comprar con moneda, aunque también se puede aumentar seleccionando artículos de la cola como recompensa por Acciones o eventos.
 - Cuando se haga referencia a artículos de la cola en condiciones o recompensas, utilice el ID de configuración aquí.
-- [_item_](es/editor/artículo)
+- [_item_](es/editor/item)
 ___
 
-### [_información_](es/editor/información)
+### [_información_](es/editor/information)
 ___
 
 ### Valor por defecto [pcs].
@@ -134,7 +134,7 @@ ___
 ### Porcentaje de aumento [veces].
 Tasa de crecimiento del coste de la ampliación de la capacidad
 - Es el multiplicador que indica en qué medida aumenta el coste de la ampliación del cupo al comprar n veces.
-- Para `1.0` el precio es siempre el mismo, para `1.2` el precio es un 20% más alto cada vez que se compra.
+- Con `1.0` el precio siempre es el mismo y con `1.2` sube un 20% en cada compra.
 - Fórmula: precio base x porcentaje de incremento ^ número de veces que se ha comprado
 ___
 
@@ -165,7 +165,7 @@ Porcentaje de aumento de la dificultad al subir de nivel.
 |0.05|x1.00|x1.05|x1.55|x11.47|x131.50|
 |0.10|x1.00|x1.10|x2.36|x117.39|x5.7×10⁴|
 |0.20|x1.00|x1.20|x6.19|x3,3 x 10³|x1,3 x 10¹¹|
-- [_category_](es/editor/categoría)
+- [_category_](es/editor/category)
 ___
 
 ## restricción del nivel de acción
@@ -175,4 +175,4 @@ Solicita el número de veces que se ha ejecutado la misma Acción de atributo pa
 - Si no se configura ningún atributo, se utiliza el ID de la Categoría a la que pertenece.
 ___
 
-## [_valor de combate_](es/editor/combate)
+## [_valor de combate_](es/editor/combat)

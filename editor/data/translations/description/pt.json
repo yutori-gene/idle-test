@@ -89,7 +89,7 @@
     "indexeddb_private_mode": "O IndexedDB não pode ser usado no modo privado",
     "storage_quota": "Capacidade de armazenamento excedida.",
     "indexeddb_unsupported": "O navegador ⚠️ não é compatível com o IndexedDB",
-    "database_init_failed": "Falha na inicialização do banco de dados: {mensagem}"
+    "database_init_failed": "❌ Falha na inicialização do banco de dados: {message}"
   },
   "ui": {
     "copy": "cópia",

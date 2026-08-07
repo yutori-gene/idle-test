@@ -6,7 +6,7 @@ Elemen-elemen barang seperti peralatan dan bahan habis pakai
 - Ada juga cara hitung untuk menggunakannya.
 ___
 
-## [_informasi_](id/editor/informasi)
+## [_informasi_](id/editor/information)
 ___
 
 ## Kategori.
@@ -19,7 +19,7 @@ Menampilkan menit kelompok Item
 - Terapkan salah satu grup yang konfigurasi di Basic.
 - Daftar item ditampilkan menurut urutan kelompok yang konfigurasi.
 - Jika dibiarkan kosong, tidak ada pengelompokan yang dibuat.
-- [_general_](id/editor/umum)
+- [_general_](id/editor/general)
 ___
 
 ## Keadaan pembebasan awal
@@ -50,7 +50,7 @@ Konfigurasi harga jual Item.
 |0|tidak ada|
 |Nilai yang lebih besar dari nol.|Jual dengan nilai tersebut.|
 |Nilai yang kurang dari nol (misalnya -1)|Tingkat diskon konfigurasi umum dikalikan dengan nilai penawaran (jika nilai penawaran nol, maka tidak ada)|
-- [_general_](id/editor/umum)
+- [_general_](id/editor/general)
 ___
 
 ## Jumlah maksimum yang dimiliki [pcs].
@@ -61,22 +61,22 @@ ___
 
 ## Tipe Peralatan
 Konfigurasi tipe untuk peralatan, efek, dan konsumsi Item.
-- Item yang dapat dilengkapi diperlukan untuk termasuk dalam grup yang ditentukan dalam Kategori `equipmentGroups`.
+- Item yang dapat dikenakan harus termasuk dalam grup yang ditentukan pada `equipmentGroups` milik kategori.
 - Hanya satu item yang dapat dilengkapi dalam grup yang sama.
-- `unnecessary` akan memberikan efek terlepas dari apakah Peralatan tersebut dimiliki atau tidak, dan besaran efeknya sebanding dengan jumlah yang dimiliki (tidak ada efek jika jumlahnya 0, dan efeknya berlipat ganda sebanyak n kali jika jumlahnya n).
+- `unnecessary` tetap berefek terlepas dari dikenakan atau tidak, dan besar efeknya sebanding dengan jumlah yang dimiliki (tidak berefek pada 0, n kali lipat pada n).
 
 |nilai|Peralatan|Efektivitas.|konsumsi|Contoh.|
 |-|-|-|-|-|
-|'perlu'.|Diperlukan|Hanya saat melengkapi (1 buah)|tidak ada|Pedang, baju besi, dan peralatan lainnya.|
-|'habis pakai'.|Diperlukan|Hanya saat melengkapi (1 buah)|Dikonsumsi saat aksi dilakukan|Item yang dikonsumsi untuk mendapatkan efek, seperti ramuan.|
-|'tidak perlu'.|Tidak perlu|Selama dibawa, selalu (berbanding lurus dengan jumlah yang dibawa)|tidak ada|Item pasif yang efektif hanya dengan memilikinya.|
-|'tidak mungkin'.|tidak diperbolehkan|tidak ada|tidak ada|Item-item yang tidak ada seperti material dan puing-puing.|
+|`necessary`|Diperlukan|Hanya saat melengkapi (1 buah)|tidak ada|Pedang, baju besi, dan peralatan lainnya.|
+|`consumable`|Diperlukan|Hanya saat melengkapi (1 buah)|Dikonsumsi saat aksi dilakukan|Item yang dikonsumsi untuk mendapatkan efek, seperti ramuan.|
+|`unnecessary`|Tidak perlu|Selama dibawa, selalu (berbanding lurus dengan jumlah yang dibawa)|tidak ada|Item pasif yang efektif hanya dengan memilikinya.|
+|`impossible`|tidak diperbolehkan|tidak ada|tidak ada|Item-item yang tidak ada seperti material dan puing-puing.|
 ___
 
-## [_syarat dan ketentuan_](id/editor/persyaratan)
+## [_syarat dan ketentuan_](id/editor/requirement)
 ___
 
-## [_properti_](id/editor/properti)
+## [_properti_](id/editor/property)
 ___
 
 ## ID Mata Uang yang Diperdagangkan

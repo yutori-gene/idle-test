@@ -37,7 +37,7 @@ ___
 ## Probability [-1 to 1]
 Probability of success in acquisition (negative values are evaluated only in the event of failure)
 - Configure the drop probability as a decimal value between -1 and 1. The absolute value is used to determine the probability.
-- When the value is positive, it is evaluated only when there is success with the action; a value of `1` guarantees a reward, while a value of `0.5` results in a 50% chance of receiving a reward.
-- When the value is negative, it is evaluated only in cases of action failure; a value of `-1` guarantees a drop, while a value of `-0.5` results in a 50% chance of a drop.
+- When the value is positive it is evaluated only when the action succeeds: `1` always grants it, and `0.5` grants it with a 50% probability.
+- When the value is negative it is evaluated only when the action fails: `-1` always grants it, and `-0.5` grants it with a 50% probability.
 - If the value is `0`, it is not obtained in either a success or a failure scenario.
 - The default value is `1` (always obtained upon success).

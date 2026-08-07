@@ -1,1069 +1,1121 @@
 {
-  "category": {},
-  "action": {},
-  "item": {},
-  "group": {},
-  "event": {},
-  "preset": {
-    "locked": {
-      "name": "잠금",
-      "explanation": "조건이 충족되면 이 요소가 잠금 해제됩니다."
-    },
-    "max": {
-      "name": "최대",
-      "explanation": ""
-    },
-    "min": {
-      "name": "최소",
-      "explanation": ""
-    },
-    "maximum": {
-      "name": "최대",
-      "explanation": "이 수량 이상으로 보유하거나 행사할 수 없습니다."
-    },
-    "minimum": {
-      "name": "최소",
-      "explanation": ""
-    },
-    "count": {
-      "name": "카운트",
-      "explanation": ""
-    },
-    "purchased-count": {
-      "name": "구매 횟수",
-      "explanation": ""
-    },
-    "purchase-limit": {
-      "name": "구매 한도",
-      "explanation": "구매할 수 있는 최대 시간입니다."
-    },
-    "purchasable-count": {
-      "name": "구매 가능",
-      "explanation": "아직 구매할 시간이 남아 있습니다."
-    },
-    "total": {
-      "name": "합계",
-      "explanation": ""
-    },
-    "percentage": {
-      "name": "비율",
-      "explanation": ""
-    },
-    "player": {
-      "name": "플레이어",
-      "explanation": ""
-    },
-    "target": {
-      "name": "타겟",
-      "explanation": ""
-    },
-    "requirement": {
-      "name": "요구사항",
-      "explanation": ""
-    },
-    "requirements": {
-      "name": "요구사항",
-      "explanation": ""
-    },
-    "acquisition": {
-      "name": "획득",
-      "explanation": ""
-    },
-    "acquisitions": {
-      "name": "획득",
-      "explanation": ""
-    },
-    "results": {
-      "name": "결과",
-      "explanation": ""
-    },
-    "yes": {
-      "name": "예",
-      "explanation": ""
-    },
-    "no": {
-      "name": "아니요",
-      "explanation": ""
-    },
-    "on": {
-      "name": "~에",
-      "explanation": ""
-    },
-    "off": {
-      "name": "꺼짐",
-      "explanation": ""
-    },
-    "seconds": {
-      "name": "초",
-      "explanation": ""
-    },
-    "minutes": {
-      "name": "회의록",
-      "explanation": ""
-    },
-    "hours": {
-      "name": "운영 시간",
-      "explanation": ""
-    },
-    "days": {
-      "name": "일",
-      "explanation": ""
-    },
-    "years": {
-      "name": "년",
-      "explanation": ""
-    },
-    "centuries": {
-      "name": "세기",
-      "explanation": ""
-    },
-    "endless": {
-      "name": "∞",
-      "explanation": ""
-    },
-    "success": {
-      "name": "성공",
-      "explanation": ""
-    },
-    "failure": {
-      "name": "실패",
-      "explanation": "실패"
-    },
-    "up": {
-      "name": "위",
-      "explanation": ""
-    },
-    "down": {
-      "name": "아래",
-      "explanation": ""
-    },
-    "question": {
-      "name": "질문",
-      "explanation": ""
-    },
-    "navigation": {
-      "name": "내비게이션",
-      "explanation": "스와이프하여 칼럼 사이를 이동할 수도 있습니다. 맨 위 버튼은 화면 왼쪽 하단에 표시됩니다."
-    },
-    "navigation-back": {
-      "name": "뒤로",
-      "explanation": ""
-    },
-    "navigation-top": {
-      "name": "맨 위",
-      "explanation": ""
-    },
-    "navigation-forward": {
-      "name": "앞으로",
-      "explanation": ""
-    },
-    "navigation-column": {
-      "name": "칼럼",
-      "explanation": "이 열의 위치와 화면 밖에 있는 열을 포함한 총 열 수."
-    },
-    "checked": {
-      "name": "확인됨",
-      "explanation": ""
-    },
-    "chevron-down": {
-      "name": "셰브론 아래",
-      "explanation": ""
-    },
-    "chevron-right": {
-      "name": "셰브론 오른쪽",
-      "explanation": ""
-    },
-    "selected": {
-      "name": "선택됨",
-      "explanation": ""
-    },
-    "character": {
-      "name": "캐릭터",
-      "explanation": ""
-    },
-    "activity": {
-      "name": "활동",
-      "explanation": ""
-    },
-    "inventory": {
-      "name": "인벤토리",
-      "explanation": ""
-    },
-    "status": {
-      "name": "상태",
-      "explanation": ""
-    },
-    "world": {
-      "name": "월드",
-      "explanation": ""
-    },
-    "overview": {
-      "name": "개요",
-      "explanation": ""
-    },
-    "version": {
-      "name": "버전",
-      "explanation": ""
-    },
-    "license": {
-      "name": "라이선스",
-      "explanation": ""
-    },
-    "updated": {
-      "name": "업데이트됨",
-      "explanation": ""
-    },
-    "author": {
-      "name": "작가",
-      "explanation": ""
-    },
-    "homepage": {
-      "name": "홈페이지",
-      "explanation": ""
-    },
-    "estimated-playing-time": {
-      "name": "예상 재생 시간",
-      "explanation": "작가가 추산한 이 월드를 완료하는 데 걸리는 시간"
-    },
-    "console": {
-      "name": "콘솔",
-      "explanation": "이 게임은 대기 RPG 콘솔 시스템에서 실행됩니다. 이 시스템은 무료이며 누구나 이용할 수 있으므로, 누구나 게임을 제작할 수 있습니다."
-    },
-    "general": {
-      "name": "일반",
-      "explanation": ""
-    },
-    "default-language": {
-      "name": "기본 언어",
-      "explanation": ""
-    },
-    "language-change-enable-general": {
-      "name": "언어 변경 활성화 - 일반",
-      "explanation": "설정에서 표시 언어를 다른 언어로 변경할 수 있습니다."
-    },
-    "max-category-level": {
-      "name": "최대 카테고리 수준",
-      "explanation": "각 카테고리에서 달성할 수 있는 최고 레벨."
-    },
-    "level-common-ratio": {
-      "name": "레벨 공통 비율",
-      "explanation": "레벨을 올릴 때마다 다음 레벨에 도달하려면 얼마나 많은 경험치가 필요한가요?"
-    },
-    "statistics": {
-      "name": "통계",
-      "explanation": ""
-    },
-    "coin": {
-      "name": "코인",
-      "explanation": ""
-    },
-    "amount-earned": {
-      "name": "수령 금액",
-      "explanation": "지금까지 획득한 코인의 총합입니다."
-    },
-    "time": {
-      "name": "시간",
-      "explanation": ""
-    },
-    "playing-time": {
-      "name": "재생 시간",
-      "explanation": "이 게임을 시작한 후 경과한 시간으로, 오프라인 시간도 포함됩니다."
-    },
-    "item": {
-      "name": "아이템",
-      "explanation": ""
-    },
-    "count-now": {
-      "name": "지금 한번 해보세요",
-      "explanation": "현재 보유하고 있는 아이템의 총 개수입니다."
-    },
-    "count-gained": {
-      "name": "획득한 카운트",
-      "explanation": "지금까지 확보한 아이템의 총 개수."
-    },
-    "total-level": {
-      "name": "총 레벨",
-      "explanation": "모든 카테고리의 현재 레벨 합계."
-    },
-    "count-actioned": {
-      "name": "조치 완료",
-      "explanation": "지금까지 수행된 액션의 총 개수."
-    },
-    "win": {
-      "name": "승리",
-      "explanation": ""
-    },
-    "debug": {
-      "name": "디버그",
-      "explanation": ""
-    },
-    "acceleration": {
-      "name": "가속도",
-      "explanation": "게임 내 시간을 빠르게 진행합니다. 액션 실행 속도가 느린 상태에서 속도를 지나치게 높이면, 처리 속도가 따라가지 못해 앱이 멈추거나 강제 종료될 수 있으니 주의하시기 바랍니다."
-    },
-    "multiplier": {
-      "name": "승수",
-      "explanation": ""
-    },
-    "accelerate": {
-      "name": "가속화",
-      "explanation": ""
-    },
-    "adjustment": {
-      "name": "조정",
-      "explanation": "소유한 아이템의 수나 카테고리 레벨을 높이거나 낮춥니다."
-    },
-    "adjustment-type": {
-      "name": "유형",
-      "explanation": ""
-    },
-    "adjustment-category": {
-      "name": "카테고리",
-      "explanation": "카테고리의 레벨을 조정하세요. 예를 들어, +5로 설정하면 5레벨이 추가됩니다."
-    },
-    "adjustment-action": {
-      "name": "액션",
-      "explanation": "이렇게 하면 해당 액션이 수행된 횟수가 늘어나거나 줄어듭니다. 다만, 액션을 완료했을 때 얻은 보상은 반영되지 않습니다."
-    },
-    "adjustment-item": {
-      "name": "아이템",
-      "explanation": "소유하고 있는 아이템의 수를 늘리거나 줄입니다."
-    },
-    "adjustment-id": {
-      "name": "ID",
-      "explanation": "대상 유형의 ID를 지정하십시오. 비워 두면 모든 ID에 대해 덧셈과 뺄셈이 조정됩니다."
-    },
-    "adjustment-sign": {
-      "name": "부호",
-      "explanation": ""
-    },
-    "adjustment-plus": {
-      "name": "플러스",
-      "explanation": "지정된 수치 값을 더합니다."
-    },
-    "adjustment-minus": {
-      "name": "마이너스",
-      "explanation": "지정된 숫자를 뺍니다."
-    },
-    "adjustment-count": {
-      "name": "카운트",
-      "explanation": "증가하거나 감소시킬 숫자입니다. 기호를 사용하여 증가할지 감소할지 지정하십시오."
-    },
-    "adjustment-adjust": {
-      "name": "조정",
-      "explanation": "지정된 조건에 따라 조정이 이루어집니다."
-    },
-    "pwa": {
-      "name": "PWA 설치",
-      "explanation": "프로그레시브 웹 앱(PWA)을 설치하세요."
-    },
-    "go-top": {
-      "name": "맨 위로",
-      "explanation": ""
-    },
-    "iconify": {
-      "name": "아이콘화",
-      "explanation": "이 게임은 iconify에서 제공하는 아이콘 세트를 사용합니다. 제작에 참여해 주신 모든 분께 감사의 말씀을 전합니다."
-    },
-    "category": {
-      "name": "카테고리",
-      "explanation": ""
-    },
-    "categories": {
-      "name": "카테고리",
-      "explanation": ""
-    },
-    "level": {
-      "name": "레벨",
-      "explanation": ""
-    },
-    "situation": {
-      "name": "상황",
-      "explanation": ""
-    },
-    "element": {
-      "name": "요소",
-      "explanation": ""
-    },
-    "standalone": {
-      "name": "독립형",
-      "explanation": "다른 카테고리의 작업 진행 상황과 관계없이 독립적으로 실행됩니다."
-    },
-    "action": {
-      "name": "액션",
-      "explanation": ""
-    },
-    "actions": {
-      "name": "액션",
-      "explanation": ""
-    },
-    "attribute": {
-      "name": "속성",
-      "explanation": "이 액션의 구체적인 속성입니다. 카테고리 속성이 이 액션의 속성에 적용됩니다. 또한 이 속성에는 경험치가 부여됩니다."
-    },
-    "progress": {
-      "name": "진행 상황",
-      "explanation": ""
-    },
-    "progressing": {
-      "name": "진행 중",
-      "explanation": ""
-    },
-    "progressing-action": {
-      "name": "진행 중",
-      "explanation": ""
-    },
-    "possible-action": {
-      "name": "가능",
-      "explanation": ""
-    },
-    "impossible-action": {
-      "name": "불가능",
-      "explanation": ""
-    },
-    "idle": {
-      "name": "대기",
-      "explanation": ""
-    },
-    "progress-type": {
-      "name": "진행 유형",
-      "explanation": ""
-    },
-    "persistent": {
-      "name": "지속적인",
-      "explanation": "일련의 액션을 수행하게 되며, 액션을 완료할 때마다 보상을 받게 됩니다."
-    },
-    "single": {
-      "name": "싱글",
-      "explanation": "각 액션은 한 번만 수행할 수 있으며, 도중에 중단하더라도 진행 상황은 저장됩니다."
-    },
-    "snap": {
-      "name": "스냅",
-      "explanation": "작업이 즉시 완료됩니다."
-    },
-    "stamina": {
-      "name": "스태미나",
-      "explanation": "각 액션은 플레이어와 대상의 체력을 감소시킵니다. 대상의 체력이 바닥나면 플레이어가 승리하고, 플레이어의 체력이 바닥나면 게임이 종료됩니다. 게임이 종료되어도 잃을 것은 없지만, 진행 중이던 모든 액션은 중단됩니다."
-    },
-    "enable-count": {
-      "name": "카운트 활성화",
-      "explanation": ""
-    },
-    "estimated-time": {
-      "name": "예상 시간",
-      "explanation": ""
-    },
-    "completed-count": {
-      "name": "완료 건수",
-      "explanation": ""
-    },
-    "current-count": {
-      "name": "현재 카운트",
-      "explanation": ""
-    },
-    "elapsed-time": {
-      "name": "경과 시간",
-      "explanation": ""
-    },
-    "rest-time": {
-      "name": "휴식 시간",
-      "explanation": ""
-    },
-    "each-time": {
-      "name": "매번 시간",
-      "explanation": ""
-    },
-    "next-time": {
-      "name": "다음에",
-      "explanation": ""
-    },
-    "rest-count": {
-      "name": "남은 횟수",
-      "explanation": ""
-    },
-    "act": {
-      "name": "행동",
-      "explanation": ""
-    },
-    "start": {
-      "name": "시작",
-      "explanation": ""
-    },
-    "end": {
-      "name": "종료",
-      "explanation": ""
-    },
-    "stop": {
-      "name": "정지",
-      "explanation": ""
-    },
-    "reserve": {
-      "name": "예약",
-      "explanation": "이 작업을 예약 대기열에 추가하여 순차적으로 실행되도록 하십시오."
-    },
-    "reorder": {
-      "name": "재주문",
-      "explanation": "이 예약된 작업을 대기열의 선택한 위치로 이동합니다."
-    },
-    "position": {
-      "name": "대기 순위",
-      "explanation": "예약 대기열에서 해당 순서를 선택하십시오."
-    },
-    "items": {
-      "name": "아이템",
-      "explanation": ""
-    },
-    "equipping": {
-      "name": "장비 장착 중",
-      "explanation": ""
-    },
-    "unequipping": {
-      "name": "해제 중",
-      "explanation": ""
-    },
-    "equip": {
-      "name": "장비 장착",
-      "explanation": ""
-    },
-    "equipment": {
-      "name": "장비",
-      "explanation": ""
-    },
-    "unequip": {
-      "name": "장비 해제",
-      "explanation": ""
-    },
-    "nothing": {
-      "name": "없음",
-      "explanation": ""
-    },
-    "own": {
-      "name": "소유",
-      "explanation": "이 아이템을 소유하고 계신지 여부."
-    },
-    "own-count": {
-      "name": "자체 카운트",
-      "explanation": "이 아이템을 소유하고 계신지 여부."
-    },
-    "recovery": {
-      "name": "회복",
-      "explanation": "하나만 소유할 수 있습니다."
-    },
-    "unique": {
-      "name": "고유한",
-      "explanation": "하나만 소유할 수 있습니다."
-    },
-    "equipment-type": {
-      "name": "장비",
-      "explanation": "해당 아이템의 장비 유형."
-    },
-    "necessary-item": {
-      "name": "필요",
-      "explanation": "해당 아이템을 장착하고 있으면 효과가 발동됩니다."
-    },
-    "unnecessary-item": {
-      "name": "불필요",
-      "explanation": "이 아이템은 장착할 수는 없지만, 소지하고 있는 것만으로도 효과가 발휘됩니다. 효과는 소유한 개수에 비례하여 증가합니다."
-    },
-    "impossible-item": {
-      "name": "불가능",
-      "explanation": "이 아이템은 장착할 수 없습니다."
-    },
-    "consumable-item": {
-      "name": "소모품",
-      "explanation": "장착하면 효과가 발동되지만, 행동을 취할 때마다 소모됩니다."
-    },
-    "buy": {
-      "name": "구매하기",
-      "explanation": "구매 시 해당 아이템의 가격."
-    },
-    "buying-value": {
-      "name": "구매 가치",
-      "explanation": "구매 시 해당 아이템의 가격."
-    },
-    "sell": {
-      "name": "판매",
-      "explanation": "판매 시 해당 아이템의 가격."
-    },
-    "selling": {
-      "name": "판매",
-      "explanation": ""
-    },
-    "kind": {
-      "name": "종류",
-      "explanation": ""
-    },
-    "selling-value": {
-      "name": "판매 가치",
-      "explanation": "판매 시 해당 아이템의 가격."
-    },
-    "trade": {
-      "name": "거래",
-      "explanation": ""
-    },
-    "trade-failed": {
-      "name": "거래 실패",
-      "explanation": "거래가 실패했습니다."
-    },
-    "capacity-full": {
-      "name": "정원 마감",
-      "explanation": "인벤토리 용량이 가득 찼습니다."
-    },
-    "queue-full": {
-      "name": "대기열이 가득 찼습니다",
-      "explanation": "예약 대기열이 가득 찼습니다."
-    },
-    "already-queued": {
-      "name": "이미 대기 중",
-      "explanation": "이 작업은 이미 실행 중이거나 예약되어 있습니다."
-    },
-    "purchase-limit-reached": {
-      "name": "구매 한도 초과",
-      "explanation": "구매 한도에 도달했습니다."
-    },
-    "completed-maximum": {
-      "name": "완료된 최대값",
-      "explanation": "완료 횟수 상한에 도달했습니다."
-    },
-    "relationship": {
-      "name": "관계",
-      "explanation": ""
-    },
-    "relationships": {
-      "name": "관계",
-      "explanation": ""
-    },
-    "requirement-equipment": {
-      "name": "필수 장비",
-      "explanation": "이 아이템은 반드시 장착해야 합니다."
-    },
-    "property": {
-      "name": "속성",
-      "explanation": ""
-    },
-    "properties": {
-      "name": "속성",
-      "explanation": ""
-    },
-    "attack": {
-      "name": "공격",
-      "explanation": "대상에게 피해를 줍니다."
-    },
-    "defence": {
-      "name": "방어",
-      "explanation": "타겟으로부터 입은 피해."
-    },
-    "accuracy": {
-      "name": "명중도",
-      "explanation": "몬스터에게 피해를 줄 확률."
-    },
-    "evasion": {
-      "name": "회피",
-      "explanation": "몬스터로부터 피해를 입을 확률."
-    },
-    "restore": {
-      "name": "회복",
-      "explanation": "전투 중 회복량에 영향을 미칩니다."
-    },
-    "speed": {
-      "name": "속도",
-      "explanation": "액션의 속도에 영향을 미칩니다."
-    },
-    "chance": {
-      "name": "찬스",
-      "explanation": "이 행동은 성공할 수도 있지만, 실패할 경우 보상을 받거나 경험치를 얻을 수 없습니다."
-    },
-    "experience": {
-      "name": "경력",
-      "explanation": "액션을 통해 얻는 경험치에 영향을 미칩니다."
-    },
-    "correction": {
-      "name": "보정",
-      "explanation": "장비 및 아이템의 영향에 따른 보정."
-    },
-    "value": {
-      "name": "값",
-      "explanation": ""
-    },
-    "resources": {
-      "name": "자원",
-      "explanation": ""
-    },
-    "base-value": {
-      "name": "기본값",
-      "explanation": "이 게임 또는 액션에 대한 고유한 값입니다."
-    },
-    "level-gap": {
-      "name": "레벨 차이",
-      "explanation": "수치 계산에 대해서는 “레벨” 블록을 참조하십시오."
-    },
-    "reflected-value": {
-      "name": "반영된 값",
-      "explanation": "“기준값”과 “레벨 차이”를 바탕으로 산출된 최종 값입니다."
-    },
-    "level-gap-property": {
-      "name": "레벨 격차 속성",
-      "explanation": "“레벨 격차” 값은 이 블록 내 각 값의 합계입니다."
-    },
-    "level-gap-category": {
-      "name": "레벨 격차 카테고리",
-      "explanation": "플레이어의 카테고리 레벨에서 해당 액션의 레벨을 뺀 값입니다. “경험치”의 경우에는 상황이 반대로 적용됩니다."
-    },
-    "level-gap-action": {
-      "name": "레벨 격차에 대응하는 조치",
-      "explanation": "진행 유형이 스태미나일 때, 이 액션이 설정하는 고유 값입니다."
-    },
-    "level-gap-item": {
-      "name": "레벨 격차 아이템",
-      "explanation": "이는 장착된 아이템이나, 장착하지 않아도 효과가 적용되는 아이템에서 비롯된 보정치입니다."
-    },
-    "no-status": {
-      "name": "상태 없음",
-      "explanation": "사용 가능한 상태 카테고리가 없습니다."
-    },
-    "targeting-all-categories": {
-      "name": "모든 카테고리 대상",
-      "explanation": "이 속성 보정은 모든 카테고리에 적용됩니다."
-    },
-    "hint-language-0": {
-      "name": "힌트 언어 0",
-      "explanation": "게임에 표시되는 언어를 전환합니다."
-    },
-    "hint-language-1": {
-      "name": "힌트 언어 1",
-      "explanation": "이는 제작자가 번역본을 제공한 경우에만 적용됩니다."
-    },
-    "hint-event-0": {
-      "name": "힌트 이벤트 0",
-      "explanation": "조건이 충족되면 실행됩니다."
-    },
-    "hint-event-1": {
-      "name": "힌트 이벤트 1",
-      "explanation": "활성화되거나 아이템을 획득하거나 소모될 때 등의 상황에서 메시지가 표시됩니다."
-    },
-    "hint-debug-0": {
-      "name": "힌트 디버그 0",
-      "explanation": "디버깅 중에만 표시됩니다."
-    },
-    "hint-debug-1": {
-      "name": "힌트 디버그 1",
-      "explanation": "게임이 출시 및 배포될 때는 표시되지 않습니다."
-    },
-    "hint-config-0": {
-      "name": "힌트 설정 0",
-      "explanation": "게임 표시 및 처리와 관련된 설정을 구성합니다."
-    },
-    "hint-config-1": {
-      "name": "힌트 설정 1",
-      "explanation": "게임 데이터를 입력·출력하거나 초기화할 수 있습니다."
-    },
-    "hint-statistics-0": {
-      "name": "힌트 통계 0",
-      "explanation": "지금까지의 게임 진행 상황을 확인할 수 있습니다."
-    },
-    "hint-general-0": {
-      "name": "일반 힌트 0",
-      "explanation": "이 월드의 난이도와 고유 설정을 확인할 수 있습니다."
-    },
-    "hint-overview-0": {
-      "name": "힌트 개요 0",
-      "explanation": "이 게임의 세계관(배경)에 대해 확인해 보실 수 있습니다."
-    },
-    "hint-overview-1": {
-      "name": "힌트 개요 1",
-      "explanation": "이 게임을 실행 중인 콘솔(시스템)을 확인해 볼 수도 있습니다."
-    },
-    "hint-correction-0": {
-      "name": "힌트 보정 0",
-      "explanation": "이 카테고리에서 특정 속성에 대한 보정 내역을 확인할 수 있습니다."
-    },
-    "hint-correction-1": {
-      "name": "힌트 보정 1",
-      "explanation": "이 보정은 해당 아이템의 영향 때문입니다. 해당 아이템을 확인해 주시기 바랍니다."
-    },
-    "hint-properties-0": {
-      "name": "힌트 속성 0",
-      "explanation": "다음은 각 카테고리별로 설정된 속성 목록입니다."
-    },
-    "hint-properties-1": {
-      "name": "힌트 속성 1",
-      "explanation": "속성은 액션의 실행에 영향을 미치는 요소입니다."
-    },
-    "hint-properties-2": {
-      "name": "힌트 속성 2",
-      "explanation": "해당 아이템을 장착하면 그 효과가 상쇄됩니다. (일부 아이템은 장착할 필요가 없습니다.)"
-    },
-    "hint-property-0": {
-      "name": "힌트 속성 0",
-      "explanation": "속성은 액션의 실행에 영향을 미치는 요소입니다."
-    },
-    "hint-property-1": {
-      "name": "힌트 속성 1",
-      "explanation": "최종 값은 할당된 초기 값을 바탕으로, 카테고리 레벨, 해당 액션에 설정된 레벨, 그리고 장착된 아이템의 보정치를 고려하여 계산됩니다."
-    },
-    "hint-trade-0": {
-      "name": "힌트 거래 0",
-      "explanation": "일부 아이템은 구매하거나 판매할 수 없습니다."
-    },
-    "hint-trade-1": {
-      "name": "힌트 거래 1",
-      "explanation": "잠긴 아이템은 구매하거나 판매할 수 없습니다."
-    },
-    "hint-items-0": {
-      "name": "힌트 아이템 0",
-      "explanation": "길게 누르면 아이템을 장비할 수 있습니다."
-    },
-    "hint-items-1": {
-      "name": "힌트 아이템 1",
-      "explanation": "목록에 있는 아이템 중 하나만 장착할 수 있습니다. (해당 아이템이 ‘장착 가능’ 카테고리로 설정된 경우)"
-    },
-    "hint-items-2": {
-      "name": "힌트 아이템 2",
-      "explanation": "출시 조건을 충족하지 않는 아이템은 잠금 상태가 되어 상세 내용을 확인할 수 없습니다."
-    },
-    "hint-item-0": {
-      "name": "힌트 아이템 0",
-      "explanation": "‘아이템’은 장비, 소모품, 귀중품 등 물품을 소지하는 것과 관련된 요소를 말합니다."
-    },
-    "hint-item-1": {
-      "name": "힌트 1번",
-      "explanation": "카테고리당 하나의 아이템만 장착할 수 있습니다. (해당 카테고리가 장비 가능하도록 설정된 경우)"
-    },
-    "hint-item-2": {
-      "name": "힌트 2번",
-      "explanation": "출시 조건을 충족하지 않는 아이템은 잠금 상태가 되어 상세 내용을 확인할 수 없습니다."
-    },
-    "hint-act-0": {
-      "name": "힌트 액트 0",
-      "explanation": "액션을 시작하거나 중지합니다."
-    },
-    "hint-act-1": {
-      "name": "힌트 1막",
-      "explanation": "사형 집행 횟수를 지정할 수 있습니다."
-    },
-    "hint-queue-0": {
-      "name": "힌트 대기열 0",
-      "explanation": "막대를 길게 누르면 대기열에서 제거됩니다."
-    },
-    "hint-actions-0": {
-      "name": "힌트 액션 0",
-      "explanation": "길게 누르면 해당 동작의 실행 여부가 전환됩니다."
-    },
-    "hint-actions-1": {
-      "name": "힌트: 액션 1",
-      "explanation": "한 카테고리에서는 하나의 항목만 실행할 수 있습니다."
-    },
-    "hint-actions-2": {
-      "name": "힌트: 액션 2",
-      "explanation": "일부 카테고리의 경우, 여러 카테고리에서 진행되는 작업을 동시에 진행할 수 있습니다."
-    },
-    "hint-actions-3": {
-      "name": "힌트: 액션 3",
-      "explanation": "출시 조건을 충족하지 않는 액션은 잠금 상태가 되어 세부 내용을 확인할 수 없습니다."
-    },
-    "hint-action-0": {
-      "name": "힌트 액션 0",
-      "explanation": "각 액션을 수행할 때마다 경험치를 획득하여 레벨을 올릴 수 있습니다."
-    },
-    "hint-action-1": {
-      "name": "힌트: 액션 1",
-      "explanation": "각 액션은 아이템을 소모하거나 획득합니다."
-    },
-    "hint-action-2": {
-      "name": "힌트: 액션 2",
-      "explanation": "출시 조건을 충족하지 않는 액션은 잠금 상태가 되어 세부 내용을 확인할 수 없습니다."
-    },
-    "hint-category-0": {
-      "name": "힌트 카테고리 0",
-      "explanation": "이는 액션과 아이템을 하나로 연결해 주는 요소입니다."
-    },
-    "hint-status-0": {
-      "name": "힌트 상태 0",
-      "explanation": "아이템별 카테고리 보정값만 표시됩니다."
-    },
-    "hint-status-1": {
-      "name": "힌트 상태 1",
-      "explanation": "수행할 작업에 따라 그 외에도 추가적인 보정 사항이 있습니다."
-    },
-    "hint-inventory-0": {
-      "name": "힌트 인벤토리 0",
-      "explanation": "길게 누르면 아이템을 장비할 수 있습니다."
-    },
-    "hint-activity-0": {
-      "name": "힌트 활동 0",
-      "explanation": "길게 누르면 해당 동작의 실행 여부가 전환됩니다."
-    },
-    "hint-character-0": {
-      "name": "힌트: 0번째 문자",
-      "explanation": "이 콘텐츠는 해당 카테고리를 실행했을 때 표시되는 내용과 동일합니다."
-    },
-    "hint-player-0": {
-      "name": "힌트: 플레이어 0",
-      "explanation": "기본적으로 각 열 하단에는 동일한 설명이 힌트로 표시됩니다."
-    },
-    "hint-player-1": {
-      "name": "힌트: 플레이어 1",
-      "explanation": "다음 설정을 통해 힌트를 숨길 수 있습니다."
-    },
-    "event": {
-      "name": "이벤트",
-      "explanation": ""
-    },
-    "timing": {
-      "name": "시기",
-      "explanation": ""
-    },
-    "matched": {
-      "name": "일치",
-      "explanation": "조건이 충족되었습니다."
-    },
-    "comebacked": {
-      "name": "돌아왔다",
-      "explanation": "다시 오신 것을 환영합니다! 자리를 비우신 동안의 진행 상황은 다음과 같습니다:"
-    },
-    "gameovered": {
-      "name": "게임 오버",
-      "explanation": "게임 오버입니다. 진행 상황이 초기화되었습니다."
-    },
-    "completed": {
-      "name": "완료됨",
-      "explanation": "축하합니다! 모든 카테고리를 완료하셨습니다."
-    },
-    "welcomed": {
-      "name": "환영합니다",
-      "explanation": "이 세상에 오신 것을 환영합니다!"
-    },
-    "obtained": {
-      "name": "획득",
-      "explanation": "다음과 같은 결과를 얻었습니다:"
-    },
-    "achieved": {
-      "name": "달성",
-      "explanation": ""
-    },
-    "task": {
-      "name": "과제",
-      "explanation": ""
-    },
-    "tasks": {
-      "name": "과제",
-      "explanation": ""
-    },
-    "missions": {
-      "name": "임무",
-      "explanation": ""
-    },
-    "language-en": {
-      "name": "영어",
-      "explanation": ""
-    },
-    "language-zh": {
-      "name": "중국어(간체)",
-      "explanation": ""
-    },
-    "language-es": {
-      "name": "스페인어",
-      "explanation": ""
-    },
-    "language-pt": {
-      "name": "포르투갈어",
-      "explanation": ""
-    },
-    "language-fr": {
-      "name": "프랑스어",
-      "explanation": ""
-    },
-    "language-ru": {
-      "name": "러시아어",
-      "explanation": ""
-    },
-    "language-de": {
-      "name": "독일어",
-      "explanation": ""
-    },
-    "language-ja": {
-      "name": "일본어",
-      "explanation": ""
-    },
-    "language-id": {
-      "name": "인도네시아어",
-      "explanation": ""
-    },
-    "language-ko": {
-      "name": "한국어",
-      "explanation": ""
-    },
-    "language-mistaked": {
-      "name": "언어 오류",
-      "explanation": ""
-    },
-    "config": {
-      "name": "설정",
-      "explanation": ""
-    },
-    "language": {
-      "name": "언어",
-      "explanation": ""
-    },
-    "selected-language": {
-      "name": "선택한 언어",
-      "explanation": ""
-    },
-    "language-change-enable": {
-      "name": "언어 변경 활성화",
-      "explanation": "표시되는 언어를 변경할 수 있습니다."
-    },
-    "language-change-unenable": {
-      "name": "언어 변경 비활성화",
-      "explanation": "표시할 수 있는 다른 언어는 없습니다."
-    },
-    "category-shortcut": {
-      "name": "카테고리 바로가기",
-      "explanation": "카테고리를 열면 해당 카테고리에 포함된 액션이나 아이템 목록도 함께 표시됩니다."
-    },
-    "showing-hint": {
-      "name": "힌트",
-      "explanation": "사용 방법에 대한 안내를 표시합니다."
-    },
-    "showing-navigation": {
-      "name": "내비게이션",
-      "explanation": "열 사이를 이동할 수 있는 버튼이 표시됩니다. 버튼을 표시하지 않아도 스와이프하여 열 사이를 이동할 수 있습니다."
-    },
-    "performing-highly": {
-      "name": "뛰어난 성과",
-      "explanation": "업데이트 빈도를 높입니다. 작업 부하가 큰 경우에는 이 기능을 비활성화 상태로 유지하는 것이 좋습니다. 각 작업의 실행 시간에는 영향을 미치지 않습니다."
-    },
-    "export-game": {
-      "name": "게임 내보내기",
-      "explanation": "게임 데이터가 내보내졌습니다."
-    },
-    "import-game": {
-      "name": "게임 가져오기",
-      "explanation": "게임 데이터가 불러왔습니다."
-    },
-    "import-mistake": {
-      "name": "가져오기 오류",
-      "explanation": "게임 데이터를 불러올 수 없습니다."
-    },
-    "reset-game": {
-      "name": "게임 초기화",
-      "explanation": "이 월드의 모든 진행 상황을 삭제합니다. 이 작업은 되돌릴 수 없습니다. 파일을 정말로 삭제할지 확인한 후, 입력란에 'DELETE'를 입력해 주세요. (디버그 모드에서는 필요 없음)"
-    },
-    "reset-really": {
-      "name": "정말이에요?",
-      "explanation": ""
-    },
-    "reset-alert": {
-      "name": "알림 초기화",
-      "explanation": "게임을 초기화하면 모든 데이터가 삭제됩니다. 정말 게임을 초기화하시겠습니까?"
-    },
-    "reset-debug-mode": {
-      "name": "디버그 모드 초기화",
-      "explanation": "디버그 모드에서는 확인 입력란에 아무것도 입력할 필요가 없습니다."
-    },
-    "force-restart": {
-      "name": "강제 재시작",
-      "explanation": "앱을 다시 불러옵니다. 화면이 반응하지 않거나 멈춘 경우 이 기능을 사용하세요. 진행 상황에는 영향을 미치지 않습니다."
-    }
-  }
+	"category": {},
+	"action": {},
+	"item": {},
+	"group": {},
+	"event": {},
+	"preset": {
+		"locked": {
+			"name": "잠금",
+			"explanation": "조건이 충족되면 이 요소가 잠금 해제됩니다."
+		},
+		"max": {
+			"name": "최대",
+			"explanation": ""
+		},
+		"min": {
+			"name": "최소",
+			"explanation": ""
+		},
+		"maximum": {
+			"name": "최대",
+			"explanation": "이 수량 이상으로 보유하거나 행사할 수 없습니다."
+		},
+		"minimum": {
+			"name": "최소",
+			"explanation": ""
+		},
+		"count": {
+			"name": "카운트",
+			"explanation": ""
+		},
+		"purchased-count": {
+			"name": "구매 횟수",
+			"explanation": ""
+		},
+		"purchase-limit": {
+			"name": "구매 한도",
+			"explanation": "구매할 수 있는 최대 시간입니다."
+		},
+		"purchasable-count": {
+			"name": "구매 가능",
+			"explanation": "아직 구매할 시간이 남아 있습니다."
+		},
+		"total": {
+			"name": "합계",
+			"explanation": ""
+		},
+		"percentage": {
+			"name": "비율",
+			"explanation": ""
+		},
+		"player": {
+			"name": "플레이어",
+			"explanation": ""
+		},
+		"target": {
+			"name": "타겟",
+			"explanation": ""
+		},
+		"requirement": {
+			"name": "요구사항",
+			"explanation": ""
+		},
+		"requirements": {
+			"name": "요구사항",
+			"explanation": ""
+		},
+		"acquisition": {
+			"name": "획득",
+			"explanation": ""
+		},
+		"acquisitions": {
+			"name": "획득",
+			"explanation": ""
+		},
+		"results": {
+			"name": "결과",
+			"explanation": ""
+		},
+		"yes": {
+			"name": "예",
+			"explanation": ""
+		},
+		"no": {
+			"name": "아니요",
+			"explanation": ""
+		},
+		"on": {
+			"name": "~에",
+			"explanation": ""
+		},
+		"off": {
+			"name": "꺼짐",
+			"explanation": ""
+		},
+		"seconds": {
+			"name": "초",
+			"explanation": ""
+		},
+		"minutes": {
+			"name": "회의록",
+			"explanation": ""
+		},
+		"hours": {
+			"name": "운영 시간",
+			"explanation": ""
+		},
+		"days": {
+			"name": "일",
+			"explanation": ""
+		},
+		"years": {
+			"name": "년",
+			"explanation": ""
+		},
+		"centuries": {
+			"name": "세기",
+			"explanation": ""
+		},
+		"endless": {
+			"name": "∞",
+			"explanation": ""
+		},
+		"success": {
+			"name": "성공",
+			"explanation": ""
+		},
+		"failure": {
+			"name": "실패",
+			"explanation": "실패"
+		},
+		"up": {
+			"name": "위",
+			"explanation": ""
+		},
+		"down": {
+			"name": "아래",
+			"explanation": ""
+		},
+		"question": {
+			"name": "질문",
+			"explanation": ""
+		},
+		"navigation": {
+			"name": "내비게이션",
+			"explanation": "스와이프하여 칼럼 사이를 이동할 수도 있습니다. 맨 위 버튼은 화면 왼쪽 하단에 표시됩니다."
+		},
+		"navigation-back": {
+			"name": "뒤로",
+			"explanation": ""
+		},
+		"navigation-top": {
+			"name": "맨 위",
+			"explanation": ""
+		},
+		"navigation-forward": {
+			"name": "앞으로",
+			"explanation": ""
+		},
+		"navigation-column": {
+			"name": "칼럼",
+			"explanation": "이 열의 위치와 화면 밖에 있는 열을 포함한 총 열 수."
+		},
+		"checked": {
+			"name": "확인됨",
+			"explanation": ""
+		},
+		"chevron-down": {
+			"name": "셰브론 아래",
+			"explanation": ""
+		},
+		"chevron-right": {
+			"name": "셰브론 오른쪽",
+			"explanation": ""
+		},
+		"selected": {
+			"name": "선택됨",
+			"explanation": ""
+		},
+		"character": {
+			"name": "캐릭터",
+			"explanation": ""
+		},
+		"activity": {
+			"name": "활동",
+			"explanation": ""
+		},
+		"inventory": {
+			"name": "인벤토리",
+			"explanation": ""
+		},
+		"status": {
+			"name": "상태",
+			"explanation": ""
+		},
+		"world": {
+			"name": "월드",
+			"explanation": ""
+		},
+		"overview": {
+			"name": "개요",
+			"explanation": ""
+		},
+		"version": {
+			"name": "버전",
+			"explanation": ""
+		},
+		"license": {
+			"name": "라이선스",
+			"explanation": ""
+		},
+		"updated": {
+			"name": "업데이트됨",
+			"explanation": ""
+		},
+		"author": {
+			"name": "작가",
+			"explanation": ""
+		},
+		"homepage": {
+			"name": "홈페이지",
+			"explanation": ""
+		},
+		"estimated-playing-time": {
+			"name": "예상 재생 시간",
+			"explanation": "작가가 추산한 이 월드를 완료하는 데 걸리는 시간"
+		},
+		"console": {
+			"name": "콘솔",
+			"explanation": "이 게임은 대기 RPG 콘솔 시스템에서 실행됩니다. 이 시스템은 무료이며 누구나 이용할 수 있으므로, 누구나 게임을 제작할 수 있습니다."
+		},
+		"general": {
+			"name": "일반",
+			"explanation": ""
+		},
+		"default-language": {
+			"name": "기본 언어",
+			"explanation": ""
+		},
+		"language-change-enable-general": {
+			"name": "언어 변경 활성화 - 일반",
+			"explanation": "설정에서 표시 언어를 다른 언어로 변경할 수 있습니다."
+		},
+		"max-category-level": {
+			"name": "최대 카테고리 수준",
+			"explanation": "각 카테고리에서 달성할 수 있는 최고 레벨."
+		},
+		"level-common-ratio": {
+			"name": "레벨 공통 비율",
+			"explanation": "레벨을 올릴 때마다 다음 레벨에 도달하려면 얼마나 많은 경험치가 필요한가요?"
+		},
+		"statistics": {
+			"name": "통계",
+			"explanation": ""
+		},
+		"coin": {
+			"name": "코인",
+			"explanation": ""
+		},
+		"amount-earned": {
+			"name": "수령 금액",
+			"explanation": "지금까지 획득한 코인의 총합입니다."
+		},
+		"time": {
+			"name": "시간",
+			"explanation": ""
+		},
+		"playing-time": {
+			"name": "재생 시간",
+			"explanation": "이 게임을 시작한 후 경과한 시간으로, 오프라인 시간도 포함됩니다."
+		},
+		"item": {
+			"name": "아이템",
+			"explanation": ""
+		},
+		"count-now": {
+			"name": "지금 한번 해보세요",
+			"explanation": "현재 보유하고 있는 아이템의 총 개수입니다."
+		},
+		"count-gained": {
+			"name": "획득한 카운트",
+			"explanation": "지금까지 확보한 아이템의 총 개수."
+		},
+		"total-level": {
+			"name": "총 레벨",
+			"explanation": "모든 카테고리의 현재 레벨 합계."
+		},
+		"count-actioned": {
+			"name": "조치 완료",
+			"explanation": "지금까지 수행된 액션의 총 개수."
+		},
+		"win": {
+			"name": "승리",
+			"explanation": ""
+		},
+		"debug": {
+			"name": "디버그",
+			"explanation": ""
+		},
+		"acceleration": {
+			"name": "가속도",
+			"explanation": "게임 내 시간을 빠르게 진행합니다. 액션 실행 속도가 느린 상태에서 속도를 지나치게 높이면, 처리 속도가 따라가지 못해 앱이 멈추거나 강제 종료될 수 있으니 주의하시기 바랍니다."
+		},
+		"multiplier": {
+			"name": "승수",
+			"explanation": ""
+		},
+		"accelerate": {
+			"name": "가속화",
+			"explanation": ""
+		},
+		"adjustment": {
+			"name": "조정",
+			"explanation": "소유한 아이템의 수나 카테고리 레벨을 높이거나 낮춥니다."
+		},
+		"adjustment-type": {
+			"name": "유형",
+			"explanation": ""
+		},
+		"adjustment-category": {
+			"name": "카테고리",
+			"explanation": "카테고리의 레벨을 조정하세요. 예를 들어, +5로 설정하면 5레벨이 추가됩니다."
+		},
+		"adjustment-action": {
+			"name": "액션",
+			"explanation": "이렇게 하면 해당 액션이 수행된 횟수가 늘어나거나 줄어듭니다. 다만, 액션을 완료했을 때 얻은 보상은 반영되지 않습니다."
+		},
+		"adjustment-item": {
+			"name": "아이템",
+			"explanation": "소유하고 있는 아이템의 수를 늘리거나 줄입니다."
+		},
+		"adjustment-id": {
+			"name": "ID",
+			"explanation": "대상 유형의 ID를 지정하십시오. 비워 두면 모든 ID에 대해 덧셈과 뺄셈이 조정됩니다."
+		},
+		"adjustment-sign": {
+			"name": "부호",
+			"explanation": ""
+		},
+		"adjustment-plus": {
+			"name": "플러스",
+			"explanation": "지정된 수치 값을 더합니다."
+		},
+		"adjustment-minus": {
+			"name": "마이너스",
+			"explanation": "지정된 숫자를 뺍니다."
+		},
+		"adjustment-count": {
+			"name": "카운트",
+			"explanation": "증가하거나 감소시킬 숫자입니다. 기호를 사용하여 증가할지 감소할지 지정하십시오."
+		},
+		"adjustment-adjust": {
+			"name": "조정",
+			"explanation": "지정된 조건에 따라 조정이 이루어집니다."
+		},
+		"pwa": {
+			"name": "PWA 설치",
+			"explanation": "프로그레시브 웹 앱(PWA)을 설치하세요."
+		},
+		"go-top": {
+			"name": "맨 위로",
+			"explanation": ""
+		},
+		"iconify": {
+			"name": "아이콘화",
+			"explanation": "이 게임은 iconify에서 제공하는 아이콘 세트를 사용합니다. 제작에 참여해 주신 모든 분께 감사의 말씀을 전합니다."
+		},
+		"category": {
+			"name": "카테고리",
+			"explanation": ""
+		},
+		"categories": {
+			"name": "카테고리 목록",
+			"explanation": ""
+		},
+		"level": {
+			"name": "레벨",
+			"explanation": ""
+		},
+		"situation": {
+			"name": "상황",
+			"explanation": ""
+		},
+		"element": {
+			"name": "요소",
+			"explanation": ""
+		},
+		"standalone": {
+			"name": "독립형",
+			"explanation": "다른 카테고리의 작업 진행 상황과 관계없이 독립적으로 실행됩니다."
+		},
+		"action": {
+			"name": "액션",
+			"explanation": ""
+		},
+		"actions": {
+			"name": "액션 목록",
+			"explanation": ""
+		},
+		"attribute": {
+			"name": "속성",
+			"explanation": "이 액션의 구체적인 속성입니다. 카테고리 속성이 이 액션의 속성에 적용됩니다. 또한 이 속성에는 경험치가 부여됩니다."
+		},
+		"progress": {
+			"name": "진행 상황",
+			"explanation": ""
+		},
+		"progressing": {
+			"name": "진행 중",
+			"explanation": ""
+		},
+		"progressing-action": {
+			"name": "진행 중",
+			"explanation": ""
+		},
+		"possible-action": {
+			"name": "가능",
+			"explanation": ""
+		},
+		"impossible-action": {
+			"name": "불가능",
+			"explanation": ""
+		},
+		"idle": {
+			"name": "대기",
+			"explanation": ""
+		},
+		"progress-type": {
+			"name": "진행 유형",
+			"explanation": ""
+		},
+		"persistent": {
+			"name": "지속적인",
+			"explanation": "일련의 액션을 수행하게 되며, 액션을 완료할 때마다 보상을 받게 됩니다."
+		},
+		"single": {
+			"name": "싱글",
+			"explanation": "각 액션은 한 번만 수행할 수 있으며, 도중에 중단하더라도 진행 상황은 저장됩니다."
+		},
+		"snap": {
+			"name": "스냅",
+			"explanation": "작업이 즉시 완료됩니다."
+		},
+		"stamina": {
+			"name": "스태미나",
+			"explanation": "각 액션은 플레이어와 대상의 체력을 감소시킵니다. 대상의 체력이 바닥나면 플레이어가 승리하고, 플레이어의 체력이 바닥나면 게임이 종료됩니다. 게임이 종료되어도 잃을 것은 없지만, 진행 중이던 모든 액션은 중단됩니다."
+		},
+		"enable-count": {
+			"name": "카운트 활성화",
+			"explanation": ""
+		},
+		"estimated-time": {
+			"name": "예상 시간",
+			"explanation": ""
+		},
+		"completed-count": {
+			"name": "완료 건수",
+			"explanation": ""
+		},
+		"current-count": {
+			"name": "현재 카운트",
+			"explanation": ""
+		},
+		"elapsed-time": {
+			"name": "경과 시간",
+			"explanation": ""
+		},
+		"rest-time": {
+			"name": "휴식 시간",
+			"explanation": ""
+		},
+		"each-time": {
+			"name": "매번 시간",
+			"explanation": ""
+		},
+		"next-time": {
+			"name": "다음에",
+			"explanation": ""
+		},
+		"rest-count": {
+			"name": "남은 횟수",
+			"explanation": ""
+		},
+		"act": {
+			"name": "실행",
+			"explanation": ""
+		},
+		"start": {
+			"name": "시작",
+			"explanation": ""
+		},
+		"end": {
+			"name": "종료",
+			"explanation": ""
+		},
+		"stop": {
+			"name": "정지",
+			"explanation": ""
+		},
+		"reserve": {
+			"name": "예약",
+			"explanation": "이 작업을 예약 대기열에 추가하여 순차적으로 실행되도록 하십시오."
+		},
+		"reorder": {
+			"name": "순서 변경",
+			"explanation": "이 예약된 작업을 대기열의 선택한 위치로 이동합니다."
+		},
+		"position": {
+			"name": "실행 순서",
+			"explanation": "이 액션을 언제 실행할지 선택합니다. 0이면 지금 바로 실행하고, 1 이상이면 대기열의 해당 위치에 들어갑니다."
+		},
+		"now": {
+			"name": "지금",
+			"explanation": "대기열에 넣지 않고 이 액션을 즉시 실행합니다."
+		},
+		"items": {
+			"name": "아이템 목록",
+			"explanation": ""
+		},
+		"equipping": {
+			"name": "장비 장착 중",
+			"explanation": ""
+		},
+		"unequipping": {
+			"name": "해제 중",
+			"explanation": ""
+		},
+		"equip": {
+			"name": "장비 장착",
+			"explanation": ""
+		},
+		"equipment": {
+			"name": "장비",
+			"explanation": ""
+		},
+		"unequip": {
+			"name": "장비 해제",
+			"explanation": ""
+		},
+		"nothing": {
+			"name": "없음",
+			"explanation": ""
+		},
+		"own": {
+			"name": "소유",
+			"explanation": "이 아이템을 소유하고 계신지 여부."
+		},
+		"own-count": {
+			"name": "자체 카운트",
+			"explanation": "이 아이템을 소유하고 계신지 여부."
+		},
+		"recovery": {
+			"name": "회복",
+			"explanation": "하나만 소유할 수 있습니다."
+		},
+		"unique": {
+			"name": "고유한",
+			"explanation": "하나만 소유할 수 있습니다."
+		},
+		"equipment-type": {
+			"name": "장비",
+			"explanation": "해당 아이템의 장비 유형."
+		},
+		"necessary-item": {
+			"name": "필요",
+			"explanation": "해당 아이템을 장착하고 있으면 효과가 발동됩니다."
+		},
+		"unnecessary-item": {
+			"name": "불필요",
+			"explanation": "이 아이템은 장착할 수는 없지만, 소지하고 있는 것만으로도 효과가 발휘됩니다. 효과는 소유한 개수에 비례하여 증가합니다."
+		},
+		"impossible-item": {
+			"name": "불가능",
+			"explanation": "이 아이템은 장착할 수 없습니다."
+		},
+		"consumable-item": {
+			"name": "소모품",
+			"explanation": "장착하면 효과가 발동되지만, 행동을 취할 때마다 소모됩니다."
+		},
+		"buy": {
+			"name": "구매하기",
+			"explanation": "구매 시 해당 아이템의 가격."
+		},
+		"buying-value": {
+			"name": "구매 가치",
+			"explanation": "구매 시 해당 아이템의 가격."
+		},
+		"sell": {
+			"name": "판매",
+			"explanation": "판매 시 해당 아이템의 가격."
+		},
+		"selling": {
+			"name": "판매",
+			"explanation": ""
+		},
+		"kind": {
+			"name": "종류",
+			"explanation": ""
+		},
+		"selling-value": {
+			"name": "판매 가치",
+			"explanation": "판매 시 해당 아이템의 가격."
+		},
+		"trade": {
+			"name": "거래",
+			"explanation": ""
+		},
+		"trade-failed": {
+			"name": "거래 실패",
+			"explanation": "거래가 실패했습니다."
+		},
+		"capacity-full": {
+			"name": "정원 마감",
+			"explanation": "인벤토리 용량이 가득 찼습니다."
+		},
+		"queue-full": {
+			"name": "대기열이 가득 찼습니다",
+			"explanation": "예약 대기열이 가득 찼습니다."
+		},
+		"already-queued": {
+			"name": "이미 대기 중",
+			"explanation": "이 작업은 이미 실행 중이거나 예약되어 있습니다."
+		},
+		"purchase-limit-reached": {
+			"name": "구매 한도 초과",
+			"explanation": "구매 한도에 도달했습니다."
+		},
+		"completed-maximum": {
+			"name": "완료된 최대값",
+			"explanation": "완료 횟수 상한에 도달했습니다."
+		},
+		"relationship": {
+			"name": "관계",
+			"explanation": ""
+		},
+		"relationships": {
+			"name": "관계",
+			"explanation": ""
+		},
+		"requirement-equipment": {
+			"name": "필수 장비",
+			"explanation": "이 아이템은 반드시 장착해야 합니다."
+		},
+		"property": {
+			"name": "속성",
+			"explanation": ""
+		},
+		"properties": {
+			"name": "속성 목록",
+			"explanation": ""
+		},
+		"attack": {
+			"name": "공격",
+			"explanation": "대상에게 피해를 줍니다."
+		},
+		"defence": {
+			"name": "방어",
+			"explanation": "타겟으로부터 입은 피해."
+		},
+		"accuracy": {
+			"name": "명중도",
+			"explanation": "몬스터에게 피해를 줄 확률."
+		},
+		"evasion": {
+			"name": "회피",
+			"explanation": "몬스터로부터 피해를 입을 확률."
+		},
+		"restore": {
+			"name": "회복",
+			"explanation": "전투 중 회복량에 영향을 미칩니다."
+		},
+		"speed": {
+			"name": "속도",
+			"explanation": "액션의 속도에 영향을 미칩니다."
+		},
+		"chance": {
+			"name": "찬스",
+			"explanation": "이 행동은 성공할 수도 있지만, 실패할 경우 보상을 받거나 경험치를 얻을 수 없습니다."
+		},
+		"experience": {
+			"name": "경력",
+			"explanation": "액션을 통해 얻는 경험치에 영향을 미칩니다."
+		},
+		"correction": {
+			"name": "보정",
+			"explanation": "장비 및 아이템의 영향에 따른 보정."
+		},
+		"value": {
+			"name": "값",
+			"explanation": ""
+		},
+		"resources": {
+			"name": "자원",
+			"explanation": ""
+		},
+		"base-value": {
+			"name": "기본값",
+			"explanation": "이 게임 또는 액션에 대한 고유한 값입니다."
+		},
+		"level-gap": {
+			"name": "레벨 차이",
+			"explanation": "수치 계산에 대해서는 “레벨” 블록을 참조하십시오."
+		},
+		"reflected-value": {
+			"name": "반영된 값",
+			"explanation": "“기준값”과 “레벨 차이”를 바탕으로 산출된 최종 값입니다."
+		},
+		"level-gap-property": {
+			"name": "레벨 격차 속성",
+			"explanation": "“레벨 격차” 값은 이 블록 내 각 값의 합계입니다."
+		},
+		"level-gap-category": {
+			"name": "레벨 격차 카테고리",
+			"explanation": "플레이어의 카테고리 레벨에서 해당 액션의 레벨을 뺀 값입니다. “경험치”의 경우에는 상황이 반대로 적용됩니다."
+		},
+		"level-gap-action": {
+			"name": "레벨 격차에 대응하는 조치",
+			"explanation": "진행 유형이 스태미나일 때, 이 액션이 설정하는 고유 값입니다."
+		},
+		"level-gap-item": {
+			"name": "레벨 격차 아이템",
+			"explanation": "이는 장착된 아이템이나, 장착하지 않아도 효과가 적용되는 아이템에서 비롯된 보정치입니다."
+		},
+		"no-status": {
+			"name": "상태 없음",
+			"explanation": "사용 가능한 상태 카테고리가 없습니다."
+		},
+		"targeting-all-categories": {
+			"name": "모든 카테고리 대상",
+			"explanation": "이 속성 보정은 모든 카테고리에 적용됩니다."
+		},
+		"event": {
+			"name": "이벤트",
+			"explanation": ""
+		},
+		"timing": {
+			"name": "시기",
+			"explanation": ""
+		},
+		"matched": {
+			"name": "일치",
+			"explanation": "조건이 충족되었습니다."
+		},
+		"comebacked": {
+			"name": "돌아왔다",
+			"explanation": "다시 오신 것을 환영합니다! 자리를 비우신 동안의 진행 상황은 다음과 같습니다:"
+		},
+		"gameovered": {
+			"name": "게임 오버",
+			"explanation": "게임 오버입니다. 진행 상황이 초기화되었습니다."
+		},
+		"completed": {
+			"name": "완료됨",
+			"explanation": "축하합니다! 모든 카테고리를 완료하셨습니다."
+		},
+		"welcomed": {
+			"name": "환영합니다",
+			"explanation": "이 세상에 오신 것을 환영합니다!"
+		},
+		"obtained": {
+			"name": "획득",
+			"explanation": "다음과 같은 결과를 얻었습니다:"
+		},
+		"achieved": {
+			"name": "달성",
+			"explanation": ""
+		},
+		"receive": {
+			"name": "받기",
+			"explanation": "이 과제의 보상을 받습니다."
+		},
+		"hidden": {
+			"name": "숨김",
+			"explanation": "내용을 확인하면 이 칼럼은 숨겨집니다."
+		},
+		"task": {
+			"name": "과제",
+			"explanation": ""
+		},
+		"tasks": {
+			"name": "과제",
+			"explanation": ""
+		},
+		"missions": {
+			"name": "임무",
+			"explanation": ""
+		},
+		"language-en": {
+			"name": "영어",
+			"explanation": ""
+		},
+		"language-zh": {
+			"name": "중국어(간체)",
+			"explanation": ""
+		},
+		"language-es": {
+			"name": "스페인어",
+			"explanation": ""
+		},
+		"language-pt": {
+			"name": "포르투갈어",
+			"explanation": ""
+		},
+		"language-fr": {
+			"name": "프랑스어",
+			"explanation": ""
+		},
+		"language-ru": {
+			"name": "러시아어",
+			"explanation": ""
+		},
+		"language-de": {
+			"name": "독일어",
+			"explanation": ""
+		},
+		"language-ja": {
+			"name": "일본어",
+			"explanation": ""
+		},
+		"language-id": {
+			"name": "인도네시아어",
+			"explanation": ""
+		},
+		"language-ko": {
+			"name": "한국어",
+			"explanation": ""
+		},
+		"language-mistaked": {
+			"name": "언어 오류",
+			"explanation": ""
+		},
+		"config": {
+			"name": "설정",
+			"explanation": ""
+		},
+		"language": {
+			"name": "언어",
+			"explanation": ""
+		},
+		"selected-language": {
+			"name": "선택한 언어",
+			"explanation": ""
+		},
+		"language-change-enable": {
+			"name": "언어 변경 활성화",
+			"explanation": "표시되는 언어를 변경할 수 있습니다."
+		},
+		"language-change-unenable": {
+			"name": "언어 변경 비활성화",
+			"explanation": "표시할 수 있는 다른 언어는 없습니다."
+		},
+		"category-shortcut": {
+			"name": "카테고리 바로가기",
+			"explanation": "카테고리를 열면 액션 목록 또는 아이템 목록도 함께 표시됩니다."
+		},
+		"showing-hint": {
+			"name": "힌트",
+			"explanation": "사용 방법에 대한 안내를 표시합니다."
+		},
+		"showing-navigation": {
+			"name": "내비게이션",
+			"explanation": "열 사이를 이동할 수 있는 버튼이 표시됩니다. 버튼을 표시하지 않아도 스와이프하여 열 사이를 이동할 수 있습니다."
+		},
+		"performing-highly": {
+			"name": "뛰어난 성과",
+			"explanation": "업데이트 빈도를 높입니다. 작업 부하가 큰 경우에는 이 기능을 비활성화 상태로 유지하는 것이 좋습니다. 각 작업의 실행 시간에는 영향을 미치지 않습니다."
+		},
+		"export-game": {
+			"name": "게임 내보내기",
+			"explanation": "게임 데이터가 내보내졌습니다."
+		},
+		"import-game": {
+			"name": "게임 가져오기",
+			"explanation": "게임 데이터가 불러왔습니다."
+		},
+		"import-mistake": {
+			"name": "가져오기 오류",
+			"explanation": "게임 데이터를 불러올 수 없습니다."
+		},
+		"reset-game": {
+			"name": "게임 초기화",
+			"explanation": "이 월드의 모든 진행 상황을 삭제합니다. 이 작업은 되돌릴 수 없습니다. 파일을 정말로 삭제할지 확인한 후, 입력란에 'DELETE'를 입력해 주세요. (디버그 모드에서는 필요 없음)"
+		},
+		"reset-really": {
+			"name": "정말이에요?",
+			"explanation": ""
+		},
+		"reset-alert": {
+			"name": "알림 초기화",
+			"explanation": "게임을 초기화하면 모든 데이터가 삭제됩니다. 정말 게임을 초기화하시겠습니까?"
+		},
+		"reset-debug-mode": {
+			"name": "디버그 모드 초기화",
+			"explanation": "디버그 모드에서는 확인 입력란에 아무것도 입력할 필요가 없습니다."
+		},
+		"force-restart": {
+			"name": "강제 재시작",
+			"explanation": "앱을 다시 불러옵니다. 화면이 반응하지 않거나 멈춘 경우 이 기능을 사용하세요. 진행 상황에는 영향을 미치지 않습니다."
+		},
+		"hint-language-switching": {
+			"name": "Hint Language Switching",
+			"explanation": "게임에 표시되는 언어를 전환합니다."
+		},
+		"hint-language-availability": {
+			"name": "Hint Language Availability",
+			"explanation": "작성자가 번역을 준비한 경우에만 유효합니다."
+		},
+		"hint-event-timing": {
+			"name": "Hint Event Timing",
+			"explanation": "게임에 복귀했을 때나 게임 오버가 되었을 때 등 정해진 시점에 발생합니다."
+		},
+		"hint-event-reward": {
+			"name": "Hint Event Reward",
+			"explanation": "발생하면 이 화면이 열리고, 메시지와 함께 보상이 자동으로 지급됩니다."
+		},
+		"hint-event-task": {
+			"name": "Hint Event Task",
+			"explanation": "과제는 특정 조건을 충족하면 달성되며, 보상은 직접 받습니다."
+		},
+		"hint-debug-visibility": {
+			"name": "Hint Debug Visibility",
+			"explanation": "디버그 중에만 표시됩니다."
+		},
+		"hint-debug-publishing": {
+			"name": "Hint Debug Publishing",
+			"explanation": "게임을 공개하고 배포할 때는 표시되지 않습니다."
+		},
+		"hint-config-settings": {
+			"name": "Hint Config Settings",
+			"explanation": "게임의 표시와 처리에 관한 설정을 합니다."
+		},
+		"hint-config-data": {
+			"name": "Hint Config Data",
+			"explanation": "게임 데이터를 입출력하고 초기화할 수 있습니다."
+		},
+		"hint-statistics-progress": {
+			"name": "Hint Statistics Progress",
+			"explanation": "지금까지의 게임 진행 상황을 확인할 수 있습니다."
+		},
+		"hint-general-difficulty": {
+			"name": "Hint General Difficulty",
+			"explanation": "이 월드의 난이도와 고유 설정을 확인할 수 있습니다."
+		},
+		"hint-overview-world": {
+			"name": "Hint Overview World",
+			"explanation": "이 게임의 월드(세계관, 설정)를 확인할 수 있습니다."
+		},
+		"hint-overview-console": {
+			"name": "Hint Overview Console",
+			"explanation": "이 게임을 구동하는 콘솔(시스템)도 확인할 수 있습니다."
+		},
+		"hint-correction-target": {
+			"name": "Hint Correction Target",
+			"explanation": "이 카테고리에서 특정 속성에 걸리는 보정을 확인할 수 있습니다."
+		},
+		"hint-correction-source": {
+			"name": "Hint Correction Source",
+			"explanation": "보정은 아이템의 효과에 의한 것입니다. 해당 아이템을 확인할 수 있습니다."
+		},
+		"hint-properties-list": {
+			"name": "Hint Properties List",
+			"explanation": "각 카테고리에 설정된 속성의 목록입니다."
+		},
+		"hint-properties-meaning": {
+			"name": "Hint Properties Meaning",
+			"explanation": "속성은 액션의 실행에 영향을 주는 요소입니다."
+		},
+		"hint-properties-equipment": {
+			"name": "Hint Properties Equipment",
+			"explanation": "효과는 아이템의 장비에 의해 보정됩니다. (장비가 필요 없는 아이템도 있습니다)"
+		},
+		"hint-property-meaning": {
+			"name": "Hint Property Meaning",
+			"explanation": "속성은 액션의 실행에 영향을 주는 요소입니다."
+		},
+		"hint-property-calculation": {
+			"name": "Hint Property Calculation",
+			"explanation": "최종 값은 할당된 초기값에 카테고리의 레벨, 액션에 설정된 레벨, 장착 중인 아이템의 보정을 반영해 산출됩니다."
+		},
+		"hint-trade-availability": {
+			"name": "Hint Trade Availability",
+			"explanation": "일부 아이템은 사고팔 수 없습니다."
+		},
+		"hint-trade-locked": {
+			"name": "Hint Trade Locked",
+			"explanation": "잠긴 아이템은 사고팔 수 없습니다."
+		},
+		"hint-trade-limit": {
+			"name": "Hint Trade Limit",
+			"explanation": "보유 용량이나 예약 슬롯(대기열)에는 구매 횟수 상한이 있을 수 있으며, 상한에 도달하면 더 이상 구매할 수 없습니다. (보상으로 늘어난 분량은 이 상한의 대상이 아닙니다)"
+		},
+		"hint-items-equipping": {
+			"name": "Hint Items Equipping",
+			"explanation": "길게 누르면 아이템의 장비를 전환합니다."
+		},
+		"hint-items-exclusive": {
+			"name": "Hint Items Exclusive",
+			"explanation": "목록에서 장착할 수 있는 아이템은 하나뿐입니다. (카테고리로 장착 가능하도록 설정된 경우)"
+		},
+		"hint-items-locked": {
+			"name": "Hint Items Locked",
+			"explanation": "해제 조건을 충족하지 못한 아이템은 잠기며 자세한 내용을 볼 수 없습니다."
+		},
+		"hint-item-meaning": {
+			"name": "Hint Item Meaning",
+			"explanation": "아이템은 장비품, 소모품, 귀중품 등 소유와 관련된 요소입니다."
+		},
+		"hint-item-exclusive": {
+			"name": "Hint Item Exclusive",
+			"explanation": "하나의 카테고리에서 장착할 수 있는 아이템은 하나뿐입니다. (카테고리로 장착 가능하도록 설정된 경우)"
+		},
+		"hint-item-locked": {
+			"name": "Hint Item Locked",
+			"explanation": "해제 조건을 충족하지 못한 아이템은 잠기며 자세한 내용을 볼 수 없습니다."
+		},
+		"hint-act-control": {
+			"name": "Hint Act Control",
+			"explanation": "액션을 시작하거나 중지합니다."
+		},
+		"hint-act-count": {
+			"name": "Hint Act Count",
+			"explanation": "실행할 횟수를 지정할 수 있습니다. 0을 입력하면 자원이 소진될 때까지 실행합니다."
+		},
+		"hint-queue-removing": {
+			"name": "Hint Queue Removing",
+			"explanation": "바를 길게 누르면 대기열에서 삭제됩니다."
+		},
+		"hint-actions-executing": {
+			"name": "Hint Actions Executing",
+			"explanation": "길게 누르면 액션의 실행을 전환합니다."
+		},
+		"hint-actions-exclusive": {
+			"name": "Hint Actions Exclusive",
+			"explanation": "하나의 카테고리에서 실행할 수 있는 것은 하나뿐입니다."
+		},
+		"hint-actions-parallel": {
+			"name": "Hint Actions Parallel",
+			"explanation": "일부 카테고리에서는 여러 카테고리의 액션을 동시에 진행할 수 있습니다."
+		},
+		"hint-actions-locked": {
+			"name": "Hint Actions Locked",
+			"explanation": "해제 조건을 충족하지 못한 액션은 잠기며 자세한 내용을 볼 수 없습니다."
+		},
+		"hint-action-experience": {
+			"name": "Hint Action Experience",
+			"explanation": "실행할 때마다 경험치를 얻어 레벨이 오를 수 있습니다."
+		},
+		"hint-action-resource": {
+			"name": "Hint Action Resource",
+			"explanation": "실행할 때마다 아이템을 소비하거나 획득합니다."
+		},
+		"hint-action-locked": {
+			"name": "Hint Action Locked",
+			"explanation": "해제 조건을 충족하지 못한 액션은 잠기며 자세한 내용을 볼 수 없습니다."
+		},
+		"hint-tasks-list": {
+			"name": "Hint Tasks List",
+			"explanation": "이 카테고리에 할당된 과제의 목록입니다."
+		},
+		"hint-tasks-detail": {
+			"name": "Hint Tasks Detail",
+			"explanation": "과제를 선택하면 달성 조건과 보상을 확인할 수 있습니다."
+		},
+		"hint-tasks-unclaimed": {
+			"name": "Hint Tasks Unclaimed",
+			"explanation": "보상을 아직 받지 않은 과제에는 리본이 표시됩니다. 선택한 뒤 받기를 누르면 받을 수 있습니다."
+		},
+		"hint-tasks-capacity": {
+			"name": "Hint Tasks Capacity",
+			"explanation": "보유할 수 있는 아이템 종류 수가 상한에 도달한 동안에는 보상을 받을 수 없습니다. 여유를 만든 뒤 다시 받으세요."
+		},
+		"hint-tasks-empty": {
+			"name": "Hint Tasks Empty",
+			"explanation": "카테고리에 과제가 하나도 없으면 표시되지 않습니다."
+		},
+		"hint-category-meaning": {
+			"name": "Hint Category Meaning",
+			"explanation": "액션과 아이템을 묶은 요소입니다."
+		},
+		"hint-status-correction": {
+			"name": "Hint Status Correction",
+			"explanation": "아이템에 의한 카테고리 보정 값만 표시됩니다."
+		},
+		"hint-status-action": {
+			"name": "Hint Status Action",
+			"explanation": "실행하는 액션에 따라 다른 보정이 추가로 걸립니다."
+		},
+		"hint-inventory-equipping": {
+			"name": "Hint Inventory Equipping",
+			"explanation": "길게 누르면 아이템의 장비를 전환합니다."
+		},
+		"hint-activity-executing": {
+			"name": "Hint Activity Executing",
+			"explanation": "길게 누르면 액션의 실행을 전환합니다."
+		},
+		"hint-missions-grouping": {
+			"name": "Hint Missions Grouping",
+			"explanation": "과제는 카테고리별로 묶여 표시됩니다."
+		},
+		"hint-missions-ungrouped": {
+			"name": "Hint Missions Ungrouped",
+			"explanation": "카테고리가 설정되지 않은 과제는 맨 위에 모입니다."
+		},
+		"hint-missions-completed": {
+			"name": "Hint Missions Completed",
+			"explanation": "달성한 과제에는 체크 표시가 붙습니다."
+		},
+		"hint-missions-unclaimed": {
+			"name": "Hint Missions Unclaimed",
+			"explanation": "보상을 아직 받지 않은 과제에는 리본이 표시됩니다. 선택한 뒤 받기를 누르면 받을 수 있습니다."
+		},
+		"hint-missions-permanent": {
+			"name": "Hint Missions Permanent",
+			"explanation": "한 번 달성한 과제는 이후 조건을 충족하지 않게 되어도 달성 상태로 유지됩니다."
+		},
+		"hint-character-identical": {
+			"name": "Hint Character Identical",
+			"explanation": "이 내용은 카테고리를 조작해 표시되는 것과 동일합니다."
+		}
+	}
 }

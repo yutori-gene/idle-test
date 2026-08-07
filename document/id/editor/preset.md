@@ -26,14 +26,14 @@ ___
 
 #### Contoh.
 Contoh kehidupan nyata dari konversi ID
-- Jika ID adalah `stylish-kapak-kuat`, maka namanya adalah `Kapak Kuat Bergaya`.
+- Jika ID-nya `stylish-strong-axe`, maka namanya menjadi `Stylish Strong Axe`.
 ___
 
 ### Terdapat tidak ada duplikasi.
 Larangan duplikasi ID dalam tipe yang sama.
 - Tiada menduplikasi dalam kategori, aksi, item, acara, dan tipe preset karena digunakan untuk mengidentifikasi elemen.
 - Memiliki ID yang sama untuk tipe yang berbeda tidak menjadi masalah.
-- [_type_](id/editor/Jenis)
+- [_type_](id/editor/type)
 ___
 
 ## Nama.
@@ -41,7 +41,7 @@ Nama elemen seperti yang terlihat
 - Nama elemen yang ditampilkan dalam permainan.
 - Bahasa selain Inggris juga dapat dimasukkan.
 - Nama yang menduplikasi elemen lain dapat diterima.
-- Jika terlalu panjang, bagian yang meluap akan dihilangkan dari tampilan selama pemutaran dengan `...`.
+- Jika terlalu panjang, bagian yang meluap akan disingkat dengan `…` pada tampilan selama permainan.
 ___
 
 ### Konversi otomatis dari ID
@@ -70,10 +70,10 @@ Gunakan file gambar apa saja
 - Tidak perlu jika Iconify atau piktogram konfigurasi.
 ___
 
-#### Jenis file.
-Format file gambar yang didukung.
-- Anda dapat menggunakan jenis umum yang dapat ditampilkan di browser.
-- JPEG, PNG, GIF, WebP, SVG, dll.
+#### Jenis berkas
+Format berkas gambar yang didukung
+- Format umum yang dapat ditampilkan peramban bisa digunakan.
+- JPEG, PNG, GIF, WebP, SVG, dan lainnya.
 ___
 
 ### Iconify
@@ -85,7 +85,7 @@ ___
 
 #### Iconify
 Cara memilih ikon dari Iconify
-- Cari `Iconify` untuk ikon yang dapat ditampilkan.
+- Cari ikon yang dapat ditampilkan di `Iconify`.
 - Anda dapat dengan cepat menemukan ikon terbaik dengan mencari ikon.
 - Pilih ikon untuk melihat pengenalnya (set ikon ketik `:` nama ikon), seperti `game-icons:sword-wound`, dan tempelkan langsung ke dalam bidang ikon ini.
 ![iconify-selection.png](../../resources/iconify-selection.png)
@@ -103,18 +103,18 @@ Tampilan ikon dengan piktogram
 - Masukkan piktogram, misalnya, `🗡️` atau `⚔️`.
 ___
 
-## variasi
+## Warna
 Konfigurasi warna tampilan elemen.
 - Sebagai warna elemen, warna ini diterapkan ke ikon elemen dan warna latar belakang.
 - Pilih dari pemilih warna editor.
 ___
 
 ### Pewarisan dari elemen induk
-Mengambil alih konfigurasi warna elemen.
-- Jika kosong, warna konfigurasi dalam elemen akan diambil alih.
-- Hirarki tipe untuk elemen adalah sebagai berikut
-- Sebagai contoh, jika sebuah aksi memiliki konfigurasi warna individual, maka warna tersebut akan digunakan, sedangkan jika aksi tidak ada konfigurasi warna individual, maka kategori atau warna dunia yang akan digunakan.
-- Jika acara juga memiliki kategori, maka acara tersebut akan mewarisi warna kategori tersebut, sama seperti Aksi dan Item.
+Mengikuti warna yang diatur pada elemen induk
+- Jika dikosongkan, warna yang diatur pada elemen induk akan diwarisi.
+- Hierarki tipe setiap elemen adalah sebagai berikut.
+- Misalnya, jika sebuah aksi memiliki warna tersendiri maka warna itulah yang dipakai; jika aksi tidak memiliki warna tersendiri, maka warna kategori atau dunia yang dipakai.
+- Jika sebuah acara juga memiliki kategori yang diatur, acara itu mewarisi warna kategori tersebut sama seperti aksi dan item.
 ```
 world
 ├── category
@@ -124,4 +124,4 @@ world
 ├── task
 └── preset
 ```
-- [_type_](id/editor/Jenis)
+- [_type_](id/editor/type)

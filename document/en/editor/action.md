@@ -53,7 +53,7 @@ ___
 ## Time required [seconds]
 Typical time it takes to execute an Action
 - Necessary standard time (in seconds) to perform an Action once.
-- For the `stamina` Type, this is the time interval for one turn (one reduction of each other's stamina).
+- For the `stamina` type this is the time interval of one turn (each side's stamina is reduced once).
 - Actual execution will vary due to property calculations.
 - [_property_](en/editor/property)
 ___
@@ -69,7 +69,7 @@ ___
 ## Probability of success [0-1].
 Probability of Success on Action Completion
 - The probability of success upon completion of the Action.
-- A value of `1` always indicates success, while a value of `0` always indicates failure.
+- With `1` it always succeeds, and with `0` it always fails.
 - In the event of failure, consumable items are consumed, but no reward or experience value is gained.
 - Actual execution will vary due to property calculations.
 ___
@@ -77,7 +77,7 @@ ___
 ## Max. number of executions [times].
 The maximum number of times an Action can be completed
 - The maximum number of times an Action can be completed successfully.
-- Unlimited for ``0``.
+- `0` means unlimited.
 - When the limit is reached, the Action becomes unexecutable.
 ___
 
@@ -90,10 +90,10 @@ Action Execution Type
 
 |Type|What it does|stamina|Example|
 |-|-|-|-|
-|`persistent`.|Type in which the Action is repeated continuously, earning experience and rewards for each completion.|Nothing.|Logging, mining, fishing|
-|`single`.|Perform one Action. If interrupted, the progress is saved and the user can resume the next time. When completed, the user presses the Confirm Action to receive the results.|Nothing.|Opening treasure chests, learning skills through reading|
-|`snap`.|Type in which the Action is performed instantly. It is completed immediately without any time lapse.|Nothing.|Bartering, Use of Items|
-|`stamina`.|Each required time decreases the respective stamina of the player and the opponent. When the opponent's stamina is depleted, the player gains experience and rewards. When the player's stamina is depleted, the game is gameovered and all ongoing actions are canceled.|Relevant.|Combat, hazardous operations|
+|`persistent`|Type in which the Action is repeated continuously, earning experience and rewards for each completion.|Nothing.|Logging, mining, fishing|
+|`single`|Perform one Action. If interrupted, the progress is saved and the user can resume the next time. When completed, the user presses the Confirm Action to receive the results.|Nothing.|Opening treasure chests, learning skills through reading|
+|`snap`|Type in which the Action is performed instantly. It is completed immediately without any time lapse.|Nothing.|Bartering, Use of Items|
+|`stamina`|Each required time decreases the respective stamina of the player and the opponent. When the opponent's stamina is depleted, the player gains experience and rewards. When the player's stamina is depleted, the game is gameovered and all ongoing actions are canceled.|Relevant.|Combat, hazardous operations|
 ___
 
 ## [_combat value_](en/editor/combat)

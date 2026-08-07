@@ -22,8 +22,8 @@ ___
 
 ## Mission
 List of All Tasks
-- They are grouped and displayed by category.
-- Tasks without a category are grouped together and displayed at the top.
-- Completed tasks are marked with a check mark.
-- Tasks for which you haven't yet received your reward will be marked with a ribbon. Select the task and tap "Claim" to receive your reward.
-- Tasks that no longer meet the conditions after being completed will have a line through their icon and will revert to "Uncompleted" status.
+- The Tasks are grouped and displayed by Category.
+- The Tasks with no Category configured are grouped together at the top.
+- A check mark is shown on the Tasks that have been completed.
+- A ribbon marks the Tasks whose reward has not been claimed yet. Select one and press claim to receive it.
+- Once a Task has been completed it stays completed, even if the conditions are no longer met afterwards.

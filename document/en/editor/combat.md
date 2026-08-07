@@ -1,10 +1,10 @@
 
 # combat value
 Configure combat correction values for stamina type Actions
-- Correction values valid only for `stamina` type Actions.
+- These correction values are effective only for actions of the `stamina` type.
 - Each value is calculated as an additional correction to the level difference between the player and the Action.
 - For example, if the attack value is 10, the attack damage is calculated as if the player's level is 10 higher than the Action's level. If it is Minus, the correction is in the opposite direction.
-- If configured to `defaultCombat` in `general`, it will be the default combat parameter for the entire world.
+- When configured in `defaultCombat` under General, they become the default combat parameters for the whole world.
 ___
 
 ## Attack value [level difference].

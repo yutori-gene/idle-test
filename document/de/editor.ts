@@ -20,7 +20,7 @@ export const translation: Markdown = {
 	summary: "Konfigurationen für die Übersetzung von Text im Spiel in andere Sprachen.",
 	points: ["Legt den zu übersetzenden Text fest.", "Mehrsprachige Konfigurationen sind verfügbar, wenn die Übersetzungseinstellungen aktiviert sind.", "Wenn die Übersetzung deaktiviert ist, werden die während der Entwicklung beschriebenen Informationen so angezeigt, wie sie sind.", "Die Konfiguration der Übersetzung und die Umschaltung der Sprache sind während der Entwicklung vor der Veröffentlichung nicht möglich."],
 	options: {
-		label: "Übersetzung",
+		label: "translation",
 	},
 	children: {
 		flag: {
@@ -46,7 +46,7 @@ export const translation: Markdown = {
 						prompt: {
 							title: "Beispielhafte Aufforderungen",
 							summary: "Beispiele für Übersetzungsanweisungen an die KI",
-							points: ["Beispielaufforderung: Übersetzen Sie die Werte `Name` und `Explanation` der hochgeladenen JSON-Daten vom Englischen ins Japanische. Ändern Sie die anderen Minuten der Daten nicht."],
+							points: ["Beispiel für eine Eingabeaufforderung: Übersetze die Werte von `name` und `explanation` in den hochgeladenen JSON-Daten aus dem Englischen ins Japanische. Ändere keine anderen Teile."],
 						},
 						gpt: {
 							title: "Verwendung von GPT",
@@ -91,9 +91,9 @@ export const miscellaneous: Markdown = {
 	title: "ergänzende Informationen",
 	summary: "Sonstige ergänzende Informationen erklärt.",
 	points: ["Referenzinformationen."],
-	list: expandList("Ergänzung", [translation]),
+	list: expandList("Ergänzung", [translation], "Beschreibung"),
 	options: {
-		label: "Verschiedenes",
+		label: "miscellaneous",
 		linkedList: true,
 	},
 };
@@ -103,7 +103,7 @@ export const miscellaneous: Markdown = {
 export const property: Type.Property = {
 	title: "Eigenschaften",
 	summary: "Konfiguration der Auswirkungen eines Gegenstands.",
-	points: ["Dies ist ein Effekt, der für den Gegenstand konfiguriert werden kann.", "Bei Gegenständen mit den Ausrüstungstypen `necessary` oder `consumable` wird der Effekt nur angewendet, während sie mit der Ausrüstung getragen werden. Bei Gegenständen vom Typ `unnecessary` wird der Effekt bereits durch den bloßen Besitz angewendet, wobei die Stärke des Effekts proportional zur Anzahl der besessenen Gegenstände ist (bei 2 Gegenständen also doppelt so stark).", "Da sich der Effekt von `unnecessary` direkt aus der Anzahl der besessenen Gegenstände ergibt, stellt `maximum` (maximale Anzahl) die Obergrenze des Effekts dar. Bitte passen Sie die Konfiguration entsprechend in Abstimmung mit `maximum` an, um ein ausgewogenes Spiel zu gewährleisten.", "Die Werte für beide Gegenstände werden als Anpassen an den Level-Unterschied zwischen dem Level des Spielers und dem Level der Aktion berechnet.", "Wenn der Wert für den Angriff beispielsweise 10 beträgt, wird der Angriff so berechnet, als ob das Level des Spielers 10 höher wäre als das Level der Aktion. Minus-Werte sind das Gegenteil.", "ANGRIFF, VERTEIDIGUNG, GENAUIGKEIT, BEWÄHRUNG und WIEDERHERSTELLUNG gelten nur für Aktionen vom Typ `Ausdauer`."],
+	points: ["Dies ist ein Effekt, der für den Gegenstand konfiguriert werden kann.", "Gegenstände mit dem Ausrüstungstyp `necessary` oder `consumable` entfalten ihre Wirkung nur im ausgerüsteten Zustand. `unnecessary` wirkt allein durch den Besitz, und die Stärke der Wirkung ist proportional zur besessenen Anzahl (bei 2 Stück das Doppelte).", "Da sich der Effekt von `unnecessary` direkt aus der Anzahl der besessenen Gegenstände ergibt, stellt `maximum` (maximale Anzahl) die Obergrenze des Effekts dar. Bitte passen Sie die Konfiguration entsprechend in Abstimmung mit `maximum` an, um ein ausgewogenes Spiel zu gewährleisten.", "Die Werte für beide Gegenstände werden als Anpassen an den Level-Unterschied zwischen dem Level des Spielers und dem Level der Aktion berechnet.", "Wenn der Wert für den Angriff beispielsweise 10 beträgt, wird der Angriff so berechnet, als ob das Level des Spielers 10 höher wäre als das Level der Aktion. Minus-Werte sind das Gegenteil.", "attack, defence, accuracy, evasion und restore gelten nur für Aktionen vom Typ `stamina`."],
 	list: [
 		["Eigenschaften", "Details zur Wirksamkeit."],
 		["Geschwindigkeit", "Verringert die Zeit, die für eine Aktion benötigt wird. Die benötigte Zeit variiert umgekehrt mit dem Level-Unterschied."],
@@ -119,7 +119,7 @@ export const property: Type.Property = {
 		category: {
 			title: "Kategorie.",
 			summary: "Angabe der Kategorie, für die die Eigenschaft gilt.",
-			points: ["Konfiguration der ID der Kategorie, für die diese Eigenschaft gilt.", "Die Konfiguration \"*\" gilt für alle Kategorien.", "Ist sie leer, gilt sie für die Kategorie, zu der der Gegenstand gehört."],
+			points: ["Konfiguration der ID der Kategorie, für die diese Eigenschaft gilt.", "Wird `*` eingestellt, gilt es für alle Kategorien.", "Ist sie leer, gilt sie für die Kategorie, zu der der Gegenstand gehört."],
 		},
 		attack: {
 			title: "Wert des Angriffs [Level-Unterschied].",
@@ -163,14 +163,14 @@ export const property: Type.Property = {
 		},
 	},
 	options: {
-		label: "Eigenschaft",
+		label: "property",
 	},
 };
 
 export const combat: Type.Combat = {
 	title: "Kampfwert",
 	summary: "Korrekturwerte für Aktionen des Typs \"Ausdauer\".",
-	points: ["Korrekturwerte gelten nur für Aktionen des Typs \"Ausdauer\".", "Jeder Wert wird als zusätzliche Korrektur des Level-Unterschieds zwischen dem Spieler und der Aktion berechnet.", "Wenn der Wert des Angriffs beispielsweise 10 beträgt, wird der Schaden des Angriffs so berechnet, als ob das Level des Spielers 10 höher wäre als das Level der Aktion. Ist er negativ, erfolgt die Korrektur in die entgegengesetzte Richtung.", "Wenn in der Konfiguration \"Allgemein\" der Wert \"DefaultCombat\" angegeben ist, wird er zum Standardkampfparameter für die gesamte Welt."],
+	points: ["Diese Korrekturwerte gelten nur für Aktionen vom Typ `stamina`.", "Jeder Wert wird als zusätzliche Korrektur des Level-Unterschieds zwischen dem Spieler und der Aktion berechnet.", "Wenn der Wert des Angriffs beispielsweise 10 beträgt, wird der Schaden des Angriffs so berechnet, als ob das Level des Spielers 10 höher wäre als das Level der Aktion. Ist er negativ, erfolgt die Korrektur in die entgegengesetzte Richtung.", "Werden sie unter Allgemein in `defaultCombat` eingestellt, werden sie zu den Standard-Kampfparametern der gesamten Welt."],
 	children: {
 		attack: {
 			title: "Wert des Angriffs [Level-Unterschied].",
@@ -199,7 +199,7 @@ export const combat: Type.Combat = {
 		},
 	},
 	options: {
-		label: "Kampf",
+		label: "combat",
 	},
 };
 
@@ -236,12 +236,12 @@ export const acquisition: Type.Acquisition = {
 		chance: {
 			title: "Wahrscheinlichkeit [-1 bis 1]",
 			summary: "Wahrscheinlichkeit eines Erfolgs beim Abruf (negative Werte werden nur bei einem Fehler ausgewertet)",
-			points: ["Die Wahrscheinlichkeit, dass etwas erhalten wird, wird als Dezimalzahl zwischen -1 und 1 konfiguriert. Zur Bestimmung der Wahrscheinlichkeit wird der Wert herangezogen.", "Ist der Wert positiv, wird er nur bei Erfolg der Aktion ausgewertet: Bei `1` wird der Gegenstand garantiert erhalten, bei `0,5` mit einer Wahrscheinlichkeit von 50 %.", "Bei negativen Werten wird die Bewertung nur bei Fehlern der Aktion vorgenommen: Bei `-1` wird der Gegenstand garantiert erhalten, bei `-0,5` mit einer Wahrscheinlichkeit von 50 %.", "Bei `0` wird der Wert weder bei Erfolg noch bei Fehler zurückgegeben.", "Der Standardwert ist `1` (wird bei Erfolg immer abgerufen)."],
+			points: ["Die Wahrscheinlichkeit, dass etwas erhalten wird, wird als Dezimalzahl zwischen -1 und 1 konfiguriert. Zur Bestimmung der Wahrscheinlichkeit wird der Wert herangezogen.", "Bei positivem Wert wird nur bei Erfolg der Aktion geprüft: mit `1` erhält man es immer, mit `0.5` mit einer Wahrscheinlichkeit von 50 %.", "Bei negativem Wert wird nur bei Misserfolg der Aktion geprüft: mit `-1` erhält man es immer, mit `-0.5` mit einer Wahrscheinlichkeit von 50 %.", "Bei `0` wird der Wert weder bei Erfolg noch bei Fehler zurückgegeben.", "Der Standardwert ist `1` (wird bei Erfolg immer abgerufen)."],
 		},
 	},
-	links: { type: "Typ" },
+	links: { type: "type" },
 	options: {
-		label: "Erwerb",
+		label: "acquisition",
 	},
 };
 
@@ -278,7 +278,7 @@ export const requirement: Type.Requirement = {
 		chance: {
 			title: "Verbrauchswahrscheinlichkeit [0-1].",
 			summary: "Wahrscheinlichkeit, dass ein Gegenstand konsumiert wird (0-1, nur gültig, wenn der Typ Gegenstand ist).",
-			points: ["Die Wahrscheinlichkeit, dass ein Gegenstand konsumiert wird, wenn die Bedingung erfüllt ist und die Aktion durchgeführt wird.", "Verbrauch immer bei \"1\", 50 % Wahrscheinlichkeit des Verbrauchs bei \"0,5\" und kein Verbrauch bei \"0\".", "Der Standardwert ist \"1\" (immer verbraucht).", "Ungültig, wenn der Typ nicht der Gegenstand ist."],
+			points: ["Die Wahrscheinlichkeit, dass ein Gegenstand konsumiert wird, wenn die Bedingung erfüllt ist und die Aktion durchgeführt wird.", "Bei `1` wird immer verbraucht, bei `0.5` mit einer Wahrscheinlichkeit von 50 % und bei `0` gar nicht.", "Der Standardwert ist `1` (wird immer verbraucht).", "Ungültig, wenn der Typ nicht der Gegenstand ist."],
 		},
 		equipment: {
 			title: "Ausrüstung",
@@ -286,9 +286,9 @@ export const requirement: Type.Requirement = {
 			points: ["Wenn er aktiviert ist, muss der Gegenstand sowohl ausgerüstet als auch besessen werden.", "Ungültig, wenn der Typ nicht der Gegenstand ist."],
 		},
 	},
-	links: { type: "Typ" },
+	links: { type: "type" },
 	options: {
-		label: "Anforderung",
+		label: "requirement",
 	},
 };
 
@@ -311,7 +311,7 @@ export const information: Type.Information = {
 						example: {
 							title: "Beispiel.",
 							summary: "Beispiele für die ID-Konvertierung aus der Praxis",
-							points: ["Wenn die ID `stylish-strong-axe` ist, lautet der Name `Stylish Strong Axe`."],
+							points: ["Lautet die ID `stylish-strong-axe`, wird der Name zu `Stylish Strong Axe`."],
 						},
 					},
 				},
@@ -319,14 +319,14 @@ export const information: Type.Information = {
 					title: "Keine Überschneidungen.",
 					summary: "Verbot von doppelten IDs innerhalb desselben Typs.",
 					points: ["Nichts innerhalb von Kategorien, Aktionen, Gegenständen, Ereignissen und voreingestellten Typen duplizieren, da diese zur Identifizierung von Elementen verwendet werden.", "Die gleiche ID für verschiedene Typen zu haben, ist kein Problem."],
-					links: { type: "Typ" },
+					links: { type: "type" },
 				},
 			},
 		},
 		name: {
 			title: "Name.",
 			summary: "Name des Elements, wie er erscheint",
-			points: ["Name des Elements, das im Spiel angezeigt wird.", "Es können auch andere Sprachen als Englisch eingegeben werden.", "Namen, die andere Elemente duplizieren, sind zulässig.", "Wenn sie zu lang ist, wird der überlaufende Teil beim Abspielen mit `...` aus der Anzeige ausgelassen."],
+			points: ["Name des Elements, das im Spiel angezeigt wird.", "Es können auch andere Sprachen als Englisch eingegeben werden.", "Namen, die andere Elemente duplizieren, sind zulässig.", "Ist er zu lang, wird der überstehende Teil in der Anzeige während des Spiels mit `…` abgekürzt."],
 			children: {
 				translateFromId: {
 					title: "Automatische Umwandlung von ID",
@@ -350,10 +350,10 @@ export const information: Type.Information = {
 					summary: "Beliebige Bilddatei verwenden",
 					points: ["Bild, das das Element darstellt.", "Wenn die Datei sehr groß ist, wird sie automatisch verkleinert.", "Unnötig, wenn Iconify oder Piktogramme konfiguriert sind."],
 					children: {
-						"Dateityp": {
-							title: "Dateityp.",
-							summary: "Unterstützte Bilddateiformate.",
-							points: ["Sie können die allgemeinen Typen verwenden, die im Browser angezeigt werden können.", "JPEG, PNG, GIF, WebP, SVG, usw."],
+						"file-type": {
+							title: "Dateityp",
+							summary: "Unterstützte Bilddateiformate",
+							points: ["Es lassen sich die gängigen Formate verwenden, die Browser darstellen können.", "JPEG, PNG, GIF, WebP, SVG und weitere."],
 						},
 					},
 				},
@@ -365,8 +365,8 @@ export const information: Type.Information = {
 						iconify: {
 							title: "Iconify",
 							summary: "So wählen Sie Symbole aus Iconify aus",
-							points: ["Suchen Sie in \"Iconify\" nach Symbolen, die angezeigt werden können.", "Sie können die besten Icons schnell finden, indem Sie nach Icons suchen.", "Wählen Sie ein Symbol aus, um seinen Bezeichner zu sehen (Symbolsatztyp `:` Symbolname), wie z. B. `game-icons:sword-wound`, und fügen Sie es direkt in dieses Symbolfeld ein."],
-							images: ["Iconify-Auswahl.png"],
+							points: ["Suche die darstellbaren Symbole in `Iconify`.", "Sie können die besten Icons schnell finden, indem Sie nach Icons suchen.", "Wählen Sie ein Symbol aus, um seinen Bezeichner zu sehen (Symbolsatztyp `:` Symbolname), wie z. B. `game-icons:sword-wound`, und fügen Sie es direkt in dieses Symbolfeld ein."],
+							images: ["iconify-selection.png"],
 							links: { iconify: "https://icon-sets.iconify.design" },
 						},
 					},
@@ -379,22 +379,22 @@ export const information: Type.Information = {
 			},
 		},
 		color: {
-			title: "Vielfalt",
+			title: "Farbe",
 			summary: "Konfiguration der Anzeigefarbe des Elements.",
 			points: ["Als Elementfarbe wird sie auf das Symbol und die Hintergrundfarbe des Elements angewendet.", "Wählen Sie aus der Farbauswahl des Editors."],
 			children: {
-				"Erbe von den Eltern": {
-					title: "Vererbung von übergeordneten Elementen",
-					summary: "Übernahme der Farbkonfigurationen des übergeordneten Elements.",
-					points: ["Wenn leer, wird die im übergeordneten Element konfigurierte Farbe übernommen.", "Die Hierarchie der Typen für die einzelnen Elemente sieht wie folgt aus", "Wenn eine Aktion beispielsweise eine individuelle Konfiguration hat, wird diese verwendet, wenn die Aktion keine individuelle Konfiguration hat, wird die Farbe der Kategorie oder der Welt verwendet.", "Wenn für ein Ereignis ebenfalls eine Kategorie konfiguriert ist, übernimmt es – genau wie Aktionen und Gegenstände – die Farbe dieser Kategorie."],
+				"heritage-from-parent": {
+					title: "Vererbung vom übergeordneten Element",
+					summary: "Übernahme der am übergeordneten Element eingestellten Farbe",
+					points: ["Bleibt das Feld leer, wird die am übergeordneten Element eingestellte Farbe übernommen.", "Die Hierarchie der Typen der einzelnen Elemente sieht wie folgt aus.", "Ist zum Beispiel für eine Aktion eine eigene Farbe eingestellt, wird diese verwendet; ist für die Aktion keine eigene Farbe eingestellt, wird die Farbe der Kategorie oder der Welt verwendet.", "Ist auch für ein Ereignis eine Kategorie eingestellt, übernimmt es die Farbe dieser Kategorie ebenso wie Aktionen und Gegenstände."],
 					quote: typeTree,
-					links: { type: "Typ" },
+					links: { type: "type" },
 				},
 			},
 		},
 	},
 	options: {
-		label: "Informationen",
+		label: "information",
 	},
 };
 
@@ -402,9 +402,9 @@ export const component: Markdown = {
 	title: "Komponente",
 	summary: "Gemeinsame Teile",
 	points: ["Gemeinsame Komponenten, die in jeder Konfiguration verwendet werden, werden extrahiert und bearbeitet.", "Die Komponenten, die in all diesen Bereichen verwendet werden, sind gleich, aber einige der Komponenten werden in einigen der Artikel nicht verwendet."],
-	list: expandList("Komponente", [information, requirement, acquisition, combat, property]),
+	list: expandList("Komponente", [information, requirement, acquisition, combat, property], "Beschreibung"),
 	options: {
-		label: "Komponente",
+		label: "component",
 		linkedList: true,
 	},
 };
@@ -417,7 +417,7 @@ export const preset: Type.Information = {
 	summary: "Anpassen der Anzeige von Systemelementen",
 	points: ["Ersetzt UI-Text und -Symbole, die bereits in die Spiel-Engine (Spieler) integriert sind.", "Es werden nur diejenigen ersetzt, die mit einer vorhandenen Voreinstellung nach ID übereinstimmen.", "Nur die Elemente, die Sie konfigurieren, werden ersetzt. Wenn zum Beispiel nur das Symbol konfiguriert ist, werden die anderen Elemente wie Name und Farbe durch das Original ersetzt.", "Das Überschreiben von Namen und Beschreibungen hat Vorrang vor den im Spieler integrierten Übersetzungen in die jeweiligen Sprachen. Die überschriebenen Zeichenfolgen werden unverändert in allen Sprachen angezeigt.", "Wenn Sie den Wortlaut für jede Sprache anpassen möchten, legen Sie dies in der Übersetzungsdatei `translations/world` fest, die bei aktivierter Übersetzungsfunktion ausgegeben wird. Diese hat höchste Priorität."],
 	options: {
-		label: "Voreinstellung",
+		label: "preset",
 	},
 };
 
@@ -425,7 +425,7 @@ export const task: Type.Event = {
 	title: "Aufgabe",
 	summary: "Missionen, die als abgeschlossen gelten, sobald die Bedingungen erfüllt sind",
 	points: ["Wenn die Konfiguration der Bedingungen erfüllt ist, gilt die Aufgabe als erledigt, und auf dem oberen Bildschirmrand wird eine Meldung angezeigt.", "Sie werden in der Liste der Spieler-Missionen und in der Liste der Aufgaben nach Kategorie angezeigt.", "Die Belohnung wird nicht automatisch ausgezahlt. Der Spieler erhält sie, wenn er die Aufgabe öffnet und auf den Button für Erwerbungen tippt.", "Bis zur Auszahlung der Vergütung wird die Liste mit einem Band gekennzeichnet, um anzuzeigen, dass sie noch nicht entgegengenommen wurde.", "Durch Erwerbungen kannst du das Level der Kategorie, die Anzahl der ausgeführten Aktionen und die Anzahl der besessenen Gegenstände verändern.", "Elemente, die zu anderen Zeitpunkten als den festgelegten Bedingungen – beispielsweise beim ersten Start oder beim Spiel vorbei – ausgelöst werden sollen, werden in der Konfiguration unter „Ereignisse“ konfiguriert."],
-	links: { event: "Veranstaltung" },
+	links: { event: "event" },
 	children: {
 		information: information,
 		category: {
@@ -437,7 +437,7 @@ export const task: Type.Event = {
 			title: "Zeitmessung",
 			summary: "Zeitpunkt der Aufgabenauslösung (fest auf `matched` gesetzt)",
 			points: ["Die Aufgabe ist auf „`matched`“ (wenn die Konfiguration die festgelegten Bedingungen erfüllt) festgelegt und kann nicht bearbeitet werden.", "Die Belohnung kann nur einmal erhalten werden; sobald sie entgegengenommen wurde, bleibt der Status „erreicht“ unverändert.", "Alles, was zu einem anderen Zeitpunkt ausgelöst werden soll, wird in den Grundeinstellungen unter „Ereignisse“ konfiguriert."],
-			links: { event: "Veranstaltung" },
+			links: { event: "event" },
 		},
 		unlocked: {
 			title: "Anfangsanzeige",
@@ -460,11 +460,11 @@ export const task: Type.Event = {
 			title: "Arbeitsgruppe",
 			summary: "Anzeige, Gruppierung und Klassifizierung von Aufgaben",
 			points: ["Wenden Sie eine der in Basic konfigurierten Gruppen an.", "Die Aufgaben werden in der Reihenfolge der Konfigurationen angezeigt.", "Innerhalb der Kategorien werden die Einträge weiter in Gruppen unterteilt und angezeigt.", "Bleibt sie leer, wird keine Gruppierung vorgenommen."],
-			links: { general: "allgemein" },
+			links: { general: "general" },
 		},
 	},
 	options: {
-		label: "Aufgabe",
+		label: "task",
 	},
 };
 
@@ -474,7 +474,7 @@ export const group: Type.Information = {
 	summary: "Definieren Sie Anzeigegruppen für Kategorien, Aktionen und Gegenstände",
 	points: ["Definieren Sie Gruppen, um die Reihenfolge der Anzeige zu steuern.", "Sie können die hier definierten Gruppen für jede Kategorie, Aktion und jeden Gegenstand einrichten.", "Gruppen mit der gleichen Gruppe werden dicht nebeneinander angezeigt.", "Bleibt sie leer, wird keine Gruppierung vorgenommen."],
 	options: {
-		label: "Gruppe",
+		label: "group",
 	},
 };
 
@@ -493,7 +493,7 @@ export const item: Type.Item = {
 			title: "Gruppe (z.B. von Personen)",
 			summary: "Gruppenklassifizierung von Gegenständen anzeigen",
 			points: ["Wenden Sie eine der in Basic konfigurierten Gruppen an.", "Es wird eine Liste der Gegenstände in der Reihenfolge der konfigurierten Gruppen angezeigt.", "Bleibt sie leer, wird keine Gruppierung vorgenommen."],
-			links: { general: "allgemein" },
+			links: { general: "general" },
 		},
 		unlocked: {
 			title: "Anfänglicher Freigabezustand",
@@ -521,7 +521,7 @@ export const item: Type.Item = {
 				["Ein Wert größer als Null.", "Verkaufen Sie zu diesem Wert."],
 				["Ein Wert kleiner als Null (z. B. -1)", "Allgemeine Konfiguration Rabattsatz multipliziert mit dem Wert des Gebots (wenn der Wert Null ist, kann nicht verkauft werden)"],
 			],
-			links: { general: "allgemein" },
+			links: { general: "general" },
 		},
 		maximum: {
 			title: "Maximal gezählte eigene [pcs].",
@@ -531,13 +531,13 @@ export const item: Type.Item = {
 		equipmentType: {
 			title: "Typ der Ausrüstung",
 			summary: "Typ-Einstellungen für Ausrüstung, Effekte und Verbrauch von Gegenständen.",
-			points: ["Gegenstände, die ausgerüstet werden können, müssen zu der in der Kategorie `equipmentGroups` angegebenen Gruppe gehören.", "Innerhalb der gleichen Gruppe kann nur ein Gegenstand ausgerüstet werden.", "„unnecessary“ entfaltet seine Wirkung unabhängig davon, ob die Ausrüstung angelegt ist oder nicht, und die Stärke des Effekts ist proportional zur Anzahl der besessenen Gegenstände (bei 0 Stück keine Wirkung, bei n Stück n-fache Wirkung)."],
+			points: ["Ausrüstbare Gegenstände müssen zu einer Gruppe gehören, die in `equipmentGroups` der Kategorie angegeben ist.", "Innerhalb der gleichen Gruppe kann nur ein Gegenstand ausgerüstet werden.", "`unnecessary` wirkt unabhängig davon, ob der Gegenstand ausgerüstet ist, und die Stärke der Wirkung ist proportional zur besessenen Anzahl (bei 0 keine Wirkung, bei n das n-Fache)."],
 			list: [
 				["Wert", "Ausrüstung", "Effektivität.", "Verbrauch", "Beispiel."],
-				["notwendig\".", "Notwendig", "Nur während der Ausrüstung (1 Stück)", "Nichts", "Schwerter, Rüstungen und andere Ausrüstung."],
-				["verbrauchbar\".", "Notwendig", "Nur während der Ausrüstung (1 Stück)", "Verbraucht bei der Durchführung von Aktionen", "Gegenstände, die verbraucht werden, um eine Wirkung zu erzielen, z. B. Tränke."],
-				["Unnötig\".", "unnötig", "Solange man sie besitzt, immer (proportional zur Anzahl im Besitz)", "Nichts", "Passive Gegenstände, die allein dadurch wirksam sind, dass man sie hat."],
-				["Unmöglich\".", "nicht erlaubt", "Nichts", "Nichts", "Nicht wirksame Gegenstände wie Materialien und Schutt."],
+				["`necessary`", "Notwendig", "Nur während der Ausrüstung (1 Stück)", "Nichts", "Schwerter, Rüstungen und andere Ausrüstung."],
+				["`consumable`", "Notwendig", "Nur während der Ausrüstung (1 Stück)", "Verbraucht bei der Durchführung von Aktionen", "Gegenstände, die verbraucht werden, um eine Wirkung zu erzielen, z. B. Tränke."],
+				["`unnecessary`", "unnötig", "Solange man sie besitzt, immer (proportional zur Anzahl im Besitz)", "Nichts", "Passive Gegenstände, die allein dadurch wirksam sind, dass man sie hat."],
+				["`impossible`", "nicht erlaubt", "Nichts", "Nichts", "Nicht wirksame Gegenstände wie Materialien und Schutt."],
 			],
 		},
 		requirements: { ...requirement, options: { ...requirement.options, array: true }, summary: "Notwendige Anforderungen für die Verwendung des Gegenstandes." },
@@ -545,7 +545,7 @@ export const item: Type.Item = {
 		coinId: { title: "Währungs-ID für den Kauf und Verkauf", summary: "ID der Währung, die für den Kauf und Verkauf dieses Gegenstands verwendet wird", points: ["Geben Sie die ID der Währung (Coins) an, die sowohl für den Kauf- als auch für den Verkaufswert verwendet wird.", "Wenn das Feld leer ist, wird die Hauptwährung (die erste Währung in der Liste „coins“) verwendet."] },
 	},
 	options: {
-		label: "Artikel",
+		label: "item",
 	},
 };
 
@@ -564,13 +564,13 @@ export const action: Type.Action = {
 			title: "Attribut",
 			summary: "Aktionsspezifische Kategorien von Attributen",
 			points: ["Es können einzelne Attribute (Kategorien) konfiguriert werden.", "Bleibt sie leer, wird die Kategorie, zu der sie gehört, übernommen", "Wenn Sie zum Beispiel das Attribut Magie für eine Aktion der Kategorie Dämonenschloss individuell konfigurieren, werden das Level und die Eigenschaften der Kategorie Magie berechnet und auf die Zeit und den Schaden der Aktion angewendet."],
-			links: { category: "Kategorie" },
+			links: { category: "category" },
 		},
 		group: {
 			title: "Gruppe (z.B. von Personen)",
 			summary: "Anzeige der Gruppeneinteilung der Aktionen",
 			points: ["Wenden Sie eine der in Basic konfigurierten Gruppen an.", "Es wird eine Liste der Aktionen in der Reihenfolge der Konfiguration der Gruppen angezeigt."],
-			links: { general: "allgemein" },
+			links: { general: "general" },
 		},
 		unlocked: {
 			title: "Anfänglicher Freigabezustand",
@@ -581,30 +581,30 @@ export const action: Type.Action = {
 			title: "Level",
 			summary: "Schwierigkeitsgrad der Aktion.",
 			points: ["Der Schwierigkeitsgrad der Aktion wird durch das Level angegeben.", "Berechnen Sie jede Eigenschaft zur Laufzeit im Vergleich zum Level des Spielers.", "Wenn du zum Beispiel eine Aktion ausführst, die über deinem Level liegt, ist die Erfolgsrate geringer.", "Wenn die Bedingungen erfüllt sind, kann die Ausführung auch dann erfolgen, wenn das Level des Spielers unter diesem Wert liegt."],
-			links: { property: "Eigenschaft" },
+			links: { property: "property" },
 		},
 		requirements: { ...requirement, options: { ...requirement.options, array: true }, summary: "Notwendige Anforderungen für die Durchführung der Aktion." },
 		seconds: {
 			title: "Zeit [s].",
 			summary: "Typische Zeit für die Durchführung der Aktion",
-			points: ["Die für die einmalige Durchführung einer Aktion notwendige Standardzeit (in Sekunden).", "Bei Typen mit \"Ausdauer\" ist dies die Zeitspanne für eine Runde (eine Verringerung der Ausdauer des jeweils anderen).", "Die tatsächliche Ausführung kann aufgrund der Berechnung der Eigenschaften variieren."],
-			links: { property: "Eigenschaft" },
+			points: ["Die für die einmalige Durchführung einer Aktion notwendige Standardzeit (in Sekunden).", "Beim Typ `stamina` ist dies das Zeitintervall einer Runde (die Ausdauer beider Seiten wird einmal verringert).", "Die tatsächliche Ausführung kann aufgrund der Berechnung der Eigenschaften variieren."],
+			links: { property: "property" },
 		},
 		experience: {
 			title: "Erfahrung [nächstes Level bei 100].",
 			summary: "Erfahrungen aus erfolgreichen Aktionen",
 			points: ["Die Standard-Erfahrung, die durch die einmalige und erfolgreiche Durchführung einer Aktion erworben wird; 100 Minuten entsprechen einem Level an Erfahrung.", "Im Falle eines Kampfes ist es ratsam, mehr zu konfigurieren, da es bei einem Sieg des Gegners zu Erwerbungen kommt.", "Die tatsächliche Ausführung kann aufgrund der Berechnung der Eigenschaften variieren."],
-			links: { property: "Eigenschaft" },
+			links: { property: "property" },
 		},
 		chance: {
 			title: "Wahrscheinlichkeit des Erfolgs [0-1].",
 			summary: "Wahrscheinlichkeit des Erfolgs bei Abschluss der Aktion",
-			points: ["Die Wahrscheinlichkeit des Erfolgs bei Abschluss der Aktion.", "Bei `1` immer erfolgreich, bei `0` immer fehlerhaft.", "Im Falle eines Fehlers werden verbrauchbare Gegenstände verbraucht, aber keine Belohnung oder Erfahrung gewonnen.", "Die tatsächliche Ausführung kann aufgrund der Berechnung der Eigenschaften variieren."],
+			points: ["Die Wahrscheinlichkeit des Erfolgs bei Abschluss der Aktion.", "Bei `1` gelingt sie immer, bei `0` scheitert sie immer.", "Im Falle eines Fehlers werden verbrauchbare Gegenstände verbraucht, aber keine Belohnung oder Erfahrung gewonnen.", "Die tatsächliche Ausführung kann aufgrund der Berechnung der Eigenschaften variieren."],
 		},
 		maximum: {
 			title: "Maximale Anzahl von Durchläufen [mal].",
 			summary: "Maximale Anzahl von Malen, die eine Aktion durchgeführt werden kann.",
-			points: ["Die maximale Anzahl von Malen, die eine Aktion erfolgreich abgeschlossen werden kann.", "Unbegrenzt für \"0\".", "Wenn die Obergrenze erreicht ist, ist die Aktion nicht mehr ausführbar."],
+			points: ["Die maximale Anzahl von Malen, die eine Aktion erfolgreich abgeschlossen werden kann.", "Bei `0` ist es unbegrenzt.", "Wenn die Obergrenze erreicht ist, ist die Aktion nicht mehr ausführbar."],
 		},
 		acquisitions: { ...acquisition, options: { ...acquisition.options, array: true }, summary: "Belohnung für die erfolgreiche Durchführung einer Aktion." },
 		progressType: {
@@ -613,16 +613,16 @@ export const action: Type.Action = {
 			points: ["Es gibt vier Arten."],
 			list: [
 				["Typ.", "Vorgangsdetails", "Ausdauer", "Beispiel."],
-				["beständig\".", "Es handelt sich dabei um eine Aktion, die ständig wiederholt wird; für jeden Abschluss erhalten Sie Erfahrung und Belohnungen.", "Keine Beziehung", "Holzeinschlag, Bergbau, Fischerei"],
-				["Single\".", "Führen Sie eine Aktion nach der anderen durch. Bei einer Unterbrechung wird der Fortschritt gespeichert und kann beim nächsten Mal fortgesetzt werden. Nach Abschluss drückt der Benutzer die Aktion Bestätigen, um das Ergebnis zu erhalten.", "Keine Beziehung", "Schatztruhen öffnen, Fähigkeiten durch Lesen lernen"],
-				["Schnapp\".", "Dieser Typ von Aktion wird sofort ausgeführt. Wird sofort und ohne Zeitverzögerung abgeschlossen.", "Keine Beziehung", "Handeln, Verwendung von Gegenständen."],
-				["Ausdauer\".", "Mit jeder benötigten Zeit sinkt die Ausdauer des Spielers und des Gegners. Wenn die Ausdauer des Gegners erschöpft ist, erhält man Erfahrung und Belohnungen. Wenn die Ausdauer des Spielers zu Ende geht, ist das Spiel vorbei und alle laufenden Aktionen werden abgebrochen.", "Einschlägig.", "Kampfhandlungen, gefährliche Einsätze."],
+				["`persistent`", "Es handelt sich dabei um eine Aktion, die ständig wiederholt wird; für jeden Abschluss erhalten Sie Erfahrung und Belohnungen.", "Keine Beziehung", "Holzeinschlag, Bergbau, Fischerei"],
+				["`single`", "Führen Sie eine Aktion nach der anderen durch. Bei einer Unterbrechung wird der Fortschritt gespeichert und kann beim nächsten Mal fortgesetzt werden. Nach Abschluss drückt der Benutzer die Aktion Bestätigen, um das Ergebnis zu erhalten.", "Keine Beziehung", "Schatztruhen öffnen, Fähigkeiten durch Lesen lernen"],
+				["`snap`", "Dieser Typ von Aktion wird sofort ausgeführt. Wird sofort und ohne Zeitverzögerung abgeschlossen.", "Keine Beziehung", "Handeln, Verwendung von Gegenständen."],
+				["`stamina`", "Mit jeder benötigten Zeit sinkt die Ausdauer des Spielers und des Gegners. Wenn die Ausdauer des Gegners erschöpft ist, erhält man Erfahrung und Belohnungen. Wenn die Ausdauer des Spielers zu Ende geht, ist das Spiel vorbei und alle laufenden Aktionen werden abgebrochen.", "Einschlägig.", "Kampfhandlungen, gefährliche Einsätze."],
 			],
 		},
 		property: combat,
 	},
 	options: {
-		label: "Aktion",
+		label: "action",
 	},
 };
 
@@ -636,7 +636,7 @@ export const category: Type.Category = {
 			title: "Gruppe (z.B. von Personen)",
 			summary: "Gruppeneinteilung der Kategorien anzeigen",
 			points: ["Wenden Sie eine der in Basic konfigurierten Gruppen an.", "Es wird eine Liste der Kategorien in der Reihenfolge der Konfiguration der Gruppen angezeigt."],
-			links: { general: "allgemein" },
+			links: { general: "general" },
 		},
 		unlocked: {
 			title: "Anfänglicher Freigabezustand",
@@ -648,7 +648,7 @@ export const category: Type.Category = {
 			title: "Ausrüstungsgruppe",
 			summary: "Bezeichnung der Gegenstandsgruppen, die in dieser Kategorie ausgerüstet werden können.",
 			points: ["Liste der Gruppennamen von Gegenständen, die in dieser Kategorie ausgerüstet werden können.", "Es können nur Gegenstände aus der Gruppe ausgerüstet werden, die dem hier angegebenen Gruppennamen entspricht.", "Wird eine leere Zeichenfolge angegeben, kommen Gegenstände mit einer nicht eingestellten Gruppe (leer) für die Ausrüstung in Frage.", "In der gleichen Gruppe kann nur ein Gegenstand ausgerüstet werden. Wenn Sie einen neuen Gegenstand ausrüsten, wird ein bereits vorhandener Gegenstand in derselben Gruppe automatisch abgelegt.", "Wenn die Liste leer ist (0 Stück), kann nichts ausgerüstet werden."],
-			links: { general: "allgemein" },
+			links: { general: "general" },
 		},
 		numeric: {
 			title: "Verfügbarkeit der Levels",
@@ -667,7 +667,7 @@ export const category: Type.Category = {
 		},
 	},
 	options: {
-		label: "Kategorie",
+		label: "category",
 	},
 };
 
@@ -675,10 +675,10 @@ export const type: Markdown = {
 	title: "Typ.",
 	summary: "Grundlegende Minuten-Klassifizierung der Welten",
 	points: ["Es gibt sechs Arten von Welten.", "Alle Elemente befinden sich direkt ab der Welt.", "Aktionen und Gegenstände werden mit der ID der Kategorie, zu der sie gehören, verknüpft."],
-	list: expandList("Typ.", [category, action, item, group, task, preset]),
+	list: expandList("Typ.", [category, action, item, group, task, preset], "Beschreibung"),
 	quote: typeTree,
 	options: {
-		label: "Typ",
+		label: "type",
 		linkedList: true,
 	},
 };
@@ -734,7 +734,7 @@ export const development: Type.Development = {
 		},
 	},
 	options: {
-		label: "Entwicklung",
+		label: "development",
 	},
 };
 
@@ -765,7 +765,7 @@ export const design: Type.Design = {
 		},
 	},
 	options: {
-		label: "Entwurf",
+		label: "design",
 	},
 };
 
@@ -782,25 +782,25 @@ export const general: Type.General = {
 			title: "Übersetzung",
 			summary: "Vorbereiten von Übersetzungen in mehrere Sprachen oder",
 			points: ["Wenn diese Funktion aktiviert ist, können die Nutzer in jeder Sprache spielen.", "Wenn diese Funktion deaktiviert ist, können Sie nur in der Sprache spielen, die Sie in den Konfigurationen ausgewählt haben.", "Wenn die Übersetzung aktiviert ist, müssen die übersetzten Daten für jede Sprache angegeben werden."],
-			links: { translation: "Übersetzung" },
+			links: { translation: "translation" },
 		},
 		offlineMaxHours: {
 			title: "Maximale Zeit aus offline [Stunden].",
 			summary: "Zeitliche Begrenzung des Fortschritts aus dem Internet.",
 			points: ["Konfiguration der maximalen Zeit des Fortschritts, wenn Sie aus sind.", "Wenn z. B. 6 Stunden eingestellt sind, wird der Vorgang der Rückkehr aus dem Netz bis zu 6 Stunden bearbeitet, aber wenn mehr Zeit für die Rückkehr aus dem Netz vorgesehen ist, wird die Zeit aus dem Netz als 6 Stunden behandelt.", "Wird 0 Zeit eingestellt, findet bei der Rückkehr aus dem Netz überhaupt keine Prozessverarbeitung statt.", "Der maximale Wert ist 24 Stunden."],
-			links: { category: "Kategorie" },
+			links: { category: "category" },
 		},
 		maxCategoryLevels: {
 			title: "Maximales Level der Kategorie",
 			summary: "Level-Grenze für jede Kategorie.",
 			points: ["Konfiguration des maximalen Levels für jede Kategorie.", "Werden über dieses Level hinausgehende Erfahrungen erworben, so wird bei der Berechnung der einzelnen Eigenschaften der hier eingestellte maximale Wert verwendet.", "Dieser Wert ist für Kategorien ohne Levels nicht relevant."],
-			links: { category: "Kategorie" },
+			links: { category: "category" },
 		},
 		locking: {
 			title: "Sperrfunktion",
 			summary: "Artikel ausblenden, bis die Anforderungen erfüllt sind",
 			points: ["Wenn diese Option aktiviert ist, wird der Gegenstand der Kategorie Aktion ausgeblendet, solange er nicht verwendet wurde oder nicht über ihn verfügt und die Anforderungen nicht erfüllt sind.", "Wenn diese Funktion deaktiviert ist, werden alle Elemente von Anfang an angezeigt, können aber erst ausgeführt oder ausgerüstet werden, wenn die Anforderungen erfüllt sind."],
-			links: { category: "Kategorie", action: "Aktion", item: "Artikel" },
+			links: { category: "category", action: "action", item: "item" },
 		},
 		coins: {
 			title: "Währung",
@@ -811,18 +811,18 @@ export const general: Type.General = {
 				"Die Währung wird für den Kauf und Verkauf von Gegenständen sowie für die Erweiterung des Inventars verwendet.",
 				"Die erste Währung wird als Hauptwährung behandelt und kommt zum Einsatz, wenn für Gegenstände oder Kapazitäten keine Währungs-ID (`coinId`) angegeben ist.",
 			],
-			links: { information: "Informationen", item: "Artikel" },
+			links: { information: "information", item: "item" },
 		},
 		capacity: {
 			title: "Kapazität",
 			summary: "Konfiguration der Inventarkapazität.",
-			points: ["Steuert die maximale Anzahl an verschiedenen Arten von Gegenständen, die ein Spieler besitzen kann.", "Jeder Gegenstand wird durch die Anzahl der Arten von Gegenständen kontrolliert, die Sie haben, nicht durch die Anzahl der Gegenstände, die Sie besitzen.", "Die Einstellung von `initialCount` auf 0 bedeutet unbegrenzte Kapazität.", "Wenn Sie sich auf Kapazitätsgegenstände in Konditionen oder Belohnungen beziehen, verwenden Sie die hier eingestellte ID."],
+			points: ["Steuert die maximale Anzahl an verschiedenen Arten von Gegenständen, die ein Spieler besitzen kann.", "Jeder Gegenstand wird durch die Anzahl der Arten von Gegenständen kontrolliert, die Sie haben, nicht durch die Anzahl der Gegenstände, die Sie besitzen.", "Wird `initialCount` auf 0 gesetzt, ist die Kapazität unbegrenzt.", "Wenn Sie sich auf Kapazitätsgegenstände in Konditionen oder Belohnungen beziehen, verwenden Sie die hier eingestellte ID."],
 			children: {
 				information: information,
 				initialCount: {
 					title: "Standardwert [pcs].",
 					summary: "Kapazität des Anfangsbestandes (Anzahl der verschiedenen Gegenstände, die gehalten werden können)",
-					points: ["Anfangskapazität (Anzahl der verschiedenen Gegenstände, die besessen werden können) zu Beginn des Spiels.", "Wenn \"0\" eingestellt ist, ist die Kapazität unbegrenzt."],
+					points: ["Anfangskapazität (Anzahl der verschiedenen Gegenstände, die besessen werden können) zu Beginn des Spiels.", "Wird `0` eingestellt, ist die Kapazität unbegrenzt."],
 				},
 				initialCost: {
 					title: "Grundpreis [Münzen].",
@@ -832,7 +832,7 @@ export const general: Type.General = {
 				increasingRate: {
 					title: "Prozentualer Anstieg [mal].",
 					summary: "Prozentualer Anstieg der Kosten für die Kapazitätserweiterung",
-					points: ["Es handelt sich um einen Multiplikator, der angibt, wie stark die Kosten der Kapazitätserweiterung mit dem n-ten Kauf steigen.", "Für `1.0` ist der Preis immer gleich, für `1.2` ist er bei jedem Kauf 20% höher.", "Formel: Grundpreis x prozentuale Erhöhung ^ Anzahl der Käufe"],
+					points: ["Es handelt sich um einen Multiplikator, der angibt, wie stark die Kosten der Kapazitätserweiterung mit dem n-ten Kauf steigen.", "Bei `1.0` bleibt der Preis stets gleich, bei `1.2` steigt er mit jedem Kauf um 20 %.", "Formel: Grundpreis x prozentuale Erhöhung ^ Anzahl der Käufe"],
 					list: [
 						["Steigerungsrate", "1. Zusatz.", "5. Erhöhung.", "10. Erhöhung.", "100. Erhöhung.", "1000ste Steigerung."],
 						["1.00", "x1.00", "x1.00", "x1.00", "x1.00", "x1.00"],
@@ -853,7 +853,7 @@ export const general: Type.General = {
 					points: ["Dies ist die maximale Anzahl an Käufen, die mit einer bestimmten Währung getätigt werden können.", "Wenn Sie den Wert auf `0` setzen, können Sie unbegrenzt kaufen.", "Wenn Sie den Wert auf `-1` setzen, können Sie den Artikel nicht mehr kaufen.", "Die durch Belohnungen erzielte Kapazitätserhöhung fällt nicht unter diese Obergrenze."],
 				},
 			},
-			links: { item: "Artikel" },
+			links: { item: "item" },
 		},
 		queue: {
 			title: "Warteschlange",
@@ -878,7 +878,7 @@ export const general: Type.General = {
 				increasingRate: {
 					title: "Prozentualer Anstieg [mal].",
 					summary: "Steigerungsrate der Kosten für die Erweiterung der Kapazität",
-					points: ["Dies ist der Multiplikator, um den sich die Kosten für die Erweiterung des Kontingents beim n-ten Kaufen erhöhen.", "Für `1.0` ist der Preis immer gleich, für `1.2` ist er bei jedem Kauf 20% höher.", "Formel: Grundpreis x prozentuale Erhöhung ^ Anzahl der Käufe"],
+					points: ["Dies ist der Multiplikator, um den sich die Kosten für die Erweiterung des Kontingents beim n-ten Kaufen erhöhen.", "Bei `1.0` bleibt der Preis stets gleich, bei `1.2` steigt er mit jedem Kauf um 20 %.", "Formel: Grundpreis x prozentuale Erhöhung ^ Anzahl der Käufe"],
 				},
 				coinId: {
 					title: "Währungs-ID",
@@ -891,7 +891,7 @@ export const general: Type.General = {
 					points: ["Dies ist die maximale Anzahl an Käufen, die mit Währung im Rahmen der Serienausführung getätigt werden können.", "Wenn Sie den Wert auf `0` setzen, können Sie unbegrenzt kaufen.", "Wenn Sie den Wert auf `-1` setzen, können Sie den Artikel nicht mehr kaufen.", "Die Erhöhung der Quote durch Vergütungen fällt nicht unter diese Obergrenze."],
 				},
 			},
-			links: { item: "Artikel" },
+			links: { item: "item" },
 		},
 		levelCommonRatio: {
 			title: "Rate des Anstiegs der Erfahrung [Zeiten].",
@@ -905,17 +905,17 @@ export const general: Type.General = {
 				["0.10", "x1.00", "x1.10", "x2.36", "x117.39", "x5.7×10⁴"],
 				["0.20", "x1.00", "x1.20", "x6.19", "x3,3 x 10³", "x1,3 x 10¹¹"],
 			],
-			links: { category: "Kategorie" },
+			links: { category: "category" },
 		},
 		actionLevelLimit: {
 			title: "Action Level Restriction",
 			summary: "Fragt ab, wie oft das gleiche Attribut Aktion für die Ausführung einer Aktion gezählt wurde.",
 			points: ["Wenn diese Option aktiviert ist, wird die Anzahl der Ausführungen einer Aktion mit denselben Attributen automatisch zu den Ausführungsbedingungen jeder Aktion hinzugefügt.", "Die Anzahl der notwendigen Male entspricht dem Level-Wert der Aktion.", "Wenn kein Attribut konfiguriert ist, wird die ID der Kategorie verwendet, zu der sie gehört."],
 		},
-		defaultCombat: { ...combat, summary: "Standard-Kampfparameter, die für alle Aktionen gelten.", points: ["Grundlegende Werte für Korrekturen im Kampf, die für alle Aktionen des Typs \"Ausdauer\" gemeinsam gelten.", "Der Kampfwert (Eigenschaft) der einzelnen Aktionen wird zu diesem Standardwert addiert."], links: { action: "Aktion" } },
+		defaultCombat: { ...combat, summary: "Standard-Kampfparameter, die für alle Aktionen gelten.", points: ["Dies sind die grundlegenden Kampfkorrekturwerte, die einheitlich für alle Aktionen vom Typ `stamina` gelten.", "Der Kampfwert (Eigenschaft) der einzelnen Aktionen wird zu diesem Standardwert addiert."], links: { action: "action" } },
 	},
 	options: {
-		label: "allgemein",
+		label: "general",
 	},
 };
 
@@ -962,7 +962,7 @@ export const overview: Type.Overview = {
 		},
 	},
 	options: {
-		label: "Übersicht",
+		label: "overview",
 	},
 };
 
@@ -974,36 +974,36 @@ const toFixedEvent = (title: string, summary: string, points: string[], timingPo
 	children: {
 		...task.children,
 		category: {
-			title: "Kategorie.",
-			summary: "Wird bei dem Ereignis nicht verwendet",
-			points: ["Da dies nicht in der Liste der Missionen und Aufgaben angezeigt wird, wird keine zugehörige Kategorie angegeben.", "Im Editor wird das Eingabefeld nicht angezeigt."],
+			title: "カテゴリー",
+			summary: "イベントでは使用しません",
+			points: ["ミッションやタスクの一覧に表示されないため、所属するカテゴリーは指定しません。", "エディターでは入力欄が表示されません。"],
 		},
 		timing: {
-			title: "Zeitmessung",
-			summary: "Zeitpunkt der Auslösung des Ereignisses (festgelegt)",
+			title: "タイミング",
+			summary: "イベントが発動するタイミング（固定）",
 			points: timingPoints,
 		},
 		unlocked: {
-			title: "Anfangsanzeige",
-			summary: "Standardanzeige des Ereignis-Symbols (die Auslösung hängt vom Zeitpunkt ab; bei dieser Konfiguration wird das Ereignis nicht ausgelöst)",
-			points: ["Die Auslösebedingungen für das Ereignis werden durch den Zeitpunkt bestimmt; dieser Punkt wirkt sich lediglich auf das Aussehen des Symbols aus.", "secreted: Das Symbol wird erst angezeigt, wenn alle Voraussetzungen erfüllt sind (die Auslösung selbst erfolgt zeitabhängig).", "hidden・hinted: Das Symbol wird mit einem Schrägstrich versehen und als „noch nicht freigeschaltet“ angezeigt.", "Freigegeben: Die Durchstreichung verschwindet und der Eintrag wird als freigegeben angezeigt."],
+			title: "初期表示状態",
+			summary: "イベントアイコンの初期表示状態（発火はタイミングで決まり、この設定では発火しません）",
+			points: ["イベントの発火条件はタイミングで決まり、この項目はアイコンの見た目のみに影響します。", "secreted: 全requirementsを満たすまでアイコンが表示されません（発火自体はタイミングで起こります）。", "hidden・hinted: アイコンに斜線が付き未解放として表示されます。", "released: 斜線が消え解放済みとして表示されます。"],
 		},
 		requirements: {
-			title: "Bedingungen und Konditionen",
-			summary: "Bedingungen für den Erwerb einer Vergütung",
-			points: ["Sobald die Bedingung erfüllt ist, wird das Ereignis ausgelöst und ein spezieller Bildschirm geöffnet, auf dem der Inhalt angezeigt wird.", "Die Belohnung wird nur dann erworben, wenn zum Zeitpunkt der Auslösung die hier vorgenommenen Konfigurationen erfüllt sind.", "Wenn keine Konfiguration vorgenommen wurde, erhalten Sie bei jeder Auslösung Erwerbungen."],
+			title: "条件",
+			summary: "報酬を獲得する条件",
+			points: ["タイミングが成立するとイベントは発動し、専用の画面を開いて内容を表示します。", "報酬は、発動時にここで設定した条件を満たしている場合にのみ獲得します。", "条件を設定していない場合は、発動するたびに報酬を獲得します。"],
 			children: requirement.children,
 		},
 		acquisitions: {
-			title: "Belohnung",
-			summary: "Konfiguration der Belohnung, wenn das Ereignis ausgelöst wird.",
-			points: ["Dies ist eine Belohnung, die man erhält, wenn der richtige Zeitpunkt erreicht ist und die Bedingungen erfüllt sind.", "Im Gegensatz zu Aufgaben sind keine Empfangsvorgänge erforderlich; die Erwerbungen erfolgen automatisch bei Aktivierung.", "Sie können für die Anzahl einen negativen Wert festlegen. Wenn Sie beispielsweise beim Spiel vorbei die Anzahl der Gegenstände auf einen negativen Wert setzen, gehen diese verloren."],
+			title: "報酬",
+			summary: "イベント発動時の報酬設定",
+			points: ["タイミングが成立し、かつ条件を満たしている時に得られる報酬です。", "タスクと違って受け取る操作は要らず、発動と同時に自動で獲得します。", "数量にマイナスを設定することができます。例えばゲームオーバー時にアイテムの数量をマイナスにすれば、それらを失います。"],
 			children: acquisition.children,
 		},
 		group: {
-			title: "Arbeitsgruppe",
-			summary: "Wird bei dem Ereignis nicht verwendet",
-			points: ["Da dies nicht in der Liste der Missionen und Aufgaben angezeigt wird, wird die Gruppenzuordnung nicht verwendet.", "Im Editor wird das Eingabefeld nicht angezeigt."],
+			title: "タスクグループ",
+			summary: "イベントでは使用しません",
+			points: ["ミッションやタスクの一覧に表示されないため、グループの指定は使いません。", "エディターでは入力欄が表示されません。"],
 		},
 	},
 });
@@ -1014,22 +1014,22 @@ export const event: Type.Events = {
 	points: ["Zu bestimmten Zeitpunkten, beispielsweise beim ersten Öffnen einer Welt oder wenn das Spiel vorbei ist, wird diese Funktion ausgelöst und ein spezieller Bildschirm geöffnet.", "Für jeden Zeitpunkt ist jeweils ein Feld vorgesehen; es können weder weitere hinzugefügt noch entfernt werden. Felder für nicht verwendete Zeitpunkte bleiben leer.", "Sie werden nicht in der Liste der Missionen und Aufgaben angezeigt. Aufgaben, die als erledigt gelten, sobald bestimmte Bedingungen erfüllt sind, werden als Aufgaben in der Konfiguration festgelegt.", "Die Belohnung wird automatisch bei Aktivierung erworben. Es gibt weder einen Vorgang zum Abholen wie bei Aufgaben noch ein Band.", "Er kann das Level der Kategorie, die Anzahl der durchgeführten Aktionen und die Anzahl der Gegenstände, die er bei der Aktivierung besitzt, verändern.", "Wenn Sie die Felder „Name“, „Beschreibung“ und „Symbol“ leer lassen, werden die bei den Spielern integrierten Standardtexte und -symbole verwendet."],
 	list: [
 		["Zeitmessung", "Aktivierungsbedingung", "wiederholen"],
-		["zurückgekommen\".", "Wenn eine Person für mehr als eine Sekunde aus dem Internet zurückkehrt und eine Aktion im Läuft ist.", "oft"],
-		["`Gameovered`.", "Wenn die Ausdauer des Spielers im Kampf zu Ende geht.", "oft"],
-		["willkommen\".", "Als ich mit dieser Welt anfing.", "nur einmal"],
-		["abgeschlossen\".", "Wenn der max. Level aller Kategorien (maxCategoryLevels) erreicht ist.", "nur einmal"],
+		["`comebacked`", "Wenn eine Person für mehr als eine Sekunde aus dem Internet zurückkehrt und eine Aktion im Läuft ist.", "oft"],
+		["`gameovered`", "Wenn die Ausdauer des Spielers im Kampf zu Ende geht.", "oft"],
+		["`welcomed`", "Als ich mit dieser Welt anfing.", "nur einmal"],
+		["`completed`", "Wenn der max. Level aller Kategorien (maxCategoryLevels) erreicht ist.", "nur einmal"],
 		["`obtained`", "Wenn eine bestimmte Aktion (z. B. eine Schatzkiste) abgeschlossen bzw. bestätigt wurde", "oft"],
 	],
-	links: { task: "Aufgabe" },
+	links: { task: "task" },
 	children: {
-		comebacked: toFixedEvent("Bei der Rückkehr", "Wird ausgelöst, wenn man wieder online ist", ["Diese Funktion wird ausgelöst, wenn nach einer Offline-Phase von mehr als einer Sekunde die Verbindung wiederhergestellt wird und zu diesem Zeitpunkt eine Aktion läuft.", "Es wird zusammen mit einer Zusammenfassung des Fortschritts während der Abwesenheit angezeigt."], ["Der Wert ist auf „comebacked“ festgelegt und kann nicht bearbeitet werden.", "Diese Funktion wird bei jeder Rückkehr so oft wie nötig ausgelöst."]),
-		gameovered: toFixedEvent("Bei Spiel vorbei", "Wird ausgelöst, wenn die Ausdauer im Kampf aufgebraucht ist", ["Diese Funktion wird ausgelöst, wenn die Ausdauer des Spielers im Kampf aufgebraucht ist.", "Wenn Sie für die Belohnungsmenge ein Minus festlegen, können Sie damit eine Strafe für das Spiel vorbei einführen."], ["Der Wert ist auf `gameovered` festgelegt und kann nicht bearbeitet werden.", "Diese Funktion wird jedes Mal ausgelöst, wenn das Spiel vorbei ist – und zwar so oft wie nötig."]),
-		welcomed: toFixedEvent("Beim ersten Start", "Wird ausgelöst, wenn die Welt zum ersten Mal geöffnet wird", ["Diese Funktion wird ausgelöst, wenn diese Welt zum ersten Mal gestartet wird.", "Dies dient zur Erläuterung des Spieluniversums und zur Übergabe der Ausrüstung, die beim Start des Spiels ausgehändigt wird."], ["Der Wert ist auf „welcomed“ festgelegt und kann nicht bearbeitet werden.", "Diese Funktion wird nur einmal beim ersten Start ausgelöst."]),
-		completed: toFixedEvent("Nach Abschluss des Spiels", "Wird ausgelöst, wenn alle Kategorien das max. Level erreicht haben", ["Diese Funktion wird ausgelöst, wenn das Level aller Kategorien den Maximalwert (maxCategoryLevels) erreicht hat.", "Kategorien, die nicht numerisch sind, werden bei der Auswertung ausgeschlossen."], ["Der Wert ist auf „completed“ festgelegt und kann nicht bearbeitet werden.", "Wird nur einmal ausgelöst, wenn die Bedingungen erfüllt sind."]),
-		obtained: toFixedEvent("Nach Abschluss einer einzelnen Aktion", "Wird ausgelöst, wenn eine einmalige Aktion wie das Öffnen einer Schatzkiste abgeschlossen wurde", ["Wird ausgelöst, wenn eine Aktion einer bestimmten Art (z. B. eine Schatztruhe) abgeschlossen oder bestätigt wurde.", "Zusätzlich zu der Belohnung für die Aktion selbst können Sie die hier festgelegte Belohnung auf die Aktion aufaddieren."], ["Der Wert ist auf `obtained` festgelegt und kann nicht bearbeitet werden.", "Wird nach jedem Abschluss einer Einzelaktion beliebig oft ausgelöst."]),
+		comebacked: toFixedEvent("Bei Rückkehr", "Wird bei der Rückkehr aus dem Offline-Zustand ausgelöst", ["Wird ausgelöst, wenn du nach mindestens einer Sekunde offline zurückkehrst und eine Aktion im Gange war.", "Wird zusammen mit der Zusammenfassung des Fortschritts während deiner Abwesenheit angezeigt."], ["Es ist auf `comebacked` festgelegt und kann nicht bearbeitet werden.", "Wird bei jeder Rückkehr ausgelöst, beliebig oft."]),
+		gameovered: toFixedEvent("Bei Game Over", "Wird ausgelöst, wenn im Kampf die Ausdauer aufgebraucht ist", ["Wird ausgelöst, wenn die Ausdauer des Spielers im Kampf aufgebraucht ist.", "Mit einer negativen Belohnungsmenge lässt sich einem Game Over ein Preis zuordnen."], ["Es ist auf `gameovered` festgelegt und kann nicht bearbeitet werden.", "Wird bei jedem Game Over ausgelöst, beliebig oft."]),
+		welcomed: toFixedEvent("Beim ersten Start", "Wird beim ersten Öffnen der Welt ausgelöst", ["Wird ausgelöst, wenn diese Welt zum ersten Mal gestartet wird.", "Dient dazu, die Spielwelt vorzustellen oder die Startausrüstung zu übergeben."], ["Es ist auf `welcomed` festgelegt und kann nicht bearbeitet werden.", "Wird nur einmal ausgelöst, beim ersten Start."]),
+		completed: toFixedEvent("Beim Abschluss", "Wird ausgelöst, wenn alle Kategorien ihr maximales Level erreichen", ["Wird ausgelöst, wenn die Level aller Kategorien den Maximalwert (maxCategoryLevels) erreichen.", "Kategorien, die nicht numeric sind, werden von der Prüfung ausgenommen."], ["Es ist auf `completed` festgelegt und kann nicht bearbeitet werden.", "Wird nur einmal ausgelöst, wenn die Bedingungen erfüllt sind."]),
+		obtained: toFixedEvent("Beim Abschluss einer Einzelaktion", "Wird beim Abschluss einer Einzelaktion wie einer Schatztruhe ausgelöst", ["Wird ausgelöst, wenn eine Aktion der Art single (etwa eine Schatztruhe) abgeschlossen und bestätigt wird.", "Zusätzlich zur eigenen Belohnung der Aktion lässt sich die hier eingestellte Belohnung obendrauf geben."], ["Es ist auf `obtained` festgelegt und kann nicht bearbeitet werden.", "Wird bei jedem Abschluss einer Einzelaktion ausgelöst, beliebig oft."]),
 	},
 	options: {
-		label: "Veranstaltung",
+		label: "event",
 	},
 };
 
@@ -1037,7 +1037,7 @@ export const basic: Type.Basic = {
 	title: "Grundeinstellung",
 	summary: "Grundlegende Konfigurationselemente für die Welt im Allgemeinen.",
 	points: ["Konfiguration des Namens der Welt, der Beschreibung, des Hintergrunds, der Währung, der Kapazität, des maximalen Levels der Kategorien, der Rate des Erfahrungszuwachses, des Rabatts, der Standard-Kampfparameter, usw.", "Diese Konfigurationen wirken sich auf die gesamte Welt aus."],
-	list: expandList("Name", [overview, general, design, event, development]),
+	list: expandList("Name", [overview, general, design, event, development], "Beschreibung"),
 	children: {
 		overview: overview,
 		general: general,
@@ -1046,7 +1046,7 @@ export const basic: Type.Basic = {
 		development: development,
 	},
 	options: {
-		label: "grundlegend",
+		label: "basic",
 		linkedList: true,
 	},
 };
@@ -1068,7 +1068,7 @@ export const world: Type.World = {
 		presets: { ...preset, options: { ...preset.options, array: true } },
 	},
 	options: {
-		label: "Welt",
+		label: "world",
 	},
 };
 
@@ -1077,11 +1077,11 @@ export const world: Type.World = {
 export const editor: Markdown = {
 	title: "Herausgeber",
 	summary: "Erklärungen zur Verwendung des Editors und zum Aufbau der Welten.",
-	list: expandList("Name", [world, basic, type, component, miscellaneous]),
+	list: expandList("Name", [world, basic, type, component, miscellaneous], "Beschreibung"),
 	options: {
-		label: "Herausgeber",
+		label: "editor",
 		linkedList: true,
-		directory: "Herausgeber",
+		directory: "editor",
 	},
 };
 

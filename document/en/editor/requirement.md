@@ -35,8 +35,8 @@ ___
 ## Consumption probability [0-1].
 Probability of Item being consumed (0-1, valid only if Type is Item)
 - The probability that an Item will be consumed when the condition is met and the Action is performed.
-- Always consumed at `1`, 50% chance of consumption at `0.5`, and no consumption at `0`.
-- The default value is `1` (always consumed).
+- `1` always consumes, `0.5` consumes with a 50% probability, and `0` does not consume.
+- The default value is `1` (always consumes).
 - Invalid if Type is other than Item.
 ___
 

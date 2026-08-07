@@ -57,7 +57,7 @@ ___
 Configure inventory capacity
 - Controls the maximum count of the types of Items a player can have.
 - The number of each Item is controlled by the count of the type of Item you own, not by the number of Items you own.
-- If `initialCount` is set to 0, the capacity is unlimited.
+- Setting `initialCount` to 0 makes the capacity unlimited.
 - Use the ID configured here when referring to capacity items in conditions or rewards.
 - [_item_](en/editor/item)
 ___
@@ -68,7 +68,7 @@ ___
 ### Default value [pcs].
 Initial inventory capacity (the number of different types of Items you can have)
 - This is the initial capacity (the number of different types of Items you can have) at the start of the game.
-- If `0` is set, the capacity is unlimited.
+- Setting it to `0` makes the capacity unlimited.
 ___
 
 ### Base price [coins].
@@ -81,7 +81,7 @@ ___
 ### Percentage increase [times].
 Percentage increase in capacity expansion costs
 - It is a multiplier for how much the cost of capacity expansion increases with the nth buy.
-- For `1.0` the price is always the same, for `1.2` the price is 20% higher each time you buy.
+- With `1.0` the price always stays the same, and with `1.2` it rises by 20% with every purchase.
 - Formula: Base Price × Percentage Increase ^ Number of Purchases
 
 |rate of increase|1st addition|Fifth increase|Tenth increase|100th increase|1000th increase|
@@ -134,7 +134,7 @@ ___
 ### Percentage increase [times].
 Rate of increase in frame expansion costs
 - This is the multiplier that indicates how much the cost of expanding the slot increases with the nth buy.
-- For `1.0` the price is always the same, for `1.2` the price is 20% higher each time you buy.
+- With `1.0` the price always stays the same, and with `1.2` it rises by 20% with every purchase.
 - Formula: Base Price × Percentage Increase ^ Number of Purchases
 ___
 

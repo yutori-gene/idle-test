@@ -16,7 +16,7 @@ export const readme: Markdown = {
 		},
 	},
 	options: {
-		label: "阅读说明",
+		label: "README",
 		readme: true,
 	}
 };

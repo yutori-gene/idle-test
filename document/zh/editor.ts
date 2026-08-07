@@ -20,7 +20,7 @@ export const translation: Markdown = {
 	summary: "将游戏内文本翻译成其他语言的配置。",
 	points: ["配置要翻译的文本。", "启用翻译设置后，即可使用多语言配置。", "如果禁用翻译功能，开发过程中描述的信息将按原样显示。", "在出版前的开发过程中，无法进行翻译配置和语言切换。"],
 	options: {
-		label: "译文",
+		label: "translation",
 	},
 	children: {
 		flag: {
@@ -46,7 +46,7 @@ export const translation: Markdown = {
 						prompt: {
 							title: "提示示例",
 							summary: "向人工智能发出的翻译指令示例",
-							points: ["示例提示：将上传的 JSON 数据中的 `name` 和 `explanation` 值从英语翻译成日语。无须更改数据的其他分钟。"],
+							points: ["提示词示例：请将上传的 JSON 数据中 `name` 和 `explanation` 的值从英语翻译成日语。其他部分请勿更改。"],
 						},
 						gpt: {
 							title: "使用 GPT",
@@ -91,9 +91,9 @@ export const miscellaneous: Markdown = {
 	title: "补充资料",
 	summary: "其他补充信息说明。",
 	points: ["参考信息。"],
-	list: expandList("补贴", [translation]),
+	list: expandList("补贴", [translation], "说明"),
 	options: {
-		label: "杂项",
+		label: "miscellaneous",
 		linkedList: true,
 	},
 };
@@ -103,7 +103,7 @@ export const miscellaneous: Markdown = {
 export const property: Type.Property = {
 	title: "属性",
 	summary: "配置物品所具有的效果。",
-	points: ["这是可以在物品上配置的效果项。", "装备类型为`necessary`或`consumable`的物品，只有在装备中才会生效。`unnecessary`类型的物品只需持有即可生效，效果强度与持有数量成正比（持有2个则效果翻倍）。", "由于`unnecessary`的效果会直接将持有数量作为倍率，因此`maximum`（最大持有数量）即为该效果的上限。在调整平衡时，请结合`maximum`进行配置。", "这两项的值都是根据玩家等级与动作等级之间的等级差来计算调整的。", "例如，如果攻击值为 10，则攻击的计算方法是玩家的等级比动作的等级高 10。减值则相反。", "攻击\"、\"防御\"、\"准确\"、\"影响 \"和 \"恢复 \"仅对 \"体力 \"类型的动作有效。"],
+	points: ["这是可以在物品上配置的效果项。", "装备类型为 `necessary` 或 `consumable` 的物品仅在装备时生效。`unnecessary` 只要持有即可生效，效果量与持有数成正比（持有 2 个则为 2 倍）。", "由于`unnecessary`的效果会直接将持有数量作为倍率，因此`maximum`（最大持有数量）即为该效果的上限。在调整平衡时，请结合`maximum`进行配置。", "这两项的值都是根据玩家等级与动作等级之间的等级差来计算调整的。", "例如，如果攻击值为 10，则攻击的计算方法是玩家的等级比动作的等级高 10。减值则相反。", "attack、defence、accuracy、evasion、restore 仅对 `stamina` 类型的动作有效。"],
 	list: [
 		["属性", "有效性详情。"],
 		["速度", "缩短动作所需的时间。所需时间与等级差异成反比。"],
@@ -119,7 +119,7 @@ export const property: Type.Property = {
 		category: {
 			title: "类别",
 			summary: "指定属性适用的类别。",
-			points: ["配置该属性所适用类别的 ID。", "配置 `*` 适用于所有类别。", "如果为空，则适用于物品所属的类别。"],
+			points: ["配置该属性所适用类别的 ID。", "设置为 `*` 时将应用于所有类别。", "如果为空，则适用于物品所属的类别。"],
 		},
 		attack: {
 			title: "攻击值 [等级差]。",
@@ -163,14 +163,14 @@ export const property: Type.Property = {
 		},
 	},
 	options: {
-		label: "财产",
+		label: "property",
 	},
 };
 
 export const combat: Type.Combat = {
 	title: "战斗值",
 	summary: "体力类型动作的战斗修正值。",
-	points: ["修正值仅对 \"体力 \"类型的动作有效。", "每个值的计算都是对玩家与动作之间等级差异的额外修正。", "例如，如果攻击值为 10，则在计算攻击伤害时，玩家的等级要比动作的等级高 10。如果是减，则修正方向相反。", "如果在 `General` 中将其配置为 `defaultCombat`，它就会成为整个世界的默认战斗参数。"],
+	points: ["这是仅对 `stamina` 类型动作有效的修正值。", "每个值的计算都是对玩家与动作之间等级差异的额外修正。", "例如，如果攻击值为 10，则在计算攻击伤害时，玩家的等级要比动作的等级高 10。如果是减，则修正方向相反。", "在一般设置的 `defaultCombat` 中配置时，将成为整个世界的默认战斗参数。"],
 	children: {
 		attack: {
 			title: "攻击值 [等级差]。",
@@ -199,7 +199,7 @@ export const combat: Type.Combat = {
 		},
 	},
 	options: {
-		label: "打击",
+		label: "combat",
 	},
 };
 
@@ -236,12 +236,12 @@ export const acquisition: Type.Acquisition = {
 		chance: {
 			title: "概率[-1～1]",
 			summary: "获取成功的概率（负值仅在失败时计算）",
-			points: ["将获得概率配置为-1到1之间的一个小数。概率的判定使用绝对值。", "当值正时，仅在动作成功时才会进行评估：值为`1`时必定获得，值为`0.5`时有50%的概率获得。", "当值是负数时，仅在动作失败时进行判定：值是`-1`时必定获得，值是`-0.5`时有50%的概率获得。", "当值为`0`时，无论成功还是失败，都不会获得该物品。", "默认值是`1`（成功时必定获得）。"],
+			points: ["将获得概率配置为-1到1之间的一个小数。概率的判定使用绝对值。", "值为正时仅在动作成功时进行判定，`1` 必定获得，`0.5` 则以 50% 的概率获得。", "值为负时仅在动作失败时进行判定，`-1` 必定获得，`-0.5` 则以 50% 的概率获得。", "当值为`0`时，无论成功还是失败，都不会获得该物品。", "默认值是`1`（成功时必定获得）。"],
 		},
 	},
-	links: { type: "类型" },
+	links: { type: "type" },
 	options: {
-		label: "收购",
+		label: "acquisition",
 	},
 };
 
@@ -278,7 +278,7 @@ export const requirement: Type.Requirement = {
 		chance: {
 			title: "消费概率 [0-1]。",
 			summary: "物品被消费的概率（0-1，仅在类型为物品时有效）。",
-			points: ["满足条件并执行动作时，物品被消耗的概率。", "1 \"时始终消耗，\"0.5 \"时消耗的几率为 50%，\"0 \"时不消耗。", "默认值为 `1`（始终消耗）。", "如果类型不是物品，则无效。"],
+			points: ["满足条件并执行动作时，物品被消耗的概率。", "`1` 时必定消耗，`0.5` 时以 50% 的概率消耗，`0` 时不消耗。", "默认值为 `1`（必定消耗）。", "如果类型不是物品，则无效。"],
 		},
 		equipment: {
 			title: "装备",
@@ -286,9 +286,9 @@ export const requirement: Type.Requirement = {
 			points: ["启用后，物品必须装备无。", "如果类型不是物品，则无效。"],
 		},
 	},
-	links: { type: "类型" },
+	links: { type: "type" },
 	options: {
-		label: "要求",
+		label: "requirement",
 	},
 };
 
@@ -311,7 +311,7 @@ export const information: Type.Information = {
 						example: {
 							title: "例如",
 							summary: "ID 转换的真实案例",
-							points: ["如果 ID 是 \"stylish-strong-axe\"，则名称为 \"Stylish Strong Axe\"。"],
+							points: ["如果 ID 为 `stylish-strong-axe`，名称将变为 `Stylish Strong Axe`。"],
 						},
 					},
 				},
@@ -319,14 +319,14 @@ export const information: Type.Information = {
 					title: "无重复。",
 					summary: "禁止在同一类型中重复 ID。",
 					points: ["无须在类别、动作、物品、事件和预设类型中重复，因为它们用于标识元素。", "不同类型使用相同的 ID 并不是问题。"],
-					links: { type: "类型" },
+					links: { type: "type" },
 				},
 			},
 		},
 		name: {
 			title: "名称：",
 			summary: "出现的元素名称",
-			points: ["游戏中显示的元素名称。", "也可输入英语以外的语言。", "可以接受与其他元素重复的名称。", "如果时间过长，则在使用\"...... \"播放时，溢出部分将从显示屏上省略。"],
+			points: ["游戏中显示的元素名称。", "也可输入英语以外的语言。", "可以接受与其他元素重复的名称。", "过长时，游戏过程中显示溢出的部分将以 `…` 省略。"],
 			children: {
 				translateFromId: {
 					title: "从 ID 自动转换",
@@ -350,10 +350,10 @@ export const information: Type.Information = {
 					summary: "使用任何图像文件",
 					points: ["代表元素的图像。", "如果文件大小较大，则会自动调整大小。", "如果配置了 Iconify 或象形图，则不必要。"],
 					children: {
-						"文件类型": {
+						"file-type": {
 							title: "文件类型",
 							summary: "支持的图像文件格式",
-							points: ["您可以使用可在浏览器中显示的一般类型。", "JPEG、PNG、GIF、WebP、SVG 等。"],
+							points: ["可以使用浏览器能够显示的常见格式。", "例如 JPEG、PNG、GIF、WebP、SVG 等。"],
 						},
 					},
 				},
@@ -365,8 +365,8 @@ export const information: Type.Information = {
 						iconify: {
 							title: "图示化",
 							summary: "如何从 Iconify 选择图标",
-							points: ["搜索 `Iconify` 可显示的图标。", "通过搜索图标，您可以快速找到最佳图标。", "选择一个图标，查看其标识符（图标集类型`:`图标名称），如`game-icons:sword-wound`，然后直接粘贴到此图标字段中。"],
-							images: ["图标选择.png"],
+							points: ["可显示的图标请从 `Iconify` 中搜索。", "通过搜索图标，您可以快速找到最佳图标。", "选择一个图标，查看其标识符（图标集类型`:`图标名称），如`game-icons:sword-wound`，然后直接粘贴到此图标字段中。"],
+							images: ["iconify-selection.png"],
 							links: { iconify: "https://icon-sets.iconify.design" },
 						},
 					},
@@ -379,22 +379,22 @@ export const information: Type.Information = {
 			},
 		},
 		color: {
-			title: "品种",
+			title: "颜色",
 			summary: "配置元素的显示颜色。",
 			points: ["作为元素颜色，它适用于元素的图标和背景颜色。", "从编辑器的颜色选择器中选择。"],
 			children: {
-				"父母传承": {
+				"heritage-from-parent": {
 					title: "从父元素继承",
-					summary: "接管父元素的颜色配置。",
-					points: ["如果为空，则使用父元素中配置的颜色。", "每个元素的类型层次结构如下", "例如，如果某个动作有单独的颜色配置，则会使用该颜色；而如果该动作无单独的颜色配置，则会使用类别或世界颜色。", "如果事件也配置了类别，则会像动作和物品一样继承该类别的颜色。"],
+					summary: "沿用父元素设置的颜色",
+					points: ["留空时，将沿用父元素所设置的颜色。", "各元素类型的层级关系如下。", "例如，若动作设置了单独的颜色则使用该颜色；若动作未设置单独的颜色，则使用类别或世界的颜色。", "事件在设置了类别的情况下，也会像动作和物品一样沿用该类别的颜色。"],
 					quote: typeTree,
-					links: { type: "类型" },
+					links: { type: "type" },
 				},
 			},
 		},
 	},
 	options: {
-		label: "信息",
+		label: "information",
 	},
 };
 
@@ -402,9 +402,9 @@ export const component: Markdown = {
 	title: "组成部分",
 	summary: "常用部件",
 	points: ["提取并处理每个位置配置中使用的常用组件。", "所有这些领域使用的组件都是通用的，但有些组件在某些项目中是无用的。"],
-	list: expandList("组成部分", [information, requirement, acquisition, combat, property]),
+	list: expandList("组成部分", [information, requirement, acquisition, combat, property], "说明"),
 	options: {
-		label: "组成部分",
+		label: "component",
 		linkedList: true,
 	},
 };
@@ -417,7 +417,7 @@ export const preset: Type.Information = {
 	summary: "自定义显示系统元素",
 	points: ["替换预先集成到游戏引擎（玩家）中的用户界面文本和图标。", "只有通过 ID 与现有预设匹配的预设才会被替换。", "只有您配置的项目才会被替换。例如，如果只配置了图标，名称和颜色等其他项目将使用原来的。", "名称和说明的覆盖内容将优先于玩家内置的各语言翻译。被覆盖的字符串将以原样显示在所有语言中。", "如果希望根据不同语言更改文本内容，请启用翻译功能，并在生成的`translations/world`翻译文件中进行指定。该文件具有最高优先级。"],
 	options: {
-		label: "预置",
+		label: "preset",
 	},
 };
 
@@ -425,7 +425,7 @@ export const task: Type.Event = {
 	title: "任务",
 	summary: "满足条件即可完成的任务",
 	points: ["配置了条件后，当满足这些条件时即视为达成，屏幕上部会显示一条提示信息。", "将显示在玩家任务列表和类别任务列表中。", "奖励不会自动发放。玩家需打开任务并点击“获取”按钮后才能获取。", "在领取报酬之前，列表栏上会显示一条丝带，表示该报酬尚未领取。", "通过获取，可以改变类别等级、动作执行次数以及物品持有数量。", "对于希望在首次启动或游戏结束等非特定条件下触发的事件，请在“基本设置”中的“事件”中配置。"],
-	links: { event: "事件" },
+	links: { event: "event" },
 	children: {
 		information: information,
 		category: {
@@ -437,7 +437,7 @@ export const task: Type.Event = {
 			title: "时间安排",
 			summary: "任务触发时机（固定为`matched`）",
 			points: ["任务在`matched`（满足配置条件时）状态下是固定的，无法编辑。", "奖励只能领取一次，一旦领取，该成就状态将保持不变。", "如果希望在其他时间点触发，请在“基本设置”中的“事件”中配置。"],
-			links: { event: "事件" },
+			links: { event: "event" },
 		},
 		unlocked: {
 			title: "初始显示状态",
@@ -460,11 +460,11 @@ export const task: Type.Event = {
 			title: "工作组",
 			summary: "任务的显示分组分类",
 			points: ["应用在 Basic 中配置的其中一个组。", "配置的组顺序：任务列表将按照配置的组顺序显示。", "在类别中，内容会进一步按组别进行分类显示。", "如果留空，则不进行分组。"],
-			links: { general: "一般" },
+			links: { general: "general" },
 		},
 	},
 	options: {
-		label: "任务",
+		label: "task",
 	},
 };
 
@@ -474,7 +474,7 @@ export const group: Type.Information = {
 	summary: "为类别、动作和物品定义显示组",
 	points: ["定义组来控制显示顺序。", "您可以为每个类别、动作和物品配置在此定义的组。", "具有相同组别的组会显示在一起。", "如果留空，则不进行分组。"],
 	options: {
-		label: "组",
+		label: "group",
 	},
 };
 
@@ -493,7 +493,7 @@ export const item: Type.Item = {
 			title: "群",
 			summary: "显示物品的组分类",
 			points: ["应用在 Basic 中配置的其中一个组。", "物品列表会按照配置组的顺序显示。", "如果留空，则不进行分组。"],
-			links: { general: "一般" },
+			links: { general: "general" },
 		},
 		unlocked: {
 			title: "初始解锁状态",
@@ -521,7 +521,7 @@ export const item: Type.Item = {
 				["大于零的值。", "以这个值出售。"],
 				["小于零的值（例如-1）", "一般配置折扣率乘以出价（如果出价为零，则无法出售）"],
 			],
-			links: { general: "一般" },
+			links: { general: "general" },
 		},
 		maximum: {
 			title: "最大拥有计数 [个]。",
@@ -531,13 +531,13 @@ export const item: Type.Item = {
 		equipmentType: {
 			title: "装备类型",
 			summary: "装备、效果和物品消耗的类型配置。",
-			points: ["可能装备的物品必须属于`装备组`类别中指定的组。", "同一组内只能装备一件物品。", "`unnecessary`的效果不受装备与否的影响，其效果强度与持有数量成正比（0个时无效果，n个时效果为n倍）。"],
+			points: ["可装备的物品必须属于类别的 `equipmentGroups` 中所指定的组。", "同一组内只能装备一件物品。", "`unnecessary` 无论是否装备都会发挥效果，效果量与持有数成正比（持有 0 个时无效果，持有 n 个时为 n 倍）。"],
 			list: [
 				["值", "装备", "有效性。", "消费量", "例如"],
-				["必要的", "必要", "仅在装备中生效（1个）", "无", "剑、盔甲和其他装备。"],
-				["可消耗`.", "必要", "仅在装备中生效（1个）", "执行动作时消耗", "为获得效果而消耗的物品，如药水。"],
-				["`不必要`。", "不必要", "持有期间始终（与持有数量成正比）", "无", "只要拥有就能发挥功效的被动物品。"],
-				["`不可能`。", "不允许", "无", "无", "材料和杂物等无 效物品。"],
+				["`necessary`", "必要", "仅在装备中生效（1个）", "无", "剑、盔甲和其他装备。"],
+				["`consumable`", "必要", "仅在装备中生效（1个）", "执行动作时消耗", "为获得效果而消耗的物品，如药水。"],
+				["`unnecessary`", "不必要", "持有期间始终（与持有数量成正比）", "无", "只要拥有就能发挥功效的被动物品。"],
+				["`impossible`", "不允许", "无", "无", "材料和杂物等无 效物品。"],
 			],
 		},
 		requirements: { ...requirement, options: { ...requirement.options, array: true }, summary: "物品使用的必要条件。" },
@@ -545,7 +545,7 @@ export const item: Type.Item = {
 		coinId: { title: "交易货币ID", summary: "用于买卖该物品的货币ID", points: ["指定买入值和卖出值中共同使用的货币（coins）的ID。", "如果留空，则使用主币种（coins列表的首个币种）。"] },
 	},
 	options: {
-		label: "项目",
+		label: "item",
 	},
 };
 
@@ -564,13 +564,13 @@ export const action: Type.Action = {
 			title: "属性",
 			summary: "动作属性类别",
 			points: ["可配置个别属性（类别）。", "如果留空，则取其所属类别", "例如，如果您为属于恶魔城堡类别的动作单独配置了魔法属性，那么魔法类别的等级和属性将被计算并应用到动作完成时间和伤害上。"],
-			links: { category: "类别" },
+			links: { category: "category" },
 		},
 		group: {
 			title: "群",
 			summary: "显示动作的组分类",
 			points: ["应用在 Basic 中配置的其中一个组。", "按组别配置顺序显示动作列表。"],
-			links: { general: "一般" },
+			links: { general: "general" },
 		},
 		unlocked: {
 			title: "初始解锁状态",
@@ -581,30 +581,30 @@ export const action: Type.Action = {
 			title: "等级",
 			summary: "动作的难度等级。",
 			points: ["动作的难易程度由等级表示。", "在运行时对照玩家的等级计算每种属性。", "例如，执行高于您等级的动作会降低成功率。", "如果条件满足，即使玩家的等级低于这个值，也可以执行。"],
-			links: { property: "财产" },
+			links: { property: "property" },
 		},
 		requirements: { ...requirement, options: { ...requirement.options, array: true }, summary: "执行动作所要求的条件。" },
 		seconds: {
 			title: "时间 [秒]。",
 			summary: "执行动作所需的典型时间",
-			points: ["执行一次动作所需的标准时间（秒）。", "对于 \"耐力 \"类型，这是一个回合的时间间隔（彼此的耐力减少一次）。", "实际执行情况会因属性计算而有所不同。"],
-			links: { property: "财产" },
+			points: ["执行一次动作所需的标准时间（秒）。", "对于 `stamina` 类型，这是一个回合（双方各削减一次耐力）所需的时间间隔。", "实际执行情况会因属性计算而有所不同。"],
+			links: { property: "property" },
 		},
 		experience: {
 			title: "经验 [下一等级为 100]。",
 			summary: "从成功动作中获取经验",
 			points: ["成功执行一次动作所获取的标准经验；100 值相当于一级经验。", "在战斗的情况下，建议多配置一些，因为这是对手胜利时获取的。", "实际执行情况会因属性计算而有所不同。"],
-			links: { property: "财产" },
+			links: { property: "property" },
 		},
 		chance: {
 			title: "成功概率 [0-1]。",
 			summary: "完成动作时的成功概率",
-			points: ["动作完成时的成功概率。", "如果为 \"1 \"则总是成功，如果为 \"0 \"则总是失败。", "失败时，消耗物品会被消耗，但不会获得奖励或经验。", "实际执行情况会因属性计算而有所不同。"],
+			points: ["动作完成时的成功概率。", "为 `1` 时总是成功，为 `0` 时总是失败。", "失败时，消耗物品会被消耗，但不会获得奖励或经验。", "实际执行情况会因属性计算而有所不同。"],
 		},
 		maximum: {
 			title: "最大运行计数 [次]。",
 			summary: "一个动作可完成的最大计数次数。",
-			points: ["一个动作成功完成的最大计数次数。", "0 \"为无限制。", "达到上限值后，动作将不再可执行。"],
+			points: ["一个动作成功完成的最大计数次数。", "为 `0` 时不受限制。", "达到上限值后，动作将不再可执行。"],
 		},
 		acquisitions: { ...acquisition, options: { ...acquisition.options, array: true }, summary: "奖励成功获取动作。" },
 		progressType: {
@@ -613,16 +613,16 @@ export const action: Type.Action = {
 			points: ["共有四种类型。"],
 			list: [
 				["类型。", "运行细节", "耐力", "例如"],
-				["`persistent`.", "这是一种不断重复的动作类型；每完成一次都会获得经验和奖励。", "无关系", "伐木、采矿、捕鱼"],
-				["单", "一次执行一个动作。如果中断，进度会被保存，下次可以继续。完成后，用户按确认动作即可收到结果。", "无关系", "打开百宝箱，通过阅读学习技能"],
-				["`snap`......。", "这种类型的动作是即时执行的。立即完成，无时间间隔。", "无关系", "以物易物，使用物品。"],
-				["\"耐力\"。", "每次所需时间都会减少玩家和对手各自的耐力。当对手的耐力耗尽时，会获得经验和奖励。当玩家的耐力耗尽时，游戏结束，所有正在进行的动作都会中止。", "相关。", "战斗、危险行动。"],
+				["`persistent`", "这是一种不断重复的动作类型；每完成一次都会获得经验和奖励。", "无关系", "伐木、采矿、捕鱼"],
+				["`single`", "一次执行一个动作。如果中断，进度会被保存，下次可以继续。完成后，用户按确认动作即可收到结果。", "无关系", "打开百宝箱，通过阅读学习技能"],
+				["`snap`", "这种类型的动作是即时执行的。立即完成，无时间间隔。", "无关系", "以物易物，使用物品。"],
+				["`stamina`", "每次所需时间都会减少玩家和对手各自的耐力。当对手的耐力耗尽时，会获得经验和奖励。当玩家的耐力耗尽时，游戏结束，所有正在进行的动作都会中止。", "相关。", "战斗、危险行动。"],
 			],
 		},
 		property: combat,
 	},
 	options: {
-		label: "行动",
+		label: "action",
 	},
 };
 
@@ -636,7 +636,7 @@ export const category: Type.Category = {
 			title: "群",
 			summary: "显示类别的组分类",
 			points: ["应用在 Basic 中配置的其中一个组。", "类别列表会按照配置组的顺序显示。"],
-			links: { general: "一般" },
+			links: { general: "general" },
 		},
 		unlocked: {
 			title: "初始解锁状态",
@@ -648,7 +648,7 @@ export const category: Type.Category = {
 			title: "装备组",
 			summary: "指定可能装备该类别的物品组。",
 			points: ["该类别中可装备物品的组名列表。", "只有与此处指定的组名称相匹配的组中的物品才能装备。", "如果指定的是空字符串，那么未配置组（空）的物品就有资格装备。", "同一组中只能装备一件物品。装备新物品时，同组中的任何现有装备都会自动卸下。", "如果列表为空（0 件），则无法装备任何物品。"],
-			links: { general: "一般" },
+			links: { general: "general" },
 		},
 		numeric: {
 			title: "等级的可用性",
@@ -667,7 +667,7 @@ export const category: Type.Category = {
 		},
 	},
 	options: {
-		label: "类别",
+		label: "category",
 	},
 };
 
@@ -675,10 +675,10 @@ export const type: Markdown = {
 	title: "类型。",
 	summary: "世界的基本分类",
 	points: ["世界由六种类型组成。", "所有元素都放在世界的正下方。", "动作和物品与所属类别的 ID 关联。"],
-	list: expandList("类型。", [category, action, item, group, task, preset]),
+	list: expandList("类型。", [category, action, item, group, task, preset], "说明"),
 	quote: typeTree,
 	options: {
-		label: "类型",
+		label: "type",
 		linkedList: true,
 	},
 };
@@ -734,7 +734,7 @@ export const development: Type.Development = {
 		},
 	},
 	options: {
-		label: "发展",
+		label: "development",
 	},
 };
 
@@ -765,7 +765,7 @@ export const design: Type.Design = {
 		},
 	},
 	options: {
-		label: "设计",
+		label: "design",
 	},
 };
 
@@ -782,25 +782,25 @@ export const general: Type.General = {
 			title: "译文",
 			summary: "准备多语言翻译或",
 			points: ["如果启用，用户可以用任何语言播放。", "如果禁用，则只能以语言配置中选择的语言播放。", "如果启用了翻译功能，则必须提供每种语言的翻译数据。"],
-			links: { translation: "译文" },
+			links: { translation: "translation" },
 		},
 		offlineMaxHours: {
 			title: "最大关机时间 [小时]。",
 			summary: "关进度的时间限制。",
 			points: ["配置关机时的最大进度时间。", "例如，如果设置为 6 小时，则最多处理 6 小时的离线返回过程，但如果允许更多时间上离线返回，则离线时间将按 6 小时处理。", "如果设置为 0 时间，则在返回关机状态时根本不会进行任何流程处理。", "最大值为 24 小时。"],
-			links: { category: "类别" },
+			links: { category: "category" },
 		},
 		maxCategoryLevels: {
 			title: "类别的最大等级",
 			summary: "每个类别的等级上 限。",
 			points: ["为每个类别配置最大等级。", "如果获取的经验超过了这个等级，则在计算每种属性时会使用此处配置的最大等级。", "该值与无等级的类别无关。"],
-			links: { category: "类别" },
+			links: { category: "category" },
 		},
 		locking: {
 			title: "锁定功能",
 			summary: "隐藏项目，直至满足要求",
 			points: ["如果启用，类别动作物品在无使用或拥有且未满足要求时将被隐藏。", "如果禁用，所有项目都会从头开始显示，但在满足要求之前无法执行或装备。"],
-			links: { category: "类别", action: "行动", item: "项目" },
+			links: { category: "category", action: "action", item: "item" },
 		},
 		coins: {
 			title: "货币",
@@ -811,18 +811,18 @@ export const general: Type.General = {
 				"货币用于买卖物品以及扩充库存容量。",
 				"首位货币将被视为主要货币，并在物品或容量中未指定货币ID（`coinId`）时使用。",
 			],
-			links: { information: "信息", item: "项目" },
+			links: { information: "information", item: "item" },
 		},
 		capacity: {
 			title: "能力",
 			summary: "库存容量配置。",
-			points: ["控制玩家可拥有的不同类型物品的最大计数。", "每件物品受您拥有的物品类型数量控制，而不是受您拥有的物品计数控制。", "将 `initialCount` 设置为 0 意味着容量不受限制。", "在条件或奖励中提及容量物品时，请使用此处配置的 ID。"],
+			points: ["控制玩家可拥有的不同类型物品的最大计数。", "每件物品受您拥有的物品类型数量控制，而不是受您拥有的物品计数控制。", "将 `initialCount` 设置为 0 时容量不受限制。", "在条件或奖励中提及容量物品时，请使用此处配置的 ID。"],
 			children: {
 				information: information,
 				initialCount: {
 					title: "默认值 [个]。",
 					summary: "初始库存容量（可容纳的不同物品计数）",
-					points: ["游戏开始时的初始容量（可拥有的不同物品计数）。", "如果设置为 \"0\"，则容量不受限制。"],
+					points: ["游戏开始时的初始容量（可拥有的不同物品计数）。", "设置为 `0` 时容量不受限制。"],
 				},
 				initialCost: {
 					title: "基本价格 [硬币]。",
@@ -832,7 +832,7 @@ export const general: Type.General = {
 				increasingRate: {
 					title: "增加百分比[倍]。",
 					summary: "产能扩张成本增加的百分比",
-					points: ["它是一个乘数，表示随着第 n 次购买，扩大产能的成本增加了多少。", "1.0 \"的价格始终不变，\"1.2 \"的价格每次购买都会提高 20%。", "计算公式：基本价格 x 增长百分比 ^ 购买计数次数"],
+					points: ["它是一个乘数，表示随着第 n 次购买，扩大产能的成本增加了多少。", "为 `1.0` 时价格始终不变，为 `1.2` 时每次购买都会提高 20%。", "计算公式：基本价格 x 增长百分比 ^ 购买计数次数"],
 					list: [
 						["增长率", "第一次增补。", "第 5 次增加。", "第 10 次增加。", "第 100 次增长。", "第 1000 次增长。"],
 						["1.00", "x1.00", "x1.00", "x1.00", "x1.00", "x1.00"],
@@ -853,7 +853,7 @@ export const general: Type.General = {
 					points: ["这是使用货币购买容量的次数上限。", "将数值设为`0`即可无限次购买。", "如果设置为`-1`，将无法购买。", "通过奖励获得的容量增加不计入该上限。"],
 				},
 			},
-			links: { item: "项目" },
+			links: { item: "item" },
 		},
 		queue: {
 			title: "Cue",
@@ -878,7 +878,7 @@ export const general: Type.General = {
 				increasingRate: {
 					title: "增加百分比[倍]。",
 					summary: "帧扩展成本的增长率",
-					points: ["这是指在第n次购买时，扩展槽位的成本增加倍数。", "1.0 \"的价格始终不变，\"1.2 \"的价格每次购买都会提高 20%。", "计算公式：基本价格 x 增长百分比 ^ 购买计数次数"],
+					points: ["这是指在第n次购买时，扩展槽位的成本增加倍数。", "为 `1.0` 时价格始终不变，为 `1.2` 时每次购买都会提高 20%。", "计算公式：基本价格 x 增长百分比 ^ 购买计数次数"],
 				},
 				coinId: {
 					title: "货币ID",
@@ -891,7 +891,7 @@ export const general: Type.General = {
 					points: ["这是使用货币购买连续执行次数的上限。", "将数值设为`0`即可无限次购买。", "如果设置为`-1`，将无法购买。", "通过奖励获得的名额增加不计入该上限。"],
 				},
 			},
-			links: { item: "项目" },
+			links: { item: "item" },
 		},
 		levelCommonRatio: {
 			title: "经验上的增长率[倍]。",
@@ -905,17 +905,17 @@ export const general: Type.General = {
 				["0.10", "x1.00", "x1.10", "x2.36", "x117.39", "x5.7×10⁴"],
 				["0.20", "x1.00", "x1.20", "x6.19", "x3.3 x 10³", "x1.3 x 10¹¹"],
 			],
-			links: { category: "类别" },
+			links: { category: "category" },
 		},
 		actionLevelLimit: {
 			title: "行动等级限制",
 			summary: "请求为执行一个动作而执行同一属性动作的计数次数。",
 			points: ["如果启用，具有相同属性的动作的执行次数会自动添加到每个动作的执行条件中。", "必要计数次数等于动作的等级值。", "若无属性配置，则使用所属类别的 ID。"],
 		},
-		defaultCombat: { ...combat, summary: "所有动作通用的默认战斗参数。", points: ["适用于所有 \"体力 \"类型动作的通用基本战斗修正值。", "每个动作的战斗值（属性）都会添加到这个默认值中。"], links: { action: "行动" } },
+		defaultCombat: { ...combat, summary: "所有动作通用的默认战斗参数。", points: ["这是共同适用于所有 `stamina` 类型动作的基本战斗修正值。", "每个动作的战斗值（属性）都会添加到这个默认值中。"], links: { action: "action" } },
 	},
 	options: {
-		label: "一般",
+		label: "general",
 	},
 };
 
@@ -962,7 +962,7 @@ export const overview: Type.Overview = {
 		},
 	},
 	options: {
-		label: "概况",
+		label: "overview",
 	},
 };
 
@@ -974,36 +974,36 @@ const toFixedEvent = (title: string, summary: string, points: string[], timingPo
 	children: {
 		...task.children,
 		category: {
-			title: "类别",
-			summary: "事件期间不会使用",
-			points: ["由于不会显示在任务列表中，因此不指定所属类别。", "编辑器中未显示输入框。"],
+			title: "カテゴリー",
+			summary: "イベントでは使用しません",
+			points: ["ミッションやタスクの一覧に表示されないため、所属するカテゴリーは指定しません。", "エディターでは入力欄が表示されません。"],
 		},
 		timing: {
-			title: "时间安排",
-			summary: "事件触发的时机（固定）",
+			title: "タイミング",
+			summary: "イベントが発動するタイミング（固定）",
 			points: timingPoints,
 		},
 		unlocked: {
-			title: "初始显示状态",
-			summary: "事件图标的初始显示状态（触发与否取决于时机，在此配置下不会触发）",
-			points: ["事件的触发条件由时机决定，此选项仅影响图标的外观。", "secreted：在满足所有要求之前，图标不会显示（但触发本身会根据时机发生）。", "hidden・hinted：图标上会显示斜线，表示该内容尚未解锁。", "已发布：斜线消失，显示为“已发布”。"],
+			title: "初期表示状態",
+			summary: "イベントアイコンの初期表示状態（発火はタイミングで決まり、この設定では発火しません）",
+			points: ["イベントの発火条件はタイミングで決まり、この項目はアイコンの見た目のみに影響します。", "secreted: 全requirementsを満たすまでアイコンが表示されません（発火自体はタイミングで起こります）。", "hidden・hinted: アイコンに斜線が付き未解放として表示されます。", "released: 斜線が消え解放済みとして表示されます。"],
 		},
 		requirements: {
-			title: "条款和条件",
-			summary: "获取报酬的条件",
-			points: ["当条件成立时，事件将触发，并打开专用界面显示相关内容。", "只有在触发时满足此处配置的条件，才能获取奖励。", "如果未配置条件，则每次触发时都会获取奖励。"],
+			title: "条件",
+			summary: "報酬を獲得する条件",
+			points: ["タイミングが成立するとイベントは発動し、専用の画面を開いて内容を表示します。", "報酬は、発動時にここで設定した条件を満たしている場合にのみ獲得します。", "条件を設定していない場合は、発動するたびに報酬を獲得します。"],
 			children: requirement.children,
 		},
 		acquisitions: {
-			title: "报酬",
-			summary: "触发事件时的奖励配置。",
-			points: ["这是在时机合适且满足条件时获得的奖励。", "与任务不同，无需进行领取操作，在触发的同时会自动获取。", "可以为数量配置负值。例如，在游戏结束时将物品数量配置为负数，玩家就会失去这些物品。"],
+			title: "報酬",
+			summary: "イベント発動時の報酬設定",
+			points: ["タイミングが成立し、かつ条件を満たしている時に得られる報酬です。", "タスクと違って受け取る操作は要らず、発動と同時に自動で獲得します。", "数量にマイナスを設定することができます。例えばゲームオーバー時にアイテムの数量をマイナスにすれば、それらを失います。"],
 			children: acquisition.children,
 		},
 		group: {
-			title: "工作组",
-			summary: "事件期间不会使用",
-			points: ["由于任务列表中无组指定功能，因此不使用组指定功能。", "编辑器中未显示输入框。"],
+			title: "タスクグループ",
+			summary: "イベントでは使用しません",
+			points: ["ミッションやタスクの一覧に表示されないため、グループの指定は使いません。", "エディターでは入力欄が表示されません。"],
 		},
 	},
 });
@@ -1014,22 +1014,22 @@ export const event: Type.Events = {
 	points: ["在首次进入世界或游戏结束等特定时刻，该功能会自动触发并打开专用界面。", "每个时间点都预设了一个选项，既不能添加也不能删除。不使用的时间点请保持空白。", "不会显示在任务列表中。符合条件即可视为完成的项，请在任务中配置。", "奖励将在触发时自动获取。无需像完成任务那样进行领取操作，也没有相应的提示条。", "它可以改变类别的等级、执行动作的次数以及激活时拥有的物品计数。", "如果将名称、说明和图标留空，玩家将使用播放器内置的默认文字和图标。"],
 	list: [
 		["时间安排", "激活条件", "复"],
-		["`comebacked`。", "当一个人从关机状态返回超过一秒，且有动作正在进行中时。", "时常"],
-		["游戏结束了", "玩家在战斗中耐力耗尽时。", "时常"],
-		["欢迎`.", "当我刚刚开始这个世界的时候。", "只一次"],
-		["`已完成`。", "当达到所有类别的最大等级（maxCategoryLevels）时。", "只一次"],
+		["`comebacked`", "当一个人从关机状态返回超过一秒，且有动作正在进行中时。", "时常"],
+		["`gameovered`", "玩家在战斗中耐力耗尽时。", "时常"],
+		["`welcomed`", "当我刚刚开始这个世界的时候。", "只一次"],
+		["`completed`", "当达到所有类别的最大等级（maxCategoryLevels）时。", "只一次"],
 		["`obtained`", "当完成了单一类型的动作（如宝箱等）或确认了这些动作时", "时常"],
 	],
-	links: { task: "任务" },
+	links: { task: "task" },
 	children: {
-		comebacked: toFixedEvent("恢复时", "在关机状态恢复时触发", ["当设备离线超过1秒后恢复连接，且存在进行中的动作时，该效果将触发。", "将与分离期间的进度总结一同显示。"], ["该字段已被固定为`comebacked`，无法编辑。", "每次复活时都会反复触发。"]),
-		gameovered: toFixedEvent("游戏结束时", "在战斗中耐力耗尽时触发", ["当玩家在战斗中耐力耗尽时触发。", "如果在奖励数量中配置减值，就可以让游戏结束时产生相应代价。"], ["该值被固定为`gameovered`，无法编辑。", "每次游戏结束时都会反复触发。"]),
-		welcomed: toFixedEvent("首次开始时", "首次打开世界时触发", ["在首次启动该世界时触发。", "用于说明世界观，以及在游戏开始时发放准备物品。"], ["该字段被固定为`welcomed`，无法编辑。", "仅在首次启动时触发一次。"]),
-		completed: toFixedEvent("通关时", "当所有类别达到最大等级时触发", ["当所有类别的等级达到最大值（maxCategoryLevels）时触发。", "非数值类别的项目将从判定中排除。"], ["该字段被设置为`completed`，无法编辑。", "仅在满足条件时触发一次。"]),
-		obtained: toFixedEvent("单次动作完成时", "在完成宝箱等单次动作时触发", ["在完成或确认单个类型的动作（如宝箱等）时触发。", "除了该动作本身的奖励外，还可以额外追加此处配置的奖励。"], ["该字段被固定为`obtained`，无法编辑。", "每次完成单次动作后，该效果都会反复触发。"]),
+		comebacked: toFixedEvent("返回时", "从离线状态返回时触发", ["在离线超过 1 秒后返回，且当时有正在进行的动作时触发。", "会与离开期间的进度汇总一起显示。"], ["固定为 `comebacked`，无法编辑。", "每次返回都会触发，次数不限。"]),
+		gameovered: toFixedEvent("游戏结束时", "在战斗中耐力耗尽时触发", ["在战斗中玩家的耐力耗尽时触发。", "将奖励数量设为负数，即可为游戏结束设置代价。"], ["固定为 `gameovered`，无法编辑。", "每次游戏结束都会触发，次数不限。"]),
+		welcomed: toFixedEvent("首次开始时", "首次打开世界时触发", ["首次启动这个世界时触发。", "可用于介绍世界观，或发放开局时的准备物品。"], ["固定为 `welcomed`，无法编辑。", "仅在首次启动时触发一次。"]),
+		completed: toFixedEvent("通关时", "所有类别达到最大等级时触发", ["所有类别的等级达到最大值（maxCategoryLevels）时触发。", "非 numeric（数值）的类别不参与判定。"], ["固定为 `completed`，无法编辑。", "满足条件时仅触发一次。"]),
+		obtained: toFixedEvent("单次动作完成时", "完成宝箱等单次动作时触发", ["完成并确认 single 种类的动作（如宝箱）时触发。", "除动作本身的奖励外，还可叠加此处设置的奖励。"], ["固定为 `obtained`，无法编辑。", "每次完成单次动作都会触发，次数不限。"]),
 	},
 	options: {
-		label: "事件",
+		label: "event",
 	},
 };
 
@@ -1037,7 +1037,7 @@ export const basic: Type.Basic = {
 	title: "基本配置",
 	summary: "一般世界的基本配置项目。",
 	points: ["配置世界的名称、描述、背景、货币、容量、类别的最大等级、经验增加率、折扣率、标准战斗参数等。", "这些配置会影响整个世界。"],
-	list: expandList("名字", [overview, general, design, event, development]),
+	list: expandList("名字", [overview, general, design, event, development], "说明"),
 	children: {
 		overview: overview,
 		general: general,
@@ -1046,7 +1046,7 @@ export const basic: Type.Basic = {
 		development: development,
 	},
 	options: {
-		label: "基本的",
+		label: "basic",
 		linkedList: true,
 	},
 };
@@ -1068,7 +1068,7 @@ export const world: Type.World = {
 		presets: { ...preset, options: { ...preset.options, array: true } },
 	},
 	options: {
-		label: "世界",
+		label: "world",
 	},
 };
 
@@ -1077,11 +1077,11 @@ export const world: Type.World = {
 export const editor: Markdown = {
 	title: "编辑",
 	summary: "关于如何使用编辑器和世界结构的说明。",
-	list: expandList("名字", [world, basic, type, component, miscellaneous]),
+	list: expandList("名字", [world, basic, type, component, miscellaneous], "说明"),
 	options: {
-		label: "编辑",
+		label: "editor",
 		linkedList: true,
-		directory: "编辑",
+		directory: "editor",
 	},
 };
 

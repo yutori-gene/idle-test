@@ -5,19 +5,17 @@ import { Markdown, Tree, expandList } from "~d/type/markdownType";
 export const language: Markdown = {
 	title: "Idioma.",
 	summary: "Cambiar de idioma",
-	points: ["Cambia el idioma mostrado en el juego.", "Sólo es válido si el autor ha facilitado una traducción."],
 	options: {
-		preset: "idioma",
+		preset: "language",
 	},
 };
 
 export const event: Markdown = {
 	title: "Evento",
 	summary: "Sistema que se activa en un momento determinado",
-	points: ["Se activa en momentos concretos, como al volver al juego o cuando el juego termina.", "Al activarse, se abrirá esta pantalla y se entregarán automáticamente las recompensas junto con un mensaje.", "Las tareas son aquellas que se cumplen al satisfacer una serie de condiciones, y la recompensa la recibes tú mismo."],
 	options: {
-		preset: "evento",
-		label: "evento",
+		preset: "event",
+		label: "event",
 	},
 };
 
@@ -26,8 +24,8 @@ export const miscellaneous: Markdown = {
 	summary: "Otra información complementaria explicada.",
 	children: { event: event, language: language },
 	options: {
-		preset: "varios",
-		label: "varios",
+		preset: "miscellaneous",
+		label: "miscellaneous",
 	},
 };
 
@@ -36,16 +34,14 @@ export const miscellaneous: Markdown = {
 export const debug: Markdown = {
 	title: "depurar",
 	summary: "Operación de comprobación de depuración",
-	points: ["Sólo visible durante la depuración.", "No se muestra cuando el juego se publica y distribuye."],
 	options: {
-		preset: "depurar",
+		preset: "debug",
 	},
 };
 
 export const config: Markdown = {
 	title: "configuración",
 	summary: "Cambiar la configuración del juego",
-	points: ["Configure los ajustes relacionados con la visualización y el procesamiento de los juegos.", "Los datos del juego también se pueden introducir, emitir y restablecer."],
 	options: {
 		preset: "config",
 	},
@@ -54,16 +50,14 @@ export const config: Markdown = {
 export const statistics: Markdown = {
 	title: "estadísticas",
 	summary: "Resumen de los progresos",
-	points: ["Puedes consultar la situación del progreso del juego hasta el momento."],
 	options: {
-		preset: "estadísticas",
+		preset: "statistics",
 	},
 };
 
 export const general: Markdown = {
 	title: "general",
 	summary: "Configuraciones específicas para cada mundo",
-	points: ["Puedes comprobar el nivel de dificultad y la configuración específica de este mundo."],
 	options: {
 		preset: "general",
 	},
@@ -72,9 +66,8 @@ export const general: Markdown = {
 export const overview: Markdown = {
 	title: "Resumen.",
 	summary: "Sobre este juego.",
-	points: ["Infórmate sobre el mundo del juego (visión del mundo y configuración).", "También puedes obtener información sobre la consola (sistema) que ejecuta este juego."],
 	options: {
-		preset: "visión general",
+		preset: "overview",
 	},
 };
 
@@ -83,8 +76,8 @@ export const world: Markdown = {
 	summary: "Puedes manejar y comprobar los controles generales y la configuración del juego,",
 	children: { overview: overview, general: general, statistics: statistics, config: config, debug: debug },
 	options: {
-		preset: "mundo",
-		label: "mundo",
+		preset: "world",
+		label: "world",
 	},
 };
 
@@ -93,34 +86,28 @@ export const world: Markdown = {
 export const correction: Markdown = {
 	title: "Correcciones de propiedades.",
 	summary: "Detalles de las correcciones de propiedades.",
-	points: ["Puede consultar las correcciones de propiedades concretas en esta Categoría.", "La corrección se debe al efecto del Artículo. Puede comprobar el Artículo."],
 	options: {
-		preset: "corrección",
+		preset: "correction",
 	},
 };
 
 export const properties: Markdown = {
 	title: "propiedades",
 	summary: "Lista de valores de corrección",
-	points: ["Lista de propiedades configuradas para cada Categoría.", "Las propiedades son elementos que afectan a la ejecución de las Acciones.", "La eficacia se corrige equipando el Artículo. (Algunos Artículos no necesitan Equipamiento)."],
 	options: {
-		preset: "propiedades",
+		preset: "properties",
 	},
 };
 
 export const property: Markdown = {
 	title: "propiedades",
 	summary: "Comprobación de los valores de corrección",
-	points: ["Las propiedades son elementos que afectan a la ejecución de las Acciones.", "La cifra final se calcula a partir del valor inicial asignado, teniendo en cuenta el nivel de Categoría, el nivel configurado para la Acción y la corrección para el Equipamiento."],
+	// properties / correction は label を持たない同ページ内の節なので、
+	// 一覧表・リンクは作らず children の見出しとして展開する（item・action と同じ形）
 	children: { properties: properties, correction: correction },
-	list: expandList("propiedad", [properties, correction]),
-	links: {
-		properties: "jugador/propiedades.",
-		correction: "jugador/corrección",
-	},
 	options: {
-		label: "propiedad",
-		preset: "propiedad",
+		label: "property",
+		preset: "property",
 	},
 };
 
@@ -129,29 +116,26 @@ export const property: Markdown = {
 export const trade: Markdown = {
 	title: "transacciones",
 	summary: "Compra o venta de Artículos en divisa.",
-	points: ["Algunos Artículos no se pueden comprar ni vender.", "Los Artículos bloqueados no se pueden comprar ni vender.", "Es posible que se haya establecido un límite máximo para comprar capacidad o plazas de reserva (cola); una vez alcanzado dicho límite, no se podrán comprar más cosas. (Los aumentos derivados de las recompensas no se tienen en cuenta a la hora de calcular este límite)."],
 	options: {
-		preset: "comercio",
+		preset: "trade",
 	},
 };
 
 export const items: Markdown = {
 	title: "Artículo",
 	summary: "Lista de Artículos de la Categoría.",
-	points: ["Mantén pulsado para cambiar entre los Artículos de Equipamiento.", "Posible Equipamiento de un solo Artículo de la lista. (si está configurado para ser Equipamiento como Categoría).", "Los Artículos que no cumplen las condiciones de publicación están bloqueados y no pueden verse en detalle."],
 	options: {
-		preset: "artículos",
+		preset: "items",
 	},
 };
 
 export const item: Markdown = {
 	title: "Artículo",
 	summary: "Detalles del Artículo.",
-	points: ["Artículos son elementos relacionados con la propiedad de objetos como Equipamiento, consumibles y objetos de valor.", "Posible Equipamiento de un solo Artículo de una Categoría. (Si está configurado para ser Equipamiento de Categoría)", "Los Artículos que no cumplen las condiciones de publicación están bloqueados y no pueden verse en detalle."],
 	children: { items: items, trade: trade },
 	options: {
-		preset: "artículo",
-		label: "artículo",
+		preset: "item",
+		label: "item",
 	},
 };
 
@@ -160,29 +144,26 @@ export const item: Markdown = {
 export const act: Markdown = {
 	title: "Actuar.",
 	summary: "Control de las Acciones",
-	points: ["Comenzar o detener la Acción.", "Puede especificar el número de ejecuciones. Introduzca 0 para ejecutar hasta que se agote el recurso."],
 	options: {
-		preset: "actuar",
+		preset: "act",
 	},
 };
 
 export const actions: Markdown = {
 	title: "ACCIÓN.",
 	summary: "Lista de Acciones de la Categoría",
-	points: ["Una pulsación larga activa la ejecución de la Acción.", "Posible sólo un Artículo de una Categoría.", "Algunas Categorías permiten que las Acciones de más de una Categoría progresen simultáneamente.", "Las Acciones que no cumplen las condiciones de liberación están bloqueadas y no pueden verse en detalle."],
 	options: {
-		preset: "acciones",
+		preset: "actions",
 	},
 };
 
 export const action: Markdown = {
 	title: "Acción.",
 	summary: "Elementos de acción como recoger, fabricar y luchar.",
-	points: ["Puedes ganar experiencia por cada acción, lo que aumenta tu nivel.", "Cada acción consume u obtiene un Artículo.", "Las Acciones que no cumplen las condiciones de liberación están bloqueadas y no pueden verse en detalle."],
 	children: { actions: actions, act: act },
 	options: {
-		preset: "acción",
-		label: "acción",
+		preset: "action",
+		label: "action",
 	},
 };
 
@@ -191,20 +172,18 @@ export const action: Markdown = {
 export const tasks: Markdown = {
 	title: "Tarea",
 	summary: "Lista de tareas de la categoría",
-	points: ["このカテゴリーに割り当てられたタスクの一覧です。", "タスクを選ぶと、達成条件と報酬を確認できます。", "報酬が未受け取りのタスクにはリボンが付きます。選んで獲得を押すと受け取れます。", "持てるアイテムの種類が上限に達している時は受け取れません。整理してから受け取り直します。", "カテゴリーにタスクが1つもない場合は表示されません。"],
 	options: {
-		preset: "tareas",
+		preset: "tasks",
 	},
 };
 
 export const category: Markdown = {
 	title: "Categoría.",
 	summary: "Una recopilación de varios elementos.",
-	points: ["Es un elemento que reúne Acciones y Artículos."],
 	children: { tasks: tasks },
 	options: {
-		label: "categoría",
-		preset: "categoría",
+		label: "category",
+		preset: "category",
 	},
 };
 
@@ -212,47 +191,42 @@ export const category: Markdown = {
 export const status: Markdown = {
 	title: "Estado.",
 	summary: "Lista de todas las propiedades",
-	points: ["Sólo se muestran los valores de corrección por Categoría por Artículo.", "Dependiendo de la Acción a realizar, existen otras correcciones."],
 	options: {
-		preset: "estado",
+		preset: "status",
 	},
 };
 
 export const inventory: Markdown = {
 	title: "inventario",
 	summary: "Lista de todos los Artículos",
-	points: ["Mantén pulsado para cambiar entre los Artículos de Equipamiento."],
 	options: {
-		preset: "inventario",
+		preset: "inventory",
 	},
 };
 
 export const activity: Markdown = {
 	title: "actividad",
 	summary: "Lista de todas las Acciones",
-	points: ["Una pulsación larga activa la ejecución de la Acción."],
 	options: {
-		preset: "actividad",
+		preset: "activity",
 	},
 };
 
 export const missions: Markdown = {
 	title: "Misión",
 	summary: "Lista de todas las tareas",
-	points: ["カテゴリーごとにまとめて表示されます。", "カテゴリーが設定されていないタスクは先頭にまとめて表示されます。", "達成済みのタスクにはチェックの印が付きます。", "報酬が未受け取りのタスクにはリボンが付きます。選んで獲得を押すと受け取れます。", "一度達成したタスクは、その後に条件を満たさなくなっても達成のまま残ります。"],
 	options: {
-		preset: "misiones",
+		preset: "missions",
 	},
 };
 
 export const character: Markdown = {
 	title: "personaje",
 	summary: "Identificación y funcionamiento de la situación del protagonista.",
-	points: ["Este contenido es idéntico al que se muestra al operar con la Categoría."],
 	children: { activity: activity, inventory: inventory, status: status, missions: missions },
 	options: {
-		label: "carácter",
-		preset: "carácter",
+		label: "character",
+		preset: "character",
 	},
 };
 
@@ -260,13 +234,13 @@ export const player: Markdown = {
 	title: "jugador",
 	summary: "El juego se explica para cada columna que aparece en Juega.",
 	points: ["Por defecto, la misma descripción aparece como pista en la parte inferior de cada columna.", "Pistas ocultables por configuración."],
-	list: expandList("jugador", [character, category, action, item, property, world, miscellaneous]),
+	list: expandList("jugador", [character, category, action, item, property, world, miscellaneous], "Descripción"),
 	// children: { character: character, category: category, action: action, item: item, property: property, world: world, miscellaneous: miscellaneous },
 	options: {
-		preset: "jugador",
-		label: "jugador",
+		preset: "player",
+		label: "player",
 		linkedList: true,
-		directory: "jugador",
+		directory: "player",
 	},
 };
 

@@ -17,4 +17,4 @@ ___
 ## act
 Controlling Action
 - Start or stop an Action.
-- You can specify the number of times to run the program. Enter 0 to run until the resource runs out.
+- You can specify the number of times to run it. Enter 0 to run until the resource runs out.

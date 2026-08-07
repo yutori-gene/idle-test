@@ -2,10 +2,10 @@
 # editor
 Explicações sobre como usar o editor e a estrutura dos mundos.
 
-|nome|説明|
+|nome|Descrição|
 |-|-|
-|[_mundo_](pt/editor/mundo)|Configuração geral do mundo do jogo e estrutura de dados|
-|[_básico_](pt/editor/básico)|Itens básicos de configuração para o mundo em geral.|
-|[_tipo_](pt/editor/tipo)|Classificação básica dos mundos|
-|[_componente_](pt/editor/componente)|Partes comuns|
-|[_Diversos_](pt/editor/Diversos)|Outras informações complementares explicadas.|
+|[_world_](pt/editor/world)|Configuração geral do mundo do jogo e estrutura de dados|
+|[_basic_](pt/editor/basic)|Itens básicos de configuração para o mundo em geral.|
+|[_type_](pt/editor/type)|Classificação básica dos mundos|
+|[_component_](pt/editor/component)|Partes comuns|
+|[_miscellaneous_](pt/editor/miscellaneous)|Outras informações complementares explicadas.|

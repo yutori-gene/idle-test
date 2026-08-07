@@ -30,19 +30,19 @@ ___
 
 ## Initial Display State
 Initial display state of the task icon (whether it is marked as completed depends on certain conditions; with this config, it will not be marked as completed)
-- The conditions for completing a task are defined in "Requirements"; this setting affects only the appearance of the list icon.
-- secreted: It will not appear in the task list at all until all requirements are met (achievement itself occurs based on conditions).
-- hidden・hinted: The icon is displayed with a diagonal line through it to indicate that it is not unlocked.
-- Released: The strikethrough disappears, and it is displayed as "Released."
-- Once a task has been completed, it will not disappear from the list. If it becomes uncompleted again, a diagonal line will appear on the icon to indicate this.
+- タスクの達成条件はrequirementsで決まり、この項目は一覧アイコンの見た目のみに影響します。
+- secreted: 全requirementsを満たすまでタスクの一覧に一切表示されません（達成自体は条件で起こります）。
+- hidden・hinted: アイコンに斜線が付き未解放として表示されます。
+- released: 斜線が消え解放済みとして表示されます。
+- 一度達成したタスクは一覧から消えず、その後に条件を満たさなくなっても達成のまま表示されます。
 ___
 
 ## terms
 Conditions for Completing a Task
-- These are the conditions for completing the task.
-- Once you meet this condition, you'll have completed the objective and will be able to receive your reward.
-- If you no longer meet the requirements before receiving your reward, your status will revert to "Not Achieved" and you will no longer be able to receive it. You can receive it again once you meet the requirements once more.
-- I won't complete tasks for which I haven't configured conditions.
+- タスクを達成させる条件です。
+- この条件を満たすと達成になり、報酬を受け取れるようになります。
+- 一度達成すると、その後に条件を満たさなくなっても達成のままで、報酬もいつでも受け取れます。
+- 条件を設定していないタスクは達成しません。
 ___
 
 ### Type
@@ -67,8 +67,8 @@ ___
 ### Consumption probability [0-1].
 Probability of Item being consumed (0-1, valid only if Type is Item)
 - The probability that an Item will be consumed when the condition is met and the Action is performed.
-- Always consumed at `1`, 50% chance of consumption at `0.5`, and no consumption at `0`.
-- The default value is `1` (always consumed).
+- `1` always consumes, `0.5` consumes with a 50% probability, and `0` does not consume.
+- The default value is `1` (always consumes).
 - Invalid if Type is other than Item.
 ___
 
@@ -80,10 +80,11 @@ ___
 
 ## reward
 Configuring Rewards for Completed Tasks
-- This is the reward you receive when you open a completed task and tap the "Claim" bar.
-- You can change the category level, the number of times an action is performed, and the number of Items you have.
-- You can also configure a negative quantity.
-- Tasks without a reward configured will not display a progress bar and will be marked as complete once they are finished.
+- 達成したタスクを開き、獲得のバーを押した時に受け取れる報酬です。
+- カテゴリーのレベル、アクションの実行回数、アイテムの所持数を変化させることができます。
+- 数量にマイナスを設定することもできます。
+- 報酬を設定していないタスクは獲得のバーが出ず、達成した時点で完了になります。
+- 持てるアイテムの種類が上限に達している時は受け取れません。整理してから受け取り直します。
 ___
 
 ### Type
@@ -110,8 +111,8 @@ ___
 ### Probability [-1 to 1]
 Probability of success in acquisition (negative values are evaluated only in the event of failure)
 - Configure the drop probability as a decimal value between -1 and 1. The absolute value is used to determine the probability.
-- When the value is positive, it is evaluated only when there is success with the action; a value of `1` guarantees a reward, while a value of `0.5` results in a 50% chance of receiving a reward.
-- When the value is negative, it is evaluated only in cases of action failure; a value of `-1` guarantees a drop, while a value of `-0.5` results in a 50% chance of a drop.
+- When the value is positive it is evaluated only when the action succeeds: `1` always grants it, and `0.5` grants it with a 50% probability.
+- When the value is negative it is evaluated only when the action fails: `-1` always grants it, and `-0.5` grants it with a 50% probability.
 - If the value is `0`, it is not obtained in either a success or a failure scenario.
 - The default value is `1` (always obtained upon success).
 ___

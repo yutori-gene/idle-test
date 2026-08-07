@@ -1,1069 +1,1121 @@
 {
-  "category": {},
-  "action": {},
-  "item": {},
-  "group": {},
-  "event": {},
-  "preset": {
-    "locked": {
-      "name": "Terkunci",
-      "explanation": "Fitur ini akan tersedia setelah persyaratannya terpenuhi."
-    },
-    "max": {
-      "name": "maks",
-      "explanation": ""
-    },
-    "min": {
-      "name": "Min",
-      "explanation": ""
-    },
-    "maximum": {
-      "name": "Maksimum",
-      "explanation": "Anda tidak boleh memiliki atau menggunakan lebih dari jumlah ini."
-    },
-    "minimum": {
-      "name": "Minimum",
-      "explanation": ""
-    },
-    "count": {
-      "name": "Hitung",
-      "explanation": ""
-    },
-    "purchased-count": {
-      "name": "Jumlah Hitung",
-      "explanation": ""
-    },
-    "purchase-limit": {
-      "name": "Batas Pembelian",
-      "explanation": "Jumlah waktu maksimum yang dapat Anda gunakan untuk melakukan pembelian."
-    },
-    "purchasable-count": {
-      "name": "Tersedia untuk dibeli",
-      "explanation": "Sisa waktu yang masih bisa Anda gunakan untuk melakukan pembelian."
-    },
-    "total": {
-      "name": "Total",
-      "explanation": ""
-    },
-    "percentage": {
-      "name": "Persentase",
-      "explanation": ""
-    },
-    "player": {
-      "name": "Pemain",
-      "explanation": ""
-    },
-    "target": {
-      "name": "Target",
-      "explanation": ""
-    },
-    "requirement": {
-      "name": "Persyaratan",
-      "explanation": ""
-    },
-    "requirements": {
-      "name": "Persyaratan",
-      "explanation": ""
-    },
-    "acquisition": {
-      "name": "Akuisisi",
-      "explanation": ""
-    },
-    "acquisitions": {
-      "name": "Akuisisi",
-      "explanation": ""
-    },
-    "results": {
-      "name": "Hasil",
-      "explanation": ""
-    },
-    "yes": {
-      "name": "Ya",
-      "explanation": ""
-    },
-    "no": {
-      "name": "Tidak",
-      "explanation": ""
-    },
-    "on": {
-      "name": "Pada",
-      "explanation": ""
-    },
-    "off": {
-      "name": "Mati",
-      "explanation": ""
-    },
-    "seconds": {
-      "name": "Detik",
-      "explanation": ""
-    },
-    "minutes": {
-      "name": "Notulen",
-      "explanation": ""
-    },
-    "hours": {
-      "name": "Jam Operasional",
-      "explanation": ""
-    },
-    "days": {
-      "name": "Hari",
-      "explanation": ""
-    },
-    "years": {
-      "name": "Tahun",
-      "explanation": ""
-    },
-    "centuries": {
-      "name": "Abad-abad",
-      "explanation": ""
-    },
-    "endless": {
-      "name": "∞",
-      "explanation": ""
-    },
-    "success": {
-      "name": "Sukses",
-      "explanation": ""
-    },
-    "failure": {
-      "name": "Gagal",
-      "explanation": "gagal"
-    },
-    "up": {
-      "name": "atas",
-      "explanation": ""
-    },
-    "down": {
-      "name": "Bawah",
-      "explanation": ""
-    },
-    "question": {
-      "name": "Pertanyaan",
-      "explanation": ""
-    },
-    "navigation": {
-      "name": "Navigasi",
-      "explanation": "Anda juga bisa berpindah antar kolom dengan menggeser jari. Tombol di bagian atas ditampilkan di pojok kiri bawah layar."
-    },
-    "navigation-back": {
-      "name": "Kembali",
-      "explanation": ""
-    },
-    "navigation-top": {
-      "name": "Atas",
-      "explanation": ""
-    },
-    "navigation-forward": {
-      "name": "Maju",
-      "explanation": ""
-    },
-    "navigation-column": {
-      "name": "Kolom",
-      "explanation": "Posisi kolom ini dan jumlah total kolom, termasuk yang berada di luar layar."
-    },
-    "checked": {
-      "name": "Telah diperiksa",
-      "explanation": ""
-    },
-    "chevron-down": {
-      "name": "Penurunan Chevron Bawah",
-      "explanation": ""
-    },
-    "chevron-right": {
-      "name": "Chevron Kanan",
-      "explanation": ""
-    },
-    "selected": {
-      "name": "Terpilih",
-      "explanation": ""
-    },
-    "character": {
-      "name": "Karakter",
-      "explanation": ""
-    },
-    "activity": {
-      "name": "Aktivitas",
-      "explanation": ""
-    },
-    "inventory": {
-      "name": "Inventaris",
-      "explanation": ""
-    },
-    "status": {
-      "name": "Status",
-      "explanation": ""
-    },
-    "world": {
-      "name": "Dunia",
-      "explanation": ""
-    },
-    "overview": {
-      "name": "Ringkasan",
-      "explanation": ""
-    },
-    "version": {
-      "name": "Versi",
-      "explanation": ""
-    },
-    "license": {
-      "name": "Lisensi",
-      "explanation": ""
-    },
-    "updated": {
-      "name": "Diperbarui",
-      "explanation": ""
-    },
-    "author": {
-      "name": "Penulis",
-      "explanation": ""
-    },
-    "homepage": {
-      "name": "Beranda",
-      "explanation": ""
-    },
-    "estimated-playing-time": {
-      "name": "Perkiraan Durasi Pemutaran",
-      "explanation": "Perkiraan waktu yang dibutuhkan untuk menyelesaikan dunia ini menurut penulis"
-    },
-    "console": {
-      "name": "Konsol",
-      "explanation": "Game ini berjalan di sistem konsol Idle RPG. Sistem ini gratis dan terbuka untuk umum, sehingga siapa pun dapat membuat game."
-    },
-    "general": {
-      "name": "Umum",
-      "explanation": ""
-    },
-    "default-language": {
-      "name": "Bahasa Default",
-      "explanation": ""
-    },
-    "language-change-enable-general": {
-      "name": "Perubahan Bahasa Aktifkan Umum",
-      "explanation": "Anda dapat mengubah bahasa tampilan ke bahasa lain di menu pengaturan."
-    },
-    "max-category-level": {
-      "name": "Level Kategori Maksimum",
-      "explanation": "Level tertinggi yang dapat dicapai dalam setiap kategori."
-    },
-    "level-common-ratio": {
-      "name": "Level Rasio Tingkat Umum",
-      "explanation": "Berapa banyak poin pengalaman yang dibutuhkan untuk naik ke level berikutnya setiap kali kamu naik level?"
-    },
-    "statistics": {
-      "name": "Statistik",
-      "explanation": ""
-    },
-    "coin": {
-      "name": "Koin",
-      "explanation": ""
-    },
-    "amount-earned": {
-      "name": "Jumlah yang Diperoleh",
-      "explanation": "Jumlah total koin yang telah Anda peroleh sejauh ini."
-    },
-    "time": {
-      "name": "Waktu",
-      "explanation": ""
-    },
-    "playing-time": {
-      "name": "Waktu Tayang",
-      "explanation": "Lamanya waktu yang telah berlalu sejak Anda mulai memainkan game ini, termasuk saat Anda tidak terhubung ke internet."
-    },
-    "item": {
-      "name": "Item",
-      "explanation": ""
-    },
-    "count-now": {
-      "name": "Hitung Sekarang",
-      "explanation": "Jumlah total item yang saat ini Anda miliki."
-    },
-    "count-gained": {
-      "name": "Hitung Jumlah",
-      "explanation": "Jumlah total item yang telah diperoleh hingga saat ini."
-    },
-    "total-level": {
-      "name": "Total Level",
-      "explanation": "Jumlah level saat ini di semua kategori."
-    },
-    "count-actioned": {
-      "name": "Tindakan Telah Dilakukan",
-      "explanation": "Jumlah total aksi yang telah dilakukan hingga saat ini."
-    },
-    "win": {
-      "name": "Menang",
-      "explanation": ""
-    },
-    "debug": {
-      "name": "debug",
-      "explanation": ""
-    },
-    "acceleration": {
-      "name": "Percepatan",
-      "explanation": "Mempercepat waktu dalam permainan. Harap diperhatikan bahwa jika Anda meningkatkan kecepatan terlalu tinggi saat waktu eksekusi aksi lambat, prosesnya tidak akan mampu mengikutinya dan aplikasi akan macet atau crash."
-    },
-    "multiplier": {
-      "name": "Pengganda",
-      "explanation": ""
-    },
-    "accelerate": {
-      "name": "Mempercepat",
-      "explanation": ""
-    },
-    "adjustment": {
-      "name": "Sesuaikan",
-      "explanation": "Meningkatkan atau mengurangi jumlah item yang dimiliki atau level kategori."
-    },
-    "adjustment-type": {
-      "name": "Jenis",
-      "explanation": ""
-    },
-    "adjustment-category": {
-      "name": "Kategori",
-      "explanation": "Sesuaikan tingkat kategori tersebut. Misalnya, jika Anda mengaturnya menjadi +5, maka akan ditambahkan 5 level."
-    },
-    "adjustment-action": {
-      "name": "Aksi",
-      "explanation": "Hal ini akan menambah atau mengurangi jumlah kali tindakan tersebut telah dilakukan. Namun, hal ini tidak akan mencerminkan hadiah apa pun yang diperoleh setelah tindakan tersebut selesai."
-    },
-    "adjustment-item": {
-      "name": "Item",
-      "explanation": "Menambah atau mengurangi jumlah item yang Anda miliki."
-    },
-    "adjustment-id": {
-      "name": "ID",
-      "explanation": "Tentukan ID tipe target. Jika dibiarkan kosong, penambahan dan pengurangan akan disesuaikan untuk semua ID."
-    },
-    "adjustment-sign": {
-      "name": "Tanda",
-      "explanation": ""
-    },
-    "adjustment-plus": {
-      "name": "Plus",
-      "explanation": "Menambahkan nilai numerik yang ditentukan."
-    },
-    "adjustment-minus": {
-      "name": "Minus",
-      "explanation": "Mengurangi angka yang ditentukan."
-    },
-    "adjustment-count": {
-      "name": "Hitung",
-      "explanation": "Angka yang akan ditambahkan atau dikurangkan. Tentukan apakah akan ditambahkan atau dikurangkan dengan menggunakan simbol."
-    },
-    "adjustment-adjust": {
-      "name": "Sesuaikan",
-      "explanation": "Sesuaikan sesuai dengan ketentuan yang telah ditetapkan."
-    },
-    "pwa": {
-      "name": "Pasang PWA",
-      "explanation": "Pasang Aplikasi Web Progresif (PWA)."
-    },
-    "go-top": {
-      "name": "Go Atas",
-      "explanation": ""
-    },
-    "iconify": {
-      "name": "Ubah Menjadi Ikon",
-      "explanation": "Game ini menggunakan kumpulan ikon yang disediakan oleh iconify. Saya ingin mengucapkan terima kasih kepada semua pihak yang terlibat dalam pembuatannya."
-    },
-    "category": {
-      "name": "Kategori",
-      "explanation": ""
-    },
-    "categories": {
-      "name": "Kategori",
-      "explanation": ""
-    },
-    "level": {
-      "name": "Level",
-      "explanation": ""
-    },
-    "situation": {
-      "name": "Situasi",
-      "explanation": ""
-    },
-    "element": {
-      "name": "Elemen",
-      "explanation": ""
-    },
-    "standalone": {
-      "name": "Mandiri",
-      "explanation": "Proses ini berjalan secara mandiri, terlepas dari perkembangan aksi di kategori lain."
-    },
-    "action": {
-      "name": "Aksi",
-      "explanation": ""
-    },
-    "actions": {
-      "name": "Aksi",
-      "explanation": ""
-    },
-    "attribute": {
-      "name": "Atribut",
-      "explanation": "Atribut-atribut khusus dari aksi ini. Properti kategori diterapkan pada atribut-atribut aksi ini. Poin pengalaman juga diberikan kepada atribut ini."
-    },
-    "progress": {
-      "name": "Kemajuan",
-      "explanation": ""
-    },
-    "progressing": {
-      "name": "Sedang berlangsung",
-      "explanation": ""
-    },
-    "progressing-action": {
-      "name": "Sedang berlangsung",
-      "explanation": ""
-    },
-    "possible-action": {
-      "name": "Mungkin",
-      "explanation": ""
-    },
-    "impossible-action": {
-      "name": "Tidak mungkin",
-      "explanation": ""
-    },
-    "idle": {
-      "name": "Menganggur",
-      "explanation": ""
-    },
-    "progress-type": {
-      "name": "Jenis Kemajuan",
-      "explanation": ""
-    },
-    "persistent": {
-      "name": "Gigih",
-      "explanation": "Kamu melakukan serangkaian tindakan, dan setiap kali suatu tindakan selesai, kamu akan mendapatkan hadiah."
-    },
-    "single": {
-      "name": "Tunggal",
-      "explanation": "Kamu hanya bisa melakukan suatu tindakan sekali saja, dan kemajuanmu akan tersimpan meskipun kamu menghentikannya di tengah jalan."
-    },
-    "snap": {
-      "name": "Cepat",
-      "explanation": "Aksi tersebut berakhir seketika."
-    },
-    "stamina": {
-      "name": "Stamina",
-      "explanation": "Setiap aksi akan mengurangi stamina pemain dan target. Jika stamina target habis, kamu menang, dan jika stamina pemain habis, permainan berakhir. Saat permainan berakhir, kamu tidak akan kehilangan apa pun, tetapi semua kemajuan aksi akan terhenti."
-    },
-    "enable-count": {
-      "name": "Aktifkan Hitung",
-      "explanation": ""
-    },
-    "estimated-time": {
-      "name": "Perkiraan Waktu",
-      "explanation": ""
-    },
-    "completed-count": {
-      "name": "Jumlah yang Telah Selesai",
-      "explanation": ""
-    },
-    "current-count": {
-      "name": "Hitung Jumlah Saat Ini",
-      "explanation": ""
-    },
-    "elapsed-time": {
-      "name": "Waktu yang Telah Berlalu",
-      "explanation": ""
-    },
-    "rest-time": {
-      "name": "Waktu Istirahat",
-      "explanation": ""
-    },
-    "each-time": {
-      "name": "Setiap Saat",
-      "explanation": ""
-    },
-    "next-time": {
-      "name": "Nanti Saja",
-      "explanation": ""
-    },
-    "rest-count": {
-      "name": "Jumlah Waktu Istirahat",
-      "explanation": ""
-    },
-    "act": {
-      "name": "Undang-Undang",
-      "explanation": ""
-    },
-    "start": {
-      "name": "Mulai",
-      "explanation": ""
-    },
-    "end": {
-      "name": "Akhir",
-      "explanation": ""
-    },
-    "stop": {
-      "name": "Berhenti",
-      "explanation": ""
-    },
-    "reserve": {
-      "name": "Cadangan",
-      "explanation": "Tambahkan tindakan ini ke antrian reservasi agar dijalankan secara berurutan."
-    },
-    "reorder": {
-      "name": "Pesan Ulang",
-      "explanation": "Pindahkan tindakan yang telah disimpan ini ke posisi yang dipilih dalam antrian."
-    },
-    "position": {
-      "name": "Posisi Antrian",
-      "explanation": "Pilih urutan dalam antrian pemesanan."
-    },
-    "items": {
-      "name": "Item",
-      "explanation": ""
-    },
-    "equipping": {
-      "name": "Melengkapi",
-      "explanation": ""
-    },
-    "unequipping": {
-      "name": "Melepas perlengkapan",
-      "explanation": ""
-    },
-    "equip": {
-      "name": "Lengkapi perlengkapan",
-      "explanation": ""
-    },
-    "equipment": {
-      "name": "Peralatan",
-      "explanation": ""
-    },
-    "unequip": {
-      "name": "Melepas perlengkapan",
-      "explanation": ""
-    },
-    "nothing": {
-      "name": "Tidak ada apa-apa",
-      "explanation": ""
-    },
-    "own": {
-      "name": "Milik sendiri",
-      "explanation": "Apakah Anda sendiri memiliki item ini?"
-    },
-    "own-count": {
-      "name": "Jumlah Sendiri",
-      "explanation": "Apakah Anda sendiri memiliki item ini?"
-    },
-    "recovery": {
-      "name": "Pemulihan",
-      "explanation": "Kamu hanya boleh memiliki satu saja."
-    },
-    "unique": {
-      "name": "Unik",
-      "explanation": "Kamu hanya boleh memiliki satu saja."
-    },
-    "equipment-type": {
-      "name": "Peralatan",
-      "explanation": "Jenis peralatan dari item tersebut."
-    },
-    "necessary-item": {
-      "name": "Diperlukan",
-      "explanation": "Mengisi item tersebut akan menimbulkan efek."
-    },
-    "unnecessary-item": {
-      "name": "Tidak perlu",
-      "explanation": "Kamu tidak bisa melengkapi item tersebut, tetapi hanya dengan memilikinya saja sudah akan memberikan efek. Efek tersebut akan dikalikan dengan jumlah item yang kamu miliki."
-    },
-    "impossible-item": {
-      "name": "Tidak mungkin",
-      "explanation": "Item ini tidak dapat dilengkapi."
-    },
-    "consumable-item": {
-      "name": "Konsumsi",
-      "explanation": "Jika dilengkapi, item ini memberikan efek, tetapi efeknya akan habis setiap kali kamu melakukan suatu tindakan."
-    },
-    "buy": {
-      "name": "Beli",
-      "explanation": "Nilai item tersebut pada saat dibeli."
-    },
-    "buying-value": {
-      "name": "Nilai Pembelian",
-      "explanation": "Nilai item tersebut pada saat dibeli."
-    },
-    "sell": {
-      "name": "Jual",
-      "explanation": "Nilai item tersebut saat dijual."
-    },
-    "selling": {
-      "name": "Jual",
-      "explanation": ""
-    },
-    "kind": {
-      "name": "Jenis",
-      "explanation": ""
-    },
-    "selling-value": {
-      "name": "Nilai Penjualan",
-      "explanation": "Nilai item tersebut saat dijual."
-    },
-    "trade": {
-      "name": "Berdagang",
-      "explanation": ""
-    },
-    "trade-failed": {
-      "name": "Kegagalan dalam Berdagang",
-      "explanation": "Usaha dagangnya gagal."
-    },
-    "capacity-full": {
-      "name": "Kapasitas Penuh",
-      "explanation": "Kapasitas persediaan sudah penuh."
-    },
-    "queue-full": {
-      "name": "Antrean Penuh",
-      "explanation": "Antrian pemesanan sudah penuh."
-    },
-    "already-queued": {
-      "name": "Sudah Masuk Antrian",
-      "explanation": "Aksi ini sedang berlangsung atau telah dipesan."
-    },
-    "purchase-limit-reached": {
-      "name": "Batas Pembelian Telah Tercapai",
-      "explanation": "Batas pembelian telah tercapai."
-    },
-    "completed-maximum": {
-      "name": "Jumlah Maksimum yang Telah Selesai",
-      "explanation": "Anda telah mencapai batas maksimum jumlah penyelesaian."
-    },
-    "relationship": {
-      "name": "Hubungan",
-      "explanation": ""
-    },
-    "relationships": {
-      "name": "Hubungan",
-      "explanation": ""
-    },
-    "requirement-equipment": {
-      "name": "Persyaratan Peralatan",
-      "explanation": "Item ini harus dilengkapi."
-    },
-    "property": {
-      "name": "Properti",
-      "explanation": ""
-    },
-    "properties": {
-      "name": "Properti",
-      "explanation": ""
-    },
-    "attack": {
-      "name": "Serangan",
-      "explanation": "Kerusakan pada target."
-    },
-    "defence": {
-      "name": "Pertahanan",
-      "explanation": "Kerusakan akibat serangan yang ditargetkan."
-    },
-    "accuracy": {
-      "name": "Akurasi",
-      "explanation": "Kemungkinan monster tersebut mengalami kerusakan."
-    },
-    "evasion": {
-      "name": "Penghindaran",
-      "explanation": "Kemungkinan terkena serangan dari monster."
-    },
-    "restore": {
-      "name": "Pulihkan",
-      "explanation": "Mempengaruhi jumlah pemulihan selama pertempuran."
-    },
-    "speed": {
-      "name": "Kecepatan",
-      "explanation": "Mempengaruhi kecepatan tindakan tersebut."
-    },
-    "chance": {
-      "name": "Kesempatan",
-      "explanation": "Aksi tersebut mungkin saja berhasil, tetapi jika gagal, Anda tidak akan mendapatkan hadiah maupun poin pengalaman apa pun."
-    },
-    "experience": {
-      "name": "Pengalaman",
-      "explanation": "Berpengaruh terhadap poin pengalaman yang diperoleh dari aksi tersebut."
-    },
-    "correction": {
-      "name": "Koreksi",
-      "explanation": "Koreksi akibat pengaruh peralatan dan item."
-    },
-    "value": {
-      "name": "Nilai",
-      "explanation": ""
-    },
-    "resources": {
-      "name": "Sumber Daya",
-      "explanation": ""
-    },
-    "base-value": {
-      "name": "Nilai Dasar",
-      "explanation": "Nilai unik untuk permainan atau aksi ini."
-    },
-    "level-gap": {
-      "name": "Selisih Level",
-      "explanation": "Untuk perhitungan numerik, lihat bagian “Level”."
-    },
-    "reflected-value": {
-      "name": "Nilai yang Tercermin",
-      "explanation": "Nilai akhir yang dihitung berdasarkan \"Nilai Dasar\" dan \"Selisih Level\"."
-    },
-    "level-gap-property": {
-      "name": "Properti Selisih Level",
-      "explanation": "Nilai “Level Gap” merupakan jumlah dari setiap nilai dalam blok ini."
-    },
-    "level-gap-category": {
-      "name": "Kategori Selisih Level",
-      "explanation": "Level kategori pemain dikurangi dengan level aksi ini. Dalam hal \"pengalaman\", situasinya justru sebaliknya."
-    },
-    "level-gap-action": {
-      "name": "Upaya untuk Mengatasi Kesenjangan Level",
-      "explanation": "Apabila jenis kemajuan yang dimaksud adalah stamina, inilah nilai unik yang ditetapkan oleh aksi ini."
-    },
-    "level-gap-item": {
-      "name": "Selisih Level Item",
-      "explanation": "Ini adalah nilai koreksi dari item yang telah dilengkapi, atau dari item yang tetap memberikan efek meskipun tidak dilengkapi."
-    },
-    "no-status": {
-      "name": "Tidak Ada status",
-      "explanation": "Tidak ada kategori status yang tersedia."
-    },
-    "targeting-all-categories": {
-      "name": "Menargetkan Semua Kategori",
-      "explanation": "Koreksi properti ini berlaku untuk semua kategori."
-    },
-    "hint-language-0": {
-      "name": "Panduan Bahasa 0",
-      "explanation": "Mengubah bahasa yang ditampilkan dalam permainan."
-    },
-    "hint-language-1": {
-      "name": "Panduan Bahasa 1",
-      "explanation": "Hal ini hanya berlaku jika pembuatnya telah menyediakan terjemahannya."
-    },
-    "hint-event-0": {
-      "name": "Panduan Acara 0",
-      "explanation": "Dipicu ketika syarat-syaratnya terpenuhi."
-    },
-    "hint-event-1": {
-      "name": "Panduan Acara 1",
-      "explanation": "Pesan akan ditampilkan saat fitur diaktifkan, item ditambahkan atau dikurangi, dan sebagainya."
-    },
-    "hint-debug-0": {
-      "name": "Petunjuk Debug 0",
-      "explanation": "Hal ini hanya ditampilkan selama proses debugging."
-    },
-    "hint-debug-1": {
-      "name": "Petunjuk Debug 1",
-      "explanation": "Hal tersebut tidak akan ditampilkan saat game tersebut diterbitkan dan didistribusikan."
-    },
-    "hint-config-0": {
-      "name": "Petunjuk Konfigurasi 0",
-      "explanation": "Konfigurasikan pengaturan yang berkaitan dengan tampilan dan pemrosesan game."
-    },
-    "hint-config-1": {
-      "name": "Petunjuk Konfigurasi 1",
-      "explanation": "Data permainan dapat dimasukkan, dihapus, dan diatur ulang."
-    },
-    "hint-statistics-0": {
-      "name": "Petunjuk Statistik 0",
-      "explanation": "Kamu bisa melihat perkembangan permainan sejauh ini."
-    },
-    "hint-general-0": {
-      "name": "Petunjuk Umum 0",
-      "explanation": "Kamu bisa melihat level kesulitan dan pengaturan unik dari dunia ini."
-    },
-    "hint-overview-0": {
-      "name": "Ringkasan Panduan 0",
-      "explanation": "Kamu bisa mengetahui lebih lanjut tentang dunia (pandangan dunia, latar) dalam game ini."
-    },
-    "hint-overview-1": {
-      "name": "Ringkasan Petunjuk 1",
-      "explanation": "Anda juga bisa memeriksa konsol (sistem) yang menjalankan game ini."
-    },
-    "hint-correction-0": {
-      "name": "Koreksi Petunjuk 0",
-      "explanation": "Anda dapat melihat koreksi untuk properti tertentu dalam kategori ini."
-    },
-    "hint-correction-1": {
-      "name": "Koreksi Petunjuk 1",
-      "explanation": "Koreksi tersebut disebabkan oleh pengaruh item tersebut. Anda dapat memeriksa item tersebut."
-    },
-    "hint-properties-0": {
-      "name": "Petunjuk Properti 0",
-      "explanation": "Berikut ini adalah daftar properti yang ditetapkan untuk setiap kategori."
-    },
-    "hint-properties-1": {
-      "name": "Petunjuk Properti 1",
-      "explanation": "Properti adalah elemen yang memengaruhi pelaksanaan suatu tindakan."
-    },
-    "hint-properties-2": {
-      "name": "Petunjuk Properti 2",
-      "explanation": "Efek tersebut diimbangi dengan melengkapi item tersebut. (Beberapa item tidak perlu dilengkapi.)"
-    },
-    "hint-property-0": {
-      "name": "Petunjuk Properti 0",
-      "explanation": "Properti adalah elemen yang memengaruhi pelaksanaan suatu tindakan."
-    },
-    "hint-property-1": {
-      "name": "Petunjuk Properti 1",
-      "explanation": "Nilai akhir dihitung berdasarkan nilai awal yang ditetapkan, dengan mempertimbangkan tingkat kategori, level yang ditetapkan untuk tindakan tersebut, serta penyesuaian untuk item yang telah diselesaikan."
-    },
-    "hint-trade-0": {
-      "name": "Panduan Berdagang 0",
-      "explanation": "Beberapa item tidak dapat dibeli atau dijual."
-    },
-    "hint-trade-1": {
-      "name": "Panduan Berdagang 1",
-      "explanation": "Item yang terkunci tidak dapat dibeli atau dijual."
-    },
-    "hint-items-0": {
-      "name": "Petunjuk Item 0",
-      "explanation": "Tekan dan tahan untuk mengganti peralatan pada item tersebut."
-    },
-    "hint-items-1": {
-      "name": "Petunjuk Item 1",
-      "explanation": "Hanya satu item dalam daftar yang dapat dikenakan. (Jika item tersebut ditetapkan sebagai item yang dapat dikenakan dalam kategori tertentu)"
-    },
-    "hint-items-2": {
-      "name": "Petunjuk Item 2",
-      "explanation": "Item yang tidak memenuhi syarat pelepasan akan dikunci dan detailnya tidak dapat dilihat."
-    },
-    "hint-item-0": {
-      "name": "Petunjuk Item 0",
-      "explanation": "Item adalah unsur yang berkaitan dengan kepemilikan benda-benda seperti peralatan, barang konsumsi, dan barang berharga."
-    },
-    "hint-item-1": {
-      "name": "Petunjuk Item 1",
-      "explanation": "Hanya satu item dari suatu kategori yang dapat dikenakan. (Jika kategori tersebut diatur sedemikian rupa sehingga item-item di dalamnya dapat dikenakan)"
-    },
-    "hint-item-2": {
-      "name": "Petunjuk Item 2",
-      "explanation": "Item yang tidak memenuhi syarat pelepasan akan dikunci dan detailnya tidak dapat dilihat."
-    },
-    "hint-act-0": {
-      "name": "Panduan Bab 0",
-      "explanation": "Memulai atau menghentikan suatu tindakan."
-    },
-    "hint-act-1": {
-      "name": "Panduan Bab 1",
-      "explanation": "Jumlah eksekusi dapat ditentukan."
-    },
-    "hint-queue-0": {
-      "name": "Petunjuk Antrian 0",
-      "explanation": "Menekan dan menahan sebuah bilah akan menghapusnya dari antrian."
-    },
-    "hint-actions-0": {
-      "name": "Panduan Tindakan 0",
-      "explanation": "Menekan dan menahan tombol tersebut akan mengaktifkan atau menonaktifkan pelaksanaan tindakan tersebut."
-    },
-    "hint-actions-1": {
-      "name": "Petunjuk Tindakan 1",
-      "explanation": "Hanya satu item dalam suatu kategori yang dapat dijalankan."
-    },
-    "hint-actions-2": {
-      "name": "Panduan Tindakan 2",
-      "explanation": "Beberapa kategori memungkinkan tindakan di lebih dari satu kategori berlangsung secara bersamaan."
-    },
-    "hint-actions-3": {
-      "name": "Panduan Tindakan 3",
-      "explanation": "Aksi yang tidak memenuhi syarat pelepasan akan terkunci dan tidak dapat dilihat secara rinci."
-    },
-    "hint-action-0": {
-      "name": "Panduan Tindakan 0",
-      "explanation": "Setiap aksi dapat memberikan pengalaman dan meningkatkan level pengalaman."
-    },
-    "hint-action-1": {
-      "name": "Petunjuk Tindakan 1",
-      "explanation": "Setiap aksi menghabiskan atau memperoleh suatu item."
-    },
-    "hint-action-2": {
-      "name": "Panduan Tindakan 2",
-      "explanation": "Aksi yang tidak memenuhi syarat pelepasan akan terkunci dan tidak dapat dilihat secara rinci."
-    },
-    "hint-category-0": {
-      "name": "Kategori Petunjuk 0",
-      "explanation": "Ini adalah elemen yang menghubungkan aksi dan item."
-    },
-    "hint-status-0": {
-      "name": "Status Petunjuk 0",
-      "explanation": "Hanya nilai koreksi kategori per item yang ditampilkan."
-    },
-    "hint-status-1": {
-      "name": "Status Petunjuk 1",
-      "explanation": "Masih ada beberapa penyesuaian lain yang bergantung pada tindakan yang akan diambil."
-    },
-    "hint-inventory-0": {
-      "name": "Panduan Inventaris 0",
-      "explanation": "Tekan dan tahan untuk mengganti peralatan pada item tersebut."
-    },
-    "hint-activity-0": {
-      "name": "Petunjuk Aktivitas 0",
-      "explanation": "Menekan dan menahan tombol tersebut akan mengaktifkan atau menonaktifkan pelaksanaan tindakan tersebut."
-    },
-    "hint-character-0": {
-      "name": "Panduan Karakter 0",
-      "explanation": "Konten ini persis sama dengan yang ditampilkan saat membuka suatu kategori."
-    },
-    "hint-player-0": {
-      "name": "Petunjuk Pemain 0",
-      "explanation": "Secara default, deskripsi yang sama ditampilkan sebagai Petunjuk di bagian bawah setiap kolom."
-    },
-    "hint-player-1": {
-      "name": "Petunjuk Pemain 1",
-      "explanation": "Petunjuk dapat disembunyikan dengan mengatur"
-    },
-    "event": {
-      "name": "Acara",
-      "explanation": ""
-    },
-    "timing": {
-      "name": "Waktu",
-      "explanation": ""
-    },
-    "matched": {
-      "name": "Cocok",
-      "explanation": "Syarat-syaratnya telah dipenuhi."
-    },
-    "comebacked": {
-      "name": "kembali",
-      "explanation": "Selamat datang kembali! Perkembangan selama Anda tidak ada:"
-    },
-    "gameovered": {
-      "name": "permainan berakhir",
-      "explanation": "Permainan telah berakhir. Kemajuanmu telah direset."
-    },
-    "completed": {
-      "name": "Selesai",
-      "explanation": "Selamat! Anda telah menyelesaikan semua kategori."
-    },
-    "welcomed": {
-      "name": "Disambut dengan hangat",
-      "explanation": "Selamat datang di dunia ini!"
-    },
-    "obtained": {
-      "name": "Diperoleh",
-      "explanation": "Hasil yang Anda peroleh:"
-    },
-    "achieved": {
-      "name": "Telah tercapai",
-      "explanation": ""
-    },
-    "task": {
-      "name": "Tugas",
-      "explanation": ""
-    },
-    "tasks": {
-      "name": "Tugas",
-      "explanation": ""
-    },
-    "missions": {
-      "name": "Misi",
-      "explanation": ""
-    },
-    "language-en": {
-      "name": "Inggris",
-      "explanation": ""
-    },
-    "language-zh": {
-      "name": "Bahasa Mandarin (Sederhana)",
-      "explanation": ""
-    },
-    "language-es": {
-      "name": "Spanyol",
-      "explanation": ""
-    },
-    "language-pt": {
-      "name": "Portugis",
-      "explanation": ""
-    },
-    "language-fr": {
-      "name": "Prancis",
-      "explanation": ""
-    },
-    "language-ru": {
-      "name": "Rusia",
-      "explanation": ""
-    },
-    "language-de": {
-      "name": "Jerman",
-      "explanation": ""
-    },
-    "language-ja": {
-      "name": "Jepang",
-      "explanation": ""
-    },
-    "language-id": {
-      "name": "Bahasa Indonesia",
-      "explanation": ""
-    },
-    "language-ko": {
-      "name": "Korea",
-      "explanation": ""
-    },
-    "language-mistaked": {
-      "name": "Kesalahan Bahasa",
-      "explanation": ""
-    },
-    "config": {
-      "name": "Konfigurasi",
-      "explanation": ""
-    },
-    "language": {
-      "name": "Bahasa",
-      "explanation": ""
-    },
-    "selected-language": {
-      "name": "Bahasa yang Dipilih",
-      "explanation": ""
-    },
-    "language-change-enable": {
-      "name": "Aktifkan Perubahan Bahasa",
-      "explanation": "Anda dapat mengubah bahasa yang ditampilkan."
-    },
-    "language-change-unenable": {
-      "name": "Perubahan Bahasa Dinonaktifkan",
-      "explanation": "Tidak ada bahasa lain yang tersedia untuk ditampilkan."
-    },
-    "category-shortcut": {
-      "name": "Pintasan Kategori",
-      "explanation": "Saat Anda membuka suatu kategori, daftar tindakan atau item juga akan ditampilkan."
-    },
-    "showing-hint": {
-      "name": "Petunjuk",
-      "explanation": "Menampilkan petunjuk pengoperasian."
-    },
-    "showing-navigation": {
-      "name": "Navigasi",
-      "explanation": "Menampilkan tombol untuk berpindah antar kolom. Anda juga dapat menggeser jari untuk berpindah antar kolom tanpa menampilkan tombol-tombol tersebut."
-    },
-    "performing-highly": {
-      "name": "Berprestasi Tinggi",
-      "explanation": "Meningkatkan frekuensi pembaruan. Jika beban kerja cukup berat, kami menyarankan untuk menonaktifkannya. Hal ini tidak memengaruhi waktu eksekusi setiap tindakan."
-    },
-    "export-game": {
-      "name": "Ekspor Game",
-      "explanation": "Data permainan telah diekspor."
-    },
-    "import-game": {
-      "name": "Impor Game",
-      "explanation": "Data permainan telah diimpor."
-    },
-    "import-mistake": {
-      "name": "Kesalahan Impor",
-      "explanation": "Gagal memuat data game."
-    },
-    "reset-game": {
-      "name": "Mulai Ulang Permainan",
-      "explanation": "Menghapus semua data kemajuan untuk dunia ini. Tindakan ini tidak dapat dibatalkan. Pastikan Anda benar-benar ingin menghapus file tersebut, lalu masukkan 'DELETE' di kolom masukan. (Tidak diperlukan dalam mode debug)"
-    },
-    "reset-really": {
-      "name": "Benarkah?",
-      "explanation": ""
-    },
-    "reset-alert": {
-      "name": "Atur Ulang Peringatan",
-      "explanation": "Mengatur ulang game ini akan menghapus semua data. Apakah Anda yakin ingin mengatur ulang game ini?"
-    },
-    "reset-debug-mode": {
-      "name": "Atur Ulang Mode Debug",
-      "explanation": "Dalam mode debug, tidak diperlukan persyaratan input apa pun di kolom konfirmasi."
-    },
-    "force-restart": {
-      "name": "Paksa Mulai Ulang",
-      "explanation": "Muat ulang aplikasi. Gunakan fitur ini jika tampilan tidak merespons atau macet. Kemajuan Anda tidak akan terpengaruh."
-    }
-  }
+	"category": {},
+	"action": {},
+	"item": {},
+	"group": {},
+	"event": {},
+	"preset": {
+		"locked": {
+			"name": "Terkunci",
+			"explanation": "Fitur ini akan tersedia setelah persyaratannya terpenuhi."
+		},
+		"max": {
+			"name": "maks",
+			"explanation": ""
+		},
+		"min": {
+			"name": "Min",
+			"explanation": ""
+		},
+		"maximum": {
+			"name": "Maksimum",
+			"explanation": "Anda tidak boleh memiliki atau menggunakan lebih dari jumlah ini."
+		},
+		"minimum": {
+			"name": "Minimum",
+			"explanation": ""
+		},
+		"count": {
+			"name": "Hitung",
+			"explanation": ""
+		},
+		"purchased-count": {
+			"name": "Jumlah Hitung",
+			"explanation": ""
+		},
+		"purchase-limit": {
+			"name": "Batas Pembelian",
+			"explanation": "Jumlah waktu maksimum yang dapat Anda gunakan untuk melakukan pembelian."
+		},
+		"purchasable-count": {
+			"name": "Tersedia untuk dibeli",
+			"explanation": "Sisa waktu yang masih bisa Anda gunakan untuk melakukan pembelian."
+		},
+		"total": {
+			"name": "Total",
+			"explanation": ""
+		},
+		"percentage": {
+			"name": "Persentase",
+			"explanation": ""
+		},
+		"player": {
+			"name": "Pemain",
+			"explanation": ""
+		},
+		"target": {
+			"name": "Target",
+			"explanation": ""
+		},
+		"requirement": {
+			"name": "Persyaratan",
+			"explanation": ""
+		},
+		"requirements": {
+			"name": "Persyaratan",
+			"explanation": ""
+		},
+		"acquisition": {
+			"name": "Akuisisi",
+			"explanation": ""
+		},
+		"acquisitions": {
+			"name": "Akuisisi",
+			"explanation": ""
+		},
+		"results": {
+			"name": "Hasil",
+			"explanation": ""
+		},
+		"yes": {
+			"name": "Ya",
+			"explanation": ""
+		},
+		"no": {
+			"name": "Tidak",
+			"explanation": ""
+		},
+		"on": {
+			"name": "Pada",
+			"explanation": ""
+		},
+		"off": {
+			"name": "Mati",
+			"explanation": ""
+		},
+		"seconds": {
+			"name": "Detik",
+			"explanation": ""
+		},
+		"minutes": {
+			"name": "Notulen",
+			"explanation": ""
+		},
+		"hours": {
+			"name": "Jam Operasional",
+			"explanation": ""
+		},
+		"days": {
+			"name": "Hari",
+			"explanation": ""
+		},
+		"years": {
+			"name": "Tahun",
+			"explanation": ""
+		},
+		"centuries": {
+			"name": "Abad-abad",
+			"explanation": ""
+		},
+		"endless": {
+			"name": "∞",
+			"explanation": ""
+		},
+		"success": {
+			"name": "Sukses",
+			"explanation": ""
+		},
+		"failure": {
+			"name": "Gagal",
+			"explanation": "gagal"
+		},
+		"up": {
+			"name": "atas",
+			"explanation": ""
+		},
+		"down": {
+			"name": "Bawah",
+			"explanation": ""
+		},
+		"question": {
+			"name": "Pertanyaan",
+			"explanation": ""
+		},
+		"navigation": {
+			"name": "Navigasi",
+			"explanation": "Anda juga bisa berpindah antar kolom dengan menggeser jari. Tombol di bagian atas ditampilkan di pojok kiri bawah layar."
+		},
+		"navigation-back": {
+			"name": "Kembali",
+			"explanation": ""
+		},
+		"navigation-top": {
+			"name": "Atas",
+			"explanation": ""
+		},
+		"navigation-forward": {
+			"name": "Maju",
+			"explanation": ""
+		},
+		"navigation-column": {
+			"name": "Kolom",
+			"explanation": "Posisi kolom ini dan jumlah total kolom, termasuk yang berada di luar layar."
+		},
+		"checked": {
+			"name": "Telah diperiksa",
+			"explanation": ""
+		},
+		"chevron-down": {
+			"name": "Penurunan Chevron Bawah",
+			"explanation": ""
+		},
+		"chevron-right": {
+			"name": "Chevron Kanan",
+			"explanation": ""
+		},
+		"selected": {
+			"name": "Terpilih",
+			"explanation": ""
+		},
+		"character": {
+			"name": "Karakter",
+			"explanation": ""
+		},
+		"activity": {
+			"name": "Aktivitas",
+			"explanation": ""
+		},
+		"inventory": {
+			"name": "Inventaris",
+			"explanation": ""
+		},
+		"status": {
+			"name": "Status",
+			"explanation": ""
+		},
+		"world": {
+			"name": "Dunia",
+			"explanation": ""
+		},
+		"overview": {
+			"name": "Ringkasan",
+			"explanation": ""
+		},
+		"version": {
+			"name": "Versi",
+			"explanation": ""
+		},
+		"license": {
+			"name": "Lisensi",
+			"explanation": ""
+		},
+		"updated": {
+			"name": "Diperbarui",
+			"explanation": ""
+		},
+		"author": {
+			"name": "Penulis",
+			"explanation": ""
+		},
+		"homepage": {
+			"name": "Beranda",
+			"explanation": ""
+		},
+		"estimated-playing-time": {
+			"name": "Perkiraan Durasi Pemutaran",
+			"explanation": "Perkiraan waktu yang dibutuhkan untuk menyelesaikan dunia ini menurut penulis"
+		},
+		"console": {
+			"name": "Konsol",
+			"explanation": "Game ini berjalan di sistem konsol Idle RPG. Sistem ini gratis dan terbuka untuk umum, sehingga siapa pun dapat membuat game."
+		},
+		"general": {
+			"name": "Umum",
+			"explanation": ""
+		},
+		"default-language": {
+			"name": "Bahasa Default",
+			"explanation": ""
+		},
+		"language-change-enable-general": {
+			"name": "Perubahan Bahasa Aktifkan Umum",
+			"explanation": "Anda dapat mengubah bahasa tampilan ke bahasa lain di menu pengaturan."
+		},
+		"max-category-level": {
+			"name": "Level Kategori Maksimum",
+			"explanation": "Level tertinggi yang dapat dicapai dalam setiap kategori."
+		},
+		"level-common-ratio": {
+			"name": "Level Rasio Tingkat Umum",
+			"explanation": "Berapa banyak poin pengalaman yang dibutuhkan untuk naik ke level berikutnya setiap kali kamu naik level?"
+		},
+		"statistics": {
+			"name": "Statistik",
+			"explanation": ""
+		},
+		"coin": {
+			"name": "Koin",
+			"explanation": ""
+		},
+		"amount-earned": {
+			"name": "Jumlah yang Diperoleh",
+			"explanation": "Jumlah total koin yang telah Anda peroleh sejauh ini."
+		},
+		"time": {
+			"name": "Waktu",
+			"explanation": ""
+		},
+		"playing-time": {
+			"name": "Waktu Tayang",
+			"explanation": "Lamanya waktu yang telah berlalu sejak Anda mulai memainkan game ini, termasuk saat Anda tidak terhubung ke internet."
+		},
+		"item": {
+			"name": "Item",
+			"explanation": ""
+		},
+		"count-now": {
+			"name": "Hitung Sekarang",
+			"explanation": "Jumlah total item yang saat ini Anda miliki."
+		},
+		"count-gained": {
+			"name": "Hitung Jumlah",
+			"explanation": "Jumlah total item yang telah diperoleh hingga saat ini."
+		},
+		"total-level": {
+			"name": "Total Level",
+			"explanation": "Jumlah level saat ini di semua kategori."
+		},
+		"count-actioned": {
+			"name": "Tindakan Telah Dilakukan",
+			"explanation": "Jumlah total aksi yang telah dilakukan hingga saat ini."
+		},
+		"win": {
+			"name": "Menang",
+			"explanation": ""
+		},
+		"debug": {
+			"name": "debug",
+			"explanation": ""
+		},
+		"acceleration": {
+			"name": "Percepatan",
+			"explanation": "Mempercepat waktu dalam permainan. Harap diperhatikan bahwa jika Anda meningkatkan kecepatan terlalu tinggi saat waktu eksekusi aksi lambat, prosesnya tidak akan mampu mengikutinya dan aplikasi akan macet atau crash."
+		},
+		"multiplier": {
+			"name": "Pengganda",
+			"explanation": ""
+		},
+		"accelerate": {
+			"name": "Mempercepat",
+			"explanation": ""
+		},
+		"adjustment": {
+			"name": "Sesuaikan",
+			"explanation": "Meningkatkan atau mengurangi jumlah item yang dimiliki atau level kategori."
+		},
+		"adjustment-type": {
+			"name": "Jenis",
+			"explanation": ""
+		},
+		"adjustment-category": {
+			"name": "Kategori",
+			"explanation": "Sesuaikan tingkat kategori tersebut. Misalnya, jika Anda mengaturnya menjadi +5, maka akan ditambahkan 5 level."
+		},
+		"adjustment-action": {
+			"name": "Aksi",
+			"explanation": "Hal ini akan menambah atau mengurangi jumlah kali tindakan tersebut telah dilakukan. Namun, hal ini tidak akan mencerminkan hadiah apa pun yang diperoleh setelah tindakan tersebut selesai."
+		},
+		"adjustment-item": {
+			"name": "Item",
+			"explanation": "Menambah atau mengurangi jumlah item yang Anda miliki."
+		},
+		"adjustment-id": {
+			"name": "ID",
+			"explanation": "Tentukan ID tipe target. Jika dibiarkan kosong, penambahan dan pengurangan akan disesuaikan untuk semua ID."
+		},
+		"adjustment-sign": {
+			"name": "Tanda",
+			"explanation": ""
+		},
+		"adjustment-plus": {
+			"name": "Plus",
+			"explanation": "Menambahkan nilai numerik yang ditentukan."
+		},
+		"adjustment-minus": {
+			"name": "Minus",
+			"explanation": "Mengurangi angka yang ditentukan."
+		},
+		"adjustment-count": {
+			"name": "Hitung",
+			"explanation": "Angka yang akan ditambahkan atau dikurangkan. Tentukan apakah akan ditambahkan atau dikurangkan dengan menggunakan simbol."
+		},
+		"adjustment-adjust": {
+			"name": "Sesuaikan",
+			"explanation": "Sesuaikan sesuai dengan ketentuan yang telah ditetapkan."
+		},
+		"pwa": {
+			"name": "Pasang PWA",
+			"explanation": "Pasang Aplikasi Web Progresif (PWA)."
+		},
+		"go-top": {
+			"name": "Go Atas",
+			"explanation": ""
+		},
+		"iconify": {
+			"name": "Ubah Menjadi Ikon",
+			"explanation": "Game ini menggunakan kumpulan ikon yang disediakan oleh iconify. Saya ingin mengucapkan terima kasih kepada semua pihak yang terlibat dalam pembuatannya."
+		},
+		"category": {
+			"name": "Kategori",
+			"explanation": ""
+		},
+		"categories": {
+			"name": "Daftar kategori",
+			"explanation": ""
+		},
+		"level": {
+			"name": "Level",
+			"explanation": ""
+		},
+		"situation": {
+			"name": "Situasi",
+			"explanation": ""
+		},
+		"element": {
+			"name": "Elemen",
+			"explanation": ""
+		},
+		"standalone": {
+			"name": "Mandiri",
+			"explanation": "Proses ini berjalan secara mandiri, terlepas dari perkembangan aksi di kategori lain."
+		},
+		"action": {
+			"name": "Aksi",
+			"explanation": ""
+		},
+		"actions": {
+			"name": "Daftar aksi",
+			"explanation": ""
+		},
+		"attribute": {
+			"name": "Atribut",
+			"explanation": "Atribut-atribut khusus dari aksi ini. Properti kategori diterapkan pada atribut-atribut aksi ini. Poin pengalaman juga diberikan kepada atribut ini."
+		},
+		"progress": {
+			"name": "Kemajuan",
+			"explanation": ""
+		},
+		"progressing": {
+			"name": "Sedang berlangsung",
+			"explanation": ""
+		},
+		"progressing-action": {
+			"name": "Sedang berlangsung",
+			"explanation": ""
+		},
+		"possible-action": {
+			"name": "Mungkin",
+			"explanation": ""
+		},
+		"impossible-action": {
+			"name": "Tidak mungkin",
+			"explanation": ""
+		},
+		"idle": {
+			"name": "Menganggur",
+			"explanation": ""
+		},
+		"progress-type": {
+			"name": "Jenis Kemajuan",
+			"explanation": ""
+		},
+		"persistent": {
+			"name": "Gigih",
+			"explanation": "Kamu melakukan serangkaian tindakan, dan setiap kali suatu tindakan selesai, kamu akan mendapatkan hadiah."
+		},
+		"single": {
+			"name": "Tunggal",
+			"explanation": "Kamu hanya bisa melakukan suatu tindakan sekali saja, dan kemajuanmu akan tersimpan meskipun kamu menghentikannya di tengah jalan."
+		},
+		"snap": {
+			"name": "Cepat",
+			"explanation": "Aksi tersebut berakhir seketika."
+		},
+		"stamina": {
+			"name": "Stamina",
+			"explanation": "Setiap aksi akan mengurangi stamina pemain dan target. Jika stamina target habis, kamu menang, dan jika stamina pemain habis, permainan berakhir. Saat permainan berakhir, kamu tidak akan kehilangan apa pun, tetapi semua kemajuan aksi akan terhenti."
+		},
+		"enable-count": {
+			"name": "Aktifkan Hitung",
+			"explanation": ""
+		},
+		"estimated-time": {
+			"name": "Perkiraan Waktu",
+			"explanation": ""
+		},
+		"completed-count": {
+			"name": "Jumlah yang Telah Selesai",
+			"explanation": ""
+		},
+		"current-count": {
+			"name": "Hitung Jumlah Saat Ini",
+			"explanation": ""
+		},
+		"elapsed-time": {
+			"name": "Waktu yang Telah Berlalu",
+			"explanation": ""
+		},
+		"rest-time": {
+			"name": "Waktu Istirahat",
+			"explanation": ""
+		},
+		"each-time": {
+			"name": "Setiap Saat",
+			"explanation": ""
+		},
+		"next-time": {
+			"name": "Nanti Saja",
+			"explanation": ""
+		},
+		"rest-count": {
+			"name": "Jumlah Waktu Istirahat",
+			"explanation": ""
+		},
+		"act": {
+			"name": "Jalankan",
+			"explanation": ""
+		},
+		"start": {
+			"name": "Mulai",
+			"explanation": ""
+		},
+		"end": {
+			"name": "Akhir",
+			"explanation": ""
+		},
+		"stop": {
+			"name": "Berhenti",
+			"explanation": ""
+		},
+		"reserve": {
+			"name": "Cadangan",
+			"explanation": "Tambahkan tindakan ini ke antrian reservasi agar dijalankan secara berurutan."
+		},
+		"reorder": {
+			"name": "Susun ulang",
+			"explanation": "Pindahkan tindakan yang telah disimpan ini ke posisi yang dipilih dalam antrian."
+		},
+		"position": {
+			"name": "Urutan eksekusi",
+			"explanation": "Pilih kapan aksi ini dijalankan. 0 menjalankannya sekarang, sedangkan 1 atau lebih menempatkannya pada posisi tersebut di antrean tunggu."
+		},
+		"now": {
+			"name": "Sekarang",
+			"explanation": "Jalankan aksi ini seketika alih-alih memasukkannya ke antrean tunggu."
+		},
+		"items": {
+			"name": "Daftar item",
+			"explanation": ""
+		},
+		"equipping": {
+			"name": "Melengkapi",
+			"explanation": ""
+		},
+		"unequipping": {
+			"name": "Melepas perlengkapan",
+			"explanation": ""
+		},
+		"equip": {
+			"name": "Lengkapi perlengkapan",
+			"explanation": ""
+		},
+		"equipment": {
+			"name": "Peralatan",
+			"explanation": ""
+		},
+		"unequip": {
+			"name": "Melepas perlengkapan",
+			"explanation": ""
+		},
+		"nothing": {
+			"name": "Tidak ada apa-apa",
+			"explanation": ""
+		},
+		"own": {
+			"name": "Milik sendiri",
+			"explanation": "Apakah Anda sendiri memiliki item ini?"
+		},
+		"own-count": {
+			"name": "Jumlah Sendiri",
+			"explanation": "Apakah Anda sendiri memiliki item ini?"
+		},
+		"recovery": {
+			"name": "Pemulihan",
+			"explanation": "Kamu hanya boleh memiliki satu saja."
+		},
+		"unique": {
+			"name": "Unik",
+			"explanation": "Kamu hanya boleh memiliki satu saja."
+		},
+		"equipment-type": {
+			"name": "Peralatan",
+			"explanation": "Jenis peralatan dari item tersebut."
+		},
+		"necessary-item": {
+			"name": "Diperlukan",
+			"explanation": "Mengisi item tersebut akan menimbulkan efek."
+		},
+		"unnecessary-item": {
+			"name": "Tidak perlu",
+			"explanation": "Kamu tidak bisa melengkapi item tersebut, tetapi hanya dengan memilikinya saja sudah akan memberikan efek. Efek tersebut akan dikalikan dengan jumlah item yang kamu miliki."
+		},
+		"impossible-item": {
+			"name": "Tidak mungkin",
+			"explanation": "Item ini tidak dapat dilengkapi."
+		},
+		"consumable-item": {
+			"name": "Konsumsi",
+			"explanation": "Jika dilengkapi, item ini memberikan efek, tetapi efeknya akan habis setiap kali kamu melakukan suatu tindakan."
+		},
+		"buy": {
+			"name": "Beli",
+			"explanation": "Nilai item tersebut pada saat dibeli."
+		},
+		"buying-value": {
+			"name": "Nilai Pembelian",
+			"explanation": "Nilai item tersebut pada saat dibeli."
+		},
+		"sell": {
+			"name": "Jual",
+			"explanation": "Nilai item tersebut saat dijual."
+		},
+		"selling": {
+			"name": "Jual",
+			"explanation": ""
+		},
+		"kind": {
+			"name": "Jenis",
+			"explanation": ""
+		},
+		"selling-value": {
+			"name": "Nilai Penjualan",
+			"explanation": "Nilai item tersebut saat dijual."
+		},
+		"trade": {
+			"name": "Berdagang",
+			"explanation": ""
+		},
+		"trade-failed": {
+			"name": "Kegagalan dalam Berdagang",
+			"explanation": "Usaha dagangnya gagal."
+		},
+		"capacity-full": {
+			"name": "Kapasitas Penuh",
+			"explanation": "Kapasitas persediaan sudah penuh."
+		},
+		"queue-full": {
+			"name": "Antrean Penuh",
+			"explanation": "Antrian pemesanan sudah penuh."
+		},
+		"already-queued": {
+			"name": "Sudah Masuk Antrian",
+			"explanation": "Aksi ini sedang berlangsung atau telah dipesan."
+		},
+		"purchase-limit-reached": {
+			"name": "Batas Pembelian Telah Tercapai",
+			"explanation": "Batas pembelian telah tercapai."
+		},
+		"completed-maximum": {
+			"name": "Jumlah Maksimum yang Telah Selesai",
+			"explanation": "Anda telah mencapai batas maksimum jumlah penyelesaian."
+		},
+		"relationship": {
+			"name": "Hubungan",
+			"explanation": ""
+		},
+		"relationships": {
+			"name": "Hubungan",
+			"explanation": ""
+		},
+		"requirement-equipment": {
+			"name": "Persyaratan Peralatan",
+			"explanation": "Item ini harus dilengkapi."
+		},
+		"property": {
+			"name": "Properti",
+			"explanation": ""
+		},
+		"properties": {
+			"name": "Daftar properti",
+			"explanation": ""
+		},
+		"attack": {
+			"name": "Serangan",
+			"explanation": "Kerusakan pada target."
+		},
+		"defence": {
+			"name": "Pertahanan",
+			"explanation": "Kerusakan akibat serangan yang ditargetkan."
+		},
+		"accuracy": {
+			"name": "Akurasi",
+			"explanation": "Kemungkinan monster tersebut mengalami kerusakan."
+		},
+		"evasion": {
+			"name": "Penghindaran",
+			"explanation": "Kemungkinan terkena serangan dari monster."
+		},
+		"restore": {
+			"name": "Pulihkan",
+			"explanation": "Mempengaruhi jumlah pemulihan selama pertempuran."
+		},
+		"speed": {
+			"name": "Kecepatan",
+			"explanation": "Mempengaruhi kecepatan tindakan tersebut."
+		},
+		"chance": {
+			"name": "Kesempatan",
+			"explanation": "Aksi tersebut mungkin saja berhasil, tetapi jika gagal, Anda tidak akan mendapatkan hadiah maupun poin pengalaman apa pun."
+		},
+		"experience": {
+			"name": "Pengalaman",
+			"explanation": "Berpengaruh terhadap poin pengalaman yang diperoleh dari aksi tersebut."
+		},
+		"correction": {
+			"name": "Koreksi",
+			"explanation": "Koreksi akibat pengaruh peralatan dan item."
+		},
+		"value": {
+			"name": "Nilai",
+			"explanation": ""
+		},
+		"resources": {
+			"name": "Sumber Daya",
+			"explanation": ""
+		},
+		"base-value": {
+			"name": "Nilai Dasar",
+			"explanation": "Nilai unik untuk permainan atau aksi ini."
+		},
+		"level-gap": {
+			"name": "Selisih Level",
+			"explanation": "Untuk perhitungan numerik, lihat bagian “Level”."
+		},
+		"reflected-value": {
+			"name": "Nilai yang Tercermin",
+			"explanation": "Nilai akhir yang dihitung berdasarkan \"Nilai Dasar\" dan \"Selisih Level\"."
+		},
+		"level-gap-property": {
+			"name": "Properti Selisih Level",
+			"explanation": "Nilai “Level Gap” merupakan jumlah dari setiap nilai dalam blok ini."
+		},
+		"level-gap-category": {
+			"name": "Kategori Selisih Level",
+			"explanation": "Level kategori pemain dikurangi dengan level aksi ini. Dalam hal \"pengalaman\", situasinya justru sebaliknya."
+		},
+		"level-gap-action": {
+			"name": "Upaya untuk Mengatasi Kesenjangan Level",
+			"explanation": "Apabila jenis kemajuan yang dimaksud adalah stamina, inilah nilai unik yang ditetapkan oleh aksi ini."
+		},
+		"level-gap-item": {
+			"name": "Selisih Level Item",
+			"explanation": "Ini adalah nilai koreksi dari item yang telah dilengkapi, atau dari item yang tetap memberikan efek meskipun tidak dilengkapi."
+		},
+		"no-status": {
+			"name": "Tidak Ada status",
+			"explanation": "Tidak ada kategori status yang tersedia."
+		},
+		"targeting-all-categories": {
+			"name": "Menargetkan Semua Kategori",
+			"explanation": "Koreksi properti ini berlaku untuk semua kategori."
+		},
+		"event": {
+			"name": "Acara",
+			"explanation": ""
+		},
+		"timing": {
+			"name": "Waktu",
+			"explanation": ""
+		},
+		"matched": {
+			"name": "Cocok",
+			"explanation": "Syarat-syaratnya telah dipenuhi."
+		},
+		"comebacked": {
+			"name": "kembali",
+			"explanation": "Selamat datang kembali! Perkembangan selama Anda tidak ada:"
+		},
+		"gameovered": {
+			"name": "permainan berakhir",
+			"explanation": "Permainan telah berakhir. Kemajuanmu telah direset."
+		},
+		"completed": {
+			"name": "Selesai",
+			"explanation": "Selamat! Anda telah menyelesaikan semua kategori."
+		},
+		"welcomed": {
+			"name": "Disambut dengan hangat",
+			"explanation": "Selamat datang di dunia ini!"
+		},
+		"obtained": {
+			"name": "Diperoleh",
+			"explanation": "Hasil yang Anda peroleh:"
+		},
+		"achieved": {
+			"name": "Telah tercapai",
+			"explanation": ""
+		},
+		"receive": {
+			"name": "Terima",
+			"explanation": "Terima hadiah untuk tugas ini."
+		},
+		"hidden": {
+			"name": "Tersembunyi",
+			"explanation": "Setelah kamu memastikan isinya, kolom ini akan disembunyikan."
+		},
+		"task": {
+			"name": "Tugas",
+			"explanation": ""
+		},
+		"tasks": {
+			"name": "Tugas",
+			"explanation": ""
+		},
+		"missions": {
+			"name": "Misi",
+			"explanation": ""
+		},
+		"language-en": {
+			"name": "Inggris",
+			"explanation": ""
+		},
+		"language-zh": {
+			"name": "Bahasa Mandarin (Sederhana)",
+			"explanation": ""
+		},
+		"language-es": {
+			"name": "Spanyol",
+			"explanation": ""
+		},
+		"language-pt": {
+			"name": "Portugis",
+			"explanation": ""
+		},
+		"language-fr": {
+			"name": "Prancis",
+			"explanation": ""
+		},
+		"language-ru": {
+			"name": "Rusia",
+			"explanation": ""
+		},
+		"language-de": {
+			"name": "Jerman",
+			"explanation": ""
+		},
+		"language-ja": {
+			"name": "Jepang",
+			"explanation": ""
+		},
+		"language-id": {
+			"name": "Bahasa Indonesia",
+			"explanation": ""
+		},
+		"language-ko": {
+			"name": "Korea",
+			"explanation": ""
+		},
+		"language-mistaked": {
+			"name": "Kesalahan Bahasa",
+			"explanation": ""
+		},
+		"config": {
+			"name": "Konfigurasi",
+			"explanation": ""
+		},
+		"language": {
+			"name": "Bahasa",
+			"explanation": ""
+		},
+		"selected-language": {
+			"name": "Bahasa yang Dipilih",
+			"explanation": ""
+		},
+		"language-change-enable": {
+			"name": "Aktifkan Perubahan Bahasa",
+			"explanation": "Anda dapat mengubah bahasa yang ditampilkan."
+		},
+		"language-change-unenable": {
+			"name": "Perubahan Bahasa Dinonaktifkan",
+			"explanation": "Tidak ada bahasa lain yang tersedia untuk ditampilkan."
+		},
+		"category-shortcut": {
+			"name": "Pintasan Kategori",
+			"explanation": "Saat kamu membuka kategori, daftar aksi atau daftar item juga ikut ditampilkan."
+		},
+		"showing-hint": {
+			"name": "Petunjuk",
+			"explanation": "Menampilkan petunjuk pengoperasian."
+		},
+		"showing-navigation": {
+			"name": "Navigasi",
+			"explanation": "Menampilkan tombol untuk berpindah antar kolom. Anda juga dapat menggeser jari untuk berpindah antar kolom tanpa menampilkan tombol-tombol tersebut."
+		},
+		"performing-highly": {
+			"name": "Berprestasi Tinggi",
+			"explanation": "Meningkatkan frekuensi pembaruan. Jika beban kerja cukup berat, kami menyarankan untuk menonaktifkannya. Hal ini tidak memengaruhi waktu eksekusi setiap tindakan."
+		},
+		"export-game": {
+			"name": "Ekspor Game",
+			"explanation": "Data permainan telah diekspor."
+		},
+		"import-game": {
+			"name": "Impor Game",
+			"explanation": "Data permainan telah diimpor."
+		},
+		"import-mistake": {
+			"name": "Kesalahan Impor",
+			"explanation": "Gagal memuat data game."
+		},
+		"reset-game": {
+			"name": "Mulai Ulang Permainan",
+			"explanation": "Menghapus semua data kemajuan untuk dunia ini. Tindakan ini tidak dapat dibatalkan. Pastikan Anda benar-benar ingin menghapus file tersebut, lalu masukkan 'DELETE' di kolom masukan. (Tidak diperlukan dalam mode debug)"
+		},
+		"reset-really": {
+			"name": "Benarkah?",
+			"explanation": ""
+		},
+		"reset-alert": {
+			"name": "Atur Ulang Peringatan",
+			"explanation": "Mengatur ulang game ini akan menghapus semua data. Apakah Anda yakin ingin mengatur ulang game ini?"
+		},
+		"reset-debug-mode": {
+			"name": "Atur Ulang Mode Debug",
+			"explanation": "Dalam mode debug, tidak diperlukan persyaratan input apa pun di kolom konfirmasi."
+		},
+		"force-restart": {
+			"name": "Paksa Mulai Ulang",
+			"explanation": "Muat ulang aplikasi. Gunakan fitur ini jika tampilan tidak merespons atau macet. Kemajuan Anda tidak akan terpengaruh."
+		},
+		"hint-language-switching": {
+			"name": "Hint Language Switching",
+			"explanation": "Mengganti bahasa yang ditampilkan dalam permainan."
+		},
+		"hint-language-availability": {
+			"name": "Hint Language Availability",
+			"explanation": "Ini hanya berlaku jika penulis telah menyiapkan terjemahan."
+		},
+		"hint-event-timing": {
+			"name": "Hint Event Timing",
+			"explanation": "Terpicu pada saat tertentu, misalnya ketika kamu kembali ke permainan atau ketika permainan berakhir."
+		},
+		"hint-event-reward": {
+			"name": "Hint Event Reward",
+			"explanation": "Saat terpicu, layar ini akan terbuka dan hadiah diberikan secara otomatis bersama sebuah pesan."
+		},
+		"hint-event-task": {
+			"name": "Hint Event Task",
+			"explanation": "Tugas diselesaikan dengan memenuhi kondisi tertentu, dan hadiahnya kamu ambil sendiri."
+		},
+		"hint-debug-visibility": {
+			"name": "Hint Debug Visibility",
+			"explanation": "Hanya ditampilkan selama proses debug."
+		},
+		"hint-debug-publishing": {
+			"name": "Hint Debug Publishing",
+			"explanation": "Tidak akan ditampilkan saat permainan diterbitkan dan didistribusikan."
+		},
+		"hint-config-settings": {
+			"name": "Hint Config Settings",
+			"explanation": "Atur pengaturan yang berkaitan dengan tampilan dan pemrosesan permainan."
+		},
+		"hint-config-data": {
+			"name": "Hint Config Data",
+			"explanation": "Data permainan dapat dimasukkan, dikeluarkan, dan direset."
+		},
+		"hint-statistics-progress": {
+			"name": "Hint Statistics Progress",
+			"explanation": "Kamu dapat memeriksa perkembangan permainan sejauh ini."
+		},
+		"hint-general-difficulty": {
+			"name": "Hint General Difficulty",
+			"explanation": "Kamu dapat memeriksa tingkat kesulitan dan konfigurasi khas dunia ini."
+		},
+		"hint-overview-world": {
+			"name": "Hint Overview World",
+			"explanation": "Kamu dapat memeriksa dunia (latar, konfigurasi) permainan ini."
+		},
+		"hint-overview-console": {
+			"name": "Hint Overview Console",
+			"explanation": "Kamu juga dapat memeriksa konsol (sistem) yang menjalankan permainan ini."
+		},
+		"hint-correction-target": {
+			"name": "Hint Correction Target",
+			"explanation": "Kamu dapat melihat koreksi untuk properti tertentu dalam kategori ini."
+		},
+		"hint-correction-source": {
+			"name": "Hint Correction Source",
+			"explanation": "Koreksi berasal dari efek item. Kamu dapat memeriksa item tersebut."
+		},
+		"hint-properties-list": {
+			"name": "Hint Properties List",
+			"explanation": "Berikut adalah daftar properti yang diatur untuk setiap kategori."
+		},
+		"hint-properties-meaning": {
+			"name": "Hint Properties Meaning",
+			"explanation": "Properti adalah elemen yang memengaruhi pelaksanaan aksi."
+		},
+		"hint-properties-equipment": {
+			"name": "Hint Properties Equipment",
+			"explanation": "Efeknya dikoreksi oleh peralatan dari item. (Sebagian item tidak memerlukannya)"
+		},
+		"hint-property-meaning": {
+			"name": "Hint Property Meaning",
+			"explanation": "Properti adalah elemen yang memengaruhi pelaksanaan aksi."
+		},
+		"hint-property-calculation": {
+			"name": "Hint Property Calculation",
+			"explanation": "Nilai akhir dihitung dari nilai awal yang ditetapkan, dengan memperhitungkan level kategori, level aksi yang diatur, dan koreksi dari item yang dikenakan."
+		},
+		"hint-trade-availability": {
+			"name": "Hint Trade Availability",
+			"explanation": "Sebagian item tidak dapat dibeli atau dijual."
+		},
+		"hint-trade-locked": {
+			"name": "Hint Trade Locked",
+			"explanation": "Item yang terkunci tidak dapat dibeli atau dijual."
+		},
+		"hint-trade-limit": {
+			"name": "Hint Trade Limit",
+			"explanation": "Mungkin ada batas jumlah pembelian untuk kapasitas atau slot pemesanan (antrean) tertentu, dan setelah batas itu tercapai kamu tidak dapat membeli lagi. (Penambahan yang berasal dari hadiah tidak termasuk dalam batas ini)"
+		},
+		"hint-items-equipping": {
+			"name": "Hint Items Equipping",
+			"explanation": "Tekan lama untuk mengganti pemakaian peralatan item."
+		},
+		"hint-items-exclusive": {
+			"name": "Hint Items Exclusive",
+			"explanation": "Hanya satu item dalam daftar yang dapat dikenakan. (Jika diatur agar dapat dikenakan sebagai kategori)"
+		},
+		"hint-items-locked": {
+			"name": "Hint Items Locked",
+			"explanation": "Item yang belum memenuhi syarat pembukaan akan terkunci dan detailnya tidak dapat dilihat."
+		},
+		"hint-item-meaning": {
+			"name": "Hint Item Meaning",
+			"explanation": "Item adalah elemen yang berkaitan dengan kepemilikan seperti peralatan, barang habis pakai, dan barang berharga."
+		},
+		"hint-item-exclusive": {
+			"name": "Hint Item Exclusive",
+			"explanation": "Hanya satu item dalam satu kategori yang dapat dikenakan. (Jika diatur agar dapat dikenakan sebagai kategori)"
+		},
+		"hint-item-locked": {
+			"name": "Hint Item Locked",
+			"explanation": "Item yang belum memenuhi syarat pembukaan akan terkunci dan detailnya tidak dapat dilihat."
+		},
+		"hint-act-control": {
+			"name": "Hint Act Control",
+			"explanation": "Memulai atau menghentikan aksi."
+		},
+		"hint-act-count": {
+			"name": "Hint Act Count",
+			"explanation": "Kamu dapat menentukan berapa kali menjalankannya. Masukkan 0 untuk menjalankannya sampai sumber daya habis."
+		},
+		"hint-queue-removing": {
+			"name": "Hint Queue Removing",
+			"explanation": "Tekan lama sebuah bilah untuk menghapusnya dari antrean."
+		},
+		"hint-actions-executing": {
+			"name": "Hint Actions Executing",
+			"explanation": "Tekan lama untuk mengganti pelaksanaan aksi."
+		},
+		"hint-actions-exclusive": {
+			"name": "Hint Actions Exclusive",
+			"explanation": "Hanya satu yang dapat dijalankan dalam satu kategori."
+		},
+		"hint-actions-parallel": {
+			"name": "Hint Actions Parallel",
+			"explanation": "Sebagian kategori memungkinkan kamu menjalankan aksi dari beberapa kategori sekaligus."
+		},
+		"hint-actions-locked": {
+			"name": "Hint Actions Locked",
+			"explanation": "Aksi yang belum memenuhi syarat pembukaan akan terkunci dan detailnya tidak dapat dilihat."
+		},
+		"hint-action-experience": {
+			"name": "Hint Action Experience",
+			"explanation": "Setiap pelaksanaan dapat memberi pengalaman dan menaikkan level kamu."
+		},
+		"hint-action-resource": {
+			"name": "Hint Action Resource",
+			"explanation": "Setiap pelaksanaan menghabiskan atau menghasilkan item."
+		},
+		"hint-action-locked": {
+			"name": "Hint Action Locked",
+			"explanation": "Aksi yang belum memenuhi syarat pembukaan akan terkunci dan detailnya tidak dapat dilihat."
+		},
+		"hint-tasks-list": {
+			"name": "Hint Tasks List",
+			"explanation": "Ini adalah daftar tugas yang ditetapkan untuk kategori ini."
+		},
+		"hint-tasks-detail": {
+			"name": "Hint Tasks Detail",
+			"explanation": "Pilih sebuah tugas untuk memeriksa syarat penyelesaian dan hadiahnya."
+		},
+		"hint-tasks-unclaimed": {
+			"name": "Hint Tasks Unclaimed",
+			"explanation": "Pita menandai tugas yang hadiahnya belum diambil. Pilih salah satu lalu tekan terima untuk mengambilnya."
+		},
+		"hint-tasks-capacity": {
+			"name": "Hint Tasks Capacity",
+			"explanation": "Kamu tidak dapat mengambil hadiah selama jumlah jenis item yang dapat kamu simpan sudah mencapai batas. Kosongkan tempat lalu ambil lagi."
+		},
+		"hint-tasks-empty": {
+			"name": "Hint Tasks Empty",
+			"explanation": "Ini tidak ditampilkan jika kategori sama sekali tidak memiliki tugas."
+		},
+		"hint-category-meaning": {
+			"name": "Hint Category Meaning",
+			"explanation": "Elemen ini merupakan kumpulan dari aksi dan item."
+		},
+		"hint-status-correction": {
+			"name": "Hint Status Correction",
+			"explanation": "Hanya nilai koreksi kategori oleh item yang ditampilkan."
+		},
+		"hint-status-action": {
+			"name": "Hint Status Action",
+			"explanation": "Masih ada koreksi lain tergantung aksi yang akan dijalankan."
+		},
+		"hint-inventory-equipping": {
+			"name": "Hint Inventory Equipping",
+			"explanation": "Tekan lama untuk mengganti pemakaian peralatan item."
+		},
+		"hint-activity-executing": {
+			"name": "Hint Activity Executing",
+			"explanation": "Tekan lama untuk mengganti pelaksanaan aksi."
+		},
+		"hint-missions-grouping": {
+			"name": "Hint Missions Grouping",
+			"explanation": "Tugas dikelompokkan dan ditampilkan menurut kategori."
+		},
+		"hint-missions-ungrouped": {
+			"name": "Hint Missions Ungrouped",
+			"explanation": "Tugas yang tidak diatur kategorinya dikumpulkan di bagian atas."
+		},
+		"hint-missions-completed": {
+			"name": "Hint Missions Completed",
+			"explanation": "Tanda centang ditampilkan pada tugas yang telah diselesaikan."
+		},
+		"hint-missions-unclaimed": {
+			"name": "Hint Missions Unclaimed",
+			"explanation": "Pita menandai tugas yang hadiahnya belum diambil. Pilih salah satu lalu tekan terima untuk mengambilnya."
+		},
+		"hint-missions-permanent": {
+			"name": "Hint Missions Permanent",
+			"explanation": "Tugas yang sudah diselesaikan tetap berstatus selesai, meskipun kondisinya tidak lagi terpenuhi setelah itu."
+		},
+		"hint-character-identical": {
+			"name": "Hint Character Identical",
+			"explanation": "Isi ini sama dengan yang ditampilkan ketika kamu mengoperasikan kategori."
+		}
+	}
 }

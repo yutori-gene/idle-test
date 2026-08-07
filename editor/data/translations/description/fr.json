@@ -36,7 +36,7 @@
       "overwrite_warning_1": "Le contenu édité est le suivant.",
       "overwrite_warning_2": "Dérogation.",
       "processing_time": "Le processus prend du temps.",
-      "autosave_status": "Actuel : {état}",
+      "autosave_status": "Actuel : {status}",
       "autosave_description": "Sauvegarder le menu lorsqu'il est ouvert."
     }
   },
@@ -52,7 +52,7 @@
       "validation_publish": "Erreur de validation détectée. Impossible de commencer la publication.",
       "publishing_failed": "La publication n'a pas eu lieu.",
       "invalid_image": "Image non valide.",
-      "image_size_limit": "Images valides. {taille} KB ; (limite : {limite}KB)",
+      "image_size_limit": "Image valide. Taille : {size} KB. (limite : {limit}KB)",
       "export_failed": "L'exportation a échoué.",
       "empty_data_load_failed": "Échec du chargement des données vides.",
       "invalid_world_data": "Données mondiales non valides. Vérifier la structure de base.",
@@ -65,9 +65,9 @@
     "success": {
       "validation_generating": "Vérification réussie ! Fichier autonome en cours de génération...",
       "publishing_completed": "Le fichier autonome est maintenant disponible !",
-      "data_exported": "Données exportées : {nom de fichier}",
+      "data_exported": "Données exportées : {filename}",
       "empty_data_loaded": "Données vides chargées.",
-      "data_loaded": "Données chargées : {nom du fichier}",
+      "data_loaded": "Données chargées : {filename}",
       "sample_data_loaded": "Les données de l'échantillon ont été chargées.",
       "validation_successful": "Vérification réussie : aucun problème de données n'a été détecté",
       "autosave_enabled": "Sauvegarde automatique activée.",
@@ -99,18 +99,18 @@
   "validation": {
     "failed_with_count": "🚨 La validation a échoué : {count} erreurs trouvées\n\n📋 Voir Base → Développement → Erreurs pour plus d'informations",
     "icon": {
-      "invalid_base64_format": "Format d'image Base64 non valide [{preview}...]. at {chemin} - doit commencer par 'data:image/[type];base64,'.",
-      "missing_base64_data": "Format d'image Base64 non valide à {chemin} - pas de données base64 après la virgule.",
-      "invalid_base64_chars": "Encodage Base64 non valide à {chemin} - contient des caractères non valides.",
-      "invalid_base64_length": "Encodage Base64 non valide à {chemin} - la longueur doit être un multiple de 4.",
+      "invalid_base64_format": "Format d'image Base64 non valide [{preview}...] à {path} - doit commencer par 'data:image/[type];base64,'.",
+      "missing_base64_data": "Format d'image Base64 non valide à {path} - pas de données base64 après la virgule.",
+      "invalid_base64_chars": "Encodage Base64 non valide à {path} - contient des caractères non valides.",
+      "invalid_base64_length": "Encodage Base64 non valide à {path} - la longueur doit être un multiple de 4.",
       "invalid_iconify_format": "Format d'ID d'icône invalide [{iconifyId}] at {path} - doit contenir le séparateur ':'.",
       "empty_iconify_family": "Format d'identifiant non valide [{iconifyId}] at {path} - le nom de famille est vide.",
       "empty_iconify_name": "Format d'ID d'icône invalide [{iconifyId}] at {path} - Le nom de l'icône est vide.",
-      "iconify_load_failed": "Échec du chargement de la famille iconify [{family}] [{iconifyId}] à {chemin} - {erreur}"
+      "iconify_load_failed": "Échec du chargement de la famille iconify [{family}] [{iconifyId}] à {path} - {error}."
     },
     "reference": {
-      "id_not_found": "L'id [{id}] de {typeName} n'a pas été trouvé dans {chemin}:{id}.",
-      "group_not_found": "Groupe [{groupe}] introuvable dans {chemin}. Doit être vide ou un ID de groupe prédéfini."
+      "id_not_found": "{typeName} id [{id}] introuvable dans {path}:{id}.",
+      "group_not_found": "Groupe [{group}] introuvable dans {path}. Doit être vide ou un ID de groupe prédéfini."
     }
   }
 }

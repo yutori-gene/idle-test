@@ -5,7 +5,7 @@ Basic Classification of Worlds
 - All elements are placed directly down in world.
 - Actions and Items are associated with the ID of the Category to which they belong.
 
-|Type|説明|
+|Type|Description|
 |-|-|
 |[_category_](en/editor/category)|A general framework for categorizing Actions and Items|
 |[_action_](en/editor/action)|Acting elements such as collecting, creating, and fighting|

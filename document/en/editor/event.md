@@ -10,48 +10,48 @@ Messages and Rewards Triggered at Specific Times
 
 |timing|activation condition|repeat|
 |-|-|-|
-|`comebacked`.|When you return from offline for more than 1 second and there is an Action in progressing.|many times|
-|`gameovered`.|When a player's stamina runs out in battle.|many times|
-|`welcomed`.|When I first started this world.|only once|
-|`completed`.|When the maximum value (maxCategoryLevels) is reached for the level of all categories|only once|
+|`comebacked`|When you return from offline for more than 1 second and there is an Action in progressing.|many times|
+|`gameovered`|When a player's stamina runs out in battle.|many times|
+|`welcomed`|When I first started this world.|only once|
+|`completed`|When the maximum value (maxCategoryLevels) is reached for the level of all categories|only once|
 |`obtained`|When you complete or confirm a single-type action (such as a treasure chest)|many times|
 - [_task_](en/editor/task)
 ___
 
-## Upon Return
-Triggers when you come back online
-- This triggers when you return from offline status after more than 1 second has elapsed and there is an action that is progressing.
-- It will be displayed along with a summary of the progress made while you were away.
+## On return
+Triggers when you come back from offline
+- It triggers when you come back after one second or more offline and an action was in progress.
+- It is shown together with the summary of the progress made while you were away.
 ___
 
 ### [_information_](en/editor/information)
 ___
 
-### Category
-We will not use it at the event.
-- Since it will not appear in the list of missions or tasks, I will not specify a category for it.
-- The input field does not appear in the editor.
+### カテゴリー
+イベントでは使用しません
+- ミッションやタスクの一覧に表示されないため、所属するカテゴリーは指定しません。
+- エディターでは入力欄が表示されません。
 ___
 
-### timing
-When the event triggers (fixed)
-- It is set to `comebacked` and cannot be edited.
-- It activates every time you return, as many times as needed.
+### タイミング
+イベントが発動するタイミング（固定）
+- It is fixed to `comebacked` and cannot be edited.
+- It triggers every time you come back, any number of times.
 ___
 
-### Initial Display State
-Initial display state of the event icon (triggering depends on timing; with this config, it will not trigger)
-- The conditions for triggering an event are determined by timing; this setting affects only the icon's appearance.
-- secreted: The icon will not be displayed until all requirements are met (though the event itself will occur at the appropriate time).
-- hidden・hinted: The icon is displayed with a diagonal line through it to indicate that it is not unlocked.
-- Released: The strikethrough disappears, and it is displayed as "Released."
+### 初期表示状態
+イベントアイコンの初期表示状態（発火はタイミングで決まり、この設定では発火しません）
+- イベントの発火条件はタイミングで決まり、この項目はアイコンの見た目のみに影響します。
+- secreted: 全requirementsを満たすまでアイコンが表示されません（発火自体はタイミングで起こります）。
+- hidden・hinted: アイコンに斜線が付き未解放として表示されます。
+- released: 斜線が消え解放済みとして表示されます。
 ___
 
-### terms
-Conditions for Earning Rewards
-- When the condition is met, the event is triggered, and a dedicated screen opens to display the details.
-- You will receive the reward only if the conditions configured here are met when the ability is activated.
-- If nothing is configured, you'll receive a reward every time it triggers.
+### 条件
+報酬を獲得する条件
+- タイミングが成立するとイベントは発動し、専用の画面を開いて内容を表示します。
+- 報酬は、発動時にここで設定した条件を満たしている場合にのみ獲得します。
+- 条件を設定していない場合は、発動するたびに報酬を獲得します。
 ___
 
 #### Type
@@ -76,8 +76,8 @@ ___
 #### Consumption probability [0-1].
 Probability of Item being consumed (0-1, valid only if Type is Item)
 - The probability that an Item will be consumed when the condition is met and the Action is performed.
-- Always consumed at `1`, 50% chance of consumption at `0.5`, and no consumption at `0`.
-- The default value is `1` (always consumed).
+- `1` always consumes, `0.5` consumes with a 50% probability, and `0` does not consume.
+- The default value is `1` (always consumes).
 - Invalid if Type is other than Item.
 ___
 
@@ -87,11 +87,11 @@ Requires that the Item be in the Equipment state (valid only if the Type is Item
 - Invalid if Type is other than Item.
 ___
 
-### reward
-Configure rewards when the event is triggered
-- This is a reward you receive when the timing is right and the conditions are met.
-- Unlike tasks, you don't need to perform any action to receive it; you automatically obtain it as soon as it is triggered.
-- You can configure a negative quantity. For example, if you configure the quantity of an item to a negative value when the gameover event occurs, you will lose those items.
+### 報酬
+イベント発動時の報酬設定
+- タイミングが成立し、かつ条件を満たしている時に得られる報酬です。
+- タスクと違って受け取る操作は要らず、発動と同時に自動で獲得します。
+- 数量にマイナスを設定することができます。例えばゲームオーバー時にアイテムの数量をマイナスにすれば、それらを失います。
 ___
 
 #### Type
@@ -118,52 +118,52 @@ ___
 #### Probability [-1 to 1]
 Probability of success in acquisition (negative values are evaluated only in the event of failure)
 - Configure the drop probability as a decimal value between -1 and 1. The absolute value is used to determine the probability.
-- When the value is positive, it is evaluated only when there is success with the action; a value of `1` guarantees a reward, while a value of `0.5` results in a 50% chance of receiving a reward.
-- When the value is negative, it is evaluated only in cases of action failure; a value of `-1` guarantees a drop, while a value of `-0.5` results in a 50% chance of a drop.
+- When the value is positive it is evaluated only when the action succeeds: `1` always grants it, and `0.5` grants it with a 50% probability.
+- When the value is negative it is evaluated only when the action fails: `-1` always grants it, and `-0.5` grants it with a 50% probability.
 - If the value is `0`, it is not obtained in either a success or a failure scenario.
 - The default value is `1` (always obtained upon success).
 ___
 
-### task group
-We will not use it at the event.
-- Since it does not appear in the list of missions or tasks, we do not use group assignments.
-- The input field does not appear in the editor.
+### タスクグループ
+イベントでは使用しません
+- ミッションやタスクの一覧に表示されないため、グループの指定は使いません。
+- エディターでは入力欄が表示されません。
 ___
 
-## When the game is gameovered
-Triggers when you run out of stamina during battle
-- This ability activates when the player runs out of stamina during combat.
-- If you configure the reward amount to a negative value, you can make it the penalty for gameoveredness.
+## On game over
+Triggers when stamina runs out in combat
+- It triggers when the player's stamina runs out in combat.
+- By setting a negative reward quantity you can attach a penalty to a game over.
 ___
 
 ### [_information_](en/editor/information)
 ___
 
-### Category
-We will not use it at the event.
-- Since it will not appear in the list of missions or tasks, I will not specify a category for it.
-- The input field does not appear in the editor.
+### カテゴリー
+イベントでは使用しません
+- ミッションやタスクの一覧に表示されないため、所属するカテゴリーは指定しません。
+- エディターでは入力欄が表示されません。
 ___
 
-### timing
-When the event triggers (fixed)
-- It is set to `gameovered` and cannot be edited.
-- It triggers every time you become gameovered, as many times as necessary.
+### タイミング
+イベントが発動するタイミング（固定）
+- It is fixed to `gameovered` and cannot be edited.
+- It triggers every time you get a game over, any number of times.
 ___
 
-### Initial Display State
-Initial display state of the event icon (triggering depends on timing; with this config, it will not trigger)
-- The conditions for triggering an event are determined by timing; this setting affects only the icon's appearance.
-- secreted: The icon will not be displayed until all requirements are met (though the event itself will occur at the appropriate time).
-- hidden・hinted: The icon is displayed with a diagonal line through it to indicate that it is not unlocked.
-- Released: The strikethrough disappears, and it is displayed as "Released."
+### 初期表示状態
+イベントアイコンの初期表示状態（発火はタイミングで決まり、この設定では発火しません）
+- イベントの発火条件はタイミングで決まり、この項目はアイコンの見た目のみに影響します。
+- secreted: 全requirementsを満たすまでアイコンが表示されません（発火自体はタイミングで起こります）。
+- hidden・hinted: アイコンに斜線が付き未解放として表示されます。
+- released: 斜線が消え解放済みとして表示されます。
 ___
 
-### terms
-Conditions for Earning Rewards
-- When the condition is met, the event is triggered, and a dedicated screen opens to display the details.
-- You will receive the reward only if the conditions configured here are met when the ability is activated.
-- If nothing is configured, you'll receive a reward every time it triggers.
+### 条件
+報酬を獲得する条件
+- タイミングが成立するとイベントは発動し、専用の画面を開いて内容を表示します。
+- 報酬は、発動時にここで設定した条件を満たしている場合にのみ獲得します。
+- 条件を設定していない場合は、発動するたびに報酬を獲得します。
 ___
 
 #### Type
@@ -188,8 +188,8 @@ ___
 #### Consumption probability [0-1].
 Probability of Item being consumed (0-1, valid only if Type is Item)
 - The probability that an Item will be consumed when the condition is met and the Action is performed.
-- Always consumed at `1`, 50% chance of consumption at `0.5`, and no consumption at `0`.
-- The default value is `1` (always consumed).
+- `1` always consumes, `0.5` consumes with a 50% probability, and `0` does not consume.
+- The default value is `1` (always consumes).
 - Invalid if Type is other than Item.
 ___
 
@@ -199,11 +199,11 @@ Requires that the Item be in the Equipment state (valid only if the Type is Item
 - Invalid if Type is other than Item.
 ___
 
-### reward
-Configure rewards when the event is triggered
-- This is a reward you receive when the timing is right and the conditions are met.
-- Unlike tasks, you don't need to perform any action to receive it; you automatically obtain it as soon as it is triggered.
-- You can configure a negative quantity. For example, if you configure the quantity of an item to a negative value when the gameover event occurs, you will lose those items.
+### 報酬
+イベント発動時の報酬設定
+- タイミングが成立し、かつ条件を満たしている時に得られる報酬です。
+- タスクと違って受け取る操作は要らず、発動と同時に自動で獲得します。
+- 数量にマイナスを設定することができます。例えばゲームオーバー時にアイテムの数量をマイナスにすれば、それらを失います。
 ___
 
 #### Type
@@ -230,52 +230,52 @@ ___
 #### Probability [-1 to 1]
 Probability of success in acquisition (negative values are evaluated only in the event of failure)
 - Configure the drop probability as a decimal value between -1 and 1. The absolute value is used to determine the probability.
-- When the value is positive, it is evaluated only when there is success with the action; a value of `1` guarantees a reward, while a value of `0.5` results in a 50% chance of receiving a reward.
-- When the value is negative, it is evaluated only in cases of action failure; a value of `-1` guarantees a drop, while a value of `-0.5` results in a 50% chance of a drop.
+- When the value is positive it is evaluated only when the action succeeds: `1` always grants it, and `0.5` grants it with a 50% probability.
+- When the value is negative it is evaluated only when the action fails: `-1` always grants it, and `-0.5` grants it with a 50% probability.
 - If the value is `0`, it is not obtained in either a success or a failure scenario.
 - The default value is `1` (always obtained upon success).
 ___
 
-### task group
-We will not use it at the event.
-- Since it does not appear in the list of missions or tasks, we do not use group assignments.
-- The input field does not appear in the editor.
+### タスクグループ
+イベントでは使用しません
+- ミッションやタスクの一覧に表示されないため、グループの指定は使いません。
+- エディターでは入力欄が表示されません。
 ___
 
-## When starting for the first time
-Triggers when you open the world for the first time
-- This effect triggers the first time you launch this world.
-- This is used to explain the game's world and to hand out the starter items as the game starts.
+## On first start
+Triggers when the world is opened for the first time
+- It triggers when this world is started for the first time.
+- Use it to explain the setting or to hand over starting supplies.
 ___
 
 ### [_information_](en/editor/information)
 ___
 
-### Category
-We will not use it at the event.
-- Since it will not appear in the list of missions or tasks, I will not specify a category for it.
-- The input field does not appear in the editor.
+### カテゴリー
+イベントでは使用しません
+- ミッションやタスクの一覧に表示されないため、所属するカテゴリーは指定しません。
+- エディターでは入力欄が表示されません。
 ___
 
-### timing
-When the event triggers (fixed)
-- It is set to `welcomed` and cannot be edited.
-- This occurs only once, when the application is launched for the first time.
+### タイミング
+イベントが発動するタイミング（固定）
+- It is fixed to `welcomed` and cannot be edited.
+- It triggers only once, at the first start.
 ___
 
-### Initial Display State
-Initial display state of the event icon (triggering depends on timing; with this config, it will not trigger)
-- The conditions for triggering an event are determined by timing; this setting affects only the icon's appearance.
-- secreted: The icon will not be displayed until all requirements are met (though the event itself will occur at the appropriate time).
-- hidden・hinted: The icon is displayed with a diagonal line through it to indicate that it is not unlocked.
-- Released: The strikethrough disappears, and it is displayed as "Released."
+### 初期表示状態
+イベントアイコンの初期表示状態（発火はタイミングで決まり、この設定では発火しません）
+- イベントの発火条件はタイミングで決まり、この項目はアイコンの見た目のみに影響します。
+- secreted: 全requirementsを満たすまでアイコンが表示されません（発火自体はタイミングで起こります）。
+- hidden・hinted: アイコンに斜線が付き未解放として表示されます。
+- released: 斜線が消え解放済みとして表示されます。
 ___
 
-### terms
-Conditions for Earning Rewards
-- When the condition is met, the event is triggered, and a dedicated screen opens to display the details.
-- You will receive the reward only if the conditions configured here are met when the ability is activated.
-- If nothing is configured, you'll receive a reward every time it triggers.
+### 条件
+報酬を獲得する条件
+- タイミングが成立するとイベントは発動し、専用の画面を開いて内容を表示します。
+- 報酬は、発動時にここで設定した条件を満たしている場合にのみ獲得します。
+- 条件を設定していない場合は、発動するたびに報酬を獲得します。
 ___
 
 #### Type
@@ -300,8 +300,8 @@ ___
 #### Consumption probability [0-1].
 Probability of Item being consumed (0-1, valid only if Type is Item)
 - The probability that an Item will be consumed when the condition is met and the Action is performed.
-- Always consumed at `1`, 50% chance of consumption at `0.5`, and no consumption at `0`.
-- The default value is `1` (always consumed).
+- `1` always consumes, `0.5` consumes with a 50% probability, and `0` does not consume.
+- The default value is `1` (always consumes).
 - Invalid if Type is other than Item.
 ___
 
@@ -311,11 +311,11 @@ Requires that the Item be in the Equipment state (valid only if the Type is Item
 - Invalid if Type is other than Item.
 ___
 
-### reward
-Configure rewards when the event is triggered
-- This is a reward you receive when the timing is right and the conditions are met.
-- Unlike tasks, you don't need to perform any action to receive it; you automatically obtain it as soon as it is triggered.
-- You can configure a negative quantity. For example, if you configure the quantity of an item to a negative value when the gameover event occurs, you will lose those items.
+### 報酬
+イベント発動時の報酬設定
+- タイミングが成立し、かつ条件を満たしている時に得られる報酬です。
+- タスクと違って受け取る操作は要らず、発動と同時に自動で獲得します。
+- 数量にマイナスを設定することができます。例えばゲームオーバー時にアイテムの数量をマイナスにすれば、それらを失います。
 ___
 
 #### Type
@@ -342,52 +342,52 @@ ___
 #### Probability [-1 to 1]
 Probability of success in acquisition (negative values are evaluated only in the event of failure)
 - Configure the drop probability as a decimal value between -1 and 1. The absolute value is used to determine the probability.
-- When the value is positive, it is evaluated only when there is success with the action; a value of `1` guarantees a reward, while a value of `0.5` results in a 50% chance of receiving a reward.
-- When the value is negative, it is evaluated only in cases of action failure; a value of `-1` guarantees a drop, while a value of `-0.5` results in a 50% chance of a drop.
+- When the value is positive it is evaluated only when the action succeeds: `1` always grants it, and `0.5` grants it with a 50% probability.
+- When the value is negative it is evaluated only when the action fails: `-1` always grants it, and `-0.5` grants it with a 50% probability.
 - If the value is `0`, it is not obtained in either a success or a failure scenario.
 - The default value is `1` (always obtained upon success).
 ___
 
-### task group
-We will not use it at the event.
-- Since it does not appear in the list of missions or tasks, we do not use group assignments.
-- The input field does not appear in the editor.
+### タスクグループ
+イベントでは使用しません
+- ミッションやタスクの一覧に表示されないため、グループの指定は使いません。
+- エディターでは入力欄が表示されません。
 ___
 
-## Upon completion
-Triggers when all categories reach their max level
-- This triggers when the level of all categories reaches the max value (maxCategoryLevels).
-- Categories that are not numeric are excluded from the evaluation.
+## On clear
+Triggers when every category reaches its maximum level
+- It triggers when the levels of all categories reach the maximum value (maxCategoryLevels).
+- Categories that are not numeric are excluded from the check.
 ___
 
 ### [_information_](en/editor/information)
 ___
 
-### Category
-We will not use it at the event.
-- Since it will not appear in the list of missions or tasks, I will not specify a category for it.
-- The input field does not appear in the editor.
+### カテゴリー
+イベントでは使用しません
+- ミッションやタスクの一覧に表示されないため、所属するカテゴリーは指定しません。
+- エディターでは入力欄が表示されません。
 ___
 
-### timing
-When the event triggers (fixed)
-- It is set to `completed` and cannot be edited.
-- It triggers only once when the conditions are met.
+### タイミング
+イベントが発動するタイミング（固定）
+- It is fixed to `completed` and cannot be edited.
+- It triggers only once, when the conditions are met.
 ___
 
-### Initial Display State
-Initial display state of the event icon (triggering depends on timing; with this config, it will not trigger)
-- The conditions for triggering an event are determined by timing; this setting affects only the icon's appearance.
-- secreted: The icon will not be displayed until all requirements are met (though the event itself will occur at the appropriate time).
-- hidden・hinted: The icon is displayed with a diagonal line through it to indicate that it is not unlocked.
-- Released: The strikethrough disappears, and it is displayed as "Released."
+### 初期表示状態
+イベントアイコンの初期表示状態（発火はタイミングで決まり、この設定では発火しません）
+- イベントの発火条件はタイミングで決まり、この項目はアイコンの見た目のみに影響します。
+- secreted: 全requirementsを満たすまでアイコンが表示されません（発火自体はタイミングで起こります）。
+- hidden・hinted: アイコンに斜線が付き未解放として表示されます。
+- released: 斜線が消え解放済みとして表示されます。
 ___
 
-### terms
-Conditions for Earning Rewards
-- When the condition is met, the event is triggered, and a dedicated screen opens to display the details.
-- You will receive the reward only if the conditions configured here are met when the ability is activated.
-- If nothing is configured, you'll receive a reward every time it triggers.
+### 条件
+報酬を獲得する条件
+- タイミングが成立するとイベントは発動し、専用の画面を開いて内容を表示します。
+- 報酬は、発動時にここで設定した条件を満たしている場合にのみ獲得します。
+- 条件を設定していない場合は、発動するたびに報酬を獲得します。
 ___
 
 #### Type
@@ -412,8 +412,8 @@ ___
 #### Consumption probability [0-1].
 Probability of Item being consumed (0-1, valid only if Type is Item)
 - The probability that an Item will be consumed when the condition is met and the Action is performed.
-- Always consumed at `1`, 50% chance of consumption at `0.5`, and no consumption at `0`.
-- The default value is `1` (always consumed).
+- `1` always consumes, `0.5` consumes with a 50% probability, and `0` does not consume.
+- The default value is `1` (always consumes).
 - Invalid if Type is other than Item.
 ___
 
@@ -423,11 +423,11 @@ Requires that the Item be in the Equipment state (valid only if the Type is Item
 - Invalid if Type is other than Item.
 ___
 
-### reward
-Configure rewards when the event is triggered
-- This is a reward you receive when the timing is right and the conditions are met.
-- Unlike tasks, you don't need to perform any action to receive it; you automatically obtain it as soon as it is triggered.
-- You can configure a negative quantity. For example, if you configure the quantity of an item to a negative value when the gameover event occurs, you will lose those items.
+### 報酬
+イベント発動時の報酬設定
+- タイミングが成立し、かつ条件を満たしている時に得られる報酬です。
+- タスクと違って受け取る操作は要らず、発動と同時に自動で獲得します。
+- 数量にマイナスを設定することができます。例えばゲームオーバー時にアイテムの数量をマイナスにすれば、それらを失います。
 ___
 
 #### Type
@@ -454,52 +454,52 @@ ___
 #### Probability [-1 to 1]
 Probability of success in acquisition (negative values are evaluated only in the event of failure)
 - Configure the drop probability as a decimal value between -1 and 1. The absolute value is used to determine the probability.
-- When the value is positive, it is evaluated only when there is success with the action; a value of `1` guarantees a reward, while a value of `0.5` results in a 50% chance of receiving a reward.
-- When the value is negative, it is evaluated only in cases of action failure; a value of `-1` guarantees a drop, while a value of `-0.5` results in a 50% chance of a drop.
+- When the value is positive it is evaluated only when the action succeeds: `1` always grants it, and `0.5` grants it with a 50% probability.
+- When the value is negative it is evaluated only when the action fails: `-1` always grants it, and `-0.5` grants it with a 50% probability.
 - If the value is `0`, it is not obtained in either a success or a failure scenario.
 - The default value is `1` (always obtained upon success).
 ___
 
-### task group
-We will not use it at the event.
-- Since it does not appear in the list of missions or tasks, we do not use group assignments.
-- The input field does not appear in the editor.
+### タスクグループ
+イベントでは使用しません
+- ミッションやタスクの一覧に表示されないため、グループの指定は使いません。
+- エディターでは入力欄が表示されません。
 ___
 
-## Upon completion of a single-step action
-Triggered when you complete a one-time action, such as opening a treasure chest
-- This effect triggers when you complete or confirm a single-type action (such as opening a treasure chest).
-- In addition to the reward for the Action itself, you can add the reward configured here.
+## On single action completion
+Triggers when a single action such as a treasure chest is completed
+- It triggers when an action of the single type (such as a treasure chest) is completed and confirmed.
+- Separately from the action's own reward, you can add the reward configured here on top.
 ___
 
 ### [_information_](en/editor/information)
 ___
 
-### Category
-We will not use it at the event.
-- Since it will not appear in the list of missions or tasks, I will not specify a category for it.
-- The input field does not appear in the editor.
+### カテゴリー
+イベントでは使用しません
+- ミッションやタスクの一覧に表示されないため、所属するカテゴリーは指定しません。
+- エディターでは入力欄が表示されません。
 ___
 
-### timing
-When the event triggers (fixed)
-- It is set to `obtained` and cannot be edited.
-- It triggers as many times as you like every time you complete a single-use action.
+### タイミング
+イベントが発動するタイミング（固定）
+- It is fixed to `obtained` and cannot be edited.
+- It triggers every time you complete a single action, any number of times.
 ___
 
-### Initial Display State
-Initial display state of the event icon (triggering depends on timing; with this config, it will not trigger)
-- The conditions for triggering an event are determined by timing; this setting affects only the icon's appearance.
-- secreted: The icon will not be displayed until all requirements are met (though the event itself will occur at the appropriate time).
-- hidden・hinted: The icon is displayed with a diagonal line through it to indicate that it is not unlocked.
-- Released: The strikethrough disappears, and it is displayed as "Released."
+### 初期表示状態
+イベントアイコンの初期表示状態（発火はタイミングで決まり、この設定では発火しません）
+- イベントの発火条件はタイミングで決まり、この項目はアイコンの見た目のみに影響します。
+- secreted: 全requirementsを満たすまでアイコンが表示されません（発火自体はタイミングで起こります）。
+- hidden・hinted: アイコンに斜線が付き未解放として表示されます。
+- released: 斜線が消え解放済みとして表示されます。
 ___
 
-### terms
-Conditions for Earning Rewards
-- When the condition is met, the event is triggered, and a dedicated screen opens to display the details.
-- You will receive the reward only if the conditions configured here are met when the ability is activated.
-- If nothing is configured, you'll receive a reward every time it triggers.
+### 条件
+報酬を獲得する条件
+- タイミングが成立するとイベントは発動し、専用の画面を開いて内容を表示します。
+- 報酬は、発動時にここで設定した条件を満たしている場合にのみ獲得します。
+- 条件を設定していない場合は、発動するたびに報酬を獲得します。
 ___
 
 #### Type
@@ -524,8 +524,8 @@ ___
 #### Consumption probability [0-1].
 Probability of Item being consumed (0-1, valid only if Type is Item)
 - The probability that an Item will be consumed when the condition is met and the Action is performed.
-- Always consumed at `1`, 50% chance of consumption at `0.5`, and no consumption at `0`.
-- The default value is `1` (always consumed).
+- `1` always consumes, `0.5` consumes with a 50% probability, and `0` does not consume.
+- The default value is `1` (always consumes).
 - Invalid if Type is other than Item.
 ___
 
@@ -535,11 +535,11 @@ Requires that the Item be in the Equipment state (valid only if the Type is Item
 - Invalid if Type is other than Item.
 ___
 
-### reward
-Configure rewards when the event is triggered
-- This is a reward you receive when the timing is right and the conditions are met.
-- Unlike tasks, you don't need to perform any action to receive it; you automatically obtain it as soon as it is triggered.
-- You can configure a negative quantity. For example, if you configure the quantity of an item to a negative value when the gameover event occurs, you will lose those items.
+### 報酬
+イベント発動時の報酬設定
+- タイミングが成立し、かつ条件を満たしている時に得られる報酬です。
+- タスクと違って受け取る操作は要らず、発動と同時に自動で獲得します。
+- 数量にマイナスを設定することができます。例えばゲームオーバー時にアイテムの数量をマイナスにすれば、それらを失います。
 ___
 
 #### Type
@@ -566,13 +566,13 @@ ___
 #### Probability [-1 to 1]
 Probability of success in acquisition (negative values are evaluated only in the event of failure)
 - Configure the drop probability as a decimal value between -1 and 1. The absolute value is used to determine the probability.
-- When the value is positive, it is evaluated only when there is success with the action; a value of `1` guarantees a reward, while a value of `0.5` results in a 50% chance of receiving a reward.
-- When the value is negative, it is evaluated only in cases of action failure; a value of `-1` guarantees a drop, while a value of `-0.5` results in a 50% chance of a drop.
+- When the value is positive it is evaluated only when the action succeeds: `1` always grants it, and `0.5` grants it with a 50% probability.
+- When the value is negative it is evaluated only when the action fails: `-1` always grants it, and `-0.5` grants it with a 50% probability.
 - If the value is `0`, it is not obtained in either a success or a failure scenario.
 - The default value is `1` (always obtained upon success).
 ___
 
-### task group
-We will not use it at the event.
-- Since it does not appear in the list of missions or tasks, we do not use group assignments.
-- The input field does not appear in the editor.
+### タスクグループ
+イベントでは使用しません
+- ミッションやタスクの一覧に表示されないため、グループの指定は使いません。
+- エディターでは入力欄が表示されません。

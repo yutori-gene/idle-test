@@ -20,7 +20,7 @@ export const translation: Markdown = {
 	summary: "Configuración para traducir el texto del juego a otros idiomas.",
 	points: ["Configura el texto que se va a traducir.", "La configuración multilingüe está disponible cuando la configuración de traducción está activada.", "Si la traducción está desactivada, la información descrita durante el desarrollo se mostrará tal cual.", "La configuración de la traducción y el cambio de idioma no son posibles durante el desarrollo previo a la publicación."],
 	options: {
-		label: "traducción",
+		label: "translation",
 	},
 	children: {
 		flag: {
@@ -46,7 +46,7 @@ export const translation: Markdown = {
 						prompt: {
 							title: "Ejemplos de indicaciones",
 							summary: "Ejemplos de instrucciones de traducción dadas a la IA",
-							points: ["Ejemplo: traduzca los valores `name` y `explanation` de los datos JSON cargados del Inglés al Japonés. No cambie nada de los otros minutos de los datos."],
+							points: ["Ejemplo de instrucción: traduce del inglés al japonés los valores de `name` y `explanation` de los datos JSON subidos. No modifiques ninguna otra parte."],
 						},
 						gpt: {
 							title: "Uso de GPT",
@@ -91,9 +91,9 @@ export const miscellaneous: Markdown = {
 	title: "información complementaria",
 	summary: "Otra información complementaria explicada.",
 	points: ["Información de referencia."],
-	list: expandList("suplemento", [translation]),
+	list: expandList("suplemento", [translation], "Descripción"),
 	options: {
-		label: "varios",
+		label: "miscellaneous",
 		linkedList: true,
 	},
 };
@@ -103,7 +103,7 @@ export const miscellaneous: Markdown = {
 export const property: Type.Property = {
 	title: "propiedades",
 	summary: "Configuración de los efectos que tiene un Artículo.",
-	points: ["Este es un Artículo de efecto que puede ser configurado en el Artículo.", "Los efectos de los artículos cuyo tipo de equipamiento sea «necessary» o «consumable» solo se aplican mientras se están equipando. En el caso de los artículos «unnecessary», el efecto se aplica con solo llevarlos en el inventario, y su intensidad es proporcional al número de unidades que se tengan (si se tienen 2, el efecto se duplica).", "Dado que el efecto de `unnecessary` se calcula multiplicando directamente el número de unidades que se tienen, `maximum` (el número máximo de unidades) constituye el límite máximo de dicho efecto. A la hora de equilibrar el juego, configúralo junto con `maximum`.", "Los valores de ambos elementos se calculan como un ajuste por la diferencia de nivel entre el nivel del jugador y el nivel de la Acción.", "Por ejemplo, si el valor de ataque es 10, el ataque se calcula como si el nivel del jugador fuera 10 superior al nivel de la Acción. Menos valores son lo contrario.", "ATAQUE, DEFENSA, PRECISIÓN, EVASIÓN y RESTAURACIÓN sólo son válidos para acciones de tipo \"resistencia\"."],
+	points: ["Este es un Artículo de efecto que puede ser configurado en el Artículo.", "Los artículos cuyo tipo de equipamiento es `necessary` o `consumable` solo aplican su efecto mientras están equipados. `unnecessary` aplica su efecto con solo poseerlo, y la magnitud del efecto es proporcional a la cantidad que se posea (el doble si se poseen 2).", "Dado que el efecto de `unnecessary` se calcula multiplicando directamente el número de unidades que se tienen, `maximum` (el número máximo de unidades) constituye el límite máximo de dicho efecto. A la hora de equilibrar el juego, configúralo junto con `maximum`.", "Los valores de ambos elementos se calculan como un ajuste por la diferencia de nivel entre el nivel del jugador y el nivel de la Acción.", "Por ejemplo, si el valor de ataque es 10, el ataque se calcula como si el nivel del jugador fuera 10 superior al nivel de la Acción. Menos valores son lo contrario.", "attack, defence, accuracy, evasion y restore solo son efectivos para acciones del tipo `stamina`."],
 	list: [
 		["propiedades", "Detalles de la eficacia."],
 		["velocidad", "Reduce el tiempo necesario para realizar una Acción. El tiempo necesario varía inversamente a la diferencia de nivel."],
@@ -119,7 +119,7 @@ export const property: Type.Property = {
 		category: {
 			title: "Categoría.",
 			summary: "Especificación de la Categoría a la que se aplica la propiedad.",
-			points: ["Configura el ID de la Categoría a la que se aplica esta propiedad.", "La configuración `*` se aplica a todas las Categorías.", "Si está en blanco, se aplica a la Categoría a la que pertenece el Artículo."],
+			points: ["Configura el ID de la Categoría a la que se aplica esta propiedad.", "Al configurar `*` se aplica a todas las categorías.", "Si está en blanco, se aplica a la Categoría a la que pertenece el Artículo."],
 		},
 		attack: {
 			title: "Valor de ataque [diferencia de nivel].",
@@ -163,14 +163,14 @@ export const property: Type.Property = {
 		},
 	},
 	options: {
-		label: "propiedad",
+		label: "property",
 	},
 };
 
 export const combat: Type.Combat = {
 	title: "valor de combate",
 	summary: "Valores de corrección de combate para acciones de Tipo resistencia.",
-	points: ["Valores de corrección válidos sólo para Acciones de Tipo `stamina`.", "Cada valor se calcula como una corrección adicional a la diferencia de nivel entre el jugador y la Acción.", "Por ejemplo, si el valor del ataque es 10, el daño del ataque se calcula como si el nivel del jugador fuera 10 superior al nivel de la Acción. Menos si es negativo, la corrección es en sentido contrario.", "Si se configura como `defaultCombat` en `General`, se convierte en el parámetro de combate por defecto para todo el mundo."],
+	points: ["Estos valores de corrección solo son efectivos para acciones del tipo `stamina`.", "Cada valor se calcula como una corrección adicional a la diferencia de nivel entre el jugador y la Acción.", "Por ejemplo, si el valor del ataque es 10, el daño del ataque se calcula como si el nivel del jugador fuera 10 superior al nivel de la Acción. Menos si es negativo, la corrección es en sentido contrario.", "Si se configuran en `defaultCombat` dentro de General, se convierten en los parámetros de combate predeterminados de todo el mundo."],
 	children: {
 		attack: {
 			title: "Valor de ataque [diferencia de nivel].",
@@ -199,7 +199,7 @@ export const combat: Type.Combat = {
 		},
 	},
 	options: {
-		label: "combate",
+		label: "combat",
 	},
 };
 
@@ -236,12 +236,12 @@ export const acquisition: Type.Acquisition = {
 		chance: {
 			title: "Probabilidad [-1 a 1]",
 			summary: "Probabilidad de que la obtención alcance el éxito (los valores negativos solo se tienen en cuenta en caso de fracaso)",
-			points: ["Configuración de la probabilidad de obtención como un número decimal comprendido entre -1 y 1. Para calcular la probabilidad se utiliza el valor absoluto.", "Cuando el valor es positivo, solo se evalúa si la acción tiene éxito; con un valor de `1` se obtiene siempre, y con un valor de `0,5`, se obtiene con una probabilidad del 50 %.", "Cuando el valor es negativo, solo se evalúa en caso de fracaso de la Acción; con `-1` se obtiene siempre, y con `-0,5`, se obtiene con una probabilidad del 50 %.", "Si el valor es `0`, no se obtiene en ningún caso, ni en caso de éxito ni en caso de fracaso.", "El valor por defecto es `1` (se obtiene siempre cuando la operación tiene éxito)."],
+			points: ["Configuración de la probabilidad de obtención como un número decimal comprendido entre -1 y 1. Para calcular la probabilidad se utiliza el valor absoluto.", "Cuando el valor es positivo solo se evalúa si la acción tiene éxito: con `1` se obtiene siempre y con `0.5` se obtiene con una probabilidad del 50%.", "Cuando el valor es negativo solo se evalúa si la acción falla: con `-1` se obtiene siempre y con `-0.5` se obtiene con una probabilidad del 50%.", "Si el valor es `0`, no se obtiene en ningún caso, ni en caso de éxito ni en caso de fracaso.", "El valor por defecto es `1` (se obtiene siempre cuando la operación tiene éxito)."],
 		},
 	},
-	links: { type: "tipo" },
+	links: { type: "type" },
 	options: {
-		label: "adquisición",
+		label: "acquisition",
 	},
 };
 
@@ -278,7 +278,7 @@ export const requirement: Type.Requirement = {
 		chance: {
 			title: "Probabilidad de consumo [0-1].",
 			summary: "Probabilidad de que se consuma un Artículo (0-1, válido sólo si el Tipo es Artículo).",
-			points: ["Probabilidad de que se consuma un Artículo cuando se cumple la condición y se realiza la Acción.", "Siempre se consume a `1`, 50% de probabilidad de consumo a `0.5` y no se consume a `0`.", "El valor por defecto es `1` (siempre se consume).", "No válido si el Tipo es distinto de Artículo."],
+			points: ["Probabilidad de que se consuma un Artículo cuando se cumple la condición y se realiza la Acción.", "Con `1` siempre se consume, con `0.5` se consume con una probabilidad del 50% y con `0` no se consume.", "El valor predeterminado es `1` (siempre se consume).", "No válido si el Tipo es distinto de Artículo."],
 		},
 		equipment: {
 			title: "Equipamiento",
@@ -286,9 +286,9 @@ export const requirement: Type.Requirement = {
 			points: ["Cuando se activa, el Artículo Necesario debe estar Equipado y Poseído.", "No válido si el Tipo es distinto de Artículo."],
 		},
 	},
-	links: { type: "tipo" },
+	links: { type: "type" },
 	options: {
-		label: "requisito",
+		label: "requirement",
 	},
 };
 
@@ -311,7 +311,7 @@ export const information: Type.Information = {
 						example: {
 							title: "Ejemplo.",
 							summary: "Ejemplos reales de conversión de ID",
-							points: ["Si el ID es `stylish-strong-axe`, el nombre es `Stylish Strong Axe`."],
+							points: ["Si el ID es `stylish-strong-axe`, el nombre será `Stylish Strong Axe`."],
 						},
 					},
 				},
@@ -319,14 +319,14 @@ export const information: Type.Information = {
 					title: "Nada de duplicados.",
 					summary: "Prohibición de ID duplicados dentro del mismo Tipo.",
 					points: ["No duplique nada dentro de los tipos Categoría, Acción, Artículo, Evento y Preajuste, ya que se utilizan para identificar elementos.", "Tener el mismo ID para diferentes Tipos no es un problema."],
-					links: { type: "tipo" },
+					links: { type: "type" },
 				},
 			},
 		},
 		name: {
 			title: "Nombre.",
 			summary: "Nombre del elemento tal y como aparece",
-			points: ["Nombre del elemento mostrado en el juego.", "También se pueden introducir otros idiomas además del Inglés.", "Se aceptan nombres que dupliquen otros elementos.", "Si es demasiado largo, la parte que desborda se omite de la pantalla durante la reproducción con `...`."],
+			points: ["Nombre del elemento mostrado en el juego.", "También se pueden introducir otros idiomas además del Inglés.", "Se aceptan nombres que dupliquen otros elementos.", "Si es demasiado largo, la parte que se desborda se omite con `…` en la pantalla durante el juego."],
 			children: {
 				translateFromId: {
 					title: "Conversión automática de ID",
@@ -350,10 +350,10 @@ export const information: Type.Information = {
 					summary: "Utilice cualquier archivo de imagen",
 					points: ["Imagen que representa el elemento.", "Si el tamaño del archivo es grande, se redimensiona automáticamente.", "Innecesario si se ha configurado Iconify o pictogramas."],
 					children: {
-						"tipo de archivo": {
-							title: "Tipo de fichero.",
-							summary: "Formatos de archivo de imagen compatibles.",
-							points: ["Puede utilizar los tipos generales que pueden mostrarse en el navegador.", "JPEG, PNG, GIF, WebP, SVG, etc."],
+						"file-type": {
+							title: "Tipo de archivo",
+							summary: "Formatos de archivo de imagen compatibles",
+							points: ["Se pueden usar los formatos habituales que los navegadores pueden mostrar.", "JPEG, PNG, GIF, WebP, SVG, entre otros."],
 						},
 					},
 				},
@@ -366,7 +366,7 @@ export const information: Type.Information = {
 							title: "Iconify",
 							summary: "Cómo seleccionar iconos de Iconify",
 							points: ["Busca en `Iconify` los iconos que se pueden mostrar.", "Puedes encontrar rápidamente los mejores iconos buscando iconos.", "Selecciona un icono para ver su identificador (tipo de conjunto de iconos `:` nombre del icono), como `game-icons:sword-wound`, y pégalo directamente en este campo de iconos."],
-							images: ["icono-selección.png"],
+							images: ["iconify-selection.png"],
 							links: { iconify: "https://icon-sets.iconify.design" },
 						},
 					},
@@ -379,22 +379,22 @@ export const information: Type.Information = {
 			},
 		},
 		color: {
-			title: "variedad",
+			title: "Color",
 			summary: "Configura el color de visualización del elemento.",
 			points: ["Como color de elemento, se aplica al icono y al color de fondo del elemento.", "Seleccione en el selector de color del editor."],
 			children: {
-				"herencia de los padres": {
-					title: "Herencia de elementos padre",
-					summary: "Asumir la configuración de color del elemento padre.",
-					points: ["Si está en blanco, se toma el color configurado en el elemento padre.", "La jerarquía de tipos de cada elemento es la siguiente", "Por ejemplo, si una Acción tiene una configuración de color individual, se utilizará, mientras que si la Acción no tiene una configuración de color individual, se utilizará el color de la Categoría o del Mundo.", "Si también se ha realizado la configuración de una categoría para el evento, este adoptará el color de dicha categoría, al igual que las Acciones y los artículos."],
+				"heritage-from-parent": {
+					title: "Herencia del elemento padre",
+					summary: "Adopción del color configurado en el elemento padre",
+					points: ["Si se deja en blanco, se hereda el color configurado en el elemento padre.", "La jerarquía de los tipos de cada elemento es la siguiente.", "Por ejemplo, si una acción tiene un color propio configurado, se usa ese; si la acción no tiene un color propio, se usa el color de la categoría o del mundo.", "Cuando un evento también tiene una categoría configurada, hereda el color de esa categoría igual que las acciones y los artículos."],
 					quote: typeTree,
-					links: { type: "tipo" },
+					links: { type: "type" },
 				},
 			},
 		},
 	},
 	options: {
-		label: "información",
+		label: "information",
 	},
 };
 
@@ -402,9 +402,9 @@ export const component: Markdown = {
 	title: "componente",
 	summary: "Piezas comunes",
 	points: ["Se extraen y manejan los componentes comunes utilizados en cada configuración de ubicación.", "Los componentes utilizados en todas estas áreas son comunes, pero algunos de los componentes no se utilizan en algunos de los artículos."],
-	list: expandList("componente", [information, requirement, acquisition, combat, property]),
+	list: expandList("componente", [information, requirement, acquisition, combat, property], "Descripción"),
 	options: {
-		label: "componente",
+		label: "component",
 		linkedList: true,
 	},
 };
@@ -417,7 +417,7 @@ export const preset: Type.Information = {
 	summary: "Personalización de la visualización de los elementos del sistema",
 	points: ["Sustituye el texto y los iconos de la interfaz de usuario preintegrados en el motor del juego (jugador).", "Sólo se sustituirán los que coincidan por ID con un preajuste existente.", "Sólo se sustituirán los elementos que hayas configurado. Por ejemplo, si solo se configura el icono, los demás elementos, como el nombre y el color, utilizarán el original.", "Las modificaciones de los nombres y las descripciones tienen prioridad sobre las traducciones de cada idioma integradas en el juego para los jugadores. Las cadenas modificadas se mostrarán tal cual en todos los idiomas.", "Si deseas modificar el texto para cada idioma, activa la traducción y especifícalo en el archivo de traducción `translations/world` que se genera. Este tendrá la máxima prioridad."],
 	options: {
-		label: "preajustado",
+		label: "preset",
 	},
 };
 
@@ -425,7 +425,7 @@ export const task: Type.Event = {
 	title: "Tarea",
 	summary: "Misiones que se completan al cumplir los requisitos",
 	points: ["Cuando se cumplan las condiciones de configuración, se considerará completada la tarea y aparecerá un mensaje arriba de la pantalla.", "Aparecerá en la lista de misiones del jugador y en la lista de tareas de la Categoría.", "La recompensa no se entrega automáticamente. El jugador la recibe cuando abre la tarea y pulsa la barra de adquisiciones.", "Hasta que se reciba la recompensa, aparecerá una cinta en la barra de la lista que indica que aún no se ha recibido.", "Con las adquisiciones, puedes modificar el nivel de la categoría, el número de veces que se ejecuta una acción y la cantidad de artículos que posees.", "Los elementos que se deseen activar en momentos distintos a los establecidos, como al iniciar el juego por primera vez o al terminar el juego terminado, se configuran en los eventos de la configuración básica."],
-	links: { event: "evento" },
+	links: { event: "event" },
 	children: {
 		information: information,
 		category: {
@@ -437,7 +437,7 @@ export const task: Type.Event = {
 			title: "cronometraje",
 			summary: "Momento de activación de la tarea (fijado en `matched`)",
 			points: ["La tarea está fijada en «`matched`» (cuando se cumplen las configuraciones establecidas) y no se puede editar.", "Solo se puede recibir la recompensa una vez; una vez recibida, el logro se mantiene sin cambios.", "Aquello que se desee activar en cualquier otro momento se configura en los eventos de la configuración básica."],
-			links: { event: "evento" },
+			links: { event: "event" },
 		},
 		unlocked: {
 			title: "Estado inicial de visualización",
@@ -464,7 +464,7 @@ export const task: Type.Event = {
 		},
 	},
 	options: {
-		label: "tarea",
+		label: "task",
 	},
 };
 
@@ -474,7 +474,7 @@ export const group: Type.Information = {
 	summary: "Definir grupos de visualización para Categorías, Acciones y Artículos",
 	points: ["Defina grupos para controlar el orden de visualización.", "Puede configurar grupos definidos aquí para cada Categoría, Acción y Artículo.", "Los grupos con el mismo grupo se muestran muy juntos.", "Si se deja en blanco, no se realiza ninguna agrupación."],
 	options: {
-		label: "grupo",
+		label: "group",
 	},
 };
 
@@ -531,13 +531,13 @@ export const item: Type.Item = {
 		equipmentType: {
 			title: "Tipo de Equipamiento",
 			summary: "Tipo de configuración para el Equipamiento, efectos y consumo de Artículos.",
-			points: ["Los Artículos Posibles de Equipamiento deben pertenecer al grupo especificado en la Categoría `equipmentGroups`.", "Sólo se puede equipar un objeto dentro del mismo grupo.", "El efecto «unnecessary» se aplica independientemente de si se tiene equipado o no, y su intensidad es proporcional al número de unidades que se posean (nada si se tiene 0; n veces mayor si se tiene n)."],
+			points: ["Los artículos equipables deben pertenecer a un grupo indicado en `equipmentGroups` de la categoría.", "Sólo se puede equipar un objeto dentro del mismo grupo.", "`unnecessary` surte efecto tanto si está equipado como si no, y la magnitud del efecto es proporcional a la cantidad que se posea (sin efecto con 0, n veces con n)."],
 			list: [
 				["valor", "Equipamiento", "Eficacia.", "consumo", "Ejemplo."],
-				["`necesario`.", "Necesario", "Equipando (1 unidad)", "nada", "Espadas, armaduras y otros Equipamientos."],
-				["\"consumible\".", "Necesario", "Equipando (1 unidad)", "Se consume al realizar las Acciones", "Artículos que se consumen para obtener un efecto, como las pociones."],
-				["\"innecesario\".", "Innecesario", "Mientras se tenga en poder, siempre (en proporción a la cantidad que se posea)", "nada", "Artículos pasivos que son efectivos por el mero hecho de tenerlos."],
-				["\"imposible\".", "no autorizado", "nada", "nada", "Artículos inútiles como materiales y escombros."],
+				["`necessary`", "Necesario", "Equipando (1 unidad)", "nada", "Espadas, armaduras y otros Equipamientos."],
+				["`consumable`", "Necesario", "Equipando (1 unidad)", "Se consume al realizar las Acciones", "Artículos que se consumen para obtener un efecto, como las pociones."],
+				["`unnecessary`", "Innecesario", "Mientras se tenga en poder, siempre (en proporción a la cantidad que se posea)", "nada", "Artículos pasivos que son efectivos por el mero hecho de tenerlos."],
+				["`impossible`", "no autorizado", "nada", "nada", "Artículos inútiles como materiales y escombros."],
 			],
 		},
 		requirements: { ...requirement, options: { ...requirement.options, array: true }, summary: "Requisitos Necesarios para el uso del Artículo." },
@@ -545,7 +545,7 @@ export const item: Type.Item = {
 		coinId: { title: "ID de la pareja de divisas", summary: "ID de la moneda que se utiliza para comprar y vender este artículo", points: ["Especifica el ID de la moneda (coins) que se utiliza tanto para el valor de compra como para el de venta.", "Si se deja en blanco, se utilizará la moneda principal (la primera de la lista «coins»)."] },
 	},
 	options: {
-		label: "artículo",
+		label: "item",
 	},
 };
 
@@ -564,7 +564,7 @@ export const action: Type.Action = {
 			title: "atributo",
 			summary: "Categorías de atributos específicos de la Acción",
 			points: ["Se pueden configurar atributos individuales (Categorías).", "Si se deja en blanco, se adopta la Categoría a la que pertenece", "Por ejemplo, si configuras el atributo Magia para una Acción que pertenece a la Categoría Castillo del Demonio de forma individual, el nivel y las propiedades de la categoría de magia se calcularán y se aplicarán al tiempo de finalización de la acción y al daño."],
-			links: { category: "categoría" },
+			links: { category: "category" },
 		},
 		group: {
 			title: "grupo (normalmente de personas)",
@@ -581,30 +581,30 @@ export const action: Type.Action = {
 			title: "nivel",
 			summary: "Nivel de dificultad de la Acción.",
 			points: ["El nivel de dificultad de la Acción viene indicado por el nivel.", "Calcula cada propiedad en tiempo de ejecución en comparación con el nivel del jugador.", "Por ejemplo, realizar una Acción por encima de tu nivel tendrá un porcentaje de éxito más bajo.", "Si se cumplen las condiciones, la ejecución puede llevarse a cabo aunque el nivel del jugador sea inferior a este valor."],
-			links: { property: "propiedad" },
+			links: { property: "property" },
 		},
 		requirements: { ...requirement, options: { ...requirement.options, array: true }, summary: "Requisitos Necesarios para la ejecución de la Acción." },
 		seconds: {
 			title: "Tiempo [segundos].",
 			summary: "Tiempo típico empleado en realizar la Acción",
-			points: ["Tiempo estándar (en segundos) Necesario para realizar una Acción una vez.", "Para los Tipos \"resistencia\", este es el intervalo de tiempo para un turno (una reducción de la resistencia de cada uno).", "La ejecución real variará debido a los cálculos de las propiedades."],
-			links: { property: "propiedad" },
+			points: ["Tiempo estándar (en segundos) Necesario para realizar una Acción una vez.", "Para el tipo `stamina`, este es el intervalo de tiempo de un turno (la resistencia de cada parte se reduce una vez).", "La ejecución real variará debido a los cálculos de las propiedades."],
+			links: { property: "property" },
 		},
 		experience: {
 			title: "Experiencia [siguiente nivel a 100].",
 			summary: "Experiencia adquirida con adquisiciones exitosas",
 			points: ["La experiencia estándar que se adquiere al realizar una Acción una vez y con éxito; 100 equivale a un nivel de experiencia.", "En caso de combate, conviene configurar más, ya que se gana cuando el adversario sale victorioso.", "La ejecución real variará debido a los cálculos de las propiedades."],
-			links: { property: "propiedad" },
+			links: { property: "property" },
 		},
 		chance: {
 			title: "Probabilidad de éxito [0-1].",
 			summary: "Probabilidad de éxito al finalizar la Acción",
-			points: ["Probabilidad de éxito al finalizar la Acción.", "Siempre tiene éxito si `1`, siempre falla si `0`.", "En caso de fracaso, se consumen Artículos consumibles, pero no se obtiene recompensa ni experiencia.", "La ejecución real variará debido a los cálculos de las propiedades."],
+			points: ["Probabilidad de éxito al finalizar la Acción.", "Con `1` siempre tiene éxito y con `0` siempre falla.", "En caso de fracaso, se consumen Artículos consumibles, pero no se obtiene recompensa ni experiencia.", "La ejecución real variará debido a los cálculos de las propiedades."],
 		},
 		maximum: {
 			title: "Número máx. de ejecuciones [veces].",
 			summary: "Máximo de veces que se puede contar una Acción.",
-			points: ["El número máximo de veces que una Acción puede ser completada con éxito.", "Ilimitado para \"0\".", "Cuando se alcanza el límite superior, la Acción deja de ser ejecutable."],
+			points: ["El número máximo de veces que una Acción puede ser completada con éxito.", "Con `0` es ilimitado.", "Cuando se alcanza el límite superior, la Acción deja de ser ejecutable."],
 		},
 		acquisitions: { ...acquisition, options: { ...acquisition.options, array: true }, summary: "Recompensa por el éxito en la adquisición de Acciones." },
 		progressType: {
@@ -613,16 +613,16 @@ export const action: Type.Action = {
 			points: ["Hay cuatro tipos."],
 			list: [
 				["Tipo.", "detalles de la operación", "resistencia", "Ejemplo."],
-				["\"persistente\".", "Tipo de Acción que se repite continuamente; ganas experiencia y recompensas por cada finalización.", "Nada que ver", "Explotación forestal, minería, pesca"],
-				["`single`.", "Realice una Acción cada vez. Si se interrumpe, el progreso se guarda y puede reanudarse la próxima vez. Una vez finalizada, el usuario pulsa la acción de confirmación para recibir los resultados.", "Nada que ver", "Abrir cofres del tesoro, aprender habilidades a través de la lectura"],
-				["`snap`.", "Este Tipo de Acción se realiza instantáneamente. Se completa de inmediato sin que transcurra nada de tiempo.", "Nada que ver", "Comerciar, uso de Artículos."],
-				["`stamina`.", "Cada tiempo requerido disminuye la resistencia respectiva del jugador y del adversario. Cuando se agota la resistencia del adversario, se gana experiencia y recompensas. Cuando la resistencia del jugador se agota, el juego terminado y todas las Acciones en curso son abortadas.", "Relevante.", "Combate, operaciones peligrosas."],
+				["`persistent`", "Tipo de Acción que se repite continuamente; ganas experiencia y recompensas por cada finalización.", "Nada que ver", "Explotación forestal, minería, pesca"],
+				["`single`", "Realice una Acción cada vez. Si se interrumpe, el progreso se guarda y puede reanudarse la próxima vez. Una vez finalizada, el usuario pulsa la acción de confirmación para recibir los resultados.", "Nada que ver", "Abrir cofres del tesoro, aprender habilidades a través de la lectura"],
+				["`snap`", "Este Tipo de Acción se realiza instantáneamente. Se completa de inmediato sin que transcurra nada de tiempo.", "Nada que ver", "Comerciar, uso de Artículos."],
+				["`stamina`", "Cada tiempo requerido disminuye la resistencia respectiva del jugador y del adversario. Cuando se agota la resistencia del adversario, se gana experiencia y recompensas. Cuando la resistencia del jugador se agota, el juego terminado y todas las Acciones en curso son abortadas.", "Relevante.", "Combate, operaciones peligrosas."],
 			],
 		},
 		property: combat,
 	},
 	options: {
-		label: "acción",
+		label: "action",
 	},
 };
 
@@ -667,7 +667,7 @@ export const category: Type.Category = {
 		},
 	},
 	options: {
-		label: "categoría",
+		label: "category",
 	},
 };
 
@@ -675,10 +675,10 @@ export const type: Markdown = {
 	title: "Tipo.",
 	summary: "Clasificación básica de los mundos",
 	points: ["Los mundos son de seis Tipos.", "Todos los elementos se colocan justo debajo del mundo.", "Acciones y Artículos se asocian con el ID de la Categoría a la que pertenecen."],
-	list: expandList("Tipo.", [category, action, item, group, task, preset]),
+	list: expandList("Tipo.", [category, action, item, group, task, preset], "Descripción"),
 	quote: typeTree,
 	options: {
-		label: "tipo",
+		label: "type",
 		linkedList: true,
 	},
 };
@@ -734,7 +734,7 @@ export const development: Type.Development = {
 		},
 	},
 	options: {
-		label: "desarrollo",
+		label: "development",
 	},
 };
 
@@ -765,7 +765,7 @@ export const design: Type.Design = {
 		},
 	},
 	options: {
-		label: "diseño",
+		label: "design",
 	},
 };
 
@@ -782,25 +782,25 @@ export const general: Type.General = {
 			title: "traducción",
 			summary: "Preparar traducciones multilingües o",
 			points: ["Si se activa, los usuarios pueden jugar en cualquier idioma.", "Si está desactivada, sólo podrás reproducir en el idioma seleccionado en la configuración de idioma.", "Si la traducción está activada, Necesario proporcionar los datos traducidos para cada idioma."],
-			links: { translation: "traducción" },
+			links: { translation: "translation" },
 		},
 		offlineMaxHours: {
 			title: "Tiempo máximo desactivado [horas].",
 			summary: "Límites de tiempo para el progreso desactivado.",
 			points: ["Configure el número máx. de horas de progreso cuando esté desactivado.", "Por ejemplo, si se establecen 6 horas, se procesará el proceso de volver a estar desconectado hasta 6 horas, pero si se permite más tiempo para volver a estar desconectado, el tiempo de desconexión se tratará como 6 horas.", "Si se fijan 0 horas, no se produce ningún proceso al volver a estar desactivado.", "El valor máximo es de 24 horas."],
-			links: { category: "categoría" },
+			links: { category: "category" },
 		},
 		maxCategoryLevels: {
 			title: "Nivel máx. de Categoría",
 			summary: "Nivel límite para cada Categoría.",
 			points: ["Configura el nivel máx. para cada Categoría.", "Si se adquiere experiencia por encima de este nivel, en el cálculo de cada propiedad se utilizará el nivel máximo aquí configurado.", "Este valor no es relevante para las Categorías sin niveles."],
-			links: { category: "categoría" },
+			links: { category: "category" },
 		},
 		locking: {
 			title: "función de bloqueado",
 			summary: "Ocultar elementos hasta que se cumplan los requisitos",
 			points: ["Si está activada, el Artículo de Acción de Categoría se oculta mientras no se haya utilizado o poseído nada y no se hayan cumplido los requisitos.", "Si se desactiva, todos los elementos se muestran desde el principio, pero no se pueden ejecutar ni equipar hasta que se cumplan los requisitos."],
-			links: { category: "categoría", action: "acción", item: "artículo" },
+			links: { category: "category", action: "action", item: "item" },
 		},
 		coins: {
 			title: "divisa",
@@ -811,18 +811,18 @@ export const general: Type.General = {
 				"La moneda se utiliza para comprar y vender artículos, así como para ampliar la capacidad del inventario.",
 				"La moneda que aparece en primer lugar se considera la moneda principal y se utiliza cuando no se especifica el ID de moneda (`coinId`) en los artículos o en la capacidad.",
 			],
-			links: { information: "información", item: "artículo" },
+			links: { information: "information", item: "item" },
 		},
 		capacity: {
 			title: "capacidad",
 			summary: "Configuración de la capacidad de inventario.",
-			points: ["Controla el número máximo de tipos diferentes de Artículos que puede tener un jugador.", "Cada Artículo se controla por el número de tipos de Artículos que tiene, no por el número de Artículos propios.", "Establecer `initialCount` a 0 significa capacidad ilimitada.", "Cuando se refiera a Artículos de capacidad en condiciones o recompensas, utilice el ID configurado aquí."],
+			points: ["Controla el número máximo de tipos diferentes de Artículos que puede tener un jugador.", "Cada Artículo se controla por el número de tipos de Artículos que tiene, no por el número de Artículos propios.", "Si se establece `initialCount` en 0, la capacidad pasa a ser ilimitada.", "Cuando se refiera a Artículos de capacidad en condiciones o recompensas, utilice el ID configurado aquí."],
 			children: {
 				information: information,
 				initialCount: {
 					title: "Valor por defecto [pcs].",
 					summary: "Capacidad inicial de inventario (número de Artículos diferentes que se pueden contar)",
-					points: ["Capacidad inicial (número de Artículos diferentes que se pueden poseer) al comenzar la partida.", "Si se establece `0`, la capacidad es ilimitada."],
+					points: ["Capacidad inicial (número de Artículos diferentes que se pueden poseer) al comenzar la partida.", "Si se establece en `0`, la capacidad pasa a ser ilimitada."],
 				},
 				initialCost: {
 					title: "Precio base [monedas].",
@@ -832,7 +832,7 @@ export const general: Type.General = {
 				increasingRate: {
 					title: "Porcentaje de aumento [veces].",
 					summary: "Incremento porcentual de los costes de ampliación de capacidad",
-					points: ["Es un multiplicador de cuánto aumenta el coste de la ampliación de capacidad con la enésima compra.", "Para `1.0` el precio es siempre el mismo, para `1.2` el precio es un 20% más alto cada vez que se compra.", "Fórmula: precio base x porcentaje de incremento ^ número de veces que se ha comprado"],
+					points: ["Es un multiplicador de cuánto aumenta el coste de la ampliación de capacidad con la enésima compra.", "Con `1.0` el precio siempre es el mismo y con `1.2` sube un 20% en cada compra.", "Fórmula: precio base x porcentaje de incremento ^ número de veces que se ha comprado"],
 					list: [
 						["tasa de aumento", "1ª adición.", "5º aumento.", "10º aumento.", "Aumento de 100.", "Aumento 1000."],
 						["1.00", "x1.00", "x1.00", "x1.00", "x1.00", "x1.00"],
@@ -853,7 +853,7 @@ export const general: Type.General = {
 					points: ["Es el límite máximo de veces que se puede comprar capacidad con dinero.", "Si lo pones en `0`, podrás comprar sin límite.", "Si lo pones en `-1`, no podrás comprarlo.", "El aumento de capacidad derivado de las recompensas no está sujeto a este límite máximo."],
 				},
 			},
-			links: { item: "artículo" },
+			links: { item: "item" },
 		},
 		queue: {
 			title: "Cue",
@@ -878,7 +878,7 @@ export const general: Type.General = {
 				increasingRate: {
 					title: "Porcentaje de aumento [veces].",
 					summary: "Tasa de crecimiento del coste de la ampliación de la capacidad",
-					points: ["Es el multiplicador que indica en qué medida aumenta el coste de la ampliación del cupo al comprar n veces.", "Para `1.0` el precio es siempre el mismo, para `1.2` el precio es un 20% más alto cada vez que se compra.", "Fórmula: precio base x porcentaje de incremento ^ número de veces que se ha comprado"],
+					points: ["Es el multiplicador que indica en qué medida aumenta el coste de la ampliación del cupo al comprar n veces.", "Con `1.0` el precio siempre es el mismo y con `1.2` sube un 20% en cada compra.", "Fórmula: precio base x porcentaje de incremento ^ número de veces que se ha comprado"],
 				},
 				coinId: {
 					title: "ID de la moneda",
@@ -891,7 +891,7 @@ export const general: Type.General = {
 					points: ["Es el límite máximo de veces que se puede comprar el paquete de ejecuciones consecutivas con moneda.", "Si lo pones en `0`, podrás comprar sin límite.", "Si lo pones en `-1`, no podrás comprarlo.", "El aumento de la cuota derivado de las retribuciones no está sujeto a este límite máximo."],
 				},
 			},
-			links: { item: "artículo" },
+			links: { item: "item" },
 		},
 		levelCommonRatio: {
 			title: "Tasa de aumento de la experiencia [veces].",
@@ -905,14 +905,14 @@ export const general: Type.General = {
 				["0.10", "x1.00", "x1.10", "x2.36", "x117.39", "x5.7×10⁴"],
 				["0.20", "x1.00", "x1.20", "x6.19", "x3,3 x 10³", "x1,3 x 10¹¹"],
 			],
-			links: { category: "categoría" },
+			links: { category: "category" },
 		},
 		actionLevelLimit: {
 			title: "restricción del nivel de acción",
 			summary: "Solicita el número de veces que se ha ejecutado la misma Acción de atributo para la ejecución de una acción.",
 			points: ["Si está activada, el número de veces que se ha ejecutado una acción con los mismos atributos se añade automáticamente a las condiciones de ejecución de cada acción.", "Necesario contar un número de veces igual al valor de nivel de la Acción.", "Si no se configura ningún atributo, se utiliza el ID de la Categoría a la que pertenece."],
 		},
-		defaultCombat: { ...combat, summary: "Parámetros de combate por defecto comunes a todas las Acciones.", points: ["Valores básicos de corrección de combate que se aplican a todas las Acciones de tipo \"resistencia\" en común.", "El valor de combate (propiedad) de cada Acción se añade a este valor por defecto."], links: { action: "acción" } },
+		defaultCombat: { ...combat, summary: "Parámetros de combate por defecto comunes a todas las Acciones.", points: ["Son los valores básicos de corrección de combate que se aplican de forma común a todas las acciones del tipo `stamina`.", "El valor de combate (propiedad) de cada Acción se añade a este valor por defecto."], links: { action: "action" } },
 	},
 	options: {
 		label: "general",
@@ -962,7 +962,7 @@ export const overview: Type.Overview = {
 		},
 	},
 	options: {
-		label: "visión general",
+		label: "overview",
 	},
 };
 
@@ -974,36 +974,36 @@ const toFixedEvent = (title: string, summary: string, points: string[], timingPo
 	children: {
 		...task.children,
 		category: {
-			title: "Categoría.",
-			summary: "No se utilizará en el evento",
-			points: ["Dado que no aparece en la lista de misiones ni de tareas, no se especifica la categoría a la que pertenece.", "En el editor no aparece el campo de entrada."],
+			title: "カテゴリー",
+			summary: "イベントでは使用しません",
+			points: ["ミッションやタスクの一覧に表示されないため、所属するカテゴリーは指定しません。", "エディターでは入力欄が表示されません。"],
 		},
 		timing: {
-			title: "cronometraje",
-			summary: "Momento en que se activa el evento (fijo)",
+			title: "タイミング",
+			summary: "イベントが発動するタイミング（固定）",
 			points: timingPoints,
 		},
 		unlocked: {
-			title: "Estado inicial de visualización",
-			summary: "Estado inicial de visualización del icono del evento (la activación depende del momento y, con esta configuración, no se activa)",
-			points: ["Las condiciones de activación del evento vienen determinadas por el momento en que se produce, y este parámetro solo afecta al aspecto del icono.", "secreted: El icono no se muestra hasta que se cumplan todos los requisitos (aunque la activación en sí se produce en el momento oportuno).", "oculto・sugerido: El icono aparece con una línea diagonal y se muestra como «no desbloqueado».", "«released»: la línea diagonal desaparece y se muestra como «liberado»."],
+			title: "初期表示状態",
+			summary: "イベントアイコンの初期表示状態（発火はタイミングで決まり、この設定では発火しません）",
+			points: ["イベントの発火条件はタイミングで決まり、この項目はアイコンの見た目のみに影響します。", "secreted: 全requirementsを満たすまでアイコンが表示されません（発火自体はタイミングで起こります）。", "hidden・hinted: アイコンに斜線が付き未解放として表示されます。", "released: 斜線が消え解放済みとして表示されます。"],
 		},
 		requirements: {
-			title: "condiciones generales",
-			summary: "Condiciones para obtener la recompensa",
-			points: ["Cuando se cumple la condición, se activa el evento y se abre una pantalla específica para mostrar el contenido.", "La recompensa solo se obtendrá si, en el momento de su activación, se cumplen las condiciones configuradas aquí.", "Si no se ha realizado la configuración, obtendrás una recompensa cada vez que se active."],
+			title: "条件",
+			summary: "報酬を獲得する条件",
+			points: ["タイミングが成立するとイベントは発動し、専用の画面を開いて内容を表示します。", "報酬は、発動時にここで設定した条件を満たしている場合にのみ獲得します。", "条件を設定していない場合は、発動するたびに報酬を獲得します。"],
 			children: requirement.children,
 		},
 		acquisitions: {
-			title: "recompensa",
-			summary: "Configuración de la recompensa cuando se activa el evento.",
-			points: ["Es la recompensa que se obtiene cuando se cumple el momento oportuno y se satisfacen las condiciones.", "A diferencia de las tareas, no es necesario realizar ninguna acción para recibirlo, ya que se realiza la adquisición automáticamente en el momento en que se activa.", "Se puede establecer un valor negativo para la cantidad. Por ejemplo, si al terminar el juego se establece un valor negativo para la cantidad de artículos, estos se perderán."],
+			title: "報酬",
+			summary: "イベント発動時の報酬設定",
+			points: ["タイミングが成立し、かつ条件を満たしている時に得られる報酬です。", "タスクと違って受け取る操作は要らず、発動と同時に自動で獲得します。", "数量にマイナスを設定することができます。例えばゲームオーバー時にアイテムの数量をマイナスにすれば、それらを失います。"],
 			children: acquisition.children,
 		},
 		group: {
-			title: "grupo de trabajo",
-			summary: "No se utilizará en el evento",
-			points: ["No utilizamos la designación de grupos, ya que no aparecen en la lista de misiones y tareas.", "En el editor no aparece el campo de entrada."],
+			title: "タスクグループ",
+			summary: "イベントでは使用しません",
+			points: ["ミッションやタスクの一覧に表示されないため、グループの指定は使いません。", "エディターでは入力欄が表示されません。"],
 		},
 	},
 });
@@ -1014,22 +1014,22 @@ export const event: Type.Events = {
 	points: ["Se activa en momentos concretos, como al abrir un mundo por primera vez o al terminar el juego, y abre una pantalla específica.", "Hay uno preparado para cada momento y no se pueden añadir ni eliminar. Los momentos en los que no se utilice deben dejarse en blanco.", "No aparecerá en la lista de misiones ni de tareas. Las acciones que se consideren completadas al cumplir una serie de condiciones deben tener una configuración de tarea.", "La recompensa se adquiere automáticamente en el momento en que se activa. No hay que realizar ninguna acción para recibirla, como en el caso de las tareas, ni aparece ninguna cinta.", "Puede cambiar el nivel de la Categoría, el número de Acciones realizadas y el Artículo que se posee cuando se activa.", "Si se dejan en blanco los campos «Nombre», «Descripción» e «Icono», se utilizarán el texto y el icono predeterminados que lleva incorporados el jugador."],
 	list: [
 		["cronometraje", "condición de activación", "repita"],
-		["`comebacked`.", "Cuando una persona vuelve de estar desactivada durante más de un segundo y hay una Acción Progresando.", "a menudo"],
-		["`gameovered`.", "Cuando la resistencia del jugador se agota en combate.", "a menudo"],
-		["`bienvenido`.", "Cuando empecé en este mundo.", "sólo una vez"],
-		["`completed`.", "Cuando se alcanza el nivel máximo de todas las Categorías (maxCategoryLevels).", "sólo una vez"],
+		["`comebacked`", "Cuando una persona vuelve de estar desactivada durante más de un segundo y hay una Acción Progresando.", "a menudo"],
+		["`gameovered`", "Cuando la resistencia del jugador se agota en combate.", "a menudo"],
+		["`welcomed`", "Cuando empecé en este mundo.", "sólo una vez"],
+		["`completed`", "Cuando se alcanza el nivel máximo de todas las Categorías (maxCategoryLevels).", "sólo una vez"],
 		["`obtained`", "Al completar o confirmar una acción de un tipo concreto (como un cofre del tesoro, etc.)", "a menudo"],
 	],
-	links: { task: "tarea" },
+	links: { task: "task" },
 	children: {
-		comebacked: toFixedEvent("En el momento del regreso", "Se activa al volver a la conexión", ["Se activa cuando se vuelve a la conexión tras haber estado desconectado durante más de un segundo y hay alguna acción progresando.", "Se mostrará junto con un resumen del progreso realizado durante el tiempo que has estado ausente."], ["Está fijado en «comebacked» y no se puede editar.", "Se activa tantas veces como sea necesario cada vez que vuelvas."]),
-		gameovered: toFixedEvent("Cuando el juego termina", "Se activa cuando te quedas sin resistencia en combate", ["Se activa cuando el jugador se queda sin resistencia durante el combate.", "Si se configura un valor negativo en la cantidad de la recompensa, se puede hacer que haya un castigo por el juego terminado."], ["Está fijado en «gameovered» y no se puede editar.", "Se activa tantas veces como sea necesario cada vez que se produce el juego terminado."]),
-		welcomed: toFixedEvent("Al comenzar por primera vez", "Se activa la primera vez que se abre el mundo", ["Se activa la primera vez que se inicia este mundo.", "Se utiliza para explicar el universo de la historia y para entregar los objetos iniciales al comenzar el juego."], ["Está fijado en «welcomed» y no se puede editar.", "Se activa una sola vez al iniciarlo por primera vez."]),
-		completed: toFixedEvent("Al completar el juego", "Se activa cuando todas las categorías alcanzan el nivel máximo", ["Se activa cuando el nivel de todas las categorías alcanza el valor máximo (maxCategoryLevels).", "Las categorías que no sean numéricas se excluirán de la evaluación."], ["Está fijado en «completed» y no se puede editar.", "Se activa una sola vez cuando se cumplen las condiciones."]),
-		obtained: toFixedEvent("Al finalizar una acción puntual", "Se activa al completar una acción puntual, como abrir un cofre del tesoro", ["Se activa al completar o confirmar una acción de tipo «single» (como un cofre del tesoro, etc.).", "Además de la recompensa de la Acción en sí, se puede añadir la recompensa configurada aquí."], ["Está fijado en «obtained» y no se puede editar.", "Se activa tantas veces como sea necesario cada vez que se completa una acción puntual."]),
+		comebacked: toFixedEvent("Al regresar", "Se activa al volver tras estar desconectado", ["Se activa cuando vuelves tras un segundo o más desconectado y había una acción en curso.", "Se muestra junto con el resumen del progreso realizado durante tu ausencia."], ["Está fijado en `comebacked` y no se puede editar.", "Se activa cada vez que regresas, sin límite de veces."]),
+		gameovered: toFixedEvent("Al perder la partida", "Se activa cuando se agota la resistencia en combate", ["Se activa cuando la resistencia del jugador se agota en combate.", "Si estableces una cantidad negativa de recompensa, puedes añadir una penalización por perder la partida."], ["Está fijado en `gameovered` y no se puede editar.", "Se activa cada vez que pierdes la partida, sin límite de veces."]),
+		welcomed: toFixedEvent("Al iniciar por primera vez", "Se activa al abrir el mundo por primera vez", ["Se activa cuando este mundo se inicia por primera vez.", "Sirve para explicar la ambientación o para entregar los preparativos iniciales."], ["Está fijado en `welcomed` y no se puede editar.", "Se activa una sola vez, en el primer inicio."]),
+		completed: toFixedEvent("Al completar", "Se activa cuando todas las categorías alcanzan su nivel máximo", ["Se activa cuando los niveles de todas las categorías alcanzan el valor máximo (maxCategoryLevels).", "Las categorías que no son numeric quedan excluidas de la comprobación."], ["Está fijado en `completed` y no se puede editar.", "Se activa una sola vez, cuando se cumplen las condiciones."]),
+		obtained: toFixedEvent("Al completar una acción única", "Se activa al completar una acción única, como un cofre del tesoro", ["Se activa cuando se completa y se confirma una acción del tipo single (como un cofre del tesoro).", "Aparte de la propia recompensa de la acción, puedes añadir encima la recompensa configurada aquí."], ["Está fijado en `obtained` y no se puede editar.", "Se activa cada vez que completas una acción única, sin límite de veces."]),
 	},
 	options: {
-		label: "evento",
+		label: "event",
 	},
 };
 
@@ -1037,7 +1037,7 @@ export const basic: Type.Basic = {
 	title: "configuración básica",
 	summary: "Elementos básicos de configuración para el mundo en general.",
 	points: ["Configura el nombre del mundo, la descripción, el fondo, la moneda, la capacidad, el nivel máx. de categorías, la tasa de aumento de experiencia, la tasa de descuento, los parámetros de combate estándar, etc.", "Estas configuraciones afectan a todo el mundo."],
-	list: expandList("nombre", [overview, general, design, event, development]),
+	list: expandList("nombre", [overview, general, design, event, development], "Descripción"),
 	children: {
 		overview: overview,
 		general: general,
@@ -1046,7 +1046,7 @@ export const basic: Type.Basic = {
 		development: development,
 	},
 	options: {
-		label: "básico",
+		label: "basic",
 		linkedList: true,
 	},
 };
@@ -1068,7 +1068,7 @@ export const world: Type.World = {
 		presets: { ...preset, options: { ...preset.options, array: true } },
 	},
 	options: {
-		label: "mundo",
+		label: "world",
 	},
 };
 
@@ -1077,7 +1077,7 @@ export const world: Type.World = {
 export const editor: Markdown = {
 	title: "editor",
 	summary: "Explicaciones sobre el uso del editor y la estructura de los mundos.",
-	list: expandList("nombre", [world, basic, type, component, miscellaneous]),
+	list: expandList("nombre", [world, basic, type, component, miscellaneous], "Descripción"),
 	options: {
 		label: "editor",
 		linkedList: true,

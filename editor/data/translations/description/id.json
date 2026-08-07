@@ -52,7 +52,7 @@
       "validation_publish": "Kesalahan validasi ditemukan. Tidak dapat memulai penerbitan.",
       "publishing_failed": "Gagal dipublikasikan.",
       "invalid_image": "Gambar tidak valid.",
-      "image_size_limit": "Gambar yang valid. {ukuran} KB; (batas: {batas}KB)",
+      "image_size_limit": "Gambar valid. Ukuran: {size} KB. (batas: {limit}KB)",
       "export_failed": "Ekspor gagal.",
       "empty_data_load_failed": "Gagal memuat data kosong.",
       "invalid_world_data": "Data dunia tidak valid. Periksa struktur dasar.",
@@ -65,9 +65,9 @@
     "success": {
       "validation_generating": "Verifikasi berhasil! File mandiri sedang dibuat...",
       "publishing_completed": "File yang berdiri sendiri sekarang sudah tersedia!",
-      "data_exported": "Data yang diekspor: {nama file}",
+      "data_exported": "Data diekspor: {filename}",
       "empty_data_loaded": "Data kosong dimuat.",
-      "data_loaded": "Data dimuat: {nama file}",
+      "data_loaded": "Data dimuat: {filename}",
       "sample_data_loaded": "Data sampel telah dimuat.",
       "validation_successful": "Verifikasi berhasil: tidak ditemukan masalah data",
       "autosave_enabled": "Penyimpanan otomatis diaktifkan.",
@@ -78,7 +78,7 @@
   "copyInformation": {
     "promptType": "Masukkan jenis tujuan penyalinan",
     "promptId": "Masukkan ID tujuan penyalinan:.",
-    "success": "Informasi yang disalin ke {tipe} (id: {id})",
+    "success": "Information disalin ke {type} (id: {id})",
     "errorInvalidType": "Jenis tidak valid.",
     "errorNotFound": "ID yang ditentukan '{id}' tidak ditemukan dalam {type}.",
     "errorCanceled": "Salinan dibatalkan."
@@ -89,7 +89,7 @@
     "indexeddb_private_mode": "🔒 IndexedDB tidak dapat digunakan dalam mode privat",
     "storage_quota": "💾 Kapasitas penyimpanan terlampaui.",
     "indexeddb_unsupported": "⚠️ Browser tidak mendukung IndexedDB",
-    "database_init_failed": "❌ Inisialisasi basis data gagal: {pesan}"
+    "database_init_failed": "❌ Inisialisasi basis data gagal: {message}"
   },
   "ui": {
     "copy": "salin",

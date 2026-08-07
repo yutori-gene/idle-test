@@ -36,7 +36,7 @@
       "overwrite_warning_1": "编辑的内容是",
       "overwrite_warning_2": "覆盖。",
       "processing_time": "这个过程需要时间。",
-      "autosave_status": "当前： {状态｝",
+      "autosave_status": "当前：{status}",
       "autosave_description": "打开菜单时保存菜单。"
     }
   },
@@ -65,9 +65,9 @@
     "success": {
       "validation_generating": "验证成功！正在生成独立文件...",
       "publishing_completed": "独立文件现已推出！",
-      "data_exported": "导出的数据： {文件名｝",
+      "data_exported": "已导出数据：{filename}",
       "empty_data_loaded": "已加载空数据。",
-      "data_loaded": "已加载数据： {文件名｝",
+      "data_loaded": "已加载数据：{filename}",
       "sample_data_loaded": "已加载样本数据。",
       "validation_successful": "验证成功：未发现数据问题",
       "autosave_enabled": "自动保存已打开。",
@@ -99,7 +99,7 @@
   "validation": {
     "failed_with_count": "验证失败：发现 {count} 错误\n\n📋有关更多信息，请参见基本 → 开发 → 错误",
     "icon": {
-      "invalid_base64_format": "Base64 图像格式 [{preview}...] 无效。 必须以 \"data:image/[type];base64, \"开头。",
+      "invalid_base64_format": "无效的 Base64 图像格式 [{preview}...] at {path} - 必须以 'data:image/[type];base64,' 开头。",
       "missing_base64_data": "{path} 处的 Base64 图像格式无效 - 逗号后无 base64 数据。",
       "invalid_base64_chars": "{path} 处的 Base64 编码无效 - 包含无效字符。",
       "invalid_base64_length": "{path} 处的 Base64 编码无效 - 长度必须是 4 的倍数。",

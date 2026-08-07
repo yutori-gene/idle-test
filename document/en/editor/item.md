@@ -61,16 +61,16 @@ ___
 
 ## Equipment Type
 Type configurations for Equipment, Effects, and Consumption of Items
-- Necessary for Possible Items to belong to the group specified in the category `equipmentGroups`.
+- Equippable items must belong to a group specified by `equipmentGroups` of the category.
 - Only one Item may be Equipment within the same group.
-- `unnecessary` takes effect regardless of whether the item is equipped with Equipment, and the effect strength is proportional to the number of items held (nothing with 0 items; n times the effect with n items).
+- `unnecessary` takes effect regardless of whether it is equipped, and the size of the effect is proportional to the number held (no effect with 0, n times with n).
 
 |value|Equipment|Effectiveness|consumption|Example|
 |-|-|-|-|-|
-|`necessary`.|Necessary|Only during equipping (1 unit)|nothing|Equipment such as swords and armor|
-|`consumable`.|Necessary|Only during equipping (1 unit)|Consumed when Action is executed|Items that are consumed for effect, such as potions|
-|`unnecessary`.|Unnecessary|While in your inventory, it is always active (proportional to the number you have)|nothing|Passive Items that are effective just by having them.|
-|`impossible`.|not allowed|nothing|nothing|Items that have no effect, such as materials and debris|
+|`necessary`|Necessary|Only during equipping (1 unit)|nothing|Equipment such as swords and armor|
+|`consumable`|Necessary|Only during equipping (1 unit)|Consumed when Action is executed|Items that are consumed for effect, such as potions|
+|`unnecessary`|Unnecessary|While in your inventory, it is always active (proportional to the number you have)|nothing|Passive Items that are effective just by having them.|
+|`impossible`|not allowed|nothing|nothing|Items that have no effect, such as materials and debris|
 ___
 
 ## [_terms_](en/editor/requirement)

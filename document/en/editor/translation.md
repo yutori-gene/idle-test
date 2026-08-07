@@ -41,7 +41,7 @@ ___
 
 #### Example Prompts
 Examples of translation instructions given to AI
-- Example prompt: Translate the `name` and `explanation` values of the uploaded JSON data from English to Japanese. Do not change anything else.
+- Example prompt: Translate the values of `name` and `explanation` in the uploaded JSON data from English into Japanese. Do not change any other part.
 ___
 
 #### Use of GPT

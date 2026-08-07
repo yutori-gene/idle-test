@@ -6,7 +6,7 @@ Elementos de bens, como Equipamento e consumíveis
 - Há também maneiras contadas de usá-los.
 ___
 
-## [_informações_](pt/editor/informações)
+## [_informações_](pt/editor/information)
 ___
 
 ## Categoria.
@@ -19,7 +19,7 @@ Exibir grupo de classificação de itens
 - Aplique um dos grupos configurados no Basic.
 - Uma lista de itens é exibida na ordem dos grupos configurados.
 - Se for deixado em branco, nenhum agrupamento será feito.
-- [_general_](pt/editor/geral)
+- [_general_](pt/editor/general)
 ___
 
 ## Estado de desbloqueio inicial
@@ -50,7 +50,7 @@ Configuração do preço de venda dos itens.
 |0|nada|
 |Um valor maior que zero.|Venda por esse valor.|
 |Um valor menor que zero (por exemplo, -1)|Taxa de desconto de configuração geral multiplicada pelo preço do lance (se o preço do lance for zero, nada poderá ser vendido)|
-- [_general_](pt/editor/geral)
+- [_general_](pt/editor/general)
 ___
 
 ## Máx. número próprio [pçs].
@@ -61,22 +61,22 @@ ___
 
 ## Tipo de Equipamento
 Configurações de tipo para Equipamento, efeitos e consumo de itens.
-- Os Itens Possíveis de serem equipados devem pertencer ao grupo especificado na Categoria `equipmentGroups`.
+- Os itens equipáveis precisam pertencer a um grupo indicado em `equipmentGroups` da categoria.
 - Somente um Item pode ser equipado em um mesmo grupo.
-- O efeito `unnecessary` é aplicado independentemente de o item estar com Equipamento ou não, e sua intensidade é proporcional à quantidade que você possui (nada se houver 0 itens; n vezes maior se houver n itens).
+- `unnecessary` produz efeito independentemente de estar equipado, e a intensidade do efeito é proporcional à quantidade que você possui (sem efeito com 0, n vezes com n).
 
 |valor|Equipamento|Eficácia.|consumo|Exemplo.|
 |-|-|-|-|-|
-|`necessário`.|Necessário|Apenas enquanto estiver equipando (1 unidade)|nada|Espadas, armaduras e outros equipamentos.|
-|"consumível".|Necessário|Apenas enquanto estiver equipando (1 unidade)|Consumido quando as ações são realizadas|Itens que são consumidos para obter um efeito, como poções.|
-|"desnecessário".|Desnecessário|Enquanto estiver em posse, sempre (proporcionalmente à quantidade em posse)|nada|Itens passivos que são eficazes pelo simples fato de tê-los.|
-|"impossível".|não permitido|nada|nada|Itens nada eficazes, como materiais e detritos.|
+|`necessary`|Necessário|Apenas enquanto estiver equipando (1 unidade)|nada|Espadas, armaduras e outros equipamentos.|
+|`consumable`|Necessário|Apenas enquanto estiver equipando (1 unidade)|Consumido quando as ações são realizadas|Itens que são consumidos para obter um efeito, como poções.|
+|`unnecessary`|Desnecessário|Enquanto estiver em posse, sempre (proporcionalmente à quantidade em posse)|nada|Itens passivos que são eficazes pelo simples fato de tê-los.|
+|`impossible`|não permitido|nada|nada|Itens nada eficazes, como materiais e detritos.|
 ___
 
-## [_termos e condições_](pt/editor/requisito)
+## [_termos e condições_](pt/editor/requirement)
 ___
 
-## [_propriedades_](pt/editor/propriedade)
+## [_propriedades_](pt/editor/property)
 ___
 
 ## ID da moeda de negociação

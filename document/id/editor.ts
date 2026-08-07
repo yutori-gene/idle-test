@@ -20,7 +20,7 @@ export const translation: Markdown = {
 	summary: "Konfigurasi untuk menerjemahkan teks dalam game ke dalam bahasa lain.",
 	points: ["Mengatur teks yang akan diterjemahkan.", "Konfigurasi bahasa tersedia apabila konfigurasi terjemahan diaktifkan.", "Jika terjemahan dinonaktifkan, informasi yang dijelaskan selama pengembangan akan ditampilkan apa adanya.", "Konfigurasi terjemahan dan pengalihan bahasa tidak dapat dilakukan selama pengembangan pra-publikasi."],
 	options: {
-		label: "terjemahan",
+		label: "translation",
 	},
 	children: {
 		flag: {
@@ -46,7 +46,7 @@ export const translation: Markdown = {
 						prompt: {
 							title: "Contoh petunjuk",
 							summary: "Contoh instruksi penerjemahan yang diberikan kepada AI",
-							points: ["Contoh perintah: terjemahkan nilai `nama` dan `penjelasan` dari data JSON yang diunggah dari Inggris ke Jepang. Jangan ubah bagian lain dari data."],
+							points: ["Contoh perintah: Terjemahkan nilai `name` dan `explanation` pada data JSON yang diunggah dari bahasa Inggris ke bahasa Jepang. Jangan ubah bagian lainnya."],
 						},
 						gpt: {
 							title: "Penggunaan GPT",
@@ -91,9 +91,9 @@ export const miscellaneous: Markdown = {
 	title: "informasi tambahan",
 	summary: "Informasi tambahan lain yang dijelaskan.",
 	points: ["Informasi referensi."],
-	list: expandList("suplemen", [translation]),
+	list: expandList("suplemen", [translation], "Deskripsi"),
 	options: {
-		label: "lain-lain",
+		label: "miscellaneous",
 		linkedList: true,
 	},
 };
@@ -103,7 +103,7 @@ export const miscellaneous: Markdown = {
 export const property: Type.Property = {
 	title: "properti",
 	summary: "Konfigurasi efek yang dimiliki Item.",
-	points: ["Ini adalah item efek yang dapat dikonfigurasi pada item.", "Efek item dengan tipe perlengkapan `necessary` atau `consumable` hanya berlaku saat item tersebut sedang dikenakan. Untuk item dengan tipe `unnecessary`, efeknya berlaku hanya dengan memilikinya, dan besarnya efek sebanding dengan jumlah yang dimiliki (jika memiliki 2 buah, efeknya menjadi 2 kali lipat).", "Karena efek `unnecessary` menggunakan jumlah yang dimiliki sebagai faktor pengganda, maka `maximum` (jumlah maksimum yang dimiliki) menjadi batas atas efek tersebut. Saat menyesuaikan keseimbangan, harap lakukan konfigurasi nilai ini bersamaan dengan `maximum`.", "Nilai untuk kedua item dihitung sebagai penyesuaian untuk perbedaan level antara level pemain dan level Aksi.", "Misalnya, jika nilai serangan adalah 10, serangan dihitung seolah-olah level pemain 10 lebih tinggi dari level Aksi. Nilai minus adalah kebalikannya.", "SERANGAN, PERTAHANAN, KETEPATAN, PENGHINDARAN dan PEMULIHAN hanya berlaku untuk aksi tipe `stamina`."],
+	points: ["Ini adalah item efek yang dapat dikonfigurasi pada item.", "Item dengan tipe peralatan `necessary` atau `consumable` hanya berefek selama dikenakan. `unnecessary` berefek cukup dengan dimiliki, dan besar efeknya sebanding dengan jumlah yang dimiliki (dua kali lipat jika memiliki 2).", "Karena efek `unnecessary` menggunakan jumlah yang dimiliki sebagai faktor pengganda, maka `maximum` (jumlah maksimum yang dimiliki) menjadi batas atas efek tersebut. Saat menyesuaikan keseimbangan, harap lakukan konfigurasi nilai ini bersamaan dengan `maximum`.", "Nilai untuk kedua item dihitung sebagai penyesuaian untuk perbedaan level antara level pemain dan level Aksi.", "Misalnya, jika nilai serangan adalah 10, serangan dihitung seolah-olah level pemain 10 lebih tinggi dari level Aksi. Nilai minus adalah kebalikannya.", "attack, defence, accuracy, evasion, dan restore hanya berlaku untuk aksi bertipe `stamina`."],
 	list: [
 		["properti", "Rincian efektivitas."],
 		["kecepatan", "Mengurangi waktu yang diperlukan untuk suatu aksi. Waktu yang diperlukan bervariasi secara terbalik dengan perbedaan level."],
@@ -119,7 +119,7 @@ export const property: Type.Property = {
 		category: {
 			title: "Kategori.",
 			summary: "Spesifikasi kategori yang berlaku untuk properti tersebut.",
-			points: ["Konfigurasi ID kategori yang berlaku untuk properti ini.", "Konfigurasi `*` berlaku untuk Kategori.", "Jika kosong, ini berlaku untuk Kategori di mana Item tersebut berada."],
+			points: ["Konfigurasi ID kategori yang berlaku untuk properti ini.", "Jika diatur `*`, berlaku untuk semua kategori.", "Jika kosong, ini berlaku untuk Kategori di mana Item tersebut berada."],
 		},
 		attack: {
 			title: "Nilai serangan [perbedaan level].",
@@ -163,14 +163,14 @@ export const property: Type.Property = {
 		},
 	},
 	options: {
-		label: "properti",
+		label: "property",
 	},
 };
 
 export const combat: Type.Combat = {
 	title: "nilai tempur",
 	summary: "Nilai koreksi tempur untuk tipe aksi stamina.",
-	points: ["Nilai koreksi hanya berlaku untuk aksi tipe `stamina`.", "Setiap nilai dihitung sebagai koreksi tambahan untuk perbedaan level antara pemain dan Aksi.", "Misalnya, jika nilai serangan adalah 10, kerusakan serangan dihitung seolah-olah level pemain 10 lebih tinggi dari level Aksi. Jika minus, koreksinya berlawanan arah.", "Jika dalam konfigurasi ke `defaultCombat` di umum, ini akan menjadi parameter pertempuran default untuk seluruh dunia."],
+	points: ["Nilai koreksi ini hanya berlaku untuk aksi bertipe `stamina`.", "Setiap nilai dihitung sebagai koreksi tambahan untuk perbedaan level antara pemain dan Aksi.", "Misalnya, jika nilai serangan adalah 10, kerusakan serangan dihitung seolah-olah level pemain 10 lebih tinggi dari level Aksi. Jika minus, koreksinya berlawanan arah.", "Jika diatur pada `defaultCombat` di bagian Umum, nilai ini menjadi parameter pertarungan bawaan untuk seluruh dunia."],
 	children: {
 		attack: {
 			title: "Nilai serangan [perbedaan level].",
@@ -199,7 +199,7 @@ export const combat: Type.Combat = {
 		},
 	},
 	options: {
-		label: "pertempuran",
+		label: "combat",
 	},
 };
 
@@ -236,12 +236,12 @@ export const acquisition: Type.Acquisition = {
 		chance: {
 			title: "Probabilitas [-1 hingga 1]",
 			summary: "Probabilitas keberhasilan perolehan yang sukses (nilai negatif hanya dievaluasi saat gagal)",
-			points: ["Konfigurasi probabilitas perolehan menggunakan bilangan desimal antara -1 hingga 1. Nilai absolut digunakan untuk menentukan probabilitas tersebut.", "Jika nilaiya positif, penilaian hanya dilakukan saat Aksi sukses; nilai `1` berarti pasti diperoleh, sedangkan nilai `0.5` berarti diperoleh dengan probabilitas 50%.", "Jika nilainya negatif, penilaian hanya dilakukan saat Aksi gagal; nilai `-1` berarti pasti diperoleh, sedangkan nilai `-0,5` berarti diperoleh dengan probabilitas 50%.", "Pada nilai `0`, item tersebut tidak akan diperoleh baik saat sukses maupun saat gagal.", "Nilai defaultnya adalah `1` (pasti diperoleh jika sukses)."],
+			points: ["Konfigurasi probabilitas perolehan menggunakan bilangan desimal antara -1 hingga 1. Nilai absolut digunakan untuk menentukan probabilitas tersebut.", "Jika nilainya positif, penilaian hanya dilakukan saat aksi berhasil: dengan `1` pasti diperoleh, dan dengan `0.5` diperoleh dengan peluang 50%.", "Jika nilainya negatif, penilaian hanya dilakukan saat aksi gagal: dengan `-1` pasti diperoleh, dan dengan `-0.5` diperoleh dengan peluang 50%.", "Pada nilai `0`, item tersebut tidak akan diperoleh baik saat sukses maupun saat gagal.", "Nilai defaultnya adalah `1` (pasti diperoleh jika sukses)."],
 		},
 	},
-	links: { type: "Jenis" },
+	links: { type: "type" },
 	options: {
-		label: "akuisisi",
+		label: "acquisition",
 	},
 };
 
@@ -278,7 +278,7 @@ export const requirement: Type.Requirement = {
 		chance: {
 			title: "Probabilitas konsumsi [0-1].",
 			summary: "Probabilitas sebuah item dikonsumsi (0-1, hanya berlaku jika tipe-nya adalah item).",
-			points: ["Probabilitas bahwa sebuah item akan dikonsumsi ketika kondisi terpenuhi dan Aksi dilakukan.", "Selalu dikonsumsi pada tingkat `1`, 50% kemungkinan konsumsi pada tingkat `0,5` dan tidak ada konsumsi pada tingkat `0`.", "Nilai defaultnya adalah `1` (selalu dikonsumsi).", "Tidak valid jika tipenya selain Item."],
+			points: ["Probabilitas bahwa sebuah item akan dikonsumsi ketika kondisi terpenuhi dan Aksi dilakukan.", "Dengan `1` selalu dikonsumsi, dengan `0.5` dikonsumsi dengan peluang 50%, dan dengan `0` tidak dikonsumsi.", "Nilai bawaannya adalah `1` (selalu dikonsumsi).", "Tidak valid jika tipenya selain Item."],
 		},
 		equipment: {
 			title: "Peralatan",
@@ -286,9 +286,9 @@ export const requirement: Type.Requirement = {
 			points: ["Ketika diaktifkan, diperlukan untuk item dilengkapi serta dimiliki.", "Tidak valid jika tipenya selain Item."],
 		},
 	},
-	links: { type: "Jenis" },
+	links: { type: "type" },
 	options: {
-		label: "persyaratan",
+		label: "requirement",
 	},
 };
 
@@ -311,7 +311,7 @@ export const information: Type.Information = {
 						example: {
 							title: "Contoh.",
 							summary: "Contoh kehidupan nyata dari konversi ID",
-							points: ["Jika ID adalah `stylish-kapak-kuat`, maka namanya adalah `Kapak Kuat Bergaya`."],
+							points: ["Jika ID-nya `stylish-strong-axe`, maka namanya menjadi `Stylish Strong Axe`."],
 						},
 					},
 				},
@@ -319,14 +319,14 @@ export const information: Type.Information = {
 					title: "Terdapat tidak ada duplikasi.",
 					summary: "Larangan duplikasi ID dalam tipe yang sama.",
 					points: ["Tiada menduplikasi dalam kategori, aksi, item, acara, dan tipe preset karena digunakan untuk mengidentifikasi elemen.", "Memiliki ID yang sama untuk tipe yang berbeda tidak menjadi masalah."],
-					links: { type: "Jenis" },
+					links: { type: "type" },
 				},
 			},
 		},
 		name: {
 			title: "Nama.",
 			summary: "Nama elemen seperti yang terlihat",
-			points: ["Nama elemen yang ditampilkan dalam permainan.", "Bahasa selain Inggris juga dapat dimasukkan.", "Nama yang menduplikasi elemen lain dapat diterima.", "Jika terlalu panjang, bagian yang meluap akan dihilangkan dari tampilan selama pemutaran dengan `...`."],
+			points: ["Nama elemen yang ditampilkan dalam permainan.", "Bahasa selain Inggris juga dapat dimasukkan.", "Nama yang menduplikasi elemen lain dapat diterima.", "Jika terlalu panjang, bagian yang meluap akan disingkat dengan `…` pada tampilan selama permainan."],
 			children: {
 				translateFromId: {
 					title: "Konversi otomatis dari ID",
@@ -350,10 +350,10 @@ export const information: Type.Information = {
 					summary: "Gunakan file gambar apa saja",
 					points: ["Gambar yang mewakili elemen.", "Jika ukuran file besar, maka ukuran file akan diubah secara otomatis.", "Tidak perlu jika Iconify atau piktogram konfigurasi."],
 					children: {
-						"tipe file": {
-							title: "Jenis file.",
-							summary: "Format file gambar yang didukung.",
-							points: ["Anda dapat menggunakan jenis umum yang dapat ditampilkan di browser.", "JPEG, PNG, GIF, WebP, SVG, dll."],
+						"file-type": {
+							title: "Jenis berkas",
+							summary: "Format berkas gambar yang didukung",
+							points: ["Format umum yang dapat ditampilkan peramban bisa digunakan.", "JPEG, PNG, GIF, WebP, SVG, dan lainnya."],
 						},
 					},
 				},
@@ -365,7 +365,7 @@ export const information: Type.Information = {
 						iconify: {
 							title: "Iconify",
 							summary: "Cara memilih ikon dari Iconify",
-							points: ["Cari `Iconify` untuk ikon yang dapat ditampilkan.", "Anda dapat dengan cepat menemukan ikon terbaik dengan mencari ikon.", "Pilih ikon untuk melihat pengenalnya (set ikon ketik `:` nama ikon), seperti `game-icons:sword-wound`, dan tempelkan langsung ke dalam bidang ikon ini."],
+							points: ["Cari ikon yang dapat ditampilkan di `Iconify`.", "Anda dapat dengan cepat menemukan ikon terbaik dengan mencari ikon.", "Pilih ikon untuk melihat pengenalnya (set ikon ketik `:` nama ikon), seperti `game-icons:sword-wound`, dan tempelkan langsung ke dalam bidang ikon ini."],
 							images: ["iconify-selection.png"],
 							links: { iconify: "https://icon-sets.iconify.design" },
 						},
@@ -379,22 +379,22 @@ export const information: Type.Information = {
 			},
 		},
 		color: {
-			title: "variasi",
+			title: "Warna",
 			summary: "Konfigurasi warna tampilan elemen.",
 			points: ["Sebagai warna elemen, warna ini diterapkan ke ikon elemen dan warna latar belakang.", "Pilih dari pemilih warna editor."],
 			children: {
-				"warisan-dari-orangtua": {
+				"heritage-from-parent": {
 					title: "Pewarisan dari elemen induk",
-					summary: "Mengambil alih konfigurasi warna elemen.",
-					points: ["Jika kosong, warna konfigurasi dalam elemen akan diambil alih.", "Hirarki tipe untuk elemen adalah sebagai berikut", "Sebagai contoh, jika sebuah aksi memiliki konfigurasi warna individual, maka warna tersebut akan digunakan, sedangkan jika aksi tidak ada konfigurasi warna individual, maka kategori atau warna dunia yang akan digunakan.", "Jika acara juga memiliki kategori, maka acara tersebut akan mewarisi warna kategori tersebut, sama seperti Aksi dan Item."],
+					summary: "Mengikuti warna yang diatur pada elemen induk",
+					points: ["Jika dikosongkan, warna yang diatur pada elemen induk akan diwarisi.", "Hierarki tipe setiap elemen adalah sebagai berikut.", "Misalnya, jika sebuah aksi memiliki warna tersendiri maka warna itulah yang dipakai; jika aksi tidak memiliki warna tersendiri, maka warna kategori atau dunia yang dipakai.", "Jika sebuah acara juga memiliki kategori yang diatur, acara itu mewarisi warna kategori tersebut sama seperti aksi dan item."],
 					quote: typeTree,
-					links: { type: "Jenis" },
+					links: { type: "type" },
 				},
 			},
 		},
 	},
 	options: {
-		label: "informasi",
+		label: "information",
 	},
 };
 
@@ -402,9 +402,9 @@ export const component: Markdown = {
 	title: "komponen",
 	summary: "Bagian umum",
 	points: ["Komponen umum yang digunakan di setiap konfigurasi lokasi diekstraksi dan ditangani.", "Komponen yang digunakan dalam semua area ini adalah umum, tetapi sebagian komponen tidak ada pada sebagian item."],
-	list: expandList("komponen", [information, requirement, acquisition, combat, property]),
+	list: expandList("komponen", [information, requirement, acquisition, combat, property], "Deskripsi"),
 	options: {
-		label: "komponen",
+		label: "component",
 		linkedList: true,
 	},
 };
@@ -425,7 +425,7 @@ export const task: Type.Event = {
 	title: "Tugas",
 	summary: "Misi yang akan dianggap berhasil jika syarat-syaratnya terpenuhi",
 	points: ["Jika memenuhi konfigurasi yang telah ditetapkan, maka target tercapai, dan pesan akan ditampilkan di bagian atas layar.", "Akan ditampilkan dalam daftar misi pemain dan daftar tugas berdasarkan Kategori.", "Hadiah tidak diberikan secara otomatis. Pemain akan menerimanya saat membuka tugas dan menekan tombol \"Akuisisi\".", "Sampai imbalan tersebut diterima, bilah pada daftar akan ditandai dengan pita untuk menunjukkan bahwa imbalan tersebut belum diterima.", "Dengan proses akuisisi, Anda dapat mengubah level Kategori, jumlah kali pelaksanaan Aksi, dan jumlah Item yang dimiliki.", "Untuk hal-hal yang ingin diaktifkan pada waktu-waktu di luar kondisi tertentu, seperti saat pertama kali dijalankan atau saat permainan berakhir, lakukan konfigurasi melalui acara di pengaturan dasar."],
-	links: { event: "acara" },
+	links: { event: "event" },
 	children: {
 		information: information,
 		category: {
@@ -437,7 +437,7 @@ export const task: Type.Event = {
 			title: "waktu",
 			summary: "Waktu pemicu tugas (tetap `matched`)",
 			points: ["Tugas dalam konfigurasi `matched` (ketika memenuhi kondisi yang telah dikonfigurasi) dan tidak dapat diedit.", "Hadiah hanya dapat diterima satu kali, dan setelah diterima, status pencapaiannya tidak akan berubah lagi.", "Untuk hal-hal yang ingin diaktifkan pada waktu lain, lakukan konfigurasi melalui acara di pengaturan dasar."],
-			links: { event: "acara" },
+			links: { event: "event" },
 		},
 		unlocked: {
 			title: "Tampilan awal",
@@ -460,11 +460,11 @@ export const task: Type.Event = {
 			title: "kelompok tugas",
 			summary: "Klasifikasi kelompok tampilan tugas",
 			points: ["Terapkan salah satu grup yang konfigurasi di Basic.", "Daftar tugas akan ditampilkan sesuai urutan konfigurasi grup yang telah ditetapkan.", "Di dalam kategori tersebut, hasilnya akan ditampilkan berdasarkan kelompok-kelompoknya.", "Jika dibiarkan kosong, tidak ada pengelompokan yang dibuat."],
-			links: { general: "umum" },
+			links: { general: "general" },
 		},
 	},
 	options: {
-		label: "tugas",
+		label: "task",
 	},
 };
 
@@ -474,7 +474,7 @@ export const group: Type.Information = {
 	summary: "Menetapkan grup tampilan untuk kategori, aksi, dan item",
 	points: ["Tentukan grup untuk mengontrol urutan tampilan.", "Anda dapat mengatur grup yang ditentukan di sini untuk setiap kategori, aksi, dan item.", "Grup dengan kelompok yang sama ditampilkan berdekatan.", "Jika dibiarkan kosong, tidak ada pengelompokan yang dibuat."],
 	options: {
-		label: "kelompok",
+		label: "group",
 	},
 };
 
@@ -493,7 +493,7 @@ export const item: Type.Item = {
 			title: "kelompok (usu. orang)",
 			summary: "Menampilkan menit kelompok Item",
 			points: ["Terapkan salah satu grup yang konfigurasi di Basic.", "Daftar item ditampilkan menurut urutan kelompok yang konfigurasi.", "Jika dibiarkan kosong, tidak ada pengelompokan yang dibuat."],
-			links: { general: "umum" },
+			links: { general: "general" },
 		},
 		unlocked: {
 			title: "Keadaan pembebasan awal",
@@ -521,7 +521,7 @@ export const item: Type.Item = {
 				["Nilai yang lebih besar dari nol.", "Jual dengan nilai tersebut."],
 				["Nilai yang kurang dari nol (misalnya -1)", "Tingkat diskon konfigurasi umum dikalikan dengan nilai penawaran (jika nilai penawaran nol, maka tidak ada)"],
 			],
-			links: { general: "umum" },
+			links: { general: "general" },
 		},
 		maximum: {
 			title: "Jumlah maksimum yang dimiliki [pcs].",
@@ -531,13 +531,13 @@ export const item: Type.Item = {
 		equipmentType: {
 			title: "Tipe Peralatan",
 			summary: "Konfigurasi tipe untuk peralatan, efek, dan konsumsi Item.",
-			points: ["Item yang dapat dilengkapi diperlukan untuk termasuk dalam grup yang ditentukan dalam Kategori `equipmentGroups`.", "Hanya satu item yang dapat dilengkapi dalam grup yang sama.", "`unnecessary` akan memberikan efek terlepas dari apakah Peralatan tersebut dimiliki atau tidak, dan besaran efeknya sebanding dengan jumlah yang dimiliki (tidak ada efek jika jumlahnya 0, dan efeknya berlipat ganda sebanyak n kali jika jumlahnya n)."],
+			points: ["Item yang dapat dikenakan harus termasuk dalam grup yang ditentukan pada `equipmentGroups` milik kategori.", "Hanya satu item yang dapat dilengkapi dalam grup yang sama.", "`unnecessary` tetap berefek terlepas dari dikenakan atau tidak, dan besar efeknya sebanding dengan jumlah yang dimiliki (tidak berefek pada 0, n kali lipat pada n)."],
 			list: [
 				["nilai", "Peralatan", "Efektivitas.", "konsumsi", "Contoh."],
-				["'perlu'.", "Diperlukan", "Hanya saat melengkapi (1 buah)", "tidak ada", "Pedang, baju besi, dan peralatan lainnya."],
-				["'habis pakai'.", "Diperlukan", "Hanya saat melengkapi (1 buah)", "Dikonsumsi saat aksi dilakukan", "Item yang dikonsumsi untuk mendapatkan efek, seperti ramuan."],
-				["'tidak perlu'.", "Tidak perlu", "Selama dibawa, selalu (berbanding lurus dengan jumlah yang dibawa)", "tidak ada", "Item pasif yang efektif hanya dengan memilikinya."],
-				["'tidak mungkin'.", "tidak diperbolehkan", "tidak ada", "tidak ada", "Item-item yang tidak ada seperti material dan puing-puing."],
+				["`necessary`", "Diperlukan", "Hanya saat melengkapi (1 buah)", "tidak ada", "Pedang, baju besi, dan peralatan lainnya."],
+				["`consumable`", "Diperlukan", "Hanya saat melengkapi (1 buah)", "Dikonsumsi saat aksi dilakukan", "Item yang dikonsumsi untuk mendapatkan efek, seperti ramuan."],
+				["`unnecessary`", "Tidak perlu", "Selama dibawa, selalu (berbanding lurus dengan jumlah yang dibawa)", "tidak ada", "Item pasif yang efektif hanya dengan memilikinya."],
+				["`impossible`", "tidak diperbolehkan", "tidak ada", "tidak ada", "Item-item yang tidak ada seperti material dan puing-puing."],
 			],
 		},
 		requirements: { ...requirement, options: { ...requirement.options, array: true }, summary: "Persyaratan diperlukan untuk penggunaan item." },
@@ -564,13 +564,13 @@ export const action: Type.Action = {
 			title: "atribut",
 			summary: "Kategori atribut aksi",
 			points: ["Atribut (kategori) individual dapat dikonfigurasi.", "Jika dibiarkan kosong, kategori yang menjadi miliknya akan diambil alih", "Misalnya, jika Anda konfigurasi atribut Sihir untuk aksi yang termasuk dalam kategori Kastil Iblis satu per satu, level dan properti kategori sihir akan dihitung dan diterapkan pada waktu penyelesaian aksi dan kerusakan."],
-			links: { category: "kategori" },
+			links: { category: "category" },
 		},
 		group: {
 			title: "kelompok (usu. orang)",
 			summary: "Menampilkan menit kelompok aksi",
 			points: ["Terapkan salah satu grup yang konfigurasi di Basic.", "Daftar aksi ditampilkan menurut urutan kelompok yang konfigurasi."],
-			links: { general: "umum" },
+			links: { general: "general" },
 		},
 		unlocked: {
 			title: "Keadaan pembebasan awal",
@@ -581,30 +581,30 @@ export const action: Type.Action = {
 			title: "level",
 			summary: "Level kesulitan Aksi.",
 			points: ["Tingkat kesulitan Aksi ditunjukkan oleh level.", "Hitung properti pada saat runtime dibandingkan dengan level pemain.", "Sebagai contoh, melakukan Aksi yang lebih tinggi dari level Anda akan memiliki tingkat sukses dibawah.", "Jika syarat-syarat tersebut terpenuhi, eksekusi dapat dilakukan meskipun level pemain lebih rendah dari nilai ini."],
-			links: { property: "properti" },
+			links: { property: "property" },
 		},
 		requirements: { ...requirement, options: { ...requirement.options, array: true }, summary: "Persyaratan yang diperlukan untuk pelaksanaan aksi." },
 		seconds: {
 			title: "Waktu [detik].",
 			summary: "Waktu yang dibutuhkan untuk melakukan aksi",
-			points: ["Waktu standar (dalam detik) yang diperlukan untuk melakukan suatu aksi sekali.", "Untuk tipe `stamina`, ini adalah interval waktu untuk satu giliran (satu pengurangan stamina satu sama lain).", "Eksekusi aktual akan bervariasi karena perhitungan properti."],
-			links: { property: "properti" },
+			points: ["Waktu standar (dalam detik) yang diperlukan untuk melakukan suatu aksi sekali.", "Untuk tipe `stamina`, ini adalah selang waktu satu giliran (stamina masing-masing pihak berkurang satu kali).", "Eksekusi aktual akan bervariasi karena perhitungan properti."],
+			links: { property: "property" },
 		},
 		experience: {
 			title: "pengalaman [tingkat level berikutnya di 100]",
 			summary: "Pengalaman yang diperoleh dari aksi yang sukses",
 			points: ["Pengalaman standar yang diperoleh dari melakukan suatu aksi satu kali dan sukses; 100 setara dengan satu level pengalaman.", "Dalam kasus pertempuran, disarankan untuk menetapkan lebih banyak, karena itu merupakan akuisisi ketika lawan menang.", "Eksekusi aktual akan bervariasi karena perhitungan properti."],
-			links: { property: "properti" },
+			links: { property: "property" },
 		},
 		chance: {
 			title: "Probabilitas sukses [0-1].",
 			summary: "Probabilitas sukses pada penyelesaian aksi",
-			points: ["Probabilitas sukses pada saat penyelesaian Aksi.", "Selalu sukses jika `1`, selalu gagal jika `0`.", "Jika terjadi kegagalan, item yang dapat dikonsumsi akan habis, tetapi tidak ada hadiah atau pengalaman yang diperoleh.", "Eksekusi aktual akan bervariasi karena perhitungan properti."],
+			points: ["Probabilitas sukses pada saat penyelesaian Aksi.", "Dengan `1` selalu berhasil, dan dengan `0` selalu gagal.", "Jika terjadi kegagalan, item yang dapat dikonsumsi akan habis, tetapi tidak ada hadiah atau pengalaman yang diperoleh.", "Eksekusi aktual akan bervariasi karena perhitungan properti."],
 		},
 		maximum: {
 			title: "Jumlah maksimum lari [kali].",
 			summary: "Jumlah maksimum aksi yang dapat diselesaikan.",
-			points: ["Jumlah maksimum aksi yang dapat diselesaikan dengan sukses.", "Tidak terbatas untuk `0`.", "Ketika batas atas tercapai, aksi tidak lagi dapat dieksekusi."],
+			points: ["Jumlah maksimum aksi yang dapat diselesaikan dengan sukses.", "Dengan `0` berarti tanpa batas.", "Ketika batas atas tercapai, aksi tidak lagi dapat dieksekusi."],
 		},
 		acquisitions: { ...acquisition, options: { ...acquisition.options, array: true }, summary: "Hadiah untuk akuisisi Aksi yang sukses." },
 		progressType: {
@@ -613,16 +613,16 @@ export const action: Type.Action = {
 			points: ["Ada empat jenis."],
 			list: [
 				["Tipe", "detail operasi", "stamina", "Contoh."],
-				["'gigih'.", "Ini adalah tipe aksi yang terus menerus diulang; Anda mendapatkan pengalaman dan hadiah untuk setiap penyelesaian.", "Tidak ada hubungan", "Penebangan, pertambangan, penangkapan ikan"],
-				["'single'.", "Lakukan satu aksi dalam satu waktu. Jika terputus, kemajuan akan disimpan dan dapat dilanjutkan di lain waktu. Setelah selesai, pengguna menekan aksi konfirmasi untuk menerima hasilnya.", "Tidak ada hubungan", "Membuka peti harta karun, belajar keterampilan melalui membaca"],
-				["\"Jepret\".", "Tipe aksi ini dilakukan secara instan. Diselesaikan dengan segera tanpa ada jeda waktu.", "Tidak ada hubungan", "berdagang, penggunaan Item."],
-				["'stamina'.", "Setiap waktu yang dibutuhkan akan mengurangi stamina pemain dan lawan. Ketika stamina lawan habis, pengalaman dan hadiah akan diperoleh. Ketika stamina pemain habis, permainan berakhir dan semua aksi yang sedang berlangsung dibatalkan.", "Relevan.", "Operasi tempur dan berbahaya."],
+				["`persistent`", "Ini adalah tipe aksi yang terus menerus diulang; Anda mendapatkan pengalaman dan hadiah untuk setiap penyelesaian.", "Tidak ada hubungan", "Penebangan, pertambangan, penangkapan ikan"],
+				["`single`", "Lakukan satu aksi dalam satu waktu. Jika terputus, kemajuan akan disimpan dan dapat dilanjutkan di lain waktu. Setelah selesai, pengguna menekan aksi konfirmasi untuk menerima hasilnya.", "Tidak ada hubungan", "Membuka peti harta karun, belajar keterampilan melalui membaca"],
+				["`snap`", "Tipe aksi ini dilakukan secara instan. Diselesaikan dengan segera tanpa ada jeda waktu.", "Tidak ada hubungan", "berdagang, penggunaan Item."],
+				["`stamina`", "Setiap waktu yang dibutuhkan akan mengurangi stamina pemain dan lawan. Ketika stamina lawan habis, pengalaman dan hadiah akan diperoleh. Ketika stamina pemain habis, permainan berakhir dan semua aksi yang sedang berlangsung dibatalkan.", "Relevan.", "Operasi tempur dan berbahaya."],
 			],
 		},
 		property: combat,
 	},
 	options: {
-		label: "tindakan",
+		label: "action",
 	},
 };
 
@@ -636,7 +636,7 @@ export const category: Type.Category = {
 			title: "kelompok (usu. orang)",
 			summary: "Menampilkan klasifikasi kelompok kategori",
 			points: ["Terapkan salah satu grup yang dilakukan konfigurasi di Basic.", "Daftar kategori ditampilkan menurut urutan kelompok yang ditetapkan dalam konfigurasi."],
-			links: { general: "umum" },
+			links: { general: "general" },
 		},
 		unlocked: {
 			title: "Keadaan pembebasan awal",
@@ -648,7 +648,7 @@ export const category: Type.Category = {
 			title: "kelompok Peralatan",
 			summary: "Penunjukan kelompok item yang mungkin dilengkapi dalam kategori ini.",
 			points: ["Daftar nama kelompok item yang dapat dilengkapi dengan Peralatan dalam Kategori ini.", "Hanya item dari grup yang sesuai dengan nama grup yang ditentukan di sini yang dapat menjadi Peralatan.", "Jika string kosong ditentukan, item dengan konfigurasi grup yang tidak disetel (kosong) menjadi memenuhi syarat untuk Peralatan.", "Hanya satu item yang dapat digunakan sebagai Peralatan dalam grup yang sama. Saat Anda melengkapi item baru, peralatan yang ada dalam grup yang sama secara otomatis dilepas.", "Jika daftar kosong (0 buah), tidak ada peralatan yang dapat digunakan."],
-			links: { general: "umum" },
+			links: { general: "general" },
 		},
 		numeric: {
 			title: "Ketersediaan level",
@@ -667,7 +667,7 @@ export const category: Type.Category = {
 		},
 	},
 	options: {
-		label: "kategori",
+		label: "category",
 	},
 };
 
@@ -675,10 +675,10 @@ export const type: Markdown = {
 	title: "Tipe",
 	summary: "Klasifikasi dasar dunia",
 	points: ["Dunia terdiri dari enam tipe.", "Semua elemen ditempatkan langsung dibawah dunia.", "Aksi dan Item dikaitkan dengan ID dari Kategori yang menjadi miliknya."],
-	list: expandList("Tipe", [category, action, item, group, task, preset]),
+	list: expandList("Tipe", [category, action, item, group, task, preset], "Deskripsi"),
 	quote: typeTree,
 	options: {
-		label: "Jenis",
+		label: "type",
 		linkedList: true,
 	},
 };
@@ -734,7 +734,7 @@ export const development: Type.Development = {
 		},
 	},
 	options: {
-		label: "pengembangan",
+		label: "development",
 	},
 };
 
@@ -765,7 +765,7 @@ export const design: Type.Design = {
 		},
 	},
 	options: {
-		label: "desain",
+		label: "design",
 	},
 };
 
@@ -782,25 +782,25 @@ export const general: Type.General = {
 			title: "terjemahan",
 			summary: "Menyiapkan terjemahan bahasa atau",
 			points: ["Jika diaktifkan, pengguna dapat bermain dalam bahasa apa pun.", "Jika dinonaktifkan, Anda hanya dapat memutar dalam bahasa yang dipilih dalam konfigurasi bahasa.", "Jika terjemahan diaktifkan, data terjemahan untuk setiap bahasa diperlukan."],
-			links: { translation: "terjemahan" },
+			links: { translation: "translation" },
 		},
 		offlineMaxHours: {
 			title: "Waktu offline maksimum [jam].",
 			summary: "Batas waktu untuk kemajuan mati.",
 			points: ["Konfigurasi jumlah waktu maks kemajuan saat mati.", "Misalnya, jika 6 waktu ditetapkan, proses kembali mati hingga 6 waktu akan diproses, tetapi jika waktu atas itu diizinkan, waktu mati akan diperlakukan sebagai 6 waktu.", "Jika 0 waktu ditetapkan, tidak ada proses pemrosesan yang terjadi sama sekali saat kembali mati.", "Nilai maks adalah 24 waktu."],
-			links: { category: "kategori" },
+			links: { category: "category" },
 		},
 		maxCategoryLevels: {
 			title: "Kategori maks",
 			summary: "Batas level atas untuk kategori.",
 			points: ["Konfigurasi level maks untuk setiap kategori.", "Jika akuisisi pengalaman terjadi di luar level ini, level maks yang konfigurasi di sini digunakan dalam perhitungan properti.", "Nilai ini tidak memiliki hubungan untuk kategori tanpa level."],
-			links: { category: "kategori" },
+			links: { category: "category" },
 		},
 		locking: {
 			title: "fungsi terkunci",
 			summary: "Menyembunyikan item sampai persyaratan terpenuhi",
 			points: ["Jika diaktifkan, item tindakan Kategori akan disembunyikan sementara item tersebut tidak ada yang pernah menggunakannya atau memilikinya dan persyaratannya belum terpenuhi.", "Jika dinonaktifkan, semua item akan ditampilkan dari awal, tetapi tidak dapat dijalankan atau dilengkapi dengan Peralatan hingga persyaratan terpenuhi."],
-			links: { category: "kategori", action: "tindakan", item: "item" },
+			links: { category: "category", action: "action", item: "item" },
 		},
 		coins: {
 			title: "mata uang",
@@ -811,18 +811,18 @@ export const general: Type.General = {
 				"Mata uang digunakan untuk membeli dan menjual item, serta untuk memperluas kapasitas inventaris.",
 				"Mata uang yang berada di urutan pertama akan diperlakukan sebagai mata uang utama, dan akan digunakan jika ID mata uang (`coinId`) tidak ada untuk Item atau kapasitas.",
 			],
-			links: { information: "informasi", item: "item" },
+			links: { information: "information", item: "item" },
 		},
 		capacity: {
 			title: "kapasitas",
 			summary: "Konfigurasi kapasitas inventaris.",
-			points: ["Mengontrol jumlah maksimum berbagai jenis item yang dapat dimiliki pemain.", "Setiap item dikendalikan oleh jumlah jenis item yang Anda miliki, tidak ada jumlah item yang Anda miliki.", "Menetapkan `initialCount` ke 0 berarti kapasitas tidak terbatas.", "Ketika merujuk pada item kapasitas dalam kondisi atau hadiah, gunakan ID yang ditetapkan dalam konfigurasi di sini."],
+			points: ["Mengontrol jumlah maksimum berbagai jenis item yang dapat dimiliki pemain.", "Setiap item dikendalikan oleh jumlah jenis item yang Anda miliki, tidak ada jumlah item yang Anda miliki.", "Jika `initialCount` diatur ke 0, kapasitasnya menjadi tanpa batas.", "Ketika merujuk pada item kapasitas dalam kondisi atau hadiah, gunakan ID yang ditetapkan dalam konfigurasi di sini."],
 			children: {
 				information: information,
 				initialCount: {
 					title: "Nilai default [pcs].",
 					summary: "Kapasitas inventaris awal (jumlah item berbeda yang dapat disimpan)",
-					points: ["Kapasitas awal (jumlah item berbeda yang dapat dimiliki) mulai permainan.", "Jika `0` ditetapkan, kapasitas tidak terbatas."],
+					points: ["Kapasitas awal (jumlah item berbeda yang dapat dimiliki) mulai permainan.", "Jika diatur ke `0`, kapasitasnya menjadi tanpa batas."],
 				},
 				initialCost: {
 					title: "Harga dasar [koin].",
@@ -832,7 +832,7 @@ export const general: Type.General = {
 				increasingRate: {
 					title: "Persentase peningkatan [kali].",
 					summary: "Persentase peningkatan biaya perluasan kapasitas",
-					points: ["Ini adalah pengganda untuk berapa banyak biaya ekspansi kapasitas meningkat dengan beli ke-n.", "Untuk `1.0` harganya selalu sama, untuk `1.2` harganya 20% lebih tinggi setiap kali dibeli.", "Rumus: harga dasar x persentase kenaikan ^ jumlah kali beli"],
+					points: ["Ini adalah pengganda untuk berapa banyak biaya ekspansi kapasitas meningkat dengan beli ke-n.", "Dengan `1.0` harganya selalu sama, dan dengan `1.2` harganya naik 20% setiap kali pembelian.", "Rumus: harga dasar x persentase kenaikan ^ jumlah kali beli"],
 					list: [
 						["tingkat kenaikan", "Penambahan pertama.", "Kenaikan ke-5.", "Kenaikan ke-10.", "Kenaikan ke-100.", "Kenaikan ke-1000."],
 						["1.00", "x1.00", "x1.00", "x1.00", "x1.00", "x1.00"],
@@ -878,7 +878,7 @@ export const general: Type.General = {
 				increasingRate: {
 					title: "Persentase peningkatan [kali].",
 					summary: "Tingkat kenaikan biaya perluasan kapasitas",
-					points: ["Ini adalah faktor pengali yang menunjukkan seberapa besar kenaikan biaya perluasan kuota saat membeli ke-n kali.", "Untuk `1.0` harganya selalu sama, untuk `1.2` harganya 20% lebih tinggi setiap kali dibeli.", "Rumus: harga dasar x persentase kenaikan ^ jumlah kali beli"],
+					points: ["Ini adalah faktor pengali yang menunjukkan seberapa besar kenaikan biaya perluasan kuota saat membeli ke-n kali.", "Dengan `1.0` harganya selalu sama, dan dengan `1.2` harganya naik 20% setiap kali pembelian.", "Rumus: harga dasar x persentase kenaikan ^ jumlah kali beli"],
 				},
 				coinId: {
 					title: "ID Mata Uang",
@@ -905,17 +905,17 @@ export const general: Type.General = {
 				["0.10", "x1.00", "x1.10", "x2.36", "x117.39", "x5.7×10⁴"],
 				["0.20", "x1.00", "x1.20", "x6.19", "x3,3 x 10³", "x1,3 x 10¹¹"],
 			],
-			links: { category: "kategori" },
+			links: { category: "category" },
 		},
 		actionLevelLimit: {
 			title: "pembatasan level Aksi",
 			summary: "Meminta hitung berapa kali aksi atribut yang sama telah dieksekusi untuk eksekusi suatu aksi.",
 			points: ["Jika diaktifkan, hitung kali aksi dengan atribut yang sama telah dieksekusi secara otomatis ditambahkan ke kondisi eksekusi setiap tindakan.", "Jumlah hitung yang diperlukan sama dengan nilai level aksi.", "Jika tidak ada atribut yang ditetapkan, ID dari kategori yang digunakan akan digunakan."],
 		},
-		defaultCombat: { ...combat, summary: "Parameter tempur default yang umum untuk Aksi.", points: ["Nilai koreksi tempur dasar yang berlaku untuk semua tipe aksi `stamina` yang sama.", "Nilai tempur (properti) dari setiap Aksi ditambahkan ke nilai default ini."], links: { action: "tindakan" } },
+		defaultCombat: { ...combat, summary: "Parameter tempur default yang umum untuk Aksi.", points: ["Ini adalah nilai koreksi pertarungan dasar yang berlaku sama untuk semua aksi bertipe `stamina`.", "Nilai tempur (properti) dari setiap Aksi ditambahkan ke nilai default ini."], links: { action: "action" } },
 	},
 	options: {
-		label: "umum",
+		label: "general",
 	},
 };
 
@@ -962,7 +962,7 @@ export const overview: Type.Overview = {
 		},
 	},
 	options: {
-		label: "gambaran umum",
+		label: "overview",
 	},
 };
 
@@ -974,36 +974,36 @@ const toFixedEvent = (title: string, summary: string, points: string[], timingPo
 	children: {
 		...task.children,
 		category: {
-			title: "Kategori.",
-			summary: "Tidak akan digunakan dalam acara tersebut",
-			points: ["Karena tidak ditampilkan dalam daftar misi atau tugas, kategori yang terkait tidak akan ditentukan.", "Di editor, kolom input tidak ditampilkan."],
+			title: "カテゴリー",
+			summary: "イベントでは使用しません",
+			points: ["ミッションやタスクの一覧に表示されないため、所属するカテゴリーは指定しません。", "エディターでは入力欄が表示されません。"],
 		},
 		timing: {
-			title: "waktu",
-			summary: "Waktu pemicu acara (tetap)",
+			title: "タイミング",
+			summary: "イベントが発動するタイミング（固定）",
 			points: timingPoints,
 		},
 		unlocked: {
-			title: "Tampilan awal",
-			summary: "Status tampilan awal ikon acara (pemicuan ditentukan oleh waktu, dan dengan konfigurasi ini, ikon tidak akan dipicu)",
-			points: ["Kondisi pemicu acara ditentukan oleh waktu, dan opsi ini hanya memengaruhi tampilan ikon.", "secreted: Ikon tidak akan ditampilkan sampai semua persyaratan terpenuhi (meskipun pemicunya sendiri terjadi sesuai waktu yang ditentukan).", "hidden・hinted: Ikon tersebut akan ditampilkan dengan garis miring sebagai tanda belum dibuka.", "dirilis: Garis miring akan hilang dan ditampilkan sebagai \"telah dibebaskan\"."],
+			title: "初期表示状態",
+			summary: "イベントアイコンの初期表示状態（発火はタイミングで決まり、この設定では発火しません）",
+			points: ["イベントの発火条件はタイミングで決まり、この項目はアイコンの見た目のみに影響します。", "secreted: 全requirementsを満たすまでアイコンが表示されません（発火自体はタイミングで起こります）。", "hidden・hinted: アイコンに斜線が付き未解放として表示されます。", "released: 斜線が消え解放済みとして表示されます。"],
 		},
 		requirements: {
-			title: "syarat dan ketentuan",
-			summary: "Syarat untuk mendapatkan imbalan dalam proses akuisisi",
-			points: ["Jika waktu yang tepat terpenuhi, acara tersebut akan terpicu, dan layar khusus akan terbuka untuk menampilkan isinya.", "Akuisisi imbalan hanya akan terjadi jika, pada saat diaktifkan, konfigurasi yang ditetapkan di sini terpenuhi.", "Jika tidak ada konfigurasi apa pun, Anda akan mendapatkan hadiah setiap kali fitur ini diaktifkan."],
+			title: "条件",
+			summary: "報酬を獲得する条件",
+			points: ["タイミングが成立するとイベントは発動し、専用の画面を開いて内容を表示します。", "報酬は、発動時にここで設定した条件を満たしている場合にのみ獲得します。", "条件を設定していない場合は、発動するたびに報酬を獲得します。"],
 			children: requirement.children,
 		},
 		acquisitions: {
-			title: "hadiah",
-			summary: "Konfigurasi hadiah saat acara dipicu.",
-			points: ["Ini adalah imbalan yang diperoleh ketika waktu yang tepat terpenuhi dan syarat-syaratnya terpenuhi.", "Berbeda dengan tugas, Anda tidak perlu melakukan tindakan apa pun untuk menerimanya; akuisisi akan dilakukan secara otomatis begitu fitur tersebut diaktifkan.", "Anda dapat melakukan konfigurasi nilai negatif untuk jumlah. Misalnya, jika Anda melakukan konfigurasi untuk membuat jumlah item menjadi negatif saat permainan berakhir, Anda akan kehilangan item-item tersebut."],
+			title: "報酬",
+			summary: "イベント発動時の報酬設定",
+			points: ["タイミングが成立し、かつ条件を満たしている時に得られる報酬です。", "タスクと違って受け取る操作は要らず、発動と同時に自動で獲得します。", "数量にマイナスを設定することができます。例えばゲームオーバー時にアイテムの数量をマイナスにすれば、それらを失います。"],
 			children: acquisition.children,
 		},
 		group: {
-			title: "kelompok tugas",
-			summary: "Tidak akan digunakan dalam acara tersebut",
-			points: ["Karena tidak ada daftar misi atau tugas, kami tidak menggunakan penunjukan grup.", "Di editor, kolom input tidak ditampilkan."],
+			title: "タスクグループ",
+			summary: "イベントでは使用しません",
+			points: ["ミッションやタスクの一覧に表示されないため、グループの指定は使いません。", "エディターでは入力欄が表示されません。"],
 		},
 	},
 });
@@ -1014,22 +1014,22 @@ export const event: Type.Events = {
 	points: ["Fitur ini akan aktif pada waktu-waktu tertentu, seperti saat pertama kali membuka dunia atau saat permainan berakhir, dan akan membuka layar khusus.", "Tersedia satu per satu untuk setiap waktu, dan tidak dapat ditambahkan maupun dihapus. Untuk waktu yang tidak digunakan, biarkan kolomnya kosong.", "Tidak akan ditampilkan dalam daftar misi atau tugas. Hal-hal yang akan dianggap tercapai jika memenuhi syarat tertentu harus dikonfigurasi sebagai tugas.", "Akuisisi imbalan akan dilakukan secara otomatis begitu fitur tersebut diaktifkan. Tidak ada langkah pengambilan seperti pada tugas, dan tidak ada pita pemberitahuan.", "Hal ini dapat mengubah level Kategori, jumlah aksi yang dilakukan dan jumlah Item yang dimiliki ketika diaktifkan.", "Jika kolom nama, deskripsi, dan ikon dibiarkan kosong, teks dan ikon default yang sudah ada di dalam game akan digunakan oleh pemain."],
 	list: [
 		["waktu", "kondisi aktivasi", "ulangi"],
-		["'kembali lagi'.", "Ketika seseorang kembali dari offline selama lebih dari satu detik dan ada aksi yang sedang berlangsung.", "sering"],
-		["`gameovered`.", "Ketika stamina pemain habis dalam pertempuran.", "sering"],
-		["\"Selamat datang\".", "Ketika saya pertama kali memulai dunia ini.", "hanya sekali"],
-		["`selesai`.", "Ketika level maksimum semua kategori (maxCategoryLevels) tercapai.", "hanya sekali"],
+		["`comebacked`", "Ketika seseorang kembali dari offline selama lebih dari satu detik dan ada aksi yang sedang berlangsung.", "sering"],
+		["`gameovered`", "Ketika stamina pemain habis dalam pertempuran.", "sering"],
+		["`welcomed`", "Ketika saya pertama kali memulai dunia ini.", "hanya sekali"],
+		["`completed`", "Ketika level maksimum semua kategori (maxCategoryLevels) tercapai.", "hanya sekali"],
 		["`obtained`", "Saat menyelesaikan atau memeriksa Aksi jenis tunggal (seperti peti harta karun, dll.)", "sering"],
 	],
-	links: { task: "tugas" },
+	links: { task: "task" },
 	children: {
-		comebacked: toFixedEvent("Saat kembali", "Berlaku saat kembali dari mode offline", ["Fitur ini akan aktif ketika perangkat kembali online setelah lebih dari 1 detik dalam keadaan offline, dan terdapat aksi yang sedang berlangsung.", "Akan ditampilkan bersamaan dengan ringkasan kemajuan selama periode terpisah tersebut."], ["Telah ditetapkan sebagai `comebacked` dan tidak dapat diedit.", "Akan aktif berulang kali setiap kali Anda kembali."]),
-		gameovered: toFixedEvent("Saat permainan berakhir", "Diaktifkan saat stamina habis dalam pertempuran", ["Fitur ini akan aktif saat stamina pemain habis dalam pertempuran.", "Dengan melakukan konfigurasi nilai negatif pada jumlah hadiah, Anda dapat menetapkan konsekuensi saat permainan berakhir."], ["Telah ditetapkan sebagai `gameovered` dan tidak dapat diedit.", "Fitur ini akan aktif berulang kali setiap kali permainan berakhir."]),
-		welcomed: toFixedEvent("Saat pertama kali mulai", "Berlaku saat pertama kali membuka dunia", ["Fitur ini akan aktif saat Anda menjalankan dunia ini untuk pertama kalinya.", "Ini digunakan untuk menjelaskan latar cerita serta menyerahkan perlengkapan yang diberikan saat mulai bermain."], ["Telah ditetapkan sebagai `welcomed` dan tidak dapat diedit.", "Fitur ini hanya akan aktif sekali saat pertama kali dijalankan."]),
-		completed: toFixedEvent("Saat berhasil diselesaikan", "Berlaku saat semua kategori telah mencapai level maks", ["Fitur ini akan aktif ketika level semua kategori telah mencapai nilai maksimum (maxCategoryLevels).", "Kategori yang bukan numerik akan dikecualikan dari penilaian."], ["Telah ditetapkan sebagai `completed` dan tidak dapat diedit.", "Fitur ini hanya akan aktif sekali saat syarat-syaratnya terpenuhi."]),
-		obtained: toFixedEvent("Saat aksi tunggal selesai", "Terpicu saat menyelesaikan aksi tunggal seperti membuka peti harta karun", ["Aksi ini akan terpicu saat Anda menyelesaikan atau memeriksa aksi jenis tunggal (seperti peti harta karun, dll.).", "Selain imbalan dari Aksi itu sendiri, Anda dapat menambahkan imbalan yang dikonfigurasi di sini."], ["`obtained` telah ditetapkan dan tidak dapat diedit.", "Akan terpicu berulang kali setiap kali aksi tunggal diselesaikan."]),
+		comebacked: toFixedEvent("Saat kembali", "Terpicu saat kembali dari kondisi luring", ["Terpicu saat kamu kembali setelah satu detik atau lebih luring dan ada aksi yang sedang berjalan.", "Ditampilkan bersama ringkasan kemajuan selama kamu pergi."], ["Nilainya tetap `comebacked` dan tidak dapat diubah.", "Terpicu setiap kali kamu kembali, tanpa batas jumlah."]),
+		gameovered: toFixedEvent("Saat permainan berakhir", "Terpicu saat stamina habis dalam pertarungan", ["Terpicu saat stamina pemain habis dalam pertarungan.", "Dengan mengatur jumlah hadiah menjadi negatif, kamu dapat memberi konsekuensi atas berakhirnya permainan."], ["Nilainya tetap `gameovered` dan tidak dapat diubah.", "Terpicu setiap kali permainan berakhir, tanpa batas jumlah."]),
+		welcomed: toFixedEvent("Saat pertama kali dimulai", "Terpicu saat dunia dibuka untuk pertama kalinya", ["Terpicu saat dunia ini dijalankan untuk pertama kalinya.", "Digunakan untuk menjelaskan latar dunia atau menyerahkan perbekalan awal."], ["Nilainya tetap `welcomed` dan tidak dapat diubah.", "Hanya terpicu sekali, saat pertama kali dijalankan."]),
+		completed: toFixedEvent("Saat tamat", "Terpicu saat semua kategori mencapai level maksimum", ["Terpicu saat level semua kategori mencapai nilai maksimum (maxCategoryLevels).", "Kategori yang bukan numeric dikecualikan dari penilaian."], ["Nilainya tetap `completed` dan tidak dapat diubah.", "Hanya terpicu sekali, saat kondisinya terpenuhi."]),
+		obtained: toFixedEvent("Saat aksi sekali jalan selesai", "Terpicu saat aksi sekali jalan seperti peti harta selesai", ["Terpicu saat aksi berjenis single (seperti peti harta) diselesaikan dan dikonfirmasi.", "Terpisah dari hadiah aksi itu sendiri, kamu dapat menambahkan hadiah yang diatur di sini."], ["Nilainya tetap `obtained` dan tidak dapat diubah.", "Terpicu setiap kali aksi sekali jalan selesai, tanpa batas jumlah."]),
 	},
 	options: {
-		label: "acara",
+		label: "event",
 	},
 };
 
@@ -1037,7 +1037,7 @@ export const basic: Type.Basic = {
 	title: "konfigurasi dasar",
 	summary: "Item konfigurasi dasar untuk dunia secara umum.",
 	points: ["Konfigurasi nama dunia, deskripsi, latar belakang, mata uang, kapasitas, level maks kategori, tingkat peningkatan pengalaman, tingkat diskon, parameter pertarungan standar, dll.", "Konfigurasi ini memengaruhi seluruh dunia."],
-	list: expandList("nama", [overview, general, design, event, development]),
+	list: expandList("nama", [overview, general, design, event, development], "Deskripsi"),
 	children: {
 		overview: overview,
 		general: general,
@@ -1046,7 +1046,7 @@ export const basic: Type.Basic = {
 		development: development,
 	},
 	options: {
-		label: "dasar",
+		label: "basic",
 		linkedList: true,
 	},
 };
@@ -1068,7 +1068,7 @@ export const world: Type.World = {
 		presets: { ...preset, options: { ...preset.options, array: true } },
 	},
 	options: {
-		label: "dunia",
+		label: "world",
 	},
 };
 
@@ -1077,7 +1077,7 @@ export const world: Type.World = {
 export const editor: Markdown = {
 	title: "editor",
 	summary: "Penjelasan tentang cara menggunakan editor dan struktur dunia.",
-	list: expandList("nama", [world, basic, type, component, miscellaneous]),
+	list: expandList("nama", [world, basic, type, component, miscellaneous], "Deskripsi"),
 	options: {
 		label: "editor",
 		linkedList: true,

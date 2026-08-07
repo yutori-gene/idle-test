@@ -6,7 +6,8 @@ ___
 
 ## Task
 List of tasks in this category
-- This is a list of tasks assigned to this category.
-- When you select a task, you can view its completion requirements and rewards.
-- Tasks for which you haven't yet received your reward will be marked with a ribbon. Select the task and tap "Claim" to receive your reward.
-- If there are no tasks in a category, it will not be displayed.
+- This is a list of the Tasks assigned to this Category.
+- Select a Task to check its completion conditions and its reward.
+- A ribbon marks the Tasks whose reward has not been claimed yet. Select one and press claim to receive it.
+- You cannot claim a reward while the number of Item types you can hold is at its limit. Free up space and claim it again.
+- This is not displayed when the Category has no Tasks at all.

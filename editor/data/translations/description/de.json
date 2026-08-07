@@ -36,7 +36,7 @@
       "overwrite_warning_1": "Der zu bearbeitende Inhalt ist.",
       "overwrite_warning_2": "Überschreiben.",
       "processing_time": "Dieser Prozess braucht Zeit.",
-      "autosave_status": "Aktuell: {Status}",
+      "autosave_status": "Aktuell: {status}",
       "autosave_description": "Speichern Sie das Menü, wenn es geöffnet wird."
     }
   },
@@ -52,7 +52,7 @@
       "validation_publish": "Validierungsfehler gefunden. Veröffentlichung kann nicht gestartet werden.",
       "publishing_failed": "Veröffentlichung fehlgeschlagen.",
       "invalid_image": "Ungültiges Bild.",
-      "image_size_limit": "Gültige Bilder. {Größe} KB; (Grenze: {Grenze}KB)",
+      "image_size_limit": "Gültiges Bild. Größe: {size} KB. (Grenze: {limit}KB)",
       "export_failed": "Export fehlgeschlagen.",
       "empty_data_load_failed": "Leere Daten konnten nicht geladen werden.",
       "invalid_world_data": "Ungültige Weltdaten. Prüfen Sie die Grundstruktur.",
@@ -65,9 +65,9 @@
     "success": {
       "validation_generating": "Verifizierung erfolgreich! Eigenständige Datei wird erzeugt...",
       "publishing_completed": "Die eigenständige Datei ist jetzt verfügbar!",
-      "data_exported": "Exportierte Daten: {Dateiname}",
+      "data_exported": "Daten exportiert: {filename}",
       "empty_data_loaded": "Leere Daten geladen.",
-      "data_loaded": "Daten geladen: {Dateiname}",
+      "data_loaded": "Daten geladen: {filename}",
       "sample_data_loaded": "Es wurden Beispieldaten geladen.",
       "validation_successful": "Verifizierung erfolgreich: keine Datenprobleme gefunden",
       "autosave_enabled": "Automatisches Speichern ist eingeschaltet.",
@@ -80,7 +80,7 @@
     "promptId": "Geben Sie die ID des Kopierziels ein:.",
     "success": "Informationen kopiert nach {type} (id: {id})",
     "errorInvalidType": "Ungültiger Typ.",
-    "errorNotFound": "Die angegebene ID '{id}' wird in {Typ} nicht gefunden.",
+    "errorNotFound": "Die angegebene ID '{id}' wurde in {type} nicht gefunden.",
     "errorCanceled": "Kopie gelöscht."
   },
   "alert": {
@@ -89,7 +89,7 @@
     "indexeddb_private_mode": "🔒 IndexedDB kann nicht im privaten Modus verwendet werden",
     "storage_quota": "💾 Speicherkapazität überschritten.",
     "indexeddb_unsupported": "⚠️ Browser unterstützt keine IndexedDB",
-    "database_init_failed": "❌ Datenbankinitialisierung fehlgeschlagen: {Meldung}"
+    "database_init_failed": "❌ Datenbankinitialisierung fehlgeschlagen: {message}"
   },
   "ui": {
     "copy": "kopieren.",
@@ -106,10 +106,10 @@
       "invalid_iconify_format": "Ungültiges iconify ID Format [{iconifyId}] bei {path} - muss ':' Trennzeichen enthalten.",
       "empty_iconify_family": "Ungültiges iconify ID-Format [{iconifyId}] bei {path} - Familienname ist leer.",
       "empty_iconify_name": "Ungültiges iconify ID Format [{iconifyId}] bei {path} - Icon Name ist leer.",
-      "iconify_load_failed": "Iconify-Familie [{Familie}] [{iconifyId}] auf {Pfad} konnte nicht geladen werden - {Fehler}"
+      "iconify_load_failed": "Iconify-Familie [{family}] [{iconifyId}] konnte unter {path} nicht geladen werden - {error}."
     },
     "reference": {
-      "id_not_found": "{TypName} id [{id}] nicht gefunden in {Pfad}:{id}.",
+      "id_not_found": "{typeName} id [{id}] nicht gefunden in {path}:{id}.",
       "group_not_found": "Gruppe [{group}] nicht in {path} gefunden. Muss leer oder eine vordefinierte Gruppen-ID sein."
     }
   }

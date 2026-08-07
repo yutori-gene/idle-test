@@ -36,7 +36,7 @@
       "overwrite_warning_1": "Редактируемый контент.",
       "overwrite_warning_2": "Переопределение.",
       "processing_time": "Процесс требует времени.",
-      "autosave_status": "Текущий: {статус}",
+      "autosave_status": "Текущий: {status}",
       "autosave_description": "Сохраняйте меню при его открытии."
     }
   },
@@ -89,7 +89,7 @@
     "indexeddb_private_mode": "🔒 IndexedDB нельзя использовать в частном режиме",
     "storage_quota": "💾 Объем памяти превышен.",
     "indexeddb_unsupported": "⚠️ Browser не поддерживает IndexedDB",
-    "database_init_failed": "❌ Не удалось инициализировать базу данных: {сообщение}"
+    "database_init_failed": "❌ Не удалось инициализировать базу данных: {message}"
   },
   "ui": {
     "copy": "копия",
@@ -110,7 +110,7 @@
     },
     "reference": {
       "id_not_found": "{typeName} id [{id}] не найден в {path}:{id}.",
-      "group_not_found": "Группа [{group}] не найдена в {пути}. Должен быть пустым или предопределенным идентификатором группы."
+      "group_not_found": "Группа [{group}] не найдена в {path}. Должна быть пустой или предопределённым идентификатором группы."
     }
   }
 }

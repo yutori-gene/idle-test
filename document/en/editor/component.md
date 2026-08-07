@@ -4,7 +4,7 @@ Common parts
 - Common components used in each location config are extracted and handled.
 - The components used in all of these locations are common, but some of the components are nothing.
 
-|component|説明|
+|component|Description|
 |-|-|
 |[_information_](en/editor/information)|Configure basic information about the element (ID, name, icon, color, etc.)|
 |[_requirement_](en/editor/requirement)|Necessary requirements configured for the use and display of elements|

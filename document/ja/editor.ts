@@ -91,7 +91,7 @@ export const miscellaneous: Markdown = {
 	title: "補足事項",
 	summary: "その他の補足事項を説明",
 	points: ["参考になる情報を掲載しています。"],
-	list: expandList("補足", [translation]),
+	list: expandList("補足", [translation], "説明"),
 	options: {
 		label: "miscellaneous",
 		linkedList: true,
@@ -170,7 +170,7 @@ export const property: Type.Property = {
 export const combat: Type.Combat = {
 	title: "戦闘値",
 	summary: "stamina タイプのアクションにおける戦闘補正値の設定",
-	points: ["`stamina`タイプのアクションでのみ有効な補正値です。", "各値はプレイヤーとアクションのレベル差への追加補正として計算されます。", "例えば攻撃値が10の場合、プレイヤーのレベルがアクションのレベルより10高いものとして攻撃ダメージが計算されます。マイナスの場合は逆方向の補正です。", "`一般`の`defaultCombat`に設定した場合はワールド全体のデフォルト戦闘パラメータとなります。"],
+	points: ["`stamina`タイプのアクションでのみ有効な補正値です。", "各値はプレイヤーとアクションのレベル差への追加補正として計算されます。", "例えば攻撃値が10の場合、プレイヤーのレベルがアクションのレベルより10高いものとして攻撃ダメージが計算されます。マイナスの場合は逆方向の補正です。", "一般の`defaultCombat`に設定した場合はワールド全体のデフォルト戦闘パラメータとなります。"],
 	children: {
 		attack: {
 			title: "攻撃値[レベル差]",
@@ -402,7 +402,7 @@ export const component: Markdown = {
 	title: "コンポーネント",
 	summary: "共通の部品",
 	points: ["各箇所の設定で使われる共通する部品は抽出して取り扱われます。", "いずれの箇所で使われるコンポーネントは共通していますが、一部ではコンポーネントのうち使われない項目もあります。"],
-	list: expandList("コンポーネント", [information, requirement, acquisition, combat, property]),
+	list: expandList("コンポーネント", [information, requirement, acquisition, combat, property], "説明"),
 	options: {
 		label: "component",
 		linkedList: true,
@@ -492,7 +492,7 @@ export const item: Type.Item = {
 		group: {
 			title: "グループ",
 			summary: "アイテムの表示グループ分類",
-			points: ["基本で設定したグループのいずれかを当てはめて下さい。", "設定したグループ順にアイテムの一覧が表示されます。", "空欄の場合はグループ分けされません。"],
+			points: ["基本で設定したグループのいずれかを当てはめて下さい。", "設定したグループ順にアイテム一覧が表示されます。", "空欄の場合はグループ分けされません。"],
 			links: { general: "general" },
 		},
 		unlocked: {
@@ -569,7 +569,7 @@ export const action: Type.Action = {
 		group: {
 			title: "グループ",
 			summary: "アクションの表示グループ分類",
-			points: ["基本で設定したグループのいずれかを当てはめて下さい。", "設定したグループ順にアクションの一覧が表示されます。"],
+			points: ["基本で設定したグループのいずれかを当てはめて下さい。", "設定したグループ順にアクション一覧が表示されます。"],
 			links: { general: "general" },
 		},
 		unlocked: {
@@ -635,7 +635,7 @@ export const category: Type.Category = {
 		group: {
 			title: "グループ",
 			summary: "カテゴリーの表示グループ分類",
-			points: ["基本で設定したグループのいずれかを当てはめてください。", "設定したグループ順にカテゴリーの一覧が表示されます。"],
+			points: ["基本で設定したグループのいずれかを当てはめてください。", "設定したグループ順にカテゴリー一覧が表示されます。"],
 			links: { general: "general" },
 		},
 		unlocked: {
@@ -675,7 +675,7 @@ export const type: Markdown = {
 	title: "タイプ",
 	summary: "ワールドの基本的な分類",
 	points: ["ワールドは6つのタイプで構成されます。", "すべての要素はワールド直下に配置されます。", "アクションとアイテムは所属するカテゴリーのIDで関連付けられます。"],
-	list: expandList("タイプ", [category, action, item, group, task, preset]),
+	list: expandList("タイプ", [category, action, item, group, task, preset], "説明"),
 	quote: typeTree,
 	options: {
 		label: "type",
@@ -1037,7 +1037,7 @@ export const basic: Type.Basic = {
 	title: "基本設定",
 	summary: "ワールド全般の基本的な設定項目",
 	points: ["ワールドの名前、説明、背景、通貨、容量、カテゴリーの最大レベル、経験値の上昇率、割引率、標準戦闘パラメータなどを設定します。", "これらの設定はワールド全体に影響します。"],
-	list: expandList("名称", [overview, general, design, event, development]),
+	list: expandList("名称", [overview, general, design, event, development], "説明"),
 	children: {
 		overview: overview,
 		general: general,
@@ -1077,7 +1077,7 @@ export const world: Type.World = {
 export const editor: Markdown = {
 	title: "エディター",
 	summary: "エディターの使い方とワールドの構造に関する説明",
-	list: expandList("名称", [world, basic, type, component, miscellaneous]),
+	list: expandList("名称", [world, basic, type, component, miscellaneous], "説明"),
 	options: {
 		label: "editor",
 		linkedList: true,

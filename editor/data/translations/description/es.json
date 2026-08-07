@@ -36,7 +36,7 @@
       "overwrite_warning_1": "El contenido que se edita es.",
       "overwrite_warning_2": "Anular.",
       "processing_time": "El proceso lleva su tiempo.",
-      "autosave_status": "Actual: {estado}",
+      "autosave_status": "Actual: {status}",
       "autosave_description": "Guardar el menú al abrirlo."
     }
   },
@@ -52,7 +52,7 @@
       "validation_publish": "Se ha encontrado un error de validación. No se puede iniciar la publicación.",
       "publishing_failed": "No se ha podido publicar.",
       "invalid_image": "Imagen no válida.",
-      "image_size_limit": "Imágenes válidas. {tamaño} KB; (límite: {límite}KB)",
+      "image_size_limit": "Imagen válida. Tamaño: {size} KB. (límite: {limit}KB)",
       "export_failed": "Exportación fallida.",
       "empty_data_load_failed": "Error al cargar datos vacíos.",
       "invalid_world_data": "Datos del mundo no válidos. Compruebe la estructura básica.",
@@ -97,12 +97,12 @@
     "enter_id": "Introduzca su ID"
   },
   "validation": {
-    "failed_with_count": "🚨 Validación fallida: {cuenta} errores encontrados\n\n📋 Consulte Básico → Desarrollo → Errores para obtener más información.",
+    "failed_with_count": "🚨 La validación ha fallado: se han encontrado {count} errores\n\n📋 Consulta Basic → Development → Errors para más detalles",
     "icon": {
       "invalid_base64_format": "Formato de imagen Base64 no válido [{preview}...]. en {path} - debe empezar por 'data:image/[type];base64,'.",
-      "missing_base64_data": "Formato de imagen Base64 no válido en {ruta} - no hay datos base64 después de la coma.",
-      "invalid_base64_chars": "Codificación Base64 no válida en {ruta} - contiene caracteres no válidos.",
-      "invalid_base64_length": "Codificación Base64 inválida en {ruta} - la longitud debe ser múltiplo de 4.",
+      "missing_base64_data": "Formato de imagen Base64 no válido en {path} - no hay datos base64 después de la coma.",
+      "invalid_base64_chars": "Codificación Base64 no válida en {path} - contiene caracteres no válidos.",
+      "invalid_base64_length": "Codificación Base64 no válida en {path} - la longitud debe ser múltiplo de 4.",
       "invalid_iconify_format": "Formato inválido de ID de iconify [{iconifyId}] en {path} - debe contener el separador ':'.",
       "empty_iconify_family": "Formato de ID de iconify [{iconifyId}] no válido en {path} - el nombre de la familia está vacío.",
       "empty_iconify_name": "Formato de ID de iconify no válido [{iconifyId}] en {path} - El nombre del icono está vacío.",
@@ -110,7 +110,7 @@
     },
     "reference": {
       "id_not_found": "{typeName} id [{id}] no se encuentra en {path}:{id}.",
-      "group_not_found": "Grupo [{grupo}] no encontrado en {ruta}. Debe estar vacío o ser un ID de grupo predefinido."
+      "group_not_found": "Grupo [{group}] no encontrado en {path}. Debe estar vacío o ser un ID de grupo predefinido."
     }
   }
 }

@@ -26,7 +26,7 @@ ___
 
 #### Example
 Examples of ID Conversion
-- If the ID is `stylish-strong-axe`, the name will be `Stylish Strong Axe`.
+- If the ID is `stylish-strong-axe`, the name becomes `Stylish Strong Axe`.
 ___
 
 ### Nothing to duplicate.
@@ -41,7 +41,7 @@ The name under which the element appears
 - The name of the element displayed in the game.
 - Languages other than English can also be entered.
 - Names that duplicate other elements are acceptable.
-- If it is too long, the overflowing part will be omitted by `...` in the display during play.
+- If it is too long, the overflowing part is omitted with `…` in the display during play.
 ___
 
 ### Automatic conversion from ID
@@ -70,10 +70,10 @@ Use any image file
 - Unnecessary if Iconify or pictograms are configured.
 ___
 
-#### File Type
+#### File type
 Supported image file formats
-- You can use the general types that can be displayed in your browser.
-- JPEG, PNG, GIF, WebP, SVG, etc.
+- Common formats that browsers can display are available.
+- JPEG, PNG, GIF, WebP, SVG and so on.
 ___
 
 ### Iconify
@@ -85,7 +85,7 @@ ___
 
 #### Iconify
 How to select icons from Iconify
-- Please search `Iconify` for icons that can be displayed.
+- Search `Iconify` for icons that can be displayed.
 - You can quickly find the best icons by searching for icons.
 - When you select an icon, you will see its identifier such as `game-icons:sword-wound` (type of icon set `:`name of icon), which you can paste directly into this icon's field.
 ![iconify-selection.png](../../resources/iconify-selection.png)
@@ -103,18 +103,18 @@ Icon display with pictograms
 - For example, enter a pictogram such as `🗡️` or `⚔️`.
 ___
 
-## variety
+## Color
 Configure the display color of the element
 - As the element's color, it is applied to the element's icon and background color.
 - Select from the editor's color picker.
 ___
 
-### inheriting from a parent element
-Inherit the color config of the parent element
-- If left blank, the color configured on the parent element is taken over.
-- The hierarchy of types for each element is as follows
-- For example, if an Action has an individual color configured, it will be used, but if nothing is configured for the Action, the Category or World color will be used.
-- If an event has a category configured for it, it will inherit the color of that category, just like Actions and Items.
+### Inheritance from the parent element
+Taking over the color configured on the parent element
+- If left blank, the color configured on the parent element is inherited.
+- The hierarchy of each element type is as follows.
+- For example, if an individual color is configured on an action it is used, but if no individual color is configured on the action, the color of the category or the world is used.
+- When an event also has a category configured, it inherits the color of that category in the same way as actions and items.
 ```
 world
 ├── category

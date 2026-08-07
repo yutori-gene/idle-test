@@ -5,19 +5,17 @@ import { Markdown, Tree, expandList } from "~d/type/markdownType";
 export const language: Markdown = {
 	title: "bahasa",
 	summary: "Mengganti bahasa",
-	points: ["Mengganti bahasa yang ditampilkan dalam game.", "Hanya berlaku jika penulis telah menyediakan terjemahan."],
 	options: {
-		preset: "bahasa",
+		preset: "language",
 	},
 };
 
 export const event: Markdown = {
 	title: "acara",
 	summary: "Sistem yang beroperasi pada waktu tertentu",
-	points: ["Fitur ini akan aktif pada waktu-waktu tertentu, seperti saat kembali ke permainan atau saat permainan berakhir.", "Saat diaktifkan, layar ini akan muncul, dan hadiah akan diberikan secara otomatis bersamaan dengan pesan tersebut.", "Tugas adalah sesuatu yang harus dipenuhi syarat-syaratnya dan diselesaikan, sedangkan imbalan akan diterima sendiri."],
 	options: {
-		preset: "acara",
-		label: "acara",
+		preset: "event",
+		label: "event",
 	},
 };
 
@@ -26,8 +24,8 @@ export const miscellaneous: Markdown = {
 	summary: "Informasi tambahan lain yang dijelaskan.",
 	children: { event: event, language: language },
 	options: {
-		preset: "lain-lain",
-		label: "lain-lain",
+		preset: "miscellaneous",
+		label: "miscellaneous",
 	},
 };
 
@@ -36,7 +34,6 @@ export const miscellaneous: Markdown = {
 export const debug: Markdown = {
 	title: "debug",
 	summary: "Operasi untuk pemeriksaan debugging",
-	points: ["Hanya terlihat selama debugging.", "Ini tidak ditampilkan saat game diterbitkan dan didistribusikan."],
 	options: {
 		preset: "debug",
 	},
@@ -45,7 +42,6 @@ export const debug: Markdown = {
 export const config: Markdown = {
 	title: "konfigurasi",
 	summary: "Mengubah konfigurasi permainan",
-	points: ["Konfigurasi pengaturan yang terkait dengan tampilan dan pemrosesan game.", "Data game juga dapat dimasukkan, dikeluarkan, dan diatur ulang."],
 	options: {
 		preset: "config",
 	},
@@ -54,27 +50,24 @@ export const config: Markdown = {
 export const statistics: Markdown = {
 	title: "statistik",
 	summary: "Ringkasan kemajuan",
-	points: ["Anda dapat memeriksa kemajuan permainan sejauh ini."],
 	options: {
-		preset: "statistik",
+		preset: "statistics",
 	},
 };
 
 export const general: Markdown = {
 	title: "umum",
 	summary: "Konfigurasi dunia",
-	points: ["Anda dapat memeriksa tingkat kesulitan dan konfigurasi khusus untuk dunia ini."],
 	options: {
-		preset: "umum",
+		preset: "general",
 	},
 };
 
 export const overview: Markdown = {
 	title: "ringkasan",
 	summary: "Tentang game ini.",
-	points: ["Cari tahu tentang dunia game (pandangan dunia dan konfigurasi).", "Anda juga dapat mengetahui tentang konsol (sistem) yang menjalankan game ini."],
 	options: {
-		preset: "gambaran umum",
+		preset: "overview",
 	},
 };
 
@@ -83,8 +76,8 @@ export const world: Markdown = {
 	summary: "Anda dapat mengoperasikan dan memeriksa kontrol dan konfigurasi umum game,",
 	children: { overview: overview, general: general, statistics: statistics, config: config, debug: debug },
 	options: {
-		preset: "dunia",
-		label: "dunia",
+		preset: "world",
+		label: "world",
 	},
 };
 
@@ -93,34 +86,28 @@ export const world: Markdown = {
 export const correction: Markdown = {
 	title: "Koreksi properti.",
 	summary: "Rincian koreksi properti.",
-	points: ["Anda dapat memeriksa koreksi untuk properti tertentu dalam kategori ini.", "Koreksi ini disebabkan oleh efek item. Anda dapat memeriksa Item tersebut."],
 	options: {
-		preset: "koreksi",
+		preset: "correction",
 	},
 };
 
 export const properties: Markdown = {
 	title: "properti",
 	summary: "Daftar nilai koreksi",
-	points: ["Daftar properti konfigurasi untuk setiap Kategori.", "Properti adalah elemen yang memengaruhi pelaksanaan Aksi.", "Efektivitas dikoreksi dengan Peralatan. (Beberapa item tidak perlu dilengkapi)."],
 	options: {
-		preset: "properti",
+		preset: "properties",
 	},
 };
 
 export const property: Markdown = {
 	title: "properti",
 	summary: "Memeriksa nilai koreksi",
-	points: ["Properti adalah elemen yang memengaruhi pelaksanaan Aksi.", "Angka akhir dihitung dari nilai awal yang ditetapkan, dengan mempertimbangkan level kategori, level konfigurasi untuk Aksi dan koreksi untuk Item Peralatan."],
+	// properties / correction は label を持たない同ページ内の節なので、
+	// 一覧表・リンクは作らず children の見出しとして展開する（item・action と同じ形）
 	children: { properties: properties, correction: correction },
-	list: expandList("properti", [properties, correction]),
-	links: {
-		properties: "pemain/properti.",
-		correction: "pemain / koreksi",
-	},
 	options: {
-		label: "properti",
-		preset: "properti",
+		label: "property",
+		preset: "property",
 	},
 };
 
@@ -129,25 +116,22 @@ export const property: Markdown = {
 export const trade: Markdown = {
 	title: "transaksi",
 	summary: "Beli atau jual Item dalam mata uang.",
-	points: ["Beberapa item tidak ada yang bisa dibeli atau dijual.", "Item yang terkunci tidak dapat dibeli atau dijual.", "Terkadang terdapat batasan jumlah pembelian untuk kapasitas atau antrian (queue), dan jika batas tersebut tercapai, Anda tidak dapat membeli lagi. (Peningkatan yang diperoleh dari hadiah tidak termasuk dalam batasan ini.)"],
 	options: {
-		preset: "perdagangan",
+		preset: "trade",
 	},
 };
 
 export const items: Markdown = {
 	title: "Item",
 	summary: "Daftar item dalam kategori.",
-	points: ["Tekan dan tahan untuk beralih di antara item Peralatan.", "Hanya satu item dari daftar yang mungkin dilengkapi. (jika konfigurasi untuk dapat dilengkapi sebagai Peralatan)", "Item yang tidak ada yang memenuhi persyaratan rilis akan terkunci dan tidak dapat dilihat secara detail."],
 	options: {
-		preset: "item",
+		preset: "items",
 	},
 };
 
 export const item: Markdown = {
 	title: "Item",
 	summary: "Detail barang.",
-	points: ["Item adalah elemen sendiri yang terkait dengan kepemilikan objek seperti peralatan, barang habis pakai, dan barang berharga.", "Hanya satu item dari satu kategori yang mungkin dilengkapi. (Jika konfigurasi untuk Peralatan Kategori)", "Item yang tidak ada yang memenuhi persyaratan rilis akan terkunci dan tidak dapat dilihat secara detail."],
 	children: { items: items, trade: trade },
 	options: {
 		preset: "item",
@@ -160,29 +144,26 @@ export const item: Markdown = {
 export const act: Markdown = {
 	title: "bertindak",
 	summary: "Kontrol Aksi",
-	points: ["Mulai atau berhenti aksi.", "Anda dapat menghitung jumlah proses yang dijalankan. Masukkan 0 untuk menjalankan hingga sumber daya habis."],
 	options: {
-		preset: "bertindak",
+		preset: "act",
 	},
 };
 
 export const actions: Markdown = {
 	title: "Aksi.",
 	summary: "Daftar aksi dalam kategori",
-	points: ["Tekan lama untuk mengalihkan eksekusi Aksi.", "Hanya satu item dari sebuah kategori yang mungkin dieksekusi.", "Kategori memungkinkan kemajuan aksi di hitung kategori untuk dilanjutkan secara bersamaan.", "Aksi yang tidak ada yang memenuhi syarat pelepasan akan terkunci dan tidak dapat dilihat secara detail."],
 	options: {
-		preset: "tindakan",
+		preset: "actions",
 	},
 };
 
 export const action: Markdown = {
 	title: "Aksi",
 	summary: "Elemen bertindak seperti mengumpulkan, membuat, dan bertarung.",
-	points: ["Anda dapat memperoleh pengalaman untuk setiap bertindak, yang menjadikan level Anda atas.", "Setiap bertindak mengkonsumsi atau mendapatkan sebuah Item.", "Aksi yang tidak ada yang memenuhi syarat pelepasan akan terkunci dan tidak dapat dilihat secara detail."],
 	children: { actions: actions, act: act },
 	options: {
-		preset: "tindakan",
-		label: "tindakan",
+		preset: "action",
+		label: "action",
 	},
 };
 
@@ -191,20 +172,18 @@ export const action: Markdown = {
 export const tasks: Markdown = {
 	title: "Tugas",
 	summary: "Daftar tugas dalam kategori",
-	points: ["このカテゴリーに割り当てられたタスクの一覧です。", "タスクを選ぶと、達成条件と報酬を確認できます。", "報酬が未受け取りのタスクにはリボンが付きます。選んで獲得を押すと受け取れます。", "持てるアイテムの種類が上限に達している時は受け取れません。整理してから受け取り直します。", "カテゴリーにタスクが1つもない場合は表示されません。"],
 	options: {
-		preset: "tugas",
+		preset: "tasks",
 	},
 };
 
 export const category: Markdown = {
 	title: "Kategori.",
 	summary: "Kompilasi berbagai elemen.",
-	points: ["Ini adalah elemen yang menyatukan aksi dan item."],
 	children: { tasks: tasks },
 	options: {
-		label: "kategori",
-		preset: "kategori",
+		label: "category",
+		preset: "category",
 	},
 };
 
@@ -212,7 +191,6 @@ export const category: Markdown = {
 export const status: Markdown = {
 	title: "status",
 	summary: "Daftar semua properti",
-	points: ["Hanya nilai koreksi kategori per item yang ditampilkan.", "Tergantung pada aksi yang akan dilakukan, terdapat koreksi lainnya."],
 	options: {
 		preset: "status",
 	},
@@ -221,38 +199,34 @@ export const status: Markdown = {
 export const inventory: Markdown = {
 	title: "inventaris",
 	summary: "Daftar semua Item",
-	points: ["Tekan dan tahan untuk beralih di antara item Peralatan."],
 	options: {
-		preset: "persediaan",
+		preset: "inventory",
 	},
 };
 
 export const activity: Markdown = {
 	title: "aktivitas",
 	summary: "Daftar semua aksi",
-	points: ["Tekan lama untuk mengalihkan eksekusi Aksi."],
 	options: {
-		preset: "aktivitas",
+		preset: "activity",
 	},
 };
 
 export const missions: Markdown = {
 	title: "Misi",
 	summary: "Daftar semua tugas",
-	points: ["カテゴリーごとにまとめて表示されます。", "カテゴリーが設定されていないタスクは先頭にまとめて表示されます。", "達成済みのタスクにはチェックの印が付きます。", "報酬が未受け取りのタスクにはリボンが付きます。選んで獲得を押すと受け取れます。", "一度達成したタスクは、その後に条件を満たさなくなっても達成のまま残ります。"],
 	options: {
-		preset: "misi",
+		preset: "missions",
 	},
 };
 
 export const character: Markdown = {
 	title: "karakter",
 	summary: "Identifikasi dan pengoperasian situasi protagonis.",
-	points: ["Konten ini identik dengan apa yang ditampilkan dengan mengoperasikan Kategori."],
 	children: { activity: activity, inventory: inventory, status: status, missions: missions },
 	options: {
-		label: "karakter",
-		preset: "karakter",
+		label: "character",
+		preset: "character",
 	},
 };
 
@@ -260,13 +234,13 @@ export const player: Markdown = {
 	title: "pemain",
 	summary: "Permainan dijelaskan untuk setiap kolom yang muncul di Play the Game.",
 	points: ["Secara default, deskripsi yang sama muncul sebagai petunjuk di bawah setiap kolom.", "Petunjuk dapat disembunyikan dengan konfigurasi."],
-	list: expandList("pemain", [character, category, action, item, property, world, miscellaneous]),
+	list: expandList("pemain", [character, category, action, item, property, world, miscellaneous], "Deskripsi"),
 	// children: { character: character, category: category, action: action, item: item, property: property, world: world, miscellaneous: miscellaneous },
 	options: {
-		preset: "pemain",
-		label: "pemain",
+		preset: "player",
+		label: "player",
 		linkedList: true,
-		directory: "pemain",
+		directory: "player",
 	},
 };
 

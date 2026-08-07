@@ -20,7 +20,7 @@ export const translation: Markdown = {
 	summary: "게임 내 텍스트를 다른 언어로 번역하기 위한 설정",
 	points: ["번역할 텍스트를 설정합니다.", "번역 설정을 활성화하면 다국어 설정이 가능합니다.", "번역이 유효하지 않은 경우, 개발 중에 기재한 내용이 그대로 표시됩니다.", "공개 전 개발 중인 경우 번역 설정 및 언어 전환은 불가능합니다."],
 	options: {
-		label: "번역",
+		label: "translation",
 	},
 	children: {
 		flag: {
@@ -46,7 +46,7 @@ export const translation: Markdown = {
 						prompt: {
 							title: "프롬프트 예시",
 							summary: "AI에 대한 번역 지시 예시",
-							points: ["프롬프트 예시: 업로드한 JSON 데이터의 `name`과 `explanation` 값을 영어에서 일본어로 번역해 주세요. 그 외의 부분은 수정할 부분이 없음."],
+							points: ["프롬프트 예시: 업로드한 JSON 데이터의 `name`과 `explanation` 값을 영어에서 일본어로 번역해 주세요. 그 외의 부분은 변경하지 마세요."],
 						},
 						gpt: {
 							title: "GPT 이용",
@@ -91,9 +91,9 @@ export const miscellaneous: Markdown = {
 	title: "보충 사항",
 	summary: "기타 보충 사항 설명",
 	points: ["참고할 수 있는 정보를 제공하고 있습니다."],
-	list: expandList("보충자료", [translation]),
+	list: expandList("보충자료", [translation], "설명"),
 	options: {
-		label: "기타",
+		label: "miscellaneous",
 		linkedList: true,
 	},
 };
@@ -103,7 +103,7 @@ export const miscellaneous: Markdown = {
 export const property: Type.Property = {
 	title: "속성",
 	summary: "아이템이 가지는 효과 설정",
-	points: ["아이템에 설정할 수 있는 효과 항목입니다.", "장비 타입이 `necessary` 또는 `consumable`인 아이템은 장착 중만 효과가 적용됩니다. `unnecessary`는 소지하고 있는 것만으로도 효과가 적용되며, 효과량은 소지 수에 비례합니다(2개 소지 시 2배).", "`unnecessary`의 효과는 소지 수 자체가 배율이 되므로, `maximum`(최대 소지 수)이 효과의 상한이 됩니다. 밸런스를 맞출 때는 `maximum`과 함께 설정해 주십시오.", "두 항목의 값은 플레이어의 레벨과 액션의 레벨 차이를 조정하는 값으로 계산됩니다.", "예를 들어 공격 값이 10이면 플레이어의 레벨이 액션의 레벨보다 10 높은 것으로 공격이 계산된다. 마이너스 값은 그 반대입니다.", "공격, 방어, 정확도, 회피, 회복은 `체력` 타입의 액션에서만 유효하다."],
+	points: ["아이템에 설정할 수 있는 효과 항목입니다.", "장비 타입이 `necessary` 또는 `consumable`인 아이템은 장착 중에만 효과가 적용됩니다. `unnecessary`는 보유하고 있는 것만으로 효과가 적용되며, 효과량은 보유 수에 비례합니다(2개 보유 시 2배).", "`unnecessary`의 효과는 소지 수 자체가 배율이 되므로, `maximum`(최대 소지 수)이 효과의 상한이 됩니다. 밸런스를 맞출 때는 `maximum`과 함께 설정해 주십시오.", "두 항목의 값은 플레이어의 레벨과 액션의 레벨 차이를 조정하는 값으로 계산됩니다.", "예를 들어 공격 값이 10이면 플레이어의 레벨이 액션의 레벨보다 10 높은 것으로 공격이 계산된다. 마이너스 값은 그 반대입니다.", "attack, defence, accuracy, evasion, restore는 `stamina` 타입의 액션에서만 유효합니다."],
 	list: [
 		["속성", "효과 상세"],
 		["속도", "액션 소요 시간을 단축합니다. 레벨 차이에 반비례하여 소요 시간이 변화합니다."],
@@ -119,7 +119,7 @@ export const property: Type.Property = {
 		category: {
 			title: "카테고리",
 			summary: "속성을 적용할 카테고리 지정",
-			points: ["이 속성을 적용할 카테고리의 ID를 설정합니다.", "'*'를 설정하면 모든 카테고리에 적용됩니다.", "비어있는 경우 해당 아이템이 속한 카테고리에 적용됩니다."],
+			points: ["이 속성을 적용할 카테고리의 ID를 설정합니다.", "`*`를 설정하면 모든 카테고리에 적용됩니다.", "비어있는 경우 해당 아이템이 속한 카테고리에 적용됩니다."],
 		},
 		attack: {
 			title: "공격 값[레벨 차이]",
@@ -170,7 +170,7 @@ export const property: Type.Property = {
 export const combat: Type.Combat = {
 	title: "전투 값",
 	summary: "스태미너 타입 액션의 전투 보정 값 설정",
-	points: ["stamina` 타입의 액션에서만 유효한 보정 값입니다.", "각 값은 플레이어와 액션의 레벨 차이에 대한 추가 보정으로 계산됩니다.", "예를 들어 공격 값이 10이라면 플레이어의 레벨이 액션의 레벨보다 10 높은 것으로 공격 대미지가 계산됩니다. 마이너스의 경우 역방향으로 보정됩니다.", "일반`의 `defaultCombat`로 설정하면 월드 전체의 기본 전투 파라미터가 됩니다."],
+	points: ["`stamina` 타입의 액션에서만 유효한 보정 값입니다.", "각 값은 플레이어와 액션의 레벨 차이에 대한 추가 보정으로 계산됩니다.", "예를 들어 공격 값이 10이라면 플레이어의 레벨이 액션의 레벨보다 10 높은 것으로 공격 대미지가 계산됩니다. 마이너스의 경우 역방향으로 보정됩니다.", "일반의 `defaultCombat`에 설정하면 월드 전체의 기본 전투 파라미터가 됩니다."],
 	children: {
 		attack: {
 			title: "공격 값[레벨 차이]",
@@ -199,7 +199,7 @@ export const combat: Type.Combat = {
 		},
 	},
 	options: {
-		label: "전투",
+		label: "combat",
 	},
 };
 
@@ -236,12 +236,12 @@ export const acquisition: Type.Acquisition = {
 		chance: {
 			title: "확률 [-1~1]",
 			summary: "획득 성공 확률 (음수는 실패 시에만 평가됨)",
-			points: ["획득 확률을 -1에서 1 사이의 소수로 설정합니다. 확률 판정에는 절대값이 사용됩니다.", "값이 양수일 경우, 액션 성공 시에만 평가되며, `1`일 때는 반드시 획득하고, `0.5`일 때는 50%의 확률로 획득합니다.", "값이 음수일 때는 액션 실패 시에만 평가되며, `-1`일 경우 반드시 획득하고, `-0.5`일 경우 50%의 확률로 획득합니다.", "`0`인 경우 성공 시나 실패 시 모두 획득할 수 없습니다.", "기본값은 `1`(성공 시 반드시 획득)입니다."],
+			points: ["획득 확률을 -1에서 1 사이의 소수로 설정합니다. 확률 판정에는 절대값이 사용됩니다.", "값이 양수일 때는 액션 성공 시에만 판정되며, `1`이면 반드시 획득하고 `0.5`이면 50% 확률로 획득합니다.", "값이 음수일 때는 액션 실패 시에만 판정되며, `-1`이면 반드시 획득하고 `-0.5`이면 50% 확률로 획득합니다.", "`0`인 경우 성공 시나 실패 시 모두 획득할 수 없습니다.", "기본값은 `1`(성공 시 반드시 획득)입니다."],
 		},
 	},
-	links: { type: "유형" },
+	links: { type: "type" },
 	options: {
-		label: "인수",
+		label: "acquisition",
 	},
 };
 
@@ -278,7 +278,7 @@ export const requirement: Type.Requirement = {
 		chance: {
 			title: "소비 확률[0-1]",
 			summary: "아이템이 소모될 확률(0~1, 타입이 아이템인 경우에만 유효)",
-			points: ["조건을 충족하고 액션이 실행되었을 때 아이템이 소비될 확률입니다.", "1`이면 반드시 소비, `0.5`이면 50% 확률로 소비, `0`이면 소비하지 않습니다.", "기본값은 `1`(반드시 소비)입니다.", "타입이 아이템이 아닌 경우 유효하지 않습니다."],
+			points: ["조건을 충족하고 액션이 실행되었을 때 아이템이 소비될 확률입니다.", "`1`이면 반드시 소비하고, `0.5`이면 50% 확률로 소비하며, `0`이면 소비하지 않습니다.", "기본값은 `1`(반드시 소비)입니다.", "타입이 아이템이 아닌 경우 유효하지 않습니다."],
 		},
 		equipment: {
 			title: "장비",
@@ -286,9 +286,9 @@ export const requirement: Type.Requirement = {
 			points: ["활성화하면 아이템을 소지하고 있을 뿐만 아니라 장비가 장착되어 있는 것이 조건으로 요구사항이 됩니다.", "타입이 아이템이 아닌 경우 유효하지 않습니다."],
 		},
 	},
-	links: { type: "유형" },
+	links: { type: "type" },
 	options: {
-		label: "요구사항",
+		label: "requirement",
 	},
 };
 
@@ -311,7 +311,7 @@ export const information: Type.Information = {
 						example: {
 							title: "예시",
 							summary: "ID 변환의 실례",
-							points: ["ID를 `stylish-strong-axe`로 설정하면 이름은 `Stylish Strong Axe`가 된다."],
+							points: ["ID를 `stylish-strong-axe`로 하면 이름은 `Stylish Strong Axe`가 됩니다."],
 						},
 					},
 				},
@@ -319,14 +319,14 @@ export const information: Type.Information = {
 					title: "중복 없음",
 					summary: "동일 타입 내 ID 중복 금지",
 					points: ["요소 식별에 사용되므로 카테고리, 액션, 아이템, 이벤트, 프리셋 타입 내에서 중복되지 않아야 합니다.", "다른 타입에 동일한 ID가 있는 것은 문제가 되지 않습니다."],
-					links: { type: "유형" },
+					links: { type: "type" },
 				},
 			},
 		},
 		name: {
 			title: "이름",
 			summary: "요소의 표시되는 이름",
-			points: ["게임에서 표시되는 요소의 이름입니다.", "영어 이외의 언어도 입력할 수 있습니다.", "다른 요소와 중복되는 이름도 괜찮습니다.", "너무 길면 플레이 중 표시에서 튀어나온 부분은 `...`로 생략됩니다."],
+			points: ["게임에서 표시되는 요소의 이름입니다.", "영어 이외의 언어도 입력할 수 있습니다.", "다른 요소와 중복되는 이름도 괜찮습니다.", "너무 길면 플레이 중 표시에서 넘치는 부분은 `…`로 생략됩니다."],
 			children: {
 				translateFromId: {
 					title: "ID에서 자동 변환",
@@ -351,9 +351,9 @@ export const information: Type.Information = {
 					points: ["요소를 나타내는 이미지입니다.", "파일 크기가 클 경우 자동으로 크기가 조정됩니다.", "Iconify 또는 이모티콘을 설정한 경우에는 불필요합니다."],
 					children: {
 						"file-type": {
-							title: "파일 유형",
-							summary: "지원되는 이미지 파일 형식",
-							points: ["브라우저에서 볼 수 있는 일반적인 종류를 사용할 수 있습니다.", "JPEG, PNG, GIF, WebP, SVG 등."],
+							title: "파일 종류",
+							summary: "지원하는 이미지 파일 형식",
+							points: ["브라우저에서 표시할 수 있는 일반적인 형식을 사용할 수 있습니다.", "JPEG, PNG, GIF, WebP, SVG 등."],
 						},
 					},
 				},
@@ -365,7 +365,7 @@ export const information: Type.Information = {
 						iconify: {
 							title: "Iconify",
 							summary: "Iconify에서 아이콘 선택 방법",
-							points: ["표시할 수 있는 아이콘은 `Iconify`에서 검색해 주세요.", "아이콘 검색을 통해 최적의 아이콘을 바로 찾을 수 있습니다.", "아이콘을 선택하면 `game-icons:sword-wound` 등 해당 아이콘의 식별자(아이콘 세트의 종류`:`아이콘의 이름)가 표시되므로, 이를 그대로 이 아이콘 항목에 붙여 넣으시면 됩니다."],
+							points: ["표시할 수 있는 아이콘은 `Iconify`에서 검색하세요.", "아이콘 검색을 통해 최적의 아이콘을 바로 찾을 수 있습니다.", "아이콘을 선택하면 `game-icons:sword-wound` 등 해당 아이콘의 식별자(아이콘 세트의 종류`:`아이콘의 이름)가 표시되므로, 이를 그대로 이 아이콘 항목에 붙여 넣으시면 됩니다."],
 							images: ["iconify-selection.png"],
 							links: { iconify: "https://icon-sets.iconify.design" },
 						},
@@ -383,18 +383,18 @@ export const information: Type.Information = {
 			summary: "요소의 표시 색상 설정",
 			points: ["요소의 색상으로 요소의 아이콘과 배경색에 적용된다.", "에디터의 색상 선택기에서 선택합니다."],
 			children: {
-				"부모로부터의 유산": {
+				"heritage-from-parent": {
 					title: "상위 요소로부터의 상속",
-					summary: "상위 요소의 색상 설정 이어받기",
-					points: ["비어 있는 경우 상위 요소에서 설정된 색상을 이어받습니다.", "각 요소의 타입별 계층 구조는 아래와 같습니다.", "예를 들어, 액션에 개별 색상이 설정되어 있는 경우 해당 색상이 사용되며, 액션에 개별 색상이 설정되어 있지 않은 경우 카테고리 또는 월드의 색상이 사용됩니다.", "이벤트에도 카테고리가 설정되어 있는 경우, 액션이나 아이템과 마찬가지로 해당 카테고리의 색상을 그대로 적용합니다."],
+					summary: "상위 요소에 설정된 색상의 계승",
+					points: ["비워 두면 상위 요소에 설정된 색상을 이어받습니다.", "각 요소 타입의 계층은 다음과 같습니다.", "예를 들어 액션에 개별 색상이 설정되어 있으면 그 색상이 사용되지만, 액션에 개별 색상이 설정되어 있지 않으면 카테고리 또는 월드의 색상이 사용됩니다.", "이벤트도 카테고리를 설정한 경우에는 액션이나 아이템과 마찬가지로 해당 카테고리의 색상을 이어받습니다."],
 					quote: typeTree,
-					links: { type: "유형" },
+					links: { type: "type" },
 				},
 			},
 		},
 	},
 	options: {
-		label: "정보",
+		label: "information",
 	},
 };
 
@@ -402,9 +402,9 @@ export const component: Markdown = {
 	title: "구성 요소",
 	summary: "공통 부품",
 	points: ["각 부분의 설정에서 사용되는 공통적인 부품은 추출하여 처리합니다.", "각 부분에서 사용되는 구성 요소는 공통적으로 사용되지만, 일부에서는 구성 요소 중 사용되지 않는 항목도 있습니다."],
-	list: expandList("구성 요소", [information, requirement, acquisition, combat, property]),
+	list: expandList("구성 요소", [information, requirement, acquisition, combat, property], "설명"),
 	options: {
-		label: "구성요소",
+		label: "component",
 		linkedList: true,
 	},
 };
@@ -425,7 +425,7 @@ export const task: Type.Event = {
 	title: "작업",
 	summary: "조건을 충족하면 달성되는 미션",
 	points: ["설정한 조건을 충족하면 달성으로 처리되며, 화면 위에 메시지가 표시됩니다.", "플레이어의 미션 목록과 카테고리별 과제 목록에 표시됩니다.", "보상은 자동으로 지급되지 않습니다. 플레이어가 과제를 열고 획득 버튼을 누를 때 수령하게 됩니다.", "보상을 수령하기 전까지는 목록의 막대에 리본이 표시되어 미수령 상태임을 나타냅니다.", "획득을 통해 카테고리의 레벨, 액션 실행 횟수, 아이템 소지 수를 변경할 수 있습니다.", "첫 실행 시나 게임 오버 시 등, 특정 조건 이외의 시점에 발동시키고 싶은 항목은 기본 설정의 이벤트에서 설정합니다."],
-	links: { event: "이벤트" },
+	links: { event: "event" },
 	children: {
 		information: information,
 		category: {
@@ -437,7 +437,7 @@ export const task: Type.Event = {
 			title: "타이밍",
 			summary: "작업 실행 시점 (`matched` 고정)",
 			points: ["작업은 `matched`(설정한 조건을 충족했을 때)로 고정되어 있어 편집할 수 없습니다.", "보상은 한 번만 받을 수 있으며, 한 번 받으면 그 이후로는 달성 상태로 고정됩니다.", "그 외의 시점에 발동시키고 싶은 것은 기본 설정의 이벤트에서 설정합니다."],
-			links: { event: "이벤트" },
+			links: { event: "event" },
 		},
 		unlocked: {
 			title: "초기 표시 상태",
@@ -460,11 +460,11 @@ export const task: Type.Event = {
 			title: "태스크 그룹",
 			summary: "작업 표시 그룹 분류",
 			points: ["기본 설정에서 설정한 그룹 중 하나를 맞춰주세요.", "설정한 그룹 순서대로 작업 목록이 표시됩니다.", "카테고리 내에서 다시 그룹별로 나뉘어 표시됩니다.", "비어있는 경우 그룹화되지 않습니다."],
-			links: { general: "일반" },
+			links: { general: "general" },
 		},
 	},
 	options: {
-		label: "작업",
+		label: "task",
 	},
 };
 
@@ -474,7 +474,7 @@ export const group: Type.Information = {
 	summary: "카테고리, 액션, 아이템의 표시 그룹 정의",
 	points: ["표시 순서를 제어하기 위한 그룹을 정의합니다.", "각 카테고리, 액션, 아이템별로 여기에서 정의한 그룹을 설정할 수 있습니다.", "그룹이 같은 것은 근처에 표시됩니다.", "비어있는 경우 그룹화되지 않습니다."],
 	options: {
-		label: "그룹",
+		label: "group",
 	},
 };
 
@@ -493,7 +493,7 @@ export const item: Type.Item = {
 			title: "그룹",
 			summary: "아이템의 표시 그룹 분류",
 			points: ["기본 설정에서 설정한 그룹 중 하나를 맞춰주세요.", "설정한 그룹 순서대로 아이템 목록이 표시됩니다.", "비어있는 경우 그룹화되지 않습니다."],
-			links: { general: "일반" },
+			links: { general: "general" },
 		},
 		unlocked: {
 			title: "초기 해제 상태",
@@ -521,7 +521,7 @@ export const item: Type.Item = {
 				["0보다 큰 값", "그 값에 팔린다."],
 				["0보다 작은 값 (예: -1)", "일반 설정된 할인율을 매수 가격에 곱한 가격(매수 가격이 0인 경우 판매 불가)"],
 			],
-			links: { general: "일반" },
+			links: { general: "general" },
 		},
 		maximum: {
 			title: "최대 소유 개수[개]",
@@ -531,11 +531,11 @@ export const item: Type.Item = {
 		equipmentType: {
 			title: "장비 타입",
 			summary: "아이템의 장비, 효과, 소비에 관한 타입 설정",
-			points: ["장비 장착이 가능한 아이템은 카테고리 `equipmentGroups`에서 지정한 그룹에 속할 필요가 있습니다.", "같은 그룹 내에서는 하나의 아이템만 장비할 수 있습니다.", "`unnecessary`는 장비 여부와 관계없이 효과가 발휘되며, 효과량은 소지 수에 비례합니다(0개일 경우 효과 없음, n개일 경우 n배)."],
+			points: ["장착 가능한 아이템은 카테고리의 `equipmentGroups`에 지정된 그룹에 속해야 합니다.", "같은 그룹 내에서는 하나의 아이템만 장비할 수 있습니다.", "`unnecessary`는 장착 여부와 관계없이 효과가 발휘되며, 효과량은 보유 수에 비례합니다(0개면 효과 없음, n개면 n배)."],
 			list: [
 				["값", "장비", "효과 발휘", "소비", "예시"],
 				["`necessary`", "필요", "장비 중일 때만 (1개 분량)", "없음", "검과 방어구 등 장비"],
-				["`소모품`", "필요", "장비 중일 때만 (1개 분량)", "액션 실행 시 소비", "물약 등 소모하여 효과를 얻는 아이템"],
+				["`consumable`", "필요", "장비 중일 때만 (1개 분량)", "액션 실행 시 소비", "물약 등 소모하여 효과를 얻는 아이템"],
 				["`unnecessary`", "불필요", "소지 중에는 항상 (소지 수에 비례하여)", "없음", "가지고 있는 것만으로도 효과를 볼 수 있는 패시브 아이템"],
 				["`impossible`", "불가", "없음", "없음", "소재, 쓰레기 등 효과가 없음 아이템"],
 			],
@@ -564,13 +564,13 @@ export const action: Type.Action = {
 			title: "속성",
 			summary: "액션 별 속성 카테고리",
 			points: ["개별 속성(카테고리)을 설정할 수 있습니다.", "비어있는 경우 해당 카테고리를 이어받습니다.", "예를 들어, 마왕성이라는 카테고리에 속하는 액션에 마법이라는 속성을 개별적으로 설정하면, 액션 완료 시간이나 데미지에는 마법 카테고리의 레벨과 속성이 계산되어 적용된다."],
-			links: { category: "카테고리" },
+			links: { category: "category" },
 		},
 		group: {
 			title: "그룹",
 			summary: "액션의 표시 그룹 분류",
 			points: ["기본 설정에서 설정한 그룹 중 하나를 맞춰주세요.", "설정한 그룹 순서대로 액션 목록이 표시됩니다."],
-			links: { general: "일반" },
+			links: { general: "general" },
 		},
 		unlocked: {
 			title: "초기 해제 상태",
@@ -587,7 +587,7 @@ export const action: Type.Action = {
 		seconds: {
 			title: "소요 시간 [초].",
 			summary: "액션 실행에 소요되는 표준 시간",
-			points: ["액션을 한 번 수행하는 데 필요한 표준 시간(초)입니다.", "스태미나` 타입의 경우, 1턴(서로의 스태미나를 1회 깎는 데 걸리는 시간 간격입니다.", "속성 계산에 따라 실제 실행 시에는 변동이 있을 수 있습니다."],
+			points: ["액션을 한 번 수행하는 데 필요한 표준 시간(초)입니다.", "`stamina` 타입의 경우, 1턴(서로의 스태미나를 1회 깎는 것)에 걸리는 시간 간격입니다.", "속성 계산에 따라 실제 실행 시에는 변동이 있을 수 있습니다."],
 			links: { property: "property" },
 		},
 		experience: {
@@ -599,12 +599,12 @@ export const action: Type.Action = {
 		chance: {
 			title: "성공 확률[0-1].",
 			summary: "액션 완료 시 성공 확률",
-			points: ["액션 완료 시 성공할 확률입니다.", "1`이면 항상 성공, `0`이면 항상 실패입니다.", "실패 시 소비 아이템은 소모되지만, 보상이나 경험치는 얻을 수 없습니다.", "속성 계산에 따라 실제 실행 시에는 변동이 있을 수 있습니다."],
+			points: ["액션 완료 시 성공할 확률입니다.", "`1`이면 항상 성공하고, `0`이면 항상 실패합니다.", "실패 시 소비 아이템은 소모되지만, 보상이나 경험치는 얻을 수 없습니다.", "속성 계산에 따라 실제 실행 시에는 변동이 있을 수 있습니다."],
 		},
 		maximum: {
 			title: "최대 실행 횟수[회]",
 			summary: "액션을 완료할 수 있는 최대 횟수",
-			points: ["액션이 성공적으로 완료될 수 있는 횟수의 상한선입니다.", "0`의 경우 무제한입니다.", "위 한도에 도달하면 액션을 실행할 수 없게 됩니다."],
+			points: ["액션이 성공적으로 완료될 수 있는 횟수의 상한선입니다.", "`0`이면 무제한입니다.", "위 한도에 도달하면 액션을 실행할 수 없게 됩니다."],
 		},
 		acquisitions: { ...acquisition, options: { ...acquisition.options, array: true }, summary: "액션 성공 시 획득 보상" },
 		progressType: {
@@ -636,7 +636,7 @@ export const category: Type.Category = {
 			title: "그룹",
 			summary: "카테고리 표시 그룹 분류",
 			points: ["기본 설정에서 설정한 그룹 중 하나를 맞춰주세요.", "설정한 그룹 순서대로 카테고리 목록이 표시됩니다."],
-			links: { general: "일반" },
+			links: { general: "general" },
 		},
 		unlocked: {
 			title: "초기 해제 상태",
@@ -648,7 +648,7 @@ export const category: Type.Category = {
 			title: "장비 그룹",
 			summary: "이 카테고리에서 장비 가능한 아이템 그룹 지정",
 			points: ["이 카테고리에서 장비할 수 있는 아이템의 그룹명 목록입니다.", "여기서 지정한 그룹 이름과 일치하는 그룹의 아이템만 장비할 수 있습니다.", "빈 문자열을 지정하면 그룹 미설정(비어있는) 아이템이 장비 대상이 됩니다.", "같은 그룹 내에서는 하나의 아이템만 장비할 수 있습니다. 새로운 아이템을 장착하면 같은 그룹의 기존 장비는 자동으로 해제됩니다.", "빈 목록(0개)으로 설정하면 아무것도 장비할 수 없습니다."],
-			links: { general: "일반" },
+			links: { general: "general" },
 		},
 		numeric: {
 			title: "레벨 유무",
@@ -667,7 +667,7 @@ export const category: Type.Category = {
 		},
 	},
 	options: {
-		label: "카테고리",
+		label: "category",
 	},
 };
 
@@ -675,10 +675,10 @@ export const type: Markdown = {
 	title: "타입",
 	summary: "월드의 기본 분류",
 	points: ["월드는 총 6가지 타입으로 구성된다.", "모든 요소는 월드 바로 아래에 배치됩니다.", "액션과 아이템은 해당 카테고리의 ID로 연관되어 있습니다."],
-	list: expandList("타입", [category, action, item, group, task, preset]),
+	list: expandList("타입", [category, action, item, group, task, preset], "설명"),
 	quote: typeTree,
 	options: {
-		label: "유형",
+		label: "type",
 		linkedList: true,
 	},
 };
@@ -734,7 +734,7 @@ export const development: Type.Development = {
 		},
 	},
 	options: {
-		label: "개발",
+		label: "development",
 	},
 };
 
@@ -765,7 +765,7 @@ export const design: Type.Design = {
 		},
 	},
 	options: {
-		label: "디자인",
+		label: "design",
 	},
 };
 
@@ -782,25 +782,25 @@ export const general: Type.General = {
 			title: "번역",
 			summary: "다국어 번역을 준비할 것인가?",
 			points: ["활성화된 경우 사용자가 원하는 언어로 플레이할 수 있습니다.", "비활성화하면 언어 설정에서 선택한 언어로만 플레이할 수 있습니다.", "번역을 활성화하려면 각 언어의 번역 데이터를 준비할 필요가 있습니다."],
-			links: { translation: "번역" },
+			links: { translation: "translation" },
 		},
 		offlineMaxHours: {
 			title: "최대 오프라인 꺼짐 시간[시간]",
 			summary: "꺼짐 진행 시간 제한",
 			points: ["꺼짐 시 최대 몇 시간 동안 진행할지 설정합니다.", "예를 들어 6시간으로 설정한 경우, 6시간까지 오프라인으로 복귀하는 과정이 처리되지만, 그 이상의 시간을 두고 오프라인으로 복귀하더라도 오프라인 시간은 6시간으로 처리된다.", "0시간으로 설정한 경우, 오프라인 복귀 시 프로세스 처리가 전혀 이루어지지 않습니다.", "최대 값은 24시간입니다."],
-			links: { category: "카테고리" },
+			links: { category: "category" },
 		},
 		maxCategoryLevels: {
 			title: "카테고리의 최대 레벨",
 			summary: "각 카테고리의 레벨 상한선",
 			points: ["각 카테고리의 최대 레벨을 설정합니다.", "이 레벨을 초과하여 경험치를 획득한 경우, 각 속성의 계산에는 여기서 설정한 최대 레벨이 사용됩니다.", "레벨이 없는 카테고리에서는 이 값과 관계가 없습니다."],
-			links: { category: "카테고리" },
+			links: { category: "category" },
 		},
 		locking: {
 			title: "잠금 기능",
 			summary: "요구 사항을 충족할 때까지 항목 숨기기",
 			points: ["활성화된 경우, 카테고리, 액션, 아이템은 한 번도 사용 및 소지한 적이 없고, 요건을 충족하지 않는 동안은 숨겨집니다.", "비활성화하면 모든 항목이 처음부터 표시되지만, 요구 사항을 충족할 때까지 실행 및 장비 장착이 불가능합니다."],
-			links: { category: "카테고리", action: "action", item: "item" },
+			links: { category: "category", action: "action", item: "item" },
 		},
 		coins: {
 			title: "통화",
@@ -811,18 +811,18 @@ export const general: Type.General = {
 				"통화는 아이템을 사고팔거나, 인벤토리 용량을 확장하는 데 사용됩니다.",
 				"첫 번째 통화가 기본 통화로 간주되며, 아이템이나 용량에서 통화 ID(`coinId`)가 지정되지 않은 경우에 사용됩니다.",
 			],
-			links: { information: "정보", item: "item" },
+			links: { information: "information", item: "item" },
 		},
 		capacity: {
 			title: "용량",
 			summary: "인벤토리 용량 설정",
-			points: ["플레이어가 소지할 수 있는 아이템의 종류 수에 대한 상한선을 관리합니다.", "각 아이템의 소유 개수가 아닌 소유한 아이템의 종류 수로 관리된다.", "initialCount`를 0으로 설정하면 용량이 무제한이 됩니다.", "조건이나 보상에서 용량의 아이템을 참조할 때는 여기서 설정한 ID를 사용하세요."],
+			points: ["플레이어가 소지할 수 있는 아이템의 종류 수에 대한 상한선을 관리합니다.", "각 아이템의 소유 개수가 아닌 소유한 아이템의 종류 수로 관리된다.", "`initialCount`를 0으로 설정하면 용량이 무제한이 됩니다.", "조건이나 보상에서 용량의 아이템을 참조할 때는 여기서 설정한 ID를 사용하세요."],
 			children: {
 				information: information,
 				initialCount: {
 					title: "초기 값 [개].",
 					summary: "초기 인벤토리 용량(소지할 수 있는 아이템의 종류 수)",
-					points: ["게임 시작 시 초기 용량(소지할 수 있는 아이템의 종류 수)입니다.", "0`으로 설정하면 용량이 무제한이 됩니다."],
+					points: ["게임 시작 시 초기 용량(소지할 수 있는 아이템의 종류 수)입니다.", "`0`으로 설정하면 용량이 무제한이 됩니다."],
 				},
 				initialCost: {
 					title: "기본 가격[코인]",
@@ -832,7 +832,7 @@ export const general: Type.General = {
 				increasingRate: {
 					title: "증가율[배]",
 					summary: "용량 확장 비용 증가율",
-					points: ["n번째 구매 시 용량 확장 비용이 얼마나 증가하는지를 나타내는 배율입니다.", "1.0`의 경우 항상 같은 가격, `1.2`의 경우 구매할 때마다 20%씩 가격이 올라간다.", "계산식 : 기본 가격 × 증가율 ^ 구매 횟수"],
+					points: ["n번째 구매 시 용량 확장 비용이 얼마나 증가하는지를 나타내는 배율입니다.", "`1.0`이면 항상 같은 가격이고, `1.2`이면 구매할 때마다 20%씩 비싸집니다.", "계산식 : 기본 가격 × 증가율 ^ 구매 횟수"],
 					list: [
 						["증가율", "1번째 추가", "5번째 증가", "10번째 증가", "100번째 증가", "1000번째 증가"],
 						["1.00", "x1.00", "x1.00", "x1.00", "x1.00", "x1.00"],
@@ -878,7 +878,7 @@ export const general: Type.General = {
 				increasingRate: {
 					title: "증가율[배]",
 					summary: "프레임 확장 비용의 증가율",
-					points: ["n번째 구매 시 슬롯 확장 비용이 얼마나 증가하는지를 나타내는 배율입니다.", "1.0`의 경우 항상 같은 가격, `1.2`의 경우 구매할 때마다 20%씩 가격이 올라간다.", "계산식 : 기본 가격 × 증가율 ^ 구매 횟수"],
+					points: ["n번째 구매 시 슬롯 확장 비용이 얼마나 증가하는지를 나타내는 배율입니다.", "`1.0`이면 항상 같은 가격이고, `1.2`이면 구매할 때마다 20%씩 비싸집니다.", "계산식 : 기본 가격 × 증가율 ^ 구매 횟수"],
 				},
 				coinId: {
 					title: "통화 ID",
@@ -905,17 +905,17 @@ export const general: Type.General = {
 				["0.10", "x1.00", "x1.10", "x2.36", "x117.39", "x5.7×10⁴"],
 				["0.20", "x1.00", "x1.20", "x6.19", "x3.3×10³", "x1.3×10¹¹¹"],
 			],
-			links: { category: "카테고리" },
+			links: { category: "category" },
 		},
 		actionLevelLimit: {
 			title: "액션 레벨 제한",
 			summary: "액션의 실행에 동일 속성 액션의 실행 횟수를 요구함",
 			points: ["활성화하면 각 액션의 실행 조건에 동일한 속성을 가진 액션의 실행 횟수가 자동으로 추가됩니다.", "필요한 횟수는 액션의 레벨 값과 동일합니다.", "속성이 설정되어 있지 않은 경우, 해당 카테고리의 ID가 사용됩니다."],
 		},
-		defaultCombat: { ...combat, summary: "모든 액션에 공통으로 적용되는 기본 전투 매개변수", points: ["모든 `체력` 타입의 액션에 공통적으로 적용되는 기본 전투 보정 값입니다.", "각 액션의 전투 값(속성)은 이 기본값에 추가됩니다."], links: { action: "action" } },
+		defaultCombat: { ...combat, summary: "모든 액션에 공통으로 적용되는 기본 전투 매개변수", points: ["모든 `stamina` 타입의 액션에 공통으로 적용되는 기본 전투 보정 값입니다.", "각 액션의 전투 값(속성)은 이 기본값에 추가됩니다."], links: { action: "action" } },
 	},
 	options: {
-		label: "일반",
+		label: "general",
 	},
 };
 
@@ -962,7 +962,7 @@ export const overview: Type.Overview = {
 		},
 	},
 	options: {
-		label: "개요",
+		label: "overview",
 	},
 };
 
@@ -974,36 +974,36 @@ const toFixedEvent = (title: string, summary: string, points: string[], timingPo
 	children: {
 		...task.children,
 		category: {
-			title: "카테고리",
-			summary: "이벤트에서는 사용하지 않습니다",
-			points: ["미션이나 작업 목록에 표시되지 않으므로, 소속 카테고리는 지정하지 않습니다.", "편집기에서는 입력란이 표시되지 않습니다."],
+			title: "カテゴリー",
+			summary: "イベントでは使用しません",
+			points: ["ミッションやタスクの一覧に表示されないため、所属するカテゴリーは指定しません。", "エディターでは入力欄が表示されません。"],
 		},
 		timing: {
-			title: "타이밍",
-			summary: "이벤트가 발동되는 시점 (고정)",
+			title: "タイミング",
+			summary: "イベントが発動するタイミング（固定）",
 			points: timingPoints,
 		},
 		unlocked: {
-			title: "초기 표시 상태",
-			summary: "이벤트 아이콘의 초기 표시 상태 (발동 여부는 타이밍에 따라 결정되며, 이 설정에서는 발동하지 않습니다)",
-			points: ["이벤트의 발동 조건은 타이밍에 따라 결정되며, 이 항목은 아이콘의 외관에만 영향을 미칩니다.", "secreted: 모든 요구 사항을 충족할 때까지 아이콘이 표시되지 않습니다(발동 자체는 타이밍에 따라 발생합니다).", "hidden・hinted: 아이콘에 가로줄이 표시되어 잠금 상태로 나타납니다.", "released: 사선이 사라지고 '해제됨'으로 표시됩니다."],
+			title: "初期表示状態",
+			summary: "イベントアイコンの初期表示状態（発火はタイミングで決まり、この設定では発火しません）",
+			points: ["イベントの発火条件はタイミングで決まり、この項目はアイコンの見た目のみに影響します。", "secreted: 全requirementsを満たすまでアイコンが表示されません（発火自体はタイミングで起こります）。", "hidden・hinted: アイコンに斜線が付き未解放として表示されます。", "released: 斜線が消え解放済みとして表示されます。"],
 		},
 		requirements: {
-			title: "조건",
-			summary: "보상을 획득하기 위한 조건",
-			points: ["타이밍이 맞으면 이벤트가 발동되며, 전용 화면이 열려 내용이 표시됩니다.", "보상은 발동 시, 여기에 설정한 조건을 충족하는 경우에만 획득합니다.", "조건을 설정하지 않은 경우, 발동할 때마다 보상을 획득합니다."],
+			title: "条件",
+			summary: "報酬を獲得する条件",
+			points: ["タイミングが成立するとイベントは発動し、専用の画面を開いて内容を表示します。", "報酬は、発動時にここで設定した条件を満たしている場合にのみ獲得します。", "条件を設定していない場合は、発動するたびに報酬を獲得します。"],
 			children: requirement.children,
 		},
 		acquisitions: {
-			title: "보상",
-			summary: "이벤트 발동 시 보상 설정",
-			points: ["타이밍이 맞고, 조건을 충족할 때 얻을 수 있는 보상입니다.", "과제와 달리 수령할 필요가 없으며, 발동과 동시에 자동으로 획득됩니다.", "수량에 마이너스 값을 설정할 수 있습니다. 예를 들어, 게임 오버 시 아이템 수량을 마이너스로 설정하면 해당 아이템을 잃게 됩니다."],
+			title: "報酬",
+			summary: "イベント発動時の報酬設定",
+			points: ["タイミングが成立し、かつ条件を満たしている時に得られる報酬です。", "タスクと違って受け取る操作は要らず、発動と同時に自動で獲得します。", "数量にマイナスを設定することができます。例えばゲームオーバー時にアイテムの数量をマイナスにすれば、それらを失います。"],
 			children: acquisition.children,
 		},
 		group: {
-			title: "태스크 그룹",
-			summary: "이벤트에서는 사용하지 않습니다",
-			points: ["미션이나 작업 목록에 표시되지 않으므로 그룹 지정은 사용하지 않습니다.", "편집기에서는 입력란이 표시되지 않습니다."],
+			title: "タスクグループ",
+			summary: "イベントでは使用しません",
+			points: ["ミッションやタスクの一覧に表示されないため、グループの指定は使いません。", "エディターでは入力欄が表示されません。"],
 		},
 	},
 });
@@ -1020,16 +1020,16 @@ export const event: Type.Events = {
 		["`completed`", "모든 카테고리의 레벨이 최대 값(maxCategoryLevels)에 도달하면", "한 번만"],
 		["`obtained`", "특정 유형의 액션(보물상자 등)을 완료하거나 확인했을 때", "여러 번"],
 	],
-	links: { task: "작업" },
+	links: { task: "task" },
 	children: {
-		comebacked: toFixedEvent("복귀 시", "오프라인 상태에서 복귀했을 때 발동", ["오프라인 상태에서 1초 이상 경과한 후 다시 접속했을 때, 진행 중인 액션이 있을 경우 발동합니다.", "떨어져 있는 동안의 진행 상황 요약과 함께 표시됩니다."], ["`comebacked`로 고정되어 있어 편집할 수 없습니다.", "복귀할 때마다 몇 번이고 발동합니다."]),
-		gameovered: toFixedEvent("게임 오버 시", "전투 중 스태미나가 바닥났을 때 발동", ["전투 중 플레이어의 스태미나가 바닥났을 때 발동합니다.", "보상의 수량에 마이너스 값을 설정하면, 게임 오버 시 대가를 치르게 할 수 있습니다."], ["`gameovered`로 고정되어 있어 편집할 수 없습니다.", "게임 오버가 될 때마다 몇 번이고 발동합니다."]),
-		welcomed: toFixedEvent("처음 시작할 때", "월드를 처음 열었을 때 발동", ["이 월드를 처음 실행할 때 발동합니다.", "세계관 설명이나, 시작 시에 전달하는 준비물을 건네는 데 사용합니다."], ["`welcomed`로 고정되어 있어 편집할 수 없습니다.", "처음 실행할 때 한 번만 발동됩니다."]),
-		completed: toFixedEvent("클리어 시", "모든 카테고리가 최대 레벨에 도달했을 때 발동", ["모든 카테고리의 레벨이 최대값(maxCategoryLevels)에 도달했을 때 발동합니다.", "숫자가 아닌 카테고리는 판정에서 제외됩니다."], ["`completed`로 고정되어 있어 편집할 수 없습니다.", "조건을 충족했을 때 한 번만 발동합니다."]),
-		obtained: toFixedEvent("단발 액션 완료 시", "보물상자 등 일회성 액션을 완료했을 때 발동", ["single 유형의 액션(보물상자 등)을 완료하거나 확인했을 때 발동합니다.", "액션 자체의 보상과 별도로, 여기에서 설정한 보상을 추가로 지급할 수 있습니다."], ["`obtained`로 고정되어 있어 편집할 수 없습니다.", "단발 액션을 완료할 때마다 몇 번이고 발동됩니다."]),
+		comebacked: toFixedEvent("복귀 시", "오프라인에서 복귀했을 때 발동", ["오프라인 상태로 1초 이상 지난 뒤 복귀했고, 진행 중인 액션이 있었을 때 발동합니다.", "자리를 비운 동안의 진행 요약과 함께 표시됩니다."], ["`comebacked`로 고정되어 있어 편집할 수 없습니다.", "복귀할 때마다 몇 번이든 발동합니다."]),
+		gameovered: toFixedEvent("게임 오버 시", "전투에서 스태미나가 없어졌을 때 발동", ["전투에서 플레이어의 스태미나가 없어졌을 때 발동합니다.", "보상 수량에 마이너스를 설정하면 게임 오버에 대가를 부여할 수 있습니다."], ["`gameovered`로 고정되어 있어 편집할 수 없습니다.", "게임 오버가 될 때마다 몇 번이든 발동합니다."]),
+		welcomed: toFixedEvent("최초 시작 시", "월드를 처음 열었을 때 발동", ["이 월드를 처음 실행했을 때 발동합니다.", "세계관 설명이나 시작할 때 건네는 준비물 전달에 사용합니다."], ["`welcomed`로 고정되어 있어 편집할 수 없습니다.", "최초 실행 시 한 번만 발동합니다."]),
+		completed: toFixedEvent("클리어 시", "모든 카테고리가 최대 레벨에 도달했을 때 발동", ["모든 카테고리의 레벨이 최대치(maxCategoryLevels)에 도달했을 때 발동합니다.", "numeric(수치)이 아닌 카테고리는 판정에서 제외됩니다."], ["`completed`로 고정되어 있어 편집할 수 없습니다.", "조건을 충족했을 때 한 번만 발동합니다."]),
+		obtained: toFixedEvent("단발 액션 완료 시", "보물상자 같은 단발 액션을 완료했을 때 발동", ["single 종류의 액션(보물상자 등)을 완료하고 확인했을 때 발동합니다.", "액션 자체의 보상과는 별도로, 여기에서 설정한 보상을 추가로 줄 수 있습니다."], ["`obtained`로 고정되어 있어 편집할 수 없습니다.", "단발 액션을 완료할 때마다 몇 번이든 발동합니다."]),
 	},
 	options: {
-		label: "이벤트",
+		label: "event",
 	},
 };
 
@@ -1037,7 +1037,7 @@ export const basic: Type.Basic = {
 	title: "기본 설정",
 	summary: "월드 전반의 기본 설정 항목",
 	points: ["월드 이름, 설명, 배경, 통화, 용량, 카테고리의 최대 레벨, 경험치 상승률, 할인율, 표준 전투 매개변수 등을 설정합니다.", "이러한 설정은 월드 전체에 영향을 미칩니다."],
-	list: expandList("명칭", [overview, general, design, event, development]),
+	list: expandList("명칭", [overview, general, design, event, development], "설명"),
 	children: {
 		overview: overview,
 		general: general,
@@ -1077,11 +1077,11 @@ export const world: Type.World = {
 export const editor: Markdown = {
 	title: "편집자",
 	summary: "에디터 사용법 및 월드 구조에 대한 설명",
-	list: expandList("명칭", [world, basic, type, component, miscellaneous]),
+	list: expandList("명칭", [world, basic, type, component, miscellaneous], "설명"),
 	options: {
-		label: "편집자",
+		label: "editor",
 		linkedList: true,
-		directory: "편집자",
+		directory: "editor",
 	},
 };
 

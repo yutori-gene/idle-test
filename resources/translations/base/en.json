@@ -370,7 +370,7 @@
 			"explanation": ""
 		},
 		"categories": {
-			"name": "Categories",
+			"name": "Category List",
 			"explanation": ""
 		},
 		"level": {
@@ -394,7 +394,7 @@
 			"explanation": ""
 		},
 		"actions": {
-			"name": "Actions",
+			"name": "Action List",
 			"explanation": ""
 		},
 		"attribute": {
@@ -482,7 +482,7 @@
 			"explanation": ""
 		},
 		"act": {
-			"name": "Act",
+			"name": "Execute",
 			"explanation": ""
 		},
 		"start": {
@@ -502,15 +502,19 @@
 			"explanation": "Add this action to the reservation queue for sequential execution."
 		},
 		"reorder": {
-			"name": "Reorder",
+			"name": "Reposition",
 			"explanation": "Move this reserved action to the selected position in the queue."
 		},
 		"position": {
-			"name": "Queue Position",
-			"explanation": "Select the position in the reservation queue."
+			"name": "Execution Order",
+			"explanation": "Select when to run this action. 0 runs it now, and 1 or later puts it into the waiting queue at that place."
+		},
+		"now": {
+			"name": "Now",
+			"explanation": "Run this action immediately instead of putting it into the waiting queue."
 		},
 		"items": {
-			"name": "Items",
+			"name": "Item List",
 			"explanation": ""
 		},
 		"equipping": {
@@ -642,7 +646,7 @@
 			"explanation": ""
 		},
 		"properties": {
-			"name": "Properties",
+			"name": "Property List",
 			"explanation": ""
 		},
 		"attack": {
@@ -725,186 +729,6 @@
 			"name": "Targeting All Categories",
 			"explanation": "This property correction applies to all categories."
 		},
-		"hint-language-0": {
-			"name": "Hint Language 0",
-			"explanation": "Toggles the language displayed in the game."
-		},
-		"hint-language-1": {
-			"name": "Hint Language 1",
-			"explanation": "This is only valid if the creator has provided a translation."
-		},
-		"hint-event-0": {
-			"name": "Hint Event 0",
-			"explanation": "Triggered when conditions are met."
-		},
-		"hint-event-1": {
-			"name": "Hint Event 1",
-			"explanation": "Messages are displayed when activated, items are given or reduced, etc."
-		},
-		"hint-debug-0": {
-			"name": "Hint Debug 0",
-			"explanation": "It is displayed only during debugging."
-		},
-		"hint-debug-1": {
-			"name": "Hint Debug 1",
-			"explanation": "It will not be displayed when the game is published and distributed."
-		},
-		"hint-config-0": {
-			"name": "Hint Config 0",
-			"explanation": "Configure settings related to game display and processing."
-		},
-		"hint-config-1": {
-			"name": "Hint Config 1",
-			"explanation": "Game data can be input/output and reset."
-		},
-		"hint-statistics-0": {
-			"name": "Hint Statistics 0",
-			"explanation": "You can check the progress of the game so far."
-		},
-		"hint-general-0": {
-			"name": "Hint General 0",
-			"explanation": "You can check the difficulty level and unique settings of this world."
-		},
-		"hint-overview-0": {
-			"name": "Hint Overview 0",
-			"explanation": "You can check about the world (worldview, setting) of this game."
-		},
-		"hint-overview-1": {
-			"name": "Hint Overview 1",
-			"explanation": "You can also check the console (system) running this game."
-		},
-		"hint-correction-0": {
-			"name": "Hint Correction 0",
-			"explanation": "You can see corrections for specific properties in this category."
-		},
-		"hint-correction-1": {
-			"name": "Hint Correction 1",
-			"explanation": "The correction is due to the effect of the item. You can check the item."
-		},
-		"hint-properties-0": {
-			"name": "Hint Properties 0",
-			"explanation": "The following is a list of properties set for each category."
-		},
-		"hint-properties-1": {
-			"name": "Hint Properties 1",
-			"explanation": "A property is an element that affects the execution of an action."
-		},
-		"hint-properties-2": {
-			"name": "Hint Properties 2",
-			"explanation": "The effect is compensated by equipping the item. (Some items do not need to be equipped.)"
-		},
-		"hint-property-0": {
-			"name": "Hint Property 0",
-			"explanation": "A property is an element that affects the execution of an action."
-		},
-		"hint-property-1": {
-			"name": "Hint Property 1",
-			"explanation": "The final value is calculated from the assigned initial value, taking into account the category level, the level set for the action, and the correction for items equipped."
-		},
-		"hint-trade-0": {
-			"name": "Hint Trade 0",
-			"explanation": "Some items cannot be purchased or sold."
-		},
-		"hint-trade-1": {
-			"name": "Hint Trade 1",
-			"explanation": "Locked items cannot be bought or sold."
-		},
-		"hint-items-0": {
-			"name": "Hint Items 0",
-			"explanation": "Press and hold to switch the item's equipment."
-		},
-		"hint-items-1": {
-			"name": "Hint Items 1",
-			"explanation": "Only one item in the list can be equipped. (If the item is set to be equipable as a category)"
-		},
-		"hint-items-2": {
-			"name": "Hint Items 2",
-			"explanation": "Items that do not meet the release conditions are locked and cannot be viewed in detail."
-		},
-		"hint-item-0": {
-			"name": "Hint Item 0",
-			"explanation": "Items are elements related to the possession of objects such as equipment, consumables, and valuables."
-		},
-		"hint-item-1": {
-			"name": "Hint Item 1",
-			"explanation": "Only one item from a category can be equipped. (If it is set to be equipable as a category)"
-		},
-		"hint-item-2": {
-			"name": "Hint Item 2",
-			"explanation": "Items that do not meet the release conditions are locked and cannot be viewed in detail."
-		},
-		"hint-act-0": {
-			"name": "Hint Act 0",
-			"explanation": "Start or stop an action."
-		},
-		"hint-act-1": {
-			"name": "Hint Act 1",
-			"explanation": "The number of executions can be specified."
-		},
-		"hint-queue-0": {
-			"name": "Hint Queue 0",
-			"explanation": "A long press on a bar removes it from the queue."
-		},
-		"hint-actions-0": {
-			"name": "Hint Actions 0",
-			"explanation": "A long press toggles the execution of the action."
-		},
-		"hint-actions-1": {
-			"name": "Hint Actions 1",
-			"explanation": "Only one item in a category can be executed."
-		},
-		"hint-actions-2": {
-			"name": "Hint Actions 2",
-			"explanation": "Some categories allow actions in more than one category to proceed simultaneously."
-		},
-		"hint-actions-3": {
-			"name": "Hint Actions 3",
-			"explanation": "Actions that do not meet the release conditions are locked and cannot be viewed in detail."
-		},
-		"hint-action-0": {
-			"name": "Hint Action 0",
-			"explanation": "Each action may gain experience and increase the level of experience."
-		},
-		"hint-action-1": {
-			"name": "Hint Action 1",
-			"explanation": "Each action consumes or obtains an item."
-		},
-		"hint-action-2": {
-			"name": "Hint Action 2",
-			"explanation": "Actions that do not meet the release conditions are locked and cannot be viewed in detail."
-		},
-		"hint-category-0": {
-			"name": "Hint Category 0",
-			"explanation": "It is an element that brings together actions and items."
-		},
-		"hint-status-0": {
-			"name": "Hint Status 0",
-			"explanation": "Only the category correction value by item is shown."
-		},
-		"hint-status-1": {
-			"name": "Hint Status 1",
-			"explanation": "There are further other corrections depending on the action to be performed."
-		},
-		"hint-inventory-0": {
-			"name": "Hint Inventory 0",
-			"explanation": "Press and hold to switch the item's equipment."
-		},
-		"hint-activity-0": {
-			"name": "Hint Activity 0",
-			"explanation": "A long press toggles the execution of the action."
-		},
-		"hint-character-0": {
-			"name": "Hint Character 0",
-			"explanation": "This content is identical to what is displayed by operating a category."
-		},
-		"hint-player-0": {
-			"name": "Hint Player 0",
-			"explanation": "By default, the same description appears as a hint at the bottom of each column."
-		},
-		"hint-player-1": {
-			"name": "Hint Player 1",
-			"explanation": "Hints can be hidden by setting"
-		},
 		"event": {
 			"name": "Event",
 			"explanation": ""
@@ -940,6 +764,14 @@
 		"achieved": {
 			"name": "Achieved",
 			"explanation": ""
+		},
+		"receive": {
+			"name": "Receive",
+			"explanation": "Receive the reward for this task."
+		},
+		"hidden": {
+			"name": "Hidden",
+			"explanation": "Once you have confirmed the content, this column will be hidden."
 		},
 		"task": {
 			"name": "Task",
@@ -1019,7 +851,7 @@
 		},
 		"category-shortcut": {
 			"name": "Category Shortcut",
-			"explanation": "When you open a category, a list of actions or items will also be displayed."
+			"explanation": "When you open a category, the Action List or Item List will also be displayed."
 		},
 		"showing-hint": {
 			"name": "Hint",
@@ -1064,6 +896,226 @@
 		"force-restart": {
 			"name": "Force Restart",
 			"explanation": "Reloads the app. Use this if the display becomes unresponsive or stuck. Your progress is not affected."
+		},
+		"hint-language-switching": {
+			"name": "Hint Language Switching",
+			"explanation": "Toggles the language displayed in the game."
+		},
+		"hint-language-availability": {
+			"name": "Hint Language Availability",
+			"explanation": "This is only valid if the author has prepared a translation."
+		},
+		"hint-event-timing": {
+			"name": "Hint Event Timing",
+			"explanation": "It triggers at specific times, such as when you return to the game or when you become gameovered."
+		},
+		"hint-event-reward": {
+			"name": "Hint Event Reward",
+			"explanation": "When activated, this screen will open, and the reward will be automatically granted along with a message."
+		},
+		"hint-event-task": {
+			"name": "Hint Event Task",
+			"explanation": "A task is something you complete by meeting certain conditions, and you receive the reward yourself."
+		},
+		"hint-debug-visibility": {
+			"name": "Hint Debug Visibility",
+			"explanation": "It is displayed only during debugging."
+		},
+		"hint-debug-publishing": {
+			"name": "Hint Debug Publishing",
+			"explanation": "It will not be displayed when the game is published and distributed."
+		},
+		"hint-config-settings": {
+			"name": "Hint Config Settings",
+			"explanation": "Configure settings related to game display and processing."
+		},
+		"hint-config-data": {
+			"name": "Hint Config Data",
+			"explanation": "Game data can be input/output and reset."
+		},
+		"hint-statistics-progress": {
+			"name": "Hint Statistics Progress",
+			"explanation": "You can check the progress of the game so far."
+		},
+		"hint-general-difficulty": {
+			"name": "Hint General Difficulty",
+			"explanation": "You can check the difficulty level and unique configurations for this world."
+		},
+		"hint-overview-world": {
+			"name": "Hint Overview World",
+			"explanation": "You can check about the world (world view, config) of this game."
+		},
+		"hint-overview-console": {
+			"name": "Hint Overview Console",
+			"explanation": "You can also check the console (system) that is running this game."
+		},
+		"hint-correction-target": {
+			"name": "Hint Correction Target",
+			"explanation": "You can see corrections for specific properties in this Category."
+		},
+		"hint-correction-source": {
+			"name": "Hint Correction Source",
+			"explanation": "Correction is due to the effect of the Item. You can check the item."
+		},
+		"hint-properties-list": {
+			"name": "Hint Properties List",
+			"explanation": "The following is a list of properties configured for each Category."
+		},
+		"hint-properties-meaning": {
+			"name": "Hint Properties Meaning",
+			"explanation": "A property is an element that affects the execution of an Action."
+		},
+		"hint-properties-equipment": {
+			"name": "Hint Properties Equipment",
+			"explanation": "The effect is corrected by Equipment of Item. (Some Items are Unnecessary)"
+		},
+		"hint-property-meaning": {
+			"name": "Hint Property Meaning",
+			"explanation": "A property is an element that affects the execution of an Action."
+		},
+		"hint-property-calculation": {
+			"name": "Hint Property Calculation",
+			"explanation": "The final value is calculated from the assigned initial value, taking into account the level of the Category, the configured level of the Action, and the correction for the Item being equipped."
+		},
+		"hint-trade-availability": {
+			"name": "Hint Trade Availability",
+			"explanation": "Some Items cannot be bought or sold."
+		},
+		"hint-trade-locked": {
+			"name": "Hint Trade Locked",
+			"explanation": "Locked Items cannot be bought or sold."
+		},
+		"hint-trade-limit": {
+			"name": "Hint Trade Limit",
+			"explanation": "There may be a limit on the number of purchases you can make for a given capacity or reservation slot (queue), and once you reach that limit, you will not be able to make any further purchases. (Increases resulting from rewards are not subject to this limit.)"
+		},
+		"hint-items-equipping": {
+			"name": "Hint Items Equipping",
+			"explanation": "Press and hold to toggle Equipment of Item."
+		},
+		"hint-items-exclusive": {
+			"name": "Hint Items Exclusive",
+			"explanation": "Only one Item in the list is Possible to equip. (If it is configured to be able to be equipped as a Category)"
+		},
+		"hint-items-locked": {
+			"name": "Hint Items Locked",
+			"explanation": "Items that have not met the release requirements are locked and cannot be viewed in detail."
+		},
+		"hint-item-meaning": {
+			"name": "Hint Item Meaning",
+			"explanation": "Items are elements related to owning things such as Equipment, Consumables, and Valuables."
+		},
+		"hint-item-exclusive": {
+			"name": "Hint Item Exclusive",
+			"explanation": "Only one Item in a Category is Possible to be equipped. (If it is configured to be able to be equipped as a Category)"
+		},
+		"hint-item-locked": {
+			"name": "Hint Item Locked",
+			"explanation": "Items that have not met the release requirements are locked and cannot be viewed in detail."
+		},
+		"hint-act-control": {
+			"name": "Hint Act Control",
+			"explanation": "Start or stop an Action."
+		},
+		"hint-act-count": {
+			"name": "Hint Act Count",
+			"explanation": "You can specify the number of times to run it. Enter 0 to run until the resource runs out."
+		},
+		"hint-queue-removing": {
+			"name": "Hint Queue Removing",
+			"explanation": "A long press on a bar removes it from the queue."
+		},
+		"hint-actions-executing": {
+			"name": "Hint Actions Executing",
+			"explanation": "A long press toggles the execution of the Action."
+		},
+		"hint-actions-exclusive": {
+			"name": "Hint Actions Exclusive",
+			"explanation": "Only one Item in a Category is Possible."
+		},
+		"hint-actions-parallel": {
+			"name": "Hint Actions Parallel",
+			"explanation": "Some Categories allow you to progress actions in more than one Category at the same time."
+		},
+		"hint-actions-locked": {
+			"name": "Hint Actions Locked",
+			"explanation": "Actions that have not met the release conditions are locked and cannot be viewed in detail."
+		},
+		"hint-action-experience": {
+			"name": "Hint Action Experience",
+			"explanation": "Each act may gain experience value and will increase your level."
+		},
+		"hint-action-resource": {
+			"name": "Hint Action Resource",
+			"explanation": "Each act consumes or obtains an Item."
+		},
+		"hint-action-locked": {
+			"name": "Hint Action Locked",
+			"explanation": "Actions that have not met the release conditions are locked and cannot be viewed in detail."
+		},
+		"hint-tasks-list": {
+			"name": "Hint Tasks List",
+			"explanation": "This is a list of the Tasks assigned to this Category."
+		},
+		"hint-tasks-detail": {
+			"name": "Hint Tasks Detail",
+			"explanation": "Select a Task to check its completion conditions and its reward."
+		},
+		"hint-tasks-unclaimed": {
+			"name": "Hint Tasks Unclaimed",
+			"explanation": "A ribbon marks the Tasks whose reward has not been claimed yet. Select one and press claim to receive it."
+		},
+		"hint-tasks-capacity": {
+			"name": "Hint Tasks Capacity",
+			"explanation": "You cannot claim a reward while the number of Item types you can hold is at its limit. Free up space and claim it again."
+		},
+		"hint-tasks-empty": {
+			"name": "Hint Tasks Empty",
+			"explanation": "This is not displayed when the Category has no Tasks at all."
+		},
+		"hint-category-meaning": {
+			"name": "Hint Category Meaning",
+			"explanation": "This element is a compilation of Actions and Items."
+		},
+		"hint-status-correction": {
+			"name": "Hint Status Correction",
+			"explanation": "Only the value of the correction of the Category by Item is shown."
+		},
+		"hint-status-action": {
+			"name": "Hint Status Action",
+			"explanation": "There are further other corrections depending on the Action to be performed."
+		},
+		"hint-inventory-equipping": {
+			"name": "Hint Inventory Equipping",
+			"explanation": "Press and hold to toggle Equipment of Item."
+		},
+		"hint-activity-executing": {
+			"name": "Hint Activity Executing",
+			"explanation": "A long press toggles the execution of the Action."
+		},
+		"hint-missions-grouping": {
+			"name": "Hint Missions Grouping",
+			"explanation": "The Tasks are grouped and displayed by Category."
+		},
+		"hint-missions-ungrouped": {
+			"name": "Hint Missions Ungrouped",
+			"explanation": "The Tasks with no Category configured are grouped together at the top."
+		},
+		"hint-missions-completed": {
+			"name": "Hint Missions Completed",
+			"explanation": "A check mark is shown on the Tasks that have been completed."
+		},
+		"hint-missions-unclaimed": {
+			"name": "Hint Missions Unclaimed",
+			"explanation": "A ribbon marks the Tasks whose reward has not been claimed yet. Select one and press claim to receive it."
+		},
+		"hint-missions-permanent": {
+			"name": "Hint Missions Permanent",
+			"explanation": "Once a Task has been completed it stays completed, even if the conditions are no longer met afterwards."
+		},
+		"hint-character-identical": {
+			"name": "Hint Character Identical",
+			"explanation": "This content is identical to what is displayed by manipulating the Category."
 		}
 	}
 }

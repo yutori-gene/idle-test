@@ -4,7 +4,7 @@ Each column that appears in Play Games is described separately.
 - By default, the same description appears as a Hint at the bottom of each column.
 - Hints can be hidden by configuration.
 
-|player|説明|
+|player|Description|
 |-|-|
 |[_character_](en/player/character)|Review and manipulation of the protagonist's situation|
 |[_category_](en/player/category)|A compilation of various elements|

@@ -2,11 +2,11 @@
 # properties
 Configuring the Effects of an Item
 - This is an item of effects that can be configured for an Item.
-- Items with a Type of `necessary` or `consumable` apply their effects while equipped, but they apply their effects simply by being in your inventory, and the effect strength is proportional to the number of items you have (e.g., having 2 items doubles the effect).
+- Items whose equipment type is `necessary` or `consumable` apply their effect only while equipped. `unnecessary` applies its effect just by being held, and the size of the effect is proportional to the number held (twice as much if you hold 2).
 - Since the effect of `unnecessary` is based on the number of items you have—which directly determines the multiplier—`maximum` (the maximum number of items you can hold) serves as the upper limit for this effect. When balancing the game, please configure this setting in conjunction with `maximum`.
 - The value of any of these items is calculated as an Adjustment for the difference in level between the player's level and the Action's level.
 - For example, if the attack value is 10, the attack is calculated as if the player's level is 10 higher than the Action's level. Minus values are the opposite.
-- ATTACK, DEFENCE, ACCURACY, EVASION, and RESTORE are only valid for `stamina` Type Actions.
+- attack, defence, accuracy, evasion and restore are effective only for actions of the `stamina` type.
 
 |properties|Details of Effects|
 |-|-|
@@ -23,7 +23,7 @@ ___
 ## Category
 Specify the Category to which the property is applied
 - Configure the ID of the Category to which this property applies.
-- If ``*`` is configured, it will be applied to all categories.
+- Configuring `*` applies it to all categories.
 - If left blank, it will be applied to the Category to which the Item belongs.
 ___
 
