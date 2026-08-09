@@ -974,9 +974,9 @@ const toFixedEvent = (title: string, summary: string, points: string[], timingPo
 	children: {
 		...task.children,
 		category: {
-			title: "カテゴリー",
+			title: "カテゴリ",
 			summary: "イベントでは使用しません",
-			points: ["ミッションやタスクの一覧に表示されないため、所属するカテゴリーは指定しません。", "エディターでは入力欄が表示されません。"],
+			points: ["ミッションやタスクの一覧に表示されないため、所属するカテゴリは指定しません。", "エディターでは入力欄が表示されません。"],
 		},
 		timing: {
 			title: "タイミング",

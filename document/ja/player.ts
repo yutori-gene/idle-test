@@ -123,7 +123,7 @@ export const trade: Markdown = {
 
 export const items: Markdown = {
 	title: "アイテム一覧",
-	summary: "カテゴリー内のアイテムの一覧",
+	summary: "カテゴリ内のアイテムの一覧",
 	options: {
 		preset: "items",
 	},
@@ -151,7 +151,7 @@ export const act: Markdown = {
 
 export const actions: Markdown = {
 	title: "アクション一覧",
-	summary: "カテゴリー内のアクションの一覧",
+	summary: "カテゴリ内のアクションの一覧",
 	options: {
 		preset: "actions",
 	},
@@ -171,14 +171,14 @@ export const action: Markdown = {
 
 export const tasks: Markdown = {
 	title: "タスク",
-	summary: "カテゴリー内のタスクの一覧",
+	summary: "カテゴリ内のタスクの一覧",
 	options: {
 		preset: "tasks",
 	},
 };
 
 export const category: Markdown = {
-	title: "カテゴリー",
+	title: "カテゴリ",
 	summary: "様々な要素をまとめたもの",
 	children: { tasks: tasks },
 	options: {

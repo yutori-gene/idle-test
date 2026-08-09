@@ -482,7 +482,7 @@
 			"explanation": ""
 		},
 		"act": {
-			"name": "実行",
+			"name": "アクト",
 			"explanation": ""
 		},
 		"start": {
@@ -751,7 +751,7 @@
 		},
 		"completed": {
 			"name": "コンプリート",
-			"explanation": "おめでとうございます！すべてのカテゴリーをコンプリートしました。"
+			"explanation": "おめでとうございます！すべてのカテゴリをコンプリートしました。"
 		},
 		"welcomed": {
 			"name": "ようこそ",
