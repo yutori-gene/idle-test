@@ -195,7 +195,7 @@
 		},
 		"overview": {
 			"name": "Overview",
-			"explanation": ""
+			"explanation": "Shows the outline of this world and the console running it."
 		},
 		"version": {
 			"name": "Version",
