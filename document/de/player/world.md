@@ -9,11 +9,6 @@ ___
 - Du kannst auch die Konsole (das System) einsehen, auf der dieses Spiel läuft.
 ___
 
-## Allgemein
-Weltspezifische Konfigurationen
-- Du kannst den Schwierigkeitsgrad und die besonderen Einstellungen dieser Welt einsehen.
-___
-
 ## Statistiken
 Zusammenfassung des Fortschritts
 - Du kannst den bisherigen Spielfortschritt einsehen.

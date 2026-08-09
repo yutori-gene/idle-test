@@ -9,11 +9,6 @@ Sobre este jogo.
 - Você também pode verificar o console (sistema) que está executando este jogo.
 ___
 
-## Geral
-Configurações específicas do mundo
-- Você pode verificar o nível de dificuldade e as configurações próprias deste mundo.
-___
-
 ## estatísticas
 Resumo do progresso
 - Você pode verificar o progresso do jogo até agora.

@@ -9,11 +9,6 @@ A propos de ce jeu.
 - Vous pouvez également consulter la console (le système) qui fait tourner ce jeu.
 ___
 
-## général
-Configurations spécifiques au monde
-- Vous pouvez consulter le niveau de difficulté et les réglages propres à ce monde.
-___
-
 ## statistiques
 Résumé des progrès accomplis
 - Vous pouvez consulter la progression du jeu jusqu'à présent.

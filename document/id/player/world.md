@@ -9,11 +9,6 @@ Tentang game ini.
 - Kamu juga dapat memeriksa konsol (sistem) yang menjalankan permainan ini.
 ___
 
-## umum
-Konfigurasi dunia
-- Kamu dapat memeriksa tingkat kesulitan dan konfigurasi khas dunia ini.
-___
-
 ## statistik
 Ringkasan kemajuan
 - Kamu dapat memeriksa perkembangan permainan sejauh ini.

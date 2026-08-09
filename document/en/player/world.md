@@ -9,11 +9,6 @@ About this game
 - You can also check the console (system) that is running this game.
 ___
 
-## general
-World-specific config
-- You can check the difficulty level and unique configurations for this world.
-___
-
 ## statistics
 Summary of progress
 - You can check the progress of the game so far.
