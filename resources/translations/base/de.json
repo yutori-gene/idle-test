@@ -25,10 +25,6 @@
 			"name": "Mindestwert",
 			"explanation": ""
 		},
-		"count": {
-			"name": "Zählen",
-			"explanation": ""
-		},
 		"purchased-count": {
 			"name": "Anzahl der Käufe",
 			"explanation": ""
@@ -269,10 +265,6 @@
 			"name": "Spieldauer",
 			"explanation": "Die Zeit, die seit dem Start des Spiels vergangen ist, einschließlich der Offline-Zeit."
 		},
-		"item": {
-			"name": "Gegenstand",
-			"explanation": ""
-		},
 		"count-now": {
 			"name": "Jetzt zählen",
 			"explanation": "Die Gesamtzahl der Gegenstände, die Sie derzeit besitzen."
@@ -453,6 +445,10 @@
 			"name": "Voraussichtliche Dauer",
 			"explanation": ""
 		},
+		"count": {
+			"name": "Zählen",
+			"explanation": ""
+		},
 		"completed-count": {
 			"name": "Anzahl der abgeschlossenen",
 			"explanation": ""
@@ -512,6 +508,10 @@
 		"now": {
 			"name": "Sofort",
 			"explanation": "Führt diese Aktion sofort aus, statt sie in die Warteschlange einzureihen."
+		},
+		"item": {
+			"name": "Gegenstand",
+			"explanation": ""
 		},
 		"items": {
 			"name": "Gegenstandsliste",
@@ -768,6 +768,10 @@
 		"receive": {
 			"name": "Erhalten",
 			"explanation": "Erhalte die Belohnung für diese Aufgabe."
+		},
+		"received": {
+			"name": "Bereits erhalten",
+			"explanation": "Die Belohnung für diese Aufgabe wurde bereits erhalten."
 		},
 		"hidden": {
 			"name": "Ausgeblendet",

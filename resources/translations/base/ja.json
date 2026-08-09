@@ -25,10 +25,6 @@
 			"name": "最小",
 			"explanation": ""
 		},
-		"count": {
-			"name": "カウント",
-			"explanation": ""
-		},
 		"purchased-count": {
 			"name": "購入数",
 			"explanation": ""
@@ -269,10 +265,6 @@
 			"name": "再生時間",
 			"explanation": "このゲームのプレイ開始から経過した時間（オフライン時間を含む）。"
 		},
-		"item": {
-			"name": "アイテム",
-			"explanation": ""
-		},
 		"count-now": {
 			"name": "今すぐカウント",
 			"explanation": "現在所有しているアイテムの合計数。"
@@ -453,6 +445,10 @@
 			"name": "所要時間の目安",
 			"explanation": ""
 		},
+		"count": {
+			"name": "カウント",
+			"explanation": ""
+		},
 		"completed-count": {
 			"name": "コンプリート数",
 			"explanation": ""
@@ -512,6 +508,10 @@
 		"now": {
 			"name": "今すぐ",
 			"explanation": "待機キューに入れず、このアクションをすぐに実行します。"
+		},
+		"item": {
+			"name": "アイテム",
+			"explanation": ""
 		},
 		"items": {
 			"name": "アイテム一覧",
@@ -768,6 +768,10 @@
 		"receive": {
 			"name": "受け取る",
 			"explanation": "このタスクの報酬を受け取ります。"
+		},
+		"received": {
+			"name": "受け取り済",
+			"explanation": "このタスクの報酬は受け取り済みです。"
 		},
 		"hidden": {
 			"name": "非表示",

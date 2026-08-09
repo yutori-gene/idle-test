@@ -25,10 +25,6 @@
 			"name": "Minimum",
 			"explanation": ""
 		},
-		"count": {
-			"name": "Hitung",
-			"explanation": ""
-		},
 		"purchased-count": {
 			"name": "Jumlah Hitung",
 			"explanation": ""
@@ -269,10 +265,6 @@
 			"name": "Waktu Tayang",
 			"explanation": "Lamanya waktu yang telah berlalu sejak Anda mulai memainkan game ini, termasuk saat Anda tidak terhubung ke internet."
 		},
-		"item": {
-			"name": "Item",
-			"explanation": ""
-		},
 		"count-now": {
 			"name": "Hitung Sekarang",
 			"explanation": "Jumlah total item yang saat ini Anda miliki."
@@ -453,6 +445,10 @@
 			"name": "Perkiraan Waktu",
 			"explanation": ""
 		},
+		"count": {
+			"name": "Hitung",
+			"explanation": ""
+		},
 		"completed-count": {
 			"name": "Jumlah yang Telah Selesai",
 			"explanation": ""
@@ -512,6 +508,10 @@
 		"now": {
 			"name": "Sekarang",
 			"explanation": "Jalankan aksi ini seketika alih-alih memasukkannya ke antrean tunggu."
+		},
+		"item": {
+			"name": "Item",
+			"explanation": ""
 		},
 		"items": {
 			"name": "Daftar item",
@@ -768,6 +768,10 @@
 		"receive": {
 			"name": "Terima",
 			"explanation": "Terima hadiah untuk tugas ini."
+		},
+		"received": {
+			"name": "Diterima",
+			"explanation": "Hadiah untuk tugas ini sudah diterima."
 		},
 		"hidden": {
 			"name": "Tersembunyi",

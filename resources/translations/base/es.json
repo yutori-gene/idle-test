@@ -25,10 +25,6 @@
 			"name": "Mínimo",
 			"explanation": ""
 		},
-		"count": {
-			"name": "Contar",
-			"explanation": ""
-		},
 		"purchased-count": {
 			"name": "Número de unidades compradas",
 			"explanation": ""
@@ -269,10 +265,6 @@
 			"name": "Tiempo de juego",
 			"explanation": "El tiempo transcurrido desde que empezaste a jugar a este juego, incluido el tiempo sin conexión."
 		},
-		"item": {
-			"name": "Artículo",
-			"explanation": ""
-		},
 		"count-now": {
 			"name": "Contar ahora",
 			"explanation": "El número total de artículos que tienes actualmente."
@@ -453,6 +445,10 @@
 			"name": "Tiempo estimado",
 			"explanation": ""
 		},
+		"count": {
+			"name": "Contar",
+			"explanation": ""
+		},
 		"completed-count": {
 			"name": "Recuento completado",
 			"explanation": ""
@@ -512,6 +508,10 @@
 		"now": {
 			"name": "Ahora",
 			"explanation": "Ejecuta esta acción de inmediato en lugar de ponerla en la cola de espera."
+		},
+		"item": {
+			"name": "Artículo",
+			"explanation": ""
 		},
 		"items": {
 			"name": "Lista de artículos",
@@ -768,6 +768,10 @@
 		"receive": {
 			"name": "Recibir",
 			"explanation": "Recibe la recompensa de esta tarea."
+		},
+		"received": {
+			"name": "Recibido",
+			"explanation": "La recompensa de esta tarea ya se ha recibido."
 		},
 		"hidden": {
 			"name": "Oculto",

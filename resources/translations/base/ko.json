@@ -25,10 +25,6 @@
 			"name": "최소",
 			"explanation": ""
 		},
-		"count": {
-			"name": "카운트",
-			"explanation": ""
-		},
 		"purchased-count": {
 			"name": "구매 횟수",
 			"explanation": ""
@@ -269,10 +265,6 @@
 			"name": "재생 시간",
 			"explanation": "이 게임을 시작한 후 경과한 시간으로, 오프라인 시간도 포함됩니다."
 		},
-		"item": {
-			"name": "아이템",
-			"explanation": ""
-		},
 		"count-now": {
 			"name": "지금 한번 해보세요",
 			"explanation": "현재 보유하고 있는 아이템의 총 개수입니다."
@@ -453,6 +445,10 @@
 			"name": "예상 시간",
 			"explanation": ""
 		},
+		"count": {
+			"name": "카운트",
+			"explanation": ""
+		},
 		"completed-count": {
 			"name": "완료 건수",
 			"explanation": ""
@@ -512,6 +508,10 @@
 		"now": {
 			"name": "지금",
 			"explanation": "대기열에 넣지 않고 이 액션을 즉시 실행합니다."
+		},
+		"item": {
+			"name": "아이템",
+			"explanation": ""
 		},
 		"items": {
 			"name": "아이템 목록",
@@ -768,6 +768,10 @@
 		"receive": {
 			"name": "받기",
 			"explanation": "이 과제의 보상을 받습니다."
+		},
+		"received": {
+			"name": "수령 완료",
+			"explanation": "이 과제의 보상은 이미 받았습니다."
 		},
 		"hidden": {
 			"name": "숨김",

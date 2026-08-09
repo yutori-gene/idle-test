@@ -769,6 +769,10 @@
 			"name": "Receive",
 			"explanation": "Receive the reward for this task."
 		},
+		"received": {
+			"name": "Received",
+			"explanation": "The reward for this task has already been received."
+		},
 		"hidden": {
 			"name": "Hidden",
 			"explanation": "Once you have confirmed the content, this column will be hidden."

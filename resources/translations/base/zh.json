@@ -25,10 +25,6 @@
 			"name": "最小值",
 			"explanation": ""
 		},
-		"count": {
-			"name": "计数",
-			"explanation": ""
-		},
 		"purchased-count": {
 			"name": "购买次数",
 			"explanation": ""
@@ -269,10 +265,6 @@
 			"name": "播放时长",
 			"explanation": "自您开始玩这款游戏以来所经过的时间，包括离线时间。"
 		},
-		"item": {
-			"name": "物品",
-			"explanation": ""
-		},
 		"count-now": {
 			"name": "立即计数",
 			"explanation": "您目前拥有的物品总数。"
@@ -453,6 +445,10 @@
 			"name": "预计时间",
 			"explanation": ""
 		},
+		"count": {
+			"name": "计数",
+			"explanation": ""
+		},
 		"completed-count": {
 			"name": "计数完成",
 			"explanation": ""
@@ -512,6 +508,10 @@
 		"now": {
 			"name": "立即",
 			"explanation": "不放入等待队列，立即执行此动作。"
+		},
+		"item": {
+			"name": "物品",
+			"explanation": ""
 		},
 		"items": {
 			"name": "物品列表",
@@ -768,6 +768,10 @@
 		"receive": {
 			"name": "领取",
 			"explanation": "领取此任务的奖励。"
+		},
+		"received": {
+			"name": "已领取",
+			"explanation": "此任务的奖励已经领取。"
 		},
 		"hidden": {
 			"name": "隐藏",
