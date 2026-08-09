@@ -25,10 +25,6 @@
 			"name": "Minimum",
 			"explanation": ""
 		},
-		"count": {
-			"name": "Count",
-			"explanation": ""
-		},
 		"purchased-count": {
 			"name": "Purchased Count",
 			"explanation": ""
@@ -183,15 +179,15 @@
 		},
 		"activity": {
 			"name": "Activity",
-			"explanation": ""
+			"explanation": "Lists the actions you can perform, grouped by category."
 		},
 		"inventory": {
 			"name": "Inventory",
-			"explanation": ""
+			"explanation": "Lists the items you own, grouped by category."
 		},
 		"status": {
 			"name": "Status",
-			"explanation": ""
+			"explanation": "Shows the current state, such as the corrections applied to each category."
 		},
 		"world": {
 			"name": "World",
@@ -251,7 +247,7 @@
 		},
 		"statistics": {
 			"name": "Statistics",
-			"explanation": ""
+			"explanation": "Shows the totals recorded through your play."
 		},
 		"coin": {
 			"name": "Coin",
@@ -268,10 +264,6 @@
 		"playing-time": {
 			"name": "Playing Time",
 			"explanation": "The amount of time elapsed since you started playing this game, including offline time."
-		},
-		"item": {
-			"name": "Item",
-			"explanation": ""
 		},
 		"count-now": {
 			"name": "Count Now",
@@ -295,7 +287,7 @@
 		},
 		"debug": {
 			"name": "Debug",
-			"explanation": ""
+			"explanation": "Provides the tools for testing a world. Available only in debug mode."
 		},
 		"acceleration": {
 			"name": "Acceleration",
@@ -395,7 +387,7 @@
 		},
 		"actions": {
 			"name": "Action List",
-			"explanation": ""
+			"explanation": "Lists the actions belonging to this category."
 		},
 		"attribute": {
 			"name": "Attribute",
@@ -453,6 +445,10 @@
 			"name": "Estimated Time",
 			"explanation": ""
 		},
+		"count": {
+			"name": "Count",
+			"explanation": ""
+		},
 		"completed-count": {
 			"name": "Completed Count",
 			"explanation": ""
@@ -483,7 +479,7 @@
 		},
 		"act": {
 			"name": "Act",
-			"explanation": ""
+			"explanation": "Starts and stops this action, and shows how far it has progressed."
 		},
 		"start": {
 			"name": "Start",
@@ -513,9 +509,13 @@
 			"name": "Now",
 			"explanation": "Run this action immediately instead of putting it into the waiting queue."
 		},
+		"item": {
+			"name": "Item",
+			"explanation": ""
+		},
 		"items": {
 			"name": "Item List",
-			"explanation": ""
+			"explanation": "Lists the items belonging to this category."
 		},
 		"equipping": {
 			"name": "Equipping",
@@ -591,7 +591,7 @@
 		},
 		"selling": {
 			"name": "Selling",
-			"explanation": ""
+			"explanation": "Sells the items you own, chosen from a single list."
 		},
 		"kind": {
 			"name": "Kind",
@@ -603,7 +603,7 @@
 		},
 		"trade": {
 			"name": "Trade",
-			"explanation": ""
+			"explanation": "Buys and sells this item."
 		},
 		"trade-failed": {
 			"name": "Trade Failed",
@@ -647,7 +647,7 @@
 		},
 		"properties": {
 			"name": "Property List",
-			"explanation": ""
+			"explanation": "Lists the properties applied to this category."
 		},
 		"attack": {
 			"name": "Attack",
@@ -779,11 +779,11 @@
 		},
 		"tasks": {
 			"name": "Tasks",
-			"explanation": ""
+			"explanation": "Lists the tasks set for this category."
 		},
 		"missions": {
 			"name": "Missions",
-			"explanation": ""
+			"explanation": "Lists the tasks of every category and whether each one has been achieved."
 		},
 		"language-en": {
 			"name": "English",
@@ -831,11 +831,11 @@
 		},
 		"config": {
 			"name": "Config",
-			"explanation": ""
+			"explanation": "Changes the settings of this game and manages your saved data."
 		},
 		"language": {
 			"name": "Language",
-			"explanation": ""
+			"explanation": "Changes the language used for the display."
 		},
 		"selected-language": {
 			"name": "Selected Language",
