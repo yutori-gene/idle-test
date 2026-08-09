@@ -369,6 +369,14 @@
 			"name": "Level",
 			"explanation": ""
 		},
+		"level-up": {
+			"name": "Naik level",
+			"explanation": ""
+		},
+		"category-unlocked": {
+			"name": "Kategori terbuka",
+			"explanation": ""
+		},
 		"situation": {
 			"name": "Situasi",
 			"explanation": ""
@@ -387,6 +395,10 @@
 		},
 		"actions": {
 			"name": "Daftar aksi",
+			"explanation": ""
+		},
+		"action-unlocked": {
+			"name": "Aksi terbuka",
 			"explanation": ""
 		},
 		"attribute": {
@@ -769,16 +781,16 @@
 			"name": "Terima",
 			"explanation": "Terima hadiah untuk tugas ini."
 		},
-		"received": {
-			"name": "Diterima",
-			"explanation": "Hadiah untuk tugas ini sudah diterima."
-		},
 		"hidden": {
 			"name": "Tersembunyi",
 			"explanation": "Setelah kamu memastikan isinya, kolom ini akan disembunyikan."
 		},
 		"task": {
 			"name": "Tugas",
+			"explanation": ""
+		},
+		"task-completed": {
+			"name": "Tugas selesai",
 			"explanation": ""
 		},
 		"tasks": {

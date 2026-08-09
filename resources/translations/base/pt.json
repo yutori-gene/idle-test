@@ -369,6 +369,14 @@
 			"name": "Nível",
 			"explanation": ""
 		},
+		"level-up": {
+			"name": "Subida de nível",
+			"explanation": ""
+		},
+		"category-unlocked": {
+			"name": "Categoria desbloqueada",
+			"explanation": ""
+		},
 		"situation": {
 			"name": "Situação",
 			"explanation": ""
@@ -387,6 +395,10 @@
 		},
 		"actions": {
 			"name": "Lista de ações",
+			"explanation": ""
+		},
+		"action-unlocked": {
+			"name": "Ação desbloqueada",
 			"explanation": ""
 		},
 		"attribute": {
@@ -769,16 +781,16 @@
 			"name": "Receber",
 			"explanation": "Receba a recompensa desta tarefa."
 		},
-		"received": {
-			"name": "Recebido",
-			"explanation": "A recompensa desta tarefa já foi recebida."
-		},
 		"hidden": {
 			"name": "Oculto",
 			"explanation": "Depois de confirmar o conteúdo, esta coluna ficará oculta."
 		},
 		"task": {
 			"name": "Tarefa",
+			"explanation": ""
+		},
+		"task-completed": {
+			"name": "Tarefa concluída",
 			"explanation": ""
 		},
 		"tasks": {

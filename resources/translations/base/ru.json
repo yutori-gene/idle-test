@@ -369,6 +369,14 @@
 			"name": "Уровень",
 			"explanation": ""
 		},
+		"level-up": {
+			"name": "Повышение уровня",
+			"explanation": ""
+		},
+		"category-unlocked": {
+			"name": "Категория разблокирована",
+			"explanation": ""
+		},
 		"situation": {
 			"name": "Ситуация",
 			"explanation": ""
@@ -387,6 +395,10 @@
 		},
 		"actions": {
 			"name": "Список действий",
+			"explanation": ""
+		},
+		"action-unlocked": {
+			"name": "Действие разблокировано",
 			"explanation": ""
 		},
 		"attribute": {
@@ -769,16 +781,16 @@
 			"name": "Получить",
 			"explanation": "Получите награду за эту задачу."
 		},
-		"received": {
-			"name": "Получено",
-			"explanation": "Награда за эту задачу уже получена."
-		},
 		"hidden": {
 			"name": "Скрыто",
 			"explanation": "После подтверждения содержимого эта колонка будет скрыта."
 		},
 		"task": {
 			"name": "Задача",
+			"explanation": ""
+		},
+		"task-completed": {
+			"name": "Задача выполнена",
 			"explanation": ""
 		},
 		"tasks": {

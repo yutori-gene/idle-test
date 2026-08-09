@@ -369,6 +369,14 @@
 			"name": "等级",
 			"explanation": ""
 		},
+		"level-up": {
+			"name": "等级提升",
+			"explanation": ""
+		},
+		"category-unlocked": {
+			"name": "类别解锁",
+			"explanation": ""
+		},
 		"situation": {
 			"name": "情况",
 			"explanation": ""
@@ -387,6 +395,10 @@
 		},
 		"actions": {
 			"name": "动作列表",
+			"explanation": ""
+		},
+		"action-unlocked": {
+			"name": "动作解锁",
 			"explanation": ""
 		},
 		"attribute": {
@@ -769,16 +781,16 @@
 			"name": "领取",
 			"explanation": "领取此任务的奖励。"
 		},
-		"received": {
-			"name": "已领取",
-			"explanation": "此任务的奖励已经领取。"
-		},
 		"hidden": {
 			"name": "隐藏",
 			"explanation": "确认内容后，此栏将被隐藏。"
 		},
 		"task": {
 			"name": "任务",
+			"explanation": ""
+		},
+		"task-completed": {
+			"name": "任务完成",
 			"explanation": ""
 		},
 		"tasks": {

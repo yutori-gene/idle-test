@@ -369,6 +369,14 @@
 			"name": "Level",
 			"explanation": ""
 		},
+		"level-up": {
+			"name": "Level Up",
+			"explanation": ""
+		},
+		"category-unlocked": {
+			"name": "Category Unlocked",
+			"explanation": ""
+		},
 		"situation": {
 			"name": "Situation",
 			"explanation": ""
@@ -388,6 +396,10 @@
 		"actions": {
 			"name": "Action List",
 			"explanation": "Lists the actions belonging to this category."
+		},
+		"action-unlocked": {
+			"name": "Action Unlocked",
+			"explanation": ""
 		},
 		"attribute": {
 			"name": "Attribute",
@@ -769,16 +781,16 @@
 			"name": "Receive",
 			"explanation": "Receive the reward for this task."
 		},
-		"received": {
-			"name": "Received",
-			"explanation": "The reward for this task has already been received."
-		},
 		"hidden": {
 			"name": "Hidden",
 			"explanation": "Once you have confirmed the content, this column will be hidden."
 		},
 		"task": {
 			"name": "Task",
+			"explanation": ""
+		},
+		"task-completed": {
+			"name": "Task Completed",
 			"explanation": ""
 		},
 		"tasks": {
