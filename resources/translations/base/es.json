@@ -225,12 +225,8 @@
 			"name": "Tiempo estimado de reproducción",
 			"explanation": "El tiempo que se tarda en completar este mundo, según la estimación del autor"
 		},
-		"console": {
-			"name": "Consola",
-			"explanation": "Este juego funciona con el sistema de consola RPG inactivo. Es gratuito y de acceso público, por lo que cualquiera puede crear juegos."
-		},
-		"general": {
-			"name": "General",
+		"detail": {
+			"name": "Detalles",
 			"explanation": ""
 		},
 		"default-language": {
@@ -248,6 +244,10 @@
 		"level-common-ratio": {
 			"name": "Nivel: Relación común",
 			"explanation": "¿Cuántos puntos de experiencia se necesitan para pasar al siguiente nivel cada vez que subes de nivel?"
+		},
+		"console": {
+			"name": "Consola",
+			"explanation": "Este juego funciona con el sistema de consola RPG inactivo. Es gratuito y de acceso público, por lo que cualquiera puede crear juegos."
 		},
 		"statistics": {
 			"name": "Estadísticas",
@@ -936,10 +936,6 @@
 		"hint-statistics-progress": {
 			"name": "Hint Statistics Progress",
 			"explanation": "Puedes consultar el progreso del juego hasta ahora."
-		},
-		"hint-general-difficulty": {
-			"name": "Hint General Difficulty",
-			"explanation": "Puedes consultar el nivel de dificultad y las configuraciones propias de este mundo."
 		},
 		"hint-overview-world": {
 			"name": "Hint Overview World",

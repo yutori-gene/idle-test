@@ -225,12 +225,8 @@
 			"name": "Tempo estimado de exibição",
 			"explanation": "O tempo estimado pelo autor para concluir este mundo"
 		},
-		"console": {
-			"name": "Console",
-			"explanation": "Este jogo está disponível no sistema de console Idle RPG. É gratuito e aberto ao público; portanto, qualquer pessoa pode criar jogos."
-		},
-		"general": {
-			"name": "Geral",
+		"detail": {
+			"name": "Detalhes",
 			"explanation": ""
 		},
 		"default-language": {
@@ -248,6 +244,10 @@
 		"level-common-ratio": {
 			"name": "Nível Proporção comum",
 			"explanation": "Quantos pontos de experiência são necessários para chegar ao próximo nível cada vez que você sobe de nível?"
+		},
+		"console": {
+			"name": "Console",
+			"explanation": "Este jogo está disponível no sistema de console Idle RPG. É gratuito e aberto ao público; portanto, qualquer pessoa pode criar jogos."
 		},
 		"statistics": {
 			"name": "Estatísticas",
@@ -936,10 +936,6 @@
 		"hint-statistics-progress": {
 			"name": "Hint Statistics Progress",
 			"explanation": "Você pode verificar o progresso do jogo até agora."
-		},
-		"hint-general-difficulty": {
-			"name": "Hint General Difficulty",
-			"explanation": "Você pode verificar o nível de dificuldade e as configurações próprias deste mundo."
 		},
 		"hint-overview-world": {
 			"name": "Hint Overview World",

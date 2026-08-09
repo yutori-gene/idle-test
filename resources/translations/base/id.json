@@ -225,12 +225,8 @@
 			"name": "Perkiraan Durasi Pemutaran",
 			"explanation": "Perkiraan waktu yang dibutuhkan untuk menyelesaikan dunia ini menurut penulis"
 		},
-		"console": {
-			"name": "Konsol",
-			"explanation": "Game ini berjalan di sistem konsol Idle RPG. Sistem ini gratis dan terbuka untuk umum, sehingga siapa pun dapat membuat game."
-		},
-		"general": {
-			"name": "Umum",
+		"detail": {
+			"name": "Detail",
 			"explanation": ""
 		},
 		"default-language": {
@@ -248,6 +244,10 @@
 		"level-common-ratio": {
 			"name": "Level Rasio Tingkat Umum",
 			"explanation": "Berapa banyak poin pengalaman yang dibutuhkan untuk naik ke level berikutnya setiap kali kamu naik level?"
+		},
+		"console": {
+			"name": "Konsol",
+			"explanation": "Game ini berjalan di sistem konsol Idle RPG. Sistem ini gratis dan terbuka untuk umum, sehingga siapa pun dapat membuat game."
 		},
 		"statistics": {
 			"name": "Statistik",
@@ -936,10 +936,6 @@
 		"hint-statistics-progress": {
 			"name": "Hint Statistics Progress",
 			"explanation": "Kamu dapat memeriksa perkembangan permainan sejauh ini."
-		},
-		"hint-general-difficulty": {
-			"name": "Hint General Difficulty",
-			"explanation": "Kamu dapat memeriksa tingkat kesulitan dan konfigurasi khas dunia ini."
 		},
 		"hint-overview-world": {
 			"name": "Hint Overview World",

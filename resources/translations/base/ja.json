@@ -225,12 +225,8 @@
 			"name": "推定再生時間",
 			"explanation": "作者による、このワールドをクリアするのにかかる時間の推定値"
 		},
-		"console": {
-			"name": "コンソール",
-			"explanation": "このゲームは「Idle RPG」コンソールシステム上で動作します。無料で一般に公開されているため、誰でもゲームを作成することができます。"
-		},
-		"general": {
-			"name": "一般",
+		"detail": {
+			"name": "詳細",
 			"explanation": ""
 		},
 		"default-language": {
@@ -248,6 +244,10 @@
 		"level-common-ratio": {
 			"name": "レベル　共通比率",
 			"explanation": "レベルアップするたびに、次のレベルに到達するにはどれくらいの経験値が必要ですか。"
+		},
+		"console": {
+			"name": "コンソール",
+			"explanation": "このゲームは「Idle RPG」コンソールシステム上で動作します。無料で一般に公開されているため、誰でもゲームを作成することができます。"
 		},
 		"statistics": {
 			"name": "統計",
@@ -936,10 +936,6 @@
 		"hint-statistics-progress": {
 			"name": "Hint Statistics Progress",
 			"explanation": "これまでのゲームの進行状況を確認できます。"
-		},
-		"hint-general-difficulty": {
-			"name": "Hint General Difficulty",
-			"explanation": "このワールドの難易度や固有の設定を確認できます。"
 		},
 		"hint-overview-world": {
 			"name": "Hint Overview World",

@@ -225,12 +225,8 @@
 			"name": "Estimated Playing Time",
 			"explanation": "The time it takes to complete this world as estimated by the author"
 		},
-		"console": {
-			"name": "Console",
-			"explanation": "This game runs on the Idle RPG console system. It is free and open to the public, so anyone can create games."
-		},
-		"general": {
-			"name": "General",
+		"detail": {
+			"name": "Detail",
 			"explanation": ""
 		},
 		"default-language": {
@@ -248,6 +244,10 @@
 		"level-common-ratio": {
 			"name": "Level Common Ratio",
 			"explanation": "How much experience points are needed to reach the next level each time you gain a level."
+		},
+		"console": {
+			"name": "Console",
+			"explanation": "This game runs on the Idle RPG console system. It is free and open to the public, so anyone can create games."
 		},
 		"statistics": {
 			"name": "Statistics",
@@ -936,10 +936,6 @@
 		"hint-statistics-progress": {
 			"name": "Hint Statistics Progress",
 			"explanation": "You can check the progress of the game so far."
-		},
-		"hint-general-difficulty": {
-			"name": "Hint General Difficulty",
-			"explanation": "You can check the difficulty level and unique configurations for this world."
 		},
 		"hint-overview-world": {
 			"name": "Hint Overview World",

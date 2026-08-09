@@ -55,14 +55,6 @@ export const statistics: Markdown = {
 	},
 };
 
-export const general: Markdown = {
-	title: "umum",
-	summary: "Konfigurasi dunia",
-	options: {
-		preset: "general",
-	},
-};
-
 export const overview: Markdown = {
 	title: "ringkasan",
 	summary: "Tentang game ini.",
@@ -74,7 +66,7 @@ export const overview: Markdown = {
 export const world: Markdown = {
 	title: "dunia",
 	summary: "Anda dapat mengoperasikan dan memeriksa kontrol dan konfigurasi umum game,",
-	children: { overview: overview, general: general, statistics: statistics, config: config, debug: debug },
+	children: { overview: overview, statistics: statistics, config: config, debug: debug },
 	options: {
 		preset: "world",
 		label: "world",

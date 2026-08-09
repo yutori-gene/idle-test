@@ -225,12 +225,8 @@
 			"name": "Durée estimée de lecture",
 			"explanation": "Temps estimé par l'auteur pour achever la création de cet univers"
 		},
-		"console": {
-			"name": "Console",
-			"explanation": "Ce jeu fonctionne sur la console Idle RPG. Celle-ci est gratuite et accessible à tous, ce qui permet à n'importe qui de créer des jeux."
-		},
-		"general": {
-			"name": "Généralités",
+		"detail": {
+			"name": "Détails",
 			"explanation": ""
 		},
 		"default-language": {
@@ -248,6 +244,10 @@
 		"level-common-ratio": {
 			"name": "Niveau Rapport courant",
 			"explanation": "Combien de points d'expérience faut-il pour passer au niveau suivant à chaque fois que l'on gagne un niveau ?"
+		},
+		"console": {
+			"name": "Console",
+			"explanation": "Ce jeu fonctionne sur la console Idle RPG. Celle-ci est gratuite et accessible à tous, ce qui permet à n'importe qui de créer des jeux."
 		},
 		"statistics": {
 			"name": "Statistiques",
@@ -936,10 +936,6 @@
 		"hint-statistics-progress": {
 			"name": "Hint Statistics Progress",
 			"explanation": "Vous pouvez consulter la progression du jeu jusqu'à présent."
-		},
-		"hint-general-difficulty": {
-			"name": "Hint General Difficulty",
-			"explanation": "Vous pouvez consulter le niveau de difficulté et les réglages propres à ce monde."
 		},
 		"hint-overview-world": {
 			"name": "Hint Overview World",

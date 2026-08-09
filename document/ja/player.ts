@@ -55,14 +55,6 @@ export const statistics: Markdown = {
 	},
 };
 
-export const general: Markdown = {
-	title: "一般",
-	summary: "ワールド固有の設定",
-	options: {
-		preset: "general",
-	},
-};
-
 export const overview: Markdown = {
 	title: "概要",
 	summary: "このゲームについて",
@@ -74,7 +66,7 @@ export const overview: Markdown = {
 export const world: Markdown = {
 	title: "ワールド",
 	summary: "ゲーム全般の制御や設定の操作と確認ができます、",
-	children: { overview: overview, general: general, statistics: statistics, config: config, debug: debug },
+	children: { overview: overview, statistics: statistics, config: config, debug: debug },
 	options: {
 		preset: "world",
 		label: "world",

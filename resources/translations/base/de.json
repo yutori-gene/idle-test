@@ -225,12 +225,8 @@
 			"name": "Geschätzte Zeit",
 			"explanation": "Die vom Autor geschätzte Zeit, die benötigt wird, um diese Welt abzuschließen"
 		},
-		"console": {
-			"name": "Konsole",
-			"explanation": "Dieses Spiel läuft auf der RPG-Konsole im Leerlauf. Sie ist kostenlos und öffentlich zugänglich, sodass jeder Spiele erstellen kann."
-		},
-		"general": {
-			"name": "Allgemein",
+		"detail": {
+			"name": "Details",
 			"explanation": ""
 		},
 		"default-language": {
@@ -248,6 +244,10 @@
 		"level-common-ratio": {
 			"name": "Level Häufigkeit Verhältnis",
 			"explanation": "Wie viele Erfahrungspunkte sind erforderlich, um bei jedem Levelaufstieg das nächste Level zu erreichen?"
+		},
+		"console": {
+			"name": "Konsole",
+			"explanation": "Dieses Spiel läuft auf der RPG-Konsole im Leerlauf. Sie ist kostenlos und öffentlich zugänglich, sodass jeder Spiele erstellen kann."
 		},
 		"statistics": {
 			"name": "Statistiken",
@@ -936,10 +936,6 @@
 		"hint-statistics-progress": {
 			"name": "Hint Statistics Progress",
 			"explanation": "Du kannst den bisherigen Spielfortschritt einsehen."
-		},
-		"hint-general-difficulty": {
-			"name": "Hint General Difficulty",
-			"explanation": "Du kannst den Schwierigkeitsgrad und die besonderen Einstellungen dieser Welt einsehen."
 		},
 		"hint-overview-world": {
 			"name": "Hint Overview World",

@@ -55,14 +55,6 @@ export const statistics: Markdown = {
 	},
 };
 
-export const general: Markdown = {
-	title: "一般",
-	summary: "世界配置",
-	options: {
-		preset: "general",
-	},
-};
-
 export const overview: Markdown = {
 	title: "概览",
 	summary: "关于这个游戏",
@@ -74,7 +66,7 @@ export const overview: Markdown = {
 export const world: Markdown = {
 	title: "世界",
 	summary: "您可以操作和检查游戏的一般控制和配置、",
-	children: { overview: overview, general: general, statistics: statistics, config: config, debug: debug },
+	children: { overview: overview, statistics: statistics, config: config, debug: debug },
 	options: {
 		preset: "world",
 		label: "world",
