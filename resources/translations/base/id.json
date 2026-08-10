@@ -781,6 +781,10 @@
 			"name": "Terima",
 			"explanation": "Terima hadiah untuk tugas ini."
 		},
+		"received": {
+			"name": "Diterima",
+			"explanation": "Hadiah untuk tugas ini sudah diterima."
+		},
 		"hidden": {
 			"name": "Tersembunyi",
 			"explanation": "Setelah kamu memastikan isinya, kolom ini akan disembunyikan."

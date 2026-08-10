@@ -781,6 +781,10 @@
 			"name": "受け取る",
 			"explanation": "このタスクの報酬を受け取ります。"
 		},
+		"received": {
+			"name": "受け取り済",
+			"explanation": "このタスクの報酬は受け取り済みです。"
+		},
 		"hidden": {
 			"name": "非表示",
 			"explanation": "内容を確認すると、このカラムは非表示になります。"

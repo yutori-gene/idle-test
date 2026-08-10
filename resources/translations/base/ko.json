@@ -781,6 +781,10 @@
 			"name": "받기",
 			"explanation": "이 과제의 보상을 받습니다."
 		},
+		"received": {
+			"name": "수령 완료",
+			"explanation": "이 과제의 보상은 이미 받았습니다."
+		},
 		"hidden": {
 			"name": "숨김",
 			"explanation": "내용을 확인하면 이 칼럼은 숨겨집니다."

@@ -781,6 +781,10 @@
 			"name": "Recevoir",
 			"explanation": "Recevez la récompense de cette tâche."
 		},
+		"received": {
+			"name": "Reçu",
+			"explanation": "La récompense de cette tâche a déjà été reçue."
+		},
 		"hidden": {
 			"name": "Masqué",
 			"explanation": "Une fois le contenu confirmé, cette colonne sera masquée."

@@ -781,6 +781,10 @@
 			"name": "领取",
 			"explanation": "领取此任务的奖励。"
 		},
+		"received": {
+			"name": "已领取",
+			"explanation": "此任务的奖励已经领取。"
+		},
 		"hidden": {
 			"name": "隐藏",
 			"explanation": "确认内容后，此栏将被隐藏。"

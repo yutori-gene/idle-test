@@ -781,6 +781,10 @@
 			"name": "Recibir",
 			"explanation": "Recibe la recompensa de esta tarea."
 		},
+		"received": {
+			"name": "Recibido",
+			"explanation": "La recompensa de esta tarea ya se ha recibido."
+		},
 		"hidden": {
 			"name": "Oculto",
 			"explanation": "Una vez confirmado el contenido, esta columna se ocultará."

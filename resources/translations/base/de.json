@@ -781,6 +781,10 @@
 			"name": "Erhalten",
 			"explanation": "Erhalte die Belohnung für diese Aufgabe."
 		},
+		"received": {
+			"name": "Bereits erhalten",
+			"explanation": "Die Belohnung für diese Aufgabe wurde bereits erhalten."
+		},
 		"hidden": {
 			"name": "Ausgeblendet",
 			"explanation": "Sobald du den Inhalt bestätigt hast, wird diese Spalte ausgeblendet."
