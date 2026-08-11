@@ -301,6 +301,10 @@
 			"name": "Beschleunigen",
 			"explanation": ""
 		},
+		"skip": {
+			"name": "1 Stunde überspringen",
+			"explanation": "Bringt das Spiel auf einmal um eine Stunde voran. Der Fortschritt wird genauso verarbeitet wie während Ihrer Abwesenheit, und die Ergebnisse werden als Benachrichtigungen angezeigt."
+		},
 		"adjustment": {
 			"name": "Anpassung",
 			"explanation": "Erhöht oder verringert die Anzahl der besessenen Gegenstände oder die Kategorieebene."

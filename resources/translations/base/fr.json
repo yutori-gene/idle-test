@@ -301,6 +301,10 @@
 			"name": "Accélérer",
 			"explanation": ""
 		},
+		"skip": {
+			"name": "Passer 1 heure",
+			"explanation": "Fait avancer le jeu d'une heure d'un seul coup. La progression est traitée de la même manière que pendant votre absence, et les résultats sont affichés sous forme de notifications."
+		},
 		"adjustment": {
 			"name": "Ajustement",
 			"explanation": "Augmente ou diminue le nombre d'objets possédés ou le niveau de la catégorie."

@@ -301,6 +301,10 @@
 			"name": "Acelerar",
 			"explanation": ""
 		},
+		"skip": {
+			"name": "Saltar 1 hora",
+			"explanation": "Avanza el juego una hora de una sola vez. El progreso se procesa de la misma manera que mientras estás ausente, y los resultados se muestran como notificaciones."
+		},
 		"adjustment": {
 			"name": "Ajustar",
 			"explanation": "Aumenta o reduce el número de artículos que se tienen o el nivel de las categorías."

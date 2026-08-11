@@ -301,6 +301,10 @@
 			"name": "Accelerate",
 			"explanation": ""
 		},
+		"skip": {
+			"name": "Skip 1 Hour",
+			"explanation": "Advances the game by one hour at once. The progress is processed in the same way as while you are away, and the results are shown as notifications."
+		},
 		"adjustment": {
 			"name": "Adjustment",
 			"explanation": "Increases or decreases the number of items owned or the category level."

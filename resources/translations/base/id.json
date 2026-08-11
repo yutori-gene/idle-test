@@ -301,6 +301,10 @@
 			"name": "Mempercepat",
 			"explanation": ""
 		},
+		"skip": {
+			"name": "Lewati 1 Jam",
+			"explanation": "Memajukan permainan satu jam sekaligus. Kemajuan diproses dengan cara yang sama seperti saat Anda sedang pergi, dan hasilnya ditampilkan sebagai notifikasi."
+		},
 		"adjustment": {
 			"name": "Sesuaikan",
 			"explanation": "Meningkatkan atau mengurangi jumlah item yang dimiliki atau level kategori."
