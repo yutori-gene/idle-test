@@ -251,7 +251,7 @@
 		},
 		"coin": {
 			"name": "Koin",
-			"explanation": ""
+			"explanation": "Item yang berfungsi sebagai mata uang untuk membeli dan menjual."
 		},
 		"amount-earned": {
 			"name": "Jumlah yang Diperoleh",
@@ -536,6 +536,22 @@
 		"items": {
 			"name": "Daftar item",
 			"explanation": ""
+		},
+		"item-type": {
+			"name": "Jenis",
+			"explanation": "Jenis item ini."
+		},
+		"normal": {
+			"name": "Normal",
+			"explanation": "Item biasa yang dapat Anda miliki, kenakan, dan perdagangkan."
+		},
+		"capacity": {
+			"name": "Kapasitas",
+			"explanation": "Item khusus yang menunjukkan berapa banyak jenis item yang dapat Anda miliki secara bersamaan."
+		},
+		"queue": {
+			"name": "Antrian",
+			"explanation": "Item khusus yang menunjukkan berapa banyak aksi yang dapat Anda pesan untuk dijalankan secara berurutan."
 		},
 		"equipping": {
 			"name": "Melengkapi",

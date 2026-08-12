@@ -251,7 +251,7 @@
 		},
 		"coin": {
 			"name": "Moeda",
-			"explanation": ""
+			"explanation": "Um item que serve como moeda para compra e venda."
 		},
 		"amount-earned": {
 			"name": "Valor atribuído",
@@ -536,6 +536,22 @@
 		"items": {
 			"name": "Lista de itens",
 			"explanation": ""
+		},
+		"item-type": {
+			"name": "Tipo",
+			"explanation": "O tipo deste item."
+		},
+		"normal": {
+			"name": "Normal",
+			"explanation": "Um item comum que você pode possuir, equipar e comercializar."
+		},
+		"capacity": {
+			"name": "Capacidade",
+			"explanation": "Um item especial que representa quantos tipos de itens você pode possuir ao mesmo tempo."
+		},
+		"queue": {
+			"name": "Fila",
+			"explanation": "Um item especial que representa quantas ações você pode reservar para execução sequencial."
 		},
 		"equipping": {
 			"name": "Equipando",

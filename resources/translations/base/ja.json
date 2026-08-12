@@ -251,7 +251,7 @@
 		},
 		"coin": {
 			"name": "コイン",
-			"explanation": ""
+			"explanation": "売買に使う通貨としてのアイテムです。"
 		},
 		"amount-earned": {
 			"name": "獲得額",
@@ -536,6 +536,22 @@
 		"items": {
 			"name": "アイテム一覧",
 			"explanation": ""
+		},
+		"item-type": {
+			"name": "タイプ",
+			"explanation": "このアイテムのタイプです。"
+		},
+		"normal": {
+			"name": "通常",
+			"explanation": "所有・装備・取引ができる通常のアイテムです。"
+		},
+		"capacity": {
+			"name": "容量",
+			"explanation": "同時に所有できるアイテムの種類数を表す特別なアイテムです。"
+		},
+		"queue": {
+			"name": "予約キュー",
+			"explanation": "順次実行するために予約できるアクションの数を表す特別なアイテムです。"
 		},
 		"equipping": {
 			"name": "装備中",

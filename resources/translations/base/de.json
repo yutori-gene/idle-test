@@ -251,7 +251,7 @@
 		},
 		"coin": {
 			"name": "Münze",
-			"explanation": ""
+			"explanation": "Ein Gegenstand, der als Währung für Kauf und Verkauf dient."
 		},
 		"amount-earned": {
 			"name": "Verdienst",
@@ -536,6 +536,22 @@
 		"items": {
 			"name": "Gegenstandsliste",
 			"explanation": ""
+		},
+		"item-type": {
+			"name": "Typ",
+			"explanation": "Der Typ dieses Gegenstands."
+		},
+		"normal": {
+			"name": "Normal",
+			"explanation": "Ein gewöhnlicher Gegenstand, den Sie besitzen, ausrüsten und handeln können."
+		},
+		"capacity": {
+			"name": "Kapazität",
+			"explanation": "Ein besonderer Gegenstand, der angibt, wie viele Arten von Gegenständen Sie gleichzeitig besitzen können."
+		},
+		"queue": {
+			"name": "Warteschlange",
+			"explanation": "Ein besonderer Gegenstand, der angibt, wie viele Aktionen Sie für die sequenzielle Ausführung reservieren können."
 		},
 		"equipping": {
 			"name": "Ausrüstung",

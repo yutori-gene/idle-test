@@ -251,7 +251,7 @@
 		},
 		"coin": {
 			"name": "硬币",
-			"explanation": ""
+			"explanation": "作为买卖货币使用的物品。"
 		},
 		"amount-earned": {
 			"name": "应得金额",
@@ -536,6 +536,22 @@
 		"items": {
 			"name": "物品列表",
 			"explanation": ""
+		},
+		"item-type": {
+			"name": "类型",
+			"explanation": "此物品的类型。"
+		},
+		"normal": {
+			"name": "普通",
+			"explanation": "可以拥有、装备和交易的普通物品。"
+		},
+		"capacity": {
+			"name": "容量",
+			"explanation": "表示可同时拥有的物品种类数量的特殊物品。"
+		},
+		"queue": {
+			"name": "队列",
+			"explanation": "表示可以预订多少个动作以便依次执行的特殊物品。"
 		},
 		"equipping": {
 			"name": "正在装备中",

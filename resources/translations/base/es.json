@@ -251,7 +251,7 @@
 		},
 		"coin": {
 			"name": "Moneda",
-			"explanation": ""
+			"explanation": "Un artículo que sirve como moneda para comprar y vender."
 		},
 		"amount-earned": {
 			"name": "Importe percibido",
@@ -536,6 +536,22 @@
 		"items": {
 			"name": "Lista de artículos",
 			"explanation": ""
+		},
+		"item-type": {
+			"name": "Tipo",
+			"explanation": "El tipo de este artículo."
+		},
+		"normal": {
+			"name": "Normal",
+			"explanation": "Un artículo corriente que puedes poseer, equipar y comerciar."
+		},
+		"capacity": {
+			"name": "Capacidad",
+			"explanation": "Un artículo especial que representa cuántos tipos de artículos puedes poseer al mismo tiempo."
+		},
+		"queue": {
+			"name": "Cola",
+			"explanation": "Un artículo especial que representa cuántas acciones puedes reservar para su ejecución secuencial."
 		},
 		"equipping": {
 			"name": "Equipamiento",

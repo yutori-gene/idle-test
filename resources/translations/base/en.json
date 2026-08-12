@@ -251,7 +251,7 @@
 		},
 		"coin": {
 			"name": "Coin",
-			"explanation": ""
+			"explanation": "An item that serves as the currency for buying and selling."
 		},
 		"amount-earned": {
 			"name": "Amount Earned",
@@ -536,6 +536,22 @@
 		"items": {
 			"name": "Item List",
 			"explanation": "Lists the items belonging to this category."
+		},
+		"item-type": {
+			"name": "Type",
+			"explanation": "The type of this item."
+		},
+		"normal": {
+			"name": "Normal",
+			"explanation": "An ordinary item that you can own, equip, and trade."
+		},
+		"capacity": {
+			"name": "Capacity",
+			"explanation": "A special item that represents how many kinds of items you can own at the same time."
+		},
+		"queue": {
+			"name": "Queue",
+			"explanation": "A special item that represents how many actions you can reserve for sequential execution."
 		},
 		"equipping": {
 			"name": "Equipping",

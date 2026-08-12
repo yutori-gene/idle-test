@@ -251,7 +251,7 @@
 		},
 		"coin": {
 			"name": "코인",
-			"explanation": ""
+			"explanation": "사고팔 때 화폐로 사용되는 아이템입니다."
 		},
 		"amount-earned": {
 			"name": "수령 금액",
@@ -536,6 +536,22 @@
 		"items": {
 			"name": "아이템 목록",
 			"explanation": ""
+		},
+		"item-type": {
+			"name": "유형",
+			"explanation": "이 아이템의 유형입니다."
+		},
+		"normal": {
+			"name": "일반",
+			"explanation": "소유, 장비, 거래가 가능한 일반 아이템입니다."
+		},
+		"capacity": {
+			"name": "용량",
+			"explanation": "동시에 소유할 수 있는 아이템 종류의 수를 나타내는 특별한 아이템입니다."
+		},
+		"queue": {
+			"name": "대기열",
+			"explanation": "순차적으로 실행하기 위해 예약할 수 있는 액션의 수를 나타내는 특별한 아이템입니다."
 		},
 		"equipping": {
 			"name": "장비 장착 중",

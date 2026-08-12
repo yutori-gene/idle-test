@@ -251,7 +251,7 @@
 		},
 		"coin": {
 			"name": "Pièce de monnaie",
-			"explanation": ""
+			"explanation": "Un objet qui sert de monnaie pour les achats et les ventes."
 		},
 		"amount-earned": {
 			"name": "Montant perçu",
@@ -536,6 +536,22 @@
 		"items": {
 			"name": "Liste des objets",
 			"explanation": ""
+		},
+		"item-type": {
+			"name": "Type",
+			"explanation": "Le type de cet objet."
+		},
+		"normal": {
+			"name": "Normal",
+			"explanation": "Un objet ordinaire que vous pouvez posséder, équiper et échanger."
+		},
+		"capacity": {
+			"name": "Capacité",
+			"explanation": "Un objet spécial qui représente le nombre de types d'objets que vous pouvez posséder en même temps."
+		},
+		"queue": {
+			"name": "File d'attente",
+			"explanation": "Un objet spécial qui représente le nombre d'actions que vous pouvez réserver pour une exécution séquentielle."
 		},
 		"equipping": {
 			"name": "Équipement",
