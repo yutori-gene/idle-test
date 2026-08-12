@@ -302,6 +302,10 @@
 			"explanation": ""
 		},
 		"skip": {
+			"name": "Saltar",
+			"explanation": "Avanza el tiempo del juego de una sola vez, sin esperar."
+		},
+		"skip-hour": {
 			"name": "Saltar 1 hora",
 			"explanation": "Avanza el juego una hora de una sola vez. El progreso se procesa de la misma manera que mientras estás ausente, y los resultados se muestran como notificaciones."
 		},
@@ -857,6 +861,10 @@
 			"name": "Configuración",
 			"explanation": ""
 		},
+		"display": {
+			"name": "Visualización",
+			"explanation": "Cambia la forma en que se muestra el juego en la pantalla."
+		},
 		"language": {
 			"name": "Idioma",
 			"explanation": ""
@@ -885,9 +893,17 @@
 			"name": "Navegación",
 			"explanation": "Muestra botones para desplazarse entre columnas. También puedes deslizar el dedo para desplazarte entre columnas sin que aparezcan dichos botones."
 		},
+		"performance": {
+			"name": "Rendimiento",
+			"explanation": "Ajusta cómo funciona la consola en tu dispositivo."
+		},
 		"performing-highly": {
 			"name": "Excelente rendimiento",
 			"explanation": "Aumenta la frecuencia de actualización. Si la operación es pesada, recomendamos desactivarla. No afecta al tiempo de ejecución de cada acción."
+		},
+		"data": {
+			"name": "Datos",
+			"explanation": "Guarda, carga y borra los datos de progreso de este mundo."
 		},
 		"export-game": {
 			"name": "Exportar juego",
@@ -917,9 +933,9 @@
 			"name": "Restablecer el modo de depuración",
 			"explanation": "En el modo de depuración, no es necesario introducir nada en el campo de confirmación."
 		},
-		"force-restart": {
-			"name": "Reinicio forzado",
-			"explanation": ""
+		"restart": {
+			"name": "Reiniciar",
+			"explanation": "Vuelve a cargar la consola. Úsalo para comprobar si la compilación ha sido reemplazada."
 		},
 		"hint-language-switching": {
 			"name": "Hint Language Switching",

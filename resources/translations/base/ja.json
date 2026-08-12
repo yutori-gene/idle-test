@@ -290,7 +290,7 @@
 			"explanation": ""
 		},
 		"acceleration": {
-			"name": "加速度",
+			"name": "加速",
 			"explanation": "ゲーム内の時間が早くなります。ただし、アクションの実行時間が長い場合に速度を過度に上げると、処理が追いつかなくなり、アプリがフリーズしたりクラッシュしたりする可能性があるため、ご注意ください。"
 		},
 		"multiplier": {
@@ -302,11 +302,15 @@
 			"explanation": ""
 		},
 		"skip": {
+			"name": "スキップ",
+			"explanation": "待たずにゲーム内の時間を一度に進めます。"
+		},
+		"skip-hour": {
 			"name": "1時間スキップ",
 			"explanation": "ゲームを一度に1時間進めます。進行は離れている間と同じように処理され、結果は通知で表示されます。"
 		},
 		"adjustment": {
-			"name": "調整",
+			"name": "数値調整",
 			"explanation": "所持しているアイテムの数やカテゴリレベルを増減させます。"
 		},
 		"adjustment-type": {
@@ -857,6 +861,10 @@
 			"name": "設定",
 			"explanation": ""
 		},
+		"display": {
+			"name": "表示",
+			"explanation": "ゲームの画面上での表示方法を変更します。"
+		},
 		"language": {
 			"name": "言語",
 			"explanation": ""
@@ -885,9 +893,17 @@
 			"name": "ナビゲーション",
 			"explanation": "列間を移動するためのボタンが表示されます。ボタンを表示せずに、スワイプして列間を移動することもできます。"
 		},
+		"performance": {
+			"name": "パフォーマンス",
+			"explanation": "コンソールの動作をお使いの端末に合わせて調整します。"
+		},
 		"performing-highly": {
 			"name": "高いパフォーマンスを発揮する",
 			"explanation": "更新頻度を高めます。処理負荷が高い場合は、この機能をオフにすることをお勧めします。各アクションの実行時間には影響しません。"
+		},
+		"data": {
+			"name": "データ",
+			"explanation": "このワールドの進行データの保存・読み込み・削除を行います。"
 		},
 		"export-game": {
 			"name": "ゲームをエクスポートする",
@@ -917,9 +933,9 @@
 			"name": "デバッグモードをリセットする",
 			"explanation": "デバッグモードでは、確認欄への入力は不要です。"
 		},
-		"force-restart": {
-			"name": "強制再起動",
-			"explanation": ""
+		"restart": {
+			"name": "再起動",
+			"explanation": "コンソールを読み込み直します。ビルドが入れ替わったかの確認に使います。"
 		},
 		"hint-language-switching": {
 			"name": "Hint Language Switching",

@@ -302,6 +302,10 @@
 			"explanation": ""
 		},
 		"skip": {
+			"name": "Skip",
+			"explanation": "Advances the game time at once without waiting."
+		},
+		"skip-hour": {
 			"name": "Skip 1 Hour",
 			"explanation": "Advances the game by one hour at once. The progress is processed in the same way as while you are away, and the results are shown as notifications."
 		},
@@ -857,6 +861,10 @@
 			"name": "Config",
 			"explanation": "Changes the settings of this game and manages your saved data."
 		},
+		"display": {
+			"name": "Display",
+			"explanation": "Changes how the game is shown on the screen."
+		},
 		"language": {
 			"name": "Language",
 			"explanation": "Changes the language used for the display."
@@ -885,9 +893,17 @@
 			"name": "Navigation",
 			"explanation": "Displays buttons for moving between columns. You can also swipe to move between columns without displaying them."
 		},
+		"performance": {
+			"name": "Performance",
+			"explanation": "Adjusts how the console runs on your device."
+		},
 		"performing-highly": {
 			"name": "Performing Highly",
 			"explanation": "Increases the update frequency. If the operation is heavy, we recommend turning it off. It does not affect the execution time of each action."
+		},
+		"data": {
+			"name": "Data",
+			"explanation": "Saves, loads and erases the progress data of this world."
 		},
 		"export-game": {
 			"name": "Export Game",
@@ -917,9 +933,9 @@
 			"name": "Reset Debug Mode",
 			"explanation": "In debug mode, no input is required in the confirmation field."
 		},
-		"force-restart": {
-			"name": "Force Restart",
-			"explanation": ""
+		"restart": {
+			"name": "Restart",
+			"explanation": "Reloads the console. Use it to check whether the build has been replaced."
 		},
 		"hint-language-switching": {
 			"name": "Hint Language Switching",

@@ -302,6 +302,10 @@
 			"explanation": ""
 		},
 		"skip": {
+			"name": "Überspringen",
+			"explanation": "Bringt die Spielzeit auf einmal voran, ohne zu warten."
+		},
+		"skip-hour": {
 			"name": "1 Stunde überspringen",
 			"explanation": "Bringt das Spiel auf einmal um eine Stunde voran. Der Fortschritt wird genauso verarbeitet wie während Ihrer Abwesenheit, und die Ergebnisse werden als Benachrichtigungen angezeigt."
 		},
@@ -857,6 +861,10 @@
 			"name": "Konfiguration",
 			"explanation": ""
 		},
+		"display": {
+			"name": "Anzeige",
+			"explanation": "Ändert, wie das Spiel auf dem Bildschirm dargestellt wird."
+		},
 		"language": {
 			"name": "Sprache",
 			"explanation": ""
@@ -885,9 +893,17 @@
 			"name": "Navigation",
 			"explanation": "Zeigt Schaltflächen zum Wechseln zwischen den Spalten an. Sie können auch durch Wischen zwischen den Spalten wechseln, ohne diese anzuzeigen."
 		},
+		"performance": {
+			"name": "Leistung",
+			"explanation": "Passt an, wie die Konsole auf Ihrem Gerät läuft."
+		},
 		"performing-highly": {
 			"name": "Hervorragende Leistung",
 			"explanation": "Erhöht die Aktualisierungshäufigkeit. Bei rechenintensiven Vorgängen empfehlen wir, diese Funktion zu deaktivieren. Die Ausführungszeit der einzelnen Aktionen wird dadurch nicht beeinflusst."
+		},
+		"data": {
+			"name": "Daten",
+			"explanation": "Speichert, lädt und löscht die Fortschrittsdaten dieser Welt."
 		},
 		"export-game": {
 			"name": "Spiel exportieren",
@@ -917,9 +933,9 @@
 			"name": "Debug-Modus zurücksetzen",
 			"explanation": "Im Debug-Modus muss im Bestätigungsfeld nichts eingegeben werden."
 		},
-		"force-restart": {
-			"name": "Neustart erzwingen",
-			"explanation": ""
+		"restart": {
+			"name": "Neu starten",
+			"explanation": "Lädt die Konsole neu. Damit lässt sich prüfen, ob der Build ausgetauscht wurde."
 		},
 		"hint-language-switching": {
 			"name": "Hint Language Switching",

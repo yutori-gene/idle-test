@@ -302,6 +302,10 @@
 			"explanation": ""
 		},
 		"skip": {
+			"name": "跳过",
+			"explanation": "无需等待，一次性推进游戏内的时间。"
+		},
+		"skip-hour": {
 			"name": "跳过1小时",
 			"explanation": "将游戏一次性推进1小时。进行过程与离开期间以相同的方式处理，结果会以通知的形式显示。"
 		},
@@ -857,6 +861,10 @@
 			"name": "配置",
 			"explanation": ""
 		},
+		"display": {
+			"name": "显示",
+			"explanation": "更改游戏在屏幕上的显示方式。"
+		},
 		"language": {
 			"name": "语言",
 			"explanation": ""
@@ -885,9 +893,17 @@
 			"name": "导航",
 			"explanation": "显示用于在各栏之间切换的按钮。您也可以通过滑动在各栏之间切换，而无需显示这些按钮。"
 		},
+		"performance": {
+			"name": "性能",
+			"explanation": "调整控制台在您的设备上的运行方式。"
+		},
 		"performing-highly": {
 			"name": "优异表现",
 			"explanation": "提高更新频率。如果操作负载较重，建议将其关闭。这不会影响每个操作的执行时间。"
+		},
+		"data": {
+			"name": "数据",
+			"explanation": "保存、读取并删除这个世界的进度数据。"
 		},
 		"export-game": {
 			"name": "导出游戏",
@@ -917,9 +933,9 @@
 			"name": "重置调试模式",
 			"explanation": "在调试模式下，请确认该字段无需输入任何内容。"
 		},
-		"force-restart": {
-			"name": "强制重启",
-			"explanation": ""
+		"restart": {
+			"name": "重启",
+			"explanation": "重新加载控制台。可用于确认构建是否已更换。"
 		},
 		"hint-language-switching": {
 			"name": "Hint Language Switching",

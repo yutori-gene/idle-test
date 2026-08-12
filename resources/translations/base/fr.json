@@ -302,6 +302,10 @@
 			"explanation": ""
 		},
 		"skip": {
+			"name": "Passer",
+			"explanation": "Fait avancer le temps du jeu d’un seul coup, sans attendre."
+		},
+		"skip-hour": {
 			"name": "Passer 1 heure",
 			"explanation": "Fait avancer le jeu d'une heure d'un seul coup. La progression est traitée de la même manière que pendant votre absence, et les résultats sont affichés sous forme de notifications."
 		},
@@ -857,6 +861,10 @@
 			"name": "Configuration",
 			"explanation": ""
 		},
+		"display": {
+			"name": "Affichage",
+			"explanation": "Modifie la façon dont le jeu est affiché à l’écran."
+		},
 		"language": {
 			"name": "Langue",
 			"explanation": ""
@@ -885,9 +893,17 @@
 			"name": "Navigation",
 			"explanation": "Affiche les boutons permettant de passer d'une colonne à l'autre. Vous pouvez également faire glisser votre doigt pour passer d'une colonne à l'autre sans les afficher."
 		},
+		"performance": {
+			"name": "Performance",
+			"explanation": "Ajuste le fonctionnement de la console sur votre appareil."
+		},
 		"performing-highly": {
 			"name": "Des performances exceptionnelles",
 			"explanation": "Augmentez la fréquence de mise à jour. Si cette opération mobilise beaucoup de ressources, nous vous recommandons de désactiver cette option. Cela n'a aucune incidence sur la durée d'exécution de chaque action."
+		},
+		"data": {
+			"name": "Données",
+			"explanation": "Enregistre, charge et efface les données de progression de ce monde."
 		},
 		"export-game": {
 			"name": "Exporter le jeu",
@@ -917,9 +933,9 @@
 			"name": "Réinitialiser le mode débogage",
 			"explanation": "En mode débogage, aucune saisie n'est requise dans le champ de confirmation."
 		},
-		"force-restart": {
-			"name": "Redémarrage forcé",
-			"explanation": ""
+		"restart": {
+			"name": "Redémarrer",
+			"explanation": "Recharge la console. À utiliser pour vérifier si la build a été remplacée."
 		},
 		"hint-language-switching": {
 			"name": "Hint Language Switching",

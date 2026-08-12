@@ -302,6 +302,10 @@
 			"explanation": ""
 		},
 		"skip": {
+			"name": "Lewati",
+			"explanation": "Memajukan waktu permainan sekaligus tanpa menunggu."
+		},
+		"skip-hour": {
 			"name": "Lewati 1 Jam",
 			"explanation": "Memajukan permainan satu jam sekaligus. Kemajuan diproses dengan cara yang sama seperti saat Anda sedang pergi, dan hasilnya ditampilkan sebagai notifikasi."
 		},
@@ -857,6 +861,10 @@
 			"name": "Konfigurasi",
 			"explanation": ""
 		},
+		"display": {
+			"name": "Tampilan",
+			"explanation": "Mengubah cara permainan ditampilkan di layar."
+		},
 		"language": {
 			"name": "Bahasa",
 			"explanation": ""
@@ -885,9 +893,17 @@
 			"name": "Navigasi",
 			"explanation": "Menampilkan tombol untuk berpindah antar kolom. Anda juga dapat menggeser jari untuk berpindah antar kolom tanpa menampilkan tombol-tombol tersebut."
 		},
+		"performance": {
+			"name": "Performa",
+			"explanation": "Menyesuaikan cara konsol berjalan di perangkat Anda."
+		},
 		"performing-highly": {
 			"name": "Berprestasi Tinggi",
 			"explanation": "Meningkatkan frekuensi pembaruan. Jika beban kerja cukup berat, kami menyarankan untuk menonaktifkannya. Hal ini tidak memengaruhi waktu eksekusi setiap tindakan."
+		},
+		"data": {
+			"name": "Data",
+			"explanation": "Menyimpan, memuat, dan menghapus data kemajuan dunia ini."
 		},
 		"export-game": {
 			"name": "Ekspor Game",
@@ -917,9 +933,9 @@
 			"name": "Atur Ulang Mode Debug",
 			"explanation": "Dalam mode debug, tidak diperlukan persyaratan input apa pun di kolom konfirmasi."
 		},
-		"force-restart": {
-			"name": "Paksa Mulai Ulang",
-			"explanation": ""
+		"restart": {
+			"name": "Mulai Ulang",
+			"explanation": "Memuat ulang konsol. Gunakan untuk memeriksa apakah build sudah diganti."
 		},
 		"hint-language-switching": {
 			"name": "Hint Language Switching",
