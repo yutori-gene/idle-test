@@ -919,7 +919,7 @@
 		},
 		"force-restart": {
 			"name": "Force Restart",
-			"explanation": "Reloads the app. Use this if the display becomes unresponsive or stuck. Your progress is not affected."
+			"explanation": ""
 		},
 		"hint-language-switching": {
 			"name": "Hint Language Switching",

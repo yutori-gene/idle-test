@@ -919,7 +919,7 @@
 		},
 		"force-restart": {
 			"name": "Reinício forçado",
-			"explanation": "Reinicie o aplicativo. Use essa opção caso a tela pare de responder ou fique travada. Seu progresso não será afetado."
+			"explanation": ""
 		},
 		"hint-language-switching": {
 			"name": "Hint Language Switching",

@@ -919,7 +919,7 @@
 		},
 		"force-restart": {
 			"name": "强制重启",
-			"explanation": "重新加载应用。如果界面无响应或卡住，请使用此功能。您的进度不会受到影响。"
+			"explanation": ""
 		},
 		"hint-language-switching": {
 			"name": "Hint Language Switching",

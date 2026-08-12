@@ -919,7 +919,7 @@
 		},
 		"force-restart": {
 			"name": "Reinicio forzado",
-			"explanation": "Reinicia la aplicación. Utiliza esta opción si la pantalla deja de responder o se cuelga. Tu progreso no se verá afectado."
+			"explanation": ""
 		},
 		"hint-language-switching": {
 			"name": "Hint Language Switching",

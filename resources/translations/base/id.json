@@ -919,7 +919,7 @@
 		},
 		"force-restart": {
 			"name": "Paksa Mulai Ulang",
-			"explanation": "Muat ulang aplikasi. Gunakan fitur ini jika tampilan tidak merespons atau macet. Kemajuan Anda tidak akan terpengaruh."
+			"explanation": ""
 		},
 		"hint-language-switching": {
 			"name": "Hint Language Switching",

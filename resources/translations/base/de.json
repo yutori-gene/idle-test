@@ -919,7 +919,7 @@
 		},
 		"force-restart": {
 			"name": "Neustart erzwingen",
-			"explanation": "Lädt die App neu. Verwenden Sie diese Option, wenn die Anzeige nicht mehr reagiert oder sich aufgehängt hat. Ihr Fortschritt bleibt davon unberührt."
+			"explanation": ""
 		},
 		"hint-language-switching": {
 			"name": "Hint Language Switching",

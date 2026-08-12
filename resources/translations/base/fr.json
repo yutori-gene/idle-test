@@ -919,7 +919,7 @@
 		},
 		"force-restart": {
 			"name": "Redémarrage forcé",
-			"explanation": "Redémarrez l'application. Utilisez cette option si l'écran ne répond plus ou se bloque. Cela n'affecte pas votre progression."
+			"explanation": ""
 		},
 		"hint-language-switching": {
 			"name": "Hint Language Switching",

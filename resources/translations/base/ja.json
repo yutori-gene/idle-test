@@ -919,7 +919,7 @@
 		},
 		"force-restart": {
 			"name": "強制再起動",
-			"explanation": "アプリを再読み込みします。画面の反応が遅くなったり、フリーズしたりした場合は、こちらをご利用ください。進行状況には影響しません。"
+			"explanation": ""
 		},
 		"hint-language-switching": {
 			"name": "Hint Language Switching",
