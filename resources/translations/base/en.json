@@ -826,7 +826,7 @@
 			"explanation": ""
 		},
 		"tasks": {
-			"name": "Tasks",
+			"name": "Task List",
 			"explanation": "Lists the tasks set for this category."
 		},
 		"missions": {
