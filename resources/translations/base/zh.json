@@ -523,11 +523,11 @@
 		},
 		"position": {
 			"name": "执行顺序",
-			"explanation": "选择何时执行此动作。0 表示立即执行，1 及以后会插入等待队列的相应位置。"
+			"explanation": "选择该动作在队列中的位置。0是队首，会把正在执行的动作挤到后面并立即执行；1及以后则在该位置等待。"
 		},
 		"now": {
 			"name": "立即",
-			"explanation": "不放入等待队列，立即执行此动作。"
+			"explanation": "将该动作放到队首并立即执行。"
 		},
 		"acquisition-failure": {
 			"name": "获取失败",
@@ -555,7 +555,7 @@
 		},
 		"queue": {
 			"name": "队列",
-			"explanation": "表示可以预订多少个动作以便依次执行的特殊物品。"
+			"explanation": "表示队列可容纳多少个动作的特殊物品。队首正在执行的动作也计入其中。"
 		},
 		"equipping": {
 			"name": "正在装备中",
@@ -655,11 +655,11 @@
 		},
 		"queue-full": {
 			"name": "队列已满",
-			"explanation": "预订队列已满。"
+			"explanation": "包含正在执行的动作在内，队列已满。"
 		},
 		"already-queued": {
 			"name": "已加入队列",
-			"explanation": "此操作正在运行或已被预留。"
+			"explanation": "该动作已在队列中。"
 		},
 		"purchase-limit-reached": {
 			"name": "已达到购买限额",
@@ -1079,7 +1079,7 @@
 		},
 		"hint-queue-removing": {
 			"name": "Hint Queue Removing",
-			"explanation": "长按进度条可将其从队列中移除。"
+			"explanation": "长按条目可将其移出队列。队首正在执行，因此会停止并开始下一个。"
 		},
 		"hint-actions-executing": {
 			"name": "Hint Actions Executing",

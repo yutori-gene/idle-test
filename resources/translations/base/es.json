@@ -523,11 +523,11 @@
 		},
 		"position": {
 			"name": "Orden de ejecución",
-			"explanation": "Elige cuándo ejecutar esta acción. Con 0 se ejecuta ahora mismo; con 1 o más se coloca en esa posición de la cola de espera."
+			"explanation": "Selecciona el lugar de esta acción en la cola. 0 es el primer puesto: se ejecuta ahora y desplaza hacia atrás la acción en curso. Desde 1 espera en ese lugar."
 		},
 		"now": {
 			"name": "Ahora",
-			"explanation": "Ejecuta esta acción de inmediato en lugar de ponerla en la cola de espera."
+			"explanation": "Coloca esta acción al principio de la cola y la ejecuta de inmediato."
 		},
 		"acquisition-failure": {
 			"name": "Fallo de adquisición",
@@ -555,7 +555,7 @@
 		},
 		"queue": {
 			"name": "Cola",
-			"explanation": "Un artículo especial que representa cuántas acciones puedes reservar para su ejecución secuencial."
+			"explanation": "Un artículo especial que indica cuántas acciones puede contener la cola, incluida la que está en curso al principio."
 		},
 		"equipping": {
 			"name": "Equipamiento",
@@ -655,11 +655,11 @@
 		},
 		"queue-full": {
 			"name": "Cola llena",
-			"explanation": "La lista de reservas está completa."
+			"explanation": "La cola está llena, incluida la acción en curso."
 		},
 		"already-queued": {
 			"name": "Ya está en la cola",
-			"explanation": "Esta acción ya se está llevando a cabo o está reservada."
+			"explanation": "Esta acción ya está en la cola."
 		},
 		"purchase-limit-reached": {
 			"name": "Se ha alcanzado el límite de compra",
@@ -1079,7 +1079,7 @@
 		},
 		"hint-queue-removing": {
 			"name": "Hint Queue Removing",
-			"explanation": "Una pulsación larga sobre una barra la elimina de la cola."
+			"explanation": "Una pulsación larga sobre una barra la quita de la cola. La primera está en curso: se detiene y comienza la siguiente."
 		},
 		"hint-actions-executing": {
 			"name": "Hint Actions Executing",

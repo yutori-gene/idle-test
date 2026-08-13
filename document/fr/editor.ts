@@ -857,9 +857,10 @@ export const general: Type.General = {
 		},
 		queue: {
 			title: "Queue",
-			summary: "Configuration du nombre de créneaux pour l'exécution en série (programmation) des actions",
+			summary: "Configuration du nombre de créneaux de la file d'attente pour l'exécution en série des actions",
 			points: [
-				"Permet de gérer le nombre de créneaux disponibles pour l'exécution en série (programmation) d'actions.",
+				"Permet de gérer le nombre de créneaux de la file d'attente pour l'exécution en série des actions.",
+				"La file d'attente contient l'action en cours, et c'est l'action en tête qui est exécutée. Avec `1` créneau, seule l'action en cours tient et rien ne peut attendre.",
 				"Tout comme la capacité, le nombre d'emplacements peut être acheté avec de la monnaie, mais il est également possible d'augmenter le nombre d'objets dans la file d'attente en les sélectionnant comme récompenses d'actions ou d'événements.",
 				"Lorsque vous faites référence à un objet de la file d'attente dans les conditions ou les récompenses, veuillez utiliser l'ID configuré ici.",
 			],
@@ -868,7 +869,7 @@ export const general: Type.General = {
 				initialCount: {
 					title: "Valeur par défaut [pcs].",
 					summary: "Nombre de cases d'exécution consécutives pour commencer la partie",
-					points: ["Il s'agit du nombre de créneaux de réservation disponibles au début de la partie qui commence.", "La valeur minimale est `1` (il n'y a pas de traitement de type `0` = illimité, comme pour la capacité)."],
+					points: ["Il s'agit du nombre de créneaux de la file d'attente au début de la partie.", "La valeur minimale est `1` (l'action en cours occupe un créneau et il n'y a pas de traitement de type `0` = illimité, comme pour la capacité)."],
 				},
 				initialCost: {
 					title: "Prix de base [pièces].",

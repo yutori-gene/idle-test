@@ -857,9 +857,10 @@ export const general: Type.General = {
 		},
 		queue: {
 			title: "Warteschlange",
-			summary: "Konfiguration der Anzahl der Felder für die fortlaufende Ausführung (Planung) von Aktionen",
+			summary: "Konfiguration der Anzahl der Warteschlangenplätze für die fortlaufende Ausführung von Aktionen",
 			points: [
-				"Verwaltet die Anzahl der Zeitfenster für die fortlaufende Ausführung (Planung) von Aktionen.",
+				"Verwaltet die Anzahl der Warteschlangenplätze für die fortlaufende Ausführung von Aktionen.",
+				"Die Warteschlange enthält die laufende Aktion, und die Aktion an ihrem Anfang wird ausgeführt. Bei `1` Platz passt nur die laufende Aktion hinein, es kann nichts warten.",
 				"Sowohl die Anzahl der Plätze als auch die Kapazität können mit Währung gekauft werden; außerdem lassen sich die Plätze in der Warteschlange durch die Auswahl bestimmter Gegenstände als Belohnung für Aktionen oder Ereignisse erhöhen.",
 				"Wenn Sie in Bedingungen oder Vergütungen auf Gegenstände der Warteschlange verweisen möchten, verwenden Sie bitte die im Rahmen der Konfiguration festgelegte ID.",
 			],
@@ -868,7 +869,7 @@ export const general: Type.General = {
 				initialCount: {
 					title: "Standardwert [pcs].",
 					summary: "Anzahl der Felder für die fortlaufende Ausführung beim Start des Spiels",
-					points: ["Die Anzahl der Reservierungsplätze zum Start des Spiels.", "Der Mindestwert ist `1` (es gibt keine Behandlung wie bei der Kapazität, bei der `0` = unbegrenzt bedeutet)."],
+					points: ["Die Anzahl der Warteschlangenplätze zum Start des Spiels.", "Der Mindestwert ist `1` (die laufende Aktion belegt einen Platz, und es gibt keine Behandlung wie bei der Kapazität, bei der `0` = unbegrenzt bedeutet)."],
 				},
 				initialCost: {
 					title: "Grundpreis [Münzen].",

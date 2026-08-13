@@ -857,9 +857,10 @@ export const general: Type.General = {
 		},
 		queue: {
 			title: "Antrian",
-			summary: "Konfigurasi jumlah slot untuk eksekusi beruntun (jadwal) aksi",
+			summary: "Konfigurasi jumlah slot antrian untuk eksekusi beruntun aksi",
 			points: [
-				"Mengelola jumlah slot untuk menjalankan Aksi secara berurutan (jadwal).",
+				"Mengelola jumlah slot antrian untuk menjalankan aksi secara berurutan.",
+				"Antrian mencakup aksi yang sedang berjalan, dan aksi di posisi terdepan adalah yang dijalankan. Jika slotnya `1`, hanya aksi yang sedang berjalan yang muat sehingga tidak ada yang bisa menunggu.",
 				"Jumlah slot, sama seperti kapasitas, dapat dibeli menggunakan mata uang, dan Anda juga dapat menambahnya dengan memilih Item dari antrian sebagai hadiah dari Aksi atau acara.",
 				"Jika Anda ingin merujuk item dalam antrian berdasarkan kondisi atau imbalan, gunakan ID yang telah dikonfigurasi di sini.",
 			],
@@ -868,7 +869,7 @@ export const general: Type.General = {
 				initialCount: {
 					title: "Nilai default [pcs].",
 					summary: "Jumlah slot eksekusi berurutan saat permainan mulai",
-					points: ["Ini adalah jumlah slot reservasi saat permainan dimulai.", "Nilai minimumnya adalah `1` (tidak ada perlakuan seperti `0` = tak terbatas, seperti pada kapasitas)."],
+					points: ["Ini adalah jumlah slot antrian saat permainan dimulai.", "Nilai minimumnya adalah `1` (aksi yang sedang berjalan memakai satu slot, dan tidak ada perlakuan seperti `0` = tak terbatas, seperti pada kapasitas)."],
 				},
 				initialCost: {
 					title: "Harga dasar [koin].",

@@ -857,9 +857,10 @@ export const general: Type.General = {
 		},
 		queue: {
 			title: "Queue",
-			summary: "Configuring the Number of Slots for Consecutive Actions (Scheduling)",
+			summary: "Configuring the Number of Queue Slots for Consecutive Actions",
 			points: [
-				"Manages the count of slots available for executing actions in sequence (scheduling).",
+				"Manages the number of queue slots for executing actions in sequence.",
+				"The queue includes the running action, and the action at its head is the one being executed. When there is only `1` slot, only the running action fits and nothing can wait.",
 				"In addition to buying slots with currency, just like storage capacity, you can also increase the number of slots by selecting specific Items from the queue as rewards for actions and events.",
 				"When referencing items in the queue based on conditions or rewards, use the ID configured here.",
 			],
@@ -868,7 +869,7 @@ export const general: Type.General = {
 				initialCount: {
 					title: "Default value [pcs].",
 					summary: "Number of consecutive runs at the start of the game",
-					points: ["This is the number of reservation slots available at the start of the game.", "The minimum value is `1` (there is no `0` = unlimited option, as with capacity)."],
+					points: ["This is the number of queue slots available at the start of the game.", "The minimum value is `1` (the running action uses one slot, and there is no `0` = unlimited option, as with capacity)."],
 				},
 				initialCost: {
 					title: "Base price [coins].",

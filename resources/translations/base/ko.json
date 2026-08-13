@@ -523,11 +523,11 @@
 		},
 		"position": {
 			"name": "실행 순서",
-			"explanation": "이 액션을 언제 실행할지 선택합니다. 0이면 지금 바로 실행하고, 1 이상이면 대기열의 해당 위치에 들어갑니다."
+			"explanation": "이 액션의 대기열 내 위치를 선택합니다. 0은 맨 앞이라 실행 중인 액션을 뒤로 밀어내고 즉시 실행하며, 1 이후는 그 위치에서 대기합니다."
 		},
 		"now": {
 			"name": "지금",
-			"explanation": "대기열에 넣지 않고 이 액션을 즉시 실행합니다."
+			"explanation": "이 액션을 대기열 맨 앞에 두고 즉시 실행합니다."
 		},
 		"acquisition-failure": {
 			"name": "획득 실패",
@@ -555,7 +555,7 @@
 		},
 		"queue": {
 			"name": "대기열",
-			"explanation": "순차적으로 실행하기 위해 예약할 수 있는 액션의 수를 나타내는 특별한 아이템입니다."
+			"explanation": "대기열에 넣을 수 있는 액션 수를 나타내는 특별한 아이템입니다. 맨 앞에서 실행 중인 액션도 이 수에 포함됩니다."
 		},
 		"equipping": {
 			"name": "장비 장착 중",
@@ -655,11 +655,11 @@
 		},
 		"queue-full": {
 			"name": "대기열이 가득 찼습니다",
-			"explanation": "예약 대기열이 가득 찼습니다."
+			"explanation": "실행 중인 액션을 포함해 대기열이 가득 찼습니다."
 		},
 		"already-queued": {
 			"name": "이미 대기 중",
-			"explanation": "이 작업은 이미 실행 중이거나 예약되어 있습니다."
+			"explanation": "이 액션은 이미 대기열에 있습니다."
 		},
 		"purchase-limit-reached": {
 			"name": "구매 한도 초과",
@@ -1079,7 +1079,7 @@
 		},
 		"hint-queue-removing": {
 			"name": "Hint Queue Removing",
-			"explanation": "바를 길게 누르면 대기열에서 삭제됩니다."
+			"explanation": "바를 길게 누르면 대기열에서 제거됩니다. 맨 앞은 실행 중이므로 정지하고 다음이 시작됩니다."
 		},
 		"hint-actions-executing": {
 			"name": "Hint Actions Executing",

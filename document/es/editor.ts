@@ -857,9 +857,10 @@ export const general: Type.General = {
 		},
 		queue: {
 			title: "Cue",
-			summary: "Configuración del número de ranuras para la ejecución consecutiva (programada) de acciones",
+			summary: "Configuración del número de ranuras de la cola para la ejecución consecutiva de acciones",
 			points: [
-				"Gestiona el número de espacios disponibles para la ejecución consecutiva (programada) de acciones.",
+				"Gestiona el número de ranuras de la cola para ejecutar acciones de forma consecutiva.",
+				"La cola incluye la acción en curso, y la acción que está al principio es la que se ejecuta. Con `1` ranura solo cabe la acción en curso y nada puede esperar.",
 				"El número de casillas, al igual que la capacidad, se puede comprar con moneda, aunque también se puede aumentar seleccionando artículos de la cola como recompensa por Acciones o eventos.",
 				"Cuando se haga referencia a artículos de la cola en condiciones o recompensas, utilice el ID de configuración aquí.",
 			],
@@ -868,7 +869,7 @@ export const general: Type.General = {
 				initialCount: {
 					title: "Valor por defecto [pcs].",
 					summary: "Número de casillas de ejecución consecutiva al comenzar el juego",
-					points: ["Es el número de plazas reservadas al comenzar el juego.", "El valor mínimo es `1` (no existe el valor `0`, que en otros casos significaría «ilimitado», como en el caso de la capacidad)."],
+					points: ["Es el número de ranuras de la cola al comenzar el juego.", "El valor mínimo es `1` (la acción en curso ocupa una ranura y no existe el valor `0`, que significaría «ilimitado», como en el caso de la capacidad)."],
 				},
 				initialCost: {
 					title: "Precio base [monedas].",

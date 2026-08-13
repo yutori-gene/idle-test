@@ -523,11 +523,11 @@
 		},
 		"position": {
 			"name": "Ordem de execução",
-			"explanation": "Escolha quando executar esta ação. Com 0 ela é executada agora; com 1 ou mais ela entra nessa posição da fila de espera."
+			"explanation": "Selecione o lugar desta ação na fila. 0 é o início: ela é executada agora e empurra a ação em andamento para trás. De 1 em diante, ela aguarda nesse lugar."
 		},
 		"now": {
 			"name": "Agora",
-			"explanation": "Executa esta ação imediatamente, em vez de colocá-la na fila de espera."
+			"explanation": "Coloca esta ação no início da fila e a executa imediatamente."
 		},
 		"acquisition-failure": {
 			"name": "Falha de aquisição",
@@ -555,7 +555,7 @@
 		},
 		"queue": {
 			"name": "Fila",
-			"explanation": "Um item especial que representa quantas ações você pode reservar para execução sequencial."
+			"explanation": "Um item especial que indica quantas ações a fila comporta, incluindo a que está em execução no início."
 		},
 		"equipping": {
 			"name": "Equipando",
@@ -655,11 +655,11 @@
 		},
 		"queue-full": {
 			"name": "Fila lotada",
-			"explanation": "A lista de reservas está lotada."
+			"explanation": "A fila está cheia, incluindo a ação em execução."
 		},
 		"already-queued": {
 			"name": "Já está na fila",
-			"explanation": "Essa ação já está em andamento ou reservada."
+			"explanation": "Esta ação já está na fila."
 		},
 		"purchase-limit-reached": {
 			"name": "Limite de compra atingido",
@@ -1079,7 +1079,7 @@
 		},
 		"hint-queue-removing": {
 			"name": "Hint Queue Removing",
-			"explanation": "Um toque longo em uma barra a remove da fila."
+			"explanation": "Um toque longo em uma barra a remove da fila. A primeira está em execução: ela para e a próxima começa."
 		},
 		"hint-actions-executing": {
 			"name": "Hint Actions Executing",

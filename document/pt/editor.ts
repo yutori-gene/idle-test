@@ -857,9 +857,10 @@ export const general: Type.General = {
 		},
 		queue: {
 			title: "Fila",
-			summary: "Configuração do número de intervalos para a execução consecutiva (programada) de ações",
+			summary: "Configuração do número de vagas da fila para a execução consecutiva de ações",
 			points: [
-				"Gerencia ou número de slots para a execução contínua (programação) de ações.",
+				"Gerencia o número de vagas da fila para a execução consecutiva de ações.",
+				"A fila inclui a ação em execução, e a ação que está no início é a que roda. Com `1` vaga, só cabe a ação em execução e nada pode aguardar.",
 				"Além de poderem ser comprados com moeda, assim como a capacidade, os espaços também podem ser aumentados por meio de recompensas de ações ou eventos, indicando os itens da fila.",
 				"Ao consultar itens da fila com base em condições ou recompensas, utilize o ID configurado aqui.",
 			],
@@ -868,7 +869,7 @@ export const general: Type.General = {
 				initialCount: {
 					title: "Valor padrão [pcs].",
 					summary: "Número de quadros de execução contínua ao começar o jogo",
-					points: ["É o número de vagas disponíveis quando o jogo começa.", "O valor mínimo é `1` (não existe o tratamento de `0` = ilimitado, como no caso da capacidade)."],
+					points: ["É o número de vagas da fila no início do jogo.", "O valor mínimo é `1` (a ação em execução ocupa uma vaga e não existe o tratamento de `0` = ilimitado, como no caso da capacidade)."],
 				},
 				initialCost: {
 					title: "Preço base [moedas].",

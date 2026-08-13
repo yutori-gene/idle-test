@@ -523,11 +523,11 @@
 		},
 		"position": {
 			"name": "Ausführungsreihenfolge",
-			"explanation": "Wähle, wann diese Aktion ausgeführt wird. 0 führt sie sofort aus, ab 1 wird sie an dieser Stelle in die Warteschlange eingereiht."
+			"explanation": "Wählen Sie den Platz dieser Aktion in der Warteschlange. 0 ist der Anfang: Sie startet sofort und die laufende Aktion rückt nach hinten. Ab 1 wartet sie an diesem Platz."
 		},
 		"now": {
 			"name": "Sofort",
-			"explanation": "Führt diese Aktion sofort aus, statt sie in die Warteschlange einzureihen."
+			"explanation": "Setzt diese Aktion an den Anfang der Warteschlange und führt sie sofort aus."
 		},
 		"acquisition-failure": {
 			"name": "Fehlgeschlagener Erwerb",
@@ -555,7 +555,7 @@
 		},
 		"queue": {
 			"name": "Warteschlange",
-			"explanation": "Ein besonderer Gegenstand, der angibt, wie viele Aktionen Sie für die sequenzielle Ausführung reservieren können."
+			"explanation": "Ein besonderer Gegenstand, der angibt, wie viele Aktionen die Warteschlange fasst, einschließlich der laufenden Aktion am Anfang."
 		},
 		"equipping": {
 			"name": "Ausrüstung",
@@ -655,11 +655,11 @@
 		},
 		"queue-full": {
 			"name": "Warteschlange voll",
-			"explanation": "Die Reservierungswarteschlange ist voll."
+			"explanation": "Die Warteschlange ist voll, einschließlich der laufenden Aktion."
 		},
 		"already-queued": {
 			"name": "Steht bereits in der Warteschlange",
-			"explanation": "Diese Aktion wird bereits ausgeführt oder ist reserviert."
+			"explanation": "Diese Aktion ist bereits in der Warteschlange."
 		},
 		"purchase-limit-reached": {
 			"name": "Einkaufslimit erreicht",
@@ -1079,7 +1079,7 @@
 		},
 		"hint-queue-removing": {
 			"name": "Hint Queue Removing",
-			"explanation": "Ein langer Druck auf einen Balken entfernt ihn aus der Warteschlange."
+			"explanation": "Ein langer Druck auf eine Leiste entfernt sie aus der Warteschlange. Die erste Leiste läuft gerade, sie wird gestoppt und die nächste beginnt."
 		},
 		"hint-actions-executing": {
 			"name": "Hint Actions Executing",

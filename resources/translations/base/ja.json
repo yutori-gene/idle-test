@@ -523,11 +523,11 @@
 		},
 		"position": {
 			"name": "実行順",
-			"explanation": "このアクションをいつ実行するかを選びます。0で今すぐ実行し、1以降は待機キューのその位置に入ります。"
+			"explanation": "このアクションのキュー内の位置を選びます。0は先頭で、実行中のアクションを後ろへ押し出して今すぐ実行します。1以降はその位置で待機します。"
 		},
 		"now": {
 			"name": "今すぐ",
-			"explanation": "待機キューに入れず、このアクションをすぐに実行します。"
+			"explanation": "このアクションをキューの先頭に置いて、すぐに実行します。"
 		},
 		"acquisition-failure": {
 			"name": "獲得失敗",
@@ -555,7 +555,7 @@
 		},
 		"queue": {
 			"name": "予約キュー",
-			"explanation": "順次実行するために予約できるアクションの数を表す特別なアイテムです。"
+			"explanation": "キューに入れられるアクションの数を表す特別なアイテムです。先頭で実行中のアクションもこの数に含まれます。"
 		},
 		"equipping": {
 			"name": "装備中",
@@ -655,11 +655,11 @@
 		},
 		"queue-full": {
 			"name": "キューが満杯です",
-			"explanation": "予約待ちリストは定員に達しています。"
+			"explanation": "実行中を含めてキューがいっぱいです。"
 		},
 		"already-queued": {
 			"name": "すでにキューに入っています",
-			"explanation": "このアクションはすでに実行中か、予約済みです。"
+			"explanation": "そのアクションはすでにキューに入っています。"
 		},
 		"purchase-limit-reached": {
 			"name": "購入上限に達しました",
@@ -1079,7 +1079,7 @@
 		},
 		"hint-queue-removing": {
 			"name": "Hint Queue Removing",
-			"explanation": "バーを長押しすると、キューから削除されます。"
+			"explanation": "バーを長押しするとキューから外れます。先頭は実行中なので、停止して次が始まります。"
 		},
 		"hint-actions-executing": {
 			"name": "Hint Actions Executing",

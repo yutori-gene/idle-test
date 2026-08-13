@@ -523,11 +523,11 @@
 		},
 		"position": {
 			"name": "Ordre d'exécution",
-			"explanation": "Choisissez quand exécuter cette action. 0 l'exécute immédiatement, 1 ou plus la place à cette position dans la file d'attente."
+			"explanation": "Choisissez la place de cette action dans la file d'attente. 0 correspond à la tête : elle démarre immédiatement et l'action en cours recule d'un rang. À partir de 1, elle attend à cette place."
 		},
 		"now": {
 			"name": "Maintenant",
-			"explanation": "Exécute cette action immédiatement au lieu de la placer dans la file d'attente."
+			"explanation": "Place cette action en tête de la file d'attente et l'exécute immédiatement."
 		},
 		"acquisition-failure": {
 			"name": "Échec d'acquisition",
@@ -555,7 +555,7 @@
 		},
 		"queue": {
 			"name": "File d'attente",
-			"explanation": "Un objet spécial qui représente le nombre d'actions que vous pouvez réserver pour une exécution séquentielle."
+			"explanation": "Un objet spécial qui indique combien d'actions la file d'attente peut contenir, y compris celle en cours en tête."
 		},
 		"equipping": {
 			"name": "Équipement",
@@ -655,11 +655,11 @@
 		},
 		"queue-full": {
 			"name": "File d'attente pleine",
-			"explanation": "La file d'attente des réservations est pleine."
+			"explanation": "La file d'attente est pleine, action en cours comprise."
 		},
 		"already-queued": {
 			"name": "Déjà dans la file d'attente",
-			"explanation": "Cette action est déjà en cours d'exécution ou réservée."
+			"explanation": "Cette action est déjà dans la file d'attente."
 		},
 		"purchase-limit-reached": {
 			"name": "Limite d'achat atteinte",
@@ -1079,7 +1079,7 @@
 		},
 		"hint-queue-removing": {
 			"name": "Hint Queue Removing",
-			"explanation": "Un appui long sur une barre la retire de la file d'attente."
+			"explanation": "Un appui long sur une barre la retire de la file d'attente. La première est en cours : elle s'arrête et la suivante démarre."
 		},
 		"hint-actions-executing": {
 			"name": "Hint Actions Executing",

@@ -523,11 +523,11 @@
 		},
 		"position": {
 			"name": "Urutan eksekusi",
-			"explanation": "Pilih kapan aksi ini dijalankan. 0 menjalankannya sekarang, sedangkan 1 atau lebih menempatkannya pada posisi tersebut di antrean tunggu."
+			"explanation": "Pilih posisi aksi ini dalam antrian. 0 adalah posisi terdepan sehingga langsung dijalankan dan aksi yang sedang berjalan digeser ke belakang. 1 atau lebih membuatnya menunggu di posisi tersebut."
 		},
 		"now": {
 			"name": "Sekarang",
-			"explanation": "Jalankan aksi ini seketika alih-alih memasukkannya ke antrean tunggu."
+			"explanation": "Menempatkan aksi ini di awal antrian dan langsung menjalankannya."
 		},
 		"acquisition-failure": {
 			"name": "Kegagalan akuisisi",
@@ -555,7 +555,7 @@
 		},
 		"queue": {
 			"name": "Antrian",
-			"explanation": "Item khusus yang menunjukkan berapa banyak aksi yang dapat Anda pesan untuk dijalankan secara berurutan."
+			"explanation": "Item khusus yang menunjukkan berapa banyak aksi yang dapat ditampung antrian, termasuk aksi yang sedang berjalan di posisi terdepan."
 		},
 		"equipping": {
 			"name": "Melengkapi",
@@ -655,11 +655,11 @@
 		},
 		"queue-full": {
 			"name": "Antrean Penuh",
-			"explanation": "Antrian pemesanan sudah penuh."
+			"explanation": "Antrian penuh, termasuk aksi yang sedang berjalan."
 		},
 		"already-queued": {
 			"name": "Sudah Masuk Antrian",
-			"explanation": "Aksi ini sedang berlangsung atau telah dipesan."
+			"explanation": "Aksi ini sudah ada dalam antrian."
 		},
 		"purchase-limit-reached": {
 			"name": "Batas Pembelian Telah Tercapai",
@@ -1079,7 +1079,7 @@
 		},
 		"hint-queue-removing": {
 			"name": "Hint Queue Removing",
-			"explanation": "Tekan lama sebuah bilah untuk menghapusnya dari antrean."
+			"explanation": "Tekan lama sebuah bar untuk mengeluarkannya dari antrian. Bar terdepan sedang berjalan, sehingga akan dihentikan dan berikutnya dimulai."
 		},
 		"hint-actions-executing": {
 			"name": "Hint Actions Executing",

@@ -523,11 +523,11 @@
 		},
 		"position": {
 			"name": "Execution Order",
-			"explanation": "Select when to run this action. 0 runs it now, and 1 or later puts it into the waiting queue at that place."
+			"explanation": "Select the place of this action in the queue. 0 is the head, so it runs now and pushes the running action back, and 1 or later makes it wait at that place."
 		},
 		"now": {
 			"name": "Now",
-			"explanation": "Run this action immediately instead of putting it into the waiting queue."
+			"explanation": "Put this action at the head of the queue and run it immediately."
 		},
 		"acquisition-failure": {
 			"name": "Acquisition Failure",
@@ -555,7 +555,7 @@
 		},
 		"queue": {
 			"name": "Queue",
-			"explanation": "A special item that represents how many actions you can reserve for sequential execution."
+			"explanation": "A special item that represents how many actions the queue can hold, including the one running at its head."
 		},
 		"equipping": {
 			"name": "Equipping",
@@ -655,11 +655,11 @@
 		},
 		"queue-full": {
 			"name": "Queue Full",
-			"explanation": "Reservation queue is full."
+			"explanation": "The queue is full, including the running action."
 		},
 		"already-queued": {
 			"name": "Already Queued",
-			"explanation": "This action is already running or reserved."
+			"explanation": "This action is already in the queue."
 		},
 		"purchase-limit-reached": {
 			"name": "Purchase Limit Reached",
@@ -1079,7 +1079,7 @@
 		},
 		"hint-queue-removing": {
 			"name": "Hint Queue Removing",
-			"explanation": "A long press on a bar removes it from the queue."
+			"explanation": "A long press on a bar removes it from the queue. The one at the head is running, so it stops and the next one starts."
 		},
 		"hint-actions-executing": {
 			"name": "Hint Actions Executing",
