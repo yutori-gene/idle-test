@@ -529,6 +529,10 @@
 			"name": "지금",
 			"explanation": "대기열에 넣지 않고 이 액션을 즉시 실행합니다."
 		},
+		"acquisition-failure": {
+			"name": "획득 실패",
+			"explanation": "(-)로 표시된 보상은 액션에 실패했을 때만 획득할 수 있습니다."
+		},
 		"item": {
 			"name": "아이템",
 			"explanation": ""

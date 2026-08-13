@@ -529,6 +529,10 @@
 			"name": "Maintenant",
 			"explanation": "Exécute cette action immédiatement au lieu de la placer dans la file d'attente."
 		},
+		"acquisition-failure": {
+			"name": "Échec d'acquisition",
+			"explanation": "Les récompenses marquées (-) ne s'obtiennent que lorsque l'action échoue."
+		},
 		"item": {
 			"name": "Objet",
 			"explanation": ""

@@ -529,6 +529,10 @@
 			"name": "立即",
 			"explanation": "不放入等待队列，立即执行此动作。"
 		},
+		"acquisition-failure": {
+			"name": "获取失败",
+			"explanation": "标有 (-) 的奖励只有在动作失败时才能获得。"
+		},
 		"item": {
 			"name": "物品",
 			"explanation": ""
