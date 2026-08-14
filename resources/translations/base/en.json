@@ -253,34 +253,6 @@
 			"name": "Coin",
 			"explanation": "An item that serves as the currency for buying and selling."
 		},
-		"amount-earned": {
-			"name": "Amount Earned",
-			"explanation": "The total amount of coins you have earned so far."
-		},
-		"time": {
-			"name": "Time",
-			"explanation": ""
-		},
-		"playing-time": {
-			"name": "Playing Time",
-			"explanation": "The amount of time elapsed since you started playing this game, including offline time."
-		},
-		"count-now": {
-			"name": "Count Now",
-			"explanation": "The total number of items you currently own."
-		},
-		"count-gained": {
-			"name": "Count Gained",
-			"explanation": "The total number of items acquired so far."
-		},
-		"total-level": {
-			"name": "Total Level",
-			"explanation": "The sum of the current levels of all categories."
-		},
-		"count-actioned": {
-			"name": "Count Actioned",
-			"explanation": "The total number of actions performed so far."
-		},
 		"play-time": {
 			"name": "Play Time",
 			"explanation": "When you started playing and how long you have played."
