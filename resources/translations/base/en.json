@@ -281,6 +281,34 @@
 			"name": "Count Actioned",
 			"explanation": "The total number of actions performed so far."
 		},
+		"play-time": {
+			"name": "Play Time",
+			"explanation": "When you started playing and how long you have played."
+		},
+		"play-started": {
+			"name": "Started",
+			"explanation": "The date and time you started playing."
+		},
+		"play-duration": {
+			"name": "Duration",
+			"explanation": "The time elapsed since you started playing."
+		},
+		"coins-earned": {
+			"name": "Coins Earned",
+			"explanation": "The total amount of each coin you have earned so far."
+		},
+		"unique-count": {
+			"name": "Unique",
+			"explanation": "The number of kinds you can hold at the same time."
+		},
+		"max-capacity": {
+			"name": "Capacity",
+			"explanation": "The maximum number of item kinds you can own now."
+		},
+		"max-queue": {
+			"name": "Queue",
+			"explanation": "The maximum number of actions the queue can hold now."
+		},
 		"win": {
 			"name": "Win",
 			"explanation": ""
@@ -775,7 +803,31 @@
 		},
 		"timing": {
 			"name": "Timing",
-			"explanation": ""
+			"explanation": "When this event occurs."
+		},
+		"timing-matched": {
+			"name": "Condition Met",
+			"explanation": "Occurs the moment the conditions are met."
+		},
+		"timing-comebacked": {
+			"name": "Comeback",
+			"explanation": "Occurs when you come back after being away."
+		},
+		"timing-gameovered": {
+			"name": "Game Over",
+			"explanation": "Occurs when you run out of stamina in battle."
+		},
+		"timing-welcomed": {
+			"name": "First Start",
+			"explanation": "Occurs when you open this world for the first time."
+		},
+		"timing-completed": {
+			"name": "Completion",
+			"explanation": "Occurs when every category reaches its maximum level."
+		},
+		"timing-obtained": {
+			"name": "Single Completion",
+			"explanation": "Occurs when a single action is completed."
 		},
 		"matched": {
 			"name": "Matched",
