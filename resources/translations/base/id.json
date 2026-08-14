@@ -519,7 +519,7 @@
 		},
 		"reorder": {
 			"name": "Susun ulang",
-			"explanation": "Pindahkan tindakan yang telah disimpan ini ke posisi yang dipilih dalam antrian."
+			"explanation": "Menerapkan jumlah eksekusi dan urutan yang dipilih ke aksi ini dalam antrian. Memindahkan aksi yang sedang berjalan ke 1 atau lebih akan menghentikannya dan mengembalikannya ke daftar tunggu."
 		},
 		"position": {
 			"name": "Urutan eksekusi",
@@ -1075,7 +1075,7 @@
 		},
 		"hint-act-count": {
 			"name": "Hint Act Count",
-			"explanation": "Kamu dapat menentukan berapa kali menjalankannya. Masukkan 0 untuk menjalankannya sampai sumber daya habis."
+			"explanation": "Kamu dapat menentukan berapa kali menjalankannya. Pilih posisi paling kanan untuk menjalankannya sampai sumber daya habis."
 		},
 		"hint-queue-removing": {
 			"name": "Hint Queue Removing",

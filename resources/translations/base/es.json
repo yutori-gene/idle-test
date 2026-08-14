@@ -519,7 +519,7 @@
 		},
 		"reorder": {
 			"name": "Reordenar",
-			"explanation": "Mueve esta acción reservada a la posición seleccionada en la cola."
+			"explanation": "Aplica el número de veces y la posición seleccionados a esta acción en la cola. Si mueves una acción en curso a 1 o más, se detiene y vuelve a la lista de espera."
 		},
 		"position": {
 			"name": "Orden de ejecución",
@@ -1075,7 +1075,7 @@
 		},
 		"hint-act-count": {
 			"name": "Hint Act Count",
-			"explanation": "Puedes indicar cuántas veces ejecutarla. Introduce 0 para ejecutarla hasta agotar los recursos."
+			"explanation": "Puedes indicar cuántas veces ejecutarla. Elige la posición más a la derecha para ejecutarla hasta agotar los recursos."
 		},
 		"hint-queue-removing": {
 			"name": "Hint Queue Removing",

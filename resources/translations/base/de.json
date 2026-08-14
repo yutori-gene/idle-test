@@ -519,7 +519,7 @@
 		},
 		"reorder": {
 			"name": "Umsortieren",
-			"explanation": "Verschieben Sie diese reservierte Aktion an die ausgewählte Position in der Warteschlange."
+			"explanation": "Wendet die gewählte Anzahl der Ausführungen und den Platz auf diese Aktion in der Warteschlange an. Wird eine laufende Aktion auf 1 oder später verschoben, wird sie gestoppt und kehrt in die Warteliste zurück."
 		},
 		"position": {
 			"name": "Ausführungsreihenfolge",
@@ -1075,7 +1075,7 @@
 		},
 		"hint-act-count": {
 			"name": "Hint Act Count",
-			"explanation": "Du kannst angeben, wie oft sie ausgeführt wird. Gib 0 ein, um sie bis zum Aufbrauchen der Ressourcen auszuführen."
+			"explanation": "Du kannst angeben, wie oft sie ausgeführt wird. Wähle die Position ganz rechts, um sie bis zum Aufbrauchen der Ressourcen auszuführen."
 		},
 		"hint-queue-removing": {
 			"name": "Hint Queue Removing",

@@ -519,7 +519,7 @@
 		},
 		"reorder": {
 			"name": "重新排列",
-			"explanation": "将此保留操作移动到队列中的选定位置。"
+			"explanation": "将选定的执行次数和执行顺序应用到队列中的该动作。把正在执行的动作移到1及以后会停止它并放回等待列表。"
 		},
 		"position": {
 			"name": "执行顺序",
@@ -1075,7 +1075,7 @@
 		},
 		"hint-act-count": {
 			"name": "Hint Act Count",
-			"explanation": "可以指定执行次数。输入 0 则会一直执行到资源耗尽。"
+			"explanation": "可以指定执行次数。选择最右端则会一直执行到资源耗尽。"
 		},
 		"hint-queue-removing": {
 			"name": "Hint Queue Removing",

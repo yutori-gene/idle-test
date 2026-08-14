@@ -519,7 +519,7 @@
 		},
 		"reorder": {
 			"name": "Reposition",
-			"explanation": "Move this reserved action to the selected position in the queue."
+			"explanation": "Apply the selected number of times and position to this action in the queue. Moving a running action to 1 or later stops it and returns it to the waiting list."
 		},
 		"position": {
 			"name": "Execution Order",
@@ -1075,7 +1075,7 @@
 		},
 		"hint-act-count": {
 			"name": "Hint Act Count",
-			"explanation": "You can specify the number of times to run it. Enter 0 to run until the resource runs out."
+			"explanation": "You can specify the number of times to run it. Pick the rightmost position to run until the resource runs out."
 		},
 		"hint-queue-removing": {
 			"name": "Hint Queue Removing",

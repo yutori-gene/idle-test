@@ -519,7 +519,7 @@
 		},
 		"reorder": {
 			"name": "Réorganiser",
-			"explanation": "Déplacez cette action vers la position sélectionnée dans la file d'attente."
+			"explanation": "Applique le nombre d'exécutions et la place sélectionnés à cette action dans la file d'attente. Déplacer une action en cours vers 1 ou plus l'arrête et la renvoie dans la liste d'attente."
 		},
 		"position": {
 			"name": "Ordre d'exécution",
@@ -1075,7 +1075,7 @@
 		},
 		"hint-act-count": {
 			"name": "Hint Act Count",
-			"explanation": "Vous pouvez indiquer le nombre d'exécutions. Saisissez 0 pour exécuter jusqu'à épuisement des ressources."
+			"explanation": "Vous pouvez indiquer le nombre d'exécutions. Choisissez la position la plus à droite pour exécuter jusqu'à épuisement des ressources."
 		},
 		"hint-queue-removing": {
 			"name": "Hint Queue Removing",

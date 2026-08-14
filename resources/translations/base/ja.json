@@ -519,7 +519,7 @@
 		},
 		"reorder": {
 			"name": "並べ替え",
-			"explanation": "この予約済みのアクションを、キュー内の選択した位置に移動します。"
+			"explanation": "選んだ実行回数と実行順を、キュー内のこのアクションへ反映します。実行中のアクションを1以降へ動かすと、停止して待機へ戻ります。"
 		},
 		"position": {
 			"name": "実行順",
@@ -1075,7 +1075,7 @@
 		},
 		"hint-act-count": {
 			"name": "Hint Act Count",
-			"explanation": "実行する回数を指定できます。0を入力すると資源が尽きるまで実行します。"
+			"explanation": "実行する回数を指定できます。一番右を選ぶと資源が尽きるまで実行します。"
 		},
 		"hint-queue-removing": {
 			"name": "Hint Queue Removing",
