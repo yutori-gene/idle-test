@@ -106,14 +106,14 @@ export const property: Type.Property = {
 	points: ["Este es un Artículo de efecto que puede ser configurado en el Artículo.", "Los artículos cuyo tipo de equipamiento es `necessary` o `consumable` solo aplican su efecto mientras están equipados. `unnecessary` aplica su efecto con solo poseerlo, y la magnitud del efecto es proporcional a la cantidad que se posea (el doble si se poseen 2).", "Dado que el efecto de `unnecessary` se calcula multiplicando directamente el número de unidades que se tienen, `maximum` (el número máximo de unidades) constituye el límite máximo de dicho efecto. A la hora de equilibrar el juego, configúralo junto con `maximum`.", "Los valores de ambos elementos se calculan como un ajuste por la diferencia de nivel entre el nivel del jugador y el nivel de la Acción.", "Por ejemplo, si el valor de ataque es 10, el ataque se calcula como si el nivel del jugador fuera 10 superior al nivel de la Acción. Menos valores son lo contrario.", "attack, defence, accuracy, evasion y restore solo son efectivos para acciones del tipo `stamina`."],
 	list: [
 		["propiedades", "Detalles de la eficacia."],
-		["velocidad", "Reduce el tiempo necesario para realizar una Acción. El tiempo necesario varía inversamente a la diferencia de nivel."],
-		["oportunidad", "Modifica la probabilidad de éxito de una Acción. La probabilidad aumenta en proporción a la diferencia de nivel."],
+		["velocidad", "Reduce el tiempo necesario para realizar una Acción. El tiempo necesario varía inversamente a la diferencia de nivel (el ratio surte la mitad de efecto)."],
+		["oportunidad", "Modifica la probabilidad de éxito de una Acción. El ratio se aplica a la proporción entre el éxito y el fracaso, por lo que nunca supera el `100`%."],
 		["experiencia", "Cambia la experiencia adquirida. Aumenta en proporción a la diferencia de nivel (el cálculo es inverso: cuanto mayor es el nivel de Acción, más ganas)."],
 		["ataque", "Cambia el daño de resistencia infligido al oponente. (Acción de resistencia solamente)."],
-		["defensa", "Reduce el daño de resistencia recibido de los oponentes. (sólo acción de resistencia)."],
+		["defensa", "Reduce el daño de resistencia recibido de los oponentes (el ratio surte la mitad de efecto). (sólo acción de resistencia)"],
 		["precisión", "Reduce el porcentaje de ataques fallidos. (sólo acción de resistencia)."],
-		["evasión", "Cambia el índice de evasión de los ataques del oponente. (Acción de resistencia solamente)."],
-		["restaurar", "Cambia la cantidad de resistencia restaurada al fin de una Acción. (sólo para acciones de resistencia)."],
+		["evasión", "Cambia el índice de evasión de los ataques del oponente (el ratio surte la mitad de efecto). (sólo acción de resistencia)"],
+		["restaurar", "Cambia la cantidad de resistencia restaurada al fin de una Acción. Cuanto más se acerca a la recuperación total, más gradual es el aumento. (sólo acción de resistencia)"],
 	],
 	children: {
 		category: {
@@ -919,7 +919,10 @@ export const general: Type.General = {
 			points: [
 				"Configura cuántas veces cambia cada propiedad cada vez que la diferencia entre el nivel de la categoría y el nivel de la acción aumenta en `10`.",
 				"El ratio se calcula como (ratio de propiedad)^(diferencia de nivel÷10). Cuando la diferencia de nivel es `0`, el ratio es `1` y se utiliza tal cual el valor configurado en la acción.",
-				"El ataque, la recuperación, la probabilidad de éxito y la experiencia aumentan según este ratio, mientras que la defensa (daño recibido) y la rapidez (tiempo necesario) disminuyen en la misma proporción. En la precisión y la evasión, la tasa de fallo y la tasa de impactos recibidos disminuyen según este ratio.",
+				"El ataque y la experiencia aumentan según este ratio, mientras que la defensa (daño recibido) y la rapidez (tiempo necesario) disminuyen en la misma proporción.",
+				"La precisión, la evasión, la probabilidad de éxito y la recuperación son valores que se mantienen entre el `0` y el `100`%, por lo que el ratio se aplica a la proporción entre lo que se cumple y lo que no. El `0`% y el `100`% no varían, y los valores intermedios nunca superan el `100`%.",
+				"La defensa, la evasión y la rapidez reciben la mitad del efecto del ratio (una diferencia de nivel de `20` equivale a una diferencia de nivel de `10` en las demás propiedades). La defensa y la evasión se aplican por partida doble a la tasa de impactos recibidos y al daño recibido, y la rapidez se aplica a todas las demás propiedades como número de ejecuciones, por lo que su efecto se debilita para mantener el equilibrio.",
+				"La referencia es (tasa de aumento de experiencia) elevada a `6.7`. Por encima de ese valor, la subida de nivel se acelera cuanto mayor es el nivel; por debajo, los niveles finales requieren más tiempo.",
 				"Si se establece en `1`, la diferencia de nivel deja de influir. Cuanto mayor sea el valor, más brusca será la ventaja o desventaja provocada por la diferencia de nivel.",
 			],
 			list: [

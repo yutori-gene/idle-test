@@ -106,14 +106,14 @@ export const property: Type.Property = {
 	points: ["Il s'agit d'un effet qui peut être configuré sur l'Objet.", "Les objets dont le type d'équipement est `necessary` ou `consumable` n'appliquent leur effet que lorsqu'ils sont équipés. `unnecessary` applique son effet du simple fait de le posséder, et l'ampleur de l'effet est proportionnelle au nombre possédé (le double si vous en possédez 2).", "L'effet « `unnecessary` » se traduisant par un multiplicateur égal au nombre d'objets détenus, la valeur « `maximum` » (nombre maximal d'objets détenus) constitue la limite supérieure de cet effet. Veuillez effectuer la configuration de ce paramètre en fonction de la valeur « `maximum` » lorsque vous réglez l'équilibre du jeu.", "Les valeurs des deux éléments sont calculées comme un ajustement de la différence de niveau entre le niveau du joueur et le niveau de l'action.", "Par exemple, si la valeur d'attaque est de 10, l'attaque est calculée comme si le niveau du joueur était supérieur de 10 au niveau de l'Action. Les valeurs négatives sont l'inverse.", "attack, defence, accuracy, evasion et restore ne sont valables que pour les actions de type `stamina`."],
 	list: [
 		["propriétés", "Détails de l'efficacité."],
-		["vitesse", "Réduit le temps nécessaire à une action. Le temps nécessaire varie inversement à la différence de niveau."],
-		["chance", "Modifie la probabilité de succès d'une action. La probabilité augmente proportionnellement à la différence de niveau."],
+		["vitesse", "Réduit le temps nécessaire à une action. Le temps nécessaire varie inversement à la différence de niveau (le rapport n'agit qu'à moitié)."],
+		["chance", "Modifie la probabilité de succès d'une action. Le rapport s'applique à la proportion entre la réussite et l'échec, si bien qu'elle ne dépasse jamais `100`%."],
 		["expérience", "Modifie l'expérience acquise. Augmente proportionnellement à la différence de niveau (le calcul est inversé : plus l'action de niveau est élevée, plus vous gagnez)."],
 		["attaque", "Modifie les dégâts d'endurance infligés à l'adversaire. (Action Stamina uniquement)."],
-		["défense", "Réduit les dégâts d'endurance subis par les adversaires. (Action stamina uniquement)."],
+		["défense", "Réduit les dégâts d'endurance subis par les adversaires (le rapport n'agit qu'à moitié). (Action stamina uniquement)"],
 		["précision", "Bas le taux de ratage des attaques. (Action de résistance uniquement)."],
-		["évasion", "Modifie le taux d'évasion des attaques de l'adversaire. (Action stamina uniquement)."],
-		["restaurer", "Modifie la quantité d'endurance restaurée à la fin d'une action. (uniquement pour les actions d'endurance)."],
+		["évasion", "Modifie le taux d'évasion des attaques de l'adversaire (le rapport n'agit qu'à moitié). (Action stamina uniquement)"],
+		["restaurer", "Modifie la quantité d'endurance restaurée à la fin d'une action. Plus on approche de la restauration complète, plus l'augmentation devient progressive. (uniquement pour les actions d'endurance)"],
 	],
 	children: {
 		category: {
@@ -919,7 +919,10 @@ export const general: Type.General = {
 			points: [
 				"Configure combien de fois chaque propriété change chaque fois que la différence entre le niveau de la catégorie et le niveau de l'action augmente de `10`.",
 				"Le rapport est calculé par (rapport de propriété)^(différence de niveau÷10). Lorsque la différence de niveau est `0`, le rapport est de `1` et la valeur configurée dans l'action est utilisée telle quelle.",
-				"L'attaque, la récupération, la probabilité de succès et l'expérience augmentent selon ce rapport, tandis que la défense (dégâts subis) et la rapidité (temps nécessaire) diminuent dans la même proportion. Pour la précision et l'esquive, le taux d'échec et le taux de coups subis diminuent selon ce rapport.",
+				"L'attaque et l'expérience augmentent selon ce rapport, tandis que la défense (dégâts subis) et la rapidité (temps nécessaire) diminuent dans la même proportion.",
+				"La précision, l'esquive, la probabilité de succès et la récupération sont des valeurs comprises entre `0` et `100`%, si bien que le rapport s'applique à la proportion entre ce qui se réalise et ce qui ne se réalise pas. `0`% et `100`% ne changent pas, et les valeurs intermédiaires ne dépassent jamais `100`%.",
+				"La défense, l'esquive et la rapidité ne reçoivent que la moitié de l'effet du rapport (une différence de niveau de `20` équivaut à une différence de niveau de `10` pour les autres propriétés). La défense et l'esquive s'appliquent doublement, au taux de coups subis et aux dégâts subis, et la rapidité s'applique à toutes les autres propriétés en tant que nombre d'exécutions ; leur effet est donc affaibli pour maintenir l'équilibre.",
+				"La référence est (taux d'augmentation de l'expérience) à la puissance `6.7`. Au-dessus, la montée en niveau s'accélère à mesure que le niveau augmente ; en dessous, les derniers niveaux demandent plus de temps.",
 				"En le fixant à `1`, la différence de niveau n'a plus d'influence. Plus la valeur est élevée, plus l'avantage et le désavantage liés à la différence de niveau sont brutaux.",
 			],
 			list: [

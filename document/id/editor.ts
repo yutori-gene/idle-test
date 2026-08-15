@@ -106,14 +106,14 @@ export const property: Type.Property = {
 	points: ["Ini adalah item efek yang dapat dikonfigurasi pada item.", "Item dengan tipe peralatan `necessary` atau `consumable` hanya berefek selama dikenakan. `unnecessary` berefek cukup dengan dimiliki, dan besar efeknya sebanding dengan jumlah yang dimiliki (dua kali lipat jika memiliki 2).", "Karena efek `unnecessary` menggunakan jumlah yang dimiliki sebagai faktor pengganda, maka `maximum` (jumlah maksimum yang dimiliki) menjadi batas atas efek tersebut. Saat menyesuaikan keseimbangan, harap lakukan konfigurasi nilai ini bersamaan dengan `maximum`.", "Nilai untuk kedua item dihitung sebagai penyesuaian untuk perbedaan level antara level pemain dan level Aksi.", "Misalnya, jika nilai serangan adalah 10, serangan dihitung seolah-olah level pemain 10 lebih tinggi dari level Aksi. Nilai minus adalah kebalikannya.", "attack, defence, accuracy, evasion, dan restore hanya berlaku untuk aksi bertipe `stamina`."],
 	list: [
 		["properti", "Rincian efektivitas."],
-		["kecepatan", "Mengurangi waktu yang diperlukan untuk suatu aksi. Waktu yang diperlukan bervariasi secara terbalik dengan perbedaan level."],
-		["kesempatan", "Mengubah probabilitas sukses suatu aksi. Probabilitas meningkat secara proporsional dengan perbedaan level."],
+		["kecepatan", "Mengurangi waktu yang diperlukan untuk suatu aksi. Waktu yang diperlukan bervariasi secara terbalik dengan perbedaan level (efek rasio hanya setengah)."],
+		["kesempatan", "Mengubah probabilitas sukses suatu aksi. Rasio dikenakan pada perbandingan antara sukses dan gagal, sehingga tidak pernah melebihi `100`%."],
 		["pengalaman", "Mengubah pengalaman akuisisi. Meningkat secara proporsional dengan perbedaan level (perhitungannya terbalik: semakin tinggi Aksi level, semakin banyak yang Anda peroleh)."],
 		["serangan", "Mengubah kerusakan stamina yang diberikan kepada lawan. (Hanya Aksi Stamina)."],
-		["pertahanan", "Mengurangi kerusakan stamina yang diterima dari lawan. (hanya aksi stamina)."],
+		["pertahanan", "Mengurangi kerusakan stamina yang diterima dari lawan (efek rasio hanya setengah). (hanya aksi stamina)"],
 		["akurasi", "Mengurangi tingkat serangan yang meleset. (hanya aksi stamina)."],
-		["penghindaran", "Mengubah tingkat penghindaran serangan lawan. (hanya aksi stamina)."],
-		["mengembalikan", "Mengubah jumlah stamina yang dipulihkan di akhir aksi. (hanya untuk aksi stamina)."],
+		["penghindaran", "Mengubah tingkat penghindaran serangan lawan (efek rasio hanya setengah). (hanya aksi stamina)"],
+		["mengembalikan", "Mengubah jumlah stamina yang dipulihkan di akhir aksi. Semakin mendekati pemulihan penuh, semakin landai kenaikannya. (hanya untuk aksi stamina)"],
 	],
 	children: {
 		category: {
@@ -919,7 +919,10 @@ export const general: Type.General = {
 			points: [
 				"Mengatur berapa kali setiap properti berubah setiap kali perbedaan antara level kategori dan level aksi bertambah `10`.",
 				"Rasio dihitung sebagai (rasio properti)^(perbedaan level÷10). Ketika perbedaan level adalah `0`, rasionya `1` dan nilai yang diatur pada aksi digunakan apa adanya.",
-				"Serangan, pemulihan, probabilitas sukses, dan pengalaman bertambah sebesar rasio ini, sedangkan pertahanan (kerusakan yang diterima) dan kecepatan (waktu yang dibutuhkan) berkurang dengan rasio yang sama. Pada akurasi dan penghindaran, tingkat meleset dan tingkat terkena serangan berkurang sebesar rasio ini.",
+				"Serangan dan pengalaman bertambah sebesar rasio ini, sedangkan pertahanan (kerusakan yang diterima) dan kecepatan (waktu yang dibutuhkan) berkurang dengan rasio yang sama.",
+				"Akurasi, penghindaran, probabilitas sukses, dan pemulihan adalah nilai yang berada dalam rentang `0` hingga `100`%, sehingga rasio dikenakan pada perbandingan antara sisi yang tercapai dan sisi yang tidak tercapai. `0`% dan `100`% tidak berubah, dan nilai di antaranya tidak pernah melebihi `100`%.",
+				"Pertahanan, penghindaran, dan kecepatan hanya menerima setengah efek rasio (perbedaan level `20` setara dengan perbedaan level `10` pada properti lain). Pertahanan dan penghindaran bekerja ganda pada tingkat terkena serangan dan kerusakan yang diterima, sedangkan kecepatan bekerja pada semua properti lain sebagai jumlah pelaksanaan, sehingga efeknya dilemahkan agar tetap seimbang.",
+				"Patokannya adalah (tingkat kenaikan pengalaman) pangkat `6.7`. Di atas itu, kenaikan level makin cepat seiring naiknya level; di bawah itu, level-level akhir memerlukan lebih banyak waktu.",
 				"Jika diatur ke `1`, perbedaan level tidak lagi berpengaruh. Semakin besar nilainya, semakin tajam keuntungan dan kerugian dari perbedaan level.",
 			],
 			list: [

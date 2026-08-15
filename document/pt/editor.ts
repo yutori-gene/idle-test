@@ -106,14 +106,14 @@ export const property: Type.Property = {
 	points: ["Esse é um item de efeito que pode ser configurado no Item.", "Itens cujo tipo de equipamento é `necessary` ou `consumable` só aplicam seu efeito enquanto equipados. `unnecessary` aplica o efeito apenas por estar em posse, e a intensidade do efeito é proporcional à quantidade possuída (o dobro se você possuir 2).", "Como o efeito de `unnecessary` é calculado com base no número de itens em posse, o `maximum` (número máximo de itens) representa o limite máximo desse efeito. Ao ajustar o equilíbrio, faça a configuração desse valor em conjunto com o `maximum`.", "Os valores de ambos os itens são calculados como um Ajustado para a diferença de nível entre o nível do jogador e o nível da Ação.", "Por exemplo, se o valor de ataque for 10, o ataque será calculado como se o nível do jogador fosse 10 mais alto do que o nível da Ação. Os valores Menos são o oposto.", "attack, defence, accuracy, evasion e restore só são eficazes para ações do tipo `stamina`."],
 	list: [
 		["propriedades", "Detalhes da eficácia."],
-		["velocidade", "Reduz o tempo necessário para uma Ação. O tempo necessário varia inversamente com a diferença de nível."],
-		["chance", "Altera a probabilidade de sucesso de uma Ação. A probabilidade aumenta na proporção da diferença de nível."],
+		["velocidade", "Reduz o tempo necessário para uma Ação. O tempo necessário varia inversamente com a diferença de nível (a taxa tem metade do efeito)."],
+		["chance", "Altera a probabilidade de sucesso de uma Ação. A taxa é aplicada à proporção entre o sucesso e o fracasso, por isso nunca ultrapassa `100`%."],
 		["experiência", "Altera a experiência adquirida. Aumenta proporcionalmente à diferença de nível (o cálculo é invertido: quanto maior a Ação de nível, mais você ganha)."],
 		["ataque", "Altera o dano de resistência causado ao oponente. (Ação de resistência apenas)."],
-		["defesa", "Reduz o dano de resistência recebido dos oponentes. (Ação de resistência apenas)."],
+		["defesa", "Reduz o dano de resistência recebido dos oponentes (a taxa tem metade do efeito). (Ação de resistência apenas)"],
 		["precisão", "Baixa a taxa de erros de ataque. (Ação de resistência apenas)."],
-		["evasão", "Altera a taxa de evasão dos ataques do oponente. (Ação de resistência apenas)."],
-		["restaurar", "Altera a quantidade de resistência restaurada no fim de uma ação. (somente para ações de resistência)."],
+		["evasão", "Altera a taxa de evasão dos ataques do oponente (a taxa tem metade do efeito). (Ação de resistência apenas)"],
+		["restaurar", "Altera a quantidade de resistência restaurada no fim de uma ação. Quanto mais perto da recuperação total, mais gradual é o aumento. (somente para ações de resistência)"],
 	],
 	children: {
 		category: {
@@ -919,7 +919,10 @@ export const general: Type.General = {
 			points: [
 				"Configura quantas vezes cada propriedade muda sempre que a diferença entre o nível da categoria e o nível da ação aumenta em `10`.",
 				"A taxa é calculada como (taxa de propriedade)^(diferença de nível÷10). Quando a diferença de nível é `0`, a taxa é `1` e o valor configurado na ação é usado como está.",
-				"O ataque, a recuperação, a probabilidade de sucesso e a experiência aumentam segundo esta taxa, enquanto a defesa (dano recebido) e a rapidez (tempo necessário) diminuem na mesma proporção. Na precisão e na evasão, a taxa de erro e a taxa de golpes recebidos diminuem segundo esta taxa.",
+				"O ataque e a experiência aumentam segundo esta taxa, enquanto a defesa (dano recebido) e a rapidez (tempo necessário) diminuem na mesma proporção.",
+				"A precisão, a evasão, a probabilidade de sucesso e a recuperação são valores que ficam entre `0` e `100`%, por isso a taxa é aplicada à proporção entre o que se concretiza e o que não se concretiza. `0`% e `100`% não mudam, e os valores intermédios nunca ultrapassam `100`%.",
+				"A defesa, a evasão e a rapidez recebem metade do efeito da taxa (uma diferença de nível de `20` equivale a uma diferença de nível de `10` nas outras propriedades). A defesa e a evasão aplicam-se em duplicado à taxa de golpes recebidos e ao dano recebido, e a rapidez aplica-se a todas as outras propriedades como número de execuções, por isso o seu efeito é enfraquecido para manter o equilíbrio.",
+				"A referência é (taxa de aumento de experiência) elevada a `6.7`. Acima disso, subir de nível acelera à medida que o nível aumenta; abaixo disso, os níveis finais demoram mais tempo.",
 				"Se definido como `1`, a diferença de nível deixa de influenciar. Quanto maior o valor, mais acentuada será a vantagem ou desvantagem provocada pela diferença de nível.",
 			],
 			list: [

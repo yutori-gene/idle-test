@@ -106,14 +106,14 @@ export const property: Type.Property = {
 	points: ["Dies ist ein Effekt, der für den Gegenstand konfiguriert werden kann.", "Gegenstände mit dem Ausrüstungstyp `necessary` oder `consumable` entfalten ihre Wirkung nur im ausgerüsteten Zustand. `unnecessary` wirkt allein durch den Besitz, und die Stärke der Wirkung ist proportional zur besessenen Anzahl (bei 2 Stück das Doppelte).", "Da sich der Effekt von `unnecessary` direkt aus der Anzahl der besessenen Gegenstände ergibt, stellt `maximum` (maximale Anzahl) die Obergrenze des Effekts dar. Bitte passen Sie die Konfiguration entsprechend in Abstimmung mit `maximum` an, um ein ausgewogenes Spiel zu gewährleisten.", "Die Werte für beide Gegenstände werden als Anpassen an den Level-Unterschied zwischen dem Level des Spielers und dem Level der Aktion berechnet.", "Wenn der Wert für den Angriff beispielsweise 10 beträgt, wird der Angriff so berechnet, als ob das Level des Spielers 10 höher wäre als das Level der Aktion. Minus-Werte sind das Gegenteil.", "attack, defence, accuracy, evasion und restore gelten nur für Aktionen vom Typ `stamina`."],
 	list: [
 		["Eigenschaften", "Details zur Wirksamkeit."],
-		["Geschwindigkeit", "Verringert die Zeit, die für eine Aktion benötigt wird. Die benötigte Zeit variiert umgekehrt mit dem Level-Unterschied."],
-		["Chance", "Ändert die Erfolgswahrscheinlichkeit einer Aktion. Die Wahrscheinlichkeit steigt proportional zum Level-Unterschied."],
+		["Geschwindigkeit", "Verringert die Zeit, die für eine Aktion benötigt wird. Die benötigte Zeit variiert umgekehrt mit dem Level-Unterschied (der Faktor wirkt nur zur Hälfte)."],
+		["Chance", "Ändert die Erfolgswahrscheinlichkeit einer Aktion. Der Faktor wirkt auf das Verhältnis von Erfolg zu Misserfolg und überschreitet daher nie `100`%."],
 		["erleben", "Ändert die Erfahrung, die man erwirbt. Erhöht sich proportional zur Level-Differenz (die Berechnung ist umgekehrt: je höher die Level-Aktion, desto mehr gewinnt man)."],
 		["angreifen", "Ändert den Ausdauerschaden, der dem Gegner zugefügt wird. (Nur Ausdauer-Aktion)."],
-		["Verteidigung", "Verringert den von Gegnern erlittenen Ausdauerschaden. (nur Ausdauer-Aktion)."],
+		["Verteidigung", "Verringert den von Gegnern erlittenen Ausdauerschaden (der Faktor wirkt nur zur Hälfte). (nur Ausdauer-Aktion)"],
 		["Genauigkeit", "Verringert die Fehlwurfquote von Angriffen. (nur Ausdauer-Aktion)."],
-		["Ausweichen", "Ändert die Ausweichrate der gegnerischen Angriffe. (nur Ausdauer-Aktion)."],
-		["wiederherstellen", "Ändert die Menge an Ausdauer, die am Ende einer Aktion wiederhergestellt wird. (nur für Ausdauer-Aktionen)."],
+		["Ausweichen", "Ändert die Ausweichrate der gegnerischen Angriffe (der Faktor wirkt nur zur Hälfte). (nur Ausdauer-Aktion)"],
+		["wiederherstellen", "Ändert die Menge an Ausdauer, die am Ende einer Aktion wiederhergestellt wird. Je näher an der vollständigen Erholung, desto flacher der Zuwachs. (nur für Ausdauer-Aktionen)"],
 	],
 	children: {
 		category: {
@@ -919,7 +919,10 @@ export const general: Type.General = {
 			points: [
 				"Legt fest, um welchen Faktor sich jede Eigenschaft ändert, sobald der Unterschied zwischen dem Level der Kategorie und dem Level der Aktion um `10` wächst.",
 				"Der Faktor wird als (Eigenschaftsfaktor)^(Level-Unterschied÷10) berechnet. Bei einem Level-Unterschied von `0` beträgt der Faktor `1`, und der in der Aktion eingestellte Wert wird unverändert verwendet.",
-				"Angriff, Wiederherstellung, Erfolgswahrscheinlichkeit und Erfahrung steigen um diesen Faktor, während Verteidigung (erlittener Schaden) und Schnelligkeit (benötigte Zeit) um denselben Faktor sinken. Bei Genauigkeit und Ausweichen sinken die Fehlschlagrate und die Rate der erlittenen Treffer um diesen Faktor.",
+				"Angriff und Erfahrung steigen um diesen Faktor, während Verteidigung (erlittener Schaden) und Schnelligkeit (benötigte Zeit) um denselben Faktor sinken.",
+				"Genauigkeit, Ausweichen, Erfolgswahrscheinlichkeit und Wiederherstellung sind Werte zwischen `0` und `100`%, daher wirkt der Faktor auf das Verhältnis zwischen dem, was eintritt, und dem, was nicht eintritt. `0`% und `100`% ändern sich nicht, und die Werte dazwischen überschreiten nie `100`%.",
+				"Bei Verteidigung, Ausweichen und Schnelligkeit wirkt der Faktor nur zur Hälfte (ein Level-Unterschied von `20` entspricht einem Level-Unterschied von `10` bei den übrigen Eigenschaften). Verteidigung und Ausweichen wirken doppelt, auf die Rate der erlittenen Treffer und auf den erlittenen Schaden, und Schnelligkeit wirkt als Anzahl der Ausführungen auf alle übrigen Eigenschaften, daher wird ihre Wirkung zum Ausgleich abgeschwächt.",
+				"Als Richtwert dient (Erfahrung-Zuwachsrate) hoch `6.7`. Darüber beschleunigt sich der Levelaufstieg mit steigendem Level, darunter dauern die späteren Level länger.",
 				"Mit `1` entfällt der Einfluss des Level-Unterschieds. Je größer der Wert, desto drastischer wirken sich Vor- und Nachteile des Level-Unterschieds aus.",
 			],
 			list: [

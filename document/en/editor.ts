@@ -106,14 +106,14 @@ export const property: Type.Property = {
 	points: ["This is an item of effects that can be configured for an Item.", "Items whose equipment type is `necessary` or `consumable` apply their effect only while equipped. `unnecessary` applies its effect just by being held, and the size of the effect is proportional to the number held (twice as much if you hold 2).", "Since the effect of `unnecessary` is based on the number of items you have—which directly determines the multiplier—`maximum` (the maximum number of items you can hold) serves as the upper limit for this effect. When balancing the game, please configure this setting in conjunction with `maximum`.", "The value of any of these items is calculated as an Adjustment for the difference in level between the player's level and the Action's level.", "For example, if the attack value is 10, the attack is calculated as if the player's level is 10 higher than the Action's level. Minus values are the opposite.", "attack, defence, accuracy, evasion and restore are effective only for actions of the `stamina` type."],
 	list: [
 		["properties", "Details of Effects"],
-		["speed", "Reduces the time required for an Action. The time required changes inversely proportional to the difference in level."],
-		["chance", "Changes the probability of success of an Action. The probability increases in proportion to the level difference."],
+		["speed", "Reduces the time required for an Action. The time required changes inversely proportional to the level difference (the ratio takes half effect)."],
+		["chance", "Changes the probability of success of an Action. The ratio applies to the proportion between success and failure, so it never exceeds `100`%."],
 		["experience", "Varies the experience value acquired. It increases in proportion to the difference in levels (the calculation is reversed: the higher the level Action, the more is gained)."],
 		["attack", "Changes the stamina damage dealt to the opponent. (only for stamina actions)"],
-		["defence", "Reduces stamina damage taken from opponents. (stamina Action only)"],
+		["defence", "Reduces stamina damage taken from opponents (the ratio takes half effect). (stamina Action only)"],
 		["accuracy", "Decreases the miss rate of attacks. (stamina Action only)"],
-		["evasion", "Changes the evasion rate of an opponent's attack. (stamina Action only)"],
-		["restore", "Changes the amount of stamina restored at the end of an Action. (only for stamina actions)"],
+		["evasion", "Changes the evasion rate of an opponent's attack (the ratio takes half effect). (stamina Action only)"],
+		["restore", "Changes the amount of stamina restored at the end of an Action. The closer it gets to a full recovery, the more gradual the increase becomes. (stamina Action only)"],
 	],
 	children: {
 		category: {
@@ -919,7 +919,10 @@ export const general: Type.General = {
 			points: [
 				"Configures how many times each property changes every time the difference between the level of the category and the level of the action widens by `10`.",
 				"The ratio is calculated as (property ratio)^(level difference ÷ 10). When the level difference is `0` the ratio is `1`, and the value configured in the action is used as it is.",
-				"Attack, restore, probability of success and experience increase by this ratio, while defence (damage taken) and quickness (required time) decrease by the same ratio. For accuracy and evasion, the miss rate and the rate of being hit decrease by this ratio.",
+				"Attack and experience increase by this ratio, while defence (damage taken) and quickness (required time) decrease by the same ratio.",
+				"Accuracy, evasion, probability of success and restoration are values that stay within `0` to `100`%, so the ratio applies to the proportion between the side that succeeds and the side that does not. `0`% and `100`% never change, and the values in between never exceed `100`%.",
+				"Defence, evasion and quickness take half the effect of the ratio (a level difference of `20` equals a level difference of `10` for the other properties). Defence and evasion apply twice, to the rate of being hit and to the damage taken, and quickness applies to every other property as the number of executions, so their effect is weakened to keep the balance.",
+				"A good guideline is (experience increase rate) to the power of `6.7`. Above that, levelling up accelerates as the level rises; below that, the later levels take more time.",
 				"Setting it to `1` removes the influence of the level difference. The larger the value, the steeper the advantage and disadvantage caused by the level difference.",
 			],
 			list: [
