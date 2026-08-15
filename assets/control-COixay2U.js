@@ -364,7 +364,7 @@ to {
 			width: 100svw;
 			height: ${e}px;
 			background-color: ${z.colors.bar};
-			box-shadow: 3px -3px 1px ${z.colors.shadow};
+			box-shadow: 0px -${z.constants.shadowOffset}px ${z.constants.shadowBlur}px ${z.colors.shadow};
 			z-index: 3;
 			padding: 0;
 			margin: 0;
