@@ -253,33 +253,69 @@
 			"name": "コイン",
 			"explanation": "売買に使う通貨としてのアイテムです。"
 		},
-		"amount-earned": {
-			"name": "獲得額",
-			"explanation": "これまでに獲得したコインの合計数です。"
+		"play-time": {
+			"name": "Play Time",
+			"explanation": "When you started playing and how long you have played."
 		},
-		"time": {
-			"name": "時間",
-			"explanation": ""
+		"play-started": {
+			"name": "Started",
+			"explanation": "The date and time you started playing."
 		},
-		"playing-time": {
-			"name": "再生時間",
-			"explanation": "このゲームのプレイ開始から経過した時間（オフライン時間を含む）。"
+		"play-duration": {
+			"name": "Duration",
+			"explanation": "The time elapsed since you started playing."
 		},
-		"count-now": {
-			"name": "今すぐカウント",
-			"explanation": "現在所有しているアイテムの合計数。"
+		"coins-earned": {
+			"name": "Coins Earned",
+			"explanation": "The total amount of each coin you have earned so far."
 		},
-		"count-gained": {
-			"name": "獲得カウント",
-			"explanation": "これまでに獲得したアイテムの合計数。"
+		"unique-count": {
+			"name": "Unique",
+			"explanation": "The number of kinds you can hold at the same time."
 		},
-		"total-level": {
-			"name": "総合レベル",
-			"explanation": "すべてのカテゴリの現在のレベルの合計。"
+		"max-capacity": {
+			"name": "Capacity",
+			"explanation": "The maximum number of item kinds you can own now."
 		},
-		"count-actioned": {
-			"name": "カウント処理済み",
-			"explanation": "これまでに実行されたアクションの合計数。"
+		"max-queue": {
+			"name": "Queue",
+			"explanation": "The maximum number of actions the queue can hold now."
+		},
+		"statistics-category": {
+			"name": "Category",
+			"explanation": "How far the categories of this world have been opened up."
+		},
+		"statistics-action": {
+			"name": "Action",
+			"explanation": "How far the actions of this world have been opened up."
+		},
+		"statistics-item": {
+			"name": "Item",
+			"explanation": "How far the items of this world have been opened up."
+		},
+		"statistics-event": {
+			"name": "Event",
+			"explanation": "How far the events of this world have been opened up."
+		},
+		"count-unlocked": {
+			"name": "Unlocked",
+			"explanation": "The number unlocked so far, out of the total."
+		},
+		"level-total": {
+			"name": "Total Level",
+			"explanation": "The sum of the levels of all categories, out of the maximum."
+		},
+		"count-performed": {
+			"name": "Performed",
+			"explanation": "The total number of times you have performed actions."
+		},
+		"count-earned": {
+			"name": "Earned",
+			"explanation": "The total number of items you have earned so far."
+		},
+		"count-triggered": {
+			"name": "Triggered",
+			"explanation": "The total number of times events have been triggered."
 		},
 		"win": {
 			"name": "勝利",
@@ -531,7 +567,7 @@
 		},
 		"acquisition-failure": {
 			"name": "獲得失敗",
-			"explanation": "(-) と表示された報酬は、アクションに失敗したときだけ獲得できます。"
+			"explanation": "[失敗] と付いた報酬は、アクションに失敗したときだけ獲得できます。表示されている割合はその獲得確率です。"
 		},
 		"item": {
 			"name": "アイテム",
@@ -776,6 +812,30 @@
 		"timing": {
 			"name": "タイミング",
 			"explanation": ""
+		},
+		"timing-matched": {
+			"name": "Condition Met",
+			"explanation": "Occurs the moment the conditions are met."
+		},
+		"timing-comebacked": {
+			"name": "Comeback",
+			"explanation": "Occurs when you come back after being away."
+		},
+		"timing-gameovered": {
+			"name": "Game Over",
+			"explanation": "Occurs when you run out of stamina in battle."
+		},
+		"timing-welcomed": {
+			"name": "First Start",
+			"explanation": "Occurs when you open this world for the first time."
+		},
+		"timing-completed": {
+			"name": "Completion",
+			"explanation": "Occurs when every category reaches its maximum level."
+		},
+		"timing-obtained": {
+			"name": "Single Completion",
+			"explanation": "Occurs when a single action is completed."
 		},
 		"matched": {
 			"name": "マッチング",

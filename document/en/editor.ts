@@ -913,6 +913,24 @@ export const general: Type.General = {
 			summary: "Requests the number of times the same attribute action has been executed to execute the action",
 			points: ["If enabled, the number of times an action with the same attribute has been executed is automatically added to the execution condition of each Action.", "The Necessary count is equal to the level value of the Action.", "If the attribute is nothing configured, the ID of the category to which it belongs is used."],
 		},
+		propertyRatio: {
+			title: "Property ratio [times]",
+			summary: "How many times a property changes per 10 of level difference",
+			points: [
+				"Configures how many times each property changes every time the difference between the level of the category and the level of the action widens by `10`.",
+				"The ratio is calculated as (property ratio)^(level difference ÷ 10). When the level difference is `0` the ratio is `1`, and the value configured in the action is used as it is.",
+				"Attack, restore, probability of success and experience increase by this ratio, while defence (damage taken) and quickness (required time) decrease by the same ratio. For accuracy and evasion, the miss rate and the rate of being hit decrease by this ratio.",
+				"Setting it to `1` removes the influence of the level difference. The larger the value, the steeper the advantage and disadvantage caused by the level difference.",
+			],
+			list: [
+				["Property ratio", "Level difference -20", "Level difference -10", "Level difference 0", "Level difference +10", "Level difference +20"],
+				["`1`", "`x1.00`", "`x1.00`", "`x1.00`", "`x1.00`", "`x1.00`"],
+				["`1.5`", "`x0.44`", "`x0.67`", "`x1.00`", "`x1.50`", "`x2.25`"],
+				["`2`", "`x0.25`", "`x0.50`", "`x1.00`", "`x2.00`", "`x4.00`"],
+				["`3`", "`x0.11`", "`x0.33`", "`x1.00`", "`x3.00`", "`x9.00`"],
+			],
+			links: { action: "action", property: "property" },
+		},
 		defaultCombat: { ...combat, summary: "Default combat parameters common to all Actions", points: ["These are the basic combat correction values applied in common to all actions of the `stamina` type.", "The combat value (property) of each Action is added to this default value."], links: { action: "action" } },
 	},
 	options: {

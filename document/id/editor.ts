@@ -913,6 +913,24 @@ export const general: Type.General = {
 			summary: "Meminta hitung berapa kali aksi atribut yang sama telah dieksekusi untuk eksekusi suatu aksi.",
 			points: ["Jika diaktifkan, hitung kali aksi dengan atribut yang sama telah dieksekusi secara otomatis ditambahkan ke kondisi eksekusi setiap tindakan.", "Jumlah hitung yang diperlukan sama dengan nilai level aksi.", "Jika tidak ada atribut yang ditetapkan, ID dari kategori yang digunakan akan digunakan."],
 		},
+		propertyRatio: {
+			title: "Rasio properti [kali]",
+			summary: "Berapa kali properti berubah setiap 10 perbedaan level",
+			points: [
+				"Mengatur berapa kali setiap properti berubah setiap kali perbedaan antara level kategori dan level aksi bertambah `10`.",
+				"Rasio dihitung sebagai (rasio properti)^(perbedaan level÷10). Ketika perbedaan level adalah `0`, rasionya `1` dan nilai yang diatur pada aksi digunakan apa adanya.",
+				"Serangan, pemulihan, probabilitas sukses, dan pengalaman bertambah sebesar rasio ini, sedangkan pertahanan (kerusakan yang diterima) dan kecepatan (waktu yang dibutuhkan) berkurang dengan rasio yang sama. Pada akurasi dan penghindaran, tingkat meleset dan tingkat terkena serangan berkurang sebesar rasio ini.",
+				"Jika diatur ke `1`, perbedaan level tidak lagi berpengaruh. Semakin besar nilainya, semakin tajam keuntungan dan kerugian dari perbedaan level.",
+			],
+			list: [
+				["Rasio properti", "Perbedaan level -20", "Perbedaan level -10", "Perbedaan level 0", "Perbedaan level +10", "Perbedaan level +20"],
+				["`1`", "`x1.00`", "`x1.00`", "`x1.00`", "`x1.00`", "`x1.00`"],
+				["`1.5`", "`x0.44`", "`x0.67`", "`x1.00`", "`x1.50`", "`x2.25`"],
+				["`2`", "`x0.25`", "`x0.50`", "`x1.00`", "`x2.00`", "`x4.00`"],
+				["`3`", "`x0.11`", "`x0.33`", "`x1.00`", "`x3.00`", "`x9.00`"],
+			],
+			links: { action: "action", property: "property" },
+		},
 		defaultCombat: { ...combat, summary: "Parameter tempur default yang umum untuk Aksi.", points: ["Ini adalah nilai koreksi pertarungan dasar yang berlaku sama untuk semua aksi bertipe `stamina`.", "Nilai tempur (properti) dari setiap Aksi ditambahkan ke nilai default ini."], links: { action: "action" } },
 	},
 	options: {

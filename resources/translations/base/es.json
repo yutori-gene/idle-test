@@ -253,33 +253,69 @@
 			"name": "Moneda",
 			"explanation": "Un artículo que sirve como moneda para comprar y vender."
 		},
-		"amount-earned": {
-			"name": "Importe percibido",
-			"explanation": "La cantidad total de monedas que has ganado hasta ahora."
+		"play-time": {
+			"name": "Play Time",
+			"explanation": "When you started playing and how long you have played."
 		},
-		"time": {
-			"name": "Tiempo",
-			"explanation": ""
+		"play-started": {
+			"name": "Started",
+			"explanation": "The date and time you started playing."
 		},
-		"playing-time": {
-			"name": "Tiempo de juego",
-			"explanation": "El tiempo transcurrido desde que empezaste a jugar a este juego, incluido el tiempo sin conexión."
+		"play-duration": {
+			"name": "Duration",
+			"explanation": "The time elapsed since you started playing."
 		},
-		"count-now": {
-			"name": "Contar ahora",
-			"explanation": "El número total de artículos que tienes actualmente."
+		"coins-earned": {
+			"name": "Coins Earned",
+			"explanation": "The total amount of each coin you have earned so far."
 		},
-		"count-gained": {
-			"name": "Puntos obtenidos",
-			"explanation": "El número total de artículos adquiridos hasta la fecha."
+		"unique-count": {
+			"name": "Unique",
+			"explanation": "The number of kinds you can hold at the same time."
 		},
-		"total-level": {
-			"name": "Nivel total",
-			"explanation": "La suma de los niveles actuales de todas las categorías."
+		"max-capacity": {
+			"name": "Capacity",
+			"explanation": "The maximum number of item kinds you can own now."
 		},
-		"count-actioned": {
-			"name": "Acción realizada",
-			"explanation": "El número total de acciones realizadas hasta la fecha."
+		"max-queue": {
+			"name": "Queue",
+			"explanation": "The maximum number of actions the queue can hold now."
+		},
+		"statistics-category": {
+			"name": "Category",
+			"explanation": "How far the categories of this world have been opened up."
+		},
+		"statistics-action": {
+			"name": "Action",
+			"explanation": "How far the actions of this world have been opened up."
+		},
+		"statistics-item": {
+			"name": "Item",
+			"explanation": "How far the items of this world have been opened up."
+		},
+		"statistics-event": {
+			"name": "Event",
+			"explanation": "How far the events of this world have been opened up."
+		},
+		"count-unlocked": {
+			"name": "Unlocked",
+			"explanation": "The number unlocked so far, out of the total."
+		},
+		"level-total": {
+			"name": "Total Level",
+			"explanation": "The sum of the levels of all categories, out of the maximum."
+		},
+		"count-performed": {
+			"name": "Performed",
+			"explanation": "The total number of times you have performed actions."
+		},
+		"count-earned": {
+			"name": "Earned",
+			"explanation": "The total number of items you have earned so far."
+		},
+		"count-triggered": {
+			"name": "Triggered",
+			"explanation": "The total number of times events have been triggered."
 		},
 		"win": {
 			"name": "Ganar",
@@ -531,7 +567,7 @@
 		},
 		"acquisition-failure": {
 			"name": "Fallo de adquisición",
-			"explanation": "Las recompensas marcadas con (-) solo se obtienen cuando la acción falla."
+			"explanation": "Las recompensas con el prefijo [Fracaso] solo se obtienen cuando la acción falla, y el porcentaje mostrado es la probabilidad de obtenerlas."
 		},
 		"item": {
 			"name": "Artículo",
@@ -776,6 +812,30 @@
 		"timing": {
 			"name": "Tiempo",
 			"explanation": ""
+		},
+		"timing-matched": {
+			"name": "Condition Met",
+			"explanation": "Occurs the moment the conditions are met."
+		},
+		"timing-comebacked": {
+			"name": "Comeback",
+			"explanation": "Occurs when you come back after being away."
+		},
+		"timing-gameovered": {
+			"name": "Game Over",
+			"explanation": "Occurs when you run out of stamina in battle."
+		},
+		"timing-welcomed": {
+			"name": "First Start",
+			"explanation": "Occurs when you open this world for the first time."
+		},
+		"timing-completed": {
+			"name": "Completion",
+			"explanation": "Occurs when every category reaches its maximum level."
+		},
+		"timing-obtained": {
+			"name": "Single Completion",
+			"explanation": "Occurs when a single action is completed."
 		},
 		"matched": {
 			"name": "Coincidido",

@@ -253,33 +253,69 @@
 			"name": "코인",
 			"explanation": "사고팔 때 화폐로 사용되는 아이템입니다."
 		},
-		"amount-earned": {
-			"name": "수령 금액",
-			"explanation": "지금까지 획득한 코인의 총합입니다."
+		"play-time": {
+			"name": "Play Time",
+			"explanation": "When you started playing and how long you have played."
 		},
-		"time": {
-			"name": "시간",
-			"explanation": ""
+		"play-started": {
+			"name": "Started",
+			"explanation": "The date and time you started playing."
 		},
-		"playing-time": {
-			"name": "재생 시간",
-			"explanation": "이 게임을 시작한 후 경과한 시간으로, 오프라인 시간도 포함됩니다."
+		"play-duration": {
+			"name": "Duration",
+			"explanation": "The time elapsed since you started playing."
 		},
-		"count-now": {
-			"name": "지금 한번 해보세요",
-			"explanation": "현재 보유하고 있는 아이템의 총 개수입니다."
+		"coins-earned": {
+			"name": "Coins Earned",
+			"explanation": "The total amount of each coin you have earned so far."
 		},
-		"count-gained": {
-			"name": "획득한 카운트",
-			"explanation": "지금까지 확보한 아이템의 총 개수."
+		"unique-count": {
+			"name": "Unique",
+			"explanation": "The number of kinds you can hold at the same time."
 		},
-		"total-level": {
-			"name": "총 레벨",
-			"explanation": "모든 카테고리의 현재 레벨 합계."
+		"max-capacity": {
+			"name": "Capacity",
+			"explanation": "The maximum number of item kinds you can own now."
 		},
-		"count-actioned": {
-			"name": "조치 완료",
-			"explanation": "지금까지 수행된 액션의 총 개수."
+		"max-queue": {
+			"name": "Queue",
+			"explanation": "The maximum number of actions the queue can hold now."
+		},
+		"statistics-category": {
+			"name": "Category",
+			"explanation": "How far the categories of this world have been opened up."
+		},
+		"statistics-action": {
+			"name": "Action",
+			"explanation": "How far the actions of this world have been opened up."
+		},
+		"statistics-item": {
+			"name": "Item",
+			"explanation": "How far the items of this world have been opened up."
+		},
+		"statistics-event": {
+			"name": "Event",
+			"explanation": "How far the events of this world have been opened up."
+		},
+		"count-unlocked": {
+			"name": "Unlocked",
+			"explanation": "The number unlocked so far, out of the total."
+		},
+		"level-total": {
+			"name": "Total Level",
+			"explanation": "The sum of the levels of all categories, out of the maximum."
+		},
+		"count-performed": {
+			"name": "Performed",
+			"explanation": "The total number of times you have performed actions."
+		},
+		"count-earned": {
+			"name": "Earned",
+			"explanation": "The total number of items you have earned so far."
+		},
+		"count-triggered": {
+			"name": "Triggered",
+			"explanation": "The total number of times events have been triggered."
 		},
 		"win": {
 			"name": "승리",
@@ -531,7 +567,7 @@
 		},
 		"acquisition-failure": {
 			"name": "획득 실패",
-			"explanation": "(-)로 표시된 보상은 액션에 실패했을 때만 획득할 수 있습니다."
+			"explanation": "[실패] 접두어가 붙은 보상은 액션이 실패했을 때만 획득할 수 있으며, 표시된 퍼센트는 그 획득 확률입니다."
 		},
 		"item": {
 			"name": "아이템",
@@ -776,6 +812,30 @@
 		"timing": {
 			"name": "시기",
 			"explanation": ""
+		},
+		"timing-matched": {
+			"name": "Condition Met",
+			"explanation": "Occurs the moment the conditions are met."
+		},
+		"timing-comebacked": {
+			"name": "Comeback",
+			"explanation": "Occurs when you come back after being away."
+		},
+		"timing-gameovered": {
+			"name": "Game Over",
+			"explanation": "Occurs when you run out of stamina in battle."
+		},
+		"timing-welcomed": {
+			"name": "First Start",
+			"explanation": "Occurs when you open this world for the first time."
+		},
+		"timing-completed": {
+			"name": "Completion",
+			"explanation": "Occurs when every category reaches its maximum level."
+		},
+		"timing-obtained": {
+			"name": "Single Completion",
+			"explanation": "Occurs when a single action is completed."
 		},
 		"matched": {
 			"name": "일치",

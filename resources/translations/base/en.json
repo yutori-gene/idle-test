@@ -567,7 +567,7 @@
 		},
 		"acquisition-failure": {
 			"name": "Acquisition Failure",
-			"explanation": "Rewards marked with (-) are obtained only when the action fails."
+			"explanation": "Rewards prefixed with [Failure] are obtained only when the action fails, and the percentage shown is the chance of obtaining them."
 		},
 		"item": {
 			"name": "Item",

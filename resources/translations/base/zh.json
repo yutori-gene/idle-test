@@ -253,33 +253,69 @@
 			"name": "硬币",
 			"explanation": "作为买卖货币使用的物品。"
 		},
-		"amount-earned": {
-			"name": "应得金额",
-			"explanation": "您迄今为止赚取的硬币总数。"
+		"play-time": {
+			"name": "Play Time",
+			"explanation": "When you started playing and how long you have played."
 		},
-		"time": {
-			"name": "时间",
-			"explanation": ""
+		"play-started": {
+			"name": "Started",
+			"explanation": "The date and time you started playing."
 		},
-		"playing-time": {
-			"name": "播放时长",
-			"explanation": "自您开始玩这款游戏以来所经过的时间，包括离线时间。"
+		"play-duration": {
+			"name": "Duration",
+			"explanation": "The time elapsed since you started playing."
 		},
-		"count-now": {
-			"name": "立即计数",
-			"explanation": "您目前拥有的物品总数。"
+		"coins-earned": {
+			"name": "Coins Earned",
+			"explanation": "The total amount of each coin you have earned so far."
 		},
-		"count-gained": {
-			"name": "获得的计数",
-			"explanation": "迄今为止购买的物品总数。"
+		"unique-count": {
+			"name": "Unique",
+			"explanation": "The number of kinds you can hold at the same time."
 		},
-		"total-level": {
-			"name": "总等级",
-			"explanation": "所有类别当前等级的总和。"
+		"max-capacity": {
+			"name": "Capacity",
+			"explanation": "The maximum number of item kinds you can own now."
 		},
-		"count-actioned": {
-			"name": "已处理的计数项",
-			"explanation": "迄今为止执行的操作总数。"
+		"max-queue": {
+			"name": "Queue",
+			"explanation": "The maximum number of actions the queue can hold now."
+		},
+		"statistics-category": {
+			"name": "Category",
+			"explanation": "How far the categories of this world have been opened up."
+		},
+		"statistics-action": {
+			"name": "Action",
+			"explanation": "How far the actions of this world have been opened up."
+		},
+		"statistics-item": {
+			"name": "Item",
+			"explanation": "How far the items of this world have been opened up."
+		},
+		"statistics-event": {
+			"name": "Event",
+			"explanation": "How far the events of this world have been opened up."
+		},
+		"count-unlocked": {
+			"name": "Unlocked",
+			"explanation": "The number unlocked so far, out of the total."
+		},
+		"level-total": {
+			"name": "Total Level",
+			"explanation": "The sum of the levels of all categories, out of the maximum."
+		},
+		"count-performed": {
+			"name": "Performed",
+			"explanation": "The total number of times you have performed actions."
+		},
+		"count-earned": {
+			"name": "Earned",
+			"explanation": "The total number of items you have earned so far."
+		},
+		"count-triggered": {
+			"name": "Triggered",
+			"explanation": "The total number of times events have been triggered."
 		},
 		"win": {
 			"name": "胜利",
@@ -531,7 +567,7 @@
 		},
 		"acquisition-failure": {
 			"name": "获取失败",
-			"explanation": "标有 (-) 的奖励只有在动作失败时才能获得。"
+			"explanation": "标有 [失败] 的奖励只有在动作失败时才能获得，显示的百分比是获得该奖励的概率。"
 		},
 		"item": {
 			"name": "物品",
@@ -776,6 +812,30 @@
 		"timing": {
 			"name": "时间安排",
 			"explanation": ""
+		},
+		"timing-matched": {
+			"name": "Condition Met",
+			"explanation": "Occurs the moment the conditions are met."
+		},
+		"timing-comebacked": {
+			"name": "Comeback",
+			"explanation": "Occurs when you come back after being away."
+		},
+		"timing-gameovered": {
+			"name": "Game Over",
+			"explanation": "Occurs when you run out of stamina in battle."
+		},
+		"timing-welcomed": {
+			"name": "First Start",
+			"explanation": "Occurs when you open this world for the first time."
+		},
+		"timing-completed": {
+			"name": "Completion",
+			"explanation": "Occurs when every category reaches its maximum level."
+		},
+		"timing-obtained": {
+			"name": "Single Completion",
+			"explanation": "Occurs when a single action is completed."
 		},
 		"matched": {
 			"name": "匹配",

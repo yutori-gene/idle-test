@@ -913,6 +913,24 @@ export const general: Type.General = {
 			summary: "Solicita o número de vezes que a ação do mesmo atributo foi executada para a execução de uma ação.",
 			points: ["Se ativado, o número de vezes que uma ação com os mesmos atributos foi executada é automaticamente adicionado às condições de execução de cada ação.", "O número de vezes necessário é igual ao valor do nível da Ação.", "Se nada for configurado, será usado o ID da Categoria à qual ele pertence."],
 		},
+		propertyRatio: {
+			title: "Taxa de propriedade [vezes]",
+			summary: "Quantas vezes uma propriedade muda a cada 10 de diferença de nível",
+			points: [
+				"Configura quantas vezes cada propriedade muda sempre que a diferença entre o nível da categoria e o nível da ação aumenta em `10`.",
+				"A taxa é calculada como (taxa de propriedade)^(diferença de nível÷10). Quando a diferença de nível é `0`, a taxa é `1` e o valor configurado na ação é usado como está.",
+				"O ataque, a recuperação, a probabilidade de sucesso e a experiência aumentam segundo esta taxa, enquanto a defesa (dano recebido) e a rapidez (tempo necessário) diminuem na mesma proporção. Na precisão e na evasão, a taxa de erro e a taxa de golpes recebidos diminuem segundo esta taxa.",
+				"Se definido como `1`, a diferença de nível deixa de influenciar. Quanto maior o valor, mais acentuada será a vantagem ou desvantagem provocada pela diferença de nível.",
+			],
+			list: [
+				["Taxa de propriedade", "Diferença de nível -20", "Diferença de nível -10", "Diferença de nível 0", "Diferença de nível +10", "Diferença de nível +20"],
+				["`1`", "`x1.00`", "`x1.00`", "`x1.00`", "`x1.00`", "`x1.00`"],
+				["`1.5`", "`x0.44`", "`x0.67`", "`x1.00`", "`x1.50`", "`x2.25`"],
+				["`2`", "`x0.25`", "`x0.50`", "`x1.00`", "`x2.00`", "`x4.00`"],
+				["`3`", "`x0.11`", "`x0.33`", "`x1.00`", "`x3.00`", "`x9.00`"],
+			],
+			links: { action: "action", property: "property" },
+		},
 		defaultCombat: { ...combat, summary: "Parâmetros de combate padrão comuns a todas as Ações.", points: ["São os valores básicos de correção de combate aplicados em comum a todas as ações do tipo `stamina`.", "O valor de combate (propriedade) de cada Ação é adicionado a esse valor padrão."], links: { action: "action" } },
 	},
 	options: {

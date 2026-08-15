@@ -913,6 +913,24 @@ export const general: Type.General = {
 			summary: "Fragt ab, wie oft das gleiche Attribut Aktion für die Ausführung einer Aktion gezählt wurde.",
 			points: ["Wenn diese Option aktiviert ist, wird die Anzahl der Ausführungen einer Aktion mit denselben Attributen automatisch zu den Ausführungsbedingungen jeder Aktion hinzugefügt.", "Die Anzahl der notwendigen Male entspricht dem Level-Wert der Aktion.", "Wenn kein Attribut konfiguriert ist, wird die ID der Kategorie verwendet, zu der sie gehört."],
 		},
+		propertyRatio: {
+			title: "Eigenschaftsfaktor [Zeiten]",
+			summary: "Um welchen Faktor sich eine Eigenschaft pro 10 Level-Unterschied ändert",
+			points: [
+				"Legt fest, um welchen Faktor sich jede Eigenschaft ändert, sobald der Unterschied zwischen dem Level der Kategorie und dem Level der Aktion um `10` wächst.",
+				"Der Faktor wird als (Eigenschaftsfaktor)^(Level-Unterschied÷10) berechnet. Bei einem Level-Unterschied von `0` beträgt der Faktor `1`, und der in der Aktion eingestellte Wert wird unverändert verwendet.",
+				"Angriff, Wiederherstellung, Erfolgswahrscheinlichkeit und Erfahrung steigen um diesen Faktor, während Verteidigung (erlittener Schaden) und Schnelligkeit (benötigte Zeit) um denselben Faktor sinken. Bei Genauigkeit und Ausweichen sinken die Fehlschlagrate und die Rate der erlittenen Treffer um diesen Faktor.",
+				"Mit `1` entfällt der Einfluss des Level-Unterschieds. Je größer der Wert, desto drastischer wirken sich Vor- und Nachteile des Level-Unterschieds aus.",
+			],
+			list: [
+				["Eigenschaftsfaktor", "Level-Unterschied -20", "Level-Unterschied -10", "Level-Unterschied 0", "Level-Unterschied +10", "Level-Unterschied +20"],
+				["`1`", "`x1.00`", "`x1.00`", "`x1.00`", "`x1.00`", "`x1.00`"],
+				["`1.5`", "`x0.44`", "`x0.67`", "`x1.00`", "`x1.50`", "`x2.25`"],
+				["`2`", "`x0.25`", "`x0.50`", "`x1.00`", "`x2.00`", "`x4.00`"],
+				["`3`", "`x0.11`", "`x0.33`", "`x1.00`", "`x3.00`", "`x9.00`"],
+			],
+			links: { action: "action", property: "property" },
+		},
 		defaultCombat: { ...combat, summary: "Standard-Kampfparameter, die für alle Aktionen gelten.", points: ["Dies sind die grundlegenden Kampfkorrekturwerte, die einheitlich für alle Aktionen vom Typ `stamina` gelten.", "Der Kampfwert (Eigenschaft) der einzelnen Aktionen wird zu diesem Standardwert addiert."], links: { action: "action" } },
 	},
 	options: {

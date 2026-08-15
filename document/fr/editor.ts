@@ -913,6 +913,24 @@ export const general: Type.General = {
 			summary: "Demande le nombre de fois où la même action d'attribut a été exécutée pour l'exécution d'une action.",
 			points: ["Si cette option est activée, le nombre de fois qu'une action ayant les mêmes attributs a été exécutée est automatiquement ajouté aux conditions d'exécution de chaque action.", "Le nombre de fois compté est égal à la valeur du niveau de l'Action.", "Si aucun attribut n'est configuré, c'est l'ID de la catégorie à laquelle il appartient qui est utilisé."],
 		},
+		propertyRatio: {
+			title: "Rapport de propriété [fois]",
+			summary: "Combien de fois une propriété change par 10 de différence de niveau",
+			points: [
+				"Configure combien de fois chaque propriété change chaque fois que la différence entre le niveau de la catégorie et le niveau de l'action augmente de `10`.",
+				"Le rapport est calculé par (rapport de propriété)^(différence de niveau÷10). Lorsque la différence de niveau est `0`, le rapport est de `1` et la valeur configurée dans l'action est utilisée telle quelle.",
+				"L'attaque, la récupération, la probabilité de succès et l'expérience augmentent selon ce rapport, tandis que la défense (dégâts subis) et la rapidité (temps nécessaire) diminuent dans la même proportion. Pour la précision et l'esquive, le taux d'échec et le taux de coups subis diminuent selon ce rapport.",
+				"En le fixant à `1`, la différence de niveau n'a plus d'influence. Plus la valeur est élevée, plus l'avantage et le désavantage liés à la différence de niveau sont brutaux.",
+			],
+			list: [
+				["Rapport de propriété", "Différence de niveau -20", "Différence de niveau -10", "Différence de niveau 0", "Différence de niveau +10", "Différence de niveau +20"],
+				["`1`", "`x1.00`", "`x1.00`", "`x1.00`", "`x1.00`", "`x1.00`"],
+				["`1.5`", "`x0.44`", "`x0.67`", "`x1.00`", "`x1.50`", "`x2.25`"],
+				["`2`", "`x0.25`", "`x0.50`", "`x1.00`", "`x2.00`", "`x4.00`"],
+				["`3`", "`x0.11`", "`x0.33`", "`x1.00`", "`x3.00`", "`x9.00`"],
+			],
+			links: { action: "action", property: "property" },
+		},
 		defaultCombat: { ...combat, summary: "Paramètres de combat par défaut communs à toutes les Actions.", points: ["Ce sont les valeurs de correction de combat de base appliquées en commun à toutes les actions de type `stamina`.", "La valeur de combat (propriété) de chaque Action est ajoutée à cette valeur par défaut."], links: { action: "action" } },
 	},
 	options: {
