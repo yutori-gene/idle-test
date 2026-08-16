@@ -466,14 +466,21 @@ to {
 			   副アイコンもここを継承するので、主アイコンと同じ色になる */
 			color: ${z.getTextColor(e)};
 			margin: ${ya.sm}px;
-			text-align: center;
+			/* 主アイコンを枠の中央に置く。インラインのまま並べると、行ボックスの高さが
+			   font-size 由来の strut（40px の 1.2 倍ほど）で決まり、その分だけ下に空きが残って
+			   アイコンが上へ寄る。flex にして strut を消す（line-height:0）と箱の高さがアイコンぴったりになり、
+			   バー側の justify-content:center がそのまま効く */
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			line-height: 0;
 			// width: 100%;
 		`,main:O`
 			position: relative;
-			display: inline-flex;
+			display: flex;
 			align-items: center;
 			justify-content: center;
-			vertical-align: top;
+			flex-shrink: 0;
 			width: ${r}px;
 			height: ${r}px;
 		`,sub:O`
