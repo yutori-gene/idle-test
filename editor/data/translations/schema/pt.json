@@ -400,6 +400,7 @@
             "capacity",
             "queue",
             "actionLevelLimit",
+            "propertyRatio",
             "defaultCombat"
           ],
           "options": {
@@ -1355,6 +1356,28 @@
                   "O valor de combate (propriedade) de cada Ação é adicionado a esse valor padrão."
                 ],
                 "reference": "pt/editor/combat"
+              }
+            },
+            "propertyRatio": {
+              "type": "number",
+              "default": 2,
+              "minimum": 1,
+              "propertyOrder": 104,
+              "title": "Taxa de propriedade [vezes]",
+              "options": {
+                "infoText": "Quantas vezes uma propriedade muda a cada 10 de diferença de nível"
+              },
+              "yutori": {
+                "points": [
+                  "Configura quantas vezes cada propriedade muda sempre que a diferença entre o nível da categoria e o nível da ação aumenta em `10`.",
+                  "A taxa é calculada como (taxa de propriedade)^(diferença de nível÷10). Quando a diferença de nível é `0`, a taxa é `1` e o valor configurado na ação é usado como está.",
+                  "O ataque e a experiência aumentam segundo esta taxa, enquanto a defesa (dano recebido) e a rapidez (tempo necessário) diminuem na mesma proporção.",
+                  "A precisão, a evasão, a probabilidade de sucesso e a recuperação são valores que ficam entre `0` e `100`%, por isso a taxa é aplicada à proporção entre o que se concretiza e o que não se concretiza. `0`% e `100`% não mudam, e os valores intermédios nunca ultrapassam `100`%.",
+                  "A defesa, a evasão e a rapidez recebem metade do efeito da taxa (uma diferença de nível de `20` equivale a uma diferença de nível de `10` nas outras propriedades). A defesa e a evasão aplicam-se em duplicado à taxa de golpes recebidos e ao dano recebido, e a rapidez aplica-se a todas as outras propriedades como número de execuções, por isso o seu efeito é enfraquecido para manter o equilíbrio.",
+                  "A referência é (taxa de aumento de experiência) elevada a `6.7`. Acima disso, subir de nível acelera à medida que o nível aumenta; abaixo disso, os níveis finais demoram mais tempo.",
+                  "Se definido como `1`, a diferença de nível deixa de influenciar. Quanto maior o valor, mais acentuada será a vantagem ou desvantagem provocada pela diferença de nível."
+                ],
+                "reference": "pt/editor/general?id=Taxa de propriedade [vezes]"
               }
             }
           },

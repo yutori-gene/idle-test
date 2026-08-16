@@ -400,6 +400,7 @@
             "capacity",
             "queue",
             "actionLevelLimit",
+            "propertyRatio",
             "defaultCombat"
           ],
           "options": {
@@ -1355,6 +1356,28 @@
                   "Der Kampfwert (Eigenschaft) der einzelnen Aktionen wird zu diesem Standardwert addiert."
                 ],
                 "reference": "de/editor/combat"
+              }
+            },
+            "propertyRatio": {
+              "type": "number",
+              "default": 2,
+              "minimum": 1,
+              "propertyOrder": 104,
+              "title": "Eigenschaftsfaktor [Zeiten]",
+              "options": {
+                "infoText": "Um welchen Faktor sich eine Eigenschaft pro 10 Level-Unterschied ändert"
+              },
+              "yutori": {
+                "points": [
+                  "Legt fest, um welchen Faktor sich jede Eigenschaft ändert, sobald der Unterschied zwischen dem Level der Kategorie und dem Level der Aktion um `10` wächst.",
+                  "Der Faktor wird als (Eigenschaftsfaktor)^(Level-Unterschied÷10) berechnet. Bei einem Level-Unterschied von `0` beträgt der Faktor `1`, und der in der Aktion eingestellte Wert wird unverändert verwendet.",
+                  "Angriff und Erfahrung steigen um diesen Faktor, während Verteidigung (erlittener Schaden) und Schnelligkeit (benötigte Zeit) um denselben Faktor sinken.",
+                  "Genauigkeit, Ausweichen, Erfolgswahrscheinlichkeit und Wiederherstellung sind Werte zwischen `0` und `100`%, daher wirkt der Faktor auf das Verhältnis zwischen dem, was eintritt, und dem, was nicht eintritt. `0`% und `100`% ändern sich nicht, und die Werte dazwischen überschreiten nie `100`%.",
+                  "Bei Verteidigung, Ausweichen und Schnelligkeit wirkt der Faktor nur zur Hälfte (ein Level-Unterschied von `20` entspricht einem Level-Unterschied von `10` bei den übrigen Eigenschaften). Verteidigung und Ausweichen wirken doppelt, auf die Rate der erlittenen Treffer und auf den erlittenen Schaden, und Schnelligkeit wirkt als Anzahl der Ausführungen auf alle übrigen Eigenschaften, daher wird ihre Wirkung zum Ausgleich abgeschwächt.",
+                  "Als Richtwert dient (Erfahrung-Zuwachsrate) hoch `6.7`. Darüber beschleunigt sich der Levelaufstieg mit steigendem Level, darunter dauern die späteren Level länger.",
+                  "Mit `1` entfällt der Einfluss des Level-Unterschieds. Je größer der Wert, desto drastischer wirken sich Vor- und Nachteile des Level-Unterschieds aus."
+                ],
+                "reference": "de/editor/general?id=Eigenschaftsfaktor [Zeiten]"
               }
             }
           },

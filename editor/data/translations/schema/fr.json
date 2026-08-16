@@ -400,6 +400,7 @@
             "capacity",
             "queue",
             "actionLevelLimit",
+            "propertyRatio",
             "defaultCombat"
           ],
           "options": {
@@ -1355,6 +1356,28 @@
                   "La valeur de combat (propriété) de chaque Action est ajoutée à cette valeur par défaut."
                 ],
                 "reference": "fr/editor/combat"
+              }
+            },
+            "propertyRatio": {
+              "type": "number",
+              "default": 2,
+              "minimum": 1,
+              "propertyOrder": 104,
+              "title": "Rapport de propriété [fois]",
+              "options": {
+                "infoText": "Combien de fois une propriété change par 10 de différence de niveau"
+              },
+              "yutori": {
+                "points": [
+                  "Configure combien de fois chaque propriété change chaque fois que la différence entre le niveau de la catégorie et le niveau de l'action augmente de `10`.",
+                  "Le rapport est calculé par (rapport de propriété)^(différence de niveau÷10). Lorsque la différence de niveau est `0`, le rapport est de `1` et la valeur configurée dans l'action est utilisée telle quelle.",
+                  "L'attaque et l'expérience augmentent selon ce rapport, tandis que la défense (dégâts subis) et la rapidité (temps nécessaire) diminuent dans la même proportion.",
+                  "La précision, l'esquive, la probabilité de succès et la récupération sont des valeurs comprises entre `0` et `100`%, si bien que le rapport s'applique à la proportion entre ce qui se réalise et ce qui ne se réalise pas. `0`% et `100`% ne changent pas, et les valeurs intermédiaires ne dépassent jamais `100`%.",
+                  "La défense, l'esquive et la rapidité ne reçoivent que la moitié de l'effet du rapport (une différence de niveau de `20` équivaut à une différence de niveau de `10` pour les autres propriétés). La défense et l'esquive s'appliquent doublement, au taux de coups subis et aux dégâts subis, et la rapidité s'applique à toutes les autres propriétés en tant que nombre d'exécutions ; leur effet est donc affaibli pour maintenir l'équilibre.",
+                  "La référence est (taux d'augmentation de l'expérience) à la puissance `6.7`. Au-dessus, la montée en niveau s'accélère à mesure que le niveau augmente ; en dessous, les derniers niveaux demandent plus de temps.",
+                  "En le fixant à `1`, la différence de niveau n'a plus d'influence. Plus la valeur est élevée, plus l'avantage et le désavantage liés à la différence de niveau sont brutaux."
+                ],
+                "reference": "fr/editor/general?id=Rapport de propriété [fois]"
               }
             }
           },

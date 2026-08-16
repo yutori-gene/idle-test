@@ -400,6 +400,7 @@
             "capacity",
             "queue",
             "actionLevelLimit",
+            "propertyRatio",
             "defaultCombat"
           ],
           "options": {
@@ -1355,6 +1356,28 @@
                   "The combat value (property) of each Action is added to this default value."
                 ],
                 "reference": "en/editor/combat"
+              }
+            },
+            "propertyRatio": {
+              "type": "number",
+              "default": 2,
+              "minimum": 1,
+              "propertyOrder": 104,
+              "title": "Property ratio [times]",
+              "options": {
+                "infoText": "How many times a property changes per 10 of level difference"
+              },
+              "yutori": {
+                "points": [
+                  "Configures how many times each property changes every time the difference between the level of the category and the level of the action widens by `10`.",
+                  "The ratio is calculated as (property ratio)^(level difference ÷ 10). When the level difference is `0` the ratio is `1`, and the value configured in the action is used as it is.",
+                  "Attack and experience increase by this ratio, while defence (damage taken) and quickness (required time) decrease by the same ratio.",
+                  "Accuracy, evasion, probability of success and restoration are values that stay within `0` to `100`%, so the ratio applies to the proportion between the side that succeeds and the side that does not. `0`% and `100`% never change, and the values in between never exceed `100`%.",
+                  "Defence, evasion and quickness take half the effect of the ratio (a level difference of `20` equals a level difference of `10` for the other properties). Defence and evasion apply twice, to the rate of being hit and to the damage taken, and quickness applies to every other property as the number of executions, so their effect is weakened to keep the balance.",
+                  "A good guideline is (experience increase rate) to the power of `6.7`. Above that, levelling up accelerates as the level rises; below that, the later levels take more time.",
+                  "Setting it to `1` removes the influence of the level difference. The larger the value, the steeper the advantage and disadvantage caused by the level difference."
+                ],
+                "reference": "en/editor/general?id=Property ratio [times]"
               }
             }
           },

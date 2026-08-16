@@ -400,6 +400,7 @@
             "capacity",
             "queue",
             "actionLevelLimit",
+            "propertyRatio",
             "defaultCombat"
           ],
           "options": {
@@ -1355,6 +1356,28 @@
                   "Nilai tempur (properti) dari setiap Aksi ditambahkan ke nilai default ini."
                 ],
                 "reference": "id/editor/combat"
+              }
+            },
+            "propertyRatio": {
+              "type": "number",
+              "default": 2,
+              "minimum": 1,
+              "propertyOrder": 104,
+              "title": "Rasio properti [kali]",
+              "options": {
+                "infoText": "Berapa kali properti berubah setiap 10 perbedaan level"
+              },
+              "yutori": {
+                "points": [
+                  "Mengatur berapa kali setiap properti berubah setiap kali perbedaan antara level kategori dan level aksi bertambah `10`.",
+                  "Rasio dihitung sebagai (rasio properti)^(perbedaan level÷10). Ketika perbedaan level adalah `0`, rasionya `1` dan nilai yang diatur pada aksi digunakan apa adanya.",
+                  "Serangan dan pengalaman bertambah sebesar rasio ini, sedangkan pertahanan (kerusakan yang diterima) dan kecepatan (waktu yang dibutuhkan) berkurang dengan rasio yang sama.",
+                  "Akurasi, penghindaran, probabilitas sukses, dan pemulihan adalah nilai yang berada dalam rentang `0` hingga `100`%, sehingga rasio dikenakan pada perbandingan antara sisi yang tercapai dan sisi yang tidak tercapai. `0`% dan `100`% tidak berubah, dan nilai di antaranya tidak pernah melebihi `100`%.",
+                  "Pertahanan, penghindaran, dan kecepatan hanya menerima setengah efek rasio (perbedaan level `20` setara dengan perbedaan level `10` pada properti lain). Pertahanan dan penghindaran bekerja ganda pada tingkat terkena serangan dan kerusakan yang diterima, sedangkan kecepatan bekerja pada semua properti lain sebagai jumlah pelaksanaan, sehingga efeknya dilemahkan agar tetap seimbang.",
+                  "Patokannya adalah (tingkat kenaikan pengalaman) pangkat `6.7`. Di atas itu, kenaikan level makin cepat seiring naiknya level; di bawah itu, level-level akhir memerlukan lebih banyak waktu.",
+                  "Jika diatur ke `1`, perbedaan level tidak lagi berpengaruh. Semakin besar nilainya, semakin tajam keuntungan dan kerugian dari perbedaan level."
+                ],
+                "reference": "id/editor/general?id=Rasio properti [kali]"
               }
             }
           },
