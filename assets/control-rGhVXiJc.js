@@ -446,14 +446,19 @@ to {
 		`,separator:D`
 			/* インライン時の前後の空白文字の代わり */
 			margin: 0 ${M.sm}px;
-		`}}var Ym=ma.hero,Xm=Ym/3,Zm=1;function Qm({information:e,sub:t,color:n,havingTop:r=!1,havingBottom:i=!1,closingIcon:a=!1,ribbon:o=!1,locked:s=!1,unit:c}){let[l,u]=Nm(c),d=eh(n,o,s,wm(e,Ym),t&&wm(t,Xm));return G(`span`,{css:[L.common,d.bar,d.background,r&&L.havingTop,i&&L.havingBottom,a&&L.curveIconBarBottom,l&&L.pressing],onPointerDownCapture:u,children:G(`span`,{css:d.image,children:xm(`span`,{css:d.main,children:[G(Tm,{information:e,size:Ym}),Q.component.hasIcon(t)&&t&&G(`span`,{css:d.sub,children:G(Tm,{information:t,size:Xm})})]})})})}Om(Qm,`bar`,{hasIconFrame:!0});function $m(e){return[[1,0],[-1,0],[0,1],[0,-1]].map(([t,n])=>`drop-shadow(${t*Zm}px ${n*Zm}px 0 ${e})`).join(` `)}function eh(e,t,n,r,i=Xm){e||=L.colors.faded;let a=L.colors.bar,o=$.primitive.switches([t,n],[`linear-gradient(135deg, ${a} 0%, ${a} 7.5%, ${e} 7.5%, ${e} 100%)`,`linear-gradient(135deg, ${e} 0%, ${e} 48%, ${a} 48%,${a} 52%,${e} 52%, ${e} 100%)`],!0,e);return{bar:D`
+		`}}var Ym=ma.hero,Xm=Ym/3,Zm=1;function Qm({information:e,sub:t,color:n,havingTop:r=!1,havingBottom:i=!1,closingIcon:a=!1,ribbon:o=!1,locked:s=!1,unit:c}){let[l,u]=Nm(c),d=eh(n,o,s,wm(e,Ym),t&&wm(t,Xm));return G(`span`,{css:[L.common,d.outer,r&&L.havingTop,i&&L.havingBottom,l&&L.pressing],onPointerDownCapture:u,children:G(`span`,{css:[d.inner,d.background,r&&L.noCurveIconTop,i&&L.noCurveIconBottom,a&&L.curveIconBarBottom],children:G(`span`,{css:d.image,children:xm(`span`,{css:d.main,children:[G(Tm,{information:e,size:Ym}),Q.component.hasIcon(t)&&t&&G(`span`,{css:d.sub,children:G(Tm,{information:t,size:Xm})})]})})})})}Om(Qm,`bar`,{hasIconFrame:!0});function $m(e){return[[1,0],[-1,0],[0,1],[0,-1]].map(([t,n])=>`drop-shadow(${t*Zm}px ${n*Zm}px 0 ${e})`).join(` `)}function eh(e,t,n,r,i=Xm){e||=L.colors.faded;let a=L.colors.bar,o=$.primitive.switches([t,n],[`linear-gradient(135deg, ${a} 0%, ${a} 7.5%, ${e} 7.5%, ${e} 100%)`,`linear-gradient(135deg, ${e} 0%, ${e} 48%, ${a} 48%,${a} 52%,${e} 52%, ${e} 100%)`],!0,e);return{outer:D`
 			${L.bar};
 			height: 64px;
 			min-height: 64px;
+			margin: 0 ${8}px ${M.xs}px;
+		`,inner:D`
+			display: flex;
 			flex-direction: column;
 			justify-content: center;
-			margin: 0 ${8}px ${M.xs}px;
-			background-color: ${e||L.colors.bar};
+			align-items: stretch;
+			width: 100%;
+			height: 100%;
+			border-radius: ${L.constants.borderRadius}px;
 		`,image:D`
 			font-size: ${Ym}px;
 			/* 枠の色に対して読める側の文字色にする（横バーのアイコン枠と同じ扱い）。
@@ -464,7 +469,7 @@ to {
 			/* 主アイコンを枠の中央に置く。インラインのまま並べると、行ボックスの高さが
 			   font-size 由来の strut（40px の 1.2 倍ほど）で決まり、その分だけ下に空きが残って
 			   アイコンが上へ寄る。flex にして strut を消す（line-height:0）と箱の高さがアイコンぴったりになり、
-			   バー側の justify-content:center がそのまま効く */
+			   内側(inner)の justify-content:center がそのまま効く */
 			display: flex;
 			align-items: center;
 			justify-content: center;
