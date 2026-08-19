@@ -21,10 +21,6 @@
 			"name": "Maximal",
 			"explanation": "Sie dürfen nicht mehr als diese Anzahl besitzen oder ausüben."
 		},
-		"minimum": {
-			"name": "Mindestwert",
-			"explanation": ""
-		},
 		"purchased-count": {
 			"name": "Anzahl der Käufe",
 			"explanation": ""
@@ -254,72 +250,68 @@
 			"explanation": "Ein Gegenstand, der als Währung für Kauf und Verkauf dient."
 		},
 		"play-time": {
-			"name": "Play Time",
-			"explanation": "When you started playing and how long you have played."
+			"name": "プレイ時間",
+			"explanation": "プレイを開始した日時と、プレイしている時間"
 		},
 		"play-started": {
-			"name": "Started",
-			"explanation": "The date and time you started playing."
+			"name": "開始日時",
+			"explanation": "プレイを開始した日時"
 		},
 		"play-duration": {
-			"name": "Duration",
-			"explanation": "The time elapsed since you started playing."
+			"name": "経過時間",
+			"explanation": "プレイを開始してから経過した時間"
 		},
 		"coins-earned": {
-			"name": "Coins Earned",
-			"explanation": "The total amount of each coin you have earned so far."
+			"name": "獲得コイン",
+			"explanation": "これまでに獲得した、各コインの合計量"
 		},
 		"unique-count": {
-			"name": "Unique",
-			"explanation": "The number of kinds you can hold at the same time."
+			"name": "種類数",
+			"explanation": "同時に所持できる種類の数"
 		},
 		"max-capacity": {
-			"name": "Capacity",
-			"explanation": "The maximum number of item kinds you can own now."
+			"name": "容量",
+			"explanation": "現在所持できるアイテムの種類数の上限"
 		},
 		"max-queue": {
-			"name": "Queue",
-			"explanation": "The maximum number of actions the queue can hold now."
+			"name": "キュー",
+			"explanation": "現在キューに保持できるアクション数の上限"
 		},
 		"statistics-category": {
-			"name": "Category",
-			"explanation": "How far the categories of this world have been opened up."
+			"name": "カテゴリ",
+			"explanation": "このワールドのカテゴリがどれだけ開放されているかを示す"
 		},
 		"statistics-action": {
-			"name": "Action",
-			"explanation": "How far the actions of this world have been opened up."
+			"name": "アクション",
+			"explanation": "このワールドのアクションがどれだけ開放されているかを示す"
 		},
 		"statistics-item": {
-			"name": "Item",
-			"explanation": "How far the items of this world have been opened up."
+			"name": "アイテム",
+			"explanation": "このワールドのアイテムがどれだけ開放されているかを示す"
 		},
 		"statistics-event": {
-			"name": "Event",
-			"explanation": "How far the events of this world have been opened up."
+			"name": "イベント",
+			"explanation": "このワールドのイベントがどれだけ開放されているかを示す"
 		},
 		"count-unlocked": {
-			"name": "Unlocked",
-			"explanation": "The number unlocked so far, out of the total."
+			"name": "解放済み",
+			"explanation": "全体のうち、これまでに解放された数"
 		},
 		"level-total": {
-			"name": "Total Level",
-			"explanation": "The sum of the levels of all categories, out of the maximum."
+			"name": "合計レベル",
+			"explanation": "全カテゴリのレベルの合計値と、その最大値"
 		},
 		"count-performed": {
-			"name": "Performed",
-			"explanation": "The total number of times you have performed actions."
+			"name": "実行済み",
+			"explanation": "これまでにアクションを実行した合計回数"
 		},
 		"count-earned": {
-			"name": "Earned",
-			"explanation": "The total number of items you have earned so far."
+			"name": "獲得済み",
+			"explanation": "これまでに獲得したアイテムの合計数"
 		},
 		"count-triggered": {
-			"name": "Triggered",
-			"explanation": "The total number of times events have been triggered."
-		},
-		"win": {
-			"name": "Sieg",
-			"explanation": ""
+			"name": "発生済み",
+			"explanation": "これまでにイベントが発生した合計回数"
 		},
 		"debug": {
 			"name": "Debug",
@@ -331,10 +323,6 @@
 		},
 		"multiplier": {
 			"name": "Multiplikator",
-			"explanation": ""
-		},
-		"accelerate": {
-			"name": "Beschleunigen",
 			"explanation": ""
 		},
 		"skip": {
@@ -419,10 +407,6 @@
 		},
 		"category-unlocked": {
 			"name": "Kategorie freigeschaltet",
-			"explanation": ""
-		},
-		"situation": {
-			"name": "Situation",
 			"explanation": ""
 		},
 		"element": {
@@ -617,10 +601,6 @@
 			"name": "Nichts",
 			"explanation": ""
 		},
-		"own": {
-			"name": "Eigene",
-			"explanation": "Ob Sie diesen Gegenstand besitzen."
-		},
 		"own-count": {
 			"name": "Eigene Zählung",
 			"explanation": "Ob Sie diesen Gegenstand besitzen."
@@ -705,13 +685,13 @@
 			"name": "Abgeschlossenes Maximum",
 			"explanation": "Sie haben die maximale Anzahl an abgeschlossenen Durchläufen erreicht."
 		},
-		"relationship": {
-			"name": "Beziehung",
-			"explanation": ""
-		},
 		"relationships": {
 			"name": "Beziehungen",
 			"explanation": ""
+		},
+		"relationship-items": {
+			"name": "Liste verwandter Gegenstände",
+			"explanation": "Eine Liste der Gegenstände, die mit den Aktionen dieser Kategorie zusammenhängen."
 		},
 		"requirement-equipment": {
 			"name": "Anforderungen an die Ausrüstung",
@@ -801,10 +781,6 @@
 			"name": "Kein Status",
 			"explanation": "Es gibt keine Statuskategorien."
 		},
-		"targeting-all-categories": {
-			"name": "Alle Kategorien ansprechen",
-			"explanation": "Diese Eigenschaftskorrektur gilt für alle Kategorien."
-		},
 		"event": {
 			"name": "Ereignis",
 			"explanation": ""
@@ -814,28 +790,28 @@
 			"explanation": ""
 		},
 		"timing-matched": {
-			"name": "Condition Met",
-			"explanation": "Occurs the moment the conditions are met."
+			"name": "条件達成",
+			"explanation": "条件が満たされた瞬間に発生する"
 		},
 		"timing-comebacked": {
-			"name": "Comeback",
-			"explanation": "Occurs when you come back after being away."
+			"name": "カムバック",
+			"explanation": "しばらく離れていたあと、戻ってきたときに発生する"
 		},
 		"timing-gameovered": {
-			"name": "Game Over",
-			"explanation": "Occurs when you run out of stamina in battle."
+			"name": "ゲームオーバー",
+			"explanation": "戦闘中にスタミナが尽きたときに発生する"
 		},
 		"timing-welcomed": {
-			"name": "First Start",
-			"explanation": "Occurs when you open this world for the first time."
+			"name": "初回起動",
+			"explanation": "このワールドを初めて開いたときに発生する"
 		},
 		"timing-completed": {
-			"name": "Completion",
-			"explanation": "Occurs when every category reaches its maximum level."
+			"name": "コンプリート",
+			"explanation": "すべてのカテゴリが最大レベルに到達したときに発生する"
 		},
 		"timing-obtained": {
-			"name": "Single Completion",
-			"explanation": "Occurs when a single action is completed."
+			"name": "獲得",
+			"explanation": "単発のアクションが完了したときに発生する"
 		},
 		"matched": {
 			"name": "Übereinstimmung",
@@ -931,10 +907,6 @@
 		},
 		"language-ko": {
 			"name": "KOREANISCH",
-			"explanation": ""
-		},
-		"language-mistaked": {
-			"name": "Falsche Sprache",
 			"explanation": ""
 		},
 		"config": {
@@ -1065,14 +1037,6 @@
 			"name": "Hint Overview Console",
 			"explanation": "Du kannst auch die Konsole (das System) einsehen, auf der dieses Spiel läuft."
 		},
-		"hint-correction-target": {
-			"name": "Hint Correction Target",
-			"explanation": "Du kannst die Korrekturen bestimmter Eigenschaften in dieser Kategorie sehen."
-		},
-		"hint-correction-source": {
-			"name": "Hint Correction Source",
-			"explanation": "Die Korrektur beruht auf der Wirkung des Gegenstands. Du kannst diesen Gegenstand einsehen."
-		},
 		"hint-properties-list": {
 			"name": "Hint Properties List",
 			"explanation": "Dies ist die Liste der Eigenschaften, die für jede Kategorie eingestellt sind."
@@ -1084,14 +1048,6 @@
 		"hint-properties-equipment": {
 			"name": "Hint Properties Equipment",
 			"explanation": "Die Wirkung wird durch die Ausrüstung des Gegenstands korrigiert. (Manche Gegenstände benötigen das nicht)"
-		},
-		"hint-property-meaning": {
-			"name": "Hint Property Meaning",
-			"explanation": "Eine Eigenschaft ist ein Element, das die Ausführung einer Aktion beeinflusst."
-		},
-		"hint-property-calculation": {
-			"name": "Hint Property Calculation",
-			"explanation": "Der Endwert wird aus dem zugewiesenen Anfangswert berechnet, unter Berücksichtigung des Levels der Kategorie, des eingestellten Levels der Aktion und der Korrektur durch den ausgerüsteten Gegenstand."
 		},
 		"hint-trade-availability": {
 			"name": "Hint Trade Availability",
@@ -1228,10 +1184,6 @@
 		"hint-missions-permanent": {
 			"name": "Hint Missions Permanent",
 			"explanation": "Eine einmal abgeschlossene Aufgabe bleibt abgeschlossen, auch wenn die Bedingungen später nicht mehr erfüllt sind."
-		},
-		"hint-character-identical": {
-			"name": "Hint Character Identical",
-			"explanation": "Dieser Inhalt ist derselbe wie der, der beim Bedienen der Kategorie angezeigt wird."
 		}
 	}
 }

@@ -21,10 +21,6 @@
 			"name": "最大值",
 			"explanation": "您持有的数量不得超过此限额，也不得行使超过此限额的权利。"
 		},
-		"minimum": {
-			"name": "最小值",
-			"explanation": ""
-		},
 		"purchased-count": {
 			"name": "购买次数",
 			"explanation": ""
@@ -254,72 +250,68 @@
 			"explanation": "作为买卖货币使用的物品。"
 		},
 		"play-time": {
-			"name": "Play Time",
-			"explanation": "When you started playing and how long you have played."
+			"name": "プレイ時間",
+			"explanation": "プレイを開始した日時と、プレイしている時間"
 		},
 		"play-started": {
-			"name": "Started",
-			"explanation": "The date and time you started playing."
+			"name": "開始日時",
+			"explanation": "プレイを開始した日時"
 		},
 		"play-duration": {
-			"name": "Duration",
-			"explanation": "The time elapsed since you started playing."
+			"name": "経過時間",
+			"explanation": "プレイを開始してから経過した時間"
 		},
 		"coins-earned": {
-			"name": "Coins Earned",
-			"explanation": "The total amount of each coin you have earned so far."
+			"name": "獲得コイン",
+			"explanation": "これまでに獲得した、各コインの合計量"
 		},
 		"unique-count": {
-			"name": "Unique",
-			"explanation": "The number of kinds you can hold at the same time."
+			"name": "種類数",
+			"explanation": "同時に所持できる種類の数"
 		},
 		"max-capacity": {
-			"name": "Capacity",
-			"explanation": "The maximum number of item kinds you can own now."
+			"name": "容量",
+			"explanation": "現在所持できるアイテムの種類数の上限"
 		},
 		"max-queue": {
-			"name": "Queue",
-			"explanation": "The maximum number of actions the queue can hold now."
+			"name": "キュー",
+			"explanation": "現在キューに保持できるアクション数の上限"
 		},
 		"statistics-category": {
-			"name": "Category",
-			"explanation": "How far the categories of this world have been opened up."
+			"name": "カテゴリ",
+			"explanation": "このワールドのカテゴリがどれだけ開放されているかを示す"
 		},
 		"statistics-action": {
-			"name": "Action",
-			"explanation": "How far the actions of this world have been opened up."
+			"name": "アクション",
+			"explanation": "このワールドのアクションがどれだけ開放されているかを示す"
 		},
 		"statistics-item": {
-			"name": "Item",
-			"explanation": "How far the items of this world have been opened up."
+			"name": "アイテム",
+			"explanation": "このワールドのアイテムがどれだけ開放されているかを示す"
 		},
 		"statistics-event": {
-			"name": "Event",
-			"explanation": "How far the events of this world have been opened up."
+			"name": "イベント",
+			"explanation": "このワールドのイベントがどれだけ開放されているかを示す"
 		},
 		"count-unlocked": {
-			"name": "Unlocked",
-			"explanation": "The number unlocked so far, out of the total."
+			"name": "解放済み",
+			"explanation": "全体のうち、これまでに解放された数"
 		},
 		"level-total": {
-			"name": "Total Level",
-			"explanation": "The sum of the levels of all categories, out of the maximum."
+			"name": "合計レベル",
+			"explanation": "全カテゴリのレベルの合計値と、その最大値"
 		},
 		"count-performed": {
-			"name": "Performed",
-			"explanation": "The total number of times you have performed actions."
+			"name": "実行済み",
+			"explanation": "これまでにアクションを実行した合計回数"
 		},
 		"count-earned": {
-			"name": "Earned",
-			"explanation": "The total number of items you have earned so far."
+			"name": "獲得済み",
+			"explanation": "これまでに獲得したアイテムの合計数"
 		},
 		"count-triggered": {
-			"name": "Triggered",
-			"explanation": "The total number of times events have been triggered."
-		},
-		"win": {
-			"name": "胜利",
-			"explanation": ""
+			"name": "発生済み",
+			"explanation": "これまでにイベントが発生した合計回数"
 		},
 		"debug": {
 			"name": "调试",
@@ -331,10 +323,6 @@
 		},
 		"multiplier": {
 			"name": "乘数",
-			"explanation": ""
-		},
-		"accelerate": {
-			"name": "加速",
 			"explanation": ""
 		},
 		"skip": {
@@ -419,10 +407,6 @@
 		},
 		"category-unlocked": {
 			"name": "类别解锁",
-			"explanation": ""
-		},
-		"situation": {
-			"name": "情况",
 			"explanation": ""
 		},
 		"element": {
@@ -617,10 +601,6 @@
 			"name": "无",
 			"explanation": ""
 		},
-		"own": {
-			"name": "拥有",
-			"explanation": "您是否拥有此物品。"
-		},
 		"own-count": {
 			"name": "计数",
 			"explanation": "您是否拥有此物品。"
@@ -705,13 +685,13 @@
 			"name": "求最大值",
 			"explanation": "您已达到最大完成次数。"
 		},
-		"relationship": {
-			"name": "关系",
-			"explanation": ""
-		},
 		"relationships": {
 			"name": "关系",
 			"explanation": ""
+		},
+		"relationship-items": {
+			"name": "相关物品列表",
+			"explanation": "与该类别动作相关的物品列表。"
 		},
 		"requirement-equipment": {
 			"name": "装备要求",
@@ -801,10 +781,6 @@
 			"name": "无状态",
 			"explanation": "没有可用的状态类别。"
 		},
-		"targeting-all-categories": {
-			"name": "面向所有类别",
-			"explanation": "此属性修正适用于所有类别。"
-		},
 		"event": {
 			"name": "事件",
 			"explanation": ""
@@ -814,28 +790,28 @@
 			"explanation": ""
 		},
 		"timing-matched": {
-			"name": "Condition Met",
-			"explanation": "Occurs the moment the conditions are met."
+			"name": "条件達成",
+			"explanation": "条件が満たされた瞬間に発生する"
 		},
 		"timing-comebacked": {
-			"name": "Comeback",
-			"explanation": "Occurs when you come back after being away."
+			"name": "カムバック",
+			"explanation": "しばらく離れていたあと、戻ってきたときに発生する"
 		},
 		"timing-gameovered": {
-			"name": "Game Over",
-			"explanation": "Occurs when you run out of stamina in battle."
+			"name": "ゲームオーバー",
+			"explanation": "戦闘中にスタミナが尽きたときに発生する"
 		},
 		"timing-welcomed": {
-			"name": "First Start",
-			"explanation": "Occurs when you open this world for the first time."
+			"name": "初回起動",
+			"explanation": "このワールドを初めて開いたときに発生する"
 		},
 		"timing-completed": {
-			"name": "Completion",
-			"explanation": "Occurs when every category reaches its maximum level."
+			"name": "コンプリート",
+			"explanation": "すべてのカテゴリが最大レベルに到達したときに発生する"
 		},
 		"timing-obtained": {
-			"name": "Single Completion",
-			"explanation": "Occurs when a single action is completed."
+			"name": "獲得",
+			"explanation": "単発のアクションが完了したときに発生する"
 		},
 		"matched": {
 			"name": "匹配",
@@ -931,10 +907,6 @@
 		},
 		"language-ko": {
 			"name": "韩语",
-			"explanation": ""
-		},
-		"language-mistaked": {
-			"name": "语言错误",
 			"explanation": ""
 		},
 		"config": {
@@ -1065,14 +1037,6 @@
 			"name": "Hint Overview Console",
 			"explanation": "也可以查看运行此游戏的控制台（系统）。"
 		},
-		"hint-correction-target": {
-			"name": "Hint Correction Target",
-			"explanation": "可以查看此类别中特定属性的修正。"
-		},
-		"hint-correction-source": {
-			"name": "Hint Correction Source",
-			"explanation": "修正来自物品的效果。可以查看该物品。"
-		},
 		"hint-properties-list": {
 			"name": "Hint Properties List",
 			"explanation": "以下是为每个类别设置的属性列表。"
@@ -1084,14 +1048,6 @@
 		"hint-properties-equipment": {
 			"name": "Hint Properties Equipment",
 			"explanation": "效果会因物品的装备而受到修正。（部分物品无需装备）"
-		},
-		"hint-property-meaning": {
-			"name": "Hint Property Meaning",
-			"explanation": "属性是影响动作执行的要素。"
-		},
-		"hint-property-calculation": {
-			"name": "Hint Property Calculation",
-			"explanation": "最终数值由分配的初始值，结合类别的等级、动作设置的等级以及所装备物品的修正计算得出。"
 		},
 		"hint-trade-availability": {
 			"name": "Hint Trade Availability",
@@ -1228,10 +1184,6 @@
 		"hint-missions-permanent": {
 			"name": "Hint Missions Permanent",
 			"explanation": "任务一旦完成便保持完成状态，即使之后不再满足条件。"
-		},
-		"hint-character-identical": {
-			"name": "Hint Character Identical",
-			"explanation": "此内容与操作类别时显示的内容相同。"
 		}
 	}
 }

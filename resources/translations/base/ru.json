@@ -21,10 +21,6 @@
 			"name": "Максимум",
 			"explanation": "Вы не имеете права владеть или использовать количество, превышающее указанное."
 		},
-		"minimum": {
-			"name": "Минимальный",
-			"explanation": ""
-		},
 		"purchased-count": {
 			"name": "Количество покупок",
 			"explanation": ""
@@ -254,72 +250,68 @@
 			"explanation": "Предмет, который служит валютой для покупки и продажи."
 		},
 		"play-time": {
-			"name": "Play Time",
-			"explanation": "When you started playing and how long you have played."
+			"name": "プレイ時間",
+			"explanation": "プレイを開始した日時と、プレイしている時間"
 		},
 		"play-started": {
-			"name": "Started",
-			"explanation": "The date and time you started playing."
+			"name": "開始日時",
+			"explanation": "プレイを開始した日時"
 		},
 		"play-duration": {
-			"name": "Duration",
-			"explanation": "The time elapsed since you started playing."
+			"name": "経過時間",
+			"explanation": "プレイを開始してから経過した時間"
 		},
 		"coins-earned": {
-			"name": "Coins Earned",
-			"explanation": "The total amount of each coin you have earned so far."
+			"name": "獲得コイン",
+			"explanation": "これまでに獲得した、各コインの合計量"
 		},
 		"unique-count": {
-			"name": "Unique",
-			"explanation": "The number of kinds you can hold at the same time."
+			"name": "種類数",
+			"explanation": "同時に所持できる種類の数"
 		},
 		"max-capacity": {
-			"name": "Capacity",
-			"explanation": "The maximum number of item kinds you can own now."
+			"name": "容量",
+			"explanation": "現在所持できるアイテムの種類数の上限"
 		},
 		"max-queue": {
-			"name": "Queue",
-			"explanation": "The maximum number of actions the queue can hold now."
+			"name": "キュー",
+			"explanation": "現在キューに保持できるアクション数の上限"
 		},
 		"statistics-category": {
-			"name": "Category",
-			"explanation": "How far the categories of this world have been opened up."
+			"name": "カテゴリ",
+			"explanation": "このワールドのカテゴリがどれだけ開放されているかを示す"
 		},
 		"statistics-action": {
-			"name": "Action",
-			"explanation": "How far the actions of this world have been opened up."
+			"name": "アクション",
+			"explanation": "このワールドのアクションがどれだけ開放されているかを示す"
 		},
 		"statistics-item": {
-			"name": "Item",
-			"explanation": "How far the items of this world have been opened up."
+			"name": "アイテム",
+			"explanation": "このワールドのアイテムがどれだけ開放されているかを示す"
 		},
 		"statistics-event": {
-			"name": "Event",
-			"explanation": "How far the events of this world have been opened up."
+			"name": "イベント",
+			"explanation": "このワールドのイベントがどれだけ開放されているかを示す"
 		},
 		"count-unlocked": {
-			"name": "Unlocked",
-			"explanation": "The number unlocked so far, out of the total."
+			"name": "解放済み",
+			"explanation": "全体のうち、これまでに解放された数"
 		},
 		"level-total": {
-			"name": "Total Level",
-			"explanation": "The sum of the levels of all categories, out of the maximum."
+			"name": "合計レベル",
+			"explanation": "全カテゴリのレベルの合計値と、その最大値"
 		},
 		"count-performed": {
-			"name": "Performed",
-			"explanation": "The total number of times you have performed actions."
+			"name": "実行済み",
+			"explanation": "これまでにアクションを実行した合計回数"
 		},
 		"count-earned": {
-			"name": "Earned",
-			"explanation": "The total number of items you have earned so far."
+			"name": "獲得済み",
+			"explanation": "これまでに獲得したアイテムの合計数"
 		},
 		"count-triggered": {
-			"name": "Triggered",
-			"explanation": "The total number of times events have been triggered."
-		},
-		"win": {
-			"name": "Победа",
-			"explanation": ""
+			"name": "発生済み",
+			"explanation": "これまでにイベントが発生した合計回数"
 		},
 		"debug": {
 			"name": "Отладка",
@@ -331,10 +323,6 @@
 		},
 		"multiplier": {
 			"name": "Мультипликатор",
-			"explanation": ""
-		},
-		"accelerate": {
-			"name": "Ускорить",
 			"explanation": ""
 		},
 		"skip": {
@@ -419,10 +407,6 @@
 		},
 		"category-unlocked": {
 			"name": "Категория разблокирована",
-			"explanation": ""
-		},
-		"situation": {
-			"name": "Ситуация",
 			"explanation": ""
 		},
 		"element": {
@@ -617,10 +601,6 @@
 			"name": "Ничего",
 			"explanation": ""
 		},
-		"own": {
-			"name": "Собственный",
-			"explanation": "У вас есть свой предмет?"
-		},
 		"own-count": {
 			"name": "Собственное число",
 			"explanation": "У вас есть свой предмет?"
@@ -705,13 +685,13 @@
 			"name": "Максимальное значение достигнуто",
 			"explanation": "Вы достигли максимального количества прохождений, при которых выполнение задания было завершено."
 		},
-		"relationship": {
-			"name": "Отношения",
-			"explanation": ""
-		},
 		"relationships": {
 			"name": "Отношения",
 			"explanation": ""
+		},
+		"relationship-items": {
+			"name": "Список связанных предметов",
+			"explanation": "Список предметов, связанных с действиями этой категории."
 		},
 		"requirement-equipment": {
 			"name": "Требования к снаряжению",
@@ -801,10 +781,6 @@
 			"name": "Такого статуса не существует",
 			"explanation": "Статусов нет."
 		},
-		"targeting-all-categories": {
-			"name": "Ориентация на все категории",
-			"explanation": "Данная корректировка свойств распространяется на все категории."
-		},
 		"event": {
 			"name": "Событие",
 			"explanation": ""
@@ -814,28 +790,28 @@
 			"explanation": ""
 		},
 		"timing-matched": {
-			"name": "Condition Met",
-			"explanation": "Occurs the moment the conditions are met."
+			"name": "条件達成",
+			"explanation": "条件が満たされた瞬間に発生する"
 		},
 		"timing-comebacked": {
-			"name": "Comeback",
-			"explanation": "Occurs when you come back after being away."
+			"name": "カムバック",
+			"explanation": "しばらく離れていたあと、戻ってきたときに発生する"
 		},
 		"timing-gameovered": {
-			"name": "Game Over",
-			"explanation": "Occurs when you run out of stamina in battle."
+			"name": "ゲームオーバー",
+			"explanation": "戦闘中にスタミナが尽きたときに発生する"
 		},
 		"timing-welcomed": {
-			"name": "First Start",
-			"explanation": "Occurs when you open this world for the first time."
+			"name": "初回起動",
+			"explanation": "このワールドを初めて開いたときに発生する"
 		},
 		"timing-completed": {
-			"name": "Completion",
-			"explanation": "Occurs when every category reaches its maximum level."
+			"name": "コンプリート",
+			"explanation": "すべてのカテゴリが最大レベルに到達したときに発生する"
 		},
 		"timing-obtained": {
-			"name": "Single Completion",
-			"explanation": "Occurs when a single action is completed."
+			"name": "獲得",
+			"explanation": "単発のアクションが完了したときに発生する"
 		},
 		"matched": {
 			"name": "Соответствующие",
@@ -931,10 +907,6 @@
 		},
 		"language-ko": {
 			"name": "КОРЕЙСКИЙ",
-			"explanation": ""
-		},
-		"language-mistaked": {
-			"name": "Ошибка в языке",
 			"explanation": ""
 		},
 		"config": {
@@ -1065,14 +1037,6 @@
 			"name": "Hint Overview Console",
 			"explanation": "Вы также можете посмотреть консоль (систему), на которой работает эта игра."
 		},
-		"hint-correction-target": {
-			"name": "Hint Correction Target",
-			"explanation": "Вы можете увидеть поправки для конкретных свойств в этой категории."
-		},
-		"hint-correction-source": {
-			"name": "Hint Correction Source",
-			"explanation": "Поправка вызвана действием предмета. Вы можете посмотреть этот предмет."
-		},
 		"hint-properties-list": {
 			"name": "Hint Properties List",
 			"explanation": "Ниже приведён список свойств, настроенных для каждой категории."
@@ -1084,14 +1048,6 @@
 		"hint-properties-equipment": {
 			"name": "Hint Properties Equipment",
 			"explanation": "Эффект корректируется снаряжением предмета. (Некоторым предметам это не требуется)"
-		},
-		"hint-property-meaning": {
-			"name": "Hint Property Meaning",
-			"explanation": "Свойство — это элемент, влияющий на выполнение действия."
-		},
-		"hint-property-calculation": {
-			"name": "Hint Property Calculation",
-			"explanation": "Итоговое значение рассчитывается из назначенного начального значения с учётом уровня категории, заданного уровня действия и поправки от экипированного предмета."
 		},
 		"hint-trade-availability": {
 			"name": "Hint Trade Availability",
@@ -1228,10 +1184,6 @@
 		"hint-missions-permanent": {
 			"name": "Hint Missions Permanent",
 			"explanation": "Однажды выполненная задача остаётся выполненной, даже если условия перестанут соблюдаться."
-		},
-		"hint-character-identical": {
-			"name": "Hint Character Identical",
-			"explanation": "Это содержимое совпадает с тем, что отображается при работе с категорией."
 		}
 	}
 }
