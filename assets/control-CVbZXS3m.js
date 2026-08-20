@@ -143,6 +143,8 @@ var e=Object.create,t=Object.defineProperty,n=Object.getOwnPropertyDescriptor,r=
 		transform: translateY(${L.pressOffset}px);
 	`,tightUnit:D`
 		${Mu}: 0px;
+	`,gapBottom:D`
+		${Mu}: ${M.xs}px;
 	`,tightTop:D`
 		margin-top: calc(-1 * var(${Mu}, ${M.xs}px));
 	`,get locked(){return D`
