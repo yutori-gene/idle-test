@@ -6264,7 +6264,8 @@
         "required": [
           "information",
           "chance",
-          "property"
+          "property",
+          "comment"
         ],
         "properties": {
           "information": {
@@ -6565,6 +6566,24 @@
                 "Wird noch geschrieben"
               ],
               "reference": "de/editor/combat"
+            }
+          },
+          "comment": {
+            "type": "boolean",
+            "default": false,
+            "format": "checkbox",
+            "title": "Anzeige der erläuternden Bemerkung",
+            "options": {
+              "infoText": "Ob die erläuternde Bemerkung beim Auslösen als Toast-Benachrichtigung erscheint"
+            },
+            "yutori": {
+              "points": [
+                "Flag dafür, ob die erläuternde Bemerkung als Toast-Benachrichtigung erscheint, wenn diese Fähigkeit ausgelöst wird.",
+                "Wenn eingeschaltet, erscheint sie einmalig beim ersten Auslösen nach dem Öffnen des Browsers.",
+                "Wenn ausgeschaltet, erscheint sie nicht.",
+                "Ist die erläuternde Bemerkung leer, erscheint auch bei eingeschaltetem Flag nichts."
+              ],
+              "reference": "de/editor/skill?id=Anzeige der erläuternden Bemerkung"
             }
           }
         }

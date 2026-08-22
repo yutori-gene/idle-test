@@ -495,6 +495,11 @@ export const skill: Type.Skill = {
 			summary: "Akan ditulis",
 			points: ["Akan ditulis"],
 		},
+		comment: {
+			title: "Tampilan catatan penjelasan",
+			summary: "Apakah catatan penjelasan ditampilkan sebagai notifikasi toast saat aktif",
+			points: ["Penanda apakah catatan penjelasan ditampilkan sebagai notifikasi toast saat skill ini aktif.", "Jika aktif, catatan ditampilkan sekali saja pada aktivasi pertama setelah browser dibuka.", "Jika nonaktif, catatan tidak ditampilkan.", "Jika catatan penjelasan kosong, tidak ada yang ditampilkan meskipun opsi ini aktif."],
+		},
 	},
 	options: {
 		label: "skill",

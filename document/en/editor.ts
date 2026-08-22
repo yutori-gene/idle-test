@@ -495,6 +495,11 @@ export const skill: Type.Skill = {
 			summary: "To be written",
 			points: ["To be written"],
 		},
+		comment: {
+			title: "Explanation display",
+			summary: "Whether to show the explanatory note as a toast on activation",
+			points: ["A flag for whether the explanatory note is shown as a toast when this skill activates.", "When on, it is shown once, at the first activation after the browser is opened.", "When off, it is not shown.", "If the explanatory note is blank, nothing is shown even when this is on."],
+		},
 	},
 	options: {
 		label: "skill",

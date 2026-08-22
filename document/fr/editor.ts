@@ -495,6 +495,11 @@ export const skill: Type.Skill = {
 			summary: "À rédiger",
 			points: ["À rédiger"],
 		},
+		comment: {
+			title: "Affichage de la note explicative",
+			summary: "Afficher ou non la note explicative en notification toast lors du déclenchement",
+			points: ["Indicateur déterminant si la note explicative s'affiche en notification toast lorsque cette compétence se déclenche.", "Si activé, elle s'affiche une seule fois, au premier déclenchement après l'ouverture du navigateur.", "Si désactivé, elle ne s'affiche pas.", "Si la note explicative est vide, rien ne s'affiche même lorsque l'option est activée."],
+		},
 	},
 	options: {
 		label: "skill",

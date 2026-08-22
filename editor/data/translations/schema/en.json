@@ -6264,7 +6264,8 @@
         "required": [
           "information",
           "chance",
-          "property"
+          "property",
+          "comment"
         ],
         "properties": {
           "information": {
@@ -6565,6 +6566,24 @@
                 "To be written"
               ],
               "reference": "en/editor/combat"
+            }
+          },
+          "comment": {
+            "type": "boolean",
+            "default": false,
+            "format": "checkbox",
+            "title": "Explanation display",
+            "options": {
+              "infoText": "Whether to show the explanatory note as a toast on activation"
+            },
+            "yutori": {
+              "points": [
+                "A flag for whether the explanatory note is shown as a toast when this skill activates.",
+                "When on, it is shown once, at the first activation after the browser is opened.",
+                "When off, it is not shown.",
+                "If the explanatory note is blank, nothing is shown even when this is on."
+              ],
+              "reference": "en/editor/skill?id=Explanation display"
             }
           }
         }

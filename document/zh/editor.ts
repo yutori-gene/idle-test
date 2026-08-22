@@ -495,6 +495,11 @@ export const skill: Type.Skill = {
 			summary: "待编写",
 			points: ["待编写"],
 		},
+		comment: {
+			title: "注释显示",
+			summary: "发动时是否以消息提示显示注释",
+			points: ["此技能发动时是否以消息提示显示注释的标志。", "开启时，在打开浏览器后的首次发动时只显示一次。", "关闭时不显示。", "注释为空时，即使开启也不会显示。"],
+		},
 	},
 	options: {
 		label: "skill",

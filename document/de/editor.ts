@@ -495,6 +495,11 @@ export const skill: Type.Skill = {
 			summary: "Wird noch geschrieben",
 			points: ["Wird noch geschrieben"],
 		},
+		comment: {
+			title: "Anzeige der erläuternden Bemerkung",
+			summary: "Ob die erläuternde Bemerkung beim Auslösen als Toast-Benachrichtigung erscheint",
+			points: ["Flag dafür, ob die erläuternde Bemerkung als Toast-Benachrichtigung erscheint, wenn diese Fähigkeit ausgelöst wird.", "Wenn eingeschaltet, erscheint sie einmalig beim ersten Auslösen nach dem Öffnen des Browsers.", "Wenn ausgeschaltet, erscheint sie nicht.", "Ist die erläuternde Bemerkung leer, erscheint auch bei eingeschaltetem Flag nichts."],
+		},
 	},
 	options: {
 		label: "skill",

@@ -6264,7 +6264,8 @@
         "required": [
           "information",
           "chance",
-          "property"
+          "property",
+          "comment"
         ],
         "properties": {
           "information": {
@@ -6565,6 +6566,24 @@
                 "待编写"
               ],
               "reference": "zh/editor/combat"
+            }
+          },
+          "comment": {
+            "type": "boolean",
+            "default": false,
+            "format": "checkbox",
+            "title": "注释显示",
+            "options": {
+              "infoText": "发动时是否以消息提示显示注释"
+            },
+            "yutori": {
+              "points": [
+                "此技能发动时是否以消息提示显示注释的标志。",
+                "开启时，在打开浏览器后的首次发动时只显示一次。",
+                "关闭时不显示。",
+                "注释为空时，即使开启也不会显示。"
+              ],
+              "reference": "zh/editor/skill?id=注释显示"
             }
           }
         }

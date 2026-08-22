@@ -6264,7 +6264,8 @@
         "required": [
           "information",
           "chance",
-          "property"
+          "property",
+          "comment"
         ],
         "properties": {
           "information": {
@@ -6565,6 +6566,24 @@
                 "執筆予定"
               ],
               "reference": "ja/editor/combat"
+            }
+          },
+          "comment": {
+            "type": "boolean",
+            "default": false,
+            "format": "checkbox",
+            "title": "説明の表示",
+            "options": {
+              "infoText": "発動時に説明をトーストで表示するか"
+            },
+            "yutori": {
+              "points": [
+                "このスキルが発動したときに、説明をトーストで表示するかどうかのフラグです。",
+                "オンの場合は、ブラウザを開いてから初めて発動したときに一度だけ表示します。",
+                "オフの場合は表示しません。",
+                "説明が空欄の場合は、オンにしても表示されません。"
+              ],
+              "reference": "ja/editor/skill?id=説明の表示"
             }
           }
         }

@@ -6264,7 +6264,8 @@
         "required": [
           "information",
           "chance",
-          "property"
+          "property",
+          "comment"
         ],
         "properties": {
           "information": {
@@ -6565,6 +6566,24 @@
                 "A ser escrito"
               ],
               "reference": "pt/editor/combat"
+            }
+          },
+          "comment": {
+            "type": "boolean",
+            "default": false,
+            "format": "checkbox",
+            "title": "Exibição da nota explicativa",
+            "options": {
+              "infoText": "Se a nota explicativa é exibida como notificação flutuante ao ativar"
+            },
+            "yutori": {
+              "points": [
+                "Indicador de se a nota explicativa é exibida como notificação flutuante quando esta habilidade é ativada.",
+                "Quando ativado, é exibida uma única vez, na primeira ativação após abrir o navegador.",
+                "Quando desativado, não é exibida.",
+                "Se a nota explicativa estiver vazia, nada é exibido mesmo com a opção ativada."
+              ],
+              "reference": "pt/editor/skill?id=Exibição da nota explicativa"
             }
           }
         }

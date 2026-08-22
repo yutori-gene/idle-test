@@ -6264,7 +6264,8 @@
         "required": [
           "information",
           "chance",
-          "property"
+          "property",
+          "comment"
         ],
         "properties": {
           "information": {
@@ -6565,6 +6566,24 @@
                 "Pendiente de redacción"
               ],
               "reference": "es/editor/combat"
+            }
+          },
+          "comment": {
+            "type": "boolean",
+            "default": false,
+            "format": "checkbox",
+            "title": "Visualización de la nota explicativa",
+            "options": {
+              "infoText": "Si la nota explicativa se muestra como notificación emergente al activarse"
+            },
+            "yutori": {
+              "points": [
+                "Indicador de si la nota explicativa se muestra como notificación emergente cuando se activa esta habilidad.",
+                "Si está activado, se muestra una sola vez, en la primera activación tras abrir el navegador.",
+                "Si está desactivado, no se muestra.",
+                "Si la nota explicativa está vacía, no se muestra nada aunque esté activado."
+              ],
+              "reference": "es/editor/skill?id=Visualización de la nota explicativa"
             }
           }
         }

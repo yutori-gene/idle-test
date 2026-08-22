@@ -6264,7 +6264,8 @@
         "required": [
           "information",
           "chance",
-          "property"
+          "property",
+          "comment"
         ],
         "properties": {
           "information": {
@@ -6565,6 +6566,24 @@
                 "À rédiger"
               ],
               "reference": "fr/editor/combat"
+            }
+          },
+          "comment": {
+            "type": "boolean",
+            "default": false,
+            "format": "checkbox",
+            "title": "Affichage de la note explicative",
+            "options": {
+              "infoText": "Afficher ou non la note explicative en notification toast lors du déclenchement"
+            },
+            "yutori": {
+              "points": [
+                "Indicateur déterminant si la note explicative s'affiche en notification toast lorsque cette compétence se déclenche.",
+                "Si activé, elle s'affiche une seule fois, au premier déclenchement après l'ouverture du navigateur.",
+                "Si désactivé, elle ne s'affiche pas.",
+                "Si la note explicative est vide, rien ne s'affiche même lorsque l'option est activée."
+              ],
+              "reference": "fr/editor/skill?id=Affichage de la note explicative"
             }
           }
         }
