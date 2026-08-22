@@ -10,14 +10,14 @@ Konfiguration der Auswirkungen eines Gegenstands.
 
 |Eigenschaften|Details zur Wirksamkeit.|
 |-|-|
-|Geschwindigkeit|Verringert die Zeit, die für eine Aktion benötigt wird. Die benötigte Zeit variiert umgekehrt mit dem Level-Unterschied.|
-|Chance|Ändert die Erfolgswahrscheinlichkeit einer Aktion. Die Wahrscheinlichkeit steigt proportional zum Level-Unterschied.|
+|Geschwindigkeit|Verringert die Zeit, die für eine Aktion benötigt wird. Die benötigte Zeit variiert umgekehrt mit dem Level-Unterschied (der Faktor wirkt nur zur Hälfte).|
+|Chance|Ändert die Erfolgswahrscheinlichkeit einer Aktion. Der Faktor wirkt auf das Verhältnis von Erfolg zu Misserfolg und überschreitet daher nie `100`%.|
 |erleben|Ändert die Erfahrung, die man erwirbt. Erhöht sich proportional zur Level-Differenz (die Berechnung ist umgekehrt: je höher die Level-Aktion, desto mehr gewinnt man).|
 |angreifen|Ändert den Ausdauerschaden, der dem Gegner zugefügt wird. (Nur Ausdauer-Aktion).|
-|Verteidigung|Verringert den von Gegnern erlittenen Ausdauerschaden. (nur Ausdauer-Aktion).|
+|Verteidigung|Verringert den von Gegnern erlittenen Ausdauerschaden (der Faktor wirkt nur zur Hälfte). (nur Ausdauer-Aktion)|
 |Genauigkeit|Verringert die Fehlwurfquote von Angriffen. (nur Ausdauer-Aktion).|
-|Ausweichen|Ändert die Ausweichrate der gegnerischen Angriffe. (nur Ausdauer-Aktion).|
-|wiederherstellen|Ändert die Menge an Ausdauer, die am Ende einer Aktion wiederhergestellt wird. (nur für Ausdauer-Aktionen).|
+|Ausweichen|Ändert die Ausweichrate der gegnerischen Angriffe (der Faktor wirkt nur zur Hälfte). (nur Ausdauer-Aktion)|
+|wiederherstellen|Ändert die Menge an Ausdauer, die am Ende einer Aktion wiederhergestellt wird. Je näher an der vollständigen Erholung, desto flacher der Zuwachs. (nur für Ausdauer-Aktionen)|
 ___
 
 ## Kategorie.

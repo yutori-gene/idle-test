@@ -1,7 +1,6 @@
 
 # personagem
 Identificação e manipulação da situação do protagonista.
-- Este conteúdo é idêntico ao que é exibido ao manipular a categoria.
 ___
 
 ## atividade
@@ -16,7 +15,7 @@ ___
 
 ## Status.
 Lista de todas as propriedades
-- Apenas o valor da correção da categoria pelo item é exibido.
+- Somente o valor da propriedade que os itens aplicam à categoria é exibido.
 - Há ainda outras correções dependendo da ação a ser executada.
 ___
 

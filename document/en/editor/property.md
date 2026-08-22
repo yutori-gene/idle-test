@@ -10,14 +10,14 @@ Configuring the Effects of an Item
 
 |properties|Details of Effects|
 |-|-|
-|speed|Reduces the time required for an Action. The time required changes inversely proportional to the difference in level.|
-|chance|Changes the probability of success of an Action. The probability increases in proportion to the level difference.|
+|speed|Reduces the time required for an Action. The time required changes inversely proportional to the level difference (the ratio takes half effect).|
+|chance|Changes the probability of success of an Action. The ratio applies to the proportion between success and failure, so it never exceeds `100`%.|
 |experience|Varies the experience value acquired. It increases in proportion to the difference in levels (the calculation is reversed: the higher the level Action, the more is gained).|
 |attack|Changes the stamina damage dealt to the opponent. (only for stamina actions)|
-|defence|Reduces stamina damage taken from opponents. (stamina Action only)|
+|defence|Reduces stamina damage taken from opponents (the ratio takes half effect). (stamina Action only)|
 |accuracy|Decreases the miss rate of attacks. (stamina Action only)|
-|evasion|Changes the evasion rate of an opponent's attack. (stamina Action only)|
-|restore|Changes the amount of stamina restored at the end of an Action. (only for stamina actions)|
+|evasion|Changes the evasion rate of an opponent's attack (the ratio takes half effect). (stamina Action only)|
+|restore|Changes the amount of stamina restored at the end of an Action. The closer it gets to a full recovery, the more gradual the increase becomes. (stamina Action only)|
 ___
 
 ## Category

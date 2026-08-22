@@ -9,6 +9,7 @@
     "categories",
     "actions",
     "items",
+    "skills",
     "groups",
     "tasks",
     "presets"
@@ -464,11 +465,33 @@
                 "reference": "zh/editor/general?id=行动等级限制"
               }
             },
+            "propertyRatio": {
+              "type": "number",
+              "default": 2,
+              "minimum": 1,
+              "propertyOrder": 104,
+              "title": "属性倍率[倍]",
+              "options": {
+                "infoText": "每10点等级差属性变为几倍"
+              },
+              "yutori": {
+                "points": [
+                  "设置类别的等级与动作的等级之差每扩大`10`时，属性变为几倍。",
+                  "倍率按(属性倍率)^(等级差÷10)计算。等级差为`0`时倍率为`1`，直接使用动作中设置的值。",
+                  "攻击和经验按此倍率增加，防御（受到的伤害）和快速（所需时间）按相同倍率减少。",
+                  "命中、回避、成功概率和恢复量都是收敛在`0`〜`100`%之间的值，因此倍率作用于成立一方与不成立一方之比。`0`%和`100`%不会变化，中间的值也不会超过`100`%。",
+                  "防御、回避和快速的倍率效果减半（等级差`20`相当于其他属性的等级差`10`）。防御和回避会对被击中率与受到的伤害双重生效，快速则作为执行次数对其他所有属性生效，因此减弱其效果以取得平衡。",
+                  "建议取(经验值上升率)的`6.7`次方。超过该值时等级越高升级越快，低于该值时后期升级所需时间越长。",
+                  "设为`1`时等级差不再产生影响。数值越大，等级差带来的优势与劣势越急剧。"
+                ],
+                "reference": "zh/editor/general?id=属性倍率[倍]"
+              }
+            },
             "levelCommonRatio": {
               "type": "number",
               "default": 1.05,
               "minimum": 1,
-              "propertyOrder": 104,
+              "propertyOrder": 105,
               "title": "经验上的增长率[倍]。",
               "options": {
                 "infoText": "等级提升难度增加的百分比。"
@@ -973,7 +996,7 @@
               ],
               "options": {
                 "disable_collapse": true,
-                "infoText": "连续执行（预设）动作的框数配置"
+                "infoText": "连续执行动作的队列槽位数配置"
               },
               "properties": {
                 "information": {
@@ -1185,8 +1208,8 @@
                   },
                   "yutori": {
                     "points": [
-                      "这是游戏开始时的预订名额数量。",
-                      "最小值是`1`（不采用类似容量的`0`=无限制的处理方式）。"
+                      "这是游戏开始时的队列槽位数量。",
+                      "最小值是`1`（正在执行的动作会占用一个槽位，且不采用类似容量的`0`=无限制的处理方式）。"
                     ],
                     "reference": "zh/editor/general?id=默认值 [个]。"
                   }
@@ -1264,7 +1287,8 @@
               "title": "Cue",
               "yutori": {
                 "points": [
-                  "用于管理用于连续执行（预定）动作的槽位数量。",
+                  "用于管理连续执行动作的队列槽位数量。",
+                  "队列包含正在执行的动作，队首的动作即为正在执行的动作。槽位为`1`时只能容纳正在执行的动作，无法排队等待。",
                   "除了可以像容量一样使用货币购买槽位外，还可以通过完成任务或参与事件，指定队列中的物品作为奖励来增加槽位。",
                   "在根据条件或奖励查询队列中的物品时，请使用此处配置的ID。"
                 ],
@@ -1356,28 +1380,6 @@
                   "每个动作的战斗值（属性）都会添加到这个默认值中。"
                 ],
                 "reference": "zh/editor/combat"
-              }
-            },
-            "propertyRatio": {
-              "type": "number",
-              "default": 2,
-              "minimum": 1,
-              "propertyOrder": 104,
-              "title": "属性倍率[倍]",
-              "options": {
-                "infoText": "每10点等级差属性变为几倍"
-              },
-              "yutori": {
-                "points": [
-                  "设置类别的等级与动作的等级之差每扩大`10`时，属性变为几倍。",
-                  "倍率按(属性倍率)^(等级差÷10)计算。等级差为`0`时倍率为`1`，直接使用动作中设置的值。",
-                  "攻击和经验按此倍率增加，防御（受到的伤害）和快速（所需时间）按相同倍率减少。",
-                  "命中、回避、成功概率和恢复量都是收敛在`0`〜`100`%之间的值，因此倍率作用于成立一方与不成立一方之比。`0`%和`100`%不会变化，中间的值也不会超过`100`%。",
-                  "防御、回避和快速的倍率效果减半（等级差`20`相当于其他属性的等级差`10`）。防御和回避会对被击中率与受到的伤害双重生效，快速则作为执行次数对其他所有属性生效，因此减弱其效果以取得平衡。",
-                  "建议取(经验值上升率)的`6.7`次方。超过该值时等级越高升级越快，低于该值时后期升级所需时间越长。",
-                  "设为`1`时等级差不再产生影响。数值越大，等级差带来的优势与劣势越急剧。"
-                ],
-                "reference": "zh/editor/general?id=属性倍率[倍]"
               }
             }
           },
@@ -1735,13 +1737,13 @@
                     "hidden": true,
                     "infoText": "イベントでは使用しません"
                   },
-                  "title": "カテゴリー",
+                  "title": "カテゴリ",
                   "yutori": {
                     "points": [
-                      "ミッションやタスクの一覧に表示されないため、所属するカテゴリーは指定しません。",
+                      "ミッションやタスクの一覧に表示されないため、所属するカテゴリは指定しません。",
                       "エディターでは入力欄が表示されません。"
                     ],
-                    "reference": "zh/editor/event?id=カテゴリー"
+                    "reference": "zh/editor/event?id=カテゴリ"
                   }
                 },
                 "timing": {
@@ -2256,13 +2258,13 @@
                     "hidden": true,
                     "infoText": "イベントでは使用しません"
                   },
-                  "title": "カテゴリー",
+                  "title": "カテゴリ",
                   "yutori": {
                     "points": [
-                      "ミッションやタスクの一覧に表示されないため、所属するカテゴリーは指定しません。",
+                      "ミッションやタスクの一覧に表示されないため、所属するカテゴリは指定しません。",
                       "エディターでは入力欄が表示されません。"
                     ],
-                    "reference": "zh/editor/event?id=カテゴリー"
+                    "reference": "zh/editor/event?id=カテゴリ"
                   }
                 },
                 "timing": {
@@ -2777,13 +2779,13 @@
                     "hidden": true,
                     "infoText": "イベントでは使用しません"
                   },
-                  "title": "カテゴリー",
+                  "title": "カテゴリ",
                   "yutori": {
                     "points": [
-                      "ミッションやタスクの一覧に表示されないため、所属するカテゴリーは指定しません。",
+                      "ミッションやタスクの一覧に表示されないため、所属するカテゴリは指定しません。",
                       "エディターでは入力欄が表示されません。"
                     ],
-                    "reference": "zh/editor/event?id=カテゴリー"
+                    "reference": "zh/editor/event?id=カテゴリ"
                   }
                 },
                 "timing": {
@@ -3298,13 +3300,13 @@
                     "hidden": true,
                     "infoText": "イベントでは使用しません"
                   },
-                  "title": "カテゴリー",
+                  "title": "カテゴリ",
                   "yutori": {
                     "points": [
-                      "ミッションやタスクの一覧に表示されないため、所属するカテゴリーは指定しません。",
+                      "ミッションやタスクの一覧に表示されないため、所属するカテゴリは指定しません。",
                       "エディターでは入力欄が表示されません。"
                     ],
-                    "reference": "zh/editor/event?id=カテゴリー"
+                    "reference": "zh/editor/event?id=カテゴリ"
                   }
                 },
                 "timing": {
@@ -3819,13 +3821,13 @@
                     "hidden": true,
                     "infoText": "イベントでは使用しません"
                   },
-                  "title": "カテゴリー",
+                  "title": "カテゴリ",
                   "yutori": {
                     "points": [
-                      "ミッションやタスクの一覧に表示されないため、所属するカテゴリーは指定しません。",
+                      "ミッションやタスクの一覧に表示されないため、所属するカテゴリは指定しません。",
                       "エディターでは入力欄が表示されません。"
                     ],
-                    "reference": "zh/editor/event?id=カテゴリー"
+                    "reference": "zh/editor/event?id=カテゴリ"
                   }
                 },
                 "timing": {
@@ -4826,7 +4828,8 @@
           "requirements",
           "acquisitions",
           "progressType",
-          "property"
+          "property",
+          "skills"
         ],
         "properties": {
           "information": {
@@ -5514,6 +5517,27 @@
               ],
               "reference": "zh/editor/combat"
             }
+          },
+          "skills": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "pattern": "^[0-9a-zA-Z\\-]*$"
+            },
+            "options": {
+              "disable_collapse": true,
+              "infoText": "Details"
+            },
+            "default": [],
+            "uniqueItems": true,
+            "title": "技能",
+            "description": "待编写",
+            "yutori": {
+              "points": [
+                "待编写"
+              ],
+              "reference": "zh/editor/skill"
+            }
           }
         }
       },
@@ -5556,7 +5580,8 @@
           "maximum",
           "equipmentType",
           "requirements",
-          "properties"
+          "properties",
+          "skill"
         ],
         "properties": {
           "information": {
@@ -6189,6 +6214,22 @@
               ],
               "reference": "zh/editor/property"
             }
+          },
+          "skill": {
+            "type": "string",
+            "default": "",
+            "pattern": "^[0-9a-zA-Z\\-]*$",
+            "title": "技能",
+            "description": "待编写",
+            "options": {
+              "infoText": "Details"
+            },
+            "yutori": {
+              "points": [
+                "待编写"
+              ],
+              "reference": "zh/editor/skill"
+            }
           }
         }
       },
@@ -6201,6 +6242,340 @@
           "使用方法也有计数可变。"
         ],
         "reference": "zh/editor/item"
+      }
+    },
+    "skills": {
+      "type": "array",
+      "basicCategoryTitle": "技能",
+      "format": "tabs",
+      "options": {
+        "disable_collapse": true,
+        "infoText": "Details"
+      },
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "format": "categories",
+        "basicCategoryTitle": "Skill",
+        "headerTemplate": "{{ i1 }}: {{ self.information.id }}",
+        "options": {
+          "disable_collapse": true
+        },
+        "required": [
+          "information",
+          "chance",
+          "property"
+        ],
+        "properties": {
+          "information": {
+            "type": "object",
+            "additionalProperties": false,
+            "format": "grid",
+            "required": [
+              "id",
+              "name",
+              "explanation",
+              "icon",
+              "color"
+            ],
+            "options": {
+              "disable_collapse": true,
+              "infoText": "Details"
+            },
+            "properties": {
+              "id": {
+                "type": "string",
+                "default": "",
+                "minLength": 1,
+                "maxLength": 100,
+                "pattern": "^[0-9a-zA-Z\\-]+$",
+                "title": "ID",
+                "options": {
+                  "infoText": "标识元素的唯一 ID"
+                },
+                "yutori": {
+                  "points": [
+                    "ID 来唯一标识每个元素。",
+                    "在编辑器中，这是一个用于标识元素的字符串。",
+                    "例如，ID 指定了动作完成后获得的物品。"
+                  ],
+                  "reference": "zh/editor/information?id=ID"
+                }
+              },
+              "name": {
+                "type": "string",
+                "maxLength": 20,
+                "title": "名称：",
+                "options": {
+                  "infoText": "出现的元素名称"
+                },
+                "yutori": {
+                  "points": [
+                    "游戏中显示的元素名称。",
+                    "也可输入英语以外的语言。",
+                    "可以接受与其他元素重复的名称。",
+                    "过长时，游戏过程中显示溢出的部分将以 `…` 省略。"
+                  ],
+                  "reference": "zh/editor/information?id=名称："
+                }
+              },
+              "explanation": {
+                "type": "string",
+                "title": "注释",
+                "options": {
+                  "infoText": "详细元素说明。"
+                },
+                "yutori": {
+                  "points": [
+                    "游戏中显示的元素说明。",
+                    "可输入英语以外的语言。可显示所有文本，即使是长文本。",
+                    "如无解释，则留空。"
+                  ],
+                  "reference": "zh/editor/information?id=注释"
+                }
+              },
+              "icon": {
+                "type": "object",
+                "additionalProperties": false,
+                "format": "grid",
+                "required": [
+                  "emoji",
+                  "iconify",
+                  "image"
+                ],
+                "options": {
+                  "disable_collapse": true,
+                  "infoText": "配置代表元素的图标。"
+                },
+                "properties": {
+                  "emoji": {
+                    "type": "string",
+                    "options": {
+                      "grid_columns": 4,
+                      "infoText": "带象形图的图标显示"
+                    },
+                    "title": "象形文字",
+                    "yutori": {
+                      "points": [
+                        "将象形图显示为图标。",
+                        "它可以从文本转换为象形图，并快速进行配置。",
+                        "对于象形图，请按原样输入 Unicode 象形图。",
+                        "由于使用的是在执行环境中引入的象形图，因此对于不同的用户，它们的显示方式略有不同。",
+                        "通过 Iconify，您可以配置与每个环境无关联的表情符号",
+                        "可以显示非图形字符，但如果有多个字符，显示可能会损坏。",
+                        "输入象形图，例如 `🗡️` 或 `⚔️`。"
+                      ],
+                      "reference": "zh/editor/information?id=象形文字"
+                    }
+                  },
+                  "iconify": {
+                    "type": "string",
+                    "default": "",
+                    "options": {
+                      "grid_columns": 4,
+                      "infoText": "使用 Iconify 图标集"
+                    },
+                    "title": "图示化",
+                    "yutori": {
+                      "points": [
+                        "代表元素的图标。",
+                        "Iconify 是一项提供各种图标的服务。",
+                        "如果已配置图像，则优先使用该图像。"
+                      ],
+                      "reference": "zh/editor/information?id=图示化"
+                    }
+                  },
+                  "image": {
+                    "type": "string",
+                    "default": "",
+                    "media": {
+                      "binaryEncoding": "base64",
+                      "type": "img/png"
+                    },
+                    "options": {
+                      "grid_columns": 4,
+                      "infoText": "使用任何图像文件"
+                    },
+                    "title": "图片",
+                    "yutori": {
+                      "points": [
+                        "代表元素的图像。",
+                        "如果文件大小较大，则会自动调整大小。",
+                        "如果配置了 Iconify 或象形图，则不必要。"
+                      ],
+                      "reference": "zh/editor/information?id=图片"
+                    }
+                  },
+                  "delete": {
+                    "format": "button",
+                    "options": {
+                      "button": {
+                        "text": "Delete Image",
+                        "icon": "trash",
+                        "action": "deletePrevious"
+                      }
+                    }
+                  }
+                },
+                "title": "图标",
+                "yutori": {
+                  "points": [
+                    "图标可配置为图像、Iconify 或表情符号。",
+                    "Iconify 是一项提供各种图标的服务。",
+                    "如果配置了一个以上，则依次优先使用图像、Iconify 和象形图。"
+                  ],
+                  "reference": "zh/editor/information?id=图标"
+                }
+              },
+              "color": {
+                "type": "string",
+                "default": "#000000",
+                "format": "color",
+                "pattern": "(^#[0-9a-fA-F]{6}$)|(^$)",
+                "title": "颜色",
+                "options": {
+                  "infoText": "配置元素的显示颜色。"
+                },
+                "yutori": {
+                  "points": [
+                    "作为元素颜色，它适用于元素的图标和背景颜色。",
+                    "从编辑器的颜色选择器中选择。"
+                  ],
+                  "reference": "zh/editor/information?id=颜色"
+                }
+              },
+              "copy": {
+                "type": "string",
+                "format": "button",
+                "options": {
+                  "button": {
+                    "text": "Copy Information",
+                    "icon": "copy",
+                    "action": "copyInformation"
+                  }
+                }
+              }
+            },
+            "title": "信息",
+            "description": "配置元素的基本信息（ID、名称、图标、颜色等）",
+            "yutori": {
+              "points": [
+                "世界中每个元素共有的基本信息项目（类别、动作、物品、事件等）。",
+                "每个元素都是单独配置的。"
+              ],
+              "reference": "zh/editor/information"
+            }
+          },
+          "chance": {
+            "type": "number",
+            "default": 1,
+            "minimum": 0,
+            "maximum": 1,
+            "title": "发动概率 [0-1]",
+            "options": {
+              "infoText": "待编写"
+            },
+            "yutori": {
+              "points": [
+                "待编写"
+              ],
+              "reference": "zh/editor/skill?id=发动概率 [0-1]"
+            }
+          },
+          "property": {
+            "type": "object",
+            "additionalProperties": false,
+            "format": "grid",
+            "required": [
+              "attack",
+              "defence",
+              "accuracy",
+              "evasion"
+            ],
+            "options": {
+              "disable_collapse": true,
+              "infoText": "Details"
+            },
+            "properties": {
+              "attack": {
+                "type": "number",
+                "default": 0,
+                "title": "攻击值 [等级差]。",
+                "options": {
+                  "infoText": "对对手造成的耐力伤害进行等级差异修正。"
+                },
+                "yutori": {
+                  "points": [
+                    "值越高，造成的伤害越大。"
+                  ],
+                  "reference": "zh/editor/combat?id=攻击值 [等级差]。"
+                }
+              },
+              "defence": {
+                "type": "number",
+                "default": 0,
+                "title": "防御值 [等级差]。",
+                "options": {
+                  "infoText": "等级差异修正从对手处收到的耐力伤害。"
+                },
+                "yutori": {
+                  "points": [
+                    "值越高，减少的伤害越多。"
+                  ],
+                  "reference": "zh/editor/combat?id=防御值 [等级差]。"
+                }
+              },
+              "accuracy": {
+                "type": "number",
+                "default": 0,
+                "title": "命中值 [等级差]。",
+                "options": {
+                  "infoText": "等级差异修正攻击失误率。"
+                },
+                "yutori": {
+                  "points": [
+                    "值越高，错误率越低。"
+                  ],
+                  "reference": "zh/editor/combat?id=命中值 [等级差]。"
+                }
+              },
+              "evasion": {
+                "type": "number",
+                "default": 0,
+                "title": "闪避值 [等级差异]。",
+                "options": {
+                  "infoText": "等级差异修正对方攻击的闪避率。"
+                },
+                "yutori": {
+                  "points": [
+                    "值越高，越容易闪避对手的攻击。"
+                  ],
+                  "reference": "zh/editor/combat?id=闪避值 [等级差异]。"
+                }
+              },
+              "restore": {
+                "type": "number",
+                "default": 0
+              }
+            },
+            "title": "战斗值",
+            "description": "待编写",
+            "yutori": {
+              "points": [
+                "待编写"
+              ],
+              "reference": "zh/editor/combat"
+            }
+          }
+        }
+      },
+      "title": "技能",
+      "description": "待编写",
+      "yutori": {
+        "points": [
+          "待编写"
+        ],
+        "reference": "zh/editor/skill"
       }
     },
     "groups": {

@@ -11,6 +11,7 @@
       * [Categoria.](pt/editor/category)
       * [Ação.](pt/editor/action)
       * [Item](pt/editor/item)
+      * [Habilidade](pt/editor/skill)
       * [grupo (geralmente de pessoas)](pt/editor/group)
       * [Tarefa](pt/editor/task)
       * [predefinido](pt/editor/preset)

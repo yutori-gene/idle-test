@@ -11,6 +11,7 @@
       * [Kategori.](id/editor/category)
       * [Aksi](id/editor/action)
       * [Item](id/editor/item)
+      * [Skill](id/editor/skill)
       * [kelompok (usu. orang)](id/editor/group)
       * [Tugas](id/editor/task)
       * [preset](id/editor/preset)

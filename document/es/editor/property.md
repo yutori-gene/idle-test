@@ -10,14 +10,14 @@ Configuración de los efectos que tiene un Artículo.
 
 |propiedades|Detalles de la eficacia.|
 |-|-|
-|velocidad|Reduce el tiempo necesario para realizar una Acción. El tiempo necesario varía inversamente a la diferencia de nivel.|
-|oportunidad|Modifica la probabilidad de éxito de una Acción. La probabilidad aumenta en proporción a la diferencia de nivel.|
+|velocidad|Reduce el tiempo necesario para realizar una Acción. El tiempo necesario varía inversamente a la diferencia de nivel (el ratio surte la mitad de efecto).|
+|oportunidad|Modifica la probabilidad de éxito de una Acción. El ratio se aplica a la proporción entre el éxito y el fracaso, por lo que nunca supera el `100`%.|
 |experiencia|Cambia la experiencia adquirida. Aumenta en proporción a la diferencia de nivel (el cálculo es inverso: cuanto mayor es el nivel de Acción, más ganas).|
 |ataque|Cambia el daño de resistencia infligido al oponente. (Acción de resistencia solamente).|
-|defensa|Reduce el daño de resistencia recibido de los oponentes. (sólo acción de resistencia).|
+|defensa|Reduce el daño de resistencia recibido de los oponentes (el ratio surte la mitad de efecto). (sólo acción de resistencia)|
 |precisión|Reduce el porcentaje de ataques fallidos. (sólo acción de resistencia).|
-|evasión|Cambia el índice de evasión de los ataques del oponente. (Acción de resistencia solamente).|
-|restaurar|Cambia la cantidad de resistencia restaurada al fin de una Acción. (sólo para acciones de resistencia).|
+|evasión|Cambia el índice de evasión de los ataques del oponente (el ratio surte la mitad de efecto). (sólo acción de resistencia)|
+|restaurar|Cambia la cantidad de resistencia restaurada al fin de una Acción. Cuanto más se acerca a la recuperación total, más gradual es el aumento. (sólo acción de resistencia)|
 ___
 
 ## Categoría.

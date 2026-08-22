@@ -9,6 +9,7 @@
     "categories",
     "actions",
     "items",
+    "skills",
     "groups",
     "tasks",
     "presets"
@@ -464,11 +465,33 @@
                 "reference": "id/editor/general?id=pembatasan level Aksi"
               }
             },
+            "propertyRatio": {
+              "type": "number",
+              "default": 2,
+              "minimum": 1,
+              "propertyOrder": 104,
+              "title": "Rasio properti [kali]",
+              "options": {
+                "infoText": "Berapa kali properti berubah setiap 10 perbedaan level"
+              },
+              "yutori": {
+                "points": [
+                  "Mengatur berapa kali setiap properti berubah setiap kali perbedaan antara level kategori dan level aksi bertambah `10`.",
+                  "Rasio dihitung sebagai (rasio properti)^(perbedaan level÷10). Ketika perbedaan level adalah `0`, rasionya `1` dan nilai yang diatur pada aksi digunakan apa adanya.",
+                  "Serangan dan pengalaman bertambah sebesar rasio ini, sedangkan pertahanan (kerusakan yang diterima) dan kecepatan (waktu yang dibutuhkan) berkurang dengan rasio yang sama.",
+                  "Akurasi, penghindaran, probabilitas sukses, dan pemulihan adalah nilai yang berada dalam rentang `0` hingga `100`%, sehingga rasio dikenakan pada perbandingan antara sisi yang tercapai dan sisi yang tidak tercapai. `0`% dan `100`% tidak berubah, dan nilai di antaranya tidak pernah melebihi `100`%.",
+                  "Pertahanan, penghindaran, dan kecepatan hanya menerima setengah efek rasio (perbedaan level `20` setara dengan perbedaan level `10` pada properti lain). Pertahanan dan penghindaran bekerja ganda pada tingkat terkena serangan dan kerusakan yang diterima, sedangkan kecepatan bekerja pada semua properti lain sebagai jumlah pelaksanaan, sehingga efeknya dilemahkan agar tetap seimbang.",
+                  "Patokannya adalah (tingkat kenaikan pengalaman) pangkat `6.7`. Di atas itu, kenaikan level makin cepat seiring naiknya level; di bawah itu, level-level akhir memerlukan lebih banyak waktu.",
+                  "Jika diatur ke `1`, perbedaan level tidak lagi berpengaruh. Semakin besar nilainya, semakin tajam keuntungan dan kerugian dari perbedaan level."
+                ],
+                "reference": "id/editor/general?id=Rasio properti [kali]"
+              }
+            },
             "levelCommonRatio": {
               "type": "number",
               "default": 1.05,
               "minimum": 1,
-              "propertyOrder": 104,
+              "propertyOrder": 105,
               "title": "Tingkat peningkatan pengalaman [kali].",
               "options": {
                 "infoText": "Persentase peningkatan tingkat kesulitan level."
@@ -973,7 +996,7 @@
               ],
               "options": {
                 "disable_collapse": true,
-                "infoText": "Konfigurasi jumlah slot untuk eksekusi beruntun (jadwal) aksi"
+                "infoText": "Konfigurasi jumlah slot antrian untuk eksekusi beruntun aksi"
               },
               "properties": {
                 "information": {
@@ -1185,8 +1208,8 @@
                   },
                   "yutori": {
                     "points": [
-                      "Ini adalah jumlah slot reservasi saat permainan dimulai.",
-                      "Nilai minimumnya adalah `1` (tidak ada perlakuan seperti `0` = tak terbatas, seperti pada kapasitas)."
+                      "Ini adalah jumlah slot antrian saat permainan dimulai.",
+                      "Nilai minimumnya adalah `1` (aksi yang sedang berjalan memakai satu slot, dan tidak ada perlakuan seperti `0` = tak terbatas, seperti pada kapasitas)."
                     ],
                     "reference": "id/editor/general?id=Nilai default [pcs]."
                   }
@@ -1264,7 +1287,8 @@
               "title": "Antrian",
               "yutori": {
                 "points": [
-                  "Mengelola jumlah slot untuk menjalankan Aksi secara berurutan (jadwal).",
+                  "Mengelola jumlah slot antrian untuk menjalankan aksi secara berurutan.",
+                  "Antrian mencakup aksi yang sedang berjalan, dan aksi di posisi terdepan adalah yang dijalankan. Jika slotnya `1`, hanya aksi yang sedang berjalan yang muat sehingga tidak ada yang bisa menunggu.",
                   "Jumlah slot, sama seperti kapasitas, dapat dibeli menggunakan mata uang, dan Anda juga dapat menambahnya dengan memilih Item dari antrian sebagai hadiah dari Aksi atau acara.",
                   "Jika Anda ingin merujuk item dalam antrian berdasarkan kondisi atau imbalan, gunakan ID yang telah dikonfigurasi di sini."
                 ],
@@ -1356,28 +1380,6 @@
                   "Nilai tempur (properti) dari setiap Aksi ditambahkan ke nilai default ini."
                 ],
                 "reference": "id/editor/combat"
-              }
-            },
-            "propertyRatio": {
-              "type": "number",
-              "default": 2,
-              "minimum": 1,
-              "propertyOrder": 104,
-              "title": "Rasio properti [kali]",
-              "options": {
-                "infoText": "Berapa kali properti berubah setiap 10 perbedaan level"
-              },
-              "yutori": {
-                "points": [
-                  "Mengatur berapa kali setiap properti berubah setiap kali perbedaan antara level kategori dan level aksi bertambah `10`.",
-                  "Rasio dihitung sebagai (rasio properti)^(perbedaan level÷10). Ketika perbedaan level adalah `0`, rasionya `1` dan nilai yang diatur pada aksi digunakan apa adanya.",
-                  "Serangan dan pengalaman bertambah sebesar rasio ini, sedangkan pertahanan (kerusakan yang diterima) dan kecepatan (waktu yang dibutuhkan) berkurang dengan rasio yang sama.",
-                  "Akurasi, penghindaran, probabilitas sukses, dan pemulihan adalah nilai yang berada dalam rentang `0` hingga `100`%, sehingga rasio dikenakan pada perbandingan antara sisi yang tercapai dan sisi yang tidak tercapai. `0`% dan `100`% tidak berubah, dan nilai di antaranya tidak pernah melebihi `100`%.",
-                  "Pertahanan, penghindaran, dan kecepatan hanya menerima setengah efek rasio (perbedaan level `20` setara dengan perbedaan level `10` pada properti lain). Pertahanan dan penghindaran bekerja ganda pada tingkat terkena serangan dan kerusakan yang diterima, sedangkan kecepatan bekerja pada semua properti lain sebagai jumlah pelaksanaan, sehingga efeknya dilemahkan agar tetap seimbang.",
-                  "Patokannya adalah (tingkat kenaikan pengalaman) pangkat `6.7`. Di atas itu, kenaikan level makin cepat seiring naiknya level; di bawah itu, level-level akhir memerlukan lebih banyak waktu.",
-                  "Jika diatur ke `1`, perbedaan level tidak lagi berpengaruh. Semakin besar nilainya, semakin tajam keuntungan dan kerugian dari perbedaan level."
-                ],
-                "reference": "id/editor/general?id=Rasio properti [kali]"
               }
             }
           },
@@ -1735,13 +1737,13 @@
                     "hidden": true,
                     "infoText": "イベントでは使用しません"
                   },
-                  "title": "カテゴリー",
+                  "title": "カテゴリ",
                   "yutori": {
                     "points": [
-                      "ミッションやタスクの一覧に表示されないため、所属するカテゴリーは指定しません。",
+                      "ミッションやタスクの一覧に表示されないため、所属するカテゴリは指定しません。",
                       "エディターでは入力欄が表示されません。"
                     ],
-                    "reference": "id/editor/event?id=カテゴリー"
+                    "reference": "id/editor/event?id=カテゴリ"
                   }
                 },
                 "timing": {
@@ -2256,13 +2258,13 @@
                     "hidden": true,
                     "infoText": "イベントでは使用しません"
                   },
-                  "title": "カテゴリー",
+                  "title": "カテゴリ",
                   "yutori": {
                     "points": [
-                      "ミッションやタスクの一覧に表示されないため、所属するカテゴリーは指定しません。",
+                      "ミッションやタスクの一覧に表示されないため、所属するカテゴリは指定しません。",
                       "エディターでは入力欄が表示されません。"
                     ],
-                    "reference": "id/editor/event?id=カテゴリー"
+                    "reference": "id/editor/event?id=カテゴリ"
                   }
                 },
                 "timing": {
@@ -2777,13 +2779,13 @@
                     "hidden": true,
                     "infoText": "イベントでは使用しません"
                   },
-                  "title": "カテゴリー",
+                  "title": "カテゴリ",
                   "yutori": {
                     "points": [
-                      "ミッションやタスクの一覧に表示されないため、所属するカテゴリーは指定しません。",
+                      "ミッションやタスクの一覧に表示されないため、所属するカテゴリは指定しません。",
                       "エディターでは入力欄が表示されません。"
                     ],
-                    "reference": "id/editor/event?id=カテゴリー"
+                    "reference": "id/editor/event?id=カテゴリ"
                   }
                 },
                 "timing": {
@@ -3298,13 +3300,13 @@
                     "hidden": true,
                     "infoText": "イベントでは使用しません"
                   },
-                  "title": "カテゴリー",
+                  "title": "カテゴリ",
                   "yutori": {
                     "points": [
-                      "ミッションやタスクの一覧に表示されないため、所属するカテゴリーは指定しません。",
+                      "ミッションやタスクの一覧に表示されないため、所属するカテゴリは指定しません。",
                       "エディターでは入力欄が表示されません。"
                     ],
-                    "reference": "id/editor/event?id=カテゴリー"
+                    "reference": "id/editor/event?id=カテゴリ"
                   }
                 },
                 "timing": {
@@ -3819,13 +3821,13 @@
                     "hidden": true,
                     "infoText": "イベントでは使用しません"
                   },
-                  "title": "カテゴリー",
+                  "title": "カテゴリ",
                   "yutori": {
                     "points": [
-                      "ミッションやタスクの一覧に表示されないため、所属するカテゴリーは指定しません。",
+                      "ミッションやタスクの一覧に表示されないため、所属するカテゴリは指定しません。",
                       "エディターでは入力欄が表示されません。"
                     ],
-                    "reference": "id/editor/event?id=カテゴリー"
+                    "reference": "id/editor/event?id=カテゴリ"
                   }
                 },
                 "timing": {
@@ -4826,7 +4828,8 @@
           "requirements",
           "acquisitions",
           "progressType",
-          "property"
+          "property",
+          "skills"
         ],
         "properties": {
           "information": {
@@ -5514,6 +5517,27 @@
               ],
               "reference": "id/editor/combat"
             }
+          },
+          "skills": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "pattern": "^[0-9a-zA-Z\\-]*$"
+            },
+            "options": {
+              "disable_collapse": true,
+              "infoText": "Details"
+            },
+            "default": [],
+            "uniqueItems": true,
+            "title": "Skill",
+            "description": "Akan ditulis",
+            "yutori": {
+              "points": [
+                "Akan ditulis"
+              ],
+              "reference": "id/editor/skill"
+            }
           }
         }
       },
@@ -5556,7 +5580,8 @@
           "maximum",
           "equipmentType",
           "requirements",
-          "properties"
+          "properties",
+          "skill"
         ],
         "properties": {
           "information": {
@@ -6189,6 +6214,22 @@
               ],
               "reference": "id/editor/property"
             }
+          },
+          "skill": {
+            "type": "string",
+            "default": "",
+            "pattern": "^[0-9a-zA-Z\\-]*$",
+            "title": "Skill",
+            "description": "Akan ditulis",
+            "options": {
+              "infoText": "Details"
+            },
+            "yutori": {
+              "points": [
+                "Akan ditulis"
+              ],
+              "reference": "id/editor/skill"
+            }
           }
         }
       },
@@ -6201,6 +6242,340 @@
           "Ada juga cara hitung untuk menggunakannya."
         ],
         "reference": "id/editor/item"
+      }
+    },
+    "skills": {
+      "type": "array",
+      "basicCategoryTitle": "Skill",
+      "format": "tabs",
+      "options": {
+        "disable_collapse": true,
+        "infoText": "Details"
+      },
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "format": "categories",
+        "basicCategoryTitle": "Skill",
+        "headerTemplate": "{{ i1 }}: {{ self.information.id }}",
+        "options": {
+          "disable_collapse": true
+        },
+        "required": [
+          "information",
+          "chance",
+          "property"
+        ],
+        "properties": {
+          "information": {
+            "type": "object",
+            "additionalProperties": false,
+            "format": "grid",
+            "required": [
+              "id",
+              "name",
+              "explanation",
+              "icon",
+              "color"
+            ],
+            "options": {
+              "disable_collapse": true,
+              "infoText": "Details"
+            },
+            "properties": {
+              "id": {
+                "type": "string",
+                "default": "",
+                "minLength": 1,
+                "maxLength": 100,
+                "pattern": "^[0-9a-zA-Z\\-]+$",
+                "title": "ID",
+                "options": {
+                  "infoText": "ID unik untuk mengidentifikasi elemen"
+                },
+                "yutori": {
+                  "points": [
+                    "ID untuk mengidentifikasi setiap elemen secara unik.",
+                    "Di editor, ini adalah string untuk mengidentifikasi elemen.",
+                    "Misalnya, ID menentukan Item mana yang diperoleh ketika Aksi selesai."
+                  ],
+                  "reference": "id/editor/information?id=ID"
+                }
+              },
+              "name": {
+                "type": "string",
+                "maxLength": 20,
+                "title": "Nama.",
+                "options": {
+                  "infoText": "Nama elemen seperti yang terlihat"
+                },
+                "yutori": {
+                  "points": [
+                    "Nama elemen yang ditampilkan dalam permainan.",
+                    "Bahasa selain Inggris juga dapat dimasukkan.",
+                    "Nama yang menduplikasi elemen lain dapat diterima.",
+                    "Jika terlalu panjang, bagian yang meluap akan disingkat dengan `…` pada tampilan selama permainan."
+                  ],
+                  "reference": "id/editor/information?id=Nama."
+                }
+              },
+              "explanation": {
+                "type": "string",
+                "title": "catatan penjelasan",
+                "options": {
+                  "infoText": "Deskripsi elemen terperinci."
+                },
+                "yutori": {
+                  "points": [
+                    "Deskripsi elemen yang ditampilkan dalam permainan.",
+                    "Bahasa selain bahasa Inggris dapat dimasukkan. Semua teks, bahkan teks yang panjang sekalipun, akan ditampilkan.",
+                    "Jika tidak ada penjelasan yang diberikan, biarkan kosong."
+                  ],
+                  "reference": "id/editor/information?id=catatan penjelasan"
+                }
+              },
+              "icon": {
+                "type": "object",
+                "additionalProperties": false,
+                "format": "grid",
+                "required": [
+                  "emoji",
+                  "iconify",
+                  "image"
+                ],
+                "options": {
+                  "disable_collapse": true,
+                  "infoText": "Menetapkan ikon untuk mewakili elemen."
+                },
+                "properties": {
+                  "emoji": {
+                    "type": "string",
+                    "options": {
+                      "grid_columns": 4,
+                      "infoText": "Tampilan ikon dengan piktogram"
+                    },
+                    "title": "piktograf",
+                    "yutori": {
+                      "points": [
+                        "Menampilkan piktogram sebagai ikon.",
+                        "Ini dapat dikonversi dari teks ke piktogram dan dikonfigurasi dengan cepat.",
+                        "Untuk piktogram, masukkan piktogram Unicode apa adanya.",
+                        "Karena piktogram yang diperkenalkan dalam lingkungan eksekusi digunakan, maka piktogram ini ditampilkan sedikit berbeda untuk pengguna yang berbeda.",
+                        "Iconify memungkinkan Anda untuk konfigurasi emoji yang tidak ada pada setiap lingkungan",
+                        "Karakter non-pikografi dapat ditampilkan, tetapi tampilan mungkin rusak jika ada hitung karakter.",
+                        "Masukkan piktogram, misalnya, `🗡️` atau `⚔️`."
+                      ],
+                      "reference": "id/editor/information?id=piktograf"
+                    }
+                  },
+                  "iconify": {
+                    "type": "string",
+                    "default": "",
+                    "options": {
+                      "grid_columns": 4,
+                      "infoText": "Menggunakan set ikon Iconify"
+                    },
+                    "title": "Iconify",
+                    "yutori": {
+                      "points": [
+                        "Ikon yang mewakili elemen.",
+                        "Iconify adalah layanan yang menawarkan berbagai macam ikon.",
+                        "Jika gambar sudah dalam konfigurasi, maka gambar tersebut akan didahulukan."
+                      ],
+                      "reference": "id/editor/information?id=Iconify"
+                    }
+                  },
+                  "image": {
+                    "type": "string",
+                    "default": "",
+                    "media": {
+                      "binaryEncoding": "base64",
+                      "type": "img/png"
+                    },
+                    "options": {
+                      "grid_columns": 4,
+                      "infoText": "Gunakan file gambar apa saja"
+                    },
+                    "title": "Gambar.",
+                    "yutori": {
+                      "points": [
+                        "Gambar yang mewakili elemen.",
+                        "Jika ukuran file besar, maka ukuran file akan diubah secara otomatis.",
+                        "Tidak perlu jika Iconify atau piktogram konfigurasi."
+                      ],
+                      "reference": "id/editor/information?id=Gambar."
+                    }
+                  },
+                  "delete": {
+                    "format": "button",
+                    "options": {
+                      "button": {
+                        "text": "Delete Image",
+                        "icon": "trash",
+                        "action": "deletePrevious"
+                      }
+                    }
+                  }
+                },
+                "title": "ikon",
+                "yutori": {
+                  "points": [
+                    "Ikon dapat dikonfigurasi sebagai gambar, Iconify atau emoji.",
+                    "Iconify adalah layanan yang menawarkan berbagai macam ikon.",
+                    "Jika lebih dari hitung yang dikonfigurasi, gambar, Ikonify, dan piktogram akan diprioritaskan dan ditampilkan dalam urutan tersebut."
+                  ],
+                  "reference": "id/editor/information?id=ikon"
+                }
+              },
+              "color": {
+                "type": "string",
+                "default": "#000000",
+                "format": "color",
+                "pattern": "(^#[0-9a-fA-F]{6}$)|(^$)",
+                "title": "Warna",
+                "options": {
+                  "infoText": "Konfigurasi warna tampilan elemen."
+                },
+                "yutori": {
+                  "points": [
+                    "Sebagai warna elemen, warna ini diterapkan ke ikon elemen dan warna latar belakang.",
+                    "Pilih dari pemilih warna editor."
+                  ],
+                  "reference": "id/editor/information?id=Warna"
+                }
+              },
+              "copy": {
+                "type": "string",
+                "format": "button",
+                "options": {
+                  "button": {
+                    "text": "Copy Information",
+                    "icon": "copy",
+                    "action": "copyInformation"
+                  }
+                }
+              }
+            },
+            "title": "informasi",
+            "description": "Lakukan konfigurasi untuk menetapkan informasi dasar tentang elemen (ID, nama, ikon, warna, dll.)",
+            "yutori": {
+              "points": [
+                "Item informasi dasar yang umum untuk setiap elemen di dunia (Kategori, Aksi, item, acara, dll.).",
+                "Setiap elemen memiliki konfigurasi yang terpisah."
+              ],
+              "reference": "id/editor/information"
+            }
+          },
+          "chance": {
+            "type": "number",
+            "default": 1,
+            "minimum": 0,
+            "maximum": 1,
+            "title": "Probabilitas aktivasi [0-1]",
+            "options": {
+              "infoText": "Akan ditulis"
+            },
+            "yutori": {
+              "points": [
+                "Akan ditulis"
+              ],
+              "reference": "id/editor/skill?id=Probabilitas aktivasi [0-1]"
+            }
+          },
+          "property": {
+            "type": "object",
+            "additionalProperties": false,
+            "format": "grid",
+            "required": [
+              "attack",
+              "defence",
+              "accuracy",
+              "evasion"
+            ],
+            "options": {
+              "disable_collapse": true,
+              "infoText": "Details"
+            },
+            "properties": {
+              "attack": {
+                "type": "number",
+                "default": 0,
+                "title": "Nilai serangan [perbedaan level].",
+                "options": {
+                  "infoText": "Koreksi perbedaan level untuk kerusakan stamina yang ditimbulkan pada lawan."
+                },
+                "yutori": {
+                  "points": [
+                    "Semakin tinggi nilaiya, semakin banyak kerusakan yang ditimbulkan."
+                  ],
+                  "reference": "id/editor/combat?id=Nilai serangan [perbedaan level]."
+                }
+              },
+              "defence": {
+                "type": "number",
+                "default": 0,
+                "title": "Nilai pertahanan [perbedaan level].",
+                "options": {
+                  "infoText": "Koreksi perbedaan level untuk kerusakan stamina yang diterima dari lawan."
+                },
+                "yutori": {
+                  "points": [
+                    "Semakin tinggi nilaiya, semakin banyak kerusakan yang berkurang."
+                  ],
+                  "reference": "id/editor/combat?id=Nilai pertahanan [perbedaan level]."
+                }
+              },
+              "accuracy": {
+                "type": "number",
+                "default": 0,
+                "title": "Nilai akurasi [perbedaan level].",
+                "options": {
+                  "infoText": "Koreksi perbedaan level untuk tingkat kesalahan serangan."
+                },
+                "yutori": {
+                  "points": [
+                    "Semakin tinggi nilaiya, semakin bawah tingkat kesalahan."
+                  ],
+                  "reference": "id/editor/combat?id=Nilai akurasi [perbedaan level]."
+                }
+              },
+              "evasion": {
+                "type": "number",
+                "default": 0,
+                "title": "Nilai penghindaran [perbedaan level].",
+                "options": {
+                  "infoText": "Koreksi perbedaan level terhadap tingkat penghindaran serangan lawan."
+                },
+                "yutori": {
+                  "points": [
+                    "Semakin tinggi nilaiya, semakin mudah dilakukan penghindaran terhadap serangan lawan."
+                  ],
+                  "reference": "id/editor/combat?id=Nilai penghindaran [perbedaan level]."
+                }
+              },
+              "restore": {
+                "type": "number",
+                "default": 0
+              }
+            },
+            "title": "nilai tempur",
+            "description": "Akan ditulis",
+            "yutori": {
+              "points": [
+                "Akan ditulis"
+              ],
+              "reference": "id/editor/combat"
+            }
+          }
+        }
+      },
+      "title": "Skill",
+      "description": "Akan ditulis",
+      "yutori": {
+        "points": [
+          "Akan ditulis"
+        ],
+        "reference": "id/editor/skill"
       }
     },
     "groups": {

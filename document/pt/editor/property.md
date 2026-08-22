@@ -10,14 +10,14 @@ Configuração dos efeitos de um Item.
 
 |propriedades|Detalhes da eficácia.|
 |-|-|
-|velocidade|Reduz o tempo necessário para uma Ação. O tempo necessário varia inversamente com a diferença de nível.|
-|chance|Altera a probabilidade de sucesso de uma Ação. A probabilidade aumenta na proporção da diferença de nível.|
+|velocidade|Reduz o tempo necessário para uma Ação. O tempo necessário varia inversamente com a diferença de nível (a taxa tem metade do efeito).|
+|chance|Altera a probabilidade de sucesso de uma Ação. A taxa é aplicada à proporção entre o sucesso e o fracasso, por isso nunca ultrapassa `100`%.|
 |experiência|Altera a experiência adquirida. Aumenta proporcionalmente à diferença de nível (o cálculo é invertido: quanto maior a Ação de nível, mais você ganha).|
 |ataque|Altera o dano de resistência causado ao oponente. (Ação de resistência apenas).|
-|defesa|Reduz o dano de resistência recebido dos oponentes. (Ação de resistência apenas).|
+|defesa|Reduz o dano de resistência recebido dos oponentes (a taxa tem metade do efeito). (Ação de resistência apenas)|
 |precisão|Baixa a taxa de erros de ataque. (Ação de resistência apenas).|
-|evasão|Altera a taxa de evasão dos ataques do oponente. (Ação de resistência apenas).|
-|restaurar|Altera a quantidade de resistência restaurada no fim de uma ação. (somente para ações de resistência).|
+|evasão|Altera a taxa de evasão dos ataques do oponente (a taxa tem metade do efeito). (Ação de resistência apenas)|
+|restaurar|Altera a quantidade de resistência restaurada no fim de uma ação. Quanto mais perto da recuperação total, mais gradual é o aumento. (somente para ações de resistência)|
 ___
 
 ## Categoria.

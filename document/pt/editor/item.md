@@ -83,3 +83,6 @@ ___
 ID da moeda utilizada na compra e venda deste Item
 - Especifique o ID da moeda (coins) usada tanto para o valor de compra quanto para o valor de venda.
 - Se o campo estiver em branco, será utilizada a moeda principal (a primeira da lista de moedas).
+___
+
+## [_Habilidade_](pt/editor/skill)

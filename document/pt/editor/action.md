@@ -97,3 +97,6 @@ Tipo de execução da ação
 ___
 
 ## [_valor de combate_](pt/editor/combat)
+___
+
+## [_Habilidade_](pt/editor/skill)

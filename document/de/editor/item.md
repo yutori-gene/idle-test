@@ -83,3 +83,6 @@ ___
 ID der Währung, die für den Kauf und Verkauf dieses Gegenstands verwendet wird
 - Geben Sie die ID der Währung (Coins) an, die sowohl für den Kauf- als auch für den Verkaufswert verwendet wird.
 - Wenn das Feld leer ist, wird die Hauptwährung (die erste Währung in der Liste „coins“) verwendet.
+___
+
+## [_Fähigkeit_](de/editor/skill)

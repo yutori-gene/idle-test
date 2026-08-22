@@ -97,3 +97,6 @@ ___
 ___
 
 ## [_전투 값_](ko/editor/combat)
+___
+
+## [_스킬_](ko/editor/skill)

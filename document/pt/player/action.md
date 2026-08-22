@@ -17,4 +17,4 @@ ___
 ## Agir.
 Controle de ações
 - Inicia ou interrompe uma ação.
-- Você pode indicar quantas vezes executá-la. Digite 0 para executar até os recursos acabarem.
+- Você pode indicar quantas vezes executá-la. Escolha a posição mais à direita para executar até os recursos acabarem.

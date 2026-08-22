@@ -11,6 +11,7 @@
       * [Category](en/editor/category)
       * [Action.](en/editor/action)
       * [Item](en/editor/item)
+      * [Skill](en/editor/skill)
       * [group (usu. of people)](en/editor/group)
       * [Task](en/editor/task)
       * [preset](en/editor/preset)

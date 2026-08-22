@@ -17,4 +17,4 @@ ___
 ## Handeln.
 Kontrolle der Aktionen
 - Startet oder stoppt eine Aktion.
-- Du kannst angeben, wie oft sie ausgeführt wird. Gib 0 ein, um sie bis zum Aufbrauchen der Ressourcen auszuführen.
+- Du kannst angeben, wie oft sie ausgeführt wird. Wähle die Position ganz rechts, um sie bis zum Aufbrauchen der Ressourcen auszuführen.

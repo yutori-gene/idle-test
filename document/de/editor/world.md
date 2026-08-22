@@ -18,6 +18,9 @@ ___
 ## [_Gegenstand_](de/editor/item)
 ___
 
+## [_Fähigkeit_](de/editor/skill)
+___
+
 ## [_Gruppe (z.B. von Personen)_](de/editor/group)
 ___
 

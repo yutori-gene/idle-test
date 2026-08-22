@@ -83,3 +83,6 @@ ___
 ID de la devise utilisée pour l'achat et la vente de cet objet
 - Spécifiez l'ID de la devise (coins) utilisée à la fois pour la valeur d'achat et la valeur de vente.
 - Si ce champ est laissé vide, la devise principale (la première devise dans la liste « coins ») sera utilisée.
+___
+
+## [_Compétence_](fr/editor/skill)

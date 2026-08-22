@@ -83,3 +83,6 @@ ___
 ID mata uang yang digunakan untuk jual beli Item ini
 - Tentukan ID mata uang (koin) yang digunakan secara umum untuk nilai beli dan nilai jual.
 - Jika kolom tersebut kosong, mata uang utama (yang tercantum di bagian awal daftar koin) akan digunakan.
+___
+
+## [_Skill_](id/editor/skill)

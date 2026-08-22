@@ -108,8 +108,9 @@ Número máximo de veces que se puede comprar capacidad
 ___
 
 ## Cue
-Configuración del número de ranuras para la ejecución consecutiva (programada) de acciones
-- Gestiona el número de espacios disponibles para la ejecución consecutiva (programada) de acciones.
+Configuración del número de ranuras de la cola para la ejecución consecutiva de acciones
+- Gestiona el número de ranuras de la cola para ejecutar acciones de forma consecutiva.
+- La cola incluye la acción en curso, y la acción que está al principio es la que se ejecuta. Con `1` ranura solo cabe la acción en curso y nada puede esperar.
 - El número de casillas, al igual que la capacidad, se puede comprar con moneda, aunque también se puede aumentar seleccionando artículos de la cola como recompensa por Acciones o eventos.
 - Cuando se haga referencia a artículos de la cola en condiciones o recompensas, utilice el ID de configuración aquí.
 - [_item_](es/editor/item)
@@ -120,8 +121,8 @@ ___
 
 ### Valor por defecto [pcs].
 Número de casillas de ejecución consecutiva al comenzar el juego
-- Es el número de plazas reservadas al comenzar el juego.
-- El valor mínimo es `1` (no existe el valor `0`, que en otros casos significaría «ilimitado», como en el caso de la capacidad).
+- Es el número de ranuras de la cola al comenzar el juego.
+- El valor mínimo es `1` (la acción en curso ocupa una ranura y no existe el valor `0`, que significaría «ilimitado», como en el caso de la capacidad).
 ___
 
 ### Precio base [monedas].
@@ -173,6 +174,26 @@ Solicita el número de veces que se ha ejecutado la misma Acción de atributo pa
 - Si está activada, el número de veces que se ha ejecutado una acción con los mismos atributos se añade automáticamente a las condiciones de ejecución de cada acción.
 - Necesario contar un número de veces igual al valor de nivel de la Acción.
 - Si no se configura ningún atributo, se utiliza el ID de la Categoría a la que pertenece.
+___
+
+## Ratio de propiedad [veces]
+Cuántas veces cambia una propiedad por cada 10 de diferencia de nivel
+- Configura cuántas veces cambia cada propiedad cada vez que la diferencia entre el nivel de la categoría y el nivel de la acción aumenta en `10`.
+- El ratio se calcula como (ratio de propiedad)^(diferencia de nivel÷10). Cuando la diferencia de nivel es `0`, el ratio es `1` y se utiliza tal cual el valor configurado en la acción.
+- El ataque y la experiencia aumentan según este ratio, mientras que la defensa (daño recibido) y la rapidez (tiempo necesario) disminuyen en la misma proporción.
+- La precisión, la evasión, la probabilidad de éxito y la recuperación son valores que se mantienen entre el `0` y el `100`%, por lo que el ratio se aplica a la proporción entre lo que se cumple y lo que no. El `0`% y el `100`% no varían, y los valores intermedios nunca superan el `100`%.
+- La defensa, la evasión y la rapidez reciben la mitad del efecto del ratio (una diferencia de nivel de `20` equivale a una diferencia de nivel de `10` en las demás propiedades). La defensa y la evasión se aplican por partida doble a la tasa de impactos recibidos y al daño recibido, y la rapidez se aplica a todas las demás propiedades como número de ejecuciones, por lo que su efecto se debilita para mantener el equilibrio.
+- La referencia es (tasa de aumento de experiencia) elevada a `6.7`. Por encima de ese valor, la subida de nivel se acelera cuanto mayor es el nivel; por debajo, los niveles finales requieren más tiempo.
+- Si se establece en `1`, la diferencia de nivel deja de influir. Cuanto mayor sea el valor, más brusca será la ventaja o desventaja provocada por la diferencia de nivel.
+
+|Ratio de propiedad|Diferencia de nivel -20|Diferencia de nivel -10|Diferencia de nivel 0|Diferencia de nivel +10|Diferencia de nivel +20|
+|-|-|-|-|-|-|
+|`1`|`x1.00`|`x1.00`|`x1.00`|`x1.00`|`x1.00`|
+|`1.5`|`x0.44`|`x0.67`|`x1.00`|`x1.50`|`x2.25`|
+|`2`|`x0.25`|`x0.50`|`x1.00`|`x2.00`|`x4.00`|
+|`3`|`x0.11`|`x0.33`|`x1.00`|`x3.00`|`x9.00`|
+- [_action_](es/editor/action)
+- [_property_](es/editor/property)
 ___
 
 ## [_valor de combate_](es/editor/combat)

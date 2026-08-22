@@ -18,6 +18,9 @@ ___
 ## [_Item_](id/editor/item)
 ___
 
+## [_Skill_](id/editor/skill)
+___
+
 ## [_kelompok (usu. orang)_](id/editor/group)
 ___
 

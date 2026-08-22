@@ -83,3 +83,6 @@ ___
 ID de la moneda que se utiliza para comprar y vender este artículo
 - Especifica el ID de la moneda (coins) que se utiliza tanto para el valor de compra como para el de venta.
 - Si se deja en blanco, se utilizará la moneda principal (la primera de la lista «coins»).
+___
+
+## [_Habilidad_](es/editor/skill)

@@ -18,6 +18,9 @@ ___
 ## [_Objet_](fr/editor/item)
 ___
 
+## [_Compétence_](fr/editor/skill)
+___
+
 ## [_groupe (habituellement de personnes)_](fr/editor/group)
 ___
 

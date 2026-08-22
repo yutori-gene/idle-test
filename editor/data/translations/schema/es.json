@@ -9,6 +9,7 @@
     "categories",
     "actions",
     "items",
+    "skills",
     "groups",
     "tasks",
     "presets"
@@ -464,11 +465,33 @@
                 "reference": "es/editor/general?id=restricción del nivel de acción"
               }
             },
+            "propertyRatio": {
+              "type": "number",
+              "default": 2,
+              "minimum": 1,
+              "propertyOrder": 104,
+              "title": "Ratio de propiedad [veces]",
+              "options": {
+                "infoText": "Cuántas veces cambia una propiedad por cada 10 de diferencia de nivel"
+              },
+              "yutori": {
+                "points": [
+                  "Configura cuántas veces cambia cada propiedad cada vez que la diferencia entre el nivel de la categoría y el nivel de la acción aumenta en `10`.",
+                  "El ratio se calcula como (ratio de propiedad)^(diferencia de nivel÷10). Cuando la diferencia de nivel es `0`, el ratio es `1` y se utiliza tal cual el valor configurado en la acción.",
+                  "El ataque y la experiencia aumentan según este ratio, mientras que la defensa (daño recibido) y la rapidez (tiempo necesario) disminuyen en la misma proporción.",
+                  "La precisión, la evasión, la probabilidad de éxito y la recuperación son valores que se mantienen entre el `0` y el `100`%, por lo que el ratio se aplica a la proporción entre lo que se cumple y lo que no. El `0`% y el `100`% no varían, y los valores intermedios nunca superan el `100`%.",
+                  "La defensa, la evasión y la rapidez reciben la mitad del efecto del ratio (una diferencia de nivel de `20` equivale a una diferencia de nivel de `10` en las demás propiedades). La defensa y la evasión se aplican por partida doble a la tasa de impactos recibidos y al daño recibido, y la rapidez se aplica a todas las demás propiedades como número de ejecuciones, por lo que su efecto se debilita para mantener el equilibrio.",
+                  "La referencia es (tasa de aumento de experiencia) elevada a `6.7`. Por encima de ese valor, la subida de nivel se acelera cuanto mayor es el nivel; por debajo, los niveles finales requieren más tiempo.",
+                  "Si se establece en `1`, la diferencia de nivel deja de influir. Cuanto mayor sea el valor, más brusca será la ventaja o desventaja provocada por la diferencia de nivel."
+                ],
+                "reference": "es/editor/general?id=Ratio de propiedad [veces]"
+              }
+            },
             "levelCommonRatio": {
               "type": "number",
               "default": 1.05,
               "minimum": 1,
-              "propertyOrder": 104,
+              "propertyOrder": 105,
               "title": "Tasa de aumento de la experiencia [veces].",
               "options": {
                 "infoText": "Porcentaje de aumento de la dificultad al subir de nivel."
@@ -973,7 +996,7 @@
               ],
               "options": {
                 "disable_collapse": true,
-                "infoText": "Configuración del número de ranuras para la ejecución consecutiva (programada) de acciones"
+                "infoText": "Configuración del número de ranuras de la cola para la ejecución consecutiva de acciones"
               },
               "properties": {
                 "information": {
@@ -1185,8 +1208,8 @@
                   },
                   "yutori": {
                     "points": [
-                      "Es el número de plazas reservadas al comenzar el juego.",
-                      "El valor mínimo es `1` (no existe el valor `0`, que en otros casos significaría «ilimitado», como en el caso de la capacidad)."
+                      "Es el número de ranuras de la cola al comenzar el juego.",
+                      "El valor mínimo es `1` (la acción en curso ocupa una ranura y no existe el valor `0`, que significaría «ilimitado», como en el caso de la capacidad)."
                     ],
                     "reference": "es/editor/general?id=Valor por defecto [pcs]."
                   }
@@ -1264,7 +1287,8 @@
               "title": "Cue",
               "yutori": {
                 "points": [
-                  "Gestiona el número de espacios disponibles para la ejecución consecutiva (programada) de acciones.",
+                  "Gestiona el número de ranuras de la cola para ejecutar acciones de forma consecutiva.",
+                  "La cola incluye la acción en curso, y la acción que está al principio es la que se ejecuta. Con `1` ranura solo cabe la acción en curso y nada puede esperar.",
                   "El número de casillas, al igual que la capacidad, se puede comprar con moneda, aunque también se puede aumentar seleccionando artículos de la cola como recompensa por Acciones o eventos.",
                   "Cuando se haga referencia a artículos de la cola en condiciones o recompensas, utilice el ID de configuración aquí."
                 ],
@@ -1356,28 +1380,6 @@
                   "El valor de combate (propiedad) de cada Acción se añade a este valor por defecto."
                 ],
                 "reference": "es/editor/combat"
-              }
-            },
-            "propertyRatio": {
-              "type": "number",
-              "default": 2,
-              "minimum": 1,
-              "propertyOrder": 104,
-              "title": "Ratio de propiedad [veces]",
-              "options": {
-                "infoText": "Cuántas veces cambia una propiedad por cada 10 de diferencia de nivel"
-              },
-              "yutori": {
-                "points": [
-                  "Configura cuántas veces cambia cada propiedad cada vez que la diferencia entre el nivel de la categoría y el nivel de la acción aumenta en `10`.",
-                  "El ratio se calcula como (ratio de propiedad)^(diferencia de nivel÷10). Cuando la diferencia de nivel es `0`, el ratio es `1` y se utiliza tal cual el valor configurado en la acción.",
-                  "El ataque y la experiencia aumentan según este ratio, mientras que la defensa (daño recibido) y la rapidez (tiempo necesario) disminuyen en la misma proporción.",
-                  "La precisión, la evasión, la probabilidad de éxito y la recuperación son valores que se mantienen entre el `0` y el `100`%, por lo que el ratio se aplica a la proporción entre lo que se cumple y lo que no. El `0`% y el `100`% no varían, y los valores intermedios nunca superan el `100`%.",
-                  "La defensa, la evasión y la rapidez reciben la mitad del efecto del ratio (una diferencia de nivel de `20` equivale a una diferencia de nivel de `10` en las demás propiedades). La defensa y la evasión se aplican por partida doble a la tasa de impactos recibidos y al daño recibido, y la rapidez se aplica a todas las demás propiedades como número de ejecuciones, por lo que su efecto se debilita para mantener el equilibrio.",
-                  "La referencia es (tasa de aumento de experiencia) elevada a `6.7`. Por encima de ese valor, la subida de nivel se acelera cuanto mayor es el nivel; por debajo, los niveles finales requieren más tiempo.",
-                  "Si se establece en `1`, la diferencia de nivel deja de influir. Cuanto mayor sea el valor, más brusca será la ventaja o desventaja provocada por la diferencia de nivel."
-                ],
-                "reference": "es/editor/general?id=Ratio de propiedad [veces]"
               }
             }
           },
@@ -1735,13 +1737,13 @@
                     "hidden": true,
                     "infoText": "イベントでは使用しません"
                   },
-                  "title": "カテゴリー",
+                  "title": "カテゴリ",
                   "yutori": {
                     "points": [
-                      "ミッションやタスクの一覧に表示されないため、所属するカテゴリーは指定しません。",
+                      "ミッションやタスクの一覧に表示されないため、所属するカテゴリは指定しません。",
                       "エディターでは入力欄が表示されません。"
                     ],
-                    "reference": "es/editor/event?id=カテゴリー"
+                    "reference": "es/editor/event?id=カテゴリ"
                   }
                 },
                 "timing": {
@@ -2256,13 +2258,13 @@
                     "hidden": true,
                     "infoText": "イベントでは使用しません"
                   },
-                  "title": "カテゴリー",
+                  "title": "カテゴリ",
                   "yutori": {
                     "points": [
-                      "ミッションやタスクの一覧に表示されないため、所属するカテゴリーは指定しません。",
+                      "ミッションやタスクの一覧に表示されないため、所属するカテゴリは指定しません。",
                       "エディターでは入力欄が表示されません。"
                     ],
-                    "reference": "es/editor/event?id=カテゴリー"
+                    "reference": "es/editor/event?id=カテゴリ"
                   }
                 },
                 "timing": {
@@ -2777,13 +2779,13 @@
                     "hidden": true,
                     "infoText": "イベントでは使用しません"
                   },
-                  "title": "カテゴリー",
+                  "title": "カテゴリ",
                   "yutori": {
                     "points": [
-                      "ミッションやタスクの一覧に表示されないため、所属するカテゴリーは指定しません。",
+                      "ミッションやタスクの一覧に表示されないため、所属するカテゴリは指定しません。",
                       "エディターでは入力欄が表示されません。"
                     ],
-                    "reference": "es/editor/event?id=カテゴリー"
+                    "reference": "es/editor/event?id=カテゴリ"
                   }
                 },
                 "timing": {
@@ -3298,13 +3300,13 @@
                     "hidden": true,
                     "infoText": "イベントでは使用しません"
                   },
-                  "title": "カテゴリー",
+                  "title": "カテゴリ",
                   "yutori": {
                     "points": [
-                      "ミッションやタスクの一覧に表示されないため、所属するカテゴリーは指定しません。",
+                      "ミッションやタスクの一覧に表示されないため、所属するカテゴリは指定しません。",
                       "エディターでは入力欄が表示されません。"
                     ],
-                    "reference": "es/editor/event?id=カテゴリー"
+                    "reference": "es/editor/event?id=カテゴリ"
                   }
                 },
                 "timing": {
@@ -3819,13 +3821,13 @@
                     "hidden": true,
                     "infoText": "イベントでは使用しません"
                   },
-                  "title": "カテゴリー",
+                  "title": "カテゴリ",
                   "yutori": {
                     "points": [
-                      "ミッションやタスクの一覧に表示されないため、所属するカテゴリーは指定しません。",
+                      "ミッションやタスクの一覧に表示されないため、所属するカテゴリは指定しません。",
                       "エディターでは入力欄が表示されません。"
                     ],
-                    "reference": "es/editor/event?id=カテゴリー"
+                    "reference": "es/editor/event?id=カテゴリ"
                   }
                 },
                 "timing": {
@@ -4826,7 +4828,8 @@
           "requirements",
           "acquisitions",
           "progressType",
-          "property"
+          "property",
+          "skills"
         ],
         "properties": {
           "information": {
@@ -5514,6 +5517,27 @@
               ],
               "reference": "es/editor/combat"
             }
+          },
+          "skills": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "pattern": "^[0-9a-zA-Z\\-]*$"
+            },
+            "options": {
+              "disable_collapse": true,
+              "infoText": "Details"
+            },
+            "default": [],
+            "uniqueItems": true,
+            "title": "Habilidad",
+            "description": "Pendiente de redacción",
+            "yutori": {
+              "points": [
+                "Pendiente de redacción"
+              ],
+              "reference": "es/editor/skill"
+            }
           }
         }
       },
@@ -5556,7 +5580,8 @@
           "maximum",
           "equipmentType",
           "requirements",
-          "properties"
+          "properties",
+          "skill"
         ],
         "properties": {
           "information": {
@@ -6189,6 +6214,22 @@
               ],
               "reference": "es/editor/property"
             }
+          },
+          "skill": {
+            "type": "string",
+            "default": "",
+            "pattern": "^[0-9a-zA-Z\\-]*$",
+            "title": "Habilidad",
+            "description": "Pendiente de redacción",
+            "options": {
+              "infoText": "Details"
+            },
+            "yutori": {
+              "points": [
+                "Pendiente de redacción"
+              ],
+              "reference": "es/editor/skill"
+            }
           }
         }
       },
@@ -6201,6 +6242,340 @@
           "También existen formas variables de utilizarlos."
         ],
         "reference": "es/editor/item"
+      }
+    },
+    "skills": {
+      "type": "array",
+      "basicCategoryTitle": "Habilidad",
+      "format": "tabs",
+      "options": {
+        "disable_collapse": true,
+        "infoText": "Details"
+      },
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "format": "categories",
+        "basicCategoryTitle": "Skill",
+        "headerTemplate": "{{ i1 }}: {{ self.information.id }}",
+        "options": {
+          "disable_collapse": true
+        },
+        "required": [
+          "information",
+          "chance",
+          "property"
+        ],
+        "properties": {
+          "information": {
+            "type": "object",
+            "additionalProperties": false,
+            "format": "grid",
+            "required": [
+              "id",
+              "name",
+              "explanation",
+              "icon",
+              "color"
+            ],
+            "options": {
+              "disable_collapse": true,
+              "infoText": "Details"
+            },
+            "properties": {
+              "id": {
+                "type": "string",
+                "default": "",
+                "minLength": 1,
+                "maxLength": 100,
+                "pattern": "^[0-9a-zA-Z\\-]+$",
+                "title": "ID",
+                "options": {
+                  "infoText": "ID único para identificar el elemento"
+                },
+                "yutori": {
+                  "points": [
+                    "ID para identificar unívocamente cada elemento.",
+                    "En el editor, es una cadena para identificar el elemento.",
+                    "Por ejemplo, el ID especifica qué Artículo se obtiene cuando se completa la Acción."
+                  ],
+                  "reference": "es/editor/information?id=ID"
+                }
+              },
+              "name": {
+                "type": "string",
+                "maxLength": 20,
+                "title": "Nombre.",
+                "options": {
+                  "infoText": "Nombre del elemento tal y como aparece"
+                },
+                "yutori": {
+                  "points": [
+                    "Nombre del elemento mostrado en el juego.",
+                    "También se pueden introducir otros idiomas además del Inglés.",
+                    "Se aceptan nombres que dupliquen otros elementos.",
+                    "Si es demasiado largo, la parte que se desborda se omite con `…` en la pantalla durante el juego."
+                  ],
+                  "reference": "es/editor/information?id=Nombre."
+                }
+              },
+              "explanation": {
+                "type": "string",
+                "title": "nota explicativa",
+                "options": {
+                  "infoText": "Descripción detallada del elemento."
+                },
+                "yutori": {
+                  "points": [
+                    "Descripción de los elementos que aparecen en el juego.",
+                    "Se pueden introducir otros idiomas además del Inglés. Se muestran todos los textos, incluso los más largos.",
+                    "Si no se da ninguna explicación, déjelo en blanco."
+                  ],
+                  "reference": "es/editor/information?id=nota explicativa"
+                }
+              },
+              "icon": {
+                "type": "object",
+                "additionalProperties": false,
+                "format": "grid",
+                "required": [
+                  "emoji",
+                  "iconify",
+                  "image"
+                ],
+                "options": {
+                  "disable_collapse": true,
+                  "infoText": "Configuración de iconos para representar elementos."
+                },
+                "properties": {
+                  "emoji": {
+                    "type": "string",
+                    "options": {
+                      "grid_columns": 4,
+                      "infoText": "Visualización de iconos con pictogramas"
+                    },
+                    "title": "pictograma",
+                    "yutori": {
+                      "points": [
+                        "Mostrar pictogramas como iconos.",
+                        "Puede convertirse de texto a pictogramas y configurarse rápidamente.",
+                        "Para los pictogramas, introduzca los pictogramas Unicode tal cual.",
+                        "Como se utilizan los pictogramas introducidos en el entorno de ejecución, se muestran de forma ligeramente diferente para los distintos usuarios.",
+                        "Iconify permite configurar emojis que son nada dependientes de cada entorno",
+                        "Se pueden mostrar caracteres no pictográficos, pero la visualización puede corromperse si hay más de un carácter.",
+                        "Introduzca pictogramas, por ejemplo, `🗡️` o `⚔️`."
+                      ],
+                      "reference": "es/editor/information?id=pictograma"
+                    }
+                  },
+                  "iconify": {
+                    "type": "string",
+                    "default": "",
+                    "options": {
+                      "grid_columns": 4,
+                      "infoText": "Utilizar el conjunto de iconos de Iconify"
+                    },
+                    "title": "Iconify",
+                    "yutori": {
+                      "points": [
+                        "Iconos que representan elementos.",
+                        "Iconify es un servicio que ofrece una amplia gama de iconos.",
+                        "Si se configura una imagen, ésta tendrá prioridad."
+                      ],
+                      "reference": "es/editor/information?id=Iconify"
+                    }
+                  },
+                  "image": {
+                    "type": "string",
+                    "default": "",
+                    "media": {
+                      "binaryEncoding": "base64",
+                      "type": "img/png"
+                    },
+                    "options": {
+                      "grid_columns": 4,
+                      "infoText": "Utilice cualquier archivo de imagen"
+                    },
+                    "title": "Imagen.",
+                    "yutori": {
+                      "points": [
+                        "Imagen que representa el elemento.",
+                        "Si el tamaño del archivo es grande, se redimensiona automáticamente.",
+                        "Innecesario si se ha configurado Iconify o pictogramas."
+                      ],
+                      "reference": "es/editor/information?id=Imagen."
+                    }
+                  },
+                  "delete": {
+                    "format": "button",
+                    "options": {
+                      "button": {
+                        "text": "Delete Image",
+                        "icon": "trash",
+                        "action": "deletePrevious"
+                      }
+                    }
+                  }
+                },
+                "title": "icono",
+                "yutori": {
+                  "points": [
+                    "Los iconos se pueden configurar como imágenes, Iconify o emojis.",
+                    "Iconify es un servicio que ofrece una amplia gama de iconos.",
+                    "Si se cuenta con más de una configuración, las imágenes, Iconify y los pictogramas se priorizan y se muestran en ese orden."
+                  ],
+                  "reference": "es/editor/information?id=icono"
+                }
+              },
+              "color": {
+                "type": "string",
+                "default": "#000000",
+                "format": "color",
+                "pattern": "(^#[0-9a-fA-F]{6}$)|(^$)",
+                "title": "Color",
+                "options": {
+                  "infoText": "Configura el color de visualización del elemento."
+                },
+                "yutori": {
+                  "points": [
+                    "Como color de elemento, se aplica al icono y al color de fondo del elemento.",
+                    "Seleccione en el selector de color del editor."
+                  ],
+                  "reference": "es/editor/information?id=Color"
+                }
+              },
+              "copy": {
+                "type": "string",
+                "format": "button",
+                "options": {
+                  "button": {
+                    "text": "Copy Information",
+                    "icon": "copy",
+                    "action": "copyInformation"
+                  }
+                }
+              }
+            },
+            "title": "información",
+            "description": "Configuración de la información básica sobre el elemento (ID, nombre, icono, color, etc.)",
+            "yutori": {
+              "points": [
+                "Artículos de información básica comunes a cada elemento del mundo (Categorías, Acciones, Artículos, Eventos, etc.).",
+                "Cada elemento se configura por separado."
+              ],
+              "reference": "es/editor/information"
+            }
+          },
+          "chance": {
+            "type": "number",
+            "default": 1,
+            "minimum": 0,
+            "maximum": 1,
+            "title": "Probabilidad de activación [0-1]",
+            "options": {
+              "infoText": "Pendiente de redacción"
+            },
+            "yutori": {
+              "points": [
+                "Pendiente de redacción"
+              ],
+              "reference": "es/editor/skill?id=Probabilidad de activación [0-1]"
+            }
+          },
+          "property": {
+            "type": "object",
+            "additionalProperties": false,
+            "format": "grid",
+            "required": [
+              "attack",
+              "defence",
+              "accuracy",
+              "evasion"
+            ],
+            "options": {
+              "disable_collapse": true,
+              "infoText": "Details"
+            },
+            "properties": {
+              "attack": {
+                "type": "number",
+                "default": 0,
+                "title": "Valor de ataque [diferencia de nivel].",
+                "options": {
+                  "infoText": "Corrección por diferencia de nivel del daño de resistencia infligido a los rivales."
+                },
+                "yutori": {
+                  "points": [
+                    "Cuanto mayor sea el valor, mayor será el daño infligido."
+                  ],
+                  "reference": "es/editor/combat?id=Valor de ataque [diferencia de nivel]."
+                }
+              },
+              "defence": {
+                "type": "number",
+                "default": 0,
+                "title": "Valor de defensa [diferencia de nivel].",
+                "options": {
+                  "infoText": "Corrección por diferencia de nivel del daño de resistencia recibido de los rivales."
+                },
+                "yutori": {
+                  "points": [
+                    "Cuanto mayor sea el valor, más se reduce el daño."
+                  ],
+                  "reference": "es/editor/combat?id=Valor de defensa [diferencia de nivel]."
+                }
+              },
+              "accuracy": {
+                "type": "number",
+                "default": 0,
+                "title": "Valor de precisión [diferencia de nivel].",
+                "options": {
+                  "infoText": "Corrección de la diferencia de nivel en el porcentaje de ataques fallidos."
+                },
+                "yutori": {
+                  "points": [
+                    "Cuanto mayor sea el valor, menor será el porcentaje de errores."
+                  ],
+                  "reference": "es/editor/combat?id=Valor de precisión [diferencia de nivel]."
+                }
+              },
+              "evasion": {
+                "type": "number",
+                "default": 0,
+                "title": "Valor de evasión [diferencia de nivel].",
+                "options": {
+                  "infoText": "Corrección por diferencia de nivel del índice de evasión de los ataques del adversario."
+                },
+                "yutori": {
+                  "points": [
+                    "Cuanto mayor sea el valor, más fácil será evadir el ataque del adversario."
+                  ],
+                  "reference": "es/editor/combat?id=Valor de evasión [diferencia de nivel]."
+                }
+              },
+              "restore": {
+                "type": "number",
+                "default": 0
+              }
+            },
+            "title": "valor de combate",
+            "description": "Pendiente de redacción",
+            "yutori": {
+              "points": [
+                "Pendiente de redacción"
+              ],
+              "reference": "es/editor/combat"
+            }
+          }
+        }
+      },
+      "title": "Habilidad",
+      "description": "Pendiente de redacción",
+      "yutori": {
+        "points": [
+          "Pendiente de redacción"
+        ],
+        "reference": "es/editor/skill"
       }
     },
     "groups": {

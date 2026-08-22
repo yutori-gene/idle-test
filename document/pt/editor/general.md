@@ -108,8 +108,9 @@ Número máximo de vezes que é possível comprar capacidade
 ___
 
 ## Fila
-Configuração do número de intervalos para a execução consecutiva (programada) de ações
-- Gerencia ou número de slots para a execução contínua (programação) de ações.
+Configuração do número de vagas da fila para a execução consecutiva de ações
+- Gerencia o número de vagas da fila para a execução consecutiva de ações.
+- A fila inclui a ação em execução, e a ação que está no início é a que roda. Com `1` vaga, só cabe a ação em execução e nada pode aguardar.
 - Além de poderem ser comprados com moeda, assim como a capacidade, os espaços também podem ser aumentados por meio de recompensas de ações ou eventos, indicando os itens da fila.
 - Ao consultar itens da fila com base em condições ou recompensas, utilize o ID configurado aqui.
 - [_item_](pt/editor/item)
@@ -120,8 +121,8 @@ ___
 
 ### Valor padrão [pcs].
 Número de quadros de execução contínua ao começar o jogo
-- É o número de vagas disponíveis quando o jogo começa.
-- O valor mínimo é `1` (não existe o tratamento de `0` = ilimitado, como no caso da capacidade).
+- É o número de vagas da fila no início do jogo.
+- O valor mínimo é `1` (a ação em execução ocupa uma vaga e não existe o tratamento de `0` = ilimitado, como no caso da capacidade).
 ___
 
 ### Preço base [moedas].
@@ -173,6 +174,26 @@ Solicita o número de vezes que a ação do mesmo atributo foi executada para a 
 - Se ativado, o número de vezes que uma ação com os mesmos atributos foi executada é automaticamente adicionado às condições de execução de cada ação.
 - O número de vezes necessário é igual ao valor do nível da Ação.
 - Se nada for configurado, será usado o ID da Categoria à qual ele pertence.
+___
+
+## Taxa de propriedade [vezes]
+Quantas vezes uma propriedade muda a cada 10 de diferença de nível
+- Configura quantas vezes cada propriedade muda sempre que a diferença entre o nível da categoria e o nível da ação aumenta em `10`.
+- A taxa é calculada como (taxa de propriedade)^(diferença de nível÷10). Quando a diferença de nível é `0`, a taxa é `1` e o valor configurado na ação é usado como está.
+- O ataque e a experiência aumentam segundo esta taxa, enquanto a defesa (dano recebido) e a rapidez (tempo necessário) diminuem na mesma proporção.
+- A precisão, a evasão, a probabilidade de sucesso e a recuperação são valores que ficam entre `0` e `100`%, por isso a taxa é aplicada à proporção entre o que se concretiza e o que não se concretiza. `0`% e `100`% não mudam, e os valores intermédios nunca ultrapassam `100`%.
+- A defesa, a evasão e a rapidez recebem metade do efeito da taxa (uma diferença de nível de `20` equivale a uma diferença de nível de `10` nas outras propriedades). A defesa e a evasão aplicam-se em duplicado à taxa de golpes recebidos e ao dano recebido, e a rapidez aplica-se a todas as outras propriedades como número de execuções, por isso o seu efeito é enfraquecido para manter o equilíbrio.
+- A referência é (taxa de aumento de experiência) elevada a `6.7`. Acima disso, subir de nível acelera à medida que o nível aumenta; abaixo disso, os níveis finais demoram mais tempo.
+- Se definido como `1`, a diferença de nível deixa de influenciar. Quanto maior o valor, mais acentuada será a vantagem ou desvantagem provocada pela diferença de nível.
+
+|Taxa de propriedade|Diferença de nível -20|Diferença de nível -10|Diferença de nível 0|Diferença de nível +10|Diferença de nível +20|
+|-|-|-|-|-|-|
+|`1`|`x1.00`|`x1.00`|`x1.00`|`x1.00`|`x1.00`|
+|`1.5`|`x0.44`|`x0.67`|`x1.00`|`x1.50`|`x2.25`|
+|`2`|`x0.25`|`x0.50`|`x1.00`|`x2.00`|`x4.00`|
+|`3`|`x0.11`|`x0.33`|`x1.00`|`x3.00`|`x9.00`|
+- [_action_](pt/editor/action)
+- [_property_](pt/editor/property)
 ___
 
 ## [_valor de combate_](pt/editor/combat)

@@ -18,6 +18,9 @@ ___
 ## [_아이템_](ko/editor/item)
 ___
 
+## [_스킬_](ko/editor/skill)
+___
+
 ## [_그룹_](ko/editor/group)
 ___
 

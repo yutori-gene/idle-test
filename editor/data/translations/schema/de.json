@@ -9,6 +9,7 @@
     "categories",
     "actions",
     "items",
+    "skills",
     "groups",
     "tasks",
     "presets"
@@ -464,11 +465,33 @@
                 "reference": "de/editor/general?id=Action Level Restriction"
               }
             },
+            "propertyRatio": {
+              "type": "number",
+              "default": 2,
+              "minimum": 1,
+              "propertyOrder": 104,
+              "title": "Eigenschaftsfaktor [Zeiten]",
+              "options": {
+                "infoText": "Um welchen Faktor sich eine Eigenschaft pro 10 Level-Unterschied ändert"
+              },
+              "yutori": {
+                "points": [
+                  "Legt fest, um welchen Faktor sich jede Eigenschaft ändert, sobald der Unterschied zwischen dem Level der Kategorie und dem Level der Aktion um `10` wächst.",
+                  "Der Faktor wird als (Eigenschaftsfaktor)^(Level-Unterschied÷10) berechnet. Bei einem Level-Unterschied von `0` beträgt der Faktor `1`, und der in der Aktion eingestellte Wert wird unverändert verwendet.",
+                  "Angriff und Erfahrung steigen um diesen Faktor, während Verteidigung (erlittener Schaden) und Schnelligkeit (benötigte Zeit) um denselben Faktor sinken.",
+                  "Genauigkeit, Ausweichen, Erfolgswahrscheinlichkeit und Wiederherstellung sind Werte zwischen `0` und `100`%, daher wirkt der Faktor auf das Verhältnis zwischen dem, was eintritt, und dem, was nicht eintritt. `0`% und `100`% ändern sich nicht, und die Werte dazwischen überschreiten nie `100`%.",
+                  "Bei Verteidigung, Ausweichen und Schnelligkeit wirkt der Faktor nur zur Hälfte (ein Level-Unterschied von `20` entspricht einem Level-Unterschied von `10` bei den übrigen Eigenschaften). Verteidigung und Ausweichen wirken doppelt, auf die Rate der erlittenen Treffer und auf den erlittenen Schaden, und Schnelligkeit wirkt als Anzahl der Ausführungen auf alle übrigen Eigenschaften, daher wird ihre Wirkung zum Ausgleich abgeschwächt.",
+                  "Als Richtwert dient (Erfahrung-Zuwachsrate) hoch `6.7`. Darüber beschleunigt sich der Levelaufstieg mit steigendem Level, darunter dauern die späteren Level länger.",
+                  "Mit `1` entfällt der Einfluss des Level-Unterschieds. Je größer der Wert, desto drastischer wirken sich Vor- und Nachteile des Level-Unterschieds aus."
+                ],
+                "reference": "de/editor/general?id=Eigenschaftsfaktor [Zeiten]"
+              }
+            },
             "levelCommonRatio": {
               "type": "number",
               "default": 1.05,
               "minimum": 1,
-              "propertyOrder": 104,
+              "propertyOrder": 105,
               "title": "Rate des Anstiegs der Erfahrung [Zeiten].",
               "options": {
                 "infoText": "Prozentualer Anstieg des Schwierigkeitsgrads beim Level-up."
@@ -973,7 +996,7 @@
               ],
               "options": {
                 "disable_collapse": true,
-                "infoText": "Konfiguration der Anzahl der Felder für die fortlaufende Ausführung (Planung) von Aktionen"
+                "infoText": "Konfiguration der Anzahl der Warteschlangenplätze für die fortlaufende Ausführung von Aktionen"
               },
               "properties": {
                 "information": {
@@ -1185,8 +1208,8 @@
                   },
                   "yutori": {
                     "points": [
-                      "Die Anzahl der Reservierungsplätze zum Start des Spiels.",
-                      "Der Mindestwert ist `1` (es gibt keine Behandlung wie bei der Kapazität, bei der `0` = unbegrenzt bedeutet)."
+                      "Die Anzahl der Warteschlangenplätze zum Start des Spiels.",
+                      "Der Mindestwert ist `1` (die laufende Aktion belegt einen Platz, und es gibt keine Behandlung wie bei der Kapazität, bei der `0` = unbegrenzt bedeutet)."
                     ],
                     "reference": "de/editor/general?id=Standardwert [pcs]."
                   }
@@ -1264,7 +1287,8 @@
               "title": "Warteschlange",
               "yutori": {
                 "points": [
-                  "Verwaltet die Anzahl der Zeitfenster für die fortlaufende Ausführung (Planung) von Aktionen.",
+                  "Verwaltet die Anzahl der Warteschlangenplätze für die fortlaufende Ausführung von Aktionen.",
+                  "Die Warteschlange enthält die laufende Aktion, und die Aktion an ihrem Anfang wird ausgeführt. Bei `1` Platz passt nur die laufende Aktion hinein, es kann nichts warten.",
                   "Sowohl die Anzahl der Plätze als auch die Kapazität können mit Währung gekauft werden; außerdem lassen sich die Plätze in der Warteschlange durch die Auswahl bestimmter Gegenstände als Belohnung für Aktionen oder Ereignisse erhöhen.",
                   "Wenn Sie in Bedingungen oder Vergütungen auf Gegenstände der Warteschlange verweisen möchten, verwenden Sie bitte die im Rahmen der Konfiguration festgelegte ID."
                 ],
@@ -1356,28 +1380,6 @@
                   "Der Kampfwert (Eigenschaft) der einzelnen Aktionen wird zu diesem Standardwert addiert."
                 ],
                 "reference": "de/editor/combat"
-              }
-            },
-            "propertyRatio": {
-              "type": "number",
-              "default": 2,
-              "minimum": 1,
-              "propertyOrder": 104,
-              "title": "Eigenschaftsfaktor [Zeiten]",
-              "options": {
-                "infoText": "Um welchen Faktor sich eine Eigenschaft pro 10 Level-Unterschied ändert"
-              },
-              "yutori": {
-                "points": [
-                  "Legt fest, um welchen Faktor sich jede Eigenschaft ändert, sobald der Unterschied zwischen dem Level der Kategorie und dem Level der Aktion um `10` wächst.",
-                  "Der Faktor wird als (Eigenschaftsfaktor)^(Level-Unterschied÷10) berechnet. Bei einem Level-Unterschied von `0` beträgt der Faktor `1`, und der in der Aktion eingestellte Wert wird unverändert verwendet.",
-                  "Angriff und Erfahrung steigen um diesen Faktor, während Verteidigung (erlittener Schaden) und Schnelligkeit (benötigte Zeit) um denselben Faktor sinken.",
-                  "Genauigkeit, Ausweichen, Erfolgswahrscheinlichkeit und Wiederherstellung sind Werte zwischen `0` und `100`%, daher wirkt der Faktor auf das Verhältnis zwischen dem, was eintritt, und dem, was nicht eintritt. `0`% und `100`% ändern sich nicht, und die Werte dazwischen überschreiten nie `100`%.",
-                  "Bei Verteidigung, Ausweichen und Schnelligkeit wirkt der Faktor nur zur Hälfte (ein Level-Unterschied von `20` entspricht einem Level-Unterschied von `10` bei den übrigen Eigenschaften). Verteidigung und Ausweichen wirken doppelt, auf die Rate der erlittenen Treffer und auf den erlittenen Schaden, und Schnelligkeit wirkt als Anzahl der Ausführungen auf alle übrigen Eigenschaften, daher wird ihre Wirkung zum Ausgleich abgeschwächt.",
-                  "Als Richtwert dient (Erfahrung-Zuwachsrate) hoch `6.7`. Darüber beschleunigt sich der Levelaufstieg mit steigendem Level, darunter dauern die späteren Level länger.",
-                  "Mit `1` entfällt der Einfluss des Level-Unterschieds. Je größer der Wert, desto drastischer wirken sich Vor- und Nachteile des Level-Unterschieds aus."
-                ],
-                "reference": "de/editor/general?id=Eigenschaftsfaktor [Zeiten]"
               }
             }
           },
@@ -1735,13 +1737,13 @@
                     "hidden": true,
                     "infoText": "イベントでは使用しません"
                   },
-                  "title": "カテゴリー",
+                  "title": "カテゴリ",
                   "yutori": {
                     "points": [
-                      "ミッションやタスクの一覧に表示されないため、所属するカテゴリーは指定しません。",
+                      "ミッションやタスクの一覧に表示されないため、所属するカテゴリは指定しません。",
                       "エディターでは入力欄が表示されません。"
                     ],
-                    "reference": "de/editor/event?id=カテゴリー"
+                    "reference": "de/editor/event?id=カテゴリ"
                   }
                 },
                 "timing": {
@@ -2256,13 +2258,13 @@
                     "hidden": true,
                     "infoText": "イベントでは使用しません"
                   },
-                  "title": "カテゴリー",
+                  "title": "カテゴリ",
                   "yutori": {
                     "points": [
-                      "ミッションやタスクの一覧に表示されないため、所属するカテゴリーは指定しません。",
+                      "ミッションやタスクの一覧に表示されないため、所属するカテゴリは指定しません。",
                       "エディターでは入力欄が表示されません。"
                     ],
-                    "reference": "de/editor/event?id=カテゴリー"
+                    "reference": "de/editor/event?id=カテゴリ"
                   }
                 },
                 "timing": {
@@ -2777,13 +2779,13 @@
                     "hidden": true,
                     "infoText": "イベントでは使用しません"
                   },
-                  "title": "カテゴリー",
+                  "title": "カテゴリ",
                   "yutori": {
                     "points": [
-                      "ミッションやタスクの一覧に表示されないため、所属するカテゴリーは指定しません。",
+                      "ミッションやタスクの一覧に表示されないため、所属するカテゴリは指定しません。",
                       "エディターでは入力欄が表示されません。"
                     ],
-                    "reference": "de/editor/event?id=カテゴリー"
+                    "reference": "de/editor/event?id=カテゴリ"
                   }
                 },
                 "timing": {
@@ -3298,13 +3300,13 @@
                     "hidden": true,
                     "infoText": "イベントでは使用しません"
                   },
-                  "title": "カテゴリー",
+                  "title": "カテゴリ",
                   "yutori": {
                     "points": [
-                      "ミッションやタスクの一覧に表示されないため、所属するカテゴリーは指定しません。",
+                      "ミッションやタスクの一覧に表示されないため、所属するカテゴリは指定しません。",
                       "エディターでは入力欄が表示されません。"
                     ],
-                    "reference": "de/editor/event?id=カテゴリー"
+                    "reference": "de/editor/event?id=カテゴリ"
                   }
                 },
                 "timing": {
@@ -3819,13 +3821,13 @@
                     "hidden": true,
                     "infoText": "イベントでは使用しません"
                   },
-                  "title": "カテゴリー",
+                  "title": "カテゴリ",
                   "yutori": {
                     "points": [
-                      "ミッションやタスクの一覧に表示されないため、所属するカテゴリーは指定しません。",
+                      "ミッションやタスクの一覧に表示されないため、所属するカテゴリは指定しません。",
                       "エディターでは入力欄が表示されません。"
                     ],
-                    "reference": "de/editor/event?id=カテゴリー"
+                    "reference": "de/editor/event?id=カテゴリ"
                   }
                 },
                 "timing": {
@@ -4826,7 +4828,8 @@
           "requirements",
           "acquisitions",
           "progressType",
-          "property"
+          "property",
+          "skills"
         ],
         "properties": {
           "information": {
@@ -5514,6 +5517,27 @@
               ],
               "reference": "de/editor/combat"
             }
+          },
+          "skills": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "pattern": "^[0-9a-zA-Z\\-]*$"
+            },
+            "options": {
+              "disable_collapse": true,
+              "infoText": "Details"
+            },
+            "default": [],
+            "uniqueItems": true,
+            "title": "Fähigkeit",
+            "description": "Wird noch geschrieben",
+            "yutori": {
+              "points": [
+                "Wird noch geschrieben"
+              ],
+              "reference": "de/editor/skill"
+            }
           }
         }
       },
@@ -5556,7 +5580,8 @@
           "maximum",
           "equipmentType",
           "requirements",
-          "properties"
+          "properties",
+          "skill"
         ],
         "properties": {
           "information": {
@@ -6189,6 +6214,22 @@
               ],
               "reference": "de/editor/property"
             }
+          },
+          "skill": {
+            "type": "string",
+            "default": "",
+            "pattern": "^[0-9a-zA-Z\\-]*$",
+            "title": "Fähigkeit",
+            "description": "Wird noch geschrieben",
+            "options": {
+              "infoText": "Details"
+            },
+            "yutori": {
+              "points": [
+                "Wird noch geschrieben"
+              ],
+              "reference": "de/editor/skill"
+            }
           }
         }
       },
@@ -6201,6 +6242,340 @@
           "Es gibt auch zahllose Möglichkeiten, sie zu verwenden."
         ],
         "reference": "de/editor/item"
+      }
+    },
+    "skills": {
+      "type": "array",
+      "basicCategoryTitle": "Fähigkeit",
+      "format": "tabs",
+      "options": {
+        "disable_collapse": true,
+        "infoText": "Details"
+      },
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "format": "categories",
+        "basicCategoryTitle": "Skill",
+        "headerTemplate": "{{ i1 }}: {{ self.information.id }}",
+        "options": {
+          "disable_collapse": true
+        },
+        "required": [
+          "information",
+          "chance",
+          "property"
+        ],
+        "properties": {
+          "information": {
+            "type": "object",
+            "additionalProperties": false,
+            "format": "grid",
+            "required": [
+              "id",
+              "name",
+              "explanation",
+              "icon",
+              "color"
+            ],
+            "options": {
+              "disable_collapse": true,
+              "infoText": "Details"
+            },
+            "properties": {
+              "id": {
+                "type": "string",
+                "default": "",
+                "minLength": 1,
+                "maxLength": 100,
+                "pattern": "^[0-9a-zA-Z\\-]+$",
+                "title": "ID",
+                "options": {
+                  "infoText": "Eindeutige ID zur Identifizierung des Elements"
+                },
+                "yutori": {
+                  "points": [
+                    "ID zur eindeutigen Identifizierung jedes Elements.",
+                    "Im Editor ist dies eine Zeichenkette zur Identifizierung des Elements.",
+                    "Die ID gibt z. B. an, welcher Gegenstand bei Abschluss der Aktion erhalten wird."
+                  ],
+                  "reference": "de/editor/information?id=ID"
+                }
+              },
+              "name": {
+                "type": "string",
+                "maxLength": 20,
+                "title": "Name.",
+                "options": {
+                  "infoText": "Name des Elements, wie er erscheint"
+                },
+                "yutori": {
+                  "points": [
+                    "Name des Elements, das im Spiel angezeigt wird.",
+                    "Es können auch andere Sprachen als Englisch eingegeben werden.",
+                    "Namen, die andere Elemente duplizieren, sind zulässig.",
+                    "Ist er zu lang, wird der überstehende Teil in der Anzeige während des Spiels mit `…` abgekürzt."
+                  ],
+                  "reference": "de/editor/information?id=Name."
+                }
+              },
+              "explanation": {
+                "type": "string",
+                "title": "erläuternde Bemerkung",
+                "options": {
+                  "infoText": "Detaillierte Beschreibung des Elements."
+                },
+                "yutori": {
+                  "points": [
+                    "Eine Beschreibung der Elemente, die im Spiel angezeigt werden.",
+                    "Andere Sprachen als Englisch können eingegeben werden. Alle Texte, auch lange Texte, werden angezeigt.",
+                    "Wenn keine Erklärung gegeben wird, leer lassen."
+                  ],
+                  "reference": "de/editor/information?id=erläuternde Bemerkung"
+                }
+              },
+              "icon": {
+                "type": "object",
+                "additionalProperties": false,
+                "format": "grid",
+                "required": [
+                  "emoji",
+                  "iconify",
+                  "image"
+                ],
+                "options": {
+                  "disable_collapse": true,
+                  "infoText": "Konfiguration von Symbolen zur Darstellung von Elementen."
+                },
+                "properties": {
+                  "emoji": {
+                    "type": "string",
+                    "options": {
+                      "grid_columns": 4,
+                      "infoText": "Icon-Anzeige mit Piktogrammen"
+                    },
+                    "title": "Piktogramm",
+                    "yutori": {
+                      "points": [
+                        "Piktogramme als Symbole anzeigen.",
+                        "Es kann von Text in Piktogramme umgewandelt und schnell konfiguriert werden.",
+                        "Bei Piktogrammen geben Sie die Unicode-Piktogramme so ein, wie sie sind.",
+                        "Da die in der Ausführungsumgebung eingeführten Piktogramme verwendet werden, werden sie für verschiedene Benutzer leicht unterschiedlich dargestellt.",
+                        "Mit Iconify können Sie Emojis konfigurieren, die nicht von jeder Umgebung abhängig sind",
+                        "Nicht-piktografische Zeichen können angezeigt werden, aber es ist möglich, dass die Anzeige verfälscht wird, wenn mehr als ein Zeichen vorhanden ist.",
+                        "Geben Sie Piktogramme ein, z. B. `🗡️` oder `⚔️`."
+                      ],
+                      "reference": "de/editor/information?id=Piktogramm"
+                    }
+                  },
+                  "iconify": {
+                    "type": "string",
+                    "default": "",
+                    "options": {
+                      "grid_columns": 4,
+                      "infoText": "Verwendung des Iconify-Symbolsets"
+                    },
+                    "title": "Iconify",
+                    "yutori": {
+                      "points": [
+                        "Icons, die Elemente darstellen.",
+                        "Iconify ist ein Dienst, der eine breite Palette von Symbolen anbietet.",
+                        "Wenn ein Bild konfiguriert ist, hat es Vorrang."
+                      ],
+                      "reference": "de/editor/information?id=Iconify"
+                    }
+                  },
+                  "image": {
+                    "type": "string",
+                    "default": "",
+                    "media": {
+                      "binaryEncoding": "base64",
+                      "type": "img/png"
+                    },
+                    "options": {
+                      "grid_columns": 4,
+                      "infoText": "Beliebige Bilddatei verwenden"
+                    },
+                    "title": "Bild.",
+                    "yutori": {
+                      "points": [
+                        "Bild, das das Element darstellt.",
+                        "Wenn die Datei sehr groß ist, wird sie automatisch verkleinert.",
+                        "Unnötig, wenn Iconify oder Piktogramme konfiguriert sind."
+                      ],
+                      "reference": "de/editor/information?id=Bild."
+                    }
+                  },
+                  "delete": {
+                    "format": "button",
+                    "options": {
+                      "button": {
+                        "text": "Delete Image",
+                        "icon": "trash",
+                        "action": "deletePrevious"
+                      }
+                    }
+                  }
+                },
+                "title": "Symbol",
+                "yutori": {
+                  "points": [
+                    "Die Icons können als Bilder, Iconify oder Emojis konfiguriert werden.",
+                    "Iconify ist ein Dienst, der eine breite Palette von Symbolen anbietet.",
+                    "Wenn mehr als eine dieser Konfigurationen gezählt wird, werden Bilder, Iconify und Piktogramme vorrangig und in dieser Reihenfolge angezeigt."
+                  ],
+                  "reference": "de/editor/information?id=Symbol"
+                }
+              },
+              "color": {
+                "type": "string",
+                "default": "#000000",
+                "format": "color",
+                "pattern": "(^#[0-9a-fA-F]{6}$)|(^$)",
+                "title": "Farbe",
+                "options": {
+                  "infoText": "Konfiguration der Anzeigefarbe des Elements."
+                },
+                "yutori": {
+                  "points": [
+                    "Als Elementfarbe wird sie auf das Symbol und die Hintergrundfarbe des Elements angewendet.",
+                    "Wählen Sie aus der Farbauswahl des Editors."
+                  ],
+                  "reference": "de/editor/information?id=Farbe"
+                }
+              },
+              "copy": {
+                "type": "string",
+                "format": "button",
+                "options": {
+                  "button": {
+                    "text": "Copy Information",
+                    "icon": "copy",
+                    "action": "copyInformation"
+                  }
+                }
+              }
+            },
+            "title": "Informationen",
+            "description": "Konfiguration der grundlegenden Informationen über das Element (ID, Name, Symbol, Farbe usw.)",
+            "yutori": {
+              "points": [
+                "Grundlegende Informationsgegenstände, die jedem Element in der Welt gemeinsam sind (Kategorien, Aktionen, Gegenstände, Ereignisse, usw.).",
+                "Jedes Element wird separat konfiguriert."
+              ],
+              "reference": "de/editor/information"
+            }
+          },
+          "chance": {
+            "type": "number",
+            "default": 1,
+            "minimum": 0,
+            "maximum": 1,
+            "title": "Auslösewahrscheinlichkeit [0-1]",
+            "options": {
+              "infoText": "Wird noch geschrieben"
+            },
+            "yutori": {
+              "points": [
+                "Wird noch geschrieben"
+              ],
+              "reference": "de/editor/skill?id=Auslösewahrscheinlichkeit [0-1]"
+            }
+          },
+          "property": {
+            "type": "object",
+            "additionalProperties": false,
+            "format": "grid",
+            "required": [
+              "attack",
+              "defence",
+              "accuracy",
+              "evasion"
+            ],
+            "options": {
+              "disable_collapse": true,
+              "infoText": "Details"
+            },
+            "properties": {
+              "attack": {
+                "type": "number",
+                "default": 0,
+                "title": "Wert des Angriffs [Level-Unterschied].",
+                "options": {
+                  "infoText": "Level-Differenz-Korrektur des Ausdauer-Schadens, der dem Gegner zugefügt wird."
+                },
+                "yutori": {
+                  "points": [
+                    "Je höher der Wert, desto mehr Schaden wird angerichtet."
+                  ],
+                  "reference": "de/editor/combat?id=Wert des Angriffs [Level-Unterschied]."
+                }
+              },
+              "defence": {
+                "type": "number",
+                "default": 0,
+                "title": "Wert der Verteidigung [Level-Differenz].",
+                "options": {
+                  "infoText": "Level-Differenz-Korrektur des von Gegnern erhaltenen Ausdauer-Schadens."
+                },
+                "yutori": {
+                  "points": [
+                    "Je höher der Wert, desto stärker wird der Schaden reduziert."
+                  ],
+                  "reference": "de/editor/combat?id=Wert der Verteidigung [Level-Differenz]."
+                }
+              },
+              "accuracy": {
+                "type": "number",
+                "default": 0,
+                "title": "Wert der Genauigkeit [Level-Unterschied].",
+                "options": {
+                  "infoText": "Level-Differenz-Korrektur der Angriffs-Fehlschussrate."
+                },
+                "yutori": {
+                  "points": [
+                    "Je höher der Wert ist, desto geringer ist die Fehlerquote."
+                  ],
+                  "reference": "de/editor/combat?id=Wert der Genauigkeit [Level-Unterschied]."
+                }
+              },
+              "evasion": {
+                "type": "number",
+                "default": 0,
+                "title": "Wert des Ausweichens [Level-Unterschied].",
+                "options": {
+                  "infoText": "Level-Differenz-Korrektur der Ausweichrate der gegnerischen Angriffe."
+                },
+                "yutori": {
+                  "points": [
+                    "Je höher der Wert, desto leichter ist es, einem gegnerischen Angriff auszuweichen."
+                  ],
+                  "reference": "de/editor/combat?id=Wert des Ausweichens [Level-Unterschied]."
+                }
+              },
+              "restore": {
+                "type": "number",
+                "default": 0
+              }
+            },
+            "title": "Kampfwert",
+            "description": "Wird noch geschrieben",
+            "yutori": {
+              "points": [
+                "Wird noch geschrieben"
+              ],
+              "reference": "de/editor/combat"
+            }
+          }
+        }
+      },
+      "title": "Fähigkeit",
+      "description": "Wird noch geschrieben",
+      "yutori": {
+        "points": [
+          "Wird noch geschrieben"
+        ],
+        "reference": "de/editor/skill"
       }
     },
     "groups": {

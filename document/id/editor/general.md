@@ -108,8 +108,9 @@ Jumlah maksimum kali beli kuota
 ___
 
 ## Antrian
-Konfigurasi jumlah slot untuk eksekusi beruntun (jadwal) aksi
-- Mengelola jumlah slot untuk menjalankan Aksi secara berurutan (jadwal).
+Konfigurasi jumlah slot antrian untuk eksekusi beruntun aksi
+- Mengelola jumlah slot antrian untuk menjalankan aksi secara berurutan.
+- Antrian mencakup aksi yang sedang berjalan, dan aksi di posisi terdepan adalah yang dijalankan. Jika slotnya `1`, hanya aksi yang sedang berjalan yang muat sehingga tidak ada yang bisa menunggu.
 - Jumlah slot, sama seperti kapasitas, dapat dibeli menggunakan mata uang, dan Anda juga dapat menambahnya dengan memilih Item dari antrian sebagai hadiah dari Aksi atau acara.
 - Jika Anda ingin merujuk item dalam antrian berdasarkan kondisi atau imbalan, gunakan ID yang telah dikonfigurasi di sini.
 - [_item_](id/editor/item)
@@ -120,8 +121,8 @@ ___
 
 ### Nilai default [pcs].
 Jumlah slot eksekusi berurutan saat permainan mulai
-- Ini adalah jumlah slot reservasi saat permainan dimulai.
-- Nilai minimumnya adalah `1` (tidak ada perlakuan seperti `0` = tak terbatas, seperti pada kapasitas).
+- Ini adalah jumlah slot antrian saat permainan dimulai.
+- Nilai minimumnya adalah `1` (aksi yang sedang berjalan memakai satu slot, dan tidak ada perlakuan seperti `0` = tak terbatas, seperti pada kapasitas).
 ___
 
 ### Harga dasar [koin].
@@ -173,6 +174,26 @@ Meminta hitung berapa kali aksi atribut yang sama telah dieksekusi untuk eksekus
 - Jika diaktifkan, hitung kali aksi dengan atribut yang sama telah dieksekusi secara otomatis ditambahkan ke kondisi eksekusi setiap tindakan.
 - Jumlah hitung yang diperlukan sama dengan nilai level aksi.
 - Jika tidak ada atribut yang ditetapkan, ID dari kategori yang digunakan akan digunakan.
+___
+
+## Rasio properti [kali]
+Berapa kali properti berubah setiap 10 perbedaan level
+- Mengatur berapa kali setiap properti berubah setiap kali perbedaan antara level kategori dan level aksi bertambah `10`.
+- Rasio dihitung sebagai (rasio properti)^(perbedaan level÷10). Ketika perbedaan level adalah `0`, rasionya `1` dan nilai yang diatur pada aksi digunakan apa adanya.
+- Serangan dan pengalaman bertambah sebesar rasio ini, sedangkan pertahanan (kerusakan yang diterima) dan kecepatan (waktu yang dibutuhkan) berkurang dengan rasio yang sama.
+- Akurasi, penghindaran, probabilitas sukses, dan pemulihan adalah nilai yang berada dalam rentang `0` hingga `100`%, sehingga rasio dikenakan pada perbandingan antara sisi yang tercapai dan sisi yang tidak tercapai. `0`% dan `100`% tidak berubah, dan nilai di antaranya tidak pernah melebihi `100`%.
+- Pertahanan, penghindaran, dan kecepatan hanya menerima setengah efek rasio (perbedaan level `20` setara dengan perbedaan level `10` pada properti lain). Pertahanan dan penghindaran bekerja ganda pada tingkat terkena serangan dan kerusakan yang diterima, sedangkan kecepatan bekerja pada semua properti lain sebagai jumlah pelaksanaan, sehingga efeknya dilemahkan agar tetap seimbang.
+- Patokannya adalah (tingkat kenaikan pengalaman) pangkat `6.7`. Di atas itu, kenaikan level makin cepat seiring naiknya level; di bawah itu, level-level akhir memerlukan lebih banyak waktu.
+- Jika diatur ke `1`, perbedaan level tidak lagi berpengaruh. Semakin besar nilainya, semakin tajam keuntungan dan kerugian dari perbedaan level.
+
+|Rasio properti|Perbedaan level -20|Perbedaan level -10|Perbedaan level 0|Perbedaan level +10|Perbedaan level +20|
+|-|-|-|-|-|-|
+|`1`|`x1.00`|`x1.00`|`x1.00`|`x1.00`|`x1.00`|
+|`1.5`|`x0.44`|`x0.67`|`x1.00`|`x1.50`|`x2.25`|
+|`2`|`x0.25`|`x0.50`|`x1.00`|`x2.00`|`x4.00`|
+|`3`|`x0.11`|`x0.33`|`x1.00`|`x3.00`|`x9.00`|
+- [_action_](id/editor/action)
+- [_property_](id/editor/property)
 ___
 
 ## [_nilai tempur_](id/editor/combat)

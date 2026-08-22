@@ -17,4 +17,4 @@ ___
 ## Actuar.
 Control de las Acciones
 - Inicia o detiene una acción.
-- Puedes indicar cuántas veces ejecutarla. Introduce 0 para ejecutarla hasta agotar los recursos.
+- Puedes indicar cuántas veces ejecutarla. Elige la posición más a la derecha para ejecutarla hasta agotar los recursos.

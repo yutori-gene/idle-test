@@ -17,4 +17,4 @@ ___
 ## Agir.
 Contrôle des actions
 - Démarre ou arrête une action.
-- Vous pouvez indiquer le nombre d'exécutions. Saisissez 0 pour exécuter jusqu'à épuisement des ressources.
+- Vous pouvez indiquer le nombre d'exécutions. Choisissez la position la plus à droite pour exécuter jusqu'à épuisement des ressources.

@@ -11,6 +11,7 @@
       * [Категория.](ru/editor/category)
       * [Действие.](ru/editor/action)
       * [предмет](ru/editor/item)
+      * [Навык](ru/editor/skill)
       * [группа (обычно люди)](ru/editor/group)
       * [Задача](ru/editor/task)
       * [предустановленный](ru/editor/preset)

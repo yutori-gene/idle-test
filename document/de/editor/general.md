@@ -108,8 +108,9 @@ Maximale Anzahl der Käufe zum Kaufen von Speicherplatz
 ___
 
 ## Warteschlange
-Konfiguration der Anzahl der Felder für die fortlaufende Ausführung (Planung) von Aktionen
-- Verwaltet die Anzahl der Zeitfenster für die fortlaufende Ausführung (Planung) von Aktionen.
+Konfiguration der Anzahl der Warteschlangenplätze für die fortlaufende Ausführung von Aktionen
+- Verwaltet die Anzahl der Warteschlangenplätze für die fortlaufende Ausführung von Aktionen.
+- Die Warteschlange enthält die laufende Aktion, und die Aktion an ihrem Anfang wird ausgeführt. Bei `1` Platz passt nur die laufende Aktion hinein, es kann nichts warten.
 - Sowohl die Anzahl der Plätze als auch die Kapazität können mit Währung gekauft werden; außerdem lassen sich die Plätze in der Warteschlange durch die Auswahl bestimmter Gegenstände als Belohnung für Aktionen oder Ereignisse erhöhen.
 - Wenn Sie in Bedingungen oder Vergütungen auf Gegenstände der Warteschlange verweisen möchten, verwenden Sie bitte die im Rahmen der Konfiguration festgelegte ID.
 - [_item_](de/editor/item)
@@ -120,8 +121,8 @@ ___
 
 ### Standardwert [pcs].
 Anzahl der Felder für die fortlaufende Ausführung beim Start des Spiels
-- Die Anzahl der Reservierungsplätze zum Start des Spiels.
-- Der Mindestwert ist `1` (es gibt keine Behandlung wie bei der Kapazität, bei der `0` = unbegrenzt bedeutet).
+- Die Anzahl der Warteschlangenplätze zum Start des Spiels.
+- Der Mindestwert ist `1` (die laufende Aktion belegt einen Platz, und es gibt keine Behandlung wie bei der Kapazität, bei der `0` = unbegrenzt bedeutet).
 ___
 
 ### Grundpreis [Münzen].
@@ -173,6 +174,26 @@ Fragt ab, wie oft das gleiche Attribut Aktion für die Ausführung einer Aktion 
 - Wenn diese Option aktiviert ist, wird die Anzahl der Ausführungen einer Aktion mit denselben Attributen automatisch zu den Ausführungsbedingungen jeder Aktion hinzugefügt.
 - Die Anzahl der notwendigen Male entspricht dem Level-Wert der Aktion.
 - Wenn kein Attribut konfiguriert ist, wird die ID der Kategorie verwendet, zu der sie gehört.
+___
+
+## Eigenschaftsfaktor [Zeiten]
+Um welchen Faktor sich eine Eigenschaft pro 10 Level-Unterschied ändert
+- Legt fest, um welchen Faktor sich jede Eigenschaft ändert, sobald der Unterschied zwischen dem Level der Kategorie und dem Level der Aktion um `10` wächst.
+- Der Faktor wird als (Eigenschaftsfaktor)^(Level-Unterschied÷10) berechnet. Bei einem Level-Unterschied von `0` beträgt der Faktor `1`, und der in der Aktion eingestellte Wert wird unverändert verwendet.
+- Angriff und Erfahrung steigen um diesen Faktor, während Verteidigung (erlittener Schaden) und Schnelligkeit (benötigte Zeit) um denselben Faktor sinken.
+- Genauigkeit, Ausweichen, Erfolgswahrscheinlichkeit und Wiederherstellung sind Werte zwischen `0` und `100`%, daher wirkt der Faktor auf das Verhältnis zwischen dem, was eintritt, und dem, was nicht eintritt. `0`% und `100`% ändern sich nicht, und die Werte dazwischen überschreiten nie `100`%.
+- Bei Verteidigung, Ausweichen und Schnelligkeit wirkt der Faktor nur zur Hälfte (ein Level-Unterschied von `20` entspricht einem Level-Unterschied von `10` bei den übrigen Eigenschaften). Verteidigung und Ausweichen wirken doppelt, auf die Rate der erlittenen Treffer und auf den erlittenen Schaden, und Schnelligkeit wirkt als Anzahl der Ausführungen auf alle übrigen Eigenschaften, daher wird ihre Wirkung zum Ausgleich abgeschwächt.
+- Als Richtwert dient (Erfahrung-Zuwachsrate) hoch `6.7`. Darüber beschleunigt sich der Levelaufstieg mit steigendem Level, darunter dauern die späteren Level länger.
+- Mit `1` entfällt der Einfluss des Level-Unterschieds. Je größer der Wert, desto drastischer wirken sich Vor- und Nachteile des Level-Unterschieds aus.
+
+|Eigenschaftsfaktor|Level-Unterschied -20|Level-Unterschied -10|Level-Unterschied 0|Level-Unterschied +10|Level-Unterschied +20|
+|-|-|-|-|-|-|
+|`1`|`x1.00`|`x1.00`|`x1.00`|`x1.00`|`x1.00`|
+|`1.5`|`x0.44`|`x0.67`|`x1.00`|`x1.50`|`x2.25`|
+|`2`|`x0.25`|`x0.50`|`x1.00`|`x2.00`|`x4.00`|
+|`3`|`x0.11`|`x0.33`|`x1.00`|`x3.00`|`x9.00`|
+- [_action_](de/editor/action)
+- [_property_](de/editor/property)
 ___
 
 ## [_Kampfwert_](de/editor/combat)

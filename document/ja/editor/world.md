@@ -18,6 +18,9 @@ ___
 ## [_アイテム_](ja/editor/item)
 ___
 
+## [_スキル_](ja/editor/skill)
+___
+
 ## [_グループ_](ja/editor/group)
 ___
 

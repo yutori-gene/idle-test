@@ -9,6 +9,7 @@
     "categories",
     "actions",
     "items",
+    "skills",
     "groups",
     "tasks",
     "presets"
@@ -464,11 +465,33 @@
                 "reference": "en/editor/general?id=Action Level Limits"
               }
             },
+            "propertyRatio": {
+              "type": "number",
+              "default": 2,
+              "minimum": 1,
+              "propertyOrder": 104,
+              "title": "Property ratio [times]",
+              "options": {
+                "infoText": "How many times a property changes per 10 of level difference"
+              },
+              "yutori": {
+                "points": [
+                  "Configures how many times each property changes every time the difference between the level of the category and the level of the action widens by `10`.",
+                  "The ratio is calculated as (property ratio)^(level difference ÷ 10). When the level difference is `0` the ratio is `1`, and the value configured in the action is used as it is.",
+                  "Attack and experience increase by this ratio, while defence (damage taken) and quickness (required time) decrease by the same ratio.",
+                  "Accuracy, evasion, probability of success and restoration are values that stay within `0` to `100`%, so the ratio applies to the proportion between the side that succeeds and the side that does not. `0`% and `100`% never change, and the values in between never exceed `100`%.",
+                  "Defence, evasion and quickness take half the effect of the ratio (a level difference of `20` equals a level difference of `10` for the other properties). Defence and evasion apply twice, to the rate of being hit and to the damage taken, and quickness applies to every other property as the number of executions, so their effect is weakened to keep the balance.",
+                  "A good guideline is (experience increase rate) to the power of `6.7`. Above that, levelling up accelerates as the level rises; below that, the later levels take more time.",
+                  "Setting it to `1` removes the influence of the level difference. The larger the value, the steeper the advantage and disadvantage caused by the level difference."
+                ],
+                "reference": "en/editor/general?id=Property ratio [times]"
+              }
+            },
             "levelCommonRatio": {
               "type": "number",
               "default": 1.05,
               "minimum": 1,
-              "propertyOrder": 104,
+              "propertyOrder": 105,
               "title": "Rate of increase in experience [times].",
               "options": {
                 "infoText": "Percentage increase in level difficulty"
@@ -973,7 +996,7 @@
               ],
               "options": {
                 "disable_collapse": true,
-                "infoText": "Configuring the Number of Slots for Consecutive Actions (Scheduling)"
+                "infoText": "Configuring the Number of Queue Slots for Consecutive Actions"
               },
               "properties": {
                 "information": {
@@ -1185,8 +1208,8 @@
                   },
                   "yutori": {
                     "points": [
-                      "This is the number of reservation slots available at the start of the game.",
-                      "The minimum value is `1` (there is no `0` = unlimited option, as with capacity)."
+                      "This is the number of queue slots available at the start of the game.",
+                      "The minimum value is `1` (the running action uses one slot, and there is no `0` = unlimited option, as with capacity)."
                     ],
                     "reference": "en/editor/general?id=Default value [pcs]."
                   }
@@ -1264,7 +1287,8 @@
               "title": "Queue",
               "yutori": {
                 "points": [
-                  "Manages the count of slots available for executing actions in sequence (scheduling).",
+                  "Manages the number of queue slots for executing actions in sequence.",
+                  "The queue includes the running action, and the action at its head is the one being executed. When there is only `1` slot, only the running action fits and nothing can wait.",
                   "In addition to buying slots with currency, just like storage capacity, you can also increase the number of slots by selecting specific Items from the queue as rewards for actions and events.",
                   "When referencing items in the queue based on conditions or rewards, use the ID configured here."
                 ],
@@ -1356,28 +1380,6 @@
                   "The combat value (property) of each Action is added to this default value."
                 ],
                 "reference": "en/editor/combat"
-              }
-            },
-            "propertyRatio": {
-              "type": "number",
-              "default": 2,
-              "minimum": 1,
-              "propertyOrder": 104,
-              "title": "Property ratio [times]",
-              "options": {
-                "infoText": "How many times a property changes per 10 of level difference"
-              },
-              "yutori": {
-                "points": [
-                  "Configures how many times each property changes every time the difference between the level of the category and the level of the action widens by `10`.",
-                  "The ratio is calculated as (property ratio)^(level difference ÷ 10). When the level difference is `0` the ratio is `1`, and the value configured in the action is used as it is.",
-                  "Attack and experience increase by this ratio, while defence (damage taken) and quickness (required time) decrease by the same ratio.",
-                  "Accuracy, evasion, probability of success and restoration are values that stay within `0` to `100`%, so the ratio applies to the proportion between the side that succeeds and the side that does not. `0`% and `100`% never change, and the values in between never exceed `100`%.",
-                  "Defence, evasion and quickness take half the effect of the ratio (a level difference of `20` equals a level difference of `10` for the other properties). Defence and evasion apply twice, to the rate of being hit and to the damage taken, and quickness applies to every other property as the number of executions, so their effect is weakened to keep the balance.",
-                  "A good guideline is (experience increase rate) to the power of `6.7`. Above that, levelling up accelerates as the level rises; below that, the later levels take more time.",
-                  "Setting it to `1` removes the influence of the level difference. The larger the value, the steeper the advantage and disadvantage caused by the level difference."
-                ],
-                "reference": "en/editor/general?id=Property ratio [times]"
               }
             }
           },
@@ -1735,13 +1737,13 @@
                     "hidden": true,
                     "infoText": "イベントでは使用しません"
                   },
-                  "title": "カテゴリー",
+                  "title": "カテゴリ",
                   "yutori": {
                     "points": [
-                      "ミッションやタスクの一覧に表示されないため、所属するカテゴリーは指定しません。",
+                      "ミッションやタスクの一覧に表示されないため、所属するカテゴリは指定しません。",
                       "エディターでは入力欄が表示されません。"
                     ],
-                    "reference": "en/editor/event?id=カテゴリー"
+                    "reference": "en/editor/event?id=カテゴリ"
                   }
                 },
                 "timing": {
@@ -2256,13 +2258,13 @@
                     "hidden": true,
                     "infoText": "イベントでは使用しません"
                   },
-                  "title": "カテゴリー",
+                  "title": "カテゴリ",
                   "yutori": {
                     "points": [
-                      "ミッションやタスクの一覧に表示されないため、所属するカテゴリーは指定しません。",
+                      "ミッションやタスクの一覧に表示されないため、所属するカテゴリは指定しません。",
                       "エディターでは入力欄が表示されません。"
                     ],
-                    "reference": "en/editor/event?id=カテゴリー"
+                    "reference": "en/editor/event?id=カテゴリ"
                   }
                 },
                 "timing": {
@@ -2777,13 +2779,13 @@
                     "hidden": true,
                     "infoText": "イベントでは使用しません"
                   },
-                  "title": "カテゴリー",
+                  "title": "カテゴリ",
                   "yutori": {
                     "points": [
-                      "ミッションやタスクの一覧に表示されないため、所属するカテゴリーは指定しません。",
+                      "ミッションやタスクの一覧に表示されないため、所属するカテゴリは指定しません。",
                       "エディターでは入力欄が表示されません。"
                     ],
-                    "reference": "en/editor/event?id=カテゴリー"
+                    "reference": "en/editor/event?id=カテゴリ"
                   }
                 },
                 "timing": {
@@ -3298,13 +3300,13 @@
                     "hidden": true,
                     "infoText": "イベントでは使用しません"
                   },
-                  "title": "カテゴリー",
+                  "title": "カテゴリ",
                   "yutori": {
                     "points": [
-                      "ミッションやタスクの一覧に表示されないため、所属するカテゴリーは指定しません。",
+                      "ミッションやタスクの一覧に表示されないため、所属するカテゴリは指定しません。",
                       "エディターでは入力欄が表示されません。"
                     ],
-                    "reference": "en/editor/event?id=カテゴリー"
+                    "reference": "en/editor/event?id=カテゴリ"
                   }
                 },
                 "timing": {
@@ -3819,13 +3821,13 @@
                     "hidden": true,
                     "infoText": "イベントでは使用しません"
                   },
-                  "title": "カテゴリー",
+                  "title": "カテゴリ",
                   "yutori": {
                     "points": [
-                      "ミッションやタスクの一覧に表示されないため、所属するカテゴリーは指定しません。",
+                      "ミッションやタスクの一覧に表示されないため、所属するカテゴリは指定しません。",
                       "エディターでは入力欄が表示されません。"
                     ],
-                    "reference": "en/editor/event?id=カテゴリー"
+                    "reference": "en/editor/event?id=カテゴリ"
                   }
                 },
                 "timing": {
@@ -4826,7 +4828,8 @@
           "requirements",
           "acquisitions",
           "progressType",
-          "property"
+          "property",
+          "skills"
         ],
         "properties": {
           "information": {
@@ -5514,6 +5517,27 @@
               ],
               "reference": "en/editor/combat"
             }
+          },
+          "skills": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "pattern": "^[0-9a-zA-Z\\-]*$"
+            },
+            "options": {
+              "disable_collapse": true,
+              "infoText": "Details"
+            },
+            "default": [],
+            "uniqueItems": true,
+            "title": "Skill",
+            "description": "To be written",
+            "yutori": {
+              "points": [
+                "To be written"
+              ],
+              "reference": "en/editor/skill"
+            }
           }
         }
       },
@@ -5556,7 +5580,8 @@
           "maximum",
           "equipmentType",
           "requirements",
-          "properties"
+          "properties",
+          "skill"
         ],
         "properties": {
           "information": {
@@ -6189,6 +6214,22 @@
               ],
               "reference": "en/editor/property"
             }
+          },
+          "skill": {
+            "type": "string",
+            "default": "",
+            "pattern": "^[0-9a-zA-Z\\-]*$",
+            "title": "Skill",
+            "description": "To be written",
+            "options": {
+              "infoText": "Details"
+            },
+            "yutori": {
+              "points": [
+                "To be written"
+              ],
+              "reference": "en/editor/skill"
+            }
           }
         }
       },
@@ -6201,6 +6242,340 @@
           "There are also ways to use it like a variable."
         ],
         "reference": "en/editor/item"
+      }
+    },
+    "skills": {
+      "type": "array",
+      "basicCategoryTitle": "Skill",
+      "format": "tabs",
+      "options": {
+        "disable_collapse": true,
+        "infoText": "Details"
+      },
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "format": "categories",
+        "basicCategoryTitle": "Skill",
+        "headerTemplate": "{{ i1 }}: {{ self.information.id }}",
+        "options": {
+          "disable_collapse": true
+        },
+        "required": [
+          "information",
+          "chance",
+          "property"
+        ],
+        "properties": {
+          "information": {
+            "type": "object",
+            "additionalProperties": false,
+            "format": "grid",
+            "required": [
+              "id",
+              "name",
+              "explanation",
+              "icon",
+              "color"
+            ],
+            "options": {
+              "disable_collapse": true,
+              "infoText": "Details"
+            },
+            "properties": {
+              "id": {
+                "type": "string",
+                "default": "",
+                "minLength": 1,
+                "maxLength": 100,
+                "pattern": "^[0-9a-zA-Z\\-]+$",
+                "title": "ID",
+                "options": {
+                  "infoText": "unique ID to identify an element"
+                },
+                "yutori": {
+                  "points": [
+                    "ID to uniquely identify each element.",
+                    "A string that identifies the element in the editor.",
+                    "For example, the ID specifies which Item is obtained when the Action is completed."
+                  ],
+                  "reference": "en/editor/information?id=ID"
+                }
+              },
+              "name": {
+                "type": "string",
+                "maxLength": 20,
+                "title": "Name",
+                "options": {
+                  "infoText": "The name under which the element appears"
+                },
+                "yutori": {
+                  "points": [
+                    "The name of the element displayed in the game.",
+                    "Languages other than English can also be entered.",
+                    "Names that duplicate other elements are acceptable.",
+                    "If it is too long, the overflowing part is omitted with `…` in the display during play."
+                  ],
+                  "reference": "en/editor/information?id=Name"
+                }
+              },
+              "explanation": {
+                "type": "string",
+                "title": "explanatory note",
+                "options": {
+                  "infoText": "Detailed description of the element"
+                },
+                "yutori": {
+                  "points": [
+                    "A description of the elements displayed in the game.",
+                    "Languages other than English can be entered. Even long sentences are all displayed.",
+                    "If there is nothing to explain, leave blank."
+                  ],
+                  "reference": "en/editor/information?id=explanatory note"
+                }
+              },
+              "icon": {
+                "type": "object",
+                "additionalProperties": false,
+                "format": "grid",
+                "required": [
+                  "emoji",
+                  "iconify",
+                  "image"
+                ],
+                "options": {
+                  "disable_collapse": true,
+                  "infoText": "Configure icons to represent elements"
+                },
+                "properties": {
+                  "emoji": {
+                    "type": "string",
+                    "options": {
+                      "grid_columns": 4,
+                      "infoText": "Icon display with pictograms"
+                    },
+                    "title": "pictograph",
+                    "yutori": {
+                      "points": [
+                        "Display pictograms as icons.",
+                        "It can be converted from text to pictograms and configured quickly.",
+                        "For pictograms, enter Unicode pictograms as they are.",
+                        "Since the pictograms introduced in the execution environment are used, the display may differ slightly from user to user.",
+                        "Iconify allows you to configure emoji that are nothing specific to each environment",
+                        "It is possible to display characters other than pictograms, but it is Possible for the display to be corrupted if there is more than one character.",
+                        "For example, enter a pictogram such as `🗡️` or `⚔️`."
+                      ],
+                      "reference": "en/editor/information?id=pictograph"
+                    }
+                  },
+                  "iconify": {
+                    "type": "string",
+                    "default": "",
+                    "options": {
+                      "grid_columns": 4,
+                      "infoText": "Using the Iconify Icon Set"
+                    },
+                    "title": "Iconify",
+                    "yutori": {
+                      "points": [
+                        "An icon representing an element.",
+                        "Iconify is a service that provides various types of icons.",
+                        "If an image is configured, it will take precedence."
+                      ],
+                      "reference": "en/editor/information?id=Iconify"
+                    }
+                  },
+                  "image": {
+                    "type": "string",
+                    "default": "",
+                    "media": {
+                      "binaryEncoding": "base64",
+                      "type": "img/png"
+                    },
+                    "options": {
+                      "grid_columns": 4,
+                      "infoText": "Use any image file"
+                    },
+                    "title": "image",
+                    "yutori": {
+                      "points": [
+                        "An image representing an element.",
+                        "If the file size is large, it will be automatically resized.",
+                        "Unnecessary if Iconify or pictograms are configured."
+                      ],
+                      "reference": "en/editor/information?id=image"
+                    }
+                  },
+                  "delete": {
+                    "format": "button",
+                    "options": {
+                      "button": {
+                        "text": "Delete Image",
+                        "icon": "trash",
+                        "action": "deletePrevious"
+                      }
+                    }
+                  }
+                },
+                "title": "icon",
+                "yutori": {
+                  "points": [
+                    "Icons can be configured as images, Iconify, or emoji.",
+                    "Iconify is a service that provides various types of icons.",
+                    "If more than one of these is configured, priority is given to images, Iconify, and pictograms, in that order."
+                  ],
+                  "reference": "en/editor/information?id=icon"
+                }
+              },
+              "color": {
+                "type": "string",
+                "default": "#000000",
+                "format": "color",
+                "pattern": "(^#[0-9a-fA-F]{6}$)|(^$)",
+                "title": "Color",
+                "options": {
+                  "infoText": "Configure the display color of the element"
+                },
+                "yutori": {
+                  "points": [
+                    "As the element's color, it is applied to the element's icon and background color.",
+                    "Select from the editor's color picker."
+                  ],
+                  "reference": "en/editor/information?id=Color"
+                }
+              },
+              "copy": {
+                "type": "string",
+                "format": "button",
+                "options": {
+                  "button": {
+                    "text": "Copy Information",
+                    "icon": "copy",
+                    "action": "copyInformation"
+                  }
+                }
+              }
+            },
+            "title": "information",
+            "description": "Configure basic information about the element (ID, name, icon, color, etc.)",
+            "yutori": {
+              "points": [
+                "This is an item of basic information common to each element in the world (Category, Action, Item, Event, etc.).",
+                "Each element is configured separately."
+              ],
+              "reference": "en/editor/information"
+            }
+          },
+          "chance": {
+            "type": "number",
+            "default": 1,
+            "minimum": 0,
+            "maximum": 1,
+            "title": "Activation probability [0-1]",
+            "options": {
+              "infoText": "To be written"
+            },
+            "yutori": {
+              "points": [
+                "To be written"
+              ],
+              "reference": "en/editor/skill?id=Activation probability [0-1]"
+            }
+          },
+          "property": {
+            "type": "object",
+            "additionalProperties": false,
+            "format": "grid",
+            "required": [
+              "attack",
+              "defence",
+              "accuracy",
+              "evasion"
+            ],
+            "options": {
+              "disable_collapse": true,
+              "infoText": "Details"
+            },
+            "properties": {
+              "attack": {
+                "type": "number",
+                "default": 0,
+                "title": "Attack value [level difference].",
+                "options": {
+                  "infoText": "Correction for level difference in stamina damage inflicted on the opponent."
+                },
+                "yutori": {
+                  "points": [
+                    "The higher the value, the more damage is done."
+                  ],
+                  "reference": "en/editor/combat?id=Attack value [level difference]."
+                }
+              },
+              "defence": {
+                "type": "number",
+                "default": 0,
+                "title": "Defence value [level difference].",
+                "options": {
+                  "infoText": "Correction for level difference in stamina damage received from opponents."
+                },
+                "yutori": {
+                  "points": [
+                    "The higher the value, the less damage is taken."
+                  ],
+                  "reference": "en/editor/combat?id=Defence value [level difference]."
+                }
+              },
+              "accuracy": {
+                "type": "number",
+                "default": 0,
+                "title": "Accuracy [level difference].",
+                "options": {
+                  "infoText": "Level difference correction to attack miss rate"
+                },
+                "yutori": {
+                  "points": [
+                    "The higher the value, the lower the miss rate."
+                  ],
+                  "reference": "en/editor/combat?id=Accuracy [level difference]."
+                }
+              },
+              "evasion": {
+                "type": "number",
+                "default": 0,
+                "title": "Evasion value [level difference].",
+                "options": {
+                  "infoText": "Level difference correction to the evasion rate of the opponent's attacks"
+                },
+                "yutori": {
+                  "points": [
+                    "The higher the value, the easier it is to evade an opponent's attack."
+                  ],
+                  "reference": "en/editor/combat?id=Evasion value [level difference]."
+                }
+              },
+              "restore": {
+                "type": "number",
+                "default": 0
+              }
+            },
+            "title": "combat value",
+            "description": "To be written",
+            "yutori": {
+              "points": [
+                "To be written"
+              ],
+              "reference": "en/editor/combat"
+            }
+          }
+        }
+      },
+      "title": "Skill",
+      "description": "To be written",
+      "yutori": {
+        "points": [
+          "To be written"
+        ],
+        "reference": "en/editor/skill"
       }
     },
     "groups": {

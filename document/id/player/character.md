@@ -1,7 +1,6 @@
 
 # karakter
 Identifikasi dan pengoperasian situasi protagonis.
-- Isi ini sama dengan yang ditampilkan ketika kamu mengoperasikan kategori.
 ___
 
 ## aktivitas
@@ -16,7 +15,7 @@ ___
 
 ## status
 Daftar semua properti
-- Hanya nilai koreksi kategori oleh item yang ditampilkan.
+- Hanya nilai Properti yang diterapkan item ke kategori yang ditampilkan.
 - Masih ada koreksi lain tergantung aksi yang akan dijalankan.
 ___
 

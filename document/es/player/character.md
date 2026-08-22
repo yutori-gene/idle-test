@@ -1,7 +1,6 @@
 
 # personaje
 Identificación y funcionamiento de la situación del protagonista.
-- Este contenido es idéntico al que se muestra al manipular la categoría.
 ___
 
 ## actividad
@@ -16,7 +15,7 @@ ___
 
 ## Estado.
 Lista de todas las propiedades
-- Solo se muestra el valor de la corrección de la categoría por parte del artículo.
+- Solo se muestra el valor de la propiedad que los artículos aplican a la categoría.
 - Existen además otras correcciones según la acción que se vaya a ejecutar.
 ___
 

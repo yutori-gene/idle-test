@@ -9,6 +9,7 @@
     "categories",
     "actions",
     "items",
+    "skills",
     "groups",
     "tasks",
     "presets"
@@ -464,11 +465,33 @@
                 "reference": "ko/editor/general?id=액션 레벨 제한"
               }
             },
+            "propertyRatio": {
+              "type": "number",
+              "default": 2,
+              "minimum": 1,
+              "propertyOrder": 104,
+              "title": "속성 배율[배]",
+              "options": {
+                "infoText": "레벨 차이 10마다 속성이 몇 배가 되는지"
+              },
+              "yutori": {
+                "points": [
+                  "카테고리의 레벨과 액션의 레벨 차이가 `10`씩 벌어질 때마다 속성이 몇 배가 되는지를 설정합니다.",
+                  "배율은 (속성 배율)^(레벨 차이÷10)로 계산됩니다. 레벨 차이가 `0`일 때는 `1`배가 되며, 액션에 설정한 값이 그대로 사용됩니다.",
+                  "공격과 경험치는 이 배율만큼 증가하고, 방어(받는 피해)와 민첩성(소요 시간)은 같은 배율만큼 감소합니다.",
+                  "명중, 회피, 성공 확률, 회복량은 `0`〜`100`% 범위에 들어가는 값이므로 성립하는 쪽과 성립하지 않는 쪽의 비율에 배율이 적용됩니다. `0`%와 `100`%는 변하지 않으며, 중간 값이 `100`%를 넘는 일도 없습니다.",
+                  "방어, 회피, 민첩성은 배율 효과가 절반입니다(레벨 차이 `20`이 다른 속성의 레벨 차이 `10`에 해당합니다). 방어와 회피는 피격 확률과 받는 피해에 이중으로 적용되고, 민첩성은 실행 횟수로서 다른 모든 속성에 적용되므로 효과를 약하게 하여 균형을 맞추고 있습니다.",
+                  "기준은 (경험치 상승률)의 `6.7`제곱입니다. 이를 넘으면 레벨이 오를수록 레벨업이 빨라지고, 밑돌수록 후반 레벨업에 시간이 더 걸립니다.",
+                  "`1`로 설정하면 레벨 차이의 영향이 없어집니다. 값을 크게 하면 레벨 차이에 따른 유불리가 급격해집니다."
+                ],
+                "reference": "ko/editor/general?id=속성 배율[배]"
+              }
+            },
             "levelCommonRatio": {
               "type": "number",
               "default": 1.05,
               "minimum": 1,
-              "propertyOrder": 104,
+              "propertyOrder": 105,
               "title": "경험치 상승률[배]",
               "options": {
                 "infoText": "레벨업 난이도 증가율"
@@ -973,7 +996,7 @@
               ],
               "options": {
                 "disable_collapse": true,
-                "infoText": "연속 실행(예약) 액션의 슬롯 수 설정"
+                "infoText": "액션 연속 실행 대기열의 슬롯 수 설정"
               },
               "properties": {
                 "information": {
@@ -1185,8 +1208,8 @@
                   },
                   "yutori": {
                     "points": [
-                      "게임 시작 시의 예약 가능 인원 수입니다.",
-                      "최소값은 `1`입니다(용량과 같이 `0`=무제한으로 처리되는 경우는 없습니다)."
+                      "게임 시작 시의 대기열 슬롯 수입니다.",
+                      "최소값은 `1`입니다(실행 중인 액션이 슬롯 하나를 사용하며, 용량과 같이 `0`=무제한으로 처리되는 경우는 없습니다)."
                     ],
                     "reference": "ko/editor/general?id=초기 값 [개]."
                   }
@@ -1264,7 +1287,8 @@
               "title": "큐",
               "yutori": {
                 "points": [
-                  "액션을 연속으로 실행(예약)하기 위한 슬롯 수를 관리합니다.",
+                  "액션을 연속으로 실행하기 위한 대기열의 슬롯 수를 관리합니다.",
+                  "대기열은 실행 중인 액션을 포함하며, 맨 앞에 있는 액션이 실행됩니다. 슬롯이 `1`일 때는 실행 중인 액션만 들어가고 대기는 둘 수 없습니다.",
                   "슬롯 수는 용량과 마찬가지로 화폐로 구매할 수 있을 뿐만 아니라, 액션이나 이벤트 보상을 통해 대기열의 특정 아이템을 지정하여 늘릴 수도 있습니다.",
                   "조건이나 보상으로 큐의 아이템을 참조할 때는 여기에서 설정한 ID를 사용하십시오."
                 ],
@@ -1356,28 +1380,6 @@
                   "각 액션의 전투 값(속성)은 이 기본값에 추가됩니다."
                 ],
                 "reference": "ko/editor/combat"
-              }
-            },
-            "propertyRatio": {
-              "type": "number",
-              "default": 2,
-              "minimum": 1,
-              "propertyOrder": 104,
-              "title": "속성 배율[배]",
-              "options": {
-                "infoText": "레벨 차이 10마다 속성이 몇 배가 되는지"
-              },
-              "yutori": {
-                "points": [
-                  "카테고리의 레벨과 액션의 레벨 차이가 `10`씩 벌어질 때마다 속성이 몇 배가 되는지를 설정합니다.",
-                  "배율은 (속성 배율)^(레벨 차이÷10)로 계산됩니다. 레벨 차이가 `0`일 때는 `1`배가 되며, 액션에 설정한 값이 그대로 사용됩니다.",
-                  "공격과 경험치는 이 배율만큼 증가하고, 방어(받는 피해)와 민첩성(소요 시간)은 같은 배율만큼 감소합니다.",
-                  "명중, 회피, 성공 확률, 회복량은 `0`〜`100`% 범위에 들어가는 값이므로 성립하는 쪽과 성립하지 않는 쪽의 비율에 배율이 적용됩니다. `0`%와 `100`%는 변하지 않으며, 중간 값이 `100`%를 넘는 일도 없습니다.",
-                  "방어, 회피, 민첩성은 배율 효과가 절반입니다(레벨 차이 `20`이 다른 속성의 레벨 차이 `10`에 해당합니다). 방어와 회피는 피격 확률과 받는 피해에 이중으로 적용되고, 민첩성은 실행 횟수로서 다른 모든 속성에 적용되므로 효과를 약하게 하여 균형을 맞추고 있습니다.",
-                  "기준은 (경험치 상승률)의 `6.7`제곱입니다. 이를 넘으면 레벨이 오를수록 레벨업이 빨라지고, 밑돌수록 후반 레벨업에 시간이 더 걸립니다.",
-                  "`1`로 설정하면 레벨 차이의 영향이 없어집니다. 값을 크게 하면 레벨 차이에 따른 유불리가 급격해집니다."
-                ],
-                "reference": "ko/editor/general?id=속성 배율[배]"
               }
             }
           },
@@ -1735,13 +1737,13 @@
                     "hidden": true,
                     "infoText": "イベントでは使用しません"
                   },
-                  "title": "カテゴリー",
+                  "title": "カテゴリ",
                   "yutori": {
                     "points": [
-                      "ミッションやタスクの一覧に表示されないため、所属するカテゴリーは指定しません。",
+                      "ミッションやタスクの一覧に表示されないため、所属するカテゴリは指定しません。",
                       "エディターでは入力欄が表示されません。"
                     ],
-                    "reference": "ko/editor/event?id=カテゴリー"
+                    "reference": "ko/editor/event?id=カテゴリ"
                   }
                 },
                 "timing": {
@@ -2256,13 +2258,13 @@
                     "hidden": true,
                     "infoText": "イベントでは使用しません"
                   },
-                  "title": "カテゴリー",
+                  "title": "カテゴリ",
                   "yutori": {
                     "points": [
-                      "ミッションやタスクの一覧に表示されないため、所属するカテゴリーは指定しません。",
+                      "ミッションやタスクの一覧に表示されないため、所属するカテゴリは指定しません。",
                       "エディターでは入力欄が表示されません。"
                     ],
-                    "reference": "ko/editor/event?id=カテゴリー"
+                    "reference": "ko/editor/event?id=カテゴリ"
                   }
                 },
                 "timing": {
@@ -2777,13 +2779,13 @@
                     "hidden": true,
                     "infoText": "イベントでは使用しません"
                   },
-                  "title": "カテゴリー",
+                  "title": "カテゴリ",
                   "yutori": {
                     "points": [
-                      "ミッションやタスクの一覧に表示されないため、所属するカテゴリーは指定しません。",
+                      "ミッションやタスクの一覧に表示されないため、所属するカテゴリは指定しません。",
                       "エディターでは入力欄が表示されません。"
                     ],
-                    "reference": "ko/editor/event?id=カテゴリー"
+                    "reference": "ko/editor/event?id=カテゴリ"
                   }
                 },
                 "timing": {
@@ -3298,13 +3300,13 @@
                     "hidden": true,
                     "infoText": "イベントでは使用しません"
                   },
-                  "title": "カテゴリー",
+                  "title": "カテゴリ",
                   "yutori": {
                     "points": [
-                      "ミッションやタスクの一覧に表示されないため、所属するカテゴリーは指定しません。",
+                      "ミッションやタスクの一覧に表示されないため、所属するカテゴリは指定しません。",
                       "エディターでは入力欄が表示されません。"
                     ],
-                    "reference": "ko/editor/event?id=カテゴリー"
+                    "reference": "ko/editor/event?id=カテゴリ"
                   }
                 },
                 "timing": {
@@ -3819,13 +3821,13 @@
                     "hidden": true,
                     "infoText": "イベントでは使用しません"
                   },
-                  "title": "カテゴリー",
+                  "title": "カテゴリ",
                   "yutori": {
                     "points": [
-                      "ミッションやタスクの一覧に表示されないため、所属するカテゴリーは指定しません。",
+                      "ミッションやタスクの一覧に表示されないため、所属するカテゴリは指定しません。",
                       "エディターでは入力欄が表示されません。"
                     ],
-                    "reference": "ko/editor/event?id=カテゴリー"
+                    "reference": "ko/editor/event?id=カテゴリ"
                   }
                 },
                 "timing": {
@@ -4826,7 +4828,8 @@
           "requirements",
           "acquisitions",
           "progressType",
-          "property"
+          "property",
+          "skills"
         ],
         "properties": {
           "information": {
@@ -5514,6 +5517,27 @@
               ],
               "reference": "ko/editor/combat"
             }
+          },
+          "skills": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "pattern": "^[0-9a-zA-Z\\-]*$"
+            },
+            "options": {
+              "disable_collapse": true,
+              "infoText": "Details"
+            },
+            "default": [],
+            "uniqueItems": true,
+            "title": "스킬",
+            "description": "작성 예정",
+            "yutori": {
+              "points": [
+                "작성 예정"
+              ],
+              "reference": "ko/editor/skill"
+            }
           }
         }
       },
@@ -5556,7 +5580,8 @@
           "maximum",
           "equipmentType",
           "requirements",
-          "properties"
+          "properties",
+          "skill"
         ],
         "properties": {
           "information": {
@@ -6189,6 +6214,22 @@
               ],
               "reference": "ko/editor/property"
             }
+          },
+          "skill": {
+            "type": "string",
+            "default": "",
+            "pattern": "^[0-9a-zA-Z\\-]*$",
+            "title": "스킬",
+            "description": "작성 예정",
+            "options": {
+              "infoText": "Details"
+            },
+            "yutori": {
+              "points": [
+                "작성 예정"
+              ],
+              "reference": "ko/editor/skill"
+            }
           }
         }
       },
@@ -6201,6 +6242,340 @@
           "변수처럼 활용하는 방법도 있습니다."
         ],
         "reference": "ko/editor/item"
+      }
+    },
+    "skills": {
+      "type": "array",
+      "basicCategoryTitle": "스킬",
+      "format": "tabs",
+      "options": {
+        "disable_collapse": true,
+        "infoText": "Details"
+      },
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "format": "categories",
+        "basicCategoryTitle": "Skill",
+        "headerTemplate": "{{ i1 }}: {{ self.information.id }}",
+        "options": {
+          "disable_collapse": true
+        },
+        "required": [
+          "information",
+          "chance",
+          "property"
+        ],
+        "properties": {
+          "information": {
+            "type": "object",
+            "additionalProperties": false,
+            "format": "grid",
+            "required": [
+              "id",
+              "name",
+              "explanation",
+              "icon",
+              "color"
+            ],
+            "options": {
+              "disable_collapse": true,
+              "infoText": "Details"
+            },
+            "properties": {
+              "id": {
+                "type": "string",
+                "default": "",
+                "minLength": 1,
+                "maxLength": 100,
+                "pattern": "^[0-9a-zA-Z\\-]+$",
+                "title": "식별 ID",
+                "options": {
+                  "infoText": "요소를 식별하기 위한 고유 ID"
+                },
+                "yutori": {
+                  "points": [
+                    "각 요소를 고유하게 식별하기 위한 ID입니다.",
+                    "에디터에서 해당 요소를 판별하기 위한 문자열입니다.",
+                    "예를 들어, 액션이 완료되면 어떤 아이템을 획득할 것인지를 ID로 지정합니다."
+                  ],
+                  "reference": "ko/editor/information?id=식별 ID"
+                }
+              },
+              "name": {
+                "type": "string",
+                "maxLength": 20,
+                "title": "이름",
+                "options": {
+                  "infoText": "요소의 표시되는 이름"
+                },
+                "yutori": {
+                  "points": [
+                    "게임에서 표시되는 요소의 이름입니다.",
+                    "영어 이외의 언어도 입력할 수 있습니다.",
+                    "다른 요소와 중복되는 이름도 괜찮습니다.",
+                    "너무 길면 플레이 중 표시에서 넘치는 부분은 `…`로 생략됩니다."
+                  ],
+                  "reference": "ko/editor/information?id=이름"
+                }
+              },
+              "explanation": {
+                "type": "string",
+                "title": "설명문",
+                "options": {
+                  "infoText": "요소에 대한 자세한 설명"
+                },
+                "yutori": {
+                  "points": [
+                    "게임에 표시되는 요소에 대한 설명입니다.",
+                    "영어 이외의 언어도 입력할 수 있습니다. 긴 문장도 모두 표시됩니다.",
+                    "설명이 없음은 비워둡니다."
+                  ],
+                  "reference": "ko/editor/information?id=설명문"
+                }
+              },
+              "icon": {
+                "type": "object",
+                "additionalProperties": false,
+                "format": "grid",
+                "required": [
+                  "emoji",
+                  "iconify",
+                  "image"
+                ],
+                "options": {
+                  "disable_collapse": true,
+                  "infoText": "요소를 나타내는 아이콘 설정"
+                },
+                "properties": {
+                  "emoji": {
+                    "type": "string",
+                    "options": {
+                      "grid_columns": 4,
+                      "infoText": "이모티콘으로 아이콘 표시"
+                    },
+                    "title": "이모티콘",
+                    "yutori": {
+                      "points": [
+                        "이모티콘을 아이콘으로 표시합니다.",
+                        "문자에서 이모티콘으로 변환하여 빠르게 설정할 수 있습니다.",
+                        "이모티콘은 유니코드 이모티콘을 그대로 입력하세요.",
+                        "실행 환경에 도입된 이모티콘을 사용하기 때문에 사용자에 따라 다소 다르게 표시될 수 있습니다.",
+                        "Iconify에서는 각 환경에 구애받지 않는 이모티콘을 설정할 수 있습니다.",
+                        "이모티콘 이외의 문자를 표시할 수 있지만, 문자 수가 많으면 표시가 깨질 수 있습니다.",
+                        "예를 들어 `🗡️`, `⚔️` 등의 이모티콘을 입력합니다."
+                      ],
+                      "reference": "ko/editor/information?id=이모티콘"
+                    }
+                  },
+                  "iconify": {
+                    "type": "string",
+                    "default": "",
+                    "options": {
+                      "grid_columns": 4,
+                      "infoText": "Iconify 아이콘 세트 사용"
+                    },
+                    "title": "Iconify",
+                    "yutori": {
+                      "points": [
+                        "요소를 나타내는 아이콘입니다.",
+                        "Iconify는 다양한 종류의 아이콘을 제공하는 서비스입니다.",
+                        "이미지를 설정한 경우 해당 이미지가 우선적으로 표시됩니다."
+                      ],
+                      "reference": "ko/editor/information?id=Iconify"
+                    }
+                  },
+                  "image": {
+                    "type": "string",
+                    "default": "",
+                    "media": {
+                      "binaryEncoding": "base64",
+                      "type": "img/png"
+                    },
+                    "options": {
+                      "grid_columns": 4,
+                      "infoText": "임의의 이미지 파일 사용"
+                    },
+                    "title": "이미지",
+                    "yutori": {
+                      "points": [
+                        "요소를 나타내는 이미지입니다.",
+                        "파일 크기가 클 경우 자동으로 크기가 조정됩니다.",
+                        "Iconify 또는 이모티콘을 설정한 경우에는 불필요합니다."
+                      ],
+                      "reference": "ko/editor/information?id=이미지"
+                    }
+                  },
+                  "delete": {
+                    "format": "button",
+                    "options": {
+                      "button": {
+                        "text": "Delete Image",
+                        "icon": "trash",
+                        "action": "deletePrevious"
+                      }
+                    }
+                  }
+                },
+                "title": "아이콘",
+                "yutori": {
+                  "points": [
+                    "아이콘은 이미지, Iconify, 이모티콘 중 하나를 설정할 수 있다.",
+                    "Iconify는 다양한 종류의 아이콘을 제공하는 서비스입니다.",
+                    "이 중 여러 개를 설정한 경우, 이미지, Iconify, 이모티콘 순으로 우선순위를 지정해 표시합니다."
+                  ],
+                  "reference": "ko/editor/information?id=아이콘"
+                }
+              },
+              "color": {
+                "type": "string",
+                "default": "#000000",
+                "format": "color",
+                "pattern": "(^#[0-9a-fA-F]{6}$)|(^$)",
+                "title": "색상",
+                "options": {
+                  "infoText": "요소의 표시 색상 설정"
+                },
+                "yutori": {
+                  "points": [
+                    "요소의 색상으로 요소의 아이콘과 배경색에 적용된다.",
+                    "에디터의 색상 선택기에서 선택합니다."
+                  ],
+                  "reference": "ko/editor/information?id=색상"
+                }
+              },
+              "copy": {
+                "type": "string",
+                "format": "button",
+                "options": {
+                  "button": {
+                    "text": "Copy Information",
+                    "icon": "copy",
+                    "action": "copyInformation"
+                  }
+                }
+              }
+            },
+            "title": "인포메이션",
+            "description": "요소의 기본 정보(ID, 이름, 아이콘, 색상 등)를 설정합니다.",
+            "yutori": {
+              "points": [
+                "월드 내 각 요소(카테고리, 액션, 아이템, 이벤트 등)에 공통적으로 적용되는 기본 정보 항목입니다.",
+                "각 요소별로 개별적으로 설정합니다."
+              ],
+              "reference": "ko/editor/information"
+            }
+          },
+          "chance": {
+            "type": "number",
+            "default": 1,
+            "minimum": 0,
+            "maximum": 1,
+            "title": "발동 확률 [0-1]",
+            "options": {
+              "infoText": "작성 예정"
+            },
+            "yutori": {
+              "points": [
+                "작성 예정"
+              ],
+              "reference": "ko/editor/skill?id=발동 확률 [0-1]"
+            }
+          },
+          "property": {
+            "type": "object",
+            "additionalProperties": false,
+            "format": "grid",
+            "required": [
+              "attack",
+              "defence",
+              "accuracy",
+              "evasion"
+            ],
+            "options": {
+              "disable_collapse": true,
+              "infoText": "Details"
+            },
+            "properties": {
+              "attack": {
+                "type": "number",
+                "default": 0,
+                "title": "공격 값[레벨 차이]",
+                "options": {
+                  "infoText": "상대에게 주는 스태미나 대미지에 대한 레벨 차이 보정"
+                },
+                "yutori": {
+                  "points": [
+                    "값이 높을수록 데미지가 증가합니다."
+                  ],
+                  "reference": "ko/editor/combat?id=공격 값[레벨 차이]"
+                }
+              },
+              "defence": {
+                "type": "number",
+                "default": 0,
+                "title": "방어력 값[레벨차이]",
+                "options": {
+                  "infoText": "상대에게 받는 스태미너 피해에 대한 레벨 차이 보정"
+                },
+                "yutori": {
+                  "points": [
+                    "값이 높을수록 피해량이 줄어듭니다."
+                  ],
+                  "reference": "ko/editor/combat?id=방어력 값[레벨차이]"
+                }
+              },
+              "accuracy": {
+                "type": "number",
+                "default": 0,
+                "title": "명중 값[레벨 차이]",
+                "options": {
+                  "infoText": "공격 실수율에 대한 레벨 차이 보정"
+                },
+                "yutori": {
+                  "points": [
+                    "값이 높을수록 실수율이 낮아집니다."
+                  ],
+                  "reference": "ko/editor/combat?id=명중 값[레벨 차이]"
+                }
+              },
+              "evasion": {
+                "type": "number",
+                "default": 0,
+                "title": "회피 값 [레벨 차이]",
+                "options": {
+                  "infoText": "상대의 공격 회피율에 대한 레벨 차이 보정"
+                },
+                "yutori": {
+                  "points": [
+                    "값이 높을수록 상대의 공격을 쉽게 회피할 수 있습니다."
+                  ],
+                  "reference": "ko/editor/combat?id=회피 값 [레벨 차이]"
+                }
+              },
+              "restore": {
+                "type": "number",
+                "default": 0
+              }
+            },
+            "title": "전투 값",
+            "description": "작성 예정",
+            "yutori": {
+              "points": [
+                "작성 예정"
+              ],
+              "reference": "ko/editor/combat"
+            }
+          }
+        }
+      },
+      "title": "스킬",
+      "description": "작성 예정",
+      "yutori": {
+        "points": [
+          "작성 예정"
+        ],
+        "reference": "ko/editor/skill"
       }
     },
     "groups": {

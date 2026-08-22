@@ -108,8 +108,9 @@ Nombre maximal d'achats de capacité
 ___
 
 ## Queue
-Configuration du nombre de créneaux pour l'exécution en série (programmation) des actions
-- Permet de gérer le nombre de créneaux disponibles pour l'exécution en série (programmation) d'actions.
+Configuration du nombre de créneaux de la file d'attente pour l'exécution en série des actions
+- Permet de gérer le nombre de créneaux de la file d'attente pour l'exécution en série des actions.
+- La file d'attente contient l'action en cours, et c'est l'action en tête qui est exécutée. Avec `1` créneau, seule l'action en cours tient et rien ne peut attendre.
 - Tout comme la capacité, le nombre d'emplacements peut être acheté avec de la monnaie, mais il est également possible d'augmenter le nombre d'objets dans la file d'attente en les sélectionnant comme récompenses d'actions ou d'événements.
 - Lorsque vous faites référence à un objet de la file d'attente dans les conditions ou les récompenses, veuillez utiliser l'ID configuré ici.
 - [_item_](fr/editor/item)
@@ -120,8 +121,8 @@ ___
 
 ### Valeur par défaut [pcs].
 Nombre de cases d'exécution consécutives pour commencer la partie
-- Il s'agit du nombre de créneaux de réservation disponibles au début de la partie qui commence.
-- La valeur minimale est `1` (il n'y a pas de traitement de type `0` = illimité, comme pour la capacité).
+- Il s'agit du nombre de créneaux de la file d'attente au début de la partie.
+- La valeur minimale est `1` (l'action en cours occupe un créneau et il n'y a pas de traitement de type `0` = illimité, comme pour la capacité).
 ___
 
 ### Prix de base [pièces].
@@ -173,6 +174,26 @@ Demande le nombre de fois où la même action d'attribut a été exécutée pour
 - Si cette option est activée, le nombre de fois qu'une action ayant les mêmes attributs a été exécutée est automatiquement ajouté aux conditions d'exécution de chaque action.
 - Le nombre de fois compté est égal à la valeur du niveau de l'Action.
 - Si aucun attribut n'est configuré, c'est l'ID de la catégorie à laquelle il appartient qui est utilisé.
+___
+
+## Rapport de propriété [fois]
+Combien de fois une propriété change par 10 de différence de niveau
+- Configure combien de fois chaque propriété change chaque fois que la différence entre le niveau de la catégorie et le niveau de l'action augmente de `10`.
+- Le rapport est calculé par (rapport de propriété)^(différence de niveau÷10). Lorsque la différence de niveau est `0`, le rapport est de `1` et la valeur configurée dans l'action est utilisée telle quelle.
+- L'attaque et l'expérience augmentent selon ce rapport, tandis que la défense (dégâts subis) et la rapidité (temps nécessaire) diminuent dans la même proportion.
+- La précision, l'esquive, la probabilité de succès et la récupération sont des valeurs comprises entre `0` et `100`%, si bien que le rapport s'applique à la proportion entre ce qui se réalise et ce qui ne se réalise pas. `0`% et `100`% ne changent pas, et les valeurs intermédiaires ne dépassent jamais `100`%.
+- La défense, l'esquive et la rapidité ne reçoivent que la moitié de l'effet du rapport (une différence de niveau de `20` équivaut à une différence de niveau de `10` pour les autres propriétés). La défense et l'esquive s'appliquent doublement, au taux de coups subis et aux dégâts subis, et la rapidité s'applique à toutes les autres propriétés en tant que nombre d'exécutions ; leur effet est donc affaibli pour maintenir l'équilibre.
+- La référence est (taux d'augmentation de l'expérience) à la puissance `6.7`. Au-dessus, la montée en niveau s'accélère à mesure que le niveau augmente ; en dessous, les derniers niveaux demandent plus de temps.
+- En le fixant à `1`, la différence de niveau n'a plus d'influence. Plus la valeur est élevée, plus l'avantage et le désavantage liés à la différence de niveau sont brutaux.
+
+|Rapport de propriété|Différence de niveau -20|Différence de niveau -10|Différence de niveau 0|Différence de niveau +10|Différence de niveau +20|
+|-|-|-|-|-|-|
+|`1`|`x1.00`|`x1.00`|`x1.00`|`x1.00`|`x1.00`|
+|`1.5`|`x0.44`|`x0.67`|`x1.00`|`x1.50`|`x2.25`|
+|`2`|`x0.25`|`x0.50`|`x1.00`|`x2.00`|`x4.00`|
+|`3`|`x0.11`|`x0.33`|`x1.00`|`x3.00`|`x9.00`|
+- [_action_](fr/editor/action)
+- [_property_](fr/editor/property)
 ___
 
 ## [_valeur de combat_](fr/editor/combat)

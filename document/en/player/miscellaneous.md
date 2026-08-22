@@ -8,5 +8,5 @@ ___
 
 ## Language
 Switching languages
-- Toggles the language displayed in the game.
-- This is only valid if the author has prepared a translation.
+- ゲーム内で表示される言語を切り替える
+- 作者が翻訳を用意している場合にのみ有効

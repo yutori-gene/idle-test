@@ -97,3 +97,6 @@ Tipe eksekusi aksi
 ___
 
 ## [_nilai tempur_](id/editor/combat)
+___
+
+## [_Skill_](id/editor/skill)

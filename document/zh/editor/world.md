@@ -18,6 +18,9 @@ ___
 ## [_物品_](zh/editor/item)
 ___
 
+## [_技能_](zh/editor/skill)
+___
+
 ## [_群_](zh/editor/group)
 ___
 

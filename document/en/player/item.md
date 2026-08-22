@@ -1,20 +1,20 @@
 
 # Item
 Item Details
-- Items are elements related to owning things such as Equipment, Consumables, and Valuables.
-- Only one Item in a Category is Possible to be equipped. (If it is configured to be able to be equipped as a Category)
-- Items that have not met the release requirements are locked and cannot be viewed in detail.
+- アイテムは装備品・消耗品・貴重品など、所持するものに関わる要素
+- 1つのカテゴリの中で装備できるアイテムは1つだけ（カテゴリとして装備できる設定の場合）
+- 解放条件を満たしていないアイテムはロックされ、詳細を見ることはできない
 ___
 
 ## Items
 List of Items in Category
-- Press and hold to toggle Equipment of Item.
-- Only one Item in the list is Possible to equip. (If it is configured to be able to be equipped as a Category)
-- Items that have not met the release requirements are locked and cannot be viewed in detail.
+- 長押しでアイテムの装備を切り替える
+- 一覧の中で装備できるアイテムは1つだけ（カテゴリとして装備できる設定の場合）
+- 解放条件を満たしていないアイテムはロックされ、詳細を見ることはできない
 ___
 
 ## transactions
 Buying or Selling Items with Currency
-- Some Items cannot be bought or sold.
-- Locked Items cannot be bought or sold.
-- There may be a limit on the number of purchases you can make for a given capacity or reservation slot (queue), and once you reach that limit, you will not be able to make any further purchases. (Increases resulting from rewards are not subject to this limit.)
+- 売買できないアイテムもある
+- ロック中のアイテムは売買できない
+- 所持枠や予約枠（キュー）には購入できる回数の上限がある場合があり、上限に達するとそれ以上購入できない（報酬による増加は上限の対象外）

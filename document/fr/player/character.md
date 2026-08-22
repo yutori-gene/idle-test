@@ -1,7 +1,6 @@
 
 # personnage
 Identification et exploitation de la situation du protagoniste.
-- Ce contenu est identique à celui affiché en manipulant la catégorie.
 ___
 
 ## activité
@@ -16,7 +15,7 @@ ___
 
 ## Statut.
 Liste de toutes les propriétés
-- Seule la valeur de la correction de la catégorie par l'objet est affichée.
+- Seule la valeur de la propriété appliquée à la catégorie par les objets est affichée.
 - D'autres corrections s'appliquent encore selon l'action à exécuter.
 ___
 

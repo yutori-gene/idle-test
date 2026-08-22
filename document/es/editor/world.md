@@ -18,6 +18,9 @@ ___
 ## [_Artículo_](es/editor/item)
 ___
 
+## [_Habilidad_](es/editor/skill)
+___
+
 ## [_grupo (normalmente de personas)_](es/editor/group)
 ___
 

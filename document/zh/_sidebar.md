@@ -11,6 +11,7 @@
       * [类别](zh/editor/category)
       * [动作。](zh/editor/action)
       * [物品](zh/editor/item)
+      * [技能](zh/editor/skill)
       * [群](zh/editor/group)
       * [任务](zh/editor/task)
       * [预置](zh/editor/preset)

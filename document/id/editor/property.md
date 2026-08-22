@@ -10,14 +10,14 @@ Konfigurasi efek yang dimiliki Item.
 
 |properti|Rincian efektivitas.|
 |-|-|
-|kecepatan|Mengurangi waktu yang diperlukan untuk suatu aksi. Waktu yang diperlukan bervariasi secara terbalik dengan perbedaan level.|
-|kesempatan|Mengubah probabilitas sukses suatu aksi. Probabilitas meningkat secara proporsional dengan perbedaan level.|
+|kecepatan|Mengurangi waktu yang diperlukan untuk suatu aksi. Waktu yang diperlukan bervariasi secara terbalik dengan perbedaan level (efek rasio hanya setengah).|
+|kesempatan|Mengubah probabilitas sukses suatu aksi. Rasio dikenakan pada perbandingan antara sukses dan gagal, sehingga tidak pernah melebihi `100`%.|
 |pengalaman|Mengubah pengalaman akuisisi. Meningkat secara proporsional dengan perbedaan level (perhitungannya terbalik: semakin tinggi Aksi level, semakin banyak yang Anda peroleh).|
 |serangan|Mengubah kerusakan stamina yang diberikan kepada lawan. (Hanya Aksi Stamina).|
-|pertahanan|Mengurangi kerusakan stamina yang diterima dari lawan. (hanya aksi stamina).|
+|pertahanan|Mengurangi kerusakan stamina yang diterima dari lawan (efek rasio hanya setengah). (hanya aksi stamina)|
 |akurasi|Mengurangi tingkat serangan yang meleset. (hanya aksi stamina).|
-|penghindaran|Mengubah tingkat penghindaran serangan lawan. (hanya aksi stamina).|
-|mengembalikan|Mengubah jumlah stamina yang dipulihkan di akhir aksi. (hanya untuk aksi stamina).|
+|penghindaran|Mengubah tingkat penghindaran serangan lawan (efek rasio hanya setengah). (hanya aksi stamina)|
+|mengembalikan|Mengubah jumlah stamina yang dipulihkan di akhir aksi. Semakin mendekati pemulihan penuh, semakin landai kenaikannya. (hanya untuk aksi stamina)|
 ___
 
 ## Kategori.

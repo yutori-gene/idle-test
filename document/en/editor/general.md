@@ -108,8 +108,9 @@ Maximum number of times you can buy storage
 ___
 
 ## Queue
-Configuring the Number of Slots for Consecutive Actions (Scheduling)
-- Manages the count of slots available for executing actions in sequence (scheduling).
+Configuring the Number of Queue Slots for Consecutive Actions
+- Manages the number of queue slots for executing actions in sequence.
+- The queue includes the running action, and the action at its head is the one being executed. When there is only `1` slot, only the running action fits and nothing can wait.
 - In addition to buying slots with currency, just like storage capacity, you can also increase the number of slots by selecting specific Items from the queue as rewards for actions and events.
 - When referencing items in the queue based on conditions or rewards, use the ID configured here.
 - [_item_](en/editor/item)
@@ -120,8 +121,8 @@ ___
 
 ### Default value [pcs].
 Number of consecutive runs at the start of the game
-- This is the number of reservation slots available at the start of the game.
-- The minimum value is `1` (there is no `0` = unlimited option, as with capacity).
+- This is the number of queue slots available at the start of the game.
+- The minimum value is `1` (the running action uses one slot, and there is no `0` = unlimited option, as with capacity).
 ___
 
 ### Base price [coins].
@@ -173,6 +174,26 @@ Requests the number of times the same attribute action has been executed to exec
 - If enabled, the number of times an action with the same attribute has been executed is automatically added to the execution condition of each Action.
 - The Necessary count is equal to the level value of the Action.
 - If the attribute is nothing configured, the ID of the category to which it belongs is used.
+___
+
+## Property ratio [times]
+How many times a property changes per 10 of level difference
+- Configures how many times each property changes every time the difference between the level of the category and the level of the action widens by `10`.
+- The ratio is calculated as (property ratio)^(level difference ÷ 10). When the level difference is `0` the ratio is `1`, and the value configured in the action is used as it is.
+- Attack and experience increase by this ratio, while defence (damage taken) and quickness (required time) decrease by the same ratio.
+- Accuracy, evasion, probability of success and restoration are values that stay within `0` to `100`%, so the ratio applies to the proportion between the side that succeeds and the side that does not. `0`% and `100`% never change, and the values in between never exceed `100`%.
+- Defence, evasion and quickness take half the effect of the ratio (a level difference of `20` equals a level difference of `10` for the other properties). Defence and evasion apply twice, to the rate of being hit and to the damage taken, and quickness applies to every other property as the number of executions, so their effect is weakened to keep the balance.
+- A good guideline is (experience increase rate) to the power of `6.7`. Above that, levelling up accelerates as the level rises; below that, the later levels take more time.
+- Setting it to `1` removes the influence of the level difference. The larger the value, the steeper the advantage and disadvantage caused by the level difference.
+
+|Property ratio|Level difference -20|Level difference -10|Level difference 0|Level difference +10|Level difference +20|
+|-|-|-|-|-|-|
+|`1`|`x1.00`|`x1.00`|`x1.00`|`x1.00`|`x1.00`|
+|`1.5`|`x0.44`|`x0.67`|`x1.00`|`x1.50`|`x2.25`|
+|`2`|`x0.25`|`x0.50`|`x1.00`|`x2.00`|`x4.00`|
+|`3`|`x0.11`|`x0.33`|`x1.00`|`x3.00`|`x9.00`|
+- [_action_](en/editor/action)
+- [_property_](en/editor/property)
 ___
 
 ## [_combat value_](en/editor/combat)

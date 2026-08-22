@@ -1,6 +1,6 @@
 
 # event
 A system that runs at set intervals
-- It triggers at specific times, such as when you return to the game or when you become gameovered.
-- When activated, this screen will open, and the reward will be automatically granted along with a message.
-- A task is something you complete by meeting certain conditions, and you receive the reward yourself.
+- ゲームに戻ったときやゲームオーバーになったときなど、決まったタイミングで発生する
+- 発生するとこの画面が開き、メッセージとともに報酬が自動で付与される
+- タスクは条件を満たすと達成となり、報酬は自分で受け取る

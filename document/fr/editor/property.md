@@ -10,14 +10,14 @@ Configuration des effets d'un Objet.
 
 |propriétés|Détails de l'efficacité.|
 |-|-|
-|vitesse|Réduit le temps nécessaire à une action. Le temps nécessaire varie inversement à la différence de niveau.|
-|chance|Modifie la probabilité de succès d'une action. La probabilité augmente proportionnellement à la différence de niveau.|
+|vitesse|Réduit le temps nécessaire à une action. Le temps nécessaire varie inversement à la différence de niveau (le rapport n'agit qu'à moitié).|
+|chance|Modifie la probabilité de succès d'une action. Le rapport s'applique à la proportion entre la réussite et l'échec, si bien qu'elle ne dépasse jamais `100`%.|
 |expérience|Modifie l'expérience acquise. Augmente proportionnellement à la différence de niveau (le calcul est inversé : plus l'action de niveau est élevée, plus vous gagnez).|
 |attaque|Modifie les dégâts d'endurance infligés à l'adversaire. (Action Stamina uniquement).|
-|défense|Réduit les dégâts d'endurance subis par les adversaires. (Action stamina uniquement).|
+|défense|Réduit les dégâts d'endurance subis par les adversaires (le rapport n'agit qu'à moitié). (Action stamina uniquement)|
 |précision|Bas le taux de ratage des attaques. (Action de résistance uniquement).|
-|évasion|Modifie le taux d'évasion des attaques de l'adversaire. (Action stamina uniquement).|
-|restaurer|Modifie la quantité d'endurance restaurée à la fin d'une action. (uniquement pour les actions d'endurance).|
+|évasion|Modifie le taux d'évasion des attaques de l'adversaire (le rapport n'agit qu'à moitié). (Action stamina uniquement)|
+|restaurer|Modifie la quantité d'endurance restaurée à la fin d'une action. Plus on approche de la restauration complète, plus l'augmentation devient progressive. (uniquement pour les actions d'endurance)|
 ___
 
 ## Catégorie.

@@ -97,3 +97,6 @@ Action Execution Type
 ___
 
 ## [_combat value_](en/editor/combat)
+___
+
+## [_Skill_](en/editor/skill)

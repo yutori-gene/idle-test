@@ -83,3 +83,6 @@ ___
 The ID of the currency used to buy and sell this item
 - Specify the ID of the currency (coins) used for both buy and sell values.
 - If left blank, the main currency (the first one listed under "coins") will be used.
+___
+
+## [_Skill_](en/editor/skill)

@@ -11,6 +11,7 @@
       * [카테고리](ko/editor/category)
       * [액션](ko/editor/action)
       * [아이템](ko/editor/item)
+      * [스킬](ko/editor/skill)
       * [그룹](ko/editor/group)
       * [작업](ko/editor/task)
       * [프리셋](ko/editor/preset)

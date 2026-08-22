@@ -97,3 +97,6 @@ ___
 ___
 
 ## [_戦闘値_](ja/editor/combat)
+___
+
+## [_スキル_](ja/editor/skill)

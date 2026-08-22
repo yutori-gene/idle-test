@@ -11,6 +11,7 @@
       * [カテゴリ](ja/editor/category)
       * [アクション](ja/editor/action)
       * [アイテム](ja/editor/item)
+      * [スキル](ja/editor/skill)
       * [グループ](ja/editor/group)
       * [タスク](ja/editor/task)
       * [プリセット](ja/editor/preset)

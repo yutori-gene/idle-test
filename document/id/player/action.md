@@ -17,4 +17,4 @@ ___
 ## bertindak
 Kontrol Aksi
 - Memulai atau menghentikan aksi.
-- Kamu dapat menentukan berapa kali menjalankannya. Masukkan 0 untuk menjalankannya sampai sumber daya habis.
+- Kamu dapat menentukan berapa kali menjalankannya. Pilih posisi paling kanan untuk menjalankannya sampai sumber daya habis.

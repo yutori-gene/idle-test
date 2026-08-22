@@ -5,22 +5,22 @@ ___
 
 ## overview
 About this game
-- You can check about the world (world view, config) of this game.
-- You can also check the console (system) that is running this game.
+- このゲームのワールド（世界観・設定）について確認できる
+- このゲームを動かしているコンソール（システム）も確認できる
 ___
 
 ## statistics
 Summary of progress
-- You can check the progress of the game so far.
+- これまでのゲームの進行状況を確認できる
 ___
 
 ## config
 Changing game configurations
-- Configure settings related to game display and processing.
-- Game data can be input/output and reset.
+- ゲームの表示や処理に関する設定を行う
+- ゲームデータの読み書きやリセットが可能
 ___
 
 ## debug
 Operation for debugging confirmation
-- It is displayed only during debugging.
-- It will not be displayed when the game is published and distributed.
+- これはデバッグ中にのみ表示される
+- ゲームの公開・配布時には表示されない

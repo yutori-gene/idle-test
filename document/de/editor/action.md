@@ -97,3 +97,6 @@ Typ der Ausführung der Aktion
 ___
 
 ## [_Kampfwert_](de/editor/combat)
+___
+
+## [_Fähigkeit_](de/editor/skill)

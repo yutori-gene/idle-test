@@ -97,3 +97,6 @@ ___
 ___
 
 ## [_战斗值_](zh/editor/combat)
+___
+
+## [_技能_](zh/editor/skill)

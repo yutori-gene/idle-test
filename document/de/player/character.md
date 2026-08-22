@@ -1,7 +1,6 @@
 
 # Charakter
 Identifizierung und Beeinflussung der Situation des Protagonisten.
-- Dieser Inhalt ist derselbe wie der, der beim Bedienen der Kategorie angezeigt wird.
 ___
 
 ## Aktivität
@@ -16,7 +15,7 @@ ___
 
 ## Status
 Liste aller Eigenschaften
-- Es wird nur der Wert der Korrektur der Kategorie durch den Gegenstand angezeigt.
+- Nur der Eigenschaftswert, den Gegenstände auf die Kategorie anwenden, wird angezeigt.
 - Je nach auszuführender Aktion greifen noch weitere Korrekturen.
 ___
 
