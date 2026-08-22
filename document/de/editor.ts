@@ -8,6 +8,7 @@ world
 ├── category
 ├── action
 ├── item
+├── skill
 ├── group
 ├── task
 └── preset
@@ -478,6 +479,28 @@ export const group: Type.Information = {
 	},
 };
 
+export const skill: Type.Skill = {
+	title: "Fähigkeit",
+	summary: "Wird noch geschrieben",
+	points: ["Wird noch geschrieben"],
+	children: {
+		information: information,
+		chance: {
+			title: "Auslösewahrscheinlichkeit [0-1]",
+			summary: "Wird noch geschrieben",
+			points: ["Wird noch geschrieben"],
+		},
+		property: {
+			...combat,
+			summary: "Wird noch geschrieben",
+			points: ["Wird noch geschrieben"],
+		},
+	},
+	options: {
+		label: "skill",
+	},
+};
+
 export const item: Type.Item = {
 	title: "Gegenstand",
 	summary: "Güterelemente wie Ausrüstung und Verbrauchsgüter",
@@ -543,6 +566,8 @@ export const item: Type.Item = {
 		requirements: { ...requirement, options: { ...requirement.options, array: true }, summary: "Notwendige Anforderungen für die Verwendung des Gegenstandes." },
 		properties: { ...property, options: { ...property.options, array: true }, summary: "Eigenschaften und Auswirkungen des Gegenstandes." },
 		coinId: { title: "Währungs-ID für den Kauf und Verkauf", summary: "ID der Währung, die für den Kauf und Verkauf dieses Gegenstands verwendet wird", points: ["Geben Sie die ID der Währung (Coins) an, die sowohl für den Kauf- als auch für den Verkaufswert verwendet wird.", "Wenn das Feld leer ist, wird die Hauptwährung (die erste Währung in der Liste „coins“) verwendet."] },
+		// スキルの実体ではなくワールド直下のskillsのID参照なので、スキル自身の項目は持たせない
+		skill: { title: skill.title, summary: "Wird noch geschrieben", points: ["Wird noch geschrieben"], options: { label: "skill" } },
 	},
 	options: {
 		label: "item",
@@ -620,6 +645,8 @@ export const action: Type.Action = {
 			],
 		},
 		property: combat,
+		// スキルの実体ではなくワールド直下のskillsのID参照の一覧
+		skills: { title: skill.title, summary: "Wird noch geschrieben", points: ["Wird noch geschrieben"], options: { label: "skill", array: true } },
 	},
 	options: {
 		label: "action",
@@ -674,8 +701,8 @@ export const category: Type.Category = {
 export const type: Markdown = {
 	title: "Typ.",
 	summary: "Grundlegende Minuten-Klassifizierung der Welten",
-	points: ["Es gibt sechs Arten von Welten.", "Alle Elemente befinden sich direkt ab der Welt.", "Aktionen und Gegenstände werden mit der ID der Kategorie, zu der sie gehören, verknüpft."],
-	list: expandList("Typ.", [category, action, item, group, task, preset], "Beschreibung"),
+	points: ["Es gibt sieben Arten von Welten.", "Alle Elemente befinden sich direkt ab der Welt.", "Aktionen und Gegenstände werden mit der ID der Kategorie, zu der sie gehören, verknüpft."],
+	list: expandList("Typ.", [category, action, item, skill, group, task, preset], "Beschreibung"),
 	quote: typeTree,
 	options: {
 		label: "type",
@@ -1085,6 +1112,7 @@ export const world: Type.World = {
 		categories: { ...category, options: { ...category.options, array: true } },
 		actions: { ...action, options: { ...action.options, array: true } },
 		items: { ...item, options: { ...item.options, array: true } },
+		skills: { ...skill, options: { ...skill.options, array: true } },
 		groups: { ...group, options: { ...group.options, array: true } },
 		tasks: { ...task, options: { ...task.options, array: true } },
 		presets: { ...preset, options: { ...preset.options, array: true } },
@@ -1115,7 +1143,7 @@ export const tree: Tree = {
 	twig: [
 		{ title: world }, 
 		{ title: basic, twig: [overview, general, design, event, development] },
-		{ title: type, twig: [category, action, item, group, task, preset] },
+		{ title: type, twig: [category, action, item, skill, group, task, preset] },
 		{ title: component, twig: [information, requirement, acquisition, combat, property] }, 
 		{ title: miscellaneous, twig: [translation] }
 	],

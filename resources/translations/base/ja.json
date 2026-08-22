@@ -4,6 +4,7 @@
 	"item": {},
 	"group": {},
 	"event": {},
+	"skill": {},
 	"preset": {
 		"locked": {
 			"name": "ロック中",
@@ -184,6 +185,10 @@
 		"status": {
 			"name": "ステータス",
 			"explanation": "カテゴリに適用された補正など、現在の状態を表示する"
+		},
+		"ability": {
+			"name": "アビリティ",
+			"explanation": "カテゴリごとにグループ化された、いま発動しうるスキルの一覧"
 		},
 		"world": {
 			"name": "ワールド",
@@ -696,6 +701,18 @@
 		"requirement-equipment": {
 			"name": "必須装備",
 			"explanation": "このアイテムは装備する必要がある"
+		},
+		"skill": {
+			"name": "スキル",
+			"explanation": "戦闘でターンごとに抽選され、発動するとそのターンだけ戦闘値を補正する"
+		},
+		"skills": {
+			"name": "スキル一覧",
+			"explanation": "この要素が持つスキルの一覧"
+		},
+		"no-ability": {
+			"name": "アビリティなし",
+			"explanation": "いま発動しうるスキルはない"
 		},
 		"property": {
 			"name": "プロパティ",

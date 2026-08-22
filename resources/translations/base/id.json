@@ -4,6 +4,7 @@
 	"item": {},
 	"group": {},
 	"event": {},
+	"skill": {},
 	"preset": {
 		"locked": {
 			"name": "Terkunci",
@@ -184,6 +185,10 @@
 		"status": {
 			"name": "Status",
 			"explanation": ""
+		},
+		"ability": {
+			"name": "Kemampuan",
+			"explanation": "Daftar skill yang bisa aktif sekarang, dikelompokkan per kategori."
 		},
 		"world": {
 			"name": "Dunia",
@@ -696,6 +701,18 @@
 		"requirement-equipment": {
 			"name": "Persyaratan Peralatan",
 			"explanation": "Item ini harus dilengkapi."
+		},
+		"skill": {
+			"name": "Skill",
+			"explanation": "Diundi setiap giliran dalam pertarungan dan, saat aktif, mengoreksi nilai tempur hanya pada giliran itu."
+		},
+		"skills": {
+			"name": "Daftar skill",
+			"explanation": "Daftar skill yang dimiliki elemen ini."
+		},
+		"no-ability": {
+			"name": "Tidak ada kemampuan",
+			"explanation": "Tidak ada skill yang bisa aktif sekarang."
 		},
 		"property": {
 			"name": "Properti",

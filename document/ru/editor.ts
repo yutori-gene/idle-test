@@ -8,6 +8,7 @@ world
 ├── category
 ├── action
 ├── item
+├── skill
 ├── group
 ├── task
 └── preset
@@ -478,6 +479,28 @@ export const group: Type.Information = {
 	},
 };
 
+export const skill: Type.Skill = {
+	title: "Навык",
+	summary: "Будет написано",
+	points: ["Будет написано"],
+	children: {
+		information: information,
+		chance: {
+			title: "Вероятность срабатывания [0-1]",
+			summary: "Будет написано",
+			points: ["Будет написано"],
+		},
+		property: {
+			...combat,
+			summary: "Будет написано",
+			points: ["Будет написано"],
+		},
+	},
+	options: {
+		label: "skill",
+	},
+};
+
 export const item: Type.Item = {
 	title: "предмет",
 	summary: "Элементы товаров, такие как снаряжение и расходные материалы",
@@ -543,6 +566,8 @@ export const item: Type.Item = {
 		requirements: { ...requirement, options: { ...requirement.options, array: true }, summary: "Необходимые требования для использования Предмета." },
 		properties: { ...property, options: { ...property.options, array: true }, summary: "Эффекты свойств предмета." },
 		coinId: { title: "ID торгуемой валюты", summary: "ID валюты, используемой для покупки и продажи этого предмета", points: ["Укажите ID валюты (coins), которая используется как для покупки, так и для продажи.", "Если поле оставлено пустым, используется основная валюта (первая в списке «coins»)."] },
+		// スキルの実体ではなくワールド直下のskillsのID参照なので、スキル自身の項目は持たせない
+		skill: { title: skill.title, summary: "Будет написано", points: ["Будет написано"], options: { label: "skill" } },
 	},
 	options: {
 		label: "item",
@@ -620,6 +645,8 @@ export const action: Type.Action = {
 			],
 		},
 		property: combat,
+		// スキルの実体ではなくワールド直下のskillsのID参照の一覧
+		skills: { title: skill.title, summary: "Будет написано", points: ["Будет написано"], options: { label: "skill", array: true } },
 	},
 	options: {
 		label: "action",
@@ -674,8 +701,8 @@ export const category: Type.Category = {
 export const type: Markdown = {
 	title: "Тип.",
 	summary: "Основная классификация миров",
-	points: ["Миры состоят из шести типов.", "Все элементы располагаются вниз от мира.", "Действия и Предметы связаны с ID категории, к которой они относятся."],
-	list: expandList("Тип.", [category, action, item, group, task, preset], "Описание"),
+	points: ["Миры состоят из семи типов.", "Все элементы располагаются вниз от мира.", "Действия и Предметы связаны с ID категории, к которой они относятся."],
+	list: expandList("Тип.", [category, action, item, skill, group, task, preset], "Описание"),
 	quote: typeTree,
 	options: {
 		label: "type",
@@ -1085,6 +1112,7 @@ export const world: Type.World = {
 		categories: { ...category, options: { ...category.options, array: true } },
 		actions: { ...action, options: { ...action.options, array: true } },
 		items: { ...item, options: { ...item.options, array: true } },
+		skills: { ...skill, options: { ...skill.options, array: true } },
 		groups: { ...group, options: { ...group.options, array: true } },
 		tasks: { ...task, options: { ...task.options, array: true } },
 		presets: { ...preset, options: { ...preset.options, array: true } },
@@ -1115,7 +1143,7 @@ export const tree: Tree = {
 	twig: [
 		{ title: world }, 
 		{ title: basic, twig: [overview, general, design, event, development] },
-		{ title: type, twig: [category, action, item, group, task, preset] },
+		{ title: type, twig: [category, action, item, skill, group, task, preset] },
 		{ title: component, twig: [information, requirement, acquisition, combat, property] }, 
 		{ title: miscellaneous, twig: [translation] }
 	],

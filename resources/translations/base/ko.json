@@ -4,6 +4,7 @@
 	"item": {},
 	"group": {},
 	"event": {},
+	"skill": {},
 	"preset": {
 		"locked": {
 			"name": "잠금",
@@ -184,6 +185,10 @@
 		"status": {
 			"name": "상태",
 			"explanation": ""
+		},
+		"ability": {
+			"name": "능력",
+			"explanation": "카테고리별로 묶은, 지금 발동할 수 있는 스킬 목록."
 		},
 		"world": {
 			"name": "월드",
@@ -696,6 +701,18 @@
 		"requirement-equipment": {
 			"name": "필수 장비",
 			"explanation": "이 아이템은 반드시 장착해야 합니다."
+		},
+		"skill": {
+			"name": "스킬",
+			"explanation": "전투에서 턴마다 추첨되며, 발동하면 그 턴에만 전투 값을 보정한다."
+		},
+		"skills": {
+			"name": "스킬 목록",
+			"explanation": "이 요소가 가진 스킬 목록."
+		},
+		"no-ability": {
+			"name": "능력 없음",
+			"explanation": "지금 발동할 수 있는 스킬이 없다."
 		},
 		"property": {
 			"name": "속성",

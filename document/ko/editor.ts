@@ -8,6 +8,7 @@ world
 ├── category
 ├── action
 ├── item
+├── skill
 ├── group
 ├── task
 └── preset
@@ -478,6 +479,28 @@ export const group: Type.Information = {
 	},
 };
 
+export const skill: Type.Skill = {
+	title: "스킬",
+	summary: "작성 예정",
+	points: ["작성 예정"],
+	children: {
+		information: information,
+		chance: {
+			title: "발동 확률 [0-1]",
+			summary: "작성 예정",
+			points: ["작성 예정"],
+		},
+		property: {
+			...combat,
+			summary: "작성 예정",
+			points: ["작성 예정"],
+		},
+	},
+	options: {
+		label: "skill",
+	},
+};
+
 export const item: Type.Item = {
 	title: "아이템",
 	summary: "장비 및 소비재 등의 물품 요소",
@@ -543,6 +566,8 @@ export const item: Type.Item = {
 		requirements: { ...requirement, options: { ...requirement.options, array: true }, summary: "아이템 사용에 필요한 요구사항" },
 		properties: { ...property, options: { ...property.options, array: true }, summary: "아이템이 가진 속성 효과" },
 		coinId: { title: "取引通貨 ID", summary: "이 아이템의 매매에 사용되는 화폐의 ID", points: ["매수·매도 시 공통으로 사용하는 통화(coins)의 ID를 지정합니다.", "공란인 경우 기본 통화(coins의 맨 앞)가 사용됩니다."] },
+		// スキルの実体ではなくワールド直下のskillsのID参照なので、スキル自身の項目は持たせない
+		skill: { title: skill.title, summary: "작성 예정", points: ["작성 예정"], options: { label: "skill" } },
 	},
 	options: {
 		label: "item",
@@ -620,6 +645,8 @@ export const action: Type.Action = {
 			],
 		},
 		property: combat,
+		// スキルの実体ではなくワールド直下のskillsのID参照の一覧
+		skills: { title: skill.title, summary: "작성 예정", points: ["작성 예정"], options: { label: "skill", array: true } },
 	},
 	options: {
 		label: "action",
@@ -674,8 +701,8 @@ export const category: Type.Category = {
 export const type: Markdown = {
 	title: "타입",
 	summary: "월드의 기본 분류",
-	points: ["월드는 총 6가지 타입으로 구성된다.", "모든 요소는 월드 바로 아래에 배치됩니다.", "액션과 아이템은 해당 카테고리의 ID로 연관되어 있습니다."],
-	list: expandList("타입", [category, action, item, group, task, preset], "설명"),
+	points: ["월드는 총 7가지 타입으로 구성된다.", "모든 요소는 월드 바로 아래에 배치됩니다.", "액션과 아이템은 해당 카테고리의 ID로 연관되어 있습니다."],
+	list: expandList("타입", [category, action, item, skill, group, task, preset], "설명"),
 	quote: typeTree,
 	options: {
 		label: "type",
@@ -1085,6 +1112,7 @@ export const world: Type.World = {
 		categories: { ...category, options: { ...category.options, array: true } },
 		actions: { ...action, options: { ...action.options, array: true } },
 		items: { ...item, options: { ...item.options, array: true } },
+		skills: { ...skill, options: { ...skill.options, array: true } },
 		groups: { ...group, options: { ...group.options, array: true } },
 		tasks: { ...task, options: { ...task.options, array: true } },
 		presets: { ...preset, options: { ...preset.options, array: true } },
@@ -1115,7 +1143,7 @@ export const tree: Tree = {
 	twig: [
 		{ title: world }, 
 		{ title: basic, twig: [overview, general, design, event, development] },
-		{ title: type, twig: [category, action, item, group, task, preset] },
+		{ title: type, twig: [category, action, item, skill, group, task, preset] },
 		{ title: component, twig: [information, requirement, acquisition, combat, property] }, 
 		{ title: miscellaneous, twig: [translation] }
 	],

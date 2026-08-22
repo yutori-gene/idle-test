@@ -4,6 +4,7 @@
 	"item": {},
 	"group": {},
 	"event": {},
+	"skill": {},
 	"preset": {
 		"locked": {
 			"name": "Gesperrt",
@@ -184,6 +185,10 @@
 		"status": {
 			"name": "Status",
 			"explanation": ""
+		},
+		"ability": {
+			"name": "Talent",
+			"explanation": "Liste der Fähigkeiten, die jetzt auslösen können, nach Kategorie gruppiert."
 		},
 		"world": {
 			"name": "Welt",
@@ -696,6 +701,18 @@
 		"requirement-equipment": {
 			"name": "Anforderungen an die Ausrüstung",
 			"explanation": "Dieser Gegenstand muss ausgerüstet sein."
+		},
+		"skill": {
+			"name": "Fähigkeit",
+			"explanation": "Sie wird im Kampf jede Runde ausgelost und korrigiert beim Auslösen die Kampfwerte nur für diese Runde."
+		},
+		"skills": {
+			"name": "Fähigkeitenliste",
+			"explanation": "Liste der Fähigkeiten, die dieses Element besitzt."
+		},
+		"no-ability": {
+			"name": "Kein Talent",
+			"explanation": "Es gibt derzeit keine Fähigkeiten, die auslösen können."
 		},
 		"property": {
 			"name": "Eigenschaft",

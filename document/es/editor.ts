@@ -8,6 +8,7 @@ world
 ├── category
 ├── action
 ├── item
+├── skill
 ├── group
 ├── task
 └── preset
@@ -478,6 +479,28 @@ export const group: Type.Information = {
 	},
 };
 
+export const skill: Type.Skill = {
+	title: "Habilidad",
+	summary: "Pendiente de redacción",
+	points: ["Pendiente de redacción"],
+	children: {
+		information: information,
+		chance: {
+			title: "Probabilidad de activación [0-1]",
+			summary: "Pendiente de redacción",
+			points: ["Pendiente de redacción"],
+		},
+		property: {
+			...combat,
+			summary: "Pendiente de redacción",
+			points: ["Pendiente de redacción"],
+		},
+	},
+	options: {
+		label: "skill",
+	},
+};
+
 export const item: Type.Item = {
 	title: "Artículo",
 	summary: "Elementos como Equipamiento y consumibles",
@@ -543,6 +566,8 @@ export const item: Type.Item = {
 		requirements: { ...requirement, options: { ...requirement.options, array: true }, summary: "Requisitos Necesarios para el uso del Artículo." },
 		properties: { ...property, options: { ...property.options, array: true }, summary: "Efectos de las propiedades del Artículo." },
 		coinId: { title: "ID de la pareja de divisas", summary: "ID de la moneda que se utiliza para comprar y vender este artículo", points: ["Especifica el ID de la moneda (coins) que se utiliza tanto para el valor de compra como para el de venta.", "Si se deja en blanco, se utilizará la moneda principal (la primera de la lista «coins»)."] },
+		// スキルの実体ではなくワールド直下のskillsのID参照なので、スキル自身の項目は持たせない
+		skill: { title: skill.title, summary: "Pendiente de redacción", points: ["Pendiente de redacción"], options: { label: "skill" } },
 	},
 	options: {
 		label: "item",
@@ -620,6 +645,8 @@ export const action: Type.Action = {
 			],
 		},
 		property: combat,
+		// スキルの実体ではなくワールド直下のskillsのID参照の一覧
+		skills: { title: skill.title, summary: "Pendiente de redacción", points: ["Pendiente de redacción"], options: { label: "skill", array: true } },
 	},
 	options: {
 		label: "action",
@@ -674,8 +701,8 @@ export const category: Type.Category = {
 export const type: Markdown = {
 	title: "Tipo.",
 	summary: "Clasificación básica de los mundos",
-	points: ["Los mundos son de seis Tipos.", "Todos los elementos se colocan justo debajo del mundo.", "Acciones y Artículos se asocian con el ID de la Categoría a la que pertenecen."],
-	list: expandList("Tipo.", [category, action, item, group, task, preset], "Descripción"),
+	points: ["Los mundos son de siete Tipos.", "Todos los elementos se colocan justo debajo del mundo.", "Acciones y Artículos se asocian con el ID de la Categoría a la que pertenecen."],
+	list: expandList("Tipo.", [category, action, item, skill, group, task, preset], "Descripción"),
 	quote: typeTree,
 	options: {
 		label: "type",
@@ -1085,6 +1112,7 @@ export const world: Type.World = {
 		categories: { ...category, options: { ...category.options, array: true } },
 		actions: { ...action, options: { ...action.options, array: true } },
 		items: { ...item, options: { ...item.options, array: true } },
+		skills: { ...skill, options: { ...skill.options, array: true } },
 		groups: { ...group, options: { ...group.options, array: true } },
 		tasks: { ...task, options: { ...task.options, array: true } },
 		presets: { ...preset, options: { ...preset.options, array: true } },
@@ -1115,7 +1143,7 @@ export const tree: Tree = {
 	twig: [
 		{ title: world }, 
 		{ title: basic, twig: [overview, general, design, event, development] },
-		{ title: type, twig: [category, action, item, group, task, preset] },
+		{ title: type, twig: [category, action, item, skill, group, task, preset] },
 		{ title: component, twig: [information, requirement, acquisition, combat, property] }, 
 		{ title: miscellaneous, twig: [translation] }
 	],

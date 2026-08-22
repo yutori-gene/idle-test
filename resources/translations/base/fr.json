@@ -4,6 +4,7 @@
 	"item": {},
 	"group": {},
 	"event": {},
+	"skill": {},
 	"preset": {
 		"locked": {
 			"name": "Verrouillé",
@@ -184,6 +185,10 @@
 		"status": {
 			"name": "Statut",
 			"explanation": ""
+		},
+		"ability": {
+			"name": "Aptitude",
+			"explanation": "Liste des compétences pouvant se déclencher maintenant, regroupées par catégorie."
 		},
 		"world": {
 			"name": "Monde",
@@ -696,6 +701,18 @@
 		"requirement-equipment": {
 			"name": "Matériel requis pour cette exigence",
 			"explanation": "Cet objet doit être équipé."
+		},
+		"skill": {
+			"name": "Compétence",
+			"explanation": "Elle est tirée au sort à chaque tour de combat et, lorsqu'elle se déclenche, corrige les valeurs de combat pour ce tour uniquement."
+		},
+		"skills": {
+			"name": "Liste des compétences",
+			"explanation": "Liste des compétences que possède cet élément."
+		},
+		"no-ability": {
+			"name": "Aucune aptitude",
+			"explanation": "Aucune compétence ne peut se déclencher pour le moment."
 		},
 		"property": {
 			"name": "Propriété",

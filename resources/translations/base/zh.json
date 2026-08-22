@@ -4,6 +4,7 @@
 	"item": {},
 	"group": {},
 	"event": {},
+	"skill": {},
 	"preset": {
 		"locked": {
 			"name": "已锁定",
@@ -184,6 +185,10 @@
 		"status": {
 			"name": "状态",
 			"explanation": ""
+		},
+		"ability": {
+			"name": "能力",
+			"explanation": "按类别分组的、当前可以发动的技能列表。"
 		},
 		"world": {
 			"name": "世界",
@@ -696,6 +701,18 @@
 		"requirement-equipment": {
 			"name": "装备要求",
 			"explanation": "必须装备此物品。"
+		},
+		"skill": {
+			"name": "技能",
+			"explanation": "战斗中每回合抽取一次，发动后仅在该回合修正战斗值。"
+		},
+		"skills": {
+			"name": "技能列表",
+			"explanation": "该要素拥有的技能列表。"
+		},
+		"no-ability": {
+			"name": "无能力",
+			"explanation": "当前没有可以发动的技能。"
 		},
 		"property": {
 			"name": "属性",

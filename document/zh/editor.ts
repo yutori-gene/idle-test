@@ -8,6 +8,7 @@ world
 ├── category
 ├── action
 ├── item
+├── skill
 ├── group
 ├── task
 └── preset
@@ -478,6 +479,28 @@ export const group: Type.Information = {
 	},
 };
 
+export const skill: Type.Skill = {
+	title: "技能",
+	summary: "待编写",
+	points: ["待编写"],
+	children: {
+		information: information,
+		chance: {
+			title: "发动概率 [0-1]",
+			summary: "待编写",
+			points: ["待编写"],
+		},
+		property: {
+			...combat,
+			summary: "待编写",
+			points: ["待编写"],
+		},
+	},
+	options: {
+		label: "skill",
+	},
+};
+
 export const item: Type.Item = {
 	title: "物品",
 	summary: "装备和消耗品等货物元素",
@@ -543,6 +566,8 @@ export const item: Type.Item = {
 		requirements: { ...requirement, options: { ...requirement.options, array: true }, summary: "物品使用的必要条件。" },
 		properties: { ...property, options: { ...property.options, array: true }, summary: "物品的属性效果。" },
 		coinId: { title: "交易货币ID", summary: "用于买卖该物品的货币ID", points: ["指定买入值和卖出值中共同使用的货币（coins）的ID。", "如果留空，则使用主币种（coins列表的首个币种）。"] },
+		// スキルの実体ではなくワールド直下のskillsのID参照なので、スキル自身の項目は持たせない
+		skill: { title: skill.title, summary: "待编写", points: ["待编写"], options: { label: "skill" } },
 	},
 	options: {
 		label: "item",
@@ -620,6 +645,8 @@ export const action: Type.Action = {
 			],
 		},
 		property: combat,
+		// スキルの実体ではなくワールド直下のskillsのID参照の一覧
+		skills: { title: skill.title, summary: "待编写", points: ["待编写"], options: { label: "skill", array: true } },
 	},
 	options: {
 		label: "action",
@@ -674,8 +701,8 @@ export const category: Type.Category = {
 export const type: Markdown = {
 	title: "类型。",
 	summary: "世界的基本分类",
-	points: ["世界由六种类型组成。", "所有元素都放在世界的正下方。", "动作和物品与所属类别的 ID 关联。"],
-	list: expandList("类型。", [category, action, item, group, task, preset], "说明"),
+	points: ["世界由七种类型组成。", "所有元素都放在世界的正下方。", "动作和物品与所属类别的 ID 关联。"],
+	list: expandList("类型。", [category, action, item, skill, group, task, preset], "说明"),
 	quote: typeTree,
 	options: {
 		label: "type",
@@ -1085,6 +1112,7 @@ export const world: Type.World = {
 		categories: { ...category, options: { ...category.options, array: true } },
 		actions: { ...action, options: { ...action.options, array: true } },
 		items: { ...item, options: { ...item.options, array: true } },
+		skills: { ...skill, options: { ...skill.options, array: true } },
 		groups: { ...group, options: { ...group.options, array: true } },
 		tasks: { ...task, options: { ...task.options, array: true } },
 		presets: { ...preset, options: { ...preset.options, array: true } },
@@ -1115,7 +1143,7 @@ export const tree: Tree = {
 	twig: [
 		{ title: world }, 
 		{ title: basic, twig: [overview, general, design, event, development] },
-		{ title: type, twig: [category, action, item, group, task, preset] },
+		{ title: type, twig: [category, action, item, skill, group, task, preset] },
 		{ title: component, twig: [information, requirement, acquisition, combat, property] }, 
 		{ title: miscellaneous, twig: [translation] }
 	],

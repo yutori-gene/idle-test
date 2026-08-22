@@ -4,6 +4,7 @@
 	"item": {},
 	"group": {},
 	"event": {},
+	"skill": {},
 	"preset": {
 		"locked": {
 			"name": "Bloqueado",
@@ -184,6 +185,10 @@
 		"status": {
 			"name": "Status",
 			"explanation": ""
+		},
+		"ability": {
+			"name": "Aptidão",
+			"explanation": "Lista das habilidades que podem ser ativadas agora, agrupadas por categoria."
 		},
 		"world": {
 			"name": "Mundo",
@@ -696,6 +701,18 @@
 		"requirement-equipment": {
 			"name": "Equipamentos necessários",
 			"explanation": "Este item deve ser equipado."
+		},
+		"skill": {
+			"name": "Habilidade",
+			"explanation": "É sorteada a cada turno de combate e, ao ser ativada, corrige os valores de combate apenas naquele turno."
+		},
+		"skills": {
+			"name": "Lista de habilidades",
+			"explanation": "Lista das habilidades que este elemento possui."
+		},
+		"no-ability": {
+			"name": "Sem aptidão",
+			"explanation": "Não há habilidades que possam ser ativadas agora."
 		},
 		"property": {
 			"name": "Propriedade",
