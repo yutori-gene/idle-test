@@ -741,10 +741,6 @@
 			"name": "経験値",
 			"explanation": "アクションから得られる経験値に影響する"
 		},
-		"correction": {
-			"name": "補正",
-			"explanation": "装備やアイテムによる補正"
-		},
 		"value": {
 			"name": "値",
 			"explanation": ""
@@ -1153,9 +1149,9 @@
 			"name": "Hint Category Meaning",
 			"explanation": "アクションやアイテムをまとめた要素"
 		},
-		"hint-status-correction": {
-			"name": "Hint Status Correction",
-			"explanation": "アイテムによるカテゴリへの補正の値だけが表示される"
+		"hint-status-property": {
+			"name": "Hint Status Property",
+			"explanation": "Only the property value that items apply to the category is shown."
 		},
 		"hint-status-action": {
 			"name": "Hint Status Action",

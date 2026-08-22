@@ -741,10 +741,6 @@
 			"name": "Experiencia",
 			"explanation": "Influye en los puntos de experiencia que se obtienen al realizar acciones."
 		},
-		"correction": {
-			"name": "Corrección",
-			"explanation": "Correcciones debidas a los efectos del equipamiento y los artículos."
-		},
 		"value": {
 			"name": "Valor",
 			"explanation": ""
@@ -1153,9 +1149,9 @@
 			"name": "Hint Category Meaning",
 			"explanation": "Este elemento es una recopilación de acciones y artículos."
 		},
-		"hint-status-correction": {
-			"name": "Hint Status Correction",
-			"explanation": "Solo se muestra el valor de la corrección de la categoría por parte del artículo."
+		"hint-status-property": {
+			"name": "Hint Status Property",
+			"explanation": "Solo se muestra el valor de la propiedad que los artículos aplican a la categoría."
 		},
 		"hint-status-action": {
 			"name": "Hint Status Action",

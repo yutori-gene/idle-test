@@ -741,10 +741,6 @@
 			"name": "Erfahrung",
 			"explanation": "Beeinflusst die durch Aktionen gewonnenen Erfahrungspunkte."
 		},
-		"correction": {
-			"name": "Korrektur",
-			"explanation": "Korrekturen aufgrund von Einflüssen durch Ausrüstung und Gegenstände."
-		},
 		"value": {
 			"name": "Wert",
 			"explanation": ""
@@ -1153,9 +1149,9 @@
 			"name": "Hint Category Meaning",
 			"explanation": "Dieses Element fasst Aktionen und Gegenstände zusammen."
 		},
-		"hint-status-correction": {
-			"name": "Hint Status Correction",
-			"explanation": "Es wird nur der Wert der Korrektur der Kategorie durch den Gegenstand angezeigt."
+		"hint-status-property": {
+			"name": "Hint Status Property",
+			"explanation": "Nur der Eigenschaftswert, den Gegenstände auf die Kategorie anwenden, wird angezeigt."
 		},
 		"hint-status-action": {
 			"name": "Hint Status Action",

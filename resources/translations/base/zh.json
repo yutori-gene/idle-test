@@ -741,10 +741,6 @@
 			"name": "经验",
 			"explanation": "影响通过动作获得的经验值。"
 		},
-		"correction": {
-			"name": "修正",
-			"explanation": "因装备和物品的影响而进行的调整。"
-		},
 		"value": {
 			"name": "值",
 			"explanation": ""
@@ -1153,9 +1149,9 @@
 			"name": "Hint Category Meaning",
 			"explanation": "这是汇总了动作和物品的要素。"
 		},
-		"hint-status-correction": {
-			"name": "Hint Status Correction",
-			"explanation": "仅显示物品对类别的修正数值。"
+		"hint-status-property": {
+			"name": "Hint Status Property",
+			"explanation": "仅显示物品对该类别产生的属性数值。"
 		},
 		"hint-status-action": {
 			"name": "Hint Status Action",

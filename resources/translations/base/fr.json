@@ -741,10 +741,6 @@
 			"name": "Épreuve",
 			"explanation": "Cela a une incidence sur les points d'expérience gagnés grâce aux actions."
 		},
-		"correction": {
-			"name": "Correction",
-			"explanation": "Corrections liées aux effets des équipements et des objets."
-		},
 		"value": {
 			"name": "Valeur",
 			"explanation": ""
@@ -1153,9 +1149,9 @@
 			"name": "Hint Category Meaning",
 			"explanation": "Cet élément regroupe des actions et des objets."
 		},
-		"hint-status-correction": {
-			"name": "Hint Status Correction",
-			"explanation": "Seule la valeur de la correction de la catégorie par l'objet est affichée."
+		"hint-status-property": {
+			"name": "Hint Status Property",
+			"explanation": "Seule la valeur de la propriété appliquée à la catégorie par les objets est affichée."
 		},
 		"hint-status-action": {
 			"name": "Hint Status Action",

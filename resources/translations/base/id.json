@@ -741,10 +741,6 @@
 			"name": "Pengalaman",
 			"explanation": "Berpengaruh terhadap poin pengalaman yang diperoleh dari aksi tersebut."
 		},
-		"correction": {
-			"name": "Koreksi",
-			"explanation": "Koreksi akibat pengaruh peralatan dan item."
-		},
 		"value": {
 			"name": "Nilai",
 			"explanation": ""
@@ -1153,9 +1149,9 @@
 			"name": "Hint Category Meaning",
 			"explanation": "Elemen ini merupakan kumpulan dari aksi dan item."
 		},
-		"hint-status-correction": {
-			"name": "Hint Status Correction",
-			"explanation": "Hanya nilai koreksi kategori oleh item yang ditampilkan."
+		"hint-status-property": {
+			"name": "Hint Status Property",
+			"explanation": "Hanya nilai Properti yang diterapkan item ke kategori yang ditampilkan."
 		},
 		"hint-status-action": {
 			"name": "Hint Status Action",

@@ -76,10 +76,10 @@ export const world: Markdown = {
 // property
 
 export const correction: Markdown = {
-	title: "Correction of properties",
-	summary: "Details of property corrections",
+	title: "Property Details",
+	summary: "Change in value from equipment or items",
 	options: {
-		preset: "correction",
+		preset: "property",
 	},
 };
 

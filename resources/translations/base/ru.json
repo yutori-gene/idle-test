@@ -741,10 +741,6 @@
 			"name": "Опыт",
 			"explanation": "Влияет на количество очков опыта, получаемых за выполнение действий."
 		},
-		"correction": {
-			"name": "Коррекция",
-			"explanation": "Корректировки, связанные с влиянием снаряжения и предметов."
-		},
 		"value": {
 			"name": "Значение",
 			"explanation": ""
@@ -1153,9 +1149,9 @@
 			"name": "Hint Category Meaning",
 			"explanation": "Этот элемент объединяет действия и предметы."
 		},
-		"hint-status-correction": {
-			"name": "Hint Status Correction",
-			"explanation": "Показывается только величина поправки категории от предмета."
+		"hint-status-property": {
+			"name": "Hint Status Property",
+			"explanation": "Отображается только значение свойства, которое предметы применяют к категории."
 		},
 		"hint-status-action": {
 			"name": "Hint Status Action",

@@ -76,10 +76,10 @@ export const world: Markdown = {
 // property
 
 export const correction: Markdown = {
-	title: "속성 보정",
-	summary: "속성 보정 세부 정보",
+	title: "속성 세부 정보",
+	summary: "장비나 아이템에 의한 수치 변화",
 	options: {
-		preset: "correction",
+		preset: "property",
 	},
 };
 

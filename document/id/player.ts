@@ -76,10 +76,10 @@ export const world: Markdown = {
 // property
 
 export const correction: Markdown = {
-	title: "Koreksi properti.",
-	summary: "Rincian koreksi properti.",
+	title: "Detail Properti",
+	summary: "Perubahan nilai akibat peralatan atau item",
 	options: {
-		preset: "correction",
+		preset: "property",
 	},
 };
 

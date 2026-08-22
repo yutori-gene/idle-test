@@ -76,10 +76,10 @@ export const world: Markdown = {
 // property
 
 export const correction: Markdown = {
-	title: "修正属性。",
-	summary: "属性修正详情。",
+	title: "属性详情",
+	summary: "装备或物品导致的数值变化",
 	options: {
-		preset: "correction",
+		preset: "property",
 	},
 };
 

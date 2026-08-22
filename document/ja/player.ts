@@ -76,16 +76,16 @@ export const world: Markdown = {
 // property
 
 export const correction: Markdown = {
-	title: "プロパティの補正",
-	summary: "プロパティの補正の詳細",
+	title: "プロパティの詳細",
+	summary: "装備やアイテムによる値の変化",
 	options: {
-		preset: "correction",
+		preset: "property",
 	},
 };
 
 export const properties: Markdown = {
 	title: "プロパティ一覧",
-	summary: "補正値の一覧",
+	summary: "プロパティの一覧",
 	options: {
 		preset: "properties",
 	},
@@ -93,7 +93,7 @@ export const properties: Markdown = {
 
 export const property: Markdown = {
 	title: "プロパティ",
-	summary: "補正値の確認",
+	summary: "プロパティの確認",
 	// properties / correction は label を持たない同ページ内の節なので、
 	// 一覧表・リンクは作らず children の見出しとして展開する（item・action と同じ形）
 	children: { properties: properties, correction: correction },
