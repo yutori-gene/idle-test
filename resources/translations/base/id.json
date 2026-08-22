@@ -701,6 +701,10 @@
 			"name": "Properti",
 			"explanation": ""
 		},
+		"calculation": {
+			"name": "Kalkulasi",
+			"explanation": ""
+		},
 		"properties": {
 			"name": "Daftar properti",
 			"explanation": ""
@@ -1184,6 +1188,38 @@
 		"hint-missions-permanent": {
 			"name": "Hint Missions Permanent",
 			"explanation": "Tugas yang sudah diselesaikan tetap berstatus selesai, meskipun kondisinya tidak lagi terpenuhi setelah itu."
+		},
+		"hint-attack-scope": {
+			"name": "Hint Attack Scope",
+			"explanation": "カテゴリから開くと寄与しているアイテムの一覧、アイテムから開くと影響先カテゴリの一覧が表示される"
+		},
+		"hint-defence-scope": {
+			"name": "Hint Defence Scope",
+			"explanation": "カテゴリから開くと寄与しているアイテムの一覧、アイテムから開くと影響先カテゴリの一覧が表示される"
+		},
+		"hint-accuracy-scope": {
+			"name": "Hint Accuracy Scope",
+			"explanation": "カテゴリから開くと寄与しているアイテムの一覧、アイテムから開くと影響先カテゴリの一覧が表示される"
+		},
+		"hint-evasion-scope": {
+			"name": "Hint Evasion Scope",
+			"explanation": "カテゴリから開くと寄与しているアイテムの一覧、アイテムから開くと影響先カテゴリの一覧が表示される"
+		},
+		"hint-restore-scope": {
+			"name": "Hint Restore Scope",
+			"explanation": "カテゴリから開くと寄与しているアイテムの一覧、アイテムから開くと影響先カテゴリの一覧が表示される"
+		},
+		"hint-speed-scope": {
+			"name": "Hint Speed Scope",
+			"explanation": "カテゴリから開くと寄与しているアイテムの一覧、アイテムから開くと影響先カテゴリの一覧が表示される"
+		},
+		"hint-chance-scope": {
+			"name": "Hint Chance Scope",
+			"explanation": "カテゴリから開くと寄与しているアイテムの一覧、アイテムから開くと影響先カテゴリの一覧が表示される"
+		},
+		"hint-experience-scope": {
+			"name": "Hint Experience Scope",
+			"explanation": "カテゴリから開くと寄与しているアイテムの一覧、アイテムから開くと影響先カテゴリの一覧が表示される"
 		}
 	}
 }
