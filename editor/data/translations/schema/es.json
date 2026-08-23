@@ -7167,20 +7167,20 @@
           "timing": {
             "type": "string",
             "enum": [
-              "matched"
+              "tasked"
             ],
-            "default": "matched",
+            "default": "tasked",
             "readOnly": true,
             "options": {
               "enum_titles": [
-                "Matched: When the set conditions are met"
+                "Tasked: When the set conditions are met"
               ],
-              "infoText": "Momento de activación de la tarea (fijado en `matched`)"
+              "infoText": "タスク発動のタイミング（`tasked`固定）"
             },
             "title": "cronometraje",
             "yutori": {
               "points": [
-                "La tarea está fijada en «`matched`» (cuando se cumplen las configuraciones establecidas) y no se puede editar.",
+                "タスクは`tasked`（設定した条件を満たした時）で固定されており、編集できません。",
                 "Solo se puede recibir la recompensa una vez; una vez recibida, el logro se mantiene sin cambios.",
                 "Aquello que se desee activar en cualquier otro momento se configura en los eventos de la configuración básica."
               ],

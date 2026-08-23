@@ -7167,20 +7167,20 @@
           "timing": {
             "type": "string",
             "enum": [
-              "matched"
+              "tasked"
             ],
-            "default": "matched",
+            "default": "tasked",
             "readOnly": true,
             "options": {
               "enum_titles": [
-                "Matched: When the set conditions are met"
+                "Tasked: When the set conditions are met"
               ],
-              "infoText": "Waktu pemicu tugas (tetap `matched`)"
+              "infoText": "タスク発動のタイミング（`tasked`固定）"
             },
             "title": "waktu",
             "yutori": {
               "points": [
-                "Tugas dalam konfigurasi `matched` (ketika memenuhi kondisi yang telah dikonfigurasi) dan tidak dapat diedit.",
+                "タスクは`tasked`（設定した条件を満たした時）で固定されており、編集できません。",
                 "Hadiah hanya dapat diterima satu kali, dan setelah diterima, status pencapaiannya tidak akan berubah lagi.",
                 "Untuk hal-hal yang ingin diaktifkan pada waktu lain, lakukan konfigurasi melalui acara di pengaturan dasar."
               ],

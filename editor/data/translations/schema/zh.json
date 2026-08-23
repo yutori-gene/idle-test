@@ -7167,20 +7167,20 @@
           "timing": {
             "type": "string",
             "enum": [
-              "matched"
+              "tasked"
             ],
-            "default": "matched",
+            "default": "tasked",
             "readOnly": true,
             "options": {
               "enum_titles": [
-                "Matched: When the set conditions are met"
+                "Tasked: When the set conditions are met"
               ],
-              "infoText": "任务触发时机（固定为`matched`）"
+              "infoText": "タスク発動のタイミング（`tasked`固定）"
             },
             "title": "时间安排",
             "yutori": {
               "points": [
-                "任务在`matched`（满足配置条件时）状态下是固定的，无法编辑。",
+                "タスクは`tasked`（設定した条件を満たした時）で固定されており、編集できません。",
                 "奖励只能领取一次，一旦领取，该成就状态将保持不变。",
                 "如果希望在其他时间点触发，请在“基本设置”中的“事件”中配置。"
               ],

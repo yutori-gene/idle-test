@@ -7167,20 +7167,20 @@
           "timing": {
             "type": "string",
             "enum": [
-              "matched"
+              "tasked"
             ],
-            "default": "matched",
+            "default": "tasked",
             "readOnly": true,
             "options": {
               "enum_titles": [
-                "Matched: When the set conditions are met"
+                "Tasked: When the set conditions are met"
               ],
-              "infoText": "Zeitpunkt der Aufgabenauslösung (fest auf `matched` gesetzt)"
+              "infoText": "タスク発動のタイミング（`tasked`固定）"
             },
             "title": "Zeitmessung",
             "yutori": {
               "points": [
-                "Die Aufgabe ist auf „`matched`“ (wenn die Konfiguration die festgelegten Bedingungen erfüllt) festgelegt und kann nicht bearbeitet werden.",
+                "タスクは`tasked`（設定した条件を満たした時）で固定されており、編集できません。",
                 "Die Belohnung kann nur einmal erhalten werden; sobald sie entgegengenommen wurde, bleibt der Status „erreicht“ unverändert.",
                 "Alles, was zu einem anderen Zeitpunkt ausgelöst werden soll, wird in den Grundeinstellungen unter „Ereignisse“ konfiguriert."
               ],

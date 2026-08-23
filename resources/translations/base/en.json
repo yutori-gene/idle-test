@@ -818,7 +818,7 @@
 			"name": "タイミング",
 			"explanation": "このイベントが発生するタイミング"
 		},
-		"timing-matched": {
+		"timing-tasked": {
 			"name": "条件達成",
 			"explanation": "条件が満たされた瞬間に発生する"
 		},
@@ -842,8 +842,8 @@
 			"name": "獲得",
 			"explanation": "単発のアクションが完了したときに発生する"
 		},
-		"matched": {
-			"name": "Matched",
+		"tasked": {
+			"name": "Tasked",
 			"explanation": "条件が満たされた"
 		},
 		"comebacked": {

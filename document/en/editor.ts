@@ -436,8 +436,8 @@ export const task: Type.Event = {
 		},
 		timing: {
 			title: "timing",
-			summary: "Task Trigger Timing (Fixed at `matched`)",
-			points: ["The task is locked at `matched` (when the configured conditions are met) and cannot be edited.", "You can receive the reward only once, and once you receive it, the achievement status will remain unchanged.", "For events you want to trigger at other times, configure them in the Basic Settings > Events section."],
+			summary: "タスク発動のタイミング（`tasked`固定）",
+			points: ["タスクは`tasked`（設定した条件を満たした時）で固定されており、編集できません。", "You can receive the reward only once, and once you receive it, the achievement status will remain unchanged.", "For events you want to trigger at other times, configure them in the Basic Settings > Events section."],
 			links: { event: "event" },
 		},
 		unlocked: {

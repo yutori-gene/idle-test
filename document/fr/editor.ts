@@ -436,8 +436,8 @@ export const task: Type.Event = {
 		},
 		timing: {
 			title: "timing",
-			summary: "Moment du déclenchement de la tâche (fixé sur `matched`)",
-			points: ["La tâche est verrouillée sur « `matched` » (lorsque la configuration définie est remplie) et ne peut pas être modifiée.", "La récompense ne peut être obtenue qu'une seule fois ; une fois reçue, le statut « Objectif atteint » reste inchangé.", "Pour les éléments que vous souhaitez déclencher à d'autres moments, effectuez la configuration dans les événements des paramètres par défaut."],
+			summary: "タスク発動のタイミング（`tasked`固定）",
+			points: ["タスクは`tasked`（設定した条件を満たした時）で固定されており、編集できません。", "La récompense ne peut être obtenue qu'une seule fois ; une fois reçue, le statut « Objectif atteint » reste inchangé.", "Pour les éléments que vous souhaitez déclencher à d'autres moments, effectuez la configuration dans les événements des paramètres par défaut."],
 			links: { event: "event" },
 		},
 		unlocked: {

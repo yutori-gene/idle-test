@@ -436,8 +436,8 @@ export const task: Type.Event = {
 		},
 		timing: {
 			title: "cronometraje",
-			summary: "Momento de activación de la tarea (fijado en `matched`)",
-			points: ["La tarea está fijada en «`matched`» (cuando se cumplen las configuraciones establecidas) y no se puede editar.", "Solo se puede recibir la recompensa una vez; una vez recibida, el logro se mantiene sin cambios.", "Aquello que se desee activar en cualquier otro momento se configura en los eventos de la configuración básica."],
+			summary: "タスク発動のタイミング（`tasked`固定）",
+			points: ["タスクは`tasked`（設定した条件を満たした時）で固定されており、編集できません。", "Solo se puede recibir la recompensa una vez; una vez recibida, el logro se mantiene sin cambios.", "Aquello que se desee activar en cualquier otro momento se configura en los eventos de la configuración básica."],
 			links: { event: "event" },
 		},
 		unlocked: {

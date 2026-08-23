@@ -436,8 +436,8 @@ export const task: Type.Event = {
 		},
 		timing: {
 			title: "tempo",
-			summary: "Momento de acionamento da tarefa (fixo em `matched`)",
-			points: ["A tarefa está definida como `matched` (quando a configuração das condições for atendida) e não pode ser editada.", "A recompensa só pode ser recebida uma vez; depois de recebida, o status de “concluído” permanece inalterado.", "Aquilo que você deseja ativar em outros momentos deve ser configurado nos eventos das configurações básicas."],
+			summary: "タスク発動のタイミング（`tasked`固定）",
+			points: ["タスクは`tasked`（設定した条件を満たした時）で固定されており、編集できません。", "A recompensa só pode ser recebida uma vez; depois de recebida, o status de “concluído” permanece inalterado.", "Aquilo que você deseja ativar em outros momentos deve ser configurado nos eventos das configurações básicas."],
 			links: { event: "event" },
 		},
 		unlocked: {

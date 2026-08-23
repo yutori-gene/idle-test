@@ -7167,20 +7167,20 @@
           "timing": {
             "type": "string",
             "enum": [
-              "matched"
+              "tasked"
             ],
-            "default": "matched",
+            "default": "tasked",
             "readOnly": true,
             "options": {
               "enum_titles": [
-                "Matched: When the set conditions are met"
+                "Tasked: When the set conditions are met"
               ],
-              "infoText": "タスク発動のタイミング（`matched`固定）"
+              "infoText": "タスク発動のタイミング（`tasked`固定）"
             },
             "title": "タイミング",
             "yutori": {
               "points": [
-                "タスクは`matched`（設定した条件を満たした時）で固定されており、編集できません。",
+                "タスクは`tasked`（設定した条件を満たした時）で固定されており、編集できません。",
                 "報酬を受け取れるのは一度だけで、受け取ると以後は達成のまま変化しません。",
                 "それ以外のタイミングで発動させたいものは、基本設定のイベントで設定します。"
               ],

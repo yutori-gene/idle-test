@@ -436,8 +436,8 @@ export const task: Type.Event = {
 		},
 		timing: {
 			title: "waktu",
-			summary: "Waktu pemicu tugas (tetap `matched`)",
-			points: ["Tugas dalam konfigurasi `matched` (ketika memenuhi kondisi yang telah dikonfigurasi) dan tidak dapat diedit.", "Hadiah hanya dapat diterima satu kali, dan setelah diterima, status pencapaiannya tidak akan berubah lagi.", "Untuk hal-hal yang ingin diaktifkan pada waktu lain, lakukan konfigurasi melalui acara di pengaturan dasar."],
+			summary: "タスク発動のタイミング（`tasked`固定）",
+			points: ["タスクは`tasked`（設定した条件を満たした時）で固定されており、編集できません。", "Hadiah hanya dapat diterima satu kali, dan setelah diterima, status pencapaiannya tidak akan berubah lagi.", "Untuk hal-hal yang ingin diaktifkan pada waktu lain, lakukan konfigurasi melalui acara di pengaturan dasar."],
 			links: { event: "event" },
 		},
 		unlocked: {

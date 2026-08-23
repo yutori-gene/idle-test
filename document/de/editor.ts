@@ -436,8 +436,8 @@ export const task: Type.Event = {
 		},
 		timing: {
 			title: "Zeitmessung",
-			summary: "Zeitpunkt der Aufgabenauslösung (fest auf `matched` gesetzt)",
-			points: ["Die Aufgabe ist auf „`matched`“ (wenn die Konfiguration die festgelegten Bedingungen erfüllt) festgelegt und kann nicht bearbeitet werden.", "Die Belohnung kann nur einmal erhalten werden; sobald sie entgegengenommen wurde, bleibt der Status „erreicht“ unverändert.", "Alles, was zu einem anderen Zeitpunkt ausgelöst werden soll, wird in den Grundeinstellungen unter „Ereignisse“ konfiguriert."],
+			summary: "タスク発動のタイミング（`tasked`固定）",
+			points: ["タスクは`tasked`（設定した条件を満たした時）で固定されており、編集できません。", "Die Belohnung kann nur einmal erhalten werden; sobald sie entgegengenommen wurde, bleibt der Status „erreicht“ unverändert.", "Alles, was zu einem anderen Zeitpunkt ausgelöst werden soll, wird in den Grundeinstellungen unter „Ereignisse“ konfiguriert."],
 			links: { event: "event" },
 		},
 		unlocked: {
