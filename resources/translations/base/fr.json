@@ -422,6 +422,14 @@
 			"name": "Autonome",
 			"explanation": "Il fonctionne de manière autonome, quel que soit l'état d'avancement des actions menées dans les autres catégories."
 		},
+		"standalone-yes": {
+			"name": "Autonome",
+			"explanation": "Il fonctionne de manière autonome, quel que soit l'état d'avancement des actions menées dans les autres catégories."
+		},
+		"standalone-no": {
+			"name": "Partagé",
+			"explanation": "Elle partage un emplacement d'exécution avec d'autres catégories. Une seule action peut s'exécuter à la fois ; en démarrer une autre renvoie l'action en cours dans la file d'attente."
+		},
 		"action": {
 			"name": "Action",
 			"explanation": ""
@@ -553,6 +561,10 @@
 		"now": {
 			"name": "Maintenant",
 			"explanation": "Place cette action en tête de la file d'attente et l'exécute immédiatement."
+		},
+		"clear": {
+			"name": "Vider",
+			"explanation": "Supprime toutes les réservations de la file d'attente, y compris celle en cours."
 		},
 		"acquisition-failure": {
 			"name": "Échec d'acquisition",
@@ -929,6 +941,14 @@
 		"config": {
 			"name": "Configuration",
 			"explanation": ""
+		},
+		"operation": {
+			"name": "Opération",
+			"explanation": "Modifie la façon dont les actions sont exécutées."
+		},
+		"auto-clear-queue": {
+			"name": "Vidage automatique de la file d'attente",
+			"explanation": "Lorsque vous appuyez longuement pour démarrer une action exécutable, toutes les réservations de la file d'attente, y compris celle en cours, sont supprimées avant que cette action ne démarre."
 		},
 		"display": {
 			"name": "Affichage",

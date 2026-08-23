@@ -422,6 +422,14 @@
 			"name": "Autônomo",
 			"explanation": "Funciona de forma independente, independentemente do andamento das ações em outras categorias."
 		},
+		"standalone-yes": {
+			"name": "Autônomo",
+			"explanation": "Funciona de forma independente, independentemente do andamento das ações em outras categorias."
+		},
+		"standalone-no": {
+			"name": "Compartilhado",
+			"explanation": "Compartilha um espaço de execução com outras categorias. Apenas uma ação pode ser executada por vez; ao iniciar outra, a atual é enviada para a fila de espera."
+		},
 		"action": {
 			"name": "Ação",
 			"explanation": ""
@@ -553,6 +561,10 @@
 		"now": {
 			"name": "Agora",
 			"explanation": "Coloca esta ação no início da fila e a executa imediatamente."
+		},
+		"clear": {
+			"name": "Limpar",
+			"explanation": "Exclui todas as reservas na fila, incluindo a que está em execução."
 		},
 		"acquisition-failure": {
 			"name": "Falha de aquisição",
@@ -929,6 +941,14 @@
 		"config": {
 			"name": "Configuração",
 			"explanation": ""
+		},
+		"operation": {
+			"name": "Operação",
+			"explanation": "Altera a forma como as ações são executadas."
+		},
+		"auto-clear-queue": {
+			"name": "Limpeza automática da fila",
+			"explanation": "Ao manter pressionada uma ação executável para iniciá-la, todas as reservas na fila, incluindo a que está em execução, são apagadas antes de executar essa ação."
 		},
 		"display": {
 			"name": "Exibição",

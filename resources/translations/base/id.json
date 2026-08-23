@@ -422,6 +422,14 @@
 			"name": "Mandiri",
 			"explanation": "Proses ini berjalan secara mandiri, terlepas dari perkembangan aksi di kategori lain."
 		},
+		"standalone-yes": {
+			"name": "Mandiri",
+			"explanation": "Proses ini berjalan secara mandiri, terlepas dari perkembangan aksi di kategori lain."
+		},
+		"standalone-no": {
+			"name": "Bersama",
+			"explanation": "Berbagi slot eksekusi dengan kategori lain. Hanya satu aksi yang dapat berjalan dalam satu waktu; memulai aksi lain akan memindahkan aksi yang sedang berjalan ke antrian tunggu."
+		},
 		"action": {
 			"name": "Aksi",
 			"explanation": ""
@@ -553,6 +561,10 @@
 		"now": {
 			"name": "Sekarang",
 			"explanation": "Menempatkan aksi ini di awal antrian dan langsung menjalankannya."
+		},
+		"clear": {
+			"name": "Kosongkan",
+			"explanation": "Menghapus semua reservasi dalam antrian, termasuk yang sedang berjalan."
 		},
 		"acquisition-failure": {
 			"name": "Kegagalan akuisisi",
@@ -929,6 +941,14 @@
 		"config": {
 			"name": "Konfigurasi",
 			"explanation": ""
+		},
+		"operation": {
+			"name": "Operasi",
+			"explanation": "Mengubah cara aksi dijalankan."
+		},
+		"auto-clear-queue": {
+			"name": "Hapus otomatis antrian",
+			"explanation": "Saat menekan lama untuk memulai aksi yang dapat dijalankan, semua reservasi dalam antrian, termasuk yang sedang berjalan, akan dihapus terlebih dahulu sebelum aksi tersebut dijalankan."
 		},
 		"display": {
 			"name": "Tampilan",

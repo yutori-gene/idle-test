@@ -422,6 +422,14 @@
 			"name": "独立版",
 			"explanation": "它独立运行，不受其他类别中动作进度的影响。"
 		},
+		"standalone-yes": {
+			"name": "独立执行",
+			"explanation": "它独立运行，不受其他类别中动作进度的影响。"
+		},
+		"standalone-no": {
+			"name": "共享执行",
+			"explanation": "与其他类别共享执行位。同时只能执行一个动作，开始其他动作时，当前动作会被移入等待队列。"
+		},
 		"action": {
 			"name": "动作",
 			"explanation": ""
@@ -553,6 +561,10 @@
 		"now": {
 			"name": "立即",
 			"explanation": "将该动作放到队首并立即执行。"
+		},
+		"clear": {
+			"name": "清空",
+			"explanation": "删除队列中包括当前正在执行的所有预约。"
 		},
 		"acquisition-failure": {
 			"name": "获取失败",
@@ -929,6 +941,14 @@
 		"config": {
 			"name": "配置",
 			"explanation": ""
+		},
+		"operation": {
+			"name": "操作",
+			"explanation": "更改动作执行的操作方式。"
+		},
+		"auto-clear-queue": {
+			"name": "自动清空队列",
+			"explanation": "长按开始一个可执行的动作时，会先清空队列中包括当前正在执行的所有预约，然后再执行该动作。"
 		},
 		"display": {
 			"name": "显示",

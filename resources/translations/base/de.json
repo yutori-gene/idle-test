@@ -422,6 +422,14 @@
 			"name": "Eigenständig",
 			"explanation": "Es läuft unabhängig vom Fortschritt der Aktionen in anderen Kategorien."
 		},
+		"standalone-yes": {
+			"name": "Eigenständig",
+			"explanation": "Es läuft unabhängig vom Fortschritt der Aktionen in anderen Kategorien."
+		},
+		"standalone-no": {
+			"name": "Geteilt",
+			"explanation": "Es teilt sich einen Ausführungsplatz mit anderen Kategorien. Es kann jeweils nur eine Aktion laufen; wird eine andere gestartet, wandert die laufende in die Warteschlange."
+		},
 		"action": {
 			"name": "Aktion",
 			"explanation": ""
@@ -553,6 +561,10 @@
 		"now": {
 			"name": "Sofort",
 			"explanation": "Setzt diese Aktion an den Anfang der Warteschlange und führt sie sofort aus."
+		},
+		"clear": {
+			"name": "Leeren",
+			"explanation": "Löscht alle Reservierungen in der Warteschlange, einschließlich der gerade laufenden."
 		},
 		"acquisition-failure": {
 			"name": "Fehlgeschlagener Erwerb",
@@ -929,6 +941,14 @@
 		"config": {
 			"name": "Konfiguration",
 			"explanation": ""
+		},
+		"operation": {
+			"name": "Bedienung",
+			"explanation": "Ändert, wie Aktionen ausgeführt werden."
+		},
+		"auto-clear-queue": {
+			"name": "Warteschlange automatisch leeren",
+			"explanation": "Wenn du eine ausführbare Aktion durch langes Drücken startest, werden zuerst alle Reservierungen in der Warteschlange gelöscht, einschließlich der gerade laufenden, bevor diese Aktion gestartet wird."
 		},
 		"display": {
 			"name": "Anzeige",

@@ -422,6 +422,14 @@
 			"name": "Independiente",
 			"explanation": "Funciona de forma independiente, al margen de la evolución de las acciones de otras categorías."
 		},
+		"standalone-yes": {
+			"name": "Independiente",
+			"explanation": "Funciona de forma independiente, al margen de la evolución de las acciones de otras categorías."
+		},
+		"standalone-no": {
+			"name": "Compartido",
+			"explanation": "Comparte una ranura de ejecución con otras categorías. Solo se puede ejecutar una acción a la vez; al iniciar otra, la actual pasa a la cola de espera."
+		},
 		"action": {
 			"name": "Acción",
 			"explanation": ""
@@ -553,6 +561,10 @@
 		"now": {
 			"name": "Ahora",
 			"explanation": "Coloca esta acción al principio de la cola y la ejecuta de inmediato."
+		},
+		"clear": {
+			"name": "Vaciar",
+			"explanation": "Elimina todas las reservas de la cola, incluida la que está en curso."
 		},
 		"acquisition-failure": {
 			"name": "Fallo de adquisición",
@@ -929,6 +941,14 @@
 		"config": {
 			"name": "Configuración",
 			"explanation": ""
+		},
+		"operation": {
+			"name": "Operación",
+			"explanation": "Cambia cómo se ejecutan las acciones."
+		},
+		"auto-clear-queue": {
+			"name": "Vaciado automático de la cola",
+			"explanation": "Al mantener pulsada una acción ejecutable para iniciarla, se borran primero todas las reservas de la cola, incluida la que está en curso, y después se ejecuta esa acción."
 		},
 		"display": {
 			"name": "Visualización",

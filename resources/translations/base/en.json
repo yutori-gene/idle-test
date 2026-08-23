@@ -422,6 +422,14 @@
 			"name": "スタンドアロン",
 			"explanation": "他のカテゴリでのアクションの進捗状況にかかわらず、独立して実行される"
 		},
+		"standalone-yes": {
+			"name": "Standalone",
+			"explanation": "It runs independently, regardless of the progress of actions in other categories."
+		},
+		"standalone-no": {
+			"name": "Shared",
+			"explanation": "It shares an execution slot with other categories. Only one action can run at a time, and starting another action sends the current one to the waiting queue."
+		},
 		"action": {
 			"name": "アクション",
 			"explanation": ""
@@ -553,6 +561,10 @@
 		"now": {
 			"name": "今すぐ",
 			"explanation": "このアクションをキューの先頭に置いて、すぐに実行する"
+		},
+		"clear": {
+			"name": "Clear",
+			"explanation": "Delete all reservations in the queue, including the one currently running."
 		},
 		"acquisition-failure": {
 			"name": "獲得失敗",
@@ -929,6 +941,14 @@
 		"config": {
 			"name": "Config",
 			"explanation": "このゲームの設定変更と、セーブデータの管理を行う"
+		},
+		"operation": {
+			"name": "Operation",
+			"explanation": "Change how actions are executed."
+		},
+		"auto-clear-queue": {
+			"name": "Auto-clear Queue",
+			"explanation": "When you long-press to start an action that can be executed, all reservations in the queue, including the one currently running, are cleared before that action starts."
 		},
 		"display": {
 			"name": "Display",
