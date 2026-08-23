@@ -2,10 +2,10 @@
 # Tâche
 Missions qui sont considérées comme accomplies lorsque les conditions sont remplies
 - Lorsque la configuration définie est remplie, l'objectif est atteint et un message s'affiche en haut de l'écran.
-- Elles s'affichent dans la liste des missions du joueur et dans la liste des tâches par catégorie.
+- プレイヤーのミッションの一覧と、カテゴリのタスクの一覧に表示されます。
 - La récompense n'est pas attribuée automatiquement. Le joueur la reçoit lorsqu'il ouvre la tâche et appuie sur la barre d'acquisitions.
 - Tant que la récompense n'a pas été perçue, un ruban apparaît sur la barre de la liste pour indiquer qu'elle n'a pas encore été perçue.
-- Par les acquisitions, vous pouvez modifier le niveau de la catégorie, le nombre d'actions effectuées et le nombre d'objets en votre possession.
+- 獲得でカテゴリのレベル、アクションの実行回数、アイテムの所持数を変化させることができます。
 - Les éléments que vous souhaitez déclencher à des moments autres que ceux prévus (par exemple lors du premier démarrage ou en cas de jeu terminé) doivent faire l’objet d’une configuration dans les événements des paramètres de base.
 - [_event_](fr/editor/event)
 ___
@@ -13,11 +13,11 @@ ___
 ## [_l'information_](fr/editor/information)
 ___
 
-## Catégorie.
-ID de la catégorie à laquelle appartient la tâche
-- Indiquez l'ID de la catégorie à laquelle cette tâche doit être rattachée.
-- Une fois la configuration activée, une liste des tâches s'ajoute à l'écran des catégories du joueur, et celles-ci s'affichent également regroupées par catégorie dans la liste des missions.
-- Si le champ est vide, la mission n'appartient à aucune catégorie et s'affiche en tête de la liste des missions.
+## カテゴリ
+タスクが所属するカテゴリのID
+- このタスクを所属させるカテゴリのIDを指定します。
+- 設定すると、プレイヤーのカテゴリの画面にタスクの一覧が追加され、ミッションの一覧でもカテゴリごとにまとめて表示されます。
+- 空欄の場合はどのカテゴリにも属さず、ミッションの一覧の先頭にまとめて表示されます。
 ___
 
 ## timing
@@ -43,6 +43,7 @@ Conditions de réussite de la tâche
 - この条件を満たすと達成になり、報酬を受け取れるようになります。
 - 一度達成すると、その後に条件を満たさなくなっても達成のままで、報酬もいつでも受け取れます。
 - 条件を設定していないタスクは達成しません。
+- requiringGroupを有効にすると、ここで指定するidの意味がカテゴリ・アクション・アイテム個別のIDからグループIDに変わります。
 ___
 
 ### Type
@@ -50,7 +51,7 @@ Type d'élément référencé comme condition.
 
 |Type|Valeurs référencées|
 |-|-|
-|Catégorie.|Niveau de la Catégorie.|
+|カテゴリ|カテゴリのレベル|
 |Action|Nombre de fois où l'action a été comptée.|
 |Objet|Nombre d'objets détenus.|
 ___
@@ -78,10 +79,21 @@ L'objet doit être dans un état équipé (valable uniquement si le Type est Obj
 - Invalide si le Type est différent de l'Objet.
 ___
 
+## Agrégation de groupe
+Traite l'id de la condition comme un ID de groupe et évalue selon le total de ses membres
+- Une fois activé, l'id défini dans la condition (requirements) est traité comme l'ID d'un groupe des paramètres de base.
+- Une condition dont le Type est Catégorie est évaluée selon la somme du Niveau de toutes les Catégories appartenant à ce groupe.
+- Une condition dont le Type est Action est évaluée selon la somme du nombre d'exécutions de toutes les Actions appartenant à ce groupe.
+- Une condition dont le Type est Objet est évaluée selon la somme des quantités possédées de tous les Objets appartenant à ce groupe.
+- Les éléments verrouillés (autres que released) ne sont pas inclus dans le total.
+- La probabilité de consommation de l'Objet (chance) et la condition d'équipement (equipment) sont ignorées, et rien n'est consommé. Elles ne servent qu'à l'évaluation.
+- Lorsqu'il est désactivé, l'id de la condition est traité comme avant, comme l'ID d'une Catégorie, Action ou Objet individuel.
+___
+
 ## récompense
 Configuration des récompenses à l'achèvement d'une tâche
 - 達成したタスクを開き、獲得のバーを押した時に受け取れる報酬です。
-- カテゴリーのレベル、アクションの実行回数、アイテムの所持数を変化させることができます。
+- カテゴリのレベル、アクションの実行回数、アイテムの所持数を変化させることができます。
 - 数量にマイナスを設定することもできます。
 - 報酬を設定していないタスクは獲得のバーが出ず、達成した時点で完了になります。
 - 持てるアイテムの種類が上限に達している時は受け取れません。整理してから受け取り直します。
@@ -92,7 +104,7 @@ Type d'élément à acquérir.
 
 |Type|Ce qui est acquis.|
 |-|-|
-|Catégorie.|Niveau (conversion de l'expérience ajoutée)|
+|カテゴリ|Niveau (conversion de l'expérience ajoutée)|
 |Action|Nombre de fois qu'il a été exécuté.|
 |Objet|compter le nombre de possessions|
 ___
@@ -105,7 +117,7 @@ ___
 Valeurs numériques à obtenir
 - Les valeurs négatives réduisent le nombre de possessions, le nombre de fois qu'elles ont été effectuées et leur niveau. Toutefois, elle ne peut être bas que 0.
 - Si un Objet a un nombre maximum de possessions (max), le nombre de possessions n'augmentera pas au-delà de cette valeur.
-- Si le Type est la Catégorie, la valeur configurée est ajoutée directement au niveau (1 pour 1 niveau, 0,5 pour 0,5 niveau). La façon habituelle d'ajuster cela est de configurer la valeur d'expérience de l'Action. Cette configuration n'est pas Inutile, à moins qu'il n'y ait un but particulier.
+- タイプがカテゴリの場合、設定した値がレベルに直接加算されます（1で1レベル、0.5で0.5レベル）。アクションの経験値設定で調整するのが通常の方法です。特殊な目的がない限りこの設定は不要です。
 ___
 
 ### Probabilité [-1 à 1]
@@ -121,6 +133,6 @@ ___
 Classification des tâches par groupe d'affichage
 - Appliquer l'un des groupes configurés dans Basic.
 - La liste des tâches s'affiche dans l'ordre des groupes de configuration que vous avez définis.
-- Ils sont classés par catégorie, puis par groupe au sein de chaque catégorie.
+- カテゴリの中でさらにグループごとに分けて表示されます。
 - Si elle est laissée vide, aucun regroupement n'est effectué.
 - [_general_](fr/editor/general)

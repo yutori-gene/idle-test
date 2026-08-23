@@ -5,22 +5,22 @@ ___
 
 ## Übersicht.
 Über dieses Spiel.
-- Du kannst die Welt (Setting, Konfiguration) dieses Spiels einsehen.
-- Du kannst auch die Konsole (das System) einsehen, auf der dieses Spiel läuft.
+- You can check this game's World (setting and lore).
+- You can also check the console (system) running this game.
 ___
 
 ## Statistiken
 Zusammenfassung des Fortschritts
-- Du kannst den bisherigen Spielfortschritt einsehen.
+- You can check the game's progress so far.
 ___
 
 ## Konfiguration
 Ändern der Konfiguration des Spiels
-- Hier stellst du Anzeige und Verarbeitung des Spiels ein.
-- Spieldaten können ein- und ausgelesen sowie zurückgesetzt werden.
+- Configure settings related to the game's display and processing.
+- You can read, write, or reset game data.
 ___
 
 ## Debug
 Operation für Debugging-Checks
-- Wird nur während des Debuggens angezeigt.
-- Wird bei der Veröffentlichung und Verteilung des Spiels nicht angezeigt.
+- This is shown only during debugging.
+- Not shown when the game is published or distributed.

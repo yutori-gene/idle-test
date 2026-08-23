@@ -5,7 +5,7 @@ Pesan dan hadiah yang muncul pada waktu tertentu
 - Tersedia satu per satu untuk setiap waktu, dan tidak dapat ditambahkan maupun dihapus. Untuk waktu yang tidak digunakan, biarkan kolomnya kosong.
 - Tidak akan ditampilkan dalam daftar misi atau tugas. Hal-hal yang akan dianggap tercapai jika memenuhi syarat tertentu harus dikonfigurasi sebagai tugas.
 - Akuisisi imbalan akan dilakukan secara otomatis begitu fitur tersebut diaktifkan. Tidak ada langkah pengambilan seperti pada tugas, dan tidak ada pita pemberitahuan.
-- Hal ini dapat mengubah level Kategori, jumlah aksi yang dilakukan dan jumlah Item yang dimiliki ketika diaktifkan.
+- 発動時にカテゴリのレベル、アクションの実行回数、アイテムの所持数を変化させることができます。
 - Jika kolom nama, deskripsi, dan ikon dibiarkan kosong, teks dan ikon default yang sudah ada di dalam game akan digunakan oleh pemain.
 
 |waktu|kondisi aktivasi|ulangi|
@@ -13,7 +13,7 @@ Pesan dan hadiah yang muncul pada waktu tertentu
 |`comebacked`|Ketika seseorang kembali dari offline selama lebih dari satu detik dan ada aksi yang sedang berlangsung.|sering|
 |`gameovered`|Ketika stamina pemain habis dalam pertempuran.|sering|
 |`welcomed`|Ketika saya pertama kali memulai dunia ini.|hanya sekali|
-|`completed`|Ketika level maksimum semua kategori (maxCategoryLevels) tercapai.|hanya sekali|
+|`completed`|全カテゴリのレベルが最大値（maxCategoryLevels）に達した時|hanya sekali|
 |`obtained`|Saat menyelesaikan atau memeriksa Aksi jenis tunggal (seperti peti harta karun, dll.)|sering|
 - [_task_](id/editor/task)
 ___
@@ -52,6 +52,7 @@ ___
 - タイミングが成立するとイベントは発動し、専用の画面を開いて内容を表示します。
 - 報酬は、発動時にここで設定した条件を満たしている場合にのみ獲得します。
 - 条件を設定していない場合は、発動するたびに報酬を獲得します。
+- requiringGroupを有効にすると、ここで指定するidの意味がカテゴリ・アクション・アイテム個別のIDからグループIDに変わります。
 ___
 
 #### Tipe
@@ -59,7 +60,7 @@ Jenis elemen yang direferensikan sebagai kondisi.
 
 |Tipe|Nilai yang direferensikan|
 |-|-|
-|Kategori.|Level kategori.|
+|カテゴリ|カテゴリのレベル|
 |Aksi|Hitung berapa kali aksi telah dilakukan.|
 |Item|Jumlah item yang dimiliki.|
 ___
@@ -87,6 +88,17 @@ Memerlukan Item dalam keadaan Peralatan (hanya berlaku jika Tipe-nya adalah Item
 - Tidak valid jika tipenya selain Item.
 ___
 
+### Agregasi grup
+Memperlakukan id kondisi sebagai ID grup dan menilai berdasarkan total anggotanya
+- Saat diaktifkan, id yang ditetapkan pada kondisi (requirements) diperlakukan sebagai ID grup dari pengaturan dasar.
+- Kondisi dengan Type Kategori dinilai berdasarkan total Level semua Kategori yang termasuk dalam grup tersebut.
+- Kondisi dengan Type Aksi dinilai berdasarkan total jumlah eksekusi semua Aksi yang termasuk dalam grup tersebut.
+- Kondisi dengan Type Item dinilai berdasarkan total jumlah kepemilikan semua Item yang termasuk dalam grup tersebut.
+- Elemen yang terkunci (selain released) tidak termasuk dalam total.
+- Probabilitas konsumsi Item (chance) dan syarat peralatan (equipment) diabaikan, dan tidak ada yang dikonsumsi. Hanya digunakan untuk penilaian.
+- Saat dinonaktifkan, id pada kondisi diperlakukan seperti sebelumnya, sebagai ID Kategori, Aksi, atau Item individual.
+___
+
 ### 報酬
 イベント発動時の報酬設定
 - タイミングが成立し、かつ条件を満たしている時に得られる報酬です。
@@ -99,7 +111,7 @@ Jenis elemen yang akan diperoleh.
 
 |Tipe|Apa yang diperoleh dalam akuisisi.|
 |-|-|
-|Kategori.|Level (konversi pengalaman ditambahkan)|
+|カテゴリ|Level (konversi pengalaman ditambahkan)|
 |Aksi|Hitung dieksekusi.|
 |Item|hitung jumlah harta benda|
 ___
@@ -112,7 +124,7 @@ ___
 Nilai yang akan diperoleh
 - Konfigurasi minus mengurangi jumlah kepemilikan, berapa kali kepemilikan tersebut dilakukan, dan levelnya. Namun, tidak boleh dibawah 0.
 - Jika sebuah item memiliki jumlah kepemilikan maksimum (maks), jumlah kepemilikan tidak akan bertambah melebihi nilai tersebut.
-- Jika tipenya adalah Kategori, nilai yang ditetapkan ditambahkan langsung ke level (1 untuk 1 level, 0,5 untuk 0,5 level). Cara yang biasa digunakan untuk menyesuaikan hal ini adalah dengan melakukan konfigurasi untuk mengatur pengalaman dari aksi tersebut. Konfigurasi ini tidak perlu kecuali tidak ada tujuan khusus.
+- タイプがカテゴリの場合、設定した値がレベルに直接加算されます（1で1レベル、0.5で0.5レベル）。アクションの経験値設定で調整するのが通常の方法です。特殊な目的がない限りこの設定は不要です。
 ___
 
 #### Probabilitas [-1 hingga 1]
@@ -164,6 +176,7 @@ ___
 - タイミングが成立するとイベントは発動し、専用の画面を開いて内容を表示します。
 - 報酬は、発動時にここで設定した条件を満たしている場合にのみ獲得します。
 - 条件を設定していない場合は、発動するたびに報酬を獲得します。
+- requiringGroupを有効にすると、ここで指定するidの意味がカテゴリ・アクション・アイテム個別のIDからグループIDに変わります。
 ___
 
 #### Tipe
@@ -171,7 +184,7 @@ Jenis elemen yang direferensikan sebagai kondisi.
 
 |Tipe|Nilai yang direferensikan|
 |-|-|
-|Kategori.|Level kategori.|
+|カテゴリ|カテゴリのレベル|
 |Aksi|Hitung berapa kali aksi telah dilakukan.|
 |Item|Jumlah item yang dimiliki.|
 ___
@@ -199,6 +212,17 @@ Memerlukan Item dalam keadaan Peralatan (hanya berlaku jika Tipe-nya adalah Item
 - Tidak valid jika tipenya selain Item.
 ___
 
+### Agregasi grup
+Memperlakukan id kondisi sebagai ID grup dan menilai berdasarkan total anggotanya
+- Saat diaktifkan, id yang ditetapkan pada kondisi (requirements) diperlakukan sebagai ID grup dari pengaturan dasar.
+- Kondisi dengan Type Kategori dinilai berdasarkan total Level semua Kategori yang termasuk dalam grup tersebut.
+- Kondisi dengan Type Aksi dinilai berdasarkan total jumlah eksekusi semua Aksi yang termasuk dalam grup tersebut.
+- Kondisi dengan Type Item dinilai berdasarkan total jumlah kepemilikan semua Item yang termasuk dalam grup tersebut.
+- Elemen yang terkunci (selain released) tidak termasuk dalam total.
+- Probabilitas konsumsi Item (chance) dan syarat peralatan (equipment) diabaikan, dan tidak ada yang dikonsumsi. Hanya digunakan untuk penilaian.
+- Saat dinonaktifkan, id pada kondisi diperlakukan seperti sebelumnya, sebagai ID Kategori, Aksi, atau Item individual.
+___
+
 ### 報酬
 イベント発動時の報酬設定
 - タイミングが成立し、かつ条件を満たしている時に得られる報酬です。
@@ -211,7 +235,7 @@ Jenis elemen yang akan diperoleh.
 
 |Tipe|Apa yang diperoleh dalam akuisisi.|
 |-|-|
-|Kategori.|Level (konversi pengalaman ditambahkan)|
+|カテゴリ|Level (konversi pengalaman ditambahkan)|
 |Aksi|Hitung dieksekusi.|
 |Item|hitung jumlah harta benda|
 ___
@@ -224,7 +248,7 @@ ___
 Nilai yang akan diperoleh
 - Konfigurasi minus mengurangi jumlah kepemilikan, berapa kali kepemilikan tersebut dilakukan, dan levelnya. Namun, tidak boleh dibawah 0.
 - Jika sebuah item memiliki jumlah kepemilikan maksimum (maks), jumlah kepemilikan tidak akan bertambah melebihi nilai tersebut.
-- Jika tipenya adalah Kategori, nilai yang ditetapkan ditambahkan langsung ke level (1 untuk 1 level, 0,5 untuk 0,5 level). Cara yang biasa digunakan untuk menyesuaikan hal ini adalah dengan melakukan konfigurasi untuk mengatur pengalaman dari aksi tersebut. Konfigurasi ini tidak perlu kecuali tidak ada tujuan khusus.
+- タイプがカテゴリの場合、設定した値がレベルに直接加算されます（1で1レベル、0.5で0.5レベル）。アクションの経験値設定で調整するのが通常の方法です。特殊な目的がない限りこの設定は不要です。
 ___
 
 #### Probabilitas [-1 hingga 1]
@@ -276,6 +300,7 @@ ___
 - タイミングが成立するとイベントは発動し、専用の画面を開いて内容を表示します。
 - 報酬は、発動時にここで設定した条件を満たしている場合にのみ獲得します。
 - 条件を設定していない場合は、発動するたびに報酬を獲得します。
+- requiringGroupを有効にすると、ここで指定するidの意味がカテゴリ・アクション・アイテム個別のIDからグループIDに変わります。
 ___
 
 #### Tipe
@@ -283,7 +308,7 @@ Jenis elemen yang direferensikan sebagai kondisi.
 
 |Tipe|Nilai yang direferensikan|
 |-|-|
-|Kategori.|Level kategori.|
+|カテゴリ|カテゴリのレベル|
 |Aksi|Hitung berapa kali aksi telah dilakukan.|
 |Item|Jumlah item yang dimiliki.|
 ___
@@ -311,6 +336,17 @@ Memerlukan Item dalam keadaan Peralatan (hanya berlaku jika Tipe-nya adalah Item
 - Tidak valid jika tipenya selain Item.
 ___
 
+### Agregasi grup
+Memperlakukan id kondisi sebagai ID grup dan menilai berdasarkan total anggotanya
+- Saat diaktifkan, id yang ditetapkan pada kondisi (requirements) diperlakukan sebagai ID grup dari pengaturan dasar.
+- Kondisi dengan Type Kategori dinilai berdasarkan total Level semua Kategori yang termasuk dalam grup tersebut.
+- Kondisi dengan Type Aksi dinilai berdasarkan total jumlah eksekusi semua Aksi yang termasuk dalam grup tersebut.
+- Kondisi dengan Type Item dinilai berdasarkan total jumlah kepemilikan semua Item yang termasuk dalam grup tersebut.
+- Elemen yang terkunci (selain released) tidak termasuk dalam total.
+- Probabilitas konsumsi Item (chance) dan syarat peralatan (equipment) diabaikan, dan tidak ada yang dikonsumsi. Hanya digunakan untuk penilaian.
+- Saat dinonaktifkan, id pada kondisi diperlakukan seperti sebelumnya, sebagai ID Kategori, Aksi, atau Item individual.
+___
+
 ### 報酬
 イベント発動時の報酬設定
 - タイミングが成立し、かつ条件を満たしている時に得られる報酬です。
@@ -323,7 +359,7 @@ Jenis elemen yang akan diperoleh.
 
 |Tipe|Apa yang diperoleh dalam akuisisi.|
 |-|-|
-|Kategori.|Level (konversi pengalaman ditambahkan)|
+|カテゴリ|Level (konversi pengalaman ditambahkan)|
 |Aksi|Hitung dieksekusi.|
 |Item|hitung jumlah harta benda|
 ___
@@ -336,7 +372,7 @@ ___
 Nilai yang akan diperoleh
 - Konfigurasi minus mengurangi jumlah kepemilikan, berapa kali kepemilikan tersebut dilakukan, dan levelnya. Namun, tidak boleh dibawah 0.
 - Jika sebuah item memiliki jumlah kepemilikan maksimum (maks), jumlah kepemilikan tidak akan bertambah melebihi nilai tersebut.
-- Jika tipenya adalah Kategori, nilai yang ditetapkan ditambahkan langsung ke level (1 untuk 1 level, 0,5 untuk 0,5 level). Cara yang biasa digunakan untuk menyesuaikan hal ini adalah dengan melakukan konfigurasi untuk mengatur pengalaman dari aksi tersebut. Konfigurasi ini tidak perlu kecuali tidak ada tujuan khusus.
+- タイプがカテゴリの場合、設定した値がレベルに直接加算されます（1で1レベル、0.5で0.5レベル）。アクションの経験値設定で調整するのが通常の方法です。特殊な目的がない限りこの設定は不要です。
 ___
 
 #### Probabilitas [-1 hingga 1]
@@ -355,9 +391,9 @@ ___
 ___
 
 ## Saat tamat
-Terpicu saat semua kategori mencapai level maksimum
-- Terpicu saat level semua kategori mencapai nilai maksimum (maxCategoryLevels).
-- Kategori yang bukan numeric dikecualikan dari penilaian.
+全カテゴリが最大レベルに達した時に発動
+- 全カテゴリのレベルが最大値（maxCategoryLevels）に達した時に発動します。
+- numeric（数値）でないカテゴリは判定から除かれます。
 ___
 
 ### [_informasi_](id/editor/information)
@@ -388,6 +424,7 @@ ___
 - タイミングが成立するとイベントは発動し、専用の画面を開いて内容を表示します。
 - 報酬は、発動時にここで設定した条件を満たしている場合にのみ獲得します。
 - 条件を設定していない場合は、発動するたびに報酬を獲得します。
+- requiringGroupを有効にすると、ここで指定するidの意味がカテゴリ・アクション・アイテム個別のIDからグループIDに変わります。
 ___
 
 #### Tipe
@@ -395,7 +432,7 @@ Jenis elemen yang direferensikan sebagai kondisi.
 
 |Tipe|Nilai yang direferensikan|
 |-|-|
-|Kategori.|Level kategori.|
+|カテゴリ|カテゴリのレベル|
 |Aksi|Hitung berapa kali aksi telah dilakukan.|
 |Item|Jumlah item yang dimiliki.|
 ___
@@ -423,6 +460,17 @@ Memerlukan Item dalam keadaan Peralatan (hanya berlaku jika Tipe-nya adalah Item
 - Tidak valid jika tipenya selain Item.
 ___
 
+### Agregasi grup
+Memperlakukan id kondisi sebagai ID grup dan menilai berdasarkan total anggotanya
+- Saat diaktifkan, id yang ditetapkan pada kondisi (requirements) diperlakukan sebagai ID grup dari pengaturan dasar.
+- Kondisi dengan Type Kategori dinilai berdasarkan total Level semua Kategori yang termasuk dalam grup tersebut.
+- Kondisi dengan Type Aksi dinilai berdasarkan total jumlah eksekusi semua Aksi yang termasuk dalam grup tersebut.
+- Kondisi dengan Type Item dinilai berdasarkan total jumlah kepemilikan semua Item yang termasuk dalam grup tersebut.
+- Elemen yang terkunci (selain released) tidak termasuk dalam total.
+- Probabilitas konsumsi Item (chance) dan syarat peralatan (equipment) diabaikan, dan tidak ada yang dikonsumsi. Hanya digunakan untuk penilaian.
+- Saat dinonaktifkan, id pada kondisi diperlakukan seperti sebelumnya, sebagai ID Kategori, Aksi, atau Item individual.
+___
+
 ### 報酬
 イベント発動時の報酬設定
 - タイミングが成立し、かつ条件を満たしている時に得られる報酬です。
@@ -435,7 +483,7 @@ Jenis elemen yang akan diperoleh.
 
 |Tipe|Apa yang diperoleh dalam akuisisi.|
 |-|-|
-|Kategori.|Level (konversi pengalaman ditambahkan)|
+|カテゴリ|Level (konversi pengalaman ditambahkan)|
 |Aksi|Hitung dieksekusi.|
 |Item|hitung jumlah harta benda|
 ___
@@ -448,7 +496,7 @@ ___
 Nilai yang akan diperoleh
 - Konfigurasi minus mengurangi jumlah kepemilikan, berapa kali kepemilikan tersebut dilakukan, dan levelnya. Namun, tidak boleh dibawah 0.
 - Jika sebuah item memiliki jumlah kepemilikan maksimum (maks), jumlah kepemilikan tidak akan bertambah melebihi nilai tersebut.
-- Jika tipenya adalah Kategori, nilai yang ditetapkan ditambahkan langsung ke level (1 untuk 1 level, 0,5 untuk 0,5 level). Cara yang biasa digunakan untuk menyesuaikan hal ini adalah dengan melakukan konfigurasi untuk mengatur pengalaman dari aksi tersebut. Konfigurasi ini tidak perlu kecuali tidak ada tujuan khusus.
+- タイプがカテゴリの場合、設定した値がレベルに直接加算されます（1で1レベル、0.5で0.5レベル）。アクションの経験値設定で調整するのが通常の方法です。特殊な目的がない限りこの設定は不要です。
 ___
 
 #### Probabilitas [-1 hingga 1]
@@ -500,6 +548,7 @@ ___
 - タイミングが成立するとイベントは発動し、専用の画面を開いて内容を表示します。
 - 報酬は、発動時にここで設定した条件を満たしている場合にのみ獲得します。
 - 条件を設定していない場合は、発動するたびに報酬を獲得します。
+- requiringGroupを有効にすると、ここで指定するidの意味がカテゴリ・アクション・アイテム個別のIDからグループIDに変わります。
 ___
 
 #### Tipe
@@ -507,7 +556,7 @@ Jenis elemen yang direferensikan sebagai kondisi.
 
 |Tipe|Nilai yang direferensikan|
 |-|-|
-|Kategori.|Level kategori.|
+|カテゴリ|カテゴリのレベル|
 |Aksi|Hitung berapa kali aksi telah dilakukan.|
 |Item|Jumlah item yang dimiliki.|
 ___
@@ -535,6 +584,17 @@ Memerlukan Item dalam keadaan Peralatan (hanya berlaku jika Tipe-nya adalah Item
 - Tidak valid jika tipenya selain Item.
 ___
 
+### Agregasi grup
+Memperlakukan id kondisi sebagai ID grup dan menilai berdasarkan total anggotanya
+- Saat diaktifkan, id yang ditetapkan pada kondisi (requirements) diperlakukan sebagai ID grup dari pengaturan dasar.
+- Kondisi dengan Type Kategori dinilai berdasarkan total Level semua Kategori yang termasuk dalam grup tersebut.
+- Kondisi dengan Type Aksi dinilai berdasarkan total jumlah eksekusi semua Aksi yang termasuk dalam grup tersebut.
+- Kondisi dengan Type Item dinilai berdasarkan total jumlah kepemilikan semua Item yang termasuk dalam grup tersebut.
+- Elemen yang terkunci (selain released) tidak termasuk dalam total.
+- Probabilitas konsumsi Item (chance) dan syarat peralatan (equipment) diabaikan, dan tidak ada yang dikonsumsi. Hanya digunakan untuk penilaian.
+- Saat dinonaktifkan, id pada kondisi diperlakukan seperti sebelumnya, sebagai ID Kategori, Aksi, atau Item individual.
+___
+
 ### 報酬
 イベント発動時の報酬設定
 - タイミングが成立し、かつ条件を満たしている時に得られる報酬です。
@@ -547,7 +607,7 @@ Jenis elemen yang akan diperoleh.
 
 |Tipe|Apa yang diperoleh dalam akuisisi.|
 |-|-|
-|Kategori.|Level (konversi pengalaman ditambahkan)|
+|カテゴリ|Level (konversi pengalaman ditambahkan)|
 |Aksi|Hitung dieksekusi.|
 |Item|hitung jumlah harta benda|
 ___
@@ -560,7 +620,7 @@ ___
 Nilai yang akan diperoleh
 - Konfigurasi minus mengurangi jumlah kepemilikan, berapa kali kepemilikan tersebut dilakukan, dan levelnya. Namun, tidak boleh dibawah 0.
 - Jika sebuah item memiliki jumlah kepemilikan maksimum (maks), jumlah kepemilikan tidak akan bertambah melebihi nilai tersebut.
-- Jika tipenya adalah Kategori, nilai yang ditetapkan ditambahkan langsung ke level (1 untuk 1 level, 0,5 untuk 0,5 level). Cara yang biasa digunakan untuk menyesuaikan hal ini adalah dengan melakukan konfigurasi untuk mengatur pengalaman dari aksi tersebut. Konfigurasi ini tidak perlu kecuali tidak ada tujuan khusus.
+- タイプがカテゴリの場合、設定した値がレベルに直接加算されます（1で1レベル、0.5で0.5レベル）。アクションの経験値設定で調整するのが通常の方法です。特殊な目的がない限りこの設定は不要です。
 ___
 
 #### Probabilitas [-1 hingga 1]

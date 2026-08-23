@@ -26,17 +26,17 @@ Time limits for offline progress
 - [_category_](en/editor/category)
 ___
 
-## Maximum level of Category
-Levels up in each Category
-- Configure the max level for each Category.
+## カテゴリの最大レベル
+各カテゴリのレベル上限
+- 各カテゴリの最大レベルを設定します。
 - If experience is acquired beyond this level, the max level configured here is used in the calculation of each property.
-- This value has no relationships in categories with no levels.
+- レベルのないカテゴリではこの値は関係ありません。
 - [_category_](en/editor/category)
 ___
 
 ## locked function
 Hide items until requirements are met
-- If enabled, the Category, Action, or Item will be hidden while it has never been used or possessed and the REQUIREMENTS are not met.
+- 有効の場合、カテゴリ・アクション・アイテムは一度も使用・所持したことがなく、かつrequirementsを満たしていない間は非表示になります。
 - If disabled, all items are displayed from the beginning, but cannot be executed or equipped until requirements are met.
 - [_category_](en/editor/category)
 - [_action_](en/editor/action)
@@ -155,7 +155,7 @@ ___
 
 ## Rate of increase in experience [times].
 Percentage increase in level difficulty
-- As the level of a Category increases, the rate of increase in the Necessary experience value to get to the next level.
+- カテゴリのレベルが上がるにつれて、次のレベルになるのに必要な経験値の上昇率です。
 - Increasing this value increases the difficulty.
 - The experience necessary to reach the next level is (experience point gain rate)^(current level - 1).
 
@@ -173,7 +173,7 @@ ___
 Requests the number of times the same attribute action has been executed to execute the action
 - If enabled, the number of times an action with the same attribute has been executed is automatically added to the execution condition of each Action.
 - The Necessary count is equal to the level value of the Action.
-- If the attribute is nothing configured, the ID of the category to which it belongs is used.
+- 属性が設定されていない場合は、所属するカテゴリのIDが使用されます。
 ___
 
 ## Property ratio [times]

@@ -5,24 +5,24 @@ ___
 
 ## activité
 Liste de toutes les actions
-- Un appui long active ou désactive l'exécution de l'action.
+- Hold to toggle performing the Action.
 ___
 
 ## inventaire
 Liste de tous les objets
-- Appuyez longuement pour activer ou désactiver l'équipement de l'objet.
+- Hold to toggle equipping the Item.
 ___
 
 ## Statut.
 Liste de toutes les propriétés
 - Seule la valeur de la propriété appliquée à la catégorie par les objets est affichée.
-- D'autres corrections s'appliquent encore selon l'action à exécuter.
+- Depending on the Action performed, additional bonuses may apply.
 ___
 
 ## Mission
 Liste de toutes les tâches
-- Les tâches sont regroupées et affichées par catégorie.
-- Les tâches sans catégorie configurée sont regroupées en haut.
-- Une coche est affichée sur les tâches accomplies.
-- Un ruban signale les tâches dont la récompense n'a pas encore été réclamée. Sélectionnez-en une et appuyez sur recevoir pour l'obtenir.
-- Une fois accomplie, une tâche le reste, même si les conditions ne sont plus remplies par la suite.
+- Tasks are grouped and shown by Category.
+- Tasks with no Category set are grouped at the top.
+- Completed Tasks have a checkmark.
+- Tasks whose reward hasn't been claimed yet have a ribbon. Select it and press Receive to claim it.
+- Once a Task is completed, it stays completed even if the condition is no longer met afterward.

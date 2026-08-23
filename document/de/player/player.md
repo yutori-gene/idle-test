@@ -10,6 +10,6 @@ Das Spiel wird für jede Spalte erklärt, die in Play the Game erscheint.
 |[_category_](de/player/category)|Eine Zusammenstellung von verschiedenen Elementen.|
 |[_action_](de/player/action)|Elemente des Handelns wie Sammeln, Herstellen und Kämpfen.|
 |[_item_](de/player/item)|Einzelheiten zum Gegenstand.|
-|[_property_](de/player/property)|Überprüfung der Korrekturwerte|
+|[_property_](de/player/property)|プロパティの確認|
 |[_world_](de/player/world)|Sie können die allgemeinen Steuerelemente und Konfigurationen des Spiels bedienen und überprüfen,|
 |[_miscellaneous_](de/player/miscellaneous)|Sonstige ergänzende Informationen erklärt.|

@@ -10,16 +10,16 @@ ___
 ## [_l'information_](fr/editor/information)
 ___
 
-## Catégorie.
-ID de la catégorie à laquelle appartient l'Action
-- Indiquez l'ID de la catégorie à laquelle cette Action appartient.
+## カテゴリ
+アクションが所属するカテゴリのID
+- このアクションが所属するカテゴリのIDを指定します。
 ___
 
 ## attribut
-Catégories d'attributs propres à l'Action
-- Des attributs individuels (catégories) peuvent être configurés.
-- Si elle n'est pas renseignée, la catégorie à laquelle elle appartient est reprise
-- Par exemple, si vous configurez l'attribut Magie pour une action appartenant individuellement à la catégorie Château du démon, le niveau et les propriétés de la catégorie Magie seront calculés et appliqués au temps d'exécution et aux dégâts de l'action.
+アクション固有の属性カテゴリ
+- 個別の属性(カテゴリ)を設定できます。
+- 空欄の場合は属するカテゴリを引き継ぎます
+- 例えば、魔王城というカテゴリに属するアクションに個別に魔法という属性を設定した場合、アクション完了時間やダメージには魔法のカテゴリのレベルやプロパティが計算され適応されます。
 - [_category_](fr/editor/category)
 ___
 

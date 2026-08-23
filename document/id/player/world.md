@@ -5,22 +5,22 @@ ___
 
 ## ringkasan
 Tentang game ini.
-- Kamu dapat memeriksa dunia (latar, konfigurasi) permainan ini.
-- Kamu juga dapat memeriksa konsol (sistem) yang menjalankan permainan ini.
+- You can check this game's World (setting and lore).
+- You can also check the console (system) running this game.
 ___
 
 ## statistik
 Ringkasan kemajuan
-- Kamu dapat memeriksa perkembangan permainan sejauh ini.
+- You can check the game's progress so far.
 ___
 
 ## konfigurasi
 Mengubah konfigurasi permainan
-- Atur pengaturan yang berkaitan dengan tampilan dan pemrosesan permainan.
-- Data permainan dapat dimasukkan, dikeluarkan, dan direset.
+- Configure settings related to the game's display and processing.
+- You can read, write, or reset game data.
 ___
 
 ## debug
 Operasi untuk pemeriksaan debugging
-- Hanya ditampilkan selama proses debug.
-- Tidak akan ditampilkan saat permainan diterbitkan dan didistribusikan.
+- This is shown only during debugging.
+- Not shown when the game is published or distributed.

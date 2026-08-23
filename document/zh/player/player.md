@@ -10,6 +10,6 @@
 |[_category_](zh/player/category)|各种元素的汇编。|
 |[_action_](zh/player/action)|收集、制作和战斗等行动元素。|
 |[_item_](zh/player/item)|物品详情。|
-|[_property_](zh/player/property)|检查修正值|
+|[_property_](zh/player/property)|プロパティの確認|
 |[_world_](zh/player/world)|您可以操作和检查游戏的一般控制和配置、|
 |[_miscellaneous_](zh/player/miscellaneous)|其他补充信息说明。|

@@ -1,20 +1,20 @@
 
 # 动作。
 收集、制作和战斗等行动元素。
-- 每次执行都可能获得经验并提升等级。
-- 每次执行都会消耗或获得物品。
-- 未满足解锁条件的动作处于锁定状态，无法查看详情。
+- Each time it is performed, you gain Experience and may Level up.
+- Each time it is performed, Items are consumed or gained.
+- Actions that don't meet their unlock condition are locked, and their details cannot be viewed.
 ___
 
 ## 动作。
-类别中的动作列表
-- 长按可切换动作的执行。
-- 一个类别中只能执行一个。
-- 部分类别允许同时推进多个类别的动作。
-- 未满足解锁条件的动作处于锁定状态，无法查看详情。
+カテゴリ内のアクションの一覧
+- Hold to toggle performing the Action.
+- Only one Action can be performed within a single Category.
+- Depending on the Category, Actions in multiple Categories can progress at the same time.
+- Actions that don't meet their unlock condition are locked, and their details cannot be viewed.
 ___
 
 ## 行动。
 控制动作
-- 开始或停止动作。
-- 可以指定执行次数。选择最右端则会一直执行到资源耗尽。
+- Starts or stops the Action.
+- You can specify the number of times to perform it. Choosing the rightmost option performs it until resources run out.

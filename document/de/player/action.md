@@ -1,20 +1,20 @@
 
 # Aktion.
 Elemente des Handelns wie Sammeln, Herstellen und Kämpfen.
-- Jede Ausführung kann Erfahrung einbringen und dein Level erhöhen.
-- Jede Ausführung verbraucht oder erbringt einen Gegenstand.
-- Aktionen, die die Freischaltbedingungen nicht erfüllen, sind gesperrt und können nicht im Detail eingesehen werden.
+- Each time it is performed, you gain Experience and may Level up.
+- Each time it is performed, Items are consumed or gained.
+- Actions that don't meet their unlock condition are locked, and their details cannot be viewed.
 ___
 
 ## AKTION.
-Liste der Aktionen in der Kategorie
-- Ein langer Druck schaltet die Ausführung der Aktion um.
-- Innerhalb einer Kategorie ist nur eines möglich.
-- Manche Kategorien erlauben es, Aktionen mehrerer Kategorien gleichzeitig voranzutreiben.
-- Aktionen, die die Freischaltbedingungen nicht erfüllen, sind gesperrt und können nicht im Detail eingesehen werden.
+カテゴリ内のアクションの一覧
+- Hold to toggle performing the Action.
+- Only one Action can be performed within a single Category.
+- Depending on the Category, Actions in multiple Categories can progress at the same time.
+- Actions that don't meet their unlock condition are locked, and their details cannot be viewed.
 ___
 
 ## Handeln.
 Kontrolle der Aktionen
-- Startet oder stoppt eine Aktion.
-- Du kannst angeben, wie oft sie ausgeführt wird. Wähle die Position ganz rechts, um sie bis zum Aufbrauchen der Ressourcen auszuführen.
+- Starts or stops the Action.
+- You can specify the number of times to perform it. Choosing the rightmost option performs it until resources run out.

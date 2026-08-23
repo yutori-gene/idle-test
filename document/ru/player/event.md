@@ -1,6 +1,6 @@
 
 # Событие
 Система, запускающаяся в определённый момент времени
-- Срабатывает в определённые моменты, например при возвращении в игру или при поражении.
-- При срабатывании откроется этот экран, и награда будет выдана автоматически вместе с сообщением.
-- Задача считается выполненной при соблюдении определённых условий, а награду вы забираете сами.
+- Occurs at set timings, such as when you return to the game or when it's game over.
+- When it occurs, this screen opens and a reward is automatically granted along with a message.
+- A Task is completed when its condition is met, and you receive the reward yourself.

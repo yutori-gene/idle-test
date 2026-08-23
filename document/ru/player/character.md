@@ -5,24 +5,24 @@ ___
 
 ## активность
 Список всех действий
-- Долгое нажатие переключает выполнение действия.
+- Hold to toggle performing the Action.
 ___
 
 ## инвентарь
 Список всех предметов
-- Долгое нажатие переключает экипировку предмета.
+- Hold to toggle equipping the Item.
 ___
 
 ## Статус.
 Список всех свойств
 - Отображается только значение свойства, которое предметы применяют к категории.
-- В зависимости от выполняемого действия применяются и другие поправки.
+- Depending on the Action performed, additional bonuses may apply.
 ___
 
 ## Миссия
 Список всех задач
-- Задачи группируются и отображаются по категориям.
-- Задачи без заданной категории собраны в начале списка.
-- На выполненных задачах отображается галочка.
-- Лентой отмечены задачи, награда за которые ещё не получена. Выберите одну и нажмите «Получить».
-- Однажды выполненная задача остаётся выполненной, даже если условия перестанут соблюдаться.
+- Tasks are grouped and shown by Category.
+- Tasks with no Category set are grouped at the top.
+- Completed Tasks have a checkmark.
+- Tasks whose reward hasn't been claimed yet have a ribbon. Select it and press Receive to claim it.
+- Once a Task is completed, it stays completed even if the condition is no longer met afterward.

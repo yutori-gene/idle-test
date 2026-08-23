@@ -118,9 +118,9 @@ export const property: Type.Property = {
 	],
 	children: {
 		category: {
-			title: "Categoria.",
-			summary: "Especificação da Categoria à qual as propriedades se aplicam.",
-			points: ["Configure o ID da Categoria à qual essa propriedade se aplica.", "Ao configurar `*`, aplica-se a todas as categorias.", "Se estiver em branco, ele se aplica à Categoria à qual o Item pertence."],
+			title: "カテゴリ",
+			summary: "プロパティを適用するカテゴリの指定",
+			points: ["このプロパティを適用するカテゴリのIDを設定します。", "`*`を設定すると全カテゴリに適用されます。", "空欄の場合はアイテムが属するカテゴリに適用されます。"],
 		},
 		attack: {
 			title: "Valor do ataque [diferença de nível].",
@@ -206,11 +206,11 @@ export const combat: Type.Combat = {
 
 export const acquisition: Type.Acquisition = {
 	title: "aquisições",
-	summary: "Configurações de aquisição em nível de Item e Categoria.",
-	points: ["Configure as aquisições.", "Você pode alterar o nível da Categoria, bem como o Item, e o número de vezes que a Ação foi executada.", "A probabilidade de obter o produto pode ser configurada."],
+	summary: "アイテムやカテゴリレベルの取得設定",
+	points: ["Configure as aquisições.", "アイテムの他にカテゴリのレベル、アクションの実行した回数を変更できます。", "A probabilidade de obter o produto pode ser configurada."],
 	list: [
 		["Tipo.", "O que você adquire."],
-		["Categoria.", "nível"],
+		["カテゴリ", "nível"],
 		["Ação.", "Número de vezes executado."],
 		["Item", "número de posses"],
 	],
@@ -220,7 +220,7 @@ export const acquisition: Type.Acquisition = {
 			summary: "Tipo de elemento a ser adquirido.",
 			list: [
 				["Tipo.", "O que é adquirido."],
-				["Categoria.", "Nível (conversão de experiência adicionada)"],
+				["カテゴリ", "Nível (conversão de experiência adicionada)"],
 				["Ação.", "Número de vezes executado."],
 				["Item", "número de posses"],
 			],
@@ -232,7 +232,7 @@ export const acquisition: Type.Acquisition = {
 		count: {
 			title: "valor",
 			summary: "Valores numéricos a serem obtidos",
-			points: ["Configurações Menos reduzem o número de posses, o número de vezes que foram realizadas e seu nível. No entanto, ele não pode ser baixo, igual a 0.", "Se um Item tiver uma configuração de número máximo de posses (máximo), o número de posses não aumentará além desse valor.", "Se o Tipo for Categoria, o valor configurado será adicionado diretamente ao nível (1 para 1 nível, 0,5 para 0,5 nível). A maneira usual de Ajustar isso é configurando o valor de experiência da Ação. Essa configuração não é necessária, a menos que haja um propósito especial."],
+			points: ["Configurações Menos reduzem o número de posses, o número de vezes que foram realizadas e seu nível. No entanto, ele não pode ser baixo, igual a 0.", "Se um Item tiver uma configuração de número máximo de posses (máximo), o número de posses não aumentará além desse valor.", "タイプがカテゴリの場合、設定した値がレベルに直接加算されます（1で1レベル、0.5で0.5レベル）。アクションの経験値設定で調整するのが通常の方法です。特殊な目的がない限りこの設定は不要です。"],
 		},
 		chance: {
 			title: "Probabilidade [-1 a 1]",
@@ -249,10 +249,10 @@ export const acquisition: Type.Acquisition = {
 export const requirement: Type.Requirement = {
 	title: "termos e condições",
 	summary: "Configuração dos requisitos necessários para o uso e exibição de elementos.",
-	points: ["Essas são as condições configuradas para cada elemento por Categoria, Ação e Item.", "Se todas as condições de configuração não forem atendidas, as operações mostradas na tabela não poderão ser realizadas.", "Se a função de bloqueio estiver ativada, o elemento em si ficará oculto até que a condição seja atendida."],
+	points: ["カテゴリ、アクション、アイテムごとの各要素に設定する条件です。", "Se todas as condições de configuração não forem atendidas, as operações mostradas na tabela não poderão ser realizadas.", "Se a função de bloqueio estiver ativada, o elemento em si ficará oculto até que a condição seja atendida."],
 	list: [
 		["Onde fazer a configuração", "O que nada pode ser feito se as condições forem atendidas."],
-		["Categoria.", "Execução de todas as Ações e manipulação de Itens na Categoria"],
+		["カテゴリ", "カテゴリ内の全てのアクションの実行とアイテムの操作"],
 		["Ação.", "Execução de ações"],
 		["Item", "Manipulação de itens (por exemplo, Equipamento)"],
 	],
@@ -262,7 +262,7 @@ export const requirement: Type.Requirement = {
 			summary: "Tipo de elemento referenciado como uma condição.",
 			list: [
 				["Tipo.", "Valores referenciados"],
-				["Categoria.", "Nível da Categoria."],
+				["カテゴリ", "カテゴリのレベル"],
 				["Ação.", "Número de vezes que a Ação foi executada."],
 				["Item", "Número de itens mantidos."],
 			],
@@ -296,7 +296,7 @@ export const requirement: Type.Requirement = {
 export const information: Type.Information = {
 	title: "informações",
 	summary: "Configuração de informações básicas sobre o elemento (ID, nome, ícone, cor, etc.)",
-	points: ["Itens de informações básicas comuns a cada elemento do mundo (Categorias, Ações, Itens, Eventos, etc.).", "Cada elemento é configurado separadamente."],
+	points: ["ワールド内の各要素（カテゴリ、アクション、アイテム、イベントなど）に共通する基本情報の項目です。", "Cada elemento é configurado separadamente."],
 	children: {
 		id: {
 			title: "ID",
@@ -319,7 +319,7 @@ export const information: Type.Information = {
 				noDuplicate: {
 					title: "Nada de duplicação.",
 					summary: "Proibição de IDs duplicados dentro do mesmo Tipo.",
-					points: ["Nada de duplicar nos tipos Categoria, Ação, Item, Evento e Predefinição, pois eles são usados para identificar elementos.", "Ter o mesmo ID para tipos diferentes não é um problema."],
+					points: ["要素の判別に用いられるため、カテゴリ、アクション、アイテム、イベント、プリセットの各タイプ内で重複しないでください。", "Ter o mesmo ID para tipos diferentes não é um problema."],
 					links: { type: "type" },
 				},
 			},
@@ -387,7 +387,7 @@ export const information: Type.Information = {
 				"heritage-from-parent": {
 					title: "Herança do elemento pai",
 					summary: "Adoção da cor configurada no elemento pai",
-					points: ["Se ficar em branco, a cor configurada no elemento pai é herdada.", "A hierarquia dos tipos de cada elemento é a seguinte.", "Por exemplo, se uma ação tiver uma cor própria configurada, ela é usada; se a ação não tiver uma cor própria, é usada a cor da categoria ou do mundo.", "Quando um evento também tem uma categoria configurada, ele herda a cor dessa categoria da mesma forma que as ações e os itens."],
+					points: ["Se ficar em branco, a cor configurada no elemento pai é herdada.", "A hierarquia dos tipos de cada elemento é a seguinte.", "例えば、アクションに個別の色が設定されている場合はそれが利用されますが、アクションに個別の色が設定されていない場合はカテゴリ又はワールドの色が使用されます。", "イベントもカテゴリを設定している場合は、アクションやアイテムと同じようにそのカテゴリの色を引き継ぎます。"],
 					quote: typeTree,
 					links: { type: "type" },
 				},
@@ -425,14 +425,14 @@ export const preset: Type.Information = {
 export const task: Type.Event = {
 	title: "Tarefa",
 	summary: "Missões que são consideradas concluídas quando as condições são atendidas",
-	points: ["Quando as configurações definidas forem atendidas, a meta será alcançada e uma mensagem será exibida na parte da cima da tela.", "Será exibido na lista de missões do jogador e na lista de tarefas da Categoria.", "A recompensa não é concedida automaticamente. O jogador a recebe ao abrir a tarefa e clicar na barra de aquisições.", "Até que a remuneração seja recebida, uma fita aparecerá na barra da lista, indicando que ela ainda não foi recebida.", "Ao realizar aquisições de itens, é possível alterar o nível da Categoria, o número de vezes que uma Ação foi executada e a quantidade de itens em posse.", "Os eventos que você deseja acionar em momentos que não sejam os previstos, como na primeira inicialização ou quando o jogo é terminado, devem ser configurados nos eventos das configurações básicas."],
+	points: ["Quando as configurações definidas forem atendidas, a meta será alcançada e uma mensagem será exibida na parte da cima da tela.", "プレイヤーのミッションの一覧と、カテゴリのタスクの一覧に表示されます。", "A recompensa não é concedida automaticamente. O jogador a recebe ao abrir a tarefa e clicar na barra de aquisições.", "Até que a remuneração seja recebida, uma fita aparecerá na barra da lista, indicando que ela ainda não foi recebida.", "獲得でカテゴリのレベル、アクションの実行回数、アイテムの所持数を変化させることができます。", "Os eventos que você deseja acionar em momentos que não sejam os previstos, como na primeira inicialização ou quando o jogo é terminado, devem ser configurados nos eventos das configurações básicas."],
 	links: { event: "event" },
 	children: {
 		information: information,
 		category: {
-			title: "Categoria.",
-			summary: "ID da categoria à qual a tarefa pertence",
-			points: ["Especifique o ID da categoria à qual esta tarefa deve ser atribuída.", "Ao definir essa configuração, uma lista de tarefas será adicionada à tela de categorias do jogador, e ela também será exibida agrupada por categoria na lista de missões.", "Se o campo estiver em branco, a missão não pertencerá a nenhuma categoria e será exibida agrupada no início da lista de missões."],
+			title: "カテゴリ",
+			summary: "タスクが所属するカテゴリのID",
+			points: ["このタスクを所属させるカテゴリのIDを指定します。", "設定すると、プレイヤーのカテゴリの画面にタスクの一覧が追加され、ミッションの一覧でもカテゴリごとにまとめて表示されます。", "空欄の場合はどのカテゴリにも属さず、ミッションの一覧の先頭にまとめて表示されます。"],
 		},
 		timing: {
 			title: "tempo",
@@ -448,19 +448,24 @@ export const task: Type.Event = {
 		requirements: {
 			title: "termos e condições",
 			summary: "Condições para a conclusão da tarefa",
-			points: ["タスクを達成させる条件です。", "この条件を満たすと達成になり、報酬を受け取れるようになります。", "一度達成すると、その後に条件を満たさなくなっても達成のままで、報酬もいつでも受け取れます。", "条件を設定していないタスクは達成しません。"],
+			points: ["タスクを達成させる条件です。", "この条件を満たすと達成になり、報酬を受け取れるようになります。", "一度達成すると、その後に条件を満たさなくなっても達成のままで、報酬もいつでも受け取れます。", "条件を設定していないタスクは達成しません。", "requiringGroupを有効にすると、ここで指定するidの意味がカテゴリ・アクション・アイテム個別のIDからグループIDに変わります。"],
 			children: requirement.children,
+		},
+		requiringGroup: {
+			title: "Agregação de grupo",
+			summary: "Trata o id da condição como um ID de grupo e avalia pelo total dos membros",
+			points: ["Quando ativado, o id definido na condição (requirements) é tratado como o ID de um grupo das configurações básicas.", "Uma condição cujo Type seja Categoria é avaliada pela soma do Nível de todas as Categorias pertencentes a esse grupo.", "Uma condição cujo Type seja Ação é avaliada pela soma do número de vezes que todas as Ações pertencentes a esse grupo foram executadas.", "Uma condição cujo Type seja Item é avaliada pela soma da quantidade possuída de todos os Itens pertencentes a esse grupo.", "Elementos bloqueados (diferentes de released) não são incluídos no total.", "A probabilidade de consumo do Item (chance) e a condição de equipamento (equipment) são ignoradas, e nada é consumido. São usados apenas para avaliação.", "Quando desativado, o id da condição é tratado como antes, como o ID de uma Categoria, Ação ou Item individual."],
 		},
 		acquisitions: {
 			title: "prêmio",
 			summary: "Configuração de recompensas ao concluir tarefas",
-			points: ["達成したタスクを開き、獲得のバーを押した時に受け取れる報酬です。", "カテゴリーのレベル、アクションの実行回数、アイテムの所持数を変化させることができます。", "数量にマイナスを設定することもできます。", "報酬を設定していないタスクは獲得のバーが出ず、達成した時点で完了になります。", "持てるアイテムの種類が上限に達している時は受け取れません。整理してから受け取り直します。"],
+			points: ["達成したタスクを開き、獲得のバーを押した時に受け取れる報酬です。", "カテゴリのレベル、アクションの実行回数、アイテムの所持数を変化させることができます。", "数量にマイナスを設定することもできます。", "報酬を設定していないタスクは獲得のバーが出ず、達成した時点で完了になります。", "持てるアイテムの種類が上限に達している時は受け取れません。整理してから受け取り直します。"],
 			children: acquisition.children,
 		},
 		group: {
 			title: "grupo de trabalho",
 			summary: "Classificação dos grupos de exibição de tarefas",
-			points: ["Aplique um dos grupos configurados no Basic.", "A lista de tarefas é exibida na ordem da configuração dos grupos.", "Dentro da categoria, os itens são exibidos divididos em grupos.", "Se for deixado em branco, nenhum agrupamento será feito."],
+			points: ["Aplique um dos grupos configurados no Basic.", "A lista de tarefas é exibida na ordem da configuração dos grupos.", "カテゴリの中でさらにグループごとに分けて表示されます。", "Se for deixado em branco, nenhum agrupamento será feito."],
 			links: { general: "general" },
 		},
 	},
@@ -472,8 +477,8 @@ export const task: Type.Event = {
 export const group: Type.Information = {
 	...information,
 	title: "grupo (geralmente de pessoas)",
-	summary: "Definir grupos de exibição para Categorias, Ações e Itens",
-	points: ["Defina grupos para controlar a ordem de exibição.", "Você pode configurar grupos definidos aqui para cada Categoria, Ação e Item.", "Os grupos com o mesmo grupo são exibidos próximos uns dos outros.", "Se for deixado em branco, nenhum agrupamento será feito."],
+	summary: "カテゴリ、アクション、アイテムの表示グループを定義",
+	points: ["Defina grupos para controlar a ordem de exibição.", "各カテゴリ、アクション、アイテムでここで定義したグループを設定できます。", "Os grupos com o mesmo grupo são exibidos próximos uns dos outros.", "Se for deixado em branco, nenhum agrupamento será feito."],
 	options: {
 		label: "group",
 	},
@@ -495,11 +500,6 @@ export const skill: Type.Skill = {
 			summary: "A ser escrito",
 			points: ["A ser escrito"],
 		},
-		comment: {
-			title: "Exibição da nota explicativa",
-			summary: "Se a nota explicativa é exibida como notificação flutuante ao ativar",
-			points: ["Indicador de se a nota explicativa é exibida como notificação flutuante quando esta habilidade é ativada.", "Quando ativado, é exibida a cada ativação com uma probabilidade de (100% − probabilidade de ativação) ÷ 2. Com 40% de probabilidade de ativação, resulta em 30%.", "Quando desativado, não é exibida.", "Se a nota explicativa estiver vazia, nada é exibido mesmo com a opção ativada."],
-		},
 	},
 	options: {
 		label: "skill",
@@ -509,13 +509,13 @@ export const skill: Type.Skill = {
 export const item: Type.Item = {
 	title: "Item",
 	summary: "Elementos de bens, como Equipamento e consumíveis",
-	points: ["Esse elemento está relacionado ao próprio patrimônio de objetos, como Equipamento, consumíveis e objetos de valor.", "Apenas um pode ser Equipamento em uma Categoria, ou nada pode ser desativado.", "Há também maneiras contadas de usá-los."],
+	points: ["Esse elemento está relacionado ao próprio patrimônio de objetos, como Equipamento, consumíveis e objetos de valor.", "カテゴリ内で１つのみ装備することもできますが、装備できないようにもできます。", "Há também maneiras contadas de usá-los."],
 	children: {
 		information: information,
 		category: {
-			title: "Categoria.",
-			summary: "ID da Categoria à qual o Item pertence",
-			points: ["Especifique o ID da Categoria à qual esse Item pertence."],
+			title: "カテゴリ",
+			summary: "アイテムが所属するカテゴリのID",
+			points: ["このアイテムが所属するカテゴリのIDを指定します。"],
 		},
 		group: {
 			title: "grupo (geralmente de pessoas)",
@@ -559,7 +559,7 @@ export const item: Type.Item = {
 		equipmentType: {
 			title: "Tipo de Equipamento",
 			summary: "Configurações de tipo para Equipamento, efeitos e consumo de itens.",
-			points: ["Os itens equipáveis precisam pertencer a um grupo indicado em `equipmentGroups` da categoria.", "Somente um Item pode ser equipado em um mesmo grupo.", "`unnecessary` produz efeito independentemente de estar equipado, e a intensidade do efeito é proporcional à quantidade que você possui (sem efeito com 0, n vezes com n)."],
+			points: ["装備可能なアイテムは、カテゴリの`equipmentGroups`で指定されたグループに属している必要があります。", "Somente um Item pode ser equipado em um mesmo grupo.", "`unnecessary` produz efeito independentemente de estar equipado, e a intensidade do efeito é proporcional à quantidade que você possui (sem efeito com 0, n vezes com n)."],
 			list: [
 				["valor", "Equipamento", "Eficácia.", "consumo", "Exemplo."],
 				["`necessary`", "Necessário", "Apenas enquanto estiver equipando (1 unidade)", "nada", "Espadas, armaduras e outros equipamentos."],
@@ -586,14 +586,14 @@ export const action: Type.Action = {
 	children: {
 		information: information,
 		category: {
-			title: "Categoria.",
-			summary: "ID da Categoria à qual a Ação pertence",
-			points: ["Especifique o ID da Categoria à qual essa Ação pertence."],
+			title: "カテゴリ",
+			summary: "アクションが所属するカテゴリのID",
+			points: ["このアクションが所属するカテゴリのIDを指定します。"],
 		},
 		attribute: {
 			title: "atributo",
-			summary: "Categorias de atributo específicas da ação",
-			points: ["Atributos individuais (Categorias) podem ser configurados.", "Se for deixado em branco, a Categoria à qual pertence será assumida", "Por exemplo, se você configurar o atributo Magia para uma ação que pertença à categoria Castelo do Demônio individualmente, o nível e as propriedades da Categoria Magia serão calculados e aplicados ao tempo de conclusão e ao dano da ação."],
+			summary: "アクション固有の属性カテゴリ",
+			points: ["個別の属性(カテゴリ)を設定できます。", "空欄の場合は属するカテゴリを引き継ぎます", "例えば、魔王城というカテゴリに属するアクションに個別に魔法という属性を設定した場合、アクション完了時間やダメージには魔法のカテゴリのレベルやプロパティが計算され適応されます。"],
 			links: { category: "category" },
 		},
 		group: {
@@ -659,15 +659,15 @@ export const action: Type.Action = {
 };
 
 export const category: Type.Category = {
-	title: "Categoria.",
+	title: "カテゴリ",
 	summary: "Estrutura geral para a classificação de ações e itens.",
-	points: ["Representa uma classificação importante.", "Por exemplo, ele pode ser configurado em qualquer ambiente, como curto alcance, longo alcance, magia, masmorras, ferreiros, fábricas etc.", "As Ações e os Itens são colocados diretamente abaixo do mundo e são associados a uma ID de Categoria."],
+	points: ["Representa uma classificação importante.", "Por exemplo, ele pode ser configurado em qualquer ambiente, como curto alcance, longo alcance, magia, masmorras, ferreiros, fábricas etc.", "アクションやアイテムはワールド直下に配置され、カテゴリIDで関連付けられます。"],
 	children: {
 		information: information,
 		group: {
 			title: "grupo (geralmente de pessoas)",
-			summary: "Exibir a classificação de grupos de categorias",
-			points: ["Aplique um dos grupos configurados no Basic.", "Uma lista de Categorias é exibida na ordem dos grupos configurados."],
+			summary: "カテゴリの表示グループ分類",
+			points: ["Aplique um dos grupos configurados no Basic.", "設定したグループ順にカテゴリ一覧が表示されます。"],
 			links: { general: "general" },
 		},
 		unlocked: {
@@ -675,27 +675,27 @@ export const category: Type.Category = {
 			summary: "Estado inicial de exibição e liberação do elemento (passa automaticamente para o estado superior quando os requisitos de ativação forem atendidos)",
 			points: ["secreted: Não será exibido na interface do usuário até que todos os requisitos sejam atendidos (não aparece nas Dicas e fica oculto na lista de requisitos/recompensas).", "hidden: Fica totalmente oculto enquanto não for referenciado por nenhum elemento de liberação e não atender aos requisitos (o nome fica desativado e não pode ser alterado).", "hinted (padrão): Apenas o nome é exibido como prévia, mas não é possível realizar nenhuma ação até que seja liberado.", "liberado: fica liberado e pronto para uso desde o início, independentemente das condições (antiga opção “Exibir desde o início”)."],
 		},
-		requirements: { ...requirement, options: { ...requirement.options, array: true }, summary: "Requisitos para uso da Categoria." },
+		requirements: { ...requirement, options: { ...requirement.options, array: true }, summary: "カテゴリ利用に必要な条件" },
 		equipmentGroups: {
 			title: "Grupo de equipamentos",
-			summary: "Designação de grupos de itens que podem ser equipados nessa Categoria.",
-			points: ["Lista de nomes de grupos de itens que podem ser equipados nessa Categoria.", "Somente os itens do grupo que correspondem ao nome do grupo especificado aqui podem ser equipados.", "Se uma string vazia for especificada, os itens com um grupo sem configuração (vazio) se tornarão elegíveis para Equipamento.", "Somente um Item pode ser equipado em um mesmo grupo. Quando você equipa um novo Item, qualquer equipamento existente no mesmo grupo é automaticamente desequipado.", "Se a lista estiver vazia (0 peças), nada poderá ser equipado."],
+			summary: "このカテゴリで装備可能なアイテムグループの指定",
+			points: ["このカテゴリで装備できるアイテムのグループ名のリストです。", "Somente os itens do grupo que correspondem ao nome do grupo especificado aqui podem ser equipados.", "Se uma string vazia for especificada, os itens com um grupo sem configuração (vazio) se tornarão elegíveis para Equipamento.", "Somente um Item pode ser equipado em um mesmo grupo. Quando você equipa um novo Item, qualquer equipamento existente no mesmo grupo é automaticamente desequipado.", "Se a lista estiver vazia (0 peças), nada poderá ser equipado."],
 			links: { general: "general" },
 		},
 		numeric: {
 			title: "Disponibilidade de níveis",
-			summary: "Disponibilidade de funções em nível de Categoria",
-			points: ["Esse é um sinalizador para indicar se essa Categoria tem um nível ou não.", "Se estiver ligado, ele tem um nível; se estiver desligado, não tem.", "Um exemplo é ativar as categorias com base na experiência, como espadachim e magia, e desligar as categorias com base no local, como masmorras e ferreiros."],
+			summary: "カテゴリレベル機能の有無",
+			points: ["このカテゴリがレベルを持つかどうかのフラグです。", "Se estiver ligado, ele tem um nível; se estiver desligado, não tem.", "例として、剣技や魔法といった経験に基づくカテゴリはオンにし、ダンジョンや鍛冶屋といった場所のカテゴリはオフにするなどの使い方があります。"],
 		},
 		standaloneProgress: {
 			title: "em progresso simultâneo",
-			summary: "Configurações de execução paralela com outras categorias",
-			points: ["Esse é um sinalizador que indica se as ações nessa Categoria podem progredir em paralelo com ações em outras Categorias.", "Se ligada, a Ação pode progredir simultaneamente e independentemente de outras Categorias de Ações.", "Se estiver desligada, ela não poderá ser executada simultaneamente com ações em outras Categorias que também estejam configuradas como desligadas. Quando você começa uma nova Ação nessa Categoria, as ações em progresso em outras Categorias não autônomas são automaticamente abortadas."],
+			summary: "他カテゴリとの並行実行設定",
+			points: ["このカテゴリのアクションが、他のカテゴリのアクションと並行して進行できるかどうかのフラグです。", "オンの場合は、他のカテゴリのアクションとは独立して同時に進行できます。", "オフの場合は、同じくオフに設定された他のカテゴリのアクションと同時に実行できません。新たにこのカテゴリのアクションを開始すると、他の非スタンドアロンカテゴリで進行中のアクションは自動的に中止されます。"],
 		},
 		background: {
 			title: "fundo",
-			summary: "Configurações de fundo específicas da Categoria",
-			points: ["Configure o plano de fundo para essa Categoria.", "Quando uma Categoria é selecionada, a imagem de fundo muda em conjunto com ela.", "Se nada for configurado, a configuração do plano de fundo do mundo será usada como está."],
+			summary: "カテゴリ固有の背景設定",
+			points: ["このカテゴリの背景を設定します。", "カテゴリを選択されたときに、連動して背景画像が変更されます。", "Se nada for configurado, a configuração do plano de fundo do mundo será usada como está."],
 		},
 	},
 	options: {
@@ -706,7 +706,7 @@ export const category: Type.Category = {
 export const type: Markdown = {
 	title: "Tipo.",
 	summary: "Classificação básica dos mundos",
-	points: ["Os mundos consistem em sete tipos.", "Todos os elementos são colocados diretamente abaixo do mundo.", "As Ações e os Itens são associados ao ID da Categoria à qual pertencem."],
+	points: ["Os mundos consistem em sete tipos.", "Todos os elementos são colocados diretamente abaixo do mundo.", "アクションとアイテムは所属するカテゴリのIDで関連付けられます。"],
 	list: expandList("Tipo.", [category, action, item, skill, group, task, preset], "Descrição"),
 	quote: typeTree,
 	options: {
@@ -823,15 +823,15 @@ export const general: Type.General = {
 			links: { category: "category" },
 		},
 		maxCategoryLevels: {
-			title: "Nível máximo da Categoria",
-			summary: "Nível limite para cada Categoria.",
-			points: ["Configure o nível máximo para cada Categoria.", "Se forem adquiridas experiências além desse nível, o nível máximo configurado aqui será usado no cálculo de cada propriedade.", "Esse valor não tem relações com Categorias sem níveis."],
+			title: "カテゴリの最大レベル",
+			summary: "各カテゴリのレベル上限",
+			points: ["各カテゴリの最大レベルを設定します。", "Se forem adquiridas experiências além desse nível, o nível máximo configurado aqui será usado no cálculo de cada propriedade.", "レベルのないカテゴリではこの値は関係ありません。"],
 			links: { category: "category" },
 		},
 		locking: {
 			title: "função de bloqueio",
 			summary: "Ocultar itens até que os requisitos sejam atendidos",
-			points: ["Se ativado, o Item de Ação da Categoria ficará oculto enquanto nada tiver sido usado ou possuído e os requisitos não tiverem sido atendidos.", "Se estiver desativado, todos os itens serão exibidos desde o início, mas não poderão ser executados ou equipados até que os requisitos sejam atendidos."],
+			points: ["有効の場合、カテゴリ・アクション・アイテムは一度も使用・所持したことがなく、かつrequirementsを満たしていない間は非表示になります。", "Se estiver desativado, todos os itens serão exibidos desde o início, mas não poderão ser executados ou equipados até que os requisitos sejam atendidos."],
 			links: { category: "category", action: "action", item: "item" },
 		},
 		coins: {
@@ -929,7 +929,7 @@ export const general: Type.General = {
 		levelCommonRatio: {
 			title: "Taxa de aumento da experiência [vezes].",
 			summary: "Aumento percentual na dificuldade de nível.",
-			points: ["À medida que o nível de uma Categoria aumenta, a taxa de aumento da experiência Necessária para alcançar o próximo nível.", "O aumento desse valor aumenta o nível de dificuldade.", "A quantidade de experiência necessária para subir de nível é igual a (taxa de aumento de experiência)^(nível atual - 1)."],
+			points: ["カテゴリのレベルが上がるにつれて、次のレベルになるのに必要な経験値の上昇率です。", "O aumento desse valor aumenta o nível de dificuldade.", "A quantidade de experiência necessária para subir de nível é igual a (taxa de aumento de experiência)^(nível atual - 1)."],
 			list: [
 				["Taxa de aumento da experiência", "Nível 1", "Nível 2", "Nível 10", "Nível 50", "Nível 99."],
 				["0", "x1.00", "x1.00", "x1.00", "x1.00", "x1.00"],
@@ -943,7 +943,7 @@ export const general: Type.General = {
 		actionLevelLimit: {
 			title: "Restrição do nível de ação",
 			summary: "Solicita o número de vezes que a ação do mesmo atributo foi executada para a execução de uma ação.",
-			points: ["Se ativado, o número de vezes que uma ação com os mesmos atributos foi executada é automaticamente adicionado às condições de execução de cada ação.", "O número de vezes necessário é igual ao valor do nível da Ação.", "Se nada for configurado, será usado o ID da Categoria à qual ele pertence."],
+			points: ["Se ativado, o número de vezes que uma ação com os mesmos atributos foi executada é automaticamente adicionado às condições de execução de cada ação.", "O número de vezes necessário é igual ao valor do nível da Ação.", "属性が設定されていない場合は、所属するカテゴリのIDが使用されます。"],
 		},
 		propertyRatio: {
 			title: "Taxa de propriedade [vezes]",
@@ -1045,7 +1045,7 @@ const toFixedEvent = (title: string, summary: string, points: string[], timingPo
 		requirements: {
 			title: "条件",
 			summary: "報酬を獲得する条件",
-			points: ["タイミングが成立するとイベントは発動し、専用の画面を開いて内容を表示します。", "報酬は、発動時にここで設定した条件を満たしている場合にのみ獲得します。", "条件を設定していない場合は、発動するたびに報酬を獲得します。"],
+			points: ["タイミングが成立するとイベントは発動し、専用の画面を開いて内容を表示します。", "報酬は、発動時にここで設定した条件を満たしている場合にのみ獲得します。", "条件を設定していない場合は、発動するたびに報酬を獲得します。", "requiringGroupを有効にすると、ここで指定するidの意味がカテゴリ・アクション・アイテム個別のIDからグループIDに変わります。"],
 			children: requirement.children,
 		},
 		acquisitions: {
@@ -1065,13 +1065,13 @@ const toFixedEvent = (title: string, summary: string, points: string[], timingPo
 export const event: Type.Events = {
 	title: "Evento",
 	summary: "Mensagens e recompensas que são ativadas em momentos específicos",
-	points: ["Ele é acionado em momentos específicos, como ao abrir um mundo pela primeira vez ou ao terminar o jogo, e abre uma tela exclusiva.", "Há um campo para cada momento, e não é possível adicionar nem excluir campos. Nos momentos em que não for utilizado, deixe o campo em branco.", "Não será exibido na lista de missões ou tarefas. Aquilo que será considerado concluído ao atender às condições deve ser configurado como uma tarefa.", "A recompensa é adquirida automaticamente assim que for ativada. Não há nenhuma ação necessária para realizar as aquisições, como em uma tarefa, nem nenhuma faixa de notificação.", "Ele pode alterar o nível da Categoria, o número de Ações realizadas e o número de Itens possuídos quando ativado.", "Se você deixar os campos “Nome”, “Descrição” e “Ícone” em branco, serão utilizados o texto e o ícone padrão integrados ao jogador."],
+	points: ["Ele é acionado em momentos específicos, como ao abrir um mundo pela primeira vez ou ao terminar o jogo, e abre uma tela exclusiva.", "Há um campo para cada momento, e não é possível adicionar nem excluir campos. Nos momentos em que não for utilizado, deixe o campo em branco.", "Não será exibido na lista de missões ou tarefas. Aquilo que será considerado concluído ao atender às condições deve ser configurado como uma tarefa.", "A recompensa é adquirida automaticamente assim que for ativada. Não há nenhuma ação necessária para realizar as aquisições, como em uma tarefa, nem nenhuma faixa de notificação.", "発動時にカテゴリのレベル、アクションの実行回数、アイテムの所持数を変化させることができます。", "Se você deixar os campos “Nome”, “Descrição” e “Ícone” em branco, serão utilizados o texto e o ícone padrão integrados ao jogador."],
 	list: [
 		["tempo", "condição de ativação", "repetir"],
 		["`comebacked`", "Quando uma pessoa retorna do desligado por mais de um segundo e há uma Ação em progresso.", "frequentemente"],
 		["`gameovered`", "Quando a resistência do jogador se esgota na batalha.", "frequentemente"],
 		["`welcomed`", "Quando comecei neste mundo.", "apenas uma vez"],
-		["`completed`", "Quando o nível máximo de todas as Categorias (maxCategoryLevels) for atingido.", "apenas uma vez"],
+		["`completed`", "全カテゴリのレベルが最大値（maxCategoryLevels）に達した時", "apenas uma vez"],
 		["`obtained`", "Ao concluir ou confirmar uma Ação de um único tipo (como baús, etc.)", "frequentemente"],
 	],
 	links: { task: "task" },
@@ -1079,7 +1079,7 @@ export const event: Type.Events = {
 		comebacked: toFixedEvent("Ao retornar", "É acionado ao voltar do modo offline", ["É acionado quando você volta após um segundo ou mais offline e havia uma ação em andamento.", "É exibido junto com o resumo do progresso feito durante a sua ausência."], ["Está fixado em `comebacked` e não pode ser editado.", "É acionado toda vez que você retorna, sem limite de vezes."]),
 		gameovered: toFixedEvent("Ao perder o jogo", "É acionado quando a resistência acaba em combate", ["É acionado quando a resistência do jogador acaba em combate.", "Definindo uma quantidade negativa de recompensa, você pode atribuir um custo à derrota."], ["Está fixado em `gameovered` e não pode ser editado.", "É acionado toda vez que você perde o jogo, sem limite de vezes."]),
 		welcomed: toFixedEvent("No primeiro início", "É acionado ao abrir o mundo pela primeira vez", ["É acionado quando este mundo é iniciado pela primeira vez.", "Serve para explicar a ambientação ou entregar os preparativos iniciais."], ["Está fixado em `welcomed` e não pode ser editado.", "É acionado uma única vez, no primeiro início."]),
-		completed: toFixedEvent("Ao concluir", "É acionado quando todas as categorias atingem o nível máximo", ["É acionado quando os níveis de todas as categorias atingem o valor máximo (maxCategoryLevels).", "Categorias que não são numeric ficam de fora da verificação."], ["Está fixado em `completed` e não pode ser editado.", "É acionado uma única vez, quando as condições são cumpridas."]),
+		completed: toFixedEvent("Ao concluir", "全カテゴリが最大レベルに達した時に発動", ["全カテゴリのレベルが最大値（maxCategoryLevels）に達した時に発動します。", "numeric（数値）でないカテゴリは判定から除かれます。"], ["Está fixado em `completed` e não pode ser editado.", "É acionado uma única vez, quando as condições são cumpridas."]),
 		obtained: toFixedEvent("Ao concluir uma ação única", "É acionado ao concluir uma ação única, como um baú de tesouro", ["É acionado quando uma ação do tipo single (como um baú de tesouro) é concluída e confirmada.", "Além da recompensa da própria ação, você pode acrescentar a recompensa configurada aqui."], ["Está fixado em `obtained` e não pode ser editado.", "É acionado toda vez que você conclui uma ação única, sem limite de vezes."]),
 	},
 	options: {
@@ -1090,7 +1090,7 @@ export const event: Type.Events = {
 export const basic: Type.Basic = {
 	title: "Configuração básica",
 	summary: "Itens básicos de configuração para o mundo em geral.",
-	points: ["Configure o nome do mundo, a descrição, o plano de fundo, a moeda, a capacidade, o nível máximo de Categorias, a taxa de aumento de experiência, a taxa de desconto, os parâmetros de combate padrão, etc.", "Essas configurações afetam o mundo inteiro."],
+	points: ["ワールドの名前、説明、背景、通貨、容量、カテゴリの最大レベル、経験値の上昇率、割引率、標準戦闘パラメータなどを設定します。", "Essas configurações afetam o mundo inteiro."],
 	list: expandList("nome", [overview, general, design, event, development], "Descrição"),
 	children: {
 		overview: overview,
@@ -1111,7 +1111,7 @@ export const basic: Type.Basic = {
 export const world: Type.World = {
 	title: "mundo",
 	summary: "Configuração geral do mundo do jogo e estrutura de dados",
-	points: ["Dados sobre jogos que podem ser jogados em consoles.", "As configurações permitem que você crie um jogo de abandono como desejar.", "Os mundos abrangem Categorias, Ações, Itens e Eventos."],
+	points: ["Dados sobre jogos que podem ser jogados em consoles.", "As configurações permitem que você crie um jogo de abandono como desejar.", "ワールドはカテゴリ、アクション、アイテム、イベントなどの要素を内包します。"],
 	children: {
 		basic: basic,
 		categories: { ...category, options: { ...category.options, array: true } },

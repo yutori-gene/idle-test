@@ -3,7 +3,7 @@
 Classificação básica dos mundos
 - Os mundos consistem em sete tipos.
 - Todos os elementos são colocados diretamente abaixo do mundo.
-- As Ações e os Itens são associados ao ID da Categoria à qual pertencem.
+- アクションとアイテムは所属するカテゴリのIDで関連付けられます。
 
 |Tipo.|Descrição|
 |-|-|
@@ -11,7 +11,7 @@ Classificação básica dos mundos
 |[_action_](pt/editor/action)|Elementos de ação, como coletar, criar e lutar.|
 |[_item_](pt/editor/item)|Elementos de bens, como Equipamento e consumíveis|
 |[_skill_](pt/editor/skill)|A ser escrito|
-|[_group_](pt/editor/group)|Definir grupos de exibição para Categorias, Ações e Itens|
+|[_group_](pt/editor/group)|カテゴリ、アクション、アイテムの表示グループを定義|
 |[_task_](pt/editor/task)|Missões que são consideradas concluídas quando as condições são atendidas|
 |[_preset_](pt/editor/preset)|Personalização da exibição dos elementos do sistema|
 ```

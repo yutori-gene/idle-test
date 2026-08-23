@@ -8,5 +8,5 @@ ___
 
 ## Langue.
 Changer de langue
-- Change la langue affichée dans le jeu.
-- Ceci n'est valable que si l'auteur a préparé une traduction.
+- Switches the language displayed in the game.
+- Only available when the author has provided a translation.

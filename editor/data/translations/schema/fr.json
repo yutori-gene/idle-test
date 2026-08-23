@@ -244,7 +244,7 @@
               "description": "Configuration des informations de base sur l'élément (ID, nom, icône, couleur, etc.)",
               "yutori": {
                 "points": [
-                  "Éléments d'information de base communs à chaque élément du monde (catégories, actions, objets, événements, etc.).",
+                  "ワールド内の各要素（カテゴリ、アクション、アイテム、イベントなど）に共通する基本情報の項目です。",
                   "Chaque élément est configuré séparément."
                 ],
                 "reference": "fr/editor/information"
@@ -434,17 +434,17 @@
               "default": 100,
               "minimum": 1,
               "propertyOrder": 101,
-              "title": "Niveau max de la Catégorie",
+              "title": "カテゴリの最大レベル",
               "options": {
-                "infoText": "Niveau haut pour chaque Catégorie."
+                "infoText": "各カテゴリのレベル上限"
               },
               "yutori": {
                 "points": [
-                  "Configurer le niveau max pour chaque Catégorie.",
+                  "各カテゴリの最大レベルを設定します。",
                   "Si l'expérience est acquise au-delà de ce niveau, le niveau max fixé ici est utilisé dans le calcul de chaque propriété.",
-                  "Cette valeur n'est pas relationnelle pour les catégories sans niveau."
+                  "レベルのないカテゴリではこの値は関係ありません。"
                 ],
-                "reference": "fr/editor/general?id=Niveau max de la Catégorie"
+                "reference": "fr/editor/general?id=カテゴリの最大レベル"
               }
             },
             "actionLevelLimit": {
@@ -460,7 +460,7 @@
                 "points": [
                   "Si cette option est activée, le nombre de fois qu'une action ayant les mêmes attributs a été exécutée est automatiquement ajouté aux conditions d'exécution de chaque action.",
                   "Le nombre de fois compté est égal à la valeur du niveau de l'Action.",
-                  "Si aucun attribut n'est configuré, c'est l'ID de la catégorie à laquelle il appartient qui est utilisé."
+                  "属性が設定されていない場合は、所属するカテゴリのIDが使用されます。"
                 ],
                 "reference": "fr/editor/general?id=restriction du niveau d'action"
               }
@@ -498,7 +498,7 @@
               },
               "yutori": {
                 "points": [
-                  "Plus le niveau d'une catégorie est élevé, plus le taux d'augmentation de l'expérience requise pour atteindre le niveau suivant est élevé.",
+                  "カテゴリのレベルが上がるにつれて、次のレベルになるのに必要な経験値の上昇率です。",
                   "En augmentant cette valeur, vous augmentez le niveau de difficulté.",
                   "Le nombre de points d'expérience nécessaires pour passer au niveau suivant est égal à (taux d'augmentation des points d'expérience)^(niveau actuel - 1)."
                 ],
@@ -879,7 +879,7 @@
                   "description": "Configuration des informations de base sur l'élément (ID, nom, icône, couleur, etc.)",
                   "yutori": {
                     "points": [
-                      "Éléments d'information de base communs à chaque élément du monde (catégories, actions, objets, événements, etc.).",
+                      "ワールド内の各要素（カテゴリ、アクション、アイテム、イベントなど）に共通する基本情報の項目です。",
                       "Chaque élément est configuré séparément."
                     ],
                     "reference": "fr/editor/information"
@@ -1192,7 +1192,7 @@
                   "description": "Configuration des informations de base sur l'élément (ID, nom, icône, couleur, etc.)",
                   "yutori": {
                     "points": [
-                      "Éléments d'information de base communs à chaque élément du monde (catégories, actions, objets, événements, etc.).",
+                      "ワールド内の各要素（カテゴリ、アクション、アイテム、イベントなど）に共通する基本情報の項目です。",
                       "Chaque élément est configuré séparément."
                     ],
                     "reference": "fr/editor/information"
@@ -1526,6 +1526,7 @@
                 "timing",
                 "unlocked",
                 "requirements",
+                "requiringGroup",
                 "acquisitions",
                 "group"
               ],
@@ -1723,7 +1724,7 @@
                   "description": "Configuration des informations de base sur l'élément (ID, nom, icône, couleur, etc.)",
                   "yutori": {
                     "points": [
-                      "Éléments d'information de base communs à chaque élément du monde (catégories, actions, objets, événements, etc.).",
+                      "ワールド内の各要素（カテゴリ、アクション、アイテム、イベントなど）に共通する基本情報の項目です。",
                       "Chaque élément est configuré séparément."
                     ],
                     "reference": "fr/editor/information"
@@ -1904,9 +1905,31 @@
                     "points": [
                       "タイミングが成立するとイベントは発動し、専用の画面を開いて内容を表示します。",
                       "報酬は、発動時にここで設定した条件を満たしている場合にのみ獲得します。",
-                      "条件を設定していない場合は、発動するたびに報酬を獲得します。"
+                      "条件を設定していない場合は、発動するたびに報酬を獲得します。",
+                      "requiringGroupを有効にすると、ここで指定するidの意味がカテゴリ・アクション・アイテム個別のIDからグループIDに変わります。"
                     ],
                     "reference": "fr/editor/event?id=条件"
+                  }
+                },
+                "requiringGroup": {
+                  "type": "boolean",
+                  "default": false,
+                  "format": "checkbox",
+                  "title": "Agrégation de groupe",
+                  "options": {
+                    "infoText": "Traite l'id de la condition comme un ID de groupe et évalue selon le total de ses membres"
+                  },
+                  "yutori": {
+                    "points": [
+                      "Une fois activé, l'id défini dans la condition (requirements) est traité comme l'ID d'un groupe des paramètres de base.",
+                      "Une condition dont le Type est Catégorie est évaluée selon la somme du Niveau de toutes les Catégories appartenant à ce groupe.",
+                      "Une condition dont le Type est Action est évaluée selon la somme du nombre d'exécutions de toutes les Actions appartenant à ce groupe.",
+                      "Une condition dont le Type est Objet est évaluée selon la somme des quantités possédées de tous les Objets appartenant à ce groupe.",
+                      "Les éléments verrouillés (autres que released) ne sont pas inclus dans le total.",
+                      "La probabilité de consommation de l'Objet (chance) et la condition d'équipement (equipment) sont ignorées, et rien n'est consommé. Elles ne servent qu'à l'évaluation.",
+                      "Lorsqu'il est désactivé, l'id de la condition est traité comme avant, comme l'ID d'une Catégorie, Action ou Objet individuel."
+                    ],
+                    "reference": "fr/editor/event?id=Agrégation de groupe"
                   }
                 },
                 "acquisitions": {
@@ -1969,7 +1992,7 @@
                           "points": [
                             "Les valeurs négatives réduisent le nombre de possessions, le nombre de fois qu'elles ont été effectuées et leur niveau. Toutefois, elle ne peut être bas que 0.",
                             "Si un Objet a un nombre maximum de possessions (max), le nombre de possessions n'augmentera pas au-delà de cette valeur.",
-                            "Si le Type est la Catégorie, la valeur configurée est ajoutée directement au niveau (1 pour 1 niveau, 0,5 pour 0,5 niveau). La façon habituelle d'ajuster cela est de configurer la valeur d'expérience de l'Action. Cette configuration n'est pas Inutile, à moins qu'il n'y ait un but particulier."
+                            "タイプがカテゴリの場合、設定した値がレベルに直接加算されます（1で1レベル、0.5で0.5レベル）。アクションの経験値設定で調整するのが通常の方法です。特殊な目的がない限りこの設定は不要です。"
                           ],
                           "reference": "fr/editor/event?id=valeur"
                         }
@@ -2047,6 +2070,7 @@
                 "timing",
                 "unlocked",
                 "requirements",
+                "requiringGroup",
                 "acquisitions",
                 "group"
               ],
@@ -2244,7 +2268,7 @@
                   "description": "Configuration des informations de base sur l'élément (ID, nom, icône, couleur, etc.)",
                   "yutori": {
                     "points": [
-                      "Éléments d'information de base communs à chaque élément du monde (catégories, actions, objets, événements, etc.).",
+                      "ワールド内の各要素（カテゴリ、アクション、アイテム、イベントなど）に共通する基本情報の項目です。",
                       "Chaque élément est configuré séparément."
                     ],
                     "reference": "fr/editor/information"
@@ -2425,9 +2449,31 @@
                     "points": [
                       "タイミングが成立するとイベントは発動し、専用の画面を開いて内容を表示します。",
                       "報酬は、発動時にここで設定した条件を満たしている場合にのみ獲得します。",
-                      "条件を設定していない場合は、発動するたびに報酬を獲得します。"
+                      "条件を設定していない場合は、発動するたびに報酬を獲得します。",
+                      "requiringGroupを有効にすると、ここで指定するidの意味がカテゴリ・アクション・アイテム個別のIDからグループIDに変わります。"
                     ],
                     "reference": "fr/editor/event?id=条件"
+                  }
+                },
+                "requiringGroup": {
+                  "type": "boolean",
+                  "default": false,
+                  "format": "checkbox",
+                  "title": "Agrégation de groupe",
+                  "options": {
+                    "infoText": "Traite l'id de la condition comme un ID de groupe et évalue selon le total de ses membres"
+                  },
+                  "yutori": {
+                    "points": [
+                      "Une fois activé, l'id défini dans la condition (requirements) est traité comme l'ID d'un groupe des paramètres de base.",
+                      "Une condition dont le Type est Catégorie est évaluée selon la somme du Niveau de toutes les Catégories appartenant à ce groupe.",
+                      "Une condition dont le Type est Action est évaluée selon la somme du nombre d'exécutions de toutes les Actions appartenant à ce groupe.",
+                      "Une condition dont le Type est Objet est évaluée selon la somme des quantités possédées de tous les Objets appartenant à ce groupe.",
+                      "Les éléments verrouillés (autres que released) ne sont pas inclus dans le total.",
+                      "La probabilité de consommation de l'Objet (chance) et la condition d'équipement (equipment) sont ignorées, et rien n'est consommé. Elles ne servent qu'à l'évaluation.",
+                      "Lorsqu'il est désactivé, l'id de la condition est traité comme avant, comme l'ID d'une Catégorie, Action ou Objet individuel."
+                    ],
+                    "reference": "fr/editor/event?id=Agrégation de groupe"
                   }
                 },
                 "acquisitions": {
@@ -2490,7 +2536,7 @@
                           "points": [
                             "Les valeurs négatives réduisent le nombre de possessions, le nombre de fois qu'elles ont été effectuées et leur niveau. Toutefois, elle ne peut être bas que 0.",
                             "Si un Objet a un nombre maximum de possessions (max), le nombre de possessions n'augmentera pas au-delà de cette valeur.",
-                            "Si le Type est la Catégorie, la valeur configurée est ajoutée directement au niveau (1 pour 1 niveau, 0,5 pour 0,5 niveau). La façon habituelle d'ajuster cela est de configurer la valeur d'expérience de l'Action. Cette configuration n'est pas Inutile, à moins qu'il n'y ait un but particulier."
+                            "タイプがカテゴリの場合、設定した値がレベルに直接加算されます（1で1レベル、0.5で0.5レベル）。アクションの経験値設定で調整するのが通常の方法です。特殊な目的がない限りこの設定は不要です。"
                           ],
                           "reference": "fr/editor/event?id=valeur"
                         }
@@ -2568,6 +2614,7 @@
                 "timing",
                 "unlocked",
                 "requirements",
+                "requiringGroup",
                 "acquisitions",
                 "group"
               ],
@@ -2765,7 +2812,7 @@
                   "description": "Configuration des informations de base sur l'élément (ID, nom, icône, couleur, etc.)",
                   "yutori": {
                     "points": [
-                      "Éléments d'information de base communs à chaque élément du monde (catégories, actions, objets, événements, etc.).",
+                      "ワールド内の各要素（カテゴリ、アクション、アイテム、イベントなど）に共通する基本情報の項目です。",
                       "Chaque élément est configuré séparément."
                     ],
                     "reference": "fr/editor/information"
@@ -2946,9 +2993,31 @@
                     "points": [
                       "タイミングが成立するとイベントは発動し、専用の画面を開いて内容を表示します。",
                       "報酬は、発動時にここで設定した条件を満たしている場合にのみ獲得します。",
-                      "条件を設定していない場合は、発動するたびに報酬を獲得します。"
+                      "条件を設定していない場合は、発動するたびに報酬を獲得します。",
+                      "requiringGroupを有効にすると、ここで指定するidの意味がカテゴリ・アクション・アイテム個別のIDからグループIDに変わります。"
                     ],
                     "reference": "fr/editor/event?id=条件"
+                  }
+                },
+                "requiringGroup": {
+                  "type": "boolean",
+                  "default": false,
+                  "format": "checkbox",
+                  "title": "Agrégation de groupe",
+                  "options": {
+                    "infoText": "Traite l'id de la condition comme un ID de groupe et évalue selon le total de ses membres"
+                  },
+                  "yutori": {
+                    "points": [
+                      "Une fois activé, l'id défini dans la condition (requirements) est traité comme l'ID d'un groupe des paramètres de base.",
+                      "Une condition dont le Type est Catégorie est évaluée selon la somme du Niveau de toutes les Catégories appartenant à ce groupe.",
+                      "Une condition dont le Type est Action est évaluée selon la somme du nombre d'exécutions de toutes les Actions appartenant à ce groupe.",
+                      "Une condition dont le Type est Objet est évaluée selon la somme des quantités possédées de tous les Objets appartenant à ce groupe.",
+                      "Les éléments verrouillés (autres que released) ne sont pas inclus dans le total.",
+                      "La probabilité de consommation de l'Objet (chance) et la condition d'équipement (equipment) sont ignorées, et rien n'est consommé. Elles ne servent qu'à l'évaluation.",
+                      "Lorsqu'il est désactivé, l'id de la condition est traité comme avant, comme l'ID d'une Catégorie, Action ou Objet individuel."
+                    ],
+                    "reference": "fr/editor/event?id=Agrégation de groupe"
                   }
                 },
                 "acquisitions": {
@@ -3011,7 +3080,7 @@
                           "points": [
                             "Les valeurs négatives réduisent le nombre de possessions, le nombre de fois qu'elles ont été effectuées et leur niveau. Toutefois, elle ne peut être bas que 0.",
                             "Si un Objet a un nombre maximum de possessions (max), le nombre de possessions n'augmentera pas au-delà de cette valeur.",
-                            "Si le Type est la Catégorie, la valeur configurée est ajoutée directement au niveau (1 pour 1 niveau, 0,5 pour 0,5 niveau). La façon habituelle d'ajuster cela est de configurer la valeur d'expérience de l'Action. Cette configuration n'est pas Inutile, à moins qu'il n'y ait un but particulier."
+                            "タイプがカテゴリの場合、設定した値がレベルに直接加算されます（1で1レベル、0.5で0.5レベル）。アクションの経験値設定で調整するのが通常の方法です。特殊な目的がない限りこの設定は不要です。"
                           ],
                           "reference": "fr/editor/event?id=valeur"
                         }
@@ -3081,7 +3150,7 @@
               "headerTemplate": "{{ title }}: {{ self.information.id }}",
               "options": {
                 "disable_collapse": true,
-                "infoText": "Se déclenche lorsque toutes les catégories atteignent leur niveau maximal"
+                "infoText": "全カテゴリが最大レベルに達した時に発動"
               },
               "required": [
                 "information",
@@ -3089,6 +3158,7 @@
                 "timing",
                 "unlocked",
                 "requirements",
+                "requiringGroup",
                 "acquisitions",
                 "group"
               ],
@@ -3286,7 +3356,7 @@
                   "description": "Configuration des informations de base sur l'élément (ID, nom, icône, couleur, etc.)",
                   "yutori": {
                     "points": [
-                      "Éléments d'information de base communs à chaque élément du monde (catégories, actions, objets, événements, etc.).",
+                      "ワールド内の各要素（カテゴリ、アクション、アイテム、イベントなど）に共通する基本情報の項目です。",
                       "Chaque élément est configuré séparément."
                     ],
                     "reference": "fr/editor/information"
@@ -3467,9 +3537,31 @@
                     "points": [
                       "タイミングが成立するとイベントは発動し、専用の画面を開いて内容を表示します。",
                       "報酬は、発動時にここで設定した条件を満たしている場合にのみ獲得します。",
-                      "条件を設定していない場合は、発動するたびに報酬を獲得します。"
+                      "条件を設定していない場合は、発動するたびに報酬を獲得します。",
+                      "requiringGroupを有効にすると、ここで指定するidの意味がカテゴリ・アクション・アイテム個別のIDからグループIDに変わります。"
                     ],
                     "reference": "fr/editor/event?id=条件"
+                  }
+                },
+                "requiringGroup": {
+                  "type": "boolean",
+                  "default": false,
+                  "format": "checkbox",
+                  "title": "Agrégation de groupe",
+                  "options": {
+                    "infoText": "Traite l'id de la condition comme un ID de groupe et évalue selon le total de ses membres"
+                  },
+                  "yutori": {
+                    "points": [
+                      "Une fois activé, l'id défini dans la condition (requirements) est traité comme l'ID d'un groupe des paramètres de base.",
+                      "Une condition dont le Type est Catégorie est évaluée selon la somme du Niveau de toutes les Catégories appartenant à ce groupe.",
+                      "Une condition dont le Type est Action est évaluée selon la somme du nombre d'exécutions de toutes les Actions appartenant à ce groupe.",
+                      "Une condition dont le Type est Objet est évaluée selon la somme des quantités possédées de tous les Objets appartenant à ce groupe.",
+                      "Les éléments verrouillés (autres que released) ne sont pas inclus dans le total.",
+                      "La probabilité de consommation de l'Objet (chance) et la condition d'équipement (equipment) sont ignorées, et rien n'est consommé. Elles ne servent qu'à l'évaluation.",
+                      "Lorsqu'il est désactivé, l'id de la condition est traité comme avant, comme l'ID d'une Catégorie, Action ou Objet individuel."
+                    ],
+                    "reference": "fr/editor/event?id=Agrégation de groupe"
                   }
                 },
                 "acquisitions": {
@@ -3532,7 +3624,7 @@
                           "points": [
                             "Les valeurs négatives réduisent le nombre de possessions, le nombre de fois qu'elles ont été effectuées et leur niveau. Toutefois, elle ne peut être bas que 0.",
                             "Si un Objet a un nombre maximum de possessions (max), le nombre de possessions n'augmentera pas au-delà de cette valeur.",
-                            "Si le Type est la Catégorie, la valeur configurée est ajoutée directement au niveau (1 pour 1 niveau, 0,5 pour 0,5 niveau). La façon habituelle d'ajuster cela est de configurer la valeur d'expérience de l'Action. Cette configuration n'est pas Inutile, à moins qu'il n'y ait un but particulier."
+                            "タイプがカテゴリの場合、設定した値がレベルに直接加算されます（1で1レベル、0.5で0.5レベル）。アクションの経験値設定で調整するのが通常の方法です。特殊な目的がない限りこの設定は不要です。"
                           ],
                           "reference": "fr/editor/event?id=valeur"
                         }
@@ -3590,8 +3682,8 @@
               "title": "À la fin du jeu",
               "yutori": {
                 "points": [
-                  "Se déclenche lorsque les niveaux de toutes les catégories atteignent la valeur maximale (maxCategoryLevels).",
-                  "Les catégories qui ne sont pas numeric sont exclues de la vérification."
+                  "全カテゴリのレベルが最大値（maxCategoryLevels）に達した時に発動します。",
+                  "numeric（数値）でないカテゴリは判定から除かれます。"
                 ],
                 "reference": "fr/editor/event?id=À la fin du jeu"
               }
@@ -3610,6 +3702,7 @@
                 "timing",
                 "unlocked",
                 "requirements",
+                "requiringGroup",
                 "acquisitions",
                 "group"
               ],
@@ -3807,7 +3900,7 @@
                   "description": "Configuration des informations de base sur l'élément (ID, nom, icône, couleur, etc.)",
                   "yutori": {
                     "points": [
-                      "Éléments d'information de base communs à chaque élément du monde (catégories, actions, objets, événements, etc.).",
+                      "ワールド内の各要素（カテゴリ、アクション、アイテム、イベントなど）に共通する基本情報の項目です。",
                       "Chaque élément est configuré séparément."
                     ],
                     "reference": "fr/editor/information"
@@ -3988,9 +4081,31 @@
                     "points": [
                       "タイミングが成立するとイベントは発動し、専用の画面を開いて内容を表示します。",
                       "報酬は、発動時にここで設定した条件を満たしている場合にのみ獲得します。",
-                      "条件を設定していない場合は、発動するたびに報酬を獲得します。"
+                      "条件を設定していない場合は、発動するたびに報酬を獲得します。",
+                      "requiringGroupを有効にすると、ここで指定するidの意味がカテゴリ・アクション・アイテム個別のIDからグループIDに変わります。"
                     ],
                     "reference": "fr/editor/event?id=条件"
+                  }
+                },
+                "requiringGroup": {
+                  "type": "boolean",
+                  "default": false,
+                  "format": "checkbox",
+                  "title": "Agrégation de groupe",
+                  "options": {
+                    "infoText": "Traite l'id de la condition comme un ID de groupe et évalue selon le total de ses membres"
+                  },
+                  "yutori": {
+                    "points": [
+                      "Une fois activé, l'id défini dans la condition (requirements) est traité comme l'ID d'un groupe des paramètres de base.",
+                      "Une condition dont le Type est Catégorie est évaluée selon la somme du Niveau de toutes les Catégories appartenant à ce groupe.",
+                      "Une condition dont le Type est Action est évaluée selon la somme du nombre d'exécutions de toutes les Actions appartenant à ce groupe.",
+                      "Une condition dont le Type est Objet est évaluée selon la somme des quantités possédées de tous les Objets appartenant à ce groupe.",
+                      "Les éléments verrouillés (autres que released) ne sont pas inclus dans le total.",
+                      "La probabilité de consommation de l'Objet (chance) et la condition d'équipement (equipment) sont ignorées, et rien n'est consommé. Elles ne servent qu'à l'évaluation.",
+                      "Lorsqu'il est désactivé, l'id de la condition est traité comme avant, comme l'ID d'une Catégorie, Action ou Objet individuel."
+                    ],
+                    "reference": "fr/editor/event?id=Agrégation de groupe"
                   }
                 },
                 "acquisitions": {
@@ -4053,7 +4168,7 @@
                           "points": [
                             "Les valeurs négatives réduisent le nombre de possessions, le nombre de fois qu'elles ont été effectuées et leur niveau. Toutefois, elle ne peut être bas que 0.",
                             "Si un Objet a un nombre maximum de possessions (max), le nombre de possessions n'augmentera pas au-delà de cette valeur.",
-                            "Si le Type est la Catégorie, la valeur configurée est ajoutée directement au niveau (1 pour 1 niveau, 0,5 pour 0,5 niveau). La façon habituelle d'ajuster cela est de configurer la valeur d'expérience de l'Action. Cette configuration n'est pas Inutile, à moins qu'il n'y ait un but particulier."
+                            "タイプがカテゴリの場合、設定した値がレベルに直接加算されます（1で1レベル、0.5で0.5レベル）。アクションの経験値設定で調整するのが通常の方法です。特殊な目的がない限りこの設定は不要です。"
                           ],
                           "reference": "fr/editor/event?id=valeur"
                         }
@@ -4126,7 +4241,7 @@
               "Il y en a un par moment, et il n'est pas possible d'en ajouter ni d'en supprimer. Laissez le champ vide pour les moments où vous ne l'utilisez pas.",
               "Elles n'apparaissent pas dans la liste des missions ou des tâches. Les éléments qui sont considérés comme accomplis dès que les conditions sont remplies doivent être configurés en tant que tâches.",
               "La récompense est automatiquement acquise dès son déclenchement. Il n'y a ni opération de réception, ni ruban, comme c'est le cas pour les tâches.",
-              "Il peut modifier le niveau de la catégorie, le nombre d'actions effectuées et le nombre d'objets possédés lorsqu'il est activé.",
+              "発動時にカテゴリのレベル、アクションの実行回数、アイテムの所持数を変化させることができます。",
               "Si vous ne renseignez pas les champs « Nom », « Description » et « Icône », le texte et l'icône par défaut intégrés au joueur seront utilisés."
             ],
             "reference": "fr/editor/event"
@@ -4305,7 +4420,7 @@
       "description": "Éléments de configuration de base pour le monde en général.",
       "yutori": {
         "points": [
-          "Configurez le nom du monde, sa description, son arrière-plan, sa monnaie, sa capacité, le niveau max des catégories, le taux de montée en expérience, le taux de remise, les paramètres de combat standard, etc.",
+          "ワールドの名前、説明、背景、通貨、容量、カテゴリの最大レベル、経験値の上昇率、割引率、標準戦闘パラメータなどを設定します。",
           "Ces configurations affectent le monde entier."
         ],
         "reference": "fr/editor/basic"
@@ -4313,7 +4428,7 @@
     },
     "categories": {
       "type": "array",
-      "basicCategoryTitle": "Catégorie.",
+      "basicCategoryTitle": "カテゴリ",
       "format": "tabs",
       "options": {
         "disable_collapse": true,
@@ -4532,7 +4647,7 @@
             "description": "Configuration des informations de base sur l'élément (ID, nom, icône, couleur, etc.)",
             "yutori": {
               "points": [
-                "Éléments d'information de base communs à chaque élément du monde (catégories, actions, objets, événements, etc.).",
+                "ワールド内の各要素（カテゴリ、アクション、アイテム、イベントなど）に共通する基本情報の項目です。",
                 "Chaque élément est configuré séparément."
               ],
               "reference": "fr/editor/information"
@@ -4544,12 +4659,12 @@
             "pattern": "^[0-9a-zA-Z\\-]*$",
             "title": "groupe (habituellement de personnes)",
             "options": {
-              "infoText": "Classification des catégories par groupe d'affichage"
+              "infoText": "カテゴリの表示グループ分類"
             },
             "yutori": {
               "points": [
                 "Appliquer l'un des groupes configurés dans Basic.",
-                "Une liste de catégories s'affiche dans l'ordre des groupes configurés."
+                "設定したグループ順にカテゴリ一覧が表示されます。"
               ],
               "reference": "fr/editor/category?id=groupe (habituellement de personnes)"
             }
@@ -4685,10 +4800,10 @@
               "infoText": "Details"
             },
             "title": "conditions générales",
-            "description": "Exigences pour l'utilisation de la Catégorie.",
+            "description": "カテゴリ利用に必要な条件",
             "yutori": {
               "points": [
-                "Il s'agit des configurations établies pour chaque élément par Catégorie, Action et Objet.",
+                "カテゴリ、アクション、アイテムごとの各要素に設定する条件です。",
                 "Si toutes les configurations ne sont pas remplies, les opérations indiquées dans le tableau ne peuvent pas être effectuées.",
                 "Si la fonction de verrouillage est activée, l'élément lui-même est masqué jusqu'à ce que la condition soit remplie."
               ],
@@ -4703,7 +4818,7 @@
             },
             "options": {
               "disable_collapse": true,
-              "infoText": "Désignation des groupes d'objets qu'il est possible d'équiper dans cette Catégorie."
+              "infoText": "このカテゴリで装備可能なアイテムグループの指定"
             },
             "default": [
               ""
@@ -4712,7 +4827,7 @@
             "title": "groupe d'équipement",
             "yutori": {
               "points": [
-                "Liste des noms de groupes d'objets pouvant être équipés dans cette Catégorie.",
+                "このカテゴリで装備できるアイテムのグループ名のリストです。",
                 "Seuls les objets du groupe correspondant au nom de groupe spécifié ici peuvent être équipés.",
                 "Si une chaîne vide est spécifiée, les objets dont le groupe n'est pas configuré (vide) deviennent éligibles à l'équipement.",
                 "Un seul objet peut être équipé dans le même groupe. Lorsque vous équipez un nouvel Objet, tout équipement existant dans le même groupe est automatiquement déséquipé.",
@@ -4727,13 +4842,13 @@
             "format": "checkbox",
             "title": "Disponibilité des niveaux",
             "options": {
-              "infoText": "Disponibilité des fonctions de niveau Catégorie"
+              "infoText": "カテゴリレベル機能の有無"
             },
             "yutori": {
               "points": [
-                "Il s'agit d'un indicateur permettant de savoir si cette catégorie a un niveau ou non.",
+                "このカテゴリがレベルを持つかどうかのフラグです。",
                 "S'il est activé, il a un niveau ; s'il est désactivé, il n'en a pas.",
-                "Par exemple, vous pouvez activer les catégories basées sur l'expérience, telles que l'épée et la magie, et désactiver les catégories basées sur l'emplacement, telles que les donjons et les forgerons."
+                "例として、剣技や魔法といった経験に基づくカテゴリはオンにし、ダンジョンや鍛冶屋といった場所のカテゴリはオフにするなどの使い方があります。"
               ],
               "reference": "fr/editor/category?id=Disponibilité des niveaux"
             }
@@ -4744,13 +4859,13 @@
             "format": "checkbox",
             "title": "en progrès simultanés",
             "options": {
-              "infoText": "Configuration de l'exécution en parallèle avec d'autres Catégories"
+              "infoText": "他カテゴリとの並行実行設定"
             },
             "yutori": {
               "points": [
-                "Il s'agit d'un indicateur permettant de savoir si les actions de cette Catégorie peuvent progresser en parallèle avec des actions d'autres catégories.",
-                "Si elle est activée, l'action peut progresser simultanément et indépendamment d'autres catégories d'actions.",
-                "Si elle est désactivée, elle ne peut pas être exécutée simultanément avec des actions dans d'autres catégories qui sont également configurées sur désactivé. Lorsque vous commencez une nouvelle action dans cette Catégorie, les actions en cours dans d'autres catégories non autonomes sont automatiquement interrompues."
+                "このカテゴリのアクションが、他のカテゴリのアクションと並行して進行できるかどうかのフラグです。",
+                "オンの場合は、他のカテゴリのアクションとは独立して同時に進行できます。",
+                "オフの場合は、同じくオフに設定された他のカテゴリのアクションと同時に実行できません。新たにこのカテゴリのアクションを開始すると、他の非スタンドアロンカテゴリで進行中のアクションは自動的に中止されます。"
               ],
               "reference": "fr/editor/category?id=en progrès simultanés"
             }
@@ -4764,12 +4879,12 @@
             },
             "title": "arrière-plan",
             "options": {
-              "infoText": "Configurations d'arrière-plan propres à chaque catégorie"
+              "infoText": "カテゴリ固有の背景設定"
             },
             "yutori": {
               "points": [
-                "Configure l'arrière-plan de cette Catégorie.",
-                "Lorsqu'une catégorie est sélectionnée, l'image de fond change en même temps qu'elle.",
+                "このカテゴリの背景を設定します。",
+                "カテゴリを選択されたときに、連動して背景画像が変更されます。",
                 "Si cette option n'est pas configurée, la configuration de l'arrière-plan du monde est utilisée telle quelle."
               ],
               "reference": "fr/editor/category?id=arrière-plan"
@@ -4787,13 +4902,13 @@
           }
         }
       },
-      "title": "Catégorie.",
+      "title": "カテゴリ",
       "description": "Cadre général pour la classification des actions et des objets.",
       "yutori": {
         "points": [
           "Représente un classement majeur.",
           "Par exemple, il peut être configuré dans n'importe quel état d'esprit, comme la courte portée, la longue portée, la magie, les donjons, les forges, les manufactures, etc.",
-          "Les actions et les objets sont placés directement sous le monde et sont associés à un ID de catégorie."
+          "アクションやアイテムはワールド直下に配置され、カテゴリIDで関連付けられます。"
         ],
         "reference": "fr/editor/category"
       }
@@ -5025,7 +5140,7 @@
             "description": "Configuration des informations de base sur l'élément (ID, nom, icône, couleur, etc.)",
             "yutori": {
               "points": [
-                "Éléments d'information de base communs à chaque élément du monde (catégories, actions, objets, événements, etc.).",
+                "ワールド内の各要素（カテゴリ、アクション、アイテム、イベントなど）に共通する基本情報の項目です。",
                 "Chaque élément est configuré séparément."
               ],
               "reference": "fr/editor/information"
@@ -5035,15 +5150,15 @@
             "type": "string",
             "default": "",
             "pattern": "^[0-9a-zA-Z\\-]*$",
-            "title": "Catégorie.",
+            "title": "カテゴリ",
             "options": {
-              "infoText": "ID de la catégorie à laquelle appartient l'Action"
+              "infoText": "アクションが所属するカテゴリのID"
             },
             "yutori": {
               "points": [
-                "Indiquez l'ID de la catégorie à laquelle cette Action appartient."
+                "このアクションが所属するカテゴリのIDを指定します。"
               ],
-              "reference": "fr/editor/action?id=Catégorie."
+              "reference": "fr/editor/action?id=カテゴリ"
             }
           },
           "attribute": {
@@ -5051,13 +5166,13 @@
             "maxLength": 20,
             "title": "attribut",
             "options": {
-              "infoText": "Catégories d'attributs propres à l'Action"
+              "infoText": "アクション固有の属性カテゴリ"
             },
             "yutori": {
               "points": [
-                "Des attributs individuels (catégories) peuvent être configurés.",
-                "Si elle n'est pas renseignée, la catégorie à laquelle elle appartient est reprise",
-                "Par exemple, si vous configurez l'attribut Magie pour une action appartenant individuellement à la catégorie Château du démon, le niveau et les propriétés de la catégorie Magie seront calculés et appliqués au temps d'exécution et aux dégâts de l'action."
+                "個別の属性(カテゴリ)を設定できます。",
+                "空欄の場合は属するカテゴリを引き継ぎます",
+                "例えば、魔王城というカテゴリに属するアクションに個別に魔法という属性を設定した場合、アクション完了時間やダメージには魔法のカテゴリのレベルやプロパティが計算され適応されます。"
               ],
               "reference": "fr/editor/action?id=attribut"
             }
@@ -5300,7 +5415,7 @@
             "description": "Conditions Nécessaires à l'exécution de l'Action.",
             "yutori": {
               "points": [
-                "Il s'agit des configurations établies pour chaque élément par Catégorie, Action et Objet.",
+                "カテゴリ、アクション、アイテムごとの各要素に設定する条件です。",
                 "Si toutes les configurations ne sont pas remplies, les opérations indiquées dans le tableau ne peuvent pas être effectuées.",
                 "Si la fonction de verrouillage est activée, l'élément lui-même est masqué jusqu'à ce que la condition soit remplie."
               ],
@@ -5362,7 +5477,7 @@
                     "points": [
                       "Les valeurs négatives réduisent le nombre de possessions, le nombre de fois qu'elles ont été effectuées et leur niveau. Toutefois, elle ne peut être bas que 0.",
                       "Si un Objet a un nombre maximum de possessions (max), le nombre de possessions n'augmentera pas au-delà de cette valeur.",
-                      "Si le Type est la Catégorie, la valeur configurée est ajoutée directement au niveau (1 pour 1 niveau, 0,5 pour 0,5 niveau). La façon habituelle d'ajuster cela est de configurer la valeur d'expérience de l'Action. Cette configuration n'est pas Inutile, à moins qu'il n'y ait un but particulier."
+                      "タイプがカテゴリの場合、設定した値がレベルに直接加算されます（1で1レベル、0.5で0.5レベル）。アクションの経験値設定で調整するのが通常の方法です。特殊な目的がない限りこの設定は不要です。"
                     ],
                     "reference": "fr/editor/acquisition?id=valeur"
                   }
@@ -5398,7 +5513,7 @@
             "yutori": {
               "points": [
                 "Configurer les acquisitions.",
-                "Vous pouvez modifier le niveau de la Catégorie ainsi que l'Objet, et le nombre de fois que l'Action a été comptée.",
+                "アイテムの他にカテゴリのレベル、アクションの実行した回数を変更できます。",
                 "La probabilité d'obtenir le produit peut être configurée."
               ],
               "reference": "fr/editor/acquisition"
@@ -5777,7 +5892,7 @@
             "description": "Configuration des informations de base sur l'élément (ID, nom, icône, couleur, etc.)",
             "yutori": {
               "points": [
-                "Éléments d'information de base communs à chaque élément du monde (catégories, actions, objets, événements, etc.).",
+                "ワールド内の各要素（カテゴリ、アクション、アイテム、イベントなど）に共通する基本情報の項目です。",
                 "Chaque élément est configuré séparément."
               ],
               "reference": "fr/editor/information"
@@ -5787,15 +5902,15 @@
             "type": "string",
             "default": "",
             "pattern": "^[0-9a-zA-Z\\-]*$",
-            "title": "Catégorie.",
+            "title": "カテゴリ",
             "options": {
-              "infoText": "ID de la Catégorie à laquelle l'Objet appartient"
+              "infoText": "アイテムが所属するカテゴリのID"
             },
             "yutori": {
               "points": [
-                "Indiquez l'ID de la catégorie à laquelle cet Objet appartient."
+                "このアイテムが所属するカテゴリのIDを指定します。"
               ],
-              "reference": "fr/editor/item?id=Catégorie."
+              "reference": "fr/editor/item?id=カテゴリ"
             }
           },
           "group": {
@@ -5926,7 +6041,7 @@
             "title": "Type d'équipement",
             "yutori": {
               "points": [
-                "Les objets équipables doivent appartenir à un groupe indiqué dans `equipmentGroups` de la catégorie.",
+                "装備可能なアイテムは、カテゴリの`equipmentGroups`で指定されたグループに属している必要があります。",
                 "Un seul Objet peut être équipé au sein d'un même groupe.",
                 "`unnecessary` produit son effet que l'objet soit équipé ou non, et l'ampleur de l'effet est proportionnelle au nombre possédé (aucun effet avec 0, n fois avec n)."
               ],
@@ -6038,7 +6153,7 @@
             "description": "Conditions Nécessaires à l'utilisation de l'Objet.",
             "yutori": {
               "points": [
-                "Il s'agit des configurations établies pour chaque élément par Catégorie, Action et Objet.",
+                "カテゴリ、アクション、アイテムごとの各要素に設定する条件です。",
                 "Si toutes les configurations ne sont pas remplies, les opérations indiquées dans le tableau ne peuvent pas être effectuées.",
                 "Si la fonction de verrouillage est activée, l'élément lui-même est masqué jusqu'à ce que la condition soit remplie."
               ],
@@ -6070,17 +6185,17 @@
                 "category": {
                   "type": "string",
                   "pattern": "^(\\*|[^*]*)$",
-                  "title": "Catégorie.",
+                  "title": "カテゴリ",
                   "options": {
-                    "infoText": "Spécification de la catégorie à laquelle les propriétés s'appliquent."
+                    "infoText": "プロパティを適用するカテゴリの指定"
                   },
                   "yutori": {
                     "points": [
-                      "Configurer l'ID de la catégorie à laquelle s'applique cette propriété.",
-                      "Configurer `*` l'applique à toutes les catégories.",
-                      "Si elle est vide, elle s'applique à la Catégorie à laquelle l'Objet appartient."
+                      "このプロパティを適用するカテゴリのIDを設定します。",
+                      "`*`を設定すると全カテゴリに適用されます。",
+                      "空欄の場合はアイテムが属するカテゴリに適用されます。"
                     ],
-                    "reference": "fr/editor/property?id=Catégorie."
+                    "reference": "fr/editor/property?id=カテゴリ"
                   }
                 },
                 "attack": {
@@ -6238,7 +6353,7 @@
       "yutori": {
         "points": [
           "Cet élément concerne la propriété d'objets tels que les équipements, les consommables et les objets de valeur.",
-          "Une seule catégorie peut être équipée, ou bien elle peut être rien.",
+          "カテゴリ内で１つのみ装備することもできますが、装備できないようにもできます。",
           "Il existe également différentes manières de les utiliser."
         ],
         "reference": "fr/editor/item"
@@ -6264,8 +6379,7 @@
         "required": [
           "information",
           "chance",
-          "property",
-          "comment"
+          "property"
         ],
         "properties": {
           "information": {
@@ -6461,7 +6575,7 @@
             "description": "Configuration des informations de base sur l'élément (ID, nom, icône, couleur, etc.)",
             "yutori": {
               "points": [
-                "Éléments d'information de base communs à chaque élément du monde (catégories, actions, objets, événements, etc.).",
+                "ワールド内の各要素（カテゴリ、アクション、アイテム、イベントなど）に共通する基本情報の項目です。",
                 "Chaque élément est configuré séparément."
               ],
               "reference": "fr/editor/information"
@@ -6566,24 +6680,6 @@
                 "À rédiger"
               ],
               "reference": "fr/editor/combat"
-            }
-          },
-          "comment": {
-            "type": "boolean",
-            "default": false,
-            "format": "checkbox",
-            "title": "Affichage de la note explicative",
-            "options": {
-              "infoText": "Afficher ou non la note explicative en notification toast lors du déclenchement"
-            },
-            "yutori": {
-              "points": [
-                "Indicateur déterminant si la note explicative s'affiche en notification toast lorsque cette compétence se déclenche.",
-                "Si activé, elle s'affiche à chaque déclenchement avec une probabilité de (100% − probabilité de déclenchement) ÷ 2. Pour une probabilité de déclenchement de 40%, cela donne 30%.",
-                "Si désactivé, elle ne s'affiche pas.",
-                "Si la note explicative est vide, rien ne s'affiche même lorsque l'option est activée."
-              ],
-              "reference": "fr/editor/skill?id=Affichage de la note explicative"
             }
           }
         }
@@ -6796,11 +6892,11 @@
         "headerTemplate": "{{ i1 }}: {{ self.id }}"
       },
       "title": "groupe (habituellement de personnes)",
-      "description": "Définir des groupes d'affichage pour les catégories, les actions et les objets",
+      "description": "カテゴリ、アクション、アイテムの表示グループを定義",
       "yutori": {
         "points": [
           "Définir des groupes pour contrôler l'ordre d'affichage.",
-          "Vous pouvez configurer les groupes définis ici pour chaque Catégorie, Action et Objet.",
+          "各カテゴリ、アクション、アイテムでここで定義したグループを設定できます。",
           "Les groupes identiques sont affichés à proximité les uns des autres.",
           "Si elle est laissée vide, aucun regroupement n'est effectué."
         ],
@@ -6828,6 +6924,7 @@
           "timing",
           "unlocked",
           "requirements",
+          "requiringGroup",
           "acquisitions",
           "group"
         ],
@@ -7025,7 +7122,7 @@
             "description": "Configuration des informations de base sur l'élément (ID, nom, icône, couleur, etc.)",
             "yutori": {
               "points": [
-                "Éléments d'information de base communs à chaque élément du monde (catégories, actions, objets, événements, etc.).",
+                "ワールド内の各要素（カテゴリ、アクション、アイテム、イベントなど）に共通する基本情報の項目です。",
                 "Chaque élément est configuré séparément."
               ],
               "reference": "fr/editor/information"
@@ -7035,17 +7132,17 @@
             "type": "string",
             "default": "",
             "pattern": "^[0-9a-zA-Z\\-]*$",
-            "title": "Catégorie.",
+            "title": "カテゴリ",
             "options": {
-              "infoText": "ID de la catégorie à laquelle appartient la tâche"
+              "infoText": "タスクが所属するカテゴリのID"
             },
             "yutori": {
               "points": [
-                "Indiquez l'ID de la catégorie à laquelle cette tâche doit être rattachée.",
-                "Une fois la configuration activée, une liste des tâches s'ajoute à l'écran des catégories du joueur, et celles-ci s'affichent également regroupées par catégorie dans la liste des missions.",
-                "Si le champ est vide, la mission n'appartient à aucune catégorie et s'affiche en tête de la liste des missions."
+                "このタスクを所属させるカテゴリのIDを指定します。",
+                "設定すると、プレイヤーのカテゴリの画面にタスクの一覧が追加され、ミッションの一覧でもカテゴリごとにまとめて表示されます。",
+                "空欄の場合はどのカテゴリにも属さず、ミッションの一覧の先頭にまとめて表示されます。"
               ],
-              "reference": "fr/editor/task?id=Catégorie."
+              "reference": "fr/editor/task?id=カテゴリ"
             }
           },
           "timing": {
@@ -7209,9 +7306,31 @@
                 "タスクを達成させる条件です。",
                 "この条件を満たすと達成になり、報酬を受け取れるようになります。",
                 "一度達成すると、その後に条件を満たさなくなっても達成のままで、報酬もいつでも受け取れます。",
-                "条件を設定していないタスクは達成しません。"
+                "条件を設定していないタスクは達成しません。",
+                "requiringGroupを有効にすると、ここで指定するidの意味がカテゴリ・アクション・アイテム個別のIDからグループIDに変わります。"
               ],
               "reference": "fr/editor/task?id=conditions générales"
+            }
+          },
+          "requiringGroup": {
+            "type": "boolean",
+            "default": false,
+            "format": "checkbox",
+            "title": "Agrégation de groupe",
+            "options": {
+              "infoText": "Traite l'id de la condition comme un ID de groupe et évalue selon le total de ses membres"
+            },
+            "yutori": {
+              "points": [
+                "Une fois activé, l'id défini dans la condition (requirements) est traité comme l'ID d'un groupe des paramètres de base.",
+                "Une condition dont le Type est Catégorie est évaluée selon la somme du Niveau de toutes les Catégories appartenant à ce groupe.",
+                "Une condition dont le Type est Action est évaluée selon la somme du nombre d'exécutions de toutes les Actions appartenant à ce groupe.",
+                "Une condition dont le Type est Objet est évaluée selon la somme des quantités possédées de tous les Objets appartenant à ce groupe.",
+                "Les éléments verrouillés (autres que released) ne sont pas inclus dans le total.",
+                "La probabilité de consommation de l'Objet (chance) et la condition d'équipement (equipment) sont ignorées, et rien n'est consommé. Elles ne servent qu'à l'évaluation.",
+                "Lorsqu'il est désactivé, l'id de la condition est traité comme avant, comme l'ID d'une Catégorie, Action ou Objet individuel."
+              ],
+              "reference": "fr/editor/task?id=Agrégation de groupe"
             }
           },
           "acquisitions": {
@@ -7274,7 +7393,7 @@
                     "points": [
                       "Les valeurs négatives réduisent le nombre de possessions, le nombre de fois qu'elles ont été effectuées et leur niveau. Toutefois, elle ne peut être bas que 0.",
                       "Si un Objet a un nombre maximum de possessions (max), le nombre de possessions n'augmentera pas au-delà de cette valeur.",
-                      "Si le Type est la Catégorie, la valeur configurée est ajoutée directement au niveau (1 pour 1 niveau, 0,5 pour 0,5 niveau). La façon habituelle d'ajuster cela est de configurer la valeur d'expérience de l'Action. Cette configuration n'est pas Inutile, à moins qu'il n'y ait un but particulier."
+                      "タイプがカテゴリの場合、設定した値がレベルに直接加算されます（1で1レベル、0.5で0.5レベル）。アクションの経験値設定で調整するのが通常の方法です。特殊な目的がない限りこの設定は不要です。"
                     ],
                     "reference": "fr/editor/task?id=valeur"
                   }
@@ -7305,7 +7424,7 @@
             "yutori": {
               "points": [
                 "達成したタスクを開き、獲得のバーを押した時に受け取れる報酬です。",
-                "カテゴリーのレベル、アクションの実行回数、アイテムの所持数を変化させることができます。",
+                "カテゴリのレベル、アクションの実行回数、アイテムの所持数を変化させることができます。",
                 "数量にマイナスを設定することもできます。",
                 "報酬を設定していないタスクは獲得のバーが出ず、達成した時点で完了になります。",
                 "持てるアイテムの種類が上限に達している時は受け取れません。整理してから受け取り直します。"
@@ -7325,7 +7444,7 @@
               "points": [
                 "Appliquer l'un des groupes configurés dans Basic.",
                 "La liste des tâches s'affiche dans l'ordre des groupes de configuration que vous avez définis.",
-                "Ils sont classés par catégorie, puis par groupe au sein de chaque catégorie.",
+                "カテゴリの中でさらにグループごとに分けて表示されます。",
                 "Si elle est laissée vide, aucun regroupement n'est effectué."
               ],
               "reference": "fr/editor/task?id=groupe de travail"
@@ -7338,10 +7457,10 @@
       "yutori": {
         "points": [
           "Lorsque la configuration définie est remplie, l'objectif est atteint et un message s'affiche en haut de l'écran.",
-          "Elles s'affichent dans la liste des missions du joueur et dans la liste des tâches par catégorie.",
+          "プレイヤーのミッションの一覧と、カテゴリのタスクの一覧に表示されます。",
           "La récompense n'est pas attribuée automatiquement. Le joueur la reçoit lorsqu'il ouvre la tâche et appuie sur la barre d'acquisitions.",
           "Tant que la récompense n'a pas été perçue, un ruban apparaît sur la barre de la liste pour indiquer qu'elle n'a pas encore été perçue.",
-          "Par les acquisitions, vous pouvez modifier le niveau de la catégorie, le nombre d'actions effectuées et le nombre d'objets en votre possession.",
+          "獲得でカテゴリのレベル、アクションの実行回数、アイテムの所持数を変化させることができます。",
           "Les éléments que vous souhaitez déclencher à des moments autres que ceux prévus (par exemple lors du premier démarrage ou en cas de jeu terminé) doivent faire l’objet d’une configuration dans les événements des paramètres de base."
         ],
         "reference": "fr/editor/task"

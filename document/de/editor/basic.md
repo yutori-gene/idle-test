@@ -1,7 +1,7 @@
 
 # Grundeinstellung
 Grundlegende Konfigurationselemente für die Welt im Allgemeinen.
-- Konfiguration des Namens der Welt, der Beschreibung, des Hintergrunds, der Währung, der Kapazität, des maximalen Levels der Kategorien, der Rate des Erfahrungszuwachses, des Rabatts, der Standard-Kampfparameter, usw.
+- ワールドの名前、説明、背景、通貨、容量、カテゴリの最大レベル、経験値の上昇率、割引率、標準戦闘パラメータなどを設定します。
 - Diese Konfigurationen wirken sich auf die gesamte Welt aus.
 
 |Name|Beschreibung|

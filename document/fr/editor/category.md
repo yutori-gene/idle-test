@@ -1,18 +1,18 @@
 
-# Catégorie.
+# カテゴリ
 Cadre général pour la classification des actions et des objets.
 - Représente un classement majeur.
 - Par exemple, il peut être configuré dans n'importe quel état d'esprit, comme la courte portée, la longue portée, la magie, les donjons, les forges, les manufactures, etc.
-- Les actions et les objets sont placés directement sous le monde et sont associés à un ID de catégorie.
+- アクションやアイテムはワールド直下に配置され、カテゴリIDで関連付けられます。
 ___
 
 ## [_l'information_](fr/editor/information)
 ___
 
 ## groupe (habituellement de personnes)
-Classification des catégories par groupe d'affichage
+カテゴリの表示グループ分類
 - Appliquer l'un des groupes configurés dans Basic.
-- Une liste de catégories s'affiche dans l'ordre des groupes configurés.
+- 設定したグループ順にカテゴリ一覧が表示されます。
 - [_general_](fr/editor/general)
 ___
 
@@ -28,8 +28,8 @@ ___
 ___
 
 ## groupe d'équipement
-Désignation des groupes d'objets qu'il est possible d'équiper dans cette Catégorie.
-- Liste des noms de groupes d'objets pouvant être équipés dans cette Catégorie.
+このカテゴリで装備可能なアイテムグループの指定
+- このカテゴリで装備できるアイテムのグループ名のリストです。
 - Seuls les objets du groupe correspondant au nom de groupe spécifié ici peuvent être équipés.
 - Si une chaîne vide est spécifiée, les objets dont le groupe n'est pas configuré (vide) deviennent éligibles à l'équipement.
 - Un seul objet peut être équipé dans le même groupe. Lorsque vous équipez un nouvel Objet, tout équipement existant dans le même groupe est automatiquement déséquipé.
@@ -38,21 +38,21 @@ Désignation des groupes d'objets qu'il est possible d'équiper dans cette Caté
 ___
 
 ## Disponibilité des niveaux
-Disponibilité des fonctions de niveau Catégorie
-- Il s'agit d'un indicateur permettant de savoir si cette catégorie a un niveau ou non.
+カテゴリレベル機能の有無
+- このカテゴリがレベルを持つかどうかのフラグです。
 - S'il est activé, il a un niveau ; s'il est désactivé, il n'en a pas.
-- Par exemple, vous pouvez activer les catégories basées sur l'expérience, telles que l'épée et la magie, et désactiver les catégories basées sur l'emplacement, telles que les donjons et les forgerons.
+- 例として、剣技や魔法といった経験に基づくカテゴリはオンにし、ダンジョンや鍛冶屋といった場所のカテゴリはオフにするなどの使い方があります。
 ___
 
 ## en progrès simultanés
-Configuration de l'exécution en parallèle avec d'autres Catégories
-- Il s'agit d'un indicateur permettant de savoir si les actions de cette Catégorie peuvent progresser en parallèle avec des actions d'autres catégories.
-- Si elle est activée, l'action peut progresser simultanément et indépendamment d'autres catégories d'actions.
-- Si elle est désactivée, elle ne peut pas être exécutée simultanément avec des actions dans d'autres catégories qui sont également configurées sur désactivé. Lorsque vous commencez une nouvelle action dans cette Catégorie, les actions en cours dans d'autres catégories non autonomes sont automatiquement interrompues.
+他カテゴリとの並行実行設定
+- このカテゴリのアクションが、他のカテゴリのアクションと並行して進行できるかどうかのフラグです。
+- オンの場合は、他のカテゴリのアクションとは独立して同時に進行できます。
+- オフの場合は、同じくオフに設定された他のカテゴリのアクションと同時に実行できません。新たにこのカテゴリのアクションを開始すると、他の非スタンドアロンカテゴリで進行中のアクションは自動的に中止されます。
 ___
 
 ## arrière-plan
-Configurations d'arrière-plan propres à chaque catégorie
-- Configure l'arrière-plan de cette Catégorie.
-- Lorsqu'une catégorie est sélectionnée, l'image de fond change en même temps qu'elle.
+カテゴリ固有の背景設定
+- このカテゴリの背景を設定します。
+- カテゴリを選択されたときに、連動して背景画像が変更されます。
 - Si cette option n'est pas configurée, la configuration de l'arrière-plan du monde est utilisée telle quelle.

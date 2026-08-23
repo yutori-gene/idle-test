@@ -1,13 +1,13 @@
 
 # syarat dan ketentuan
 Konfigurasi syarat untuk penggunaan dan tampilan elemen.
-- Ini adalah konfigurasi kondisi untuk setiap elemen berdasarkan kategori, aksi, dan item.
+- カテゴリ、アクション、アイテムごとの各要素に設定する条件です。
 - Jika semua konfigurasi tidak ada, operasi yang ditunjukkan dalam tabel tidak dapat dilakukan.
 - Jika fungsi kunci terkunci, elemen itu sendiri akan disembunyikan sampai kondisi terpenuhi.
 
 |Di mana harus melakukan konfigurasi|Apa yang tidak ada kecuali jika syarat-syaratnya terpenuhi.|
 |-|-|
-|Kategori.|Eksekusi semua aksi dan manipulasi Item dalam Kategori|
+|カテゴリ|カテゴリ内の全てのアクションの実行とアイテムの操作|
 |Aksi|Pelaksanaan aksi|
 |Item|Manipulasi item (misalnya Peralatan)|
 - [_type_](id/editor/type)
@@ -18,7 +18,7 @@ Jenis elemen yang direferensikan sebagai kondisi.
 
 |Tipe|Nilai yang direferensikan|
 |-|-|
-|Kategori.|Level kategori.|
+|カテゴリ|カテゴリのレベル|
 |Aksi|Hitung berapa kali aksi telah dilakukan.|
 |Item|Jumlah item yang dimiliki.|
 ___

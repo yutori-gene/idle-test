@@ -1,7 +1,7 @@
 
 # Basic Configuration
 Basic configurations for the world in general
-- Configure the world's name, description, background, currency, capacity, max level of categories, experience increase rate, discount rate, standard combat parameters, etc.
+- ワールドの名前、説明、背景、通貨、容量、カテゴリの最大レベル、経験値の上昇率、割引率、標準戦闘パラメータなどを設定します。
 - These configurations affect the entire world.
 
 |name|Description|

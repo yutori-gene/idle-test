@@ -85,7 +85,7 @@ export const correction: Markdown = {
 
 export const properties: Markdown = {
 	title: "属性",
-	summary: "修正值列表",
+	summary: "プロパティの一覧",
 	options: {
 		preset: "properties",
 	},
@@ -93,7 +93,7 @@ export const properties: Markdown = {
 
 export const property: Markdown = {
 	title: "属性",
-	summary: "检查修正值",
+	summary: "プロパティの確認",
 	// properties / correction は label を持たない同ページ内の節なので、
 	// 一覧表・リンクは作らず children の見出しとして展開する（item・action と同じ形）
 	children: { properties: properties, correction: correction },
@@ -115,7 +115,7 @@ export const trade: Markdown = {
 
 export const items: Markdown = {
 	title: "物品。",
-	summary: "类别中的物品清单。",
+	summary: "カテゴリ内のアイテムの一覧",
 	options: {
 		preset: "items",
 	},
@@ -143,7 +143,7 @@ export const act: Markdown = {
 
 export const actions: Markdown = {
 	title: "动作。",
-	summary: "类别中的动作列表",
+	summary: "カテゴリ内のアクションの一覧",
 	options: {
 		preset: "actions",
 	},
@@ -163,14 +163,14 @@ export const action: Markdown = {
 
 export const tasks: Markdown = {
 	title: "任务",
-	summary: "该类别中的任务列表",
+	summary: "カテゴリ内のタスクの一覧",
 	options: {
 		preset: "tasks",
 	},
 };
 
 export const category: Markdown = {
-	title: "类别",
+	title: "カテゴリ",
 	summary: "各种元素的汇编。",
 	children: { tasks: tasks },
 	options: {

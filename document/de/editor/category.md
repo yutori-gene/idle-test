@@ -1,18 +1,18 @@
 
-# Kategorie.
+# カテゴリ
 Allgemeiner Rahmen für die Klassifizierung von Aktionen und Gegenständen.
 - Stellt eine wichtige Minute dar.
 - Zum Beispiel kann es in jeder beliebigen Konfiguration eingesetzt werden, wie z.B. Nahbereich, Fernbereich, Magie, Kerker, Schmiede, Manufakturen, usw.
-- Aktionen und Gegenstände werden direkt ab der Welt platziert und sind mit einer Kategorie ID verbunden.
+- アクションやアイテムはワールド直下に配置され、カテゴリIDで関連付けられます。
 ___
 
 ## [_Informationen_](de/editor/information)
 ___
 
 ## Gruppe (z.B. von Personen)
-Gruppeneinteilung der Kategorien anzeigen
+カテゴリの表示グループ分類
 - Wenden Sie eine der in Basic konfigurierten Gruppen an.
-- Es wird eine Liste der Kategorien in der Reihenfolge der Konfiguration der Gruppen angezeigt.
+- 設定したグループ順にカテゴリ一覧が表示されます。
 - [_general_](de/editor/general)
 ___
 
@@ -28,8 +28,8 @@ ___
 ___
 
 ## Ausrüstungsgruppe
-Bezeichnung der Gegenstandsgruppen, die in dieser Kategorie ausgerüstet werden können.
-- Liste der Gruppennamen von Gegenständen, die in dieser Kategorie ausgerüstet werden können.
+このカテゴリで装備可能なアイテムグループの指定
+- このカテゴリで装備できるアイテムのグループ名のリストです。
 - Es können nur Gegenstände aus der Gruppe ausgerüstet werden, die dem hier angegebenen Gruppennamen entspricht.
 - Wird eine leere Zeichenfolge angegeben, kommen Gegenstände mit einer nicht eingestellten Gruppe (leer) für die Ausrüstung in Frage.
 - In der gleichen Gruppe kann nur ein Gegenstand ausgerüstet werden. Wenn Sie einen neuen Gegenstand ausrüsten, wird ein bereits vorhandener Gegenstand in derselben Gruppe automatisch abgelegt.
@@ -38,21 +38,21 @@ Bezeichnung der Gegenstandsgruppen, die in dieser Kategorie ausgerüstet werden 
 ___
 
 ## Verfügbarkeit der Levels
-Verfügbarkeit von Funktionen auf Kategorie Level
-- Dieses Kennzeichen gibt an, ob diese Kategorie ein Level hat oder nicht.
+カテゴリレベル機能の有無
+- このカテゴリがレベルを持つかどうかのフラグです。
 - Ist er an, hat er ein Level, ist er aus, hat er keins.
-- Ein Beispiel ist das Einschalten von Kategorien, die auf Erfahrung basieren, wie Schwertkampf und Magie, und das Ausschalten von Kategorien, die auf dem Ort basieren, wie Verliese und Schmiede.
+- 例として、剣技や魔法といった経験に基づくカテゴリはオンにし、ダンジョンや鍛冶屋といった場所のカテゴリはオフにするなどの使い方があります。
 ___
 
 ## gleichzeitiger Fortschritt
-Konfiguration der parallelen Ausführung mit anderen Kategorien
-- Dieses Kennzeichen gibt an, ob Aktionen in dieser Kategorie parallel zu Aktionen in anderen Kategorien fortschreiten können.
-- Wenn sie an sind, können sie gleichzeitig und unabhängig von anderen Kategorien von Aktionen Fortschritte machen.
-- Ist sie ausgeschaltet, kann sie nicht gleichzeitig mit Aktionen in anderen Kategorien durchgeführt werden, die ebenfalls auf "Aus" gesetzt sind. Wenn Sie eine neue Aktion in dieser Kategorie starten, werden laufende Aktionen in anderen, nicht eigenständigen Kategorien automatisch abgebrochen.
+他カテゴリとの並行実行設定
+- このカテゴリのアクションが、他のカテゴリのアクションと並行して進行できるかどうかのフラグです。
+- オンの場合は、他のカテゴリのアクションとは独立して同時に進行できます。
+- オフの場合は、同じくオフに設定された他のカテゴリのアクションと同時に実行できません。新たにこのカテゴリのアクションを開始すると、他の非スタンドアロンカテゴリで進行中のアクションは自動的に中止されます。
 ___
 
 ## Hintergrund
-Kategorie-spezifische Hintergrund-Einstellungen
-- Konfiguration des Hintergrunds für diese Kategorie.
-- Wenn eine Kategorie ausgewählt wird, ändert sich das Hintergrundbild in Verbindung mit dieser Kategorie.
+カテゴリ固有の背景設定
+- このカテゴリの背景を設定します。
+- カテゴリを選択されたときに、連動して背景画像が変更されます。
 - Wenn nichts konfiguriert ist, wird die Welt-Hintergrundeinstellung so verwendet, wie sie ist.

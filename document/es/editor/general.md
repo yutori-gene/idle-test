@@ -26,17 +26,17 @@ Límites de tiempo para el progreso desactivado.
 - [_category_](es/editor/category)
 ___
 
-## Nivel máx. de Categoría
-Nivel límite para cada Categoría.
-- Configura el nivel máx. para cada Categoría.
+## カテゴリの最大レベル
+各カテゴリのレベル上限
+- 各カテゴリの最大レベルを設定します。
 - Si se adquiere experiencia por encima de este nivel, en el cálculo de cada propiedad se utilizará el nivel máximo aquí configurado.
-- Este valor no es relevante para las Categorías sin niveles.
+- レベルのないカテゴリではこの値は関係ありません。
 - [_category_](es/editor/category)
 ___
 
 ## función de bloqueado
 Ocultar elementos hasta que se cumplan los requisitos
-- Si está activada, el Artículo de Acción de Categoría se oculta mientras no se haya utilizado o poseído nada y no se hayan cumplido los requisitos.
+- 有効の場合、カテゴリ・アクション・アイテムは一度も使用・所持したことがなく、かつrequirementsを満たしていない間は非表示になります。
 - Si se desactiva, todos los elementos se muestran desde el principio, pero no se pueden ejecutar ni equipar hasta que se cumplan los requisitos.
 - [_category_](es/editor/category)
 - [_action_](es/editor/action)
@@ -155,7 +155,7 @@ ___
 
 ## Tasa de aumento de la experiencia [veces].
 Porcentaje de aumento de la dificultad al subir de nivel.
-- A medida que aumenta el nivel de una Categoría, aumenta la experiencia Necesaria para alcanzar el siguiente nivel.
+- カテゴリのレベルが上がるにつれて、次のレベルになるのに必要な経験値の上昇率です。
 - Al aumentar este valor, aumenta el nivel de dificultad.
 - La experiencia necesaria para pasar al siguiente nivel es (tasa de aumento de experiencia)^(nivel actual - 1).
 
@@ -173,7 +173,7 @@ ___
 Solicita el número de veces que se ha ejecutado la misma Acción de atributo para la ejecución de una acción.
 - Si está activada, el número de veces que se ha ejecutado una acción con los mismos atributos se añade automáticamente a las condiciones de ejecución de cada acción.
 - Necesario contar un número de veces igual al valor de nivel de la Acción.
-- Si no se configura ningún atributo, se utiliza el ID de la Categoría a la que pertenece.
+- 属性が設定されていない場合は、所属するカテゴリのIDが使用されます。
 ___
 
 ## Ratio de propiedad [veces]

@@ -1,13 +1,13 @@
 
 # properties
-Checking correction values
+プロパティの確認
 ___
 
 ## properties
-List of correction values
-- カテゴリごとに設定されたプロパティの一覧
-- プロパティはアクションの実行に影響する要素
-- 効果はアイテムの装備によって補正される（装備が不要なアイテムもある）
+プロパティの一覧
+- A list of Properties set for each Category.
+- Properties are elements that affect the performance of Actions.
+- The effect is adjusted by equipping Items (some Items do not require equipping).
 ___
 
 ## Property Details

@@ -118,9 +118,9 @@ export const property: Type.Property = {
 	],
 	children: {
 		category: {
-			title: "Kategori.",
-			summary: "Spesifikasi kategori yang berlaku untuk properti tersebut.",
-			points: ["Konfigurasi ID kategori yang berlaku untuk properti ini.", "Jika diatur `*`, berlaku untuk semua kategori.", "Jika kosong, ini berlaku untuk Kategori di mana Item tersebut berada."],
+			title: "カテゴリ",
+			summary: "プロパティを適用するカテゴリの指定",
+			points: ["このプロパティを適用するカテゴリのIDを設定します。", "`*`を設定すると全カテゴリに適用されます。", "空欄の場合はアイテムが属するカテゴリに適用されます。"],
 		},
 		attack: {
 			title: "Nilai serangan [perbedaan level].",
@@ -206,11 +206,11 @@ export const combat: Type.Combat = {
 
 export const acquisition: Type.Acquisition = {
 	title: "akuisisi",
-	summary: "Konfigurasi akuisisi level item dan kategori.",
-	points: ["Konfigurasi akuisisi.", "Anda dapat mengubah level kategori serta item, dan hitung Aksi telah dilakukan.", "Probabilitas untuk mendapatkan produk dapat dikonfigurasi."],
+	summary: "アイテムやカテゴリレベルの取得設定",
+	points: ["Konfigurasi akuisisi.", "アイテムの他にカテゴリのレベル、アクションの実行した回数を変更できます。", "Probabilitas untuk mendapatkan produk dapat dikonfigurasi."],
 	list: [
 		["Tipe", "Apa yang Anda akuisisi."],
-		["Kategori.", "level"],
+		["カテゴリ", "level"],
 		["Aksi", "Hitung dieksekusi."],
 		["Item", "hitung jumlah harta benda"],
 	],
@@ -220,7 +220,7 @@ export const acquisition: Type.Acquisition = {
 			summary: "Jenis elemen yang akan diperoleh.",
 			list: [
 				["Tipe", "Apa yang diperoleh dalam akuisisi."],
-				["Kategori.", "Level (konversi pengalaman ditambahkan)"],
+				["カテゴリ", "Level (konversi pengalaman ditambahkan)"],
 				["Aksi", "Hitung dieksekusi."],
 				["Item", "hitung jumlah harta benda"],
 			],
@@ -232,7 +232,7 @@ export const acquisition: Type.Acquisition = {
 		count: {
 			title: "nilai",
 			summary: "Nilai yang akan diperoleh",
-			points: ["Konfigurasi minus mengurangi jumlah kepemilikan, berapa kali kepemilikan tersebut dilakukan, dan levelnya. Namun, tidak boleh dibawah 0.", "Jika sebuah item memiliki jumlah kepemilikan maksimum (maks), jumlah kepemilikan tidak akan bertambah melebihi nilai tersebut.", "Jika tipenya adalah Kategori, nilai yang ditetapkan ditambahkan langsung ke level (1 untuk 1 level, 0,5 untuk 0,5 level). Cara yang biasa digunakan untuk menyesuaikan hal ini adalah dengan melakukan konfigurasi untuk mengatur pengalaman dari aksi tersebut. Konfigurasi ini tidak perlu kecuali tidak ada tujuan khusus."],
+			points: ["Konfigurasi minus mengurangi jumlah kepemilikan, berapa kali kepemilikan tersebut dilakukan, dan levelnya. Namun, tidak boleh dibawah 0.", "Jika sebuah item memiliki jumlah kepemilikan maksimum (maks), jumlah kepemilikan tidak akan bertambah melebihi nilai tersebut.", "タイプがカテゴリの場合、設定した値がレベルに直接加算されます（1で1レベル、0.5で0.5レベル）。アクションの経験値設定で調整するのが通常の方法です。特殊な目的がない限りこの設定は不要です。"],
 		},
 		chance: {
 			title: "Probabilitas [-1 hingga 1]",
@@ -249,10 +249,10 @@ export const acquisition: Type.Acquisition = {
 export const requirement: Type.Requirement = {
 	title: "syarat dan ketentuan",
 	summary: "Konfigurasi syarat untuk penggunaan dan tampilan elemen.",
-	points: ["Ini adalah konfigurasi kondisi untuk setiap elemen berdasarkan kategori, aksi, dan item.", "Jika semua konfigurasi tidak ada, operasi yang ditunjukkan dalam tabel tidak dapat dilakukan.", "Jika fungsi kunci terkunci, elemen itu sendiri akan disembunyikan sampai kondisi terpenuhi."],
+	points: ["カテゴリ、アクション、アイテムごとの各要素に設定する条件です。", "Jika semua konfigurasi tidak ada, operasi yang ditunjukkan dalam tabel tidak dapat dilakukan.", "Jika fungsi kunci terkunci, elemen itu sendiri akan disembunyikan sampai kondisi terpenuhi."],
 	list: [
 		["Di mana harus melakukan konfigurasi", "Apa yang tidak ada kecuali jika syarat-syaratnya terpenuhi."],
-		["Kategori.", "Eksekusi semua aksi dan manipulasi Item dalam Kategori"],
+		["カテゴリ", "カテゴリ内の全てのアクションの実行とアイテムの操作"],
 		["Aksi", "Pelaksanaan aksi"],
 		["Item", "Manipulasi item (misalnya Peralatan)"],
 	],
@@ -262,7 +262,7 @@ export const requirement: Type.Requirement = {
 			summary: "Jenis elemen yang direferensikan sebagai kondisi.",
 			list: [
 				["Tipe", "Nilai yang direferensikan"],
-				["Kategori.", "Level kategori."],
+				["カテゴリ", "カテゴリのレベル"],
 				["Aksi", "Hitung berapa kali aksi telah dilakukan."],
 				["Item", "Jumlah item yang dimiliki."],
 			],
@@ -296,7 +296,7 @@ export const requirement: Type.Requirement = {
 export const information: Type.Information = {
 	title: "informasi",
 	summary: "Lakukan konfigurasi untuk menetapkan informasi dasar tentang elemen (ID, nama, ikon, warna, dll.)",
-	points: ["Item informasi dasar yang umum untuk setiap elemen di dunia (Kategori, Aksi, item, acara, dll.).", "Setiap elemen memiliki konfigurasi yang terpisah."],
+	points: ["ワールド内の各要素（カテゴリ、アクション、アイテム、イベントなど）に共通する基本情報の項目です。", "Setiap elemen memiliki konfigurasi yang terpisah."],
 	children: {
 		id: {
 			title: "ID",
@@ -319,7 +319,7 @@ export const information: Type.Information = {
 				noDuplicate: {
 					title: "Terdapat tidak ada duplikasi.",
 					summary: "Larangan duplikasi ID dalam tipe yang sama.",
-					points: ["Tiada menduplikasi dalam kategori, aksi, item, acara, dan tipe preset karena digunakan untuk mengidentifikasi elemen.", "Memiliki ID yang sama untuk tipe yang berbeda tidak menjadi masalah."],
+					points: ["要素の判別に用いられるため、カテゴリ、アクション、アイテム、イベント、プリセットの各タイプ内で重複しないでください。", "Memiliki ID yang sama untuk tipe yang berbeda tidak menjadi masalah."],
 					links: { type: "type" },
 				},
 			},
@@ -387,7 +387,7 @@ export const information: Type.Information = {
 				"heritage-from-parent": {
 					title: "Pewarisan dari elemen induk",
 					summary: "Mengikuti warna yang diatur pada elemen induk",
-					points: ["Jika dikosongkan, warna yang diatur pada elemen induk akan diwarisi.", "Hierarki tipe setiap elemen adalah sebagai berikut.", "Misalnya, jika sebuah aksi memiliki warna tersendiri maka warna itulah yang dipakai; jika aksi tidak memiliki warna tersendiri, maka warna kategori atau dunia yang dipakai.", "Jika sebuah acara juga memiliki kategori yang diatur, acara itu mewarisi warna kategori tersebut sama seperti aksi dan item."],
+					points: ["Jika dikosongkan, warna yang diatur pada elemen induk akan diwarisi.", "Hierarki tipe setiap elemen adalah sebagai berikut.", "例えば、アクションに個別の色が設定されている場合はそれが利用されますが、アクションに個別の色が設定されていない場合はカテゴリ又はワールドの色が使用されます。", "イベントもカテゴリを設定している場合は、アクションやアイテムと同じようにそのカテゴリの色を引き継ぎます。"],
 					quote: typeTree,
 					links: { type: "type" },
 				},
@@ -425,14 +425,14 @@ export const preset: Type.Information = {
 export const task: Type.Event = {
 	title: "Tugas",
 	summary: "Misi yang akan dianggap berhasil jika syarat-syaratnya terpenuhi",
-	points: ["Jika memenuhi konfigurasi yang telah ditetapkan, maka target tercapai, dan pesan akan ditampilkan di bagian atas layar.", "Akan ditampilkan dalam daftar misi pemain dan daftar tugas berdasarkan Kategori.", "Hadiah tidak diberikan secara otomatis. Pemain akan menerimanya saat membuka tugas dan menekan tombol \"Akuisisi\".", "Sampai imbalan tersebut diterima, bilah pada daftar akan ditandai dengan pita untuk menunjukkan bahwa imbalan tersebut belum diterima.", "Dengan proses akuisisi, Anda dapat mengubah level Kategori, jumlah kali pelaksanaan Aksi, dan jumlah Item yang dimiliki.", "Untuk hal-hal yang ingin diaktifkan pada waktu-waktu di luar kondisi tertentu, seperti saat pertama kali dijalankan atau saat permainan berakhir, lakukan konfigurasi melalui acara di pengaturan dasar."],
+	points: ["Jika memenuhi konfigurasi yang telah ditetapkan, maka target tercapai, dan pesan akan ditampilkan di bagian atas layar.", "プレイヤーのミッションの一覧と、カテゴリのタスクの一覧に表示されます。", "Hadiah tidak diberikan secara otomatis. Pemain akan menerimanya saat membuka tugas dan menekan tombol \"Akuisisi\".", "Sampai imbalan tersebut diterima, bilah pada daftar akan ditandai dengan pita untuk menunjukkan bahwa imbalan tersebut belum diterima.", "獲得でカテゴリのレベル、アクションの実行回数、アイテムの所持数を変化させることができます。", "Untuk hal-hal yang ingin diaktifkan pada waktu-waktu di luar kondisi tertentu, seperti saat pertama kali dijalankan atau saat permainan berakhir, lakukan konfigurasi melalui acara di pengaturan dasar."],
 	links: { event: "event" },
 	children: {
 		information: information,
 		category: {
-			title: "Kategori.",
-			summary: "ID Kategori tempat tugas tersebut berada",
-			points: ["Tentukan ID Kategori tempat tugas ini akan dimasukkan.", "Setelah diatur dalam konfigurasi, daftar tugas akan ditambahkan ke layar kategori pemain, dan dalam daftar misi pun akan ditampilkan secara terkelompok berdasarkan kategori.", "Jika dibiarkan kosong, misi tersebut tidak akan termasuk dalam kategori mana pun dan akan ditampilkan secara terpisah di bagian atas daftar misi."],
+			title: "カテゴリ",
+			summary: "タスクが所属するカテゴリのID",
+			points: ["このタスクを所属させるカテゴリのIDを指定します。", "設定すると、プレイヤーのカテゴリの画面にタスクの一覧が追加され、ミッションの一覧でもカテゴリごとにまとめて表示されます。", "空欄の場合はどのカテゴリにも属さず、ミッションの一覧の先頭にまとめて表示されます。"],
 		},
 		timing: {
 			title: "waktu",
@@ -448,19 +448,24 @@ export const task: Type.Event = {
 		requirements: {
 			title: "syarat dan ketentuan",
 			summary: "Syarat penyelesaian tugas",
-			points: ["タスクを達成させる条件です。", "この条件を満たすと達成になり、報酬を受け取れるようになります。", "一度達成すると、その後に条件を満たさなくなっても達成のままで、報酬もいつでも受け取れます。", "条件を設定していないタスクは達成しません。"],
+			points: ["タスクを達成させる条件です。", "この条件を満たすと達成になり、報酬を受け取れるようになります。", "一度達成すると、その後に条件を満たさなくなっても達成のままで、報酬もいつでも受け取れます。", "条件を設定していないタスクは達成しません。", "requiringGroupを有効にすると、ここで指定するidの意味がカテゴリ・アクション・アイテム個別のIDからグループIDに変わります。"],
 			children: requirement.children,
+		},
+		requiringGroup: {
+			title: "Agregasi grup",
+			summary: "Memperlakukan id kondisi sebagai ID grup dan menilai berdasarkan total anggotanya",
+			points: ["Saat diaktifkan, id yang ditetapkan pada kondisi (requirements) diperlakukan sebagai ID grup dari pengaturan dasar.", "Kondisi dengan Type Kategori dinilai berdasarkan total Level semua Kategori yang termasuk dalam grup tersebut.", "Kondisi dengan Type Aksi dinilai berdasarkan total jumlah eksekusi semua Aksi yang termasuk dalam grup tersebut.", "Kondisi dengan Type Item dinilai berdasarkan total jumlah kepemilikan semua Item yang termasuk dalam grup tersebut.", "Elemen yang terkunci (selain released) tidak termasuk dalam total.", "Probabilitas konsumsi Item (chance) dan syarat peralatan (equipment) diabaikan, dan tidak ada yang dikonsumsi. Hanya digunakan untuk penilaian.", "Saat dinonaktifkan, id pada kondisi diperlakukan seperti sebelumnya, sebagai ID Kategori, Aksi, atau Item individual."],
 		},
 		acquisitions: {
 			title: "hadiah",
 			summary: "Konfigurasi Hadiah Saat Tugas Selesai",
-			points: ["達成したタスクを開き、獲得のバーを押した時に受け取れる報酬です。", "カテゴリーのレベル、アクションの実行回数、アイテムの所持数を変化させることができます。", "数量にマイナスを設定することもできます。", "報酬を設定していないタスクは獲得のバーが出ず、達成した時点で完了になります。", "持てるアイテムの種類が上限に達している時は受け取れません。整理してから受け取り直します。"],
+			points: ["達成したタスクを開き、獲得のバーを押した時に受け取れる報酬です。", "カテゴリのレベル、アクションの実行回数、アイテムの所持数を変化させることができます。", "数量にマイナスを設定することもできます。", "報酬を設定していないタスクは獲得のバーが出ず、達成した時点で完了になります。", "持てるアイテムの種類が上限に達している時は受け取れません。整理してから受け取り直します。"],
 			children: acquisition.children,
 		},
 		group: {
 			title: "kelompok tugas",
 			summary: "Klasifikasi kelompok tampilan tugas",
-			points: ["Terapkan salah satu grup yang konfigurasi di Basic.", "Daftar tugas akan ditampilkan sesuai urutan konfigurasi grup yang telah ditetapkan.", "Di dalam kategori tersebut, hasilnya akan ditampilkan berdasarkan kelompok-kelompoknya.", "Jika dibiarkan kosong, tidak ada pengelompokan yang dibuat."],
+			points: ["Terapkan salah satu grup yang konfigurasi di Basic.", "Daftar tugas akan ditampilkan sesuai urutan konfigurasi grup yang telah ditetapkan.", "カテゴリの中でさらにグループごとに分けて表示されます。", "Jika dibiarkan kosong, tidak ada pengelompokan yang dibuat."],
 			links: { general: "general" },
 		},
 	},
@@ -472,8 +477,8 @@ export const task: Type.Event = {
 export const group: Type.Information = {
 	...information,
 	title: "kelompok (usu. orang)",
-	summary: "Menetapkan grup tampilan untuk kategori, aksi, dan item",
-	points: ["Tentukan grup untuk mengontrol urutan tampilan.", "Anda dapat mengatur grup yang ditentukan di sini untuk setiap kategori, aksi, dan item.", "Grup dengan kelompok yang sama ditampilkan berdekatan.", "Jika dibiarkan kosong, tidak ada pengelompokan yang dibuat."],
+	summary: "カテゴリ、アクション、アイテムの表示グループを定義",
+	points: ["Tentukan grup untuk mengontrol urutan tampilan.", "各カテゴリ、アクション、アイテムでここで定義したグループを設定できます。", "Grup dengan kelompok yang sama ditampilkan berdekatan.", "Jika dibiarkan kosong, tidak ada pengelompokan yang dibuat."],
 	options: {
 		label: "group",
 	},
@@ -495,11 +500,6 @@ export const skill: Type.Skill = {
 			summary: "Akan ditulis",
 			points: ["Akan ditulis"],
 		},
-		comment: {
-			title: "Tampilan catatan penjelasan",
-			summary: "Apakah catatan penjelasan ditampilkan sebagai notifikasi toast saat aktif",
-			points: ["Penanda apakah catatan penjelasan ditampilkan sebagai notifikasi toast saat skill ini aktif.", "Jika aktif, catatan ditampilkan setiap kali skill aktif dengan peluang (100% − peluang aktivasi) ÷ 2. Dengan peluang aktivasi 40%, hasilnya 30%.", "Jika nonaktif, catatan tidak ditampilkan.", "Jika catatan penjelasan kosong, tidak ada yang ditampilkan meskipun opsi ini aktif."],
-		},
 	},
 	options: {
 		label: "skill",
@@ -509,13 +509,13 @@ export const skill: Type.Skill = {
 export const item: Type.Item = {
 	title: "Item",
 	summary: "Elemen-elemen barang seperti peralatan dan bahan habis pakai",
-	points: ["Elemen ini sendiri berkaitan dengan kepemilikan benda-benda seperti peralatan, barang habis pakai, dan barang berharga.", "Hanya satu yang dapat dilengkapi dalam suatu kategori, atau dapat tidak ada.", "Ada juga cara hitung untuk menggunakannya."],
+	points: ["Elemen ini sendiri berkaitan dengan kepemilikan benda-benda seperti peralatan, barang habis pakai, dan barang berharga.", "カテゴリ内で１つのみ装備することもできますが、装備できないようにもできます。", "Ada juga cara hitung untuk menggunakannya."],
 	children: {
 		information: information,
 		category: {
-			title: "Kategori.",
-			summary: "ID dari kategori yang dimiliki item tersebut",
-			points: ["Tentukan ID dari Kategori yang dimiliki Item ini."],
+			title: "カテゴリ",
+			summary: "アイテムが所属するカテゴリのID",
+			points: ["このアイテムが所属するカテゴリのIDを指定します。"],
 		},
 		group: {
 			title: "kelompok (usu. orang)",
@@ -559,7 +559,7 @@ export const item: Type.Item = {
 		equipmentType: {
 			title: "Tipe Peralatan",
 			summary: "Konfigurasi tipe untuk peralatan, efek, dan konsumsi Item.",
-			points: ["Item yang dapat dikenakan harus termasuk dalam grup yang ditentukan pada `equipmentGroups` milik kategori.", "Hanya satu item yang dapat dilengkapi dalam grup yang sama.", "`unnecessary` tetap berefek terlepas dari dikenakan atau tidak, dan besar efeknya sebanding dengan jumlah yang dimiliki (tidak berefek pada 0, n kali lipat pada n)."],
+			points: ["装備可能なアイテムは、カテゴリの`equipmentGroups`で指定されたグループに属している必要があります。", "Hanya satu item yang dapat dilengkapi dalam grup yang sama.", "`unnecessary` tetap berefek terlepas dari dikenakan atau tidak, dan besar efeknya sebanding dengan jumlah yang dimiliki (tidak berefek pada 0, n kali lipat pada n)."],
 			list: [
 				["nilai", "Peralatan", "Efektivitas.", "konsumsi", "Contoh."],
 				["`necessary`", "Diperlukan", "Hanya saat melengkapi (1 buah)", "tidak ada", "Pedang, baju besi, dan peralatan lainnya."],
@@ -586,14 +586,14 @@ export const action: Type.Action = {
 	children: {
 		information: information,
 		category: {
-			title: "Kategori.",
-			summary: "ID dari kategori yang termasuk dalam Aksi tersebut",
-			points: ["Tentukan ID dari Kategori yang menjadi bagian dari Aksi ini."],
+			title: "カテゴリ",
+			summary: "アクションが所属するカテゴリのID",
+			points: ["このアクションが所属するカテゴリのIDを指定します。"],
 		},
 		attribute: {
 			title: "atribut",
-			summary: "Kategori atribut aksi",
-			points: ["Atribut (kategori) individual dapat dikonfigurasi.", "Jika dibiarkan kosong, kategori yang menjadi miliknya akan diambil alih", "Misalnya, jika Anda konfigurasi atribut Sihir untuk aksi yang termasuk dalam kategori Kastil Iblis satu per satu, level dan properti kategori sihir akan dihitung dan diterapkan pada waktu penyelesaian aksi dan kerusakan."],
+			summary: "アクション固有の属性カテゴリ",
+			points: ["個別の属性(カテゴリ)を設定できます。", "空欄の場合は属するカテゴリを引き継ぎます", "例えば、魔王城というカテゴリに属するアクションに個別に魔法という属性を設定した場合、アクション完了時間やダメージには魔法のカテゴリのレベルやプロパティが計算され適応されます。"],
 			links: { category: "category" },
 		},
 		group: {
@@ -659,15 +659,15 @@ export const action: Type.Action = {
 };
 
 export const category: Type.Category = {
-	title: "Kategori.",
+	title: "カテゴリ",
 	summary: "Kerangka kerja umum untuk menit Aksi dan Item.",
-	points: ["Merupakan klasifikasi utama.", "Contohnya, ini bisa dikonfigurasi dalam kerangka berpikir apa pun, seperti jarak dekat, jarak jauh, sihir, ruang bawah tanah, pandai besi, pabrik, dll.", "Aksi dan Item ditempatkan langsung dibawah dunia dan dikaitkan dengan ID Kategori."],
+	points: ["Merupakan klasifikasi utama.", "Contohnya, ini bisa dikonfigurasi dalam kerangka berpikir apa pun, seperti jarak dekat, jarak jauh, sihir, ruang bawah tanah, pandai besi, pabrik, dll.", "アクションやアイテムはワールド直下に配置され、カテゴリIDで関連付けられます。"],
 	children: {
 		information: information,
 		group: {
 			title: "kelompok (usu. orang)",
-			summary: "Menampilkan klasifikasi kelompok kategori",
-			points: ["Terapkan salah satu grup yang dilakukan konfigurasi di Basic.", "Daftar kategori ditampilkan menurut urutan kelompok yang ditetapkan dalam konfigurasi."],
+			summary: "カテゴリの表示グループ分類",
+			points: ["Terapkan salah satu grup yang dilakukan konfigurasi di Basic.", "設定したグループ順にカテゴリ一覧が表示されます。"],
 			links: { general: "general" },
 		},
 		unlocked: {
@@ -675,27 +675,27 @@ export const category: Type.Category = {
 			summary: "Status tampilan awal dan status pembebasan elemen (akan secara otomatis beralih ke status yang lebih tinggi jika persyaratan aktivasi terpenuhi)",
 			points: ["secreted: Tidak akan ditampilkan sama sekali di antarmuka pengguna (UI) sampai semua persyaratan terpenuhi (tidak muncul di Petunjuk, dan disembunyikan dalam daftar persyaratan/hadiah).", "hidden: Akan tersembunyi sepenuhnya (namanya juga akan berwarna abu-abu dan tidak dapat dioperasikan) selama tidak dirujuk oleh elemen pelepasan mana pun dan persyaratannya belum terpenuhi.", "hinted (default): Hanya nama yang ditampilkan sebagai pratinjau, tetapi tidak dapat dioperasikan sampai dibuka.", "released: Dapat diakses dan dioperasikan sejak awal tanpa memandang kondisi apa pun (sebelumnya disebut “Tampilkan sejak awal”)."],
 		},
-		requirements: { ...requirement, options: { ...requirement.options, array: true }, summary: "Persyaratan untuk penggunaan kategori." },
+		requirements: { ...requirement, options: { ...requirement.options, array: true }, summary: "カテゴリ利用に必要な条件" },
 		equipmentGroups: {
 			title: "kelompok Peralatan",
-			summary: "Penunjukan kelompok item yang mungkin dilengkapi dalam kategori ini.",
-			points: ["Daftar nama kelompok item yang dapat dilengkapi dengan Peralatan dalam Kategori ini.", "Hanya item dari grup yang sesuai dengan nama grup yang ditentukan di sini yang dapat menjadi Peralatan.", "Jika string kosong ditentukan, item dengan konfigurasi grup yang tidak disetel (kosong) menjadi memenuhi syarat untuk Peralatan.", "Hanya satu item yang dapat digunakan sebagai Peralatan dalam grup yang sama. Saat Anda melengkapi item baru, peralatan yang ada dalam grup yang sama secara otomatis dilepas.", "Jika daftar kosong (0 buah), tidak ada peralatan yang dapat digunakan."],
+			summary: "このカテゴリで装備可能なアイテムグループの指定",
+			points: ["このカテゴリで装備できるアイテムのグループ名のリストです。", "Hanya item dari grup yang sesuai dengan nama grup yang ditentukan di sini yang dapat menjadi Peralatan.", "Jika string kosong ditentukan, item dengan konfigurasi grup yang tidak disetel (kosong) menjadi memenuhi syarat untuk Peralatan.", "Hanya satu item yang dapat digunakan sebagai Peralatan dalam grup yang sama. Saat Anda melengkapi item baru, peralatan yang ada dalam grup yang sama secara otomatis dilepas.", "Jika daftar kosong (0 buah), tidak ada peralatan yang dapat digunakan."],
 			links: { general: "general" },
 		},
 		numeric: {
 			title: "Ketersediaan level",
-			summary: "Ketersediaan fungsi level kategori",
-			points: ["Ini adalah bendera untuk mengindikasikan apakah kategori ini memiliki level atau tidak.", "Jika nyala, berarti ada levelnya; jika mati, berarti tidak ada.", "Contohnya adalah mengaktifkan kategori berdasarkan pengalaman, seperti ilmu pedang dan sihir, dan mematikan kategori berdasarkan lokasi, seperti ruang bawah tanah dan pandai besi."],
+			summary: "カテゴリレベル機能の有無",
+			points: ["このカテゴリがレベルを持つかどうかのフラグです。", "Jika nyala, berarti ada levelnya; jika mati, berarti tidak ada.", "例として、剣技や魔法といった経験に基づくカテゴリはオンにし、ダンジョンや鍛冶屋といった場所のカテゴリはオフにするなどの使い方があります。"],
 		},
 		standaloneProgress: {
 			title: "kemajuan secara bersamaan",
-			summary: "Konfigurasi eksekusi paralel dengan kategori",
-			points: ["Ini adalah bendera untuk menunjukkan apakah aksi dalam kategori ini dapat dilanjutkan secara paralel dengan aksi dalam kategori lain.", "Jika aktif, tindakan dapat dilanjutkan secara simultan dan independen dari kategori aksi lainnya.", "Jika mati, aksi ini tidak dapat dilakukan secara bersamaan dengan aksi dalam kategori lain yang juga memiliki konfigurasi mati. Ketika Anda mulai aksi baru dalam kategori ini, aksi yang sedang berlangsung dalam kategori lain yang mandiri secara otomatis dibatalkan."],
+			summary: "他カテゴリとの並行実行設定",
+			points: ["このカテゴリのアクションが、他のカテゴリのアクションと並行して進行できるかどうかのフラグです。", "オンの場合は、他のカテゴリのアクションとは独立して同時に進行できます。", "オフの場合は、同じくオフに設定された他のカテゴリのアクションと同時に実行できません。新たにこのカテゴリのアクションを開始すると、他の非スタンドアロンカテゴリで進行中のアクションは自動的に中止されます。"],
 		},
 		background: {
 			title: "latar belakang",
-			summary: "Konfigurasi latar belakang kategori",
-			points: ["Konfigurasi latar belakang untuk kategori ini.", "Apabila kategori dipilih, gambar latar belakang akan berubah sehubungan dengan kategori tersebut.", "Jika tidak ada konfigurasi, pengaturan latar belakang dunia digunakan sebagaimana adanya."],
+			summary: "カテゴリ固有の背景設定",
+			points: ["このカテゴリの背景を設定します。", "カテゴリを選択されたときに、連動して背景画像が変更されます。", "Jika tidak ada konfigurasi, pengaturan latar belakang dunia digunakan sebagaimana adanya."],
 		},
 	},
 	options: {
@@ -706,7 +706,7 @@ export const category: Type.Category = {
 export const type: Markdown = {
 	title: "Tipe",
 	summary: "Klasifikasi dasar dunia",
-	points: ["Dunia terdiri dari tujuh tipe.", "Semua elemen ditempatkan langsung dibawah dunia.", "Aksi dan Item dikaitkan dengan ID dari Kategori yang menjadi miliknya."],
+	points: ["Dunia terdiri dari tujuh tipe.", "Semua elemen ditempatkan langsung dibawah dunia.", "アクションとアイテムは所属するカテゴリのIDで関連付けられます。"],
 	list: expandList("Tipe", [category, action, item, skill, group, task, preset], "Deskripsi"),
 	quote: typeTree,
 	options: {
@@ -823,15 +823,15 @@ export const general: Type.General = {
 			links: { category: "category" },
 		},
 		maxCategoryLevels: {
-			title: "Kategori maks",
-			summary: "Batas level atas untuk kategori.",
-			points: ["Konfigurasi level maks untuk setiap kategori.", "Jika akuisisi pengalaman terjadi di luar level ini, level maks yang konfigurasi di sini digunakan dalam perhitungan properti.", "Nilai ini tidak memiliki hubungan untuk kategori tanpa level."],
+			title: "カテゴリの最大レベル",
+			summary: "各カテゴリのレベル上限",
+			points: ["各カテゴリの最大レベルを設定します。", "Jika akuisisi pengalaman terjadi di luar level ini, level maks yang konfigurasi di sini digunakan dalam perhitungan properti.", "レベルのないカテゴリではこの値は関係ありません。"],
 			links: { category: "category" },
 		},
 		locking: {
 			title: "fungsi terkunci",
 			summary: "Menyembunyikan item sampai persyaratan terpenuhi",
-			points: ["Jika diaktifkan, item tindakan Kategori akan disembunyikan sementara item tersebut tidak ada yang pernah menggunakannya atau memilikinya dan persyaratannya belum terpenuhi.", "Jika dinonaktifkan, semua item akan ditampilkan dari awal, tetapi tidak dapat dijalankan atau dilengkapi dengan Peralatan hingga persyaratan terpenuhi."],
+			points: ["有効の場合、カテゴリ・アクション・アイテムは一度も使用・所持したことがなく、かつrequirementsを満たしていない間は非表示になります。", "Jika dinonaktifkan, semua item akan ditampilkan dari awal, tetapi tidak dapat dijalankan atau dilengkapi dengan Peralatan hingga persyaratan terpenuhi."],
 			links: { category: "category", action: "action", item: "item" },
 		},
 		coins: {
@@ -929,7 +929,7 @@ export const general: Type.General = {
 		levelCommonRatio: {
 			title: "Tingkat peningkatan pengalaman [kali].",
 			summary: "Persentase peningkatan tingkat kesulitan level.",
-			points: ["Seiring dengan meningkatnya level suatu kategori, maka semakin tinggi pula tingkat peningkatan pengalaman yang diperlukan untuk mencapai level berikutnya.", "Meningkatkan nilai ini akan meningkatkan tingkat kesulitan.", "Jumlah pengalaman yang diperlukan untuk naik ke level berikutnya adalah (tingkat kenaikan pengalaman)^(level saat ini - 1)."],
+			points: ["カテゴリのレベルが上がるにつれて、次のレベルになるのに必要な経験値の上昇率です。", "Meningkatkan nilai ini akan meningkatkan tingkat kesulitan.", "Jumlah pengalaman yang diperlukan untuk naik ke level berikutnya adalah (tingkat kenaikan pengalaman)^(level saat ini - 1)."],
 			list: [
 				["Tingkat peningkatan pengalaman", "Lv.1", "Lv.2", "Lv.10", "Lv.50", "Lv.99."],
 				["0", "x1.00", "x1.00", "x1.00", "x1.00", "x1.00"],
@@ -943,7 +943,7 @@ export const general: Type.General = {
 		actionLevelLimit: {
 			title: "pembatasan level Aksi",
 			summary: "Meminta hitung berapa kali aksi atribut yang sama telah dieksekusi untuk eksekusi suatu aksi.",
-			points: ["Jika diaktifkan, hitung kali aksi dengan atribut yang sama telah dieksekusi secara otomatis ditambahkan ke kondisi eksekusi setiap tindakan.", "Jumlah hitung yang diperlukan sama dengan nilai level aksi.", "Jika tidak ada atribut yang ditetapkan, ID dari kategori yang digunakan akan digunakan."],
+			points: ["Jika diaktifkan, hitung kali aksi dengan atribut yang sama telah dieksekusi secara otomatis ditambahkan ke kondisi eksekusi setiap tindakan.", "Jumlah hitung yang diperlukan sama dengan nilai level aksi.", "属性が設定されていない場合は、所属するカテゴリのIDが使用されます。"],
 		},
 		propertyRatio: {
 			title: "Rasio properti [kali]",
@@ -1045,7 +1045,7 @@ const toFixedEvent = (title: string, summary: string, points: string[], timingPo
 		requirements: {
 			title: "条件",
 			summary: "報酬を獲得する条件",
-			points: ["タイミングが成立するとイベントは発動し、専用の画面を開いて内容を表示します。", "報酬は、発動時にここで設定した条件を満たしている場合にのみ獲得します。", "条件を設定していない場合は、発動するたびに報酬を獲得します。"],
+			points: ["タイミングが成立するとイベントは発動し、専用の画面を開いて内容を表示します。", "報酬は、発動時にここで設定した条件を満たしている場合にのみ獲得します。", "条件を設定していない場合は、発動するたびに報酬を獲得します。", "requiringGroupを有効にすると、ここで指定するidの意味がカテゴリ・アクション・アイテム個別のIDからグループIDに変わります。"],
 			children: requirement.children,
 		},
 		acquisitions: {
@@ -1065,13 +1065,13 @@ const toFixedEvent = (title: string, summary: string, points: string[], timingPo
 export const event: Type.Events = {
 	title: "acara",
 	summary: "Pesan dan hadiah yang muncul pada waktu tertentu",
-	points: ["Fitur ini akan aktif pada waktu-waktu tertentu, seperti saat pertama kali membuka dunia atau saat permainan berakhir, dan akan membuka layar khusus.", "Tersedia satu per satu untuk setiap waktu, dan tidak dapat ditambahkan maupun dihapus. Untuk waktu yang tidak digunakan, biarkan kolomnya kosong.", "Tidak akan ditampilkan dalam daftar misi atau tugas. Hal-hal yang akan dianggap tercapai jika memenuhi syarat tertentu harus dikonfigurasi sebagai tugas.", "Akuisisi imbalan akan dilakukan secara otomatis begitu fitur tersebut diaktifkan. Tidak ada langkah pengambilan seperti pada tugas, dan tidak ada pita pemberitahuan.", "Hal ini dapat mengubah level Kategori, jumlah aksi yang dilakukan dan jumlah Item yang dimiliki ketika diaktifkan.", "Jika kolom nama, deskripsi, dan ikon dibiarkan kosong, teks dan ikon default yang sudah ada di dalam game akan digunakan oleh pemain."],
+	points: ["Fitur ini akan aktif pada waktu-waktu tertentu, seperti saat pertama kali membuka dunia atau saat permainan berakhir, dan akan membuka layar khusus.", "Tersedia satu per satu untuk setiap waktu, dan tidak dapat ditambahkan maupun dihapus. Untuk waktu yang tidak digunakan, biarkan kolomnya kosong.", "Tidak akan ditampilkan dalam daftar misi atau tugas. Hal-hal yang akan dianggap tercapai jika memenuhi syarat tertentu harus dikonfigurasi sebagai tugas.", "Akuisisi imbalan akan dilakukan secara otomatis begitu fitur tersebut diaktifkan. Tidak ada langkah pengambilan seperti pada tugas, dan tidak ada pita pemberitahuan.", "発動時にカテゴリのレベル、アクションの実行回数、アイテムの所持数を変化させることができます。", "Jika kolom nama, deskripsi, dan ikon dibiarkan kosong, teks dan ikon default yang sudah ada di dalam game akan digunakan oleh pemain."],
 	list: [
 		["waktu", "kondisi aktivasi", "ulangi"],
 		["`comebacked`", "Ketika seseorang kembali dari offline selama lebih dari satu detik dan ada aksi yang sedang berlangsung.", "sering"],
 		["`gameovered`", "Ketika stamina pemain habis dalam pertempuran.", "sering"],
 		["`welcomed`", "Ketika saya pertama kali memulai dunia ini.", "hanya sekali"],
-		["`completed`", "Ketika level maksimum semua kategori (maxCategoryLevels) tercapai.", "hanya sekali"],
+		["`completed`", "全カテゴリのレベルが最大値（maxCategoryLevels）に達した時", "hanya sekali"],
 		["`obtained`", "Saat menyelesaikan atau memeriksa Aksi jenis tunggal (seperti peti harta karun, dll.)", "sering"],
 	],
 	links: { task: "task" },
@@ -1079,7 +1079,7 @@ export const event: Type.Events = {
 		comebacked: toFixedEvent("Saat kembali", "Terpicu saat kembali dari kondisi luring", ["Terpicu saat kamu kembali setelah satu detik atau lebih luring dan ada aksi yang sedang berjalan.", "Ditampilkan bersama ringkasan kemajuan selama kamu pergi."], ["Nilainya tetap `comebacked` dan tidak dapat diubah.", "Terpicu setiap kali kamu kembali, tanpa batas jumlah."]),
 		gameovered: toFixedEvent("Saat permainan berakhir", "Terpicu saat stamina habis dalam pertarungan", ["Terpicu saat stamina pemain habis dalam pertarungan.", "Dengan mengatur jumlah hadiah menjadi negatif, kamu dapat memberi konsekuensi atas berakhirnya permainan."], ["Nilainya tetap `gameovered` dan tidak dapat diubah.", "Terpicu setiap kali permainan berakhir, tanpa batas jumlah."]),
 		welcomed: toFixedEvent("Saat pertama kali dimulai", "Terpicu saat dunia dibuka untuk pertama kalinya", ["Terpicu saat dunia ini dijalankan untuk pertama kalinya.", "Digunakan untuk menjelaskan latar dunia atau menyerahkan perbekalan awal."], ["Nilainya tetap `welcomed` dan tidak dapat diubah.", "Hanya terpicu sekali, saat pertama kali dijalankan."]),
-		completed: toFixedEvent("Saat tamat", "Terpicu saat semua kategori mencapai level maksimum", ["Terpicu saat level semua kategori mencapai nilai maksimum (maxCategoryLevels).", "Kategori yang bukan numeric dikecualikan dari penilaian."], ["Nilainya tetap `completed` dan tidak dapat diubah.", "Hanya terpicu sekali, saat kondisinya terpenuhi."]),
+		completed: toFixedEvent("Saat tamat", "全カテゴリが最大レベルに達した時に発動", ["全カテゴリのレベルが最大値（maxCategoryLevels）に達した時に発動します。", "numeric（数値）でないカテゴリは判定から除かれます。"], ["Nilainya tetap `completed` dan tidak dapat diubah.", "Hanya terpicu sekali, saat kondisinya terpenuhi."]),
 		obtained: toFixedEvent("Saat aksi sekali jalan selesai", "Terpicu saat aksi sekali jalan seperti peti harta selesai", ["Terpicu saat aksi berjenis single (seperti peti harta) diselesaikan dan dikonfirmasi.", "Terpisah dari hadiah aksi itu sendiri, kamu dapat menambahkan hadiah yang diatur di sini."], ["Nilainya tetap `obtained` dan tidak dapat diubah.", "Terpicu setiap kali aksi sekali jalan selesai, tanpa batas jumlah."]),
 	},
 	options: {
@@ -1090,7 +1090,7 @@ export const event: Type.Events = {
 export const basic: Type.Basic = {
 	title: "konfigurasi dasar",
 	summary: "Item konfigurasi dasar untuk dunia secara umum.",
-	points: ["Konfigurasi nama dunia, deskripsi, latar belakang, mata uang, kapasitas, level maks kategori, tingkat peningkatan pengalaman, tingkat diskon, parameter pertarungan standar, dll.", "Konfigurasi ini memengaruhi seluruh dunia."],
+	points: ["ワールドの名前、説明、背景、通貨、容量、カテゴリの最大レベル、経験値の上昇率、割引率、標準戦闘パラメータなどを設定します。", "Konfigurasi ini memengaruhi seluruh dunia."],
 	list: expandList("nama", [overview, general, design, event, development], "Deskripsi"),
 	children: {
 		overview: overview,
@@ -1111,7 +1111,7 @@ export const basic: Type.Basic = {
 export const world: Type.World = {
 	title: "dunia",
 	summary: "Keseluruhan konfigurasi dunia game dan struktur data",
-	points: ["Data tentang game yang dapat dimainkan di konsol.", "Konfigurasinya memungkinkan Anda untuk membuat permainan pengabaian sesuai keinginan.", "Dunia mencakup kategori, aksi, item, dan acara."],
+	points: ["Data tentang game yang dapat dimainkan di konsol.", "Konfigurasinya memungkinkan Anda untuk membuat permainan pengabaian sesuai keinginan.", "ワールドはカテゴリ、アクション、アイテム、イベントなどの要素を内包します。"],
 	children: {
 		basic: basic,
 		categories: { ...category, options: { ...category.options, array: true } },

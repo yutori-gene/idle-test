@@ -5,22 +5,22 @@ ___
 
 ## Aperçu.
 A propos de ce jeu.
-- Vous pouvez consulter le monde (univers, configuration) de ce jeu.
-- Vous pouvez également consulter la console (le système) qui fait tourner ce jeu.
+- You can check this game's World (setting and lore).
+- You can also check the console (system) running this game.
 ___
 
 ## statistiques
 Résumé des progrès accomplis
-- Vous pouvez consulter la progression du jeu jusqu'à présent.
+- You can check the game's progress so far.
 ___
 
 ## configuration
 Modifier les configurations du jeu
-- Configurez les réglages liés à l'affichage et au traitement du jeu.
-- Les données du jeu peuvent être importées, exportées et réinitialisées.
+- Configure settings related to the game's display and processing.
+- You can read, write, or reset game data.
 ___
 
 ## déboguer
 Opération pour les contrôles de débogage
-- Ceci n'est affiché que pendant le débogage.
-- Ceci ne sera pas affiché lors de la publication et de la distribution du jeu.
+- This is shown only during debugging.
+- Not shown when the game is published or distributed.

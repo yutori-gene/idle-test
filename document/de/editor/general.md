@@ -26,17 +26,17 @@ Zeitliche Begrenzung des Fortschritts aus dem Internet.
 - [_category_](de/editor/category)
 ___
 
-## Maximales Level der Kategorie
-Level-Grenze für jede Kategorie.
-- Konfiguration des maximalen Levels für jede Kategorie.
+## カテゴリの最大レベル
+各カテゴリのレベル上限
+- 各カテゴリの最大レベルを設定します。
 - Werden über dieses Level hinausgehende Erfahrungen erworben, so wird bei der Berechnung der einzelnen Eigenschaften der hier eingestellte maximale Wert verwendet.
-- Dieser Wert ist für Kategorien ohne Levels nicht relevant.
+- レベルのないカテゴリではこの値は関係ありません。
 - [_category_](de/editor/category)
 ___
 
 ## Sperrfunktion
 Artikel ausblenden, bis die Anforderungen erfüllt sind
-- Wenn diese Option aktiviert ist, wird der Gegenstand der Kategorie Aktion ausgeblendet, solange er nicht verwendet wurde oder nicht über ihn verfügt und die Anforderungen nicht erfüllt sind.
+- 有効の場合、カテゴリ・アクション・アイテムは一度も使用・所持したことがなく、かつrequirementsを満たしていない間は非表示になります。
 - Wenn diese Funktion deaktiviert ist, werden alle Elemente von Anfang an angezeigt, können aber erst ausgeführt oder ausgerüstet werden, wenn die Anforderungen erfüllt sind.
 - [_category_](de/editor/category)
 - [_action_](de/editor/action)
@@ -155,7 +155,7 @@ ___
 
 ## Rate des Anstiegs der Erfahrung [Zeiten].
 Prozentualer Anstieg des Schwierigkeitsgrads beim Level-up.
-- Mit steigendem Level einer Kategorie steigt auch die für das Erreichen des nächsten Levels notwendige Erfahrung.
+- カテゴリのレベルが上がるにつれて、次のレベルになるのに必要な経験値の上昇率です。
 - Wenn Sie diesen Wert erhöhen, steigt der Schwierigkeitsgrad.
 - Die für den Aufstieg auf das nächste Level notwendige Erfahrung entspricht (Erfahrung-Zuwachsrate)^(aktuelles Level - 1).
 
@@ -173,7 +173,7 @@ ___
 Fragt ab, wie oft das gleiche Attribut Aktion für die Ausführung einer Aktion gezählt wurde.
 - Wenn diese Option aktiviert ist, wird die Anzahl der Ausführungen einer Aktion mit denselben Attributen automatisch zu den Ausführungsbedingungen jeder Aktion hinzugefügt.
 - Die Anzahl der notwendigen Male entspricht dem Level-Wert der Aktion.
-- Wenn kein Attribut konfiguriert ist, wird die ID der Kategorie verwendet, zu der sie gehört.
+- 属性が設定されていない場合は、所属するカテゴリのIDが使用されます。
 ___
 
 ## Eigenschaftsfaktor [Zeiten]

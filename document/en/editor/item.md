@@ -2,16 +2,16 @@
 # Item
 Material elements such as Equipment and Consumables
 - These are elements related to owning things such as Equipment, Consumables, and Valuables.
-- Only one may be equipped in a Category, but it can also be made to be equipped with nothing.
+- カテゴリ内で１つのみ装備することもできますが、装備できないようにもできます。
 - There are also ways to use it like a variable.
 ___
 
 ## [_information_](en/editor/information)
 ___
 
-## Category
-ID of the Category to which the Item belongs
-- Specify the ID of the Category to which this Item belongs.
+## カテゴリ
+アイテムが所属するカテゴリのID
+- このアイテムが所属するカテゴリのIDを指定します。
 ___
 
 ## group (usu. of people)
@@ -61,7 +61,7 @@ ___
 
 ## Equipment Type
 Type configurations for Equipment, Effects, and Consumption of Items
-- Equippable items must belong to a group specified by `equipmentGroups` of the category.
+- 装備可能なアイテムは、カテゴリの`equipmentGroups`で指定されたグループに属している必要があります。
 - Only one Item may be Equipment within the same group.
 - `unnecessary` takes effect regardless of whether it is equipped, and the size of the effect is proportional to the number held (no effect with 0, n times with n).
 

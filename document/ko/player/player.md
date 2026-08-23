@@ -10,6 +10,6 @@
 |[_category_](ko/player/category)|다양한 요소들을 모아놓은 것|
 |[_action_](ko/player/action)|채집, 제작, 전투 등의 행동 요소|
 |[_item_](ko/player/item)|아이템 상세 정보|
-|[_property_](ko/player/property)|보정 값 확인|
+|[_property_](ko/player/property)|プロパティの確認|
 |[_world_](ko/player/world)|게임 전반의 제어 및 설정 조작과 확인이 가능합니다,|
 |[_miscellaneous_](ko/player/miscellaneous)|기타 보충 사항 설명|

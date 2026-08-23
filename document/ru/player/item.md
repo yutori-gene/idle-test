@@ -1,20 +1,20 @@
 
 # предмет
 Предметы.
-- Предметы — это элементы, связанные с тем, чем вы владеете: снаряжением, расходуемыми и ценными вещами.
-- В пределах категории можно экипировать только один предмет. (Если настроена возможность экипировки на уровне категории)
-- Предметы, не соответствующие условиям открытия, заблокированы, и их подробности недоступны.
+- Items are elements related to what you hold, such as equipment, consumables, and valuables.
+- Only one Item can be equipped within a single Category (when the Category is set to allow equipping).
+- Items that don't meet their unlock condition are locked, and their details cannot be viewed.
 ___
 
 ## Предмет
-Список предметов в категории.
-- Долгое нажатие переключает экипировку предмета.
-- Из списка можно экипировать только один предмет. (Если настроена возможность экипировки на уровне категории)
-- Предметы, не соответствующие условиям открытия, заблокированы, и их подробности недоступны.
+カテゴリ内のアイテムの一覧
+- Hold to toggle equipping the Item.
+- Only one Item in the list can be equipped (when the Category is set to allow equipping).
+- Items that don't meet their unlock condition are locked, and their details cannot be viewed.
 ___
 
 ## транзакции
 Купить или продать предметы в валюте.
-- Некоторые предметы нельзя купить или продать.
-- Заблокированные предметы нельзя купить или продать.
-- Для данной вместимости или слота резервирования (очереди) может быть ограничение на количество покупок, и после его достижения дальнейшие покупки станут невозможны. (Прирост, полученный в виде награды, под это ограничение не подпадает)
+- Some Items cannot be bought or sold.
+- Locked Items cannot be bought or sold.
+- The Capacity and Queue may have a limit on the number of times they can be purchased; once the limit is reached, no more can be purchased (increases from rewards are not subject to the limit).

@@ -1,18 +1,18 @@
 
-# Category
+# カテゴリ
 A general framework for categorizing Actions and Items
 - Represents a large classification.
 - For example, it can be configured in any frame of mind, such as short range, long range, magic, dungeons, blacksmiths, and manufactories.
-- Actions and Items are placed directly down in the world and are associated with a Category ID.
+- アクションやアイテムはワールド直下に配置され、カテゴリIDで関連付けられます。
 ___
 
 ## [_information_](en/editor/information)
 ___
 
 ## group (usu. of people)
-Display Group Classification of Category
+カテゴリの表示グループ分類
 - Apply one of the groups configured in Basic.
-- A list of categories will be displayed in the order of the configured groups.
+- 設定したグループ順にカテゴリ一覧が表示されます。
 - [_general_](en/editor/general)
 ___
 
@@ -28,8 +28,8 @@ ___
 ___
 
 ## Equipment Groups
-Designation of Possible Item Groups for Equipment in this Category
-- A list of the group names of Items that can be equipped in this Category.
+このカテゴリで装備可能なアイテムグループの指定
+- このカテゴリで装備できるアイテムのグループ名のリストです。
 - You can only equip items from the group that matches the group name you specify here.
 - If an empty string is specified, an item with an unconfigured (empty) group will be targeted for Equipment.
 - Only one Item can be equipped in the same group. When you equip a new Item, any existing Equipment in the same group will automatically be unequipped.
@@ -38,21 +38,21 @@ Designation of Possible Item Groups for Equipment in this Category
 ___
 
 ## Level Availability
-Availability of Category level function
-- This is a flag to indicate whether or not this Category has a level.
+カテゴリレベル機能の有無
+- このカテゴリがレベルを持つかどうかのフラグです。
 - If on, it has a level; if off, it does not.
-- An example would be to turn on categories based on experience, such as swordsmanship and magic, and turn off categories based on location, such as dungeons and blacksmith shops.
+- 例として、剣技や魔法といった経験に基づくカテゴリはオンにし、ダンジョンや鍛冶屋といった場所のカテゴリはオフにするなどの使い方があります。
 ___
 
 ## simultaneous progress
-Configure parallel execution with other categories
-- This is a flag to indicate whether an Action in this Category can progress in parallel with an Action in another Category.
-- If on, it can progress simultaneously and independently of actions in other Categories.
-- If it is off, it cannot be performed at the same time as an Action in another Category that is also configured to be off. When you start a new Action in this Category, any other Progressing Actions in the Non-Standalone Category will be automatically aborted.
+他カテゴリとの並行実行設定
+- このカテゴリのアクションが、他のカテゴリのアクションと並行して進行できるかどうかのフラグです。
+- オンの場合は、他のカテゴリのアクションとは独立して同時に進行できます。
+- オフの場合は、同じくオフに設定された他のカテゴリのアクションと同時に実行できません。新たにこのカテゴリのアクションを開始すると、他の非スタンドアロンカテゴリで進行中のアクションは自動的に中止されます。
 ___
 
 ## background
-Category-specific background config
-- Configure the background for this Category.
-- When a Category is selected, the background image changes in conjunction with it.
+カテゴリ固有の背景設定
+- このカテゴリの背景を設定します。
+- カテゴリを選択されたときに、連動して背景画像が変更されます。
 - If nothing is configured, the world background setting is used as is.

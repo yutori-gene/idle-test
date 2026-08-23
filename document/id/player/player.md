@@ -10,6 +10,6 @@ Permainan dijelaskan untuk setiap kolom yang muncul di Play the Game.
 |[_category_](id/player/category)|Kompilasi berbagai elemen.|
 |[_action_](id/player/action)|Elemen bertindak seperti mengumpulkan, membuat, dan bertarung.|
 |[_item_](id/player/item)|Detail barang.|
-|[_property_](id/player/property)|Memeriksa nilai koreksi|
+|[_property_](id/player/property)|プロパティの確認|
 |[_world_](id/player/world)|Anda dapat mengoperasikan dan memeriksa kontrol dan konfigurasi umum game,|
 |[_miscellaneous_](id/player/miscellaneous)|Informasi tambahan lain yang dijelaskan.|

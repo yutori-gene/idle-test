@@ -1,13 +1,13 @@
 
 # akuisisi
-Konfigurasi akuisisi level item dan kategori.
+アイテムやカテゴリレベルの取得設定
 - Konfigurasi akuisisi.
-- Anda dapat mengubah level kategori serta item, dan hitung Aksi telah dilakukan.
+- アイテムの他にカテゴリのレベル、アクションの実行した回数を変更できます。
 - Probabilitas untuk mendapatkan produk dapat dikonfigurasi.
 
 |Tipe|Apa yang Anda akuisisi.|
 |-|-|
-|Kategori.|level|
+|カテゴリ|level|
 |Aksi|Hitung dieksekusi.|
 |Item|hitung jumlah harta benda|
 - [_type_](id/editor/type)
@@ -18,7 +18,7 @@ Jenis elemen yang akan diperoleh.
 
 |Tipe|Apa yang diperoleh dalam akuisisi.|
 |-|-|
-|Kategori.|Level (konversi pengalaman ditambahkan)|
+|カテゴリ|Level (konversi pengalaman ditambahkan)|
 |Aksi|Hitung dieksekusi.|
 |Item|hitung jumlah harta benda|
 ___
@@ -31,7 +31,7 @@ ___
 Nilai yang akan diperoleh
 - Konfigurasi minus mengurangi jumlah kepemilikan, berapa kali kepemilikan tersebut dilakukan, dan levelnya. Namun, tidak boleh dibawah 0.
 - Jika sebuah item memiliki jumlah kepemilikan maksimum (maks), jumlah kepemilikan tidak akan bertambah melebihi nilai tersebut.
-- Jika tipenya adalah Kategori, nilai yang ditetapkan ditambahkan langsung ke level (1 untuk 1 level, 0,5 untuk 0,5 level). Cara yang biasa digunakan untuk menyesuaikan hal ini adalah dengan melakukan konfigurasi untuk mengatur pengalaman dari aksi tersebut. Konfigurasi ini tidak perlu kecuali tidak ada tujuan khusus.
+- タイプがカテゴリの場合、設定した値がレベルに直接加算されます（1で1レベル、0.5で0.5レベル）。アクションの経験値設定で調整するのが通常の方法です。特殊な目的がない限りこの設定は不要です。
 ___
 
 ## Probabilitas [-1 hingga 1]

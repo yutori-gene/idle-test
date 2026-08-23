@@ -10,16 +10,16 @@ ___
 ## [_informasi_](id/editor/information)
 ___
 
-## Kategori.
-ID dari kategori yang termasuk dalam Aksi tersebut
-- Tentukan ID dari Kategori yang menjadi bagian dari Aksi ini.
+## カテゴリ
+アクションが所属するカテゴリのID
+- このアクションが所属するカテゴリのIDを指定します。
 ___
 
 ## atribut
-Kategori atribut aksi
-- Atribut (kategori) individual dapat dikonfigurasi.
-- Jika dibiarkan kosong, kategori yang menjadi miliknya akan diambil alih
-- Misalnya, jika Anda konfigurasi atribut Sihir untuk aksi yang termasuk dalam kategori Kastil Iblis satu per satu, level dan properti kategori sihir akan dihitung dan diterapkan pada waktu penyelesaian aksi dan kerusakan.
+アクション固有の属性カテゴリ
+- 個別の属性(カテゴリ)を設定できます。
+- 空欄の場合は属するカテゴリを引き継ぎます
+- 例えば、魔王城というカテゴリに属するアクションに個別に魔法という属性を設定した場合、アクション完了時間やダメージには魔法のカテゴリのレベルやプロパティが計算され適応されます。
 - [_category_](id/editor/category)
 ___
 

@@ -1,13 +1,13 @@
 
 # 속성
-보정 값 확인
+プロパティの確認
 ___
 
 ## 속성
-보정 값 목록
-- 각 카테고리에 설정된 속성의 목록입니다.
-- 속성은 액션의 실행에 영향을 주는 요소입니다.
-- 효과는 아이템의 장비에 의해 보정됩니다. (장비가 필요 없는 아이템도 있습니다)
+プロパティの一覧
+- A list of Properties set for each Category.
+- Properties are elements that affect the performance of Actions.
+- The effect is adjusted by equipping Items (some Items do not require equipping).
 ___
 
 ## 속성 세부 정보

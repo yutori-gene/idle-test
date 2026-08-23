@@ -1,6 +1,6 @@
 
 # event
 A system that runs at set intervals
-- ゲームに戻ったときやゲームオーバーになったときなど、決まったタイミングで発生する
-- 発生するとこの画面が開き、メッセージとともに報酬が自動で付与される
-- タスクは条件を満たすと達成となり、報酬は自分で受け取る
+- Occurs at set timings, such as when you return to the game or when it's game over.
+- When it occurs, this screen opens and a reward is automatically granted along with a message.
+- A Task is completed when its condition is met, and you receive the reward yourself.

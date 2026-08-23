@@ -8,5 +8,5 @@ ___
 
 ## bahasa
 Mengganti bahasa
-- Mengganti bahasa yang ditampilkan dalam permainan.
-- Ini hanya berlaku jika penulis telah menyiapkan terjemahan.
+- Switches the language displayed in the game.
+- Only available when the author has provided a translation.

@@ -1,13 +1,13 @@
 
 # свойства
-Проверка значений коррекции
+プロパティの確認
 ___
 
 ## свойства
-Список значений коррекции
-- Ниже приведён список свойств, настроенных для каждой категории.
-- Свойство — это элемент, влияющий на выполнение действия.
-- Эффект корректируется снаряжением предмета. (Некоторым предметам это не требуется)
+プロパティの一覧
+- A list of Properties set for each Category.
+- Properties are elements that affect the performance of Actions.
+- The effect is adjusted by equipping Items (some Items do not require equipping).
 ___
 
 ## Подробности о свойстве

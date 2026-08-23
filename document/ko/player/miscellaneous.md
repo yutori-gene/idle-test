@@ -8,5 +8,5 @@ ___
 
 ## 언어
 언어 전환하기
-- 게임에 표시되는 언어를 전환합니다.
-- 작성자가 번역을 준비한 경우에만 유효합니다.
+- Switches the language displayed in the game.
+- Only available when the author has provided a translation.

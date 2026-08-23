@@ -2,16 +2,16 @@
 # Gegenstand
 Güterelemente wie Ausrüstung und Verbrauchsgüter
 - Dieses Element bezieht sich auf den Besitz von Gegenständen wie Ausrüstung, Verbrauchsmaterial und Wertsachen.
-- Innerhalb einer Kategorie kann nur eine Ausrüstung vorhanden sein, oder sie kann Nichts sein.
+- カテゴリ内で１つのみ装備することもできますが、装備できないようにもできます。
 - Es gibt auch zahllose Möglichkeiten, sie zu verwenden.
 ___
 
 ## [_Informationen_](de/editor/information)
 ___
 
-## Kategorie.
-ID der Kategorie, zu der der Gegenstand gehört
-- Geben Sie die ID der Kategorie an, zu der dieser Gegenstand gehört.
+## カテゴリ
+アイテムが所属するカテゴリのID
+- このアイテムが所属するカテゴリのIDを指定します。
 ___
 
 ## Gruppe (z.B. von Personen)
@@ -61,7 +61,7 @@ ___
 
 ## Typ der Ausrüstung
 Typ-Einstellungen für Ausrüstung, Effekte und Verbrauch von Gegenständen.
-- Ausrüstbare Gegenstände müssen zu einer Gruppe gehören, die in `equipmentGroups` der Kategorie angegeben ist.
+- 装備可能なアイテムは、カテゴリの`equipmentGroups`で指定されたグループに属している必要があります。
 - Innerhalb der gleichen Gruppe kann nur ein Gegenstand ausgerüstet werden.
 - `unnecessary` wirkt unabhängig davon, ob der Gegenstand ausgerüstet ist, und die Stärke der Wirkung ist proportional zur besessenen Anzahl (bei 0 keine Wirkung, bei n das n-Fache).
 

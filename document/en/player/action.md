@@ -1,20 +1,20 @@
 
 # Action.
 Acting elements such as collecting, creating, and fighting
-- 1回の実行ごとに経験値を獲得し、レベルが上がることがある
-- 1回の実行ごとにアイテムを消費または獲得する
-- 解放条件を満たしていないアクションはロックされ、詳細を見ることはできない
+- Each time it is performed, you gain Experience and may Level up.
+- Each time it is performed, Items are consumed or gained.
+- Actions that don't meet their unlock condition are locked, and their details cannot be viewed.
 ___
 
 ## Actions.
-List of Actions in Category
-- 長押しでアクションの実行を切り替える
-- 1つのカテゴリの中で実行できるのは1つだけ
-- カテゴリによっては、複数のカテゴリのアクションを同時に進行できる
-- 解放条件を満たしていないアクションはロックされ、詳細を見ることはできない
+カテゴリ内のアクションの一覧
+- Hold to toggle performing the Action.
+- Only one Action can be performed within a single Category.
+- Depending on the Category, Actions in multiple Categories can progress at the same time.
+- Actions that don't meet their unlock condition are locked, and their details cannot be viewed.
 ___
 
 ## act
 Controlling Action
-- アクションを開始または停止する
-- 実行する回数を指定できる。一番右を選ぶと資源が尽きるまで実行する。
+- Starts or stops the Action.
+- You can specify the number of times to perform it. Choosing the rightmost option performs it until resources run out.

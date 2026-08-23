@@ -20,11 +20,11 @@ Configuration des effets d'un Objet.
 |restaurer|Modifie la quantité d'endurance restaurée à la fin d'une action. Plus on approche de la restauration complète, plus l'augmentation devient progressive. (uniquement pour les actions d'endurance)|
 ___
 
-## Catégorie.
-Spécification de la catégorie à laquelle les propriétés s'appliquent.
-- Configurer l'ID de la catégorie à laquelle s'applique cette propriété.
-- Configurer `*` l'applique à toutes les catégories.
-- Si elle est vide, elle s'applique à la Catégorie à laquelle l'Objet appartient.
+## カテゴリ
+プロパティを適用するカテゴリの指定
+- このプロパティを適用するカテゴリのIDを設定します。
+- `*`を設定すると全カテゴリに適用されます。
+- 空欄の場合はアイテムが属するカテゴリに適用されます。
 ___
 
 ## Valeur d'attaque [différence de niveau].

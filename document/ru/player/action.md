@@ -1,20 +1,20 @@
 
 # Действие.
 Элементы действия, такие как сбор, изготовление и сражения.
-- За каждое выполнение можно получить опыт и повысить уровень.
-- Каждое выполнение расходует или приносит предмет.
-- Действия, не соответствующие условиям открытия, заблокированы, и их подробности недоступны.
+- Each time it is performed, you gain Experience and may Level up.
+- Each time it is performed, Items are consumed or gained.
+- Actions that don't meet their unlock condition are locked, and their details cannot be viewed.
 ___
 
 ## ДЕЙСТВИЕ.
-Список действий в категории
-- Долгое нажатие переключает выполнение действия.
-- В пределах категории возможно только одно.
-- Некоторые категории позволяют продвигать действия сразу в нескольких категориях.
-- Действия, не соответствующие условиям открытия, заблокированы, и их подробности недоступны.
+カテゴリ内のアクションの一覧
+- Hold to toggle performing the Action.
+- Only one Action can be performed within a single Category.
+- Depending on the Category, Actions in multiple Categories can progress at the same time.
+- Actions that don't meet their unlock condition are locked, and their details cannot be viewed.
 ___
 
 ## Действовать.
 Контроль действий
-- Запустить или остановить действие.
-- Вы можете указать число выполнений. Выберите крайнее правое положение, чтобы выполнять до исчерпания ресурсов.
+- Starts or stops the Action.
+- You can specify the number of times to perform it. Choosing the rightmost option performs it until resources run out.

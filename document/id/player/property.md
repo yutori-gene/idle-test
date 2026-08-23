@@ -1,13 +1,13 @@
 
 # properti
-Memeriksa nilai koreksi
+プロパティの確認
 ___
 
 ## properti
-Daftar nilai koreksi
-- Berikut adalah daftar properti yang diatur untuk setiap kategori.
-- Properti adalah elemen yang memengaruhi pelaksanaan aksi.
-- Efeknya dikoreksi oleh peralatan dari item. (Sebagian item tidak memerlukannya)
+プロパティの一覧
+- A list of Properties set for each Category.
+- Properties are elements that affect the performance of Actions.
+- The effect is adjusted by equipping Items (some Items do not require equipping).
 ___
 
 ## Detail Properti

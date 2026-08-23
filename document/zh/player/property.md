@@ -1,13 +1,13 @@
 
 # 属性
-检查修正值
+プロパティの確認
 ___
 
 ## 属性
-修正值列表
-- 以下是为每个类别设置的属性列表。
-- 属性是影响动作执行的要素。
-- 效果会因物品的装备而受到修正。（部分物品无需装备）
+プロパティの一覧
+- A list of Properties set for each Category.
+- Properties are elements that affect the performance of Actions.
+- The effect is adjusted by equipping Items (some Items do not require equipping).
 ___
 
 ## 属性详情

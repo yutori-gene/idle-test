@@ -5,22 +5,22 @@ ___
 
 ## Resumen.
 Sobre este juego.
-- Puedes consultar el mundo (ambientación, configuración) de este juego.
-- También puedes consultar la consola (sistema) que ejecuta este juego.
+- You can check this game's World (setting and lore).
+- You can also check the console (system) running this game.
 ___
 
 ## estadísticas
 Resumen de los progresos
-- Puedes consultar el progreso del juego hasta ahora.
+- You can check the game's progress so far.
 ___
 
 ## configuración
 Cambiar la configuración del juego
-- Configura los ajustes relacionados con la visualización y el procesamiento del juego.
-- Los datos del juego se pueden importar, exportar y restablecer.
+- Configure settings related to the game's display and processing.
+- You can read, write, or reset game data.
 ___
 
 ## depurar
 Operación de comprobación de depuración
-- Solo se muestra durante la depuración.
-- No se mostrará cuando el juego se publique y se distribuya.
+- This is shown only during debugging.
+- Not shown when the game is published or distributed.

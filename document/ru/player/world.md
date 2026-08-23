@@ -5,22 +5,22 @@ ___
 
 ## Обзор.
 Об этой игре.
-- Вы можете узнать о мире (сеттинге, настройках) этой игры.
-- Вы также можете посмотреть консоль (систему), на которой работает эта игра.
+- You can check this game's World (setting and lore).
+- You can also check the console (system) running this game.
 ___
 
 ## статистика
 Краткая информация о прогрессе
-- Вы можете просмотреть прогресс игры на текущий момент.
+- You can check the game's progress so far.
 ___
 
 ## конфигурация
 Изменение конфигураций игры
-- Настройте параметры, связанные с отображением и обработкой игры.
-- Игровые данные можно импортировать, экспортировать и сбросить.
+- Configure settings related to the game's display and processing.
+- You can read, write, or reset game data.
 ___
 
 ## отладка
 Операция для отладочных проверок
-- Отображается только во время отладки.
-- Не будет отображаться при публикации и распространении игры.
+- This is shown only during debugging.
+- Not shown when the game is published or distributed.

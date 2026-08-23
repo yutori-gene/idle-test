@@ -1,13 +1,13 @@
 
 # adquisiciones
-Configuración de adquisición a nivel de Artículo y Categoría.
+アイテムやカテゴリレベルの取得設定
 - Configura las adquisiciones.
-- Puede cambiar el nivel de la Categoría, así como el Artículo, y el número de veces que se ha realizado la Acción.
+- アイテムの他にカテゴリのレベル、アクションの実行した回数を変更できます。
 - Se puede configurar la probabilidad de obtener el producto.
 
 |Tipo.|Adquisiciones.|
 |-|-|
-|Categoría.|nivel|
+|カテゴリ|nivel|
 |Acción.|Número de veces que se ha ejecutado.|
 |Artículo|número de posesiones|
 - [_type_](es/editor/type)
@@ -18,7 +18,7 @@ Tipo de elemento que se va a adquirir.
 
 |Tipo.|Lo que se adquiere.|
 |-|-|
-|Categoría.|Nivel (conversión de experiencia añadida)|
+|カテゴリ|Nivel (conversión de experiencia añadida)|
 |Acción.|Número de veces que se ha ejecutado.|
 |Artículo|número de posesiones|
 ___
@@ -31,7 +31,7 @@ ___
 Valores numéricos que deben obtenerse
 - Menos configuraciones negativas reducen el número de posesiones, el número de veces que se han realizado y su nivel. Sin embargo, no puede ser inferior a 0.
 - Si un Artículo tiene una configuración máx. de posesiones (máximo), el número de posesiones no aumentará más allá de ese valor.
-- Si el Tipo es Categoría, el valor configurado se añade directamente al nivel (1 para 1 nivel, 0,5 para 0,5 nivel). La forma habitual de ajustar esto es configurando el valor de experiencia de la Acción. Esta configuración no es Innecesaria a menos que haya un propósito especial.
+- タイプがカテゴリの場合、設定した値がレベルに直接加算されます（1で1レベル、0.5で0.5レベル）。アクションの経験値設定で調整するのが通常の方法です。特殊な目的がない限りこの設定は不要です。
 ___
 
 ## Probabilidad [-1 a 1]

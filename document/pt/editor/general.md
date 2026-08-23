@@ -26,17 +26,17 @@ Limites de tempo para progresso desligado.
 - [_category_](pt/editor/category)
 ___
 
-## Nível máximo da Categoria
-Nível limite para cada Categoria.
-- Configure o nível máximo para cada Categoria.
+## カテゴリの最大レベル
+各カテゴリのレベル上限
+- 各カテゴリの最大レベルを設定します。
 - Se forem adquiridas experiências além desse nível, o nível máximo configurado aqui será usado no cálculo de cada propriedade.
-- Esse valor não tem relações com Categorias sem níveis.
+- レベルのないカテゴリではこの値は関係ありません。
 - [_category_](pt/editor/category)
 ___
 
 ## função de bloqueio
 Ocultar itens até que os requisitos sejam atendidos
-- Se ativado, o Item de Ação da Categoria ficará oculto enquanto nada tiver sido usado ou possuído e os requisitos não tiverem sido atendidos.
+- 有効の場合、カテゴリ・アクション・アイテムは一度も使用・所持したことがなく、かつrequirementsを満たしていない間は非表示になります。
 - Se estiver desativado, todos os itens serão exibidos desde o início, mas não poderão ser executados ou equipados até que os requisitos sejam atendidos.
 - [_category_](pt/editor/category)
 - [_action_](pt/editor/action)
@@ -155,7 +155,7 @@ ___
 
 ## Taxa de aumento da experiência [vezes].
 Aumento percentual na dificuldade de nível.
-- À medida que o nível de uma Categoria aumenta, a taxa de aumento da experiência Necessária para alcançar o próximo nível.
+- カテゴリのレベルが上がるにつれて、次のレベルになるのに必要な経験値の上昇率です。
 - O aumento desse valor aumenta o nível de dificuldade.
 - A quantidade de experiência necessária para subir de nível é igual a (taxa de aumento de experiência)^(nível atual - 1).
 
@@ -173,7 +173,7 @@ ___
 Solicita o número de vezes que a ação do mesmo atributo foi executada para a execução de uma ação.
 - Se ativado, o número de vezes que uma ação com os mesmos atributos foi executada é automaticamente adicionado às condições de execução de cada ação.
 - O número de vezes necessário é igual ao valor do nível da Ação.
-- Se nada for configurado, será usado o ID da Categoria à qual ele pertence.
+- 属性が設定されていない場合は、所属するカテゴリのIDが使用されます。
 ___
 
 ## Taxa de propriedade [vezes]

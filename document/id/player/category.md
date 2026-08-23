@@ -1,13 +1,13 @@
 
-# Kategori.
+# カテゴリ
 Kompilasi berbagai elemen.
-- Elemen ini merupakan kumpulan dari aksi dan item.
+- An element that groups together Actions and Items.
 ___
 
 ## Tugas
-Daftar tugas dalam kategori
-- Ini adalah daftar tugas yang ditetapkan untuk kategori ini.
-- Pilih sebuah tugas untuk memeriksa syarat penyelesaian dan hadiahnya.
-- Pita menandai tugas yang hadiahnya belum diambil. Pilih salah satu lalu tekan terima untuk mengambilnya.
-- Kamu tidak dapat mengambil hadiah selama jumlah jenis item yang dapat kamu simpan sudah mencapai batas. Kosongkan tempat lalu ambil lagi.
-- Ini tidak ditampilkan jika kategori sama sekali tidak memiliki tugas.
+カテゴリ内のタスクの一覧
+- A list of Tasks assigned to this Category.
+- Select a Task to check its completion condition and reward.
+- Tasks whose reward hasn't been claimed yet have a ribbon. Select it and press Receive to claim it.
+- You cannot receive the reward while the number of Item types you can hold has reached its limit. Make room, then try receiving it again.
+- Not shown if the Category has no Tasks.

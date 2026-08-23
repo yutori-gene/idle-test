@@ -1,20 +1,20 @@
 
 # Gegenstand
 Einzelheiten zum Gegenstand.
-- Gegenstände sind Elemente rund um Besitz, etwa Ausrüstung, Verbrauchsgüter und Wertsachen.
-- Innerhalb einer Kategorie lässt sich nur ein Gegenstand ausrüsten. (Sofern er als Kategorie ausrüstbar konfiguriert ist)
-- Gegenstände, die die Freischaltbedingungen nicht erfüllen, sind gesperrt und können nicht im Detail eingesehen werden.
+- Items are elements related to what you hold, such as equipment, consumables, and valuables.
+- Only one Item can be equipped within a single Category (when the Category is set to allow equipping).
+- Items that don't meet their unlock condition are locked, and their details cannot be viewed.
 ___
 
 ## Gegenstand
-Liste der Gegenstände in der Kategorie.
-- Langes Drücken schaltet die Ausrüstung des Gegenstands um.
-- Aus der Liste lässt sich nur ein Gegenstand ausrüsten. (Sofern er als Kategorie ausrüstbar konfiguriert ist)
-- Gegenstände, die die Freischaltbedingungen nicht erfüllen, sind gesperrt und können nicht im Detail eingesehen werden.
+カテゴリ内のアイテムの一覧
+- Hold to toggle equipping the Item.
+- Only one Item in the list can be equipped (when the Category is set to allow equipping).
+- Items that don't meet their unlock condition are locked, and their details cannot be viewed.
 ___
 
 ## Transaktionen
 Kauf oder Verkauf von Gegenständen in Währung.
-- Manche Gegenstände können weder gekauft noch verkauft werden.
-- Gesperrte Gegenstände können weder gekauft noch verkauft werden.
-- Für eine bestimmte Kapazität oder einen Reservierungsplatz (Warteschlange) kann es eine Obergrenze für Käufe geben; ist sie erreicht, sind keine weiteren Käufe möglich. (Zuwächse aus Belohnungen fallen nicht unter diese Grenze)
+- Some Items cannot be bought or sold.
+- Locked Items cannot be bought or sold.
+- The Capacity and Queue may have a limit on the number of times they can be purchased; once the limit is reached, no more can be purchased (increases from rewards are not subject to the limit).

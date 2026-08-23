@@ -3,13 +3,13 @@
 Konfiguration der gesamten Spielwelt und Datenstruktur
 - Daten über Spiele, die auf Konsolen gespielt werden können.
 - Mit den Konfigurationen können Sie ein Abbruchspiel nach Ihren Wünschen gestalten.
-- Welten bestehen aus Kategorien, Aktionen, Gegenständen und Ereignissen.
+- ワールドはカテゴリ、アクション、アイテム、イベントなどの要素を内包します。
 ___
 
 ## [_Grundeinstellung_](de/editor/basic)
 ___
 
-## [_Kategorie._](de/editor/category)
+## [_カテゴリ_](de/editor/category)
 ___
 
 ## [_Aktion._](de/editor/action)

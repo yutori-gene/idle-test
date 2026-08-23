@@ -1,13 +1,13 @@
 
 # Eigenschaften
-Überprüfung der Korrekturwerte
+プロパティの確認
 ___
 
 ## Eigenschaften
-Liste der Korrekturwerte
-- Dies ist die Liste der Eigenschaften, die für jede Kategorie eingestellt sind.
-- Eine Eigenschaft ist ein Element, das die Ausführung einer Aktion beeinflusst.
-- Die Wirkung wird durch die Ausrüstung des Gegenstands korrigiert. (Manche Gegenstände benötigen das nicht)
+プロパティの一覧
+- A list of Properties set for each Category.
+- Properties are elements that affect the performance of Actions.
+- The effect is adjusted by equipping Items (some Items do not require equipping).
 ___
 
 ## Eigenschaftsdetails

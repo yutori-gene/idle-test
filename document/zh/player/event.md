@@ -1,6 +1,6 @@
 
 # 事件
 在固定时间点触发的系统
-- 会在返回游戏或游戏结束等特定时机触发。
-- 触发时会打开此画面，并随消息自动发放奖励。
-- 任务是满足特定条件后完成的，奖励需要自己领取。
+- Occurs at set timings, such as when you return to the game or when it's game over.
+- When it occurs, this screen opens and a reward is automatically granted along with a message.
+- A Task is completed when its condition is met, and you receive the reward yourself.

@@ -1,20 +1,20 @@
 
 # Acción.
 Elementos de acción como recoger, fabricar y luchar.
-- Cada ejecución puede otorgar experiencia y subir tu nivel.
-- Cada ejecución consume u obtiene un artículo.
-- Las acciones que no cumplen las condiciones de desbloqueo quedan bloqueadas y no se pueden ver en detalle.
+- Each time it is performed, you gain Experience and may Level up.
+- Each time it is performed, Items are consumed or gained.
+- Actions that don't meet their unlock condition are locked, and their details cannot be viewed.
 ___
 
 ## ACCIÓN.
-Lista de Acciones de la Categoría
-- Una pulsación larga alterna la ejecución de la acción.
-- Solo se puede ejecutar uno dentro de una categoría.
-- Algunas categorías permiten avanzar acciones de varias categorías al mismo tiempo.
-- Las acciones que no cumplen las condiciones de desbloqueo quedan bloqueadas y no se pueden ver en detalle.
+カテゴリ内のアクションの一覧
+- Hold to toggle performing the Action.
+- Only one Action can be performed within a single Category.
+- Depending on the Category, Actions in multiple Categories can progress at the same time.
+- Actions that don't meet their unlock condition are locked, and their details cannot be viewed.
 ___
 
 ## Actuar.
 Control de las Acciones
-- Inicia o detiene una acción.
-- Puedes indicar cuántas veces ejecutarla. Elige la posición más a la derecha para ejecutarla hasta agotar los recursos.
+- Starts or stops the Action.
+- You can specify the number of times to perform it. Choosing the rightmost option performs it until resources run out.

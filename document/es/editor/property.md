@@ -20,11 +20,11 @@ Configuración de los efectos que tiene un Artículo.
 |restaurar|Cambia la cantidad de resistencia restaurada al fin de una Acción. Cuanto más se acerca a la recuperación total, más gradual es el aumento. (sólo acción de resistencia)|
 ___
 
-## Categoría.
-Especificación de la Categoría a la que se aplica la propiedad.
-- Configura el ID de la Categoría a la que se aplica esta propiedad.
-- Al configurar `*` se aplica a todas las categorías.
-- Si está en blanco, se aplica a la Categoría a la que pertenece el Artículo.
+## カテゴリ
+プロパティを適用するカテゴリの指定
+- このプロパティを適用するカテゴリのIDを設定します。
+- `*`を設定すると全カテゴリに適用されます。
+- 空欄の場合はアイテムが属するカテゴリに適用されます。
 ___
 
 ## Valor de ataque [diferencia de nivel].

@@ -8,5 +8,5 @@ ___
 
 ## 语言
 切换语言
-- 切换游戏中显示的语言。
-- 仅在作者准备了翻译时有效。
+- Switches the language displayed in the game.
+- Only available when the author has provided a translation.

@@ -1,13 +1,13 @@
 
 # acquisitions
-Configuration de l'acquisition au niveau des objets et des catégories.
+アイテムやカテゴリレベルの取得設定
 - Configurer les acquisitions.
-- Vous pouvez modifier le niveau de la Catégorie ainsi que l'Objet, et le nombre de fois que l'Action a été comptée.
+- アイテムの他にカテゴリのレベル、アクションの実行した回数を変更できます。
 - La probabilité d'obtenir le produit peut être configurée.
 
 |Type|Ce que vous acquérez.|
 |-|-|
-|Catégorie.|niveau|
+|カテゴリ|niveau|
 |Action|Nombre de fois qu'il a été exécuté.|
 |Objet|compter le nombre de possessions|
 - [_type_](fr/editor/type)
@@ -18,7 +18,7 @@ Type d'élément à acquérir.
 
 |Type|Ce qui est acquis.|
 |-|-|
-|Catégorie.|Niveau (conversion de l'expérience ajoutée)|
+|カテゴリ|Niveau (conversion de l'expérience ajoutée)|
 |Action|Nombre de fois qu'il a été exécuté.|
 |Objet|compter le nombre de possessions|
 ___
@@ -31,7 +31,7 @@ ___
 Valeurs numériques à obtenir
 - Les valeurs négatives réduisent le nombre de possessions, le nombre de fois qu'elles ont été effectuées et leur niveau. Toutefois, elle ne peut être bas que 0.
 - Si un Objet a un nombre maximum de possessions (max), le nombre de possessions n'augmentera pas au-delà de cette valeur.
-- Si le Type est la Catégorie, la valeur configurée est ajoutée directement au niveau (1 pour 1 niveau, 0,5 pour 0,5 niveau). La façon habituelle d'ajuster cela est de configurer la valeur d'expérience de l'Action. Cette configuration n'est pas Inutile, à moins qu'il n'y ait un but particulier.
+- タイプがカテゴリの場合、設定した値がレベルに直接加算されます（1で1レベル、0.5で0.5レベル）。アクションの経験値設定で調整するのが通常の方法です。特殊な目的がない限りこの設定は不要です。
 ___
 
 ## Probabilité [-1 à 1]

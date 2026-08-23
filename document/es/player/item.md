@@ -1,20 +1,20 @@
 
 # Artículo
 Detalles del Artículo.
-- Los artículos son elementos relacionados con lo que posees, como equipamiento, consumibles y objetos de valor.
-- Solo se puede equipar un artículo dentro de una categoría. (Si está configurado para poder equiparse como categoría)
-- Los artículos que no cumplen los requisitos de desbloqueo quedan bloqueados y no se pueden ver en detalle.
+- Items are elements related to what you hold, such as equipment, consumables, and valuables.
+- Only one Item can be equipped within a single Category (when the Category is set to allow equipping).
+- Items that don't meet their unlock condition are locked, and their details cannot be viewed.
 ___
 
 ## Artículo
-Lista de Artículos de la Categoría.
-- Mantén pulsado para alternar el equipamiento del artículo.
-- Solo se puede equipar un artículo de la lista. (Si está configurado para poder equiparse como categoría)
-- Los artículos que no cumplen los requisitos de desbloqueo quedan bloqueados y no se pueden ver en detalle.
+カテゴリ内のアイテムの一覧
+- Hold to toggle equipping the Item.
+- Only one Item in the list can be equipped (when the Category is set to allow equipping).
+- Items that don't meet their unlock condition are locked, and their details cannot be viewed.
 ___
 
 ## transacciones
 Compra o venta de Artículos en divisa.
-- Algunos artículos no se pueden comprar ni vender.
-- Los artículos bloqueados no se pueden comprar ni vender.
-- Puede haber un límite en el número de compras para una capacidad o una ranura de reserva (cola); al alcanzarlo no podrás comprar más. (Los aumentos obtenidos como recompensa no están sujetos a este límite)
+- Some Items cannot be bought or sold.
+- Locked Items cannot be bought or sold.
+- The Capacity and Queue may have a limit on the number of times they can be purchased; once the limit is reached, no more can be purchased (increases from rewards are not subject to the limit).

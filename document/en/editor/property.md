@@ -20,11 +20,11 @@ Configuring the Effects of an Item
 |restore|Changes the amount of stamina restored at the end of an Action. The closer it gets to a full recovery, the more gradual the increase becomes. (stamina Action only)|
 ___
 
-## Category
-Specify the Category to which the property is applied
-- Configure the ID of the Category to which this property applies.
-- Configuring `*` applies it to all categories.
-- If left blank, it will be applied to the Category to which the Item belongs.
+## カテゴリ
+プロパティを適用するカテゴリの指定
+- このプロパティを適用するカテゴリのIDを設定します。
+- `*`を設定すると全カテゴリに適用されます。
+- 空欄の場合はアイテムが属するカテゴリに適用されます。
 ___
 
 ## Attack value [level difference].

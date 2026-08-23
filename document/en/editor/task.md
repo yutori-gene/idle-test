@@ -2,10 +2,10 @@
 # Task
 Missions that are completed when certain conditions are met
 - When the configured conditions are met, the goal is achieved, and a message appears at the top of the screen.
-- It will appear in the list of player missions and the list of tasks by Category.
+- プレイヤーのミッションの一覧と、カテゴリのタスクの一覧に表示されます。
 - Rewards are not awarded automatically. Players receive them when they open a task and tap the "Claim" button.
 - Until you receive the reward, a ribbon will appear on the list bar to indicate that it is still unclaimed.
-- By making acquisitions, you can change the category level, the number of times an action has been performed, and the number of Items you possess.
+- 獲得でカテゴリのレベル、アクションの実行回数、アイテムの所持数を変化させることができます。
 - For events you want to trigger at times other than those specified by conditions—such as when the game is first launched or when the gameovered state is reached—config them in the Basic Settings events.
 - [_event_](en/editor/event)
 ___
@@ -13,11 +13,11 @@ ___
 ## [_information_](en/editor/information)
 ___
 
-## Category
-The ID of the category to which the task belongs
-- Specify the ID of the Category to which this task belongs.
-- Once configured, a list of tasks will be added to the player's category screen, and they will also be grouped by category in the mission list.
-- If left blank, the mission will not be assigned to any Category and will be grouped together and displayed at the top of the mission list.
+## カテゴリ
+タスクが所属するカテゴリのID
+- このタスクを所属させるカテゴリのIDを指定します。
+- 設定すると、プレイヤーのカテゴリの画面にタスクの一覧が追加され、ミッションの一覧でもカテゴリごとにまとめて表示されます。
+- 空欄の場合はどのカテゴリにも属さず、ミッションの一覧の先頭にまとめて表示されます。
 ___
 
 ## timing
@@ -43,6 +43,7 @@ Conditions for Completing a Task
 - この条件を満たすと達成になり、報酬を受け取れるようになります。
 - 一度達成すると、その後に条件を満たさなくなっても達成のままで、報酬もいつでも受け取れます。
 - 条件を設定していないタスクは達成しません。
+- requiringGroupを有効にすると、ここで指定するidの意味がカテゴリ・アクション・アイテム個別のIDからグループIDに変わります。
 ___
 
 ### Type
@@ -50,7 +51,7 @@ Type of element referenced as a condition
 
 |Type|Referenced value|
 |-|-|
-|Category|Category Level|
+|カテゴリ|カテゴリのレベル|
 |Action.|Number of times the Action has been performed.|
 |Item|Number of Items in your possession|
 ___
@@ -78,10 +79,21 @@ Requires that the Item be in the Equipment state (valid only if the Type is Item
 - Invalid if Type is other than Item.
 ___
 
+## Group Aggregation
+Treat the condition's id as a group ID and judge by the total of its members
+- When enabled, the id set in the condition (requirements) is treated as the ID of a group from the basic settings.
+- A condition whose Type is Category is judged by the total Level of all Categories belonging to that group.
+- A condition whose Type is Action is judged by the total number of times all Actions belonging to that group have been executed.
+- A condition whose Type is Item is judged by the total number of all Items belonging to that group in your possession.
+- Locked (non-released) elements are not included in the total.
+- The Item's consumption probability (chance) and equipment condition (equipment) are ignored, and nothing is consumed. They are used for judgment only.
+- When disabled, the id in the condition is treated as before, as the ID of an individual Category, Action, or Item.
+___
+
 ## reward
 Configuring Rewards for Completed Tasks
 - 達成したタスクを開き、獲得のバーを押した時に受け取れる報酬です。
-- カテゴリーのレベル、アクションの実行回数、アイテムの所持数を変化させることができます。
+- カテゴリのレベル、アクションの実行回数、アイテムの所持数を変化させることができます。
 - 数量にマイナスを設定することもできます。
 - 報酬を設定していないタスクは獲得のバーが出ず、達成した時点で完了になります。
 - 持てるアイテムの種類が上限に達している時は受け取れません。整理してから受け取り直します。
@@ -92,7 +104,7 @@ Type of element to be acquired
 
 |Type|What is Acquisitions|
 |-|-|
-|Category|Level (added in terms of experience value)|
+|カテゴリ|Level (added in terms of experience value)|
 |Action.|Number of times executed|
 |Item|number possessed|
 ___
@@ -105,7 +117,7 @@ ___
 Value to be obtained
 - Minus values configured will decrease the number of possessions, the number of times they have been performed, and their level. However, it will not go down to 0 or below.
 - If an Item has a configured maximum ownership count (max), the number of possessions will not increase beyond that value.
-- If the Type is Category, the value configured is added directly to the level (1 for 1 level, 0.5 for 0.5 level). The usual way to adjust this is to use the Action's experience value config. Unnecessary to configure this setting unless there is a special purpose.
+- タイプがカテゴリの場合、設定した値がレベルに直接加算されます（1で1レベル、0.5で0.5レベル）。アクションの経験値設定で調整するのが通常の方法です。特殊な目的がない限りこの設定は不要です。
 ___
 
 ### Probability [-1 to 1]
@@ -121,6 +133,6 @@ ___
 Task Display Group Categories
 - Apply one of the groups configured in Basic.
 - The list of tasks is displayed in the order of the groups you have configured.
-- Items are displayed within categories, further organized into groups.
+- カテゴリの中でさらにグループごとに分けて表示されます。
 - If left blank, no minutes will be grouped.
 - [_general_](en/editor/general)

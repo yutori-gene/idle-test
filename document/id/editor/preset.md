@@ -31,7 +31,7 @@ ___
 
 ### Terdapat tidak ada duplikasi.
 Larangan duplikasi ID dalam tipe yang sama.
-- Tiada menduplikasi dalam kategori, aksi, item, acara, dan tipe preset karena digunakan untuk mengidentifikasi elemen.
+- 要素の判別に用いられるため、カテゴリ、アクション、アイテム、イベント、プリセットの各タイプ内で重複しないでください。
 - Memiliki ID yang sama untuk tipe yang berbeda tidak menjadi masalah.
 - [_type_](id/editor/type)
 ___
@@ -113,8 +113,8 @@ ___
 Mengikuti warna yang diatur pada elemen induk
 - Jika dikosongkan, warna yang diatur pada elemen induk akan diwarisi.
 - Hierarki tipe setiap elemen adalah sebagai berikut.
-- Misalnya, jika sebuah aksi memiliki warna tersendiri maka warna itulah yang dipakai; jika aksi tidak memiliki warna tersendiri, maka warna kategori atau dunia yang dipakai.
-- Jika sebuah acara juga memiliki kategori yang diatur, acara itu mewarisi warna kategori tersebut sama seperti aksi dan item.
+- 例えば、アクションに個別の色が設定されている場合はそれが利用されますが、アクションに個別の色が設定されていない場合はカテゴリ又はワールドの色が使用されます。
+- イベントもカテゴリを設定している場合は、アクションやアイテムと同じようにそのカテゴリの色を引き継ぎます。
 ```
 world
 ├── category

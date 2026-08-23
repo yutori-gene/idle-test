@@ -1,13 +1,13 @@
 
 # propriétés
-Vérification des valeurs de correction
+プロパティの確認
 ___
 
 ## propriétés
-Liste des valeurs de correction
-- Voici la liste des propriétés configurées pour chaque catégorie.
-- Une propriété est un élément qui influe sur l'exécution d'une action.
-- L'effet est corrigé par l'équipement de l'objet. (Certains objets n'en ont pas besoin)
+プロパティの一覧
+- A list of Properties set for each Category.
+- Properties are elements that affect the performance of Actions.
+- The effect is adjusted by equipping Items (some Items do not require equipping).
 ___
 
 ## Détails de la propriété

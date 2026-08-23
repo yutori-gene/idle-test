@@ -1,6 +1,6 @@
 
 # Evento
 Sistema que é acionado em intervalos regulares
-- É acionado em momentos específicos, como ao voltar ao jogo ou ao perder a partida.
-- Ao ser acionado, esta tela será aberta e a recompensa será concedida automaticamente junto com uma mensagem.
-- Uma tarefa é concluída ao cumprir determinadas condições, e a recompensa você mesmo recebe.
+- Occurs at set timings, such as when you return to the game or when it's game over.
+- When it occurs, this screen opens and a reward is automatically granted along with a message.
+- A Task is completed when its condition is met, and you receive the reward yourself.

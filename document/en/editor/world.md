@@ -3,13 +3,13 @@
 Configuration and data structure of the entire game world
 - Data for games that can be played up on consoles.
 - You can create an abandonment game as you wish by configuring it.
-- Worlds encompass elements such as Categories, Actions, Items, and Events.
+- ワールドはカテゴリ、アクション、アイテム、イベントなどの要素を内包します。
 ___
 
 ## [_Basic Configuration_](en/editor/basic)
 ___
 
-## [_Category_](en/editor/category)
+## [_カテゴリ_](en/editor/category)
 ___
 
 ## [_Action._](en/editor/action)

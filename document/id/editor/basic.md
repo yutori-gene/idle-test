@@ -1,7 +1,7 @@
 
 # konfigurasi dasar
 Item konfigurasi dasar untuk dunia secara umum.
-- Konfigurasi nama dunia, deskripsi, latar belakang, mata uang, kapasitas, level maks kategori, tingkat peningkatan pengalaman, tingkat diskon, parameter pertarungan standar, dll.
+- ワールドの名前、説明、背景、通貨、容量、カテゴリの最大レベル、経験値の上昇率、割引率、標準戦闘パラメータなどを設定します。
 - Konfigurasi ini memengaruhi seluruh dunia.
 
 |nama|Deskripsi|

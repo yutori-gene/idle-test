@@ -1,20 +1,20 @@
 
 # Aksi
 Elemen bertindak seperti mengumpulkan, membuat, dan bertarung.
-- Setiap pelaksanaan dapat memberi pengalaman dan menaikkan level kamu.
-- Setiap pelaksanaan menghabiskan atau menghasilkan item.
-- Aksi yang belum memenuhi syarat pembukaan akan terkunci dan detailnya tidak dapat dilihat.
+- Each time it is performed, you gain Experience and may Level up.
+- Each time it is performed, Items are consumed or gained.
+- Actions that don't meet their unlock condition are locked, and their details cannot be viewed.
 ___
 
 ## Aksi.
-Daftar aksi dalam kategori
-- Tekan lama untuk mengganti pelaksanaan aksi.
-- Hanya satu yang dapat dijalankan dalam satu kategori.
-- Sebagian kategori memungkinkan kamu menjalankan aksi dari beberapa kategori sekaligus.
-- Aksi yang belum memenuhi syarat pembukaan akan terkunci dan detailnya tidak dapat dilihat.
+カテゴリ内のアクションの一覧
+- Hold to toggle performing the Action.
+- Only one Action can be performed within a single Category.
+- Depending on the Category, Actions in multiple Categories can progress at the same time.
+- Actions that don't meet their unlock condition are locked, and their details cannot be viewed.
 ___
 
 ## bertindak
 Kontrol Aksi
-- Memulai atau menghentikan aksi.
-- Kamu dapat menentukan berapa kali menjalankannya. Pilih posisi paling kanan untuk menjalankannya sampai sumber daya habis.
+- Starts or stops the Action.
+- You can specify the number of times to perform it. Choosing the rightmost option performs it until resources run out.

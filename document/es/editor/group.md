@@ -1,8 +1,8 @@
 
 # grupo (normalmente de personas)
-Definir grupos de visualización para Categorías, Acciones y Artículos
+カテゴリ、アクション、アイテムの表示グループを定義
 - Defina grupos para controlar el orden de visualización.
-- Puede configurar grupos definidos aquí para cada Categoría, Acción y Artículo.
+- 各カテゴリ、アクション、アイテムでここで定義したグループを設定できます。
 - Los grupos con el mismo grupo se muestran muy juntos.
 - Si se deja en blanco, no se realiza ninguna agrupación.
 ___
@@ -30,7 +30,7 @@ ___
 
 ### Nada de duplicados.
 Prohibición de ID duplicados dentro del mismo Tipo.
-- No duplique nada dentro de los tipos Categoría, Acción, Artículo, Evento y Preajuste, ya que se utilizan para identificar elementos.
+- 要素の判別に用いられるため、カテゴリ、アクション、アイテム、イベント、プリセットの各タイプ内で重複しないでください。
 - Tener el mismo ID para diferentes Tipos no es un problema.
 - [_type_](es/editor/type)
 ___
@@ -112,8 +112,8 @@ ___
 Adopción del color configurado en el elemento padre
 - Si se deja en blanco, se hereda el color configurado en el elemento padre.
 - La jerarquía de los tipos de cada elemento es la siguiente.
-- Por ejemplo, si una acción tiene un color propio configurado, se usa ese; si la acción no tiene un color propio, se usa el color de la categoría o del mundo.
-- Cuando un evento también tiene una categoría configurada, hereda el color de esa categoría igual que las acciones y los artículos.
+- 例えば、アクションに個別の色が設定されている場合はそれが利用されますが、アクションに個別の色が設定されていない場合はカテゴリ又はワールドの色が使用されます。
+- イベントもカテゴリを設定している場合は、アクションやアイテムと同じようにそのカテゴリの色を引き継ぎます。
 ```
 world
 ├── category

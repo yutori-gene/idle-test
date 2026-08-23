@@ -1,13 +1,13 @@
 
 # Bedingungen und Konditionen
 Konfiguration der notwendigen Anforderungen für die Verwendung und Anzeige von Elementen.
-- Dies sind die Bedingungen, die für jedes Element nach Kategorie, Aktion und Gegenstand konfiguriert werden.
+- カテゴリ、アクション、アイテムごとの各要素に設定する条件です。
 - Wenn nicht alle konfigurierten Bedingungen erfüllt sind, können die in der Tabelle aufgeführten Vorgänge nicht ausgeführt werden.
 - Wenn die Sperrfunktion aktiviert ist, wird das Element selbst ausgeblendet, bis die Bedingung erfüllt ist.
 
 |Wo ist die Konfiguration vorzunehmen?|Nichts kann nur getan werden, wenn die Bedingungen erfüllt sind.|
 |-|-|
-|Kategorie.|Ausführung aller Aktionen und Manipulation von Gegenständen in der Kategorie|
+|カテゴリ|カテゴリ内の全てのアクションの実行とアイテムの操作|
 |Aktion.|Durchführung der Aktionen|
 |Gegenstand|Manipulation von Gegenständen (z. B. Ausrüstung)|
 - [_type_](de/editor/type)
@@ -18,7 +18,7 @@ Art des Elements, auf das als Bedingung verwiesen wird.
 
 |Typ.|Referenzierte Werte|
 |-|-|
-|Kategorie.|Level der Kategorie.|
+|カテゴリ|カテゴリのレベル|
 |Aktion.|Zählt, wie oft die Aktion durchgeführt wurde.|
 |Gegenstand|Anzahl der gehaltenen Gegenstände.|
 ___

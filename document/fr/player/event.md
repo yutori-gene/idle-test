@@ -1,6 +1,6 @@
 
 # Événement
 Système se déclenchant à des moments prédéfinis
-- Se déclenche à des moments précis, comme au retour dans le jeu ou en cas de fin de partie.
-- Au déclenchement, cet écran s'ouvre et la récompense est accordée automatiquement avec un message.
-- Une tâche s'accomplit en remplissant certaines conditions, et vous récupérez la récompense vous-même.
+- Occurs at set timings, such as when you return to the game or when it's game over.
+- When it occurs, this screen opens and a reward is automatically granted along with a message.
+- A Task is completed when its condition is met, and you receive the reward yourself.

@@ -1,18 +1,18 @@
 
-# Categoría.
+# カテゴリ
 Marco general para la clasificación de Acciones y Artículos.
 - Representa una clasificación importante.
 - Por ejemplo, se puede configurar en cualquier marco, como corto alcance, largo alcance, magia, mazmorras, herrerías, fábricas, etc.
-- Las Acciones y Artículos se colocan directamente debajo del mundo y se asocian a un ID de Categoría.
+- アクションやアイテムはワールド直下に配置され、カテゴリIDで関連付けられます。
 ___
 
 ## [_información_](es/editor/information)
 ___
 
 ## grupo (normalmente de personas)
-Visualización de la clasificación por grupos de categorías
+カテゴリの表示グループ分類
 - Aplique uno de los grupos configurados en Básico.
-- Aparece una lista de Categorías en el orden de los grupos configurados.
+- 設定したグループ順にカテゴリ一覧が表示されます。
 - [_general_](es/editor/general)
 ___
 
@@ -28,8 +28,8 @@ ___
 ___
 
 ## grupo de equipamiento
-Designación de los grupos de Artículos que pueden ser Equipados en esta Categoría.
-- Lista de nombres de grupo de los Artículos que se pueden Equipar en esta Categoría.
+このカテゴリで装備可能なアイテムグループの指定
+- このカテゴリで装備できるアイテムのグループ名のリストです。
 - Sólo se pueden equipar los artículos del grupo que coincida con el nombre del grupo especificado aquí.
 - Si se especifica una cadena vacía, los Artículos con un grupo no configurado (vacío) pasan a ser elegibles para Equipamiento.
 - Sólo se puede equipar un objeto en el mismo grupo. Cuando equipas un nuevo Artículo, cualquier equipamiento existente en el mismo grupo se desactiva automáticamente.
@@ -38,21 +38,21 @@ Designación de los grupos de Artículos que pueden ser Equipados en esta Catego
 ___
 
 ## Disponibilidad de niveles
-Disponibilidad de funciones a nivel de Categoría
-- Es una bandera para indicar si esta Categoría tiene un nivel o no.
+カテゴリレベル機能の有無
+- このカテゴリがレベルを持つかどうかのフラグです。
 - Si está activado, tiene un nivel; si está desactivado, no.
-- Un ejemplo es activar las categorías basadas en la experiencia, como espadachín y magia, y desactivar las categorías basadas en la ubicación, como mazmorras y herrerías.
+- 例として、剣技や魔法といった経験に基づくカテゴリはオンにし、ダンジョンや鍛冶屋といった場所のカテゴリはオフにするなどの使い方があります。
 ___
 
 ## progresando simultáneamente
-Configuraciones de ejecución paralela con otras Categorías
-- Indicador que señala si las Acciones de esta Categoría pueden progresar en paralelo con Acciones de otras Categorías.
-- Si está activada, la Acción puede progresar simultánea e independientemente de otras Categorías de acciones.
-- Si está desactivada, no puede realizarse simultáneamente con acciones de otras Categorías que también estén desactivadas. Al comenzar una nueva Acción en esta Categoría, las Acciones en progreso en otras Categorías independientes se cancelan automáticamente.
+他カテゴリとの並行実行設定
+- このカテゴリのアクションが、他のカテゴリのアクションと並行して進行できるかどうかのフラグです。
+- オンの場合は、他のカテゴリのアクションとは独立して同時に進行できます。
+- オフの場合は、同じくオフに設定された他のカテゴリのアクションと同時に実行できません。新たにこのカテゴリのアクションを開始すると、他の非スタンドアロンカテゴリで進行中のアクションは自動的に中止されます。
 ___
 
 ## fondo
-Configuraciones de fondo específicas para cada Categoría
-- Configure el fondo de esta Categoría.
-- Cuando se selecciona una Categoría, la imagen de fondo cambia junto con ella.
+カテゴリ固有の背景設定
+- このカテゴリの背景を設定します。
+- カテゴリを選択されたときに、連動して背景画像が変更されます。
 - Si no se configura nada, la configuración del fondo del mundo se utiliza tal cual.

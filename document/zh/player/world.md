@@ -5,22 +5,22 @@ ___
 
 ## 概览
 关于这个游戏
-- 可以查看此游戏的世界（世界观、设定）。
-- 也可以查看运行此游戏的控制台（系统）。
+- You can check this game's World (setting and lore).
+- You can also check the console (system) running this game.
 ___
 
 ## 统计
 进度概述
-- 可以查看目前为止的游戏进度。
+- You can check the game's progress so far.
 ___
 
 ## 配置
 更改游戏配置
-- 进行与游戏显示和处理相关的设置。
-- 可以输入、输出并重置游戏数据。
+- Configure settings related to the game's display and processing.
+- You can read, write, or reset game data.
 ___
 
 ## 调试
 调试检查操作
-- 仅在调试期间显示。
-- 游戏发布和分发时不会显示。
+- This is shown only during debugging.
+- Not shown when the game is published or distributed.

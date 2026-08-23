@@ -1,13 +1,13 @@
 
 # conditions générales
 Configuration des exigences nécessaires à l'utilisation et à la présentation des éléments.
-- Il s'agit des configurations établies pour chaque élément par Catégorie, Action et Objet.
+- カテゴリ、アクション、アイテムごとの各要素に設定する条件です。
 - Si toutes les configurations ne sont pas remplies, les opérations indiquées dans le tableau ne peuvent pas être effectuées.
 - Si la fonction de verrouillage est activée, l'élément lui-même est masqué jusqu'à ce que la condition soit remplie.
 
 |Où se configurer ?|Ce qui ne peut être fait que si les conditions sont réunies.|
 |-|-|
-|Catégorie.|Exécution de toutes les actions et manipulation des objets de la Catégorie|
+|カテゴリ|カテゴリ内の全てのアクションの実行とアイテムの操作|
 |Action|Exécution des actions|
 |Objet|Manipulation d'objets (par exemple, d'équipements)|
 - [_type_](fr/editor/type)
@@ -18,7 +18,7 @@ Type d'élément référencé comme condition.
 
 |Type|Valeurs référencées|
 |-|-|
-|Catégorie.|Niveau de la Catégorie.|
+|カテゴリ|カテゴリのレベル|
 |Action|Nombre de fois où l'action a été comptée.|
 |Objet|Nombre d'objets détenus.|
 ___

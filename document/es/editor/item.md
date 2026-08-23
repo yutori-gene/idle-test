@@ -2,16 +2,16 @@
 # Artículo
 Elementos como Equipamiento y consumibles
 - Este elemento se refiere a la propiedad de objetos como Equipamiento, consumibles y objetos de valor.
-- Sólo se puede equipar uno dentro de una Categoría, o se puede desactivar.
+- カテゴリ内で１つのみ装備することもできますが、装備できないようにもできます。
 - También existen formas variables de utilizarlos.
 ___
 
 ## [_información_](es/editor/information)
 ___
 
-## Categoría.
-ID de la Categoría a la que pertenece el Artículo
-- Especifique el ID de la Categoría a la que pertenece este Artículo.
+## カテゴリ
+アイテムが所属するカテゴリのID
+- このアイテムが所属するカテゴリのIDを指定します。
 ___
 
 ## grupo (normalmente de personas)
@@ -61,7 +61,7 @@ ___
 
 ## Tipo de Equipamiento
 Tipo de configuración para el Equipamiento, efectos y consumo de Artículos.
-- Los artículos equipables deben pertenecer a un grupo indicado en `equipmentGroups` de la categoría.
+- 装備可能なアイテムは、カテゴリの`equipmentGroups`で指定されたグループに属している必要があります。
 - Sólo se puede equipar un objeto dentro del mismo grupo.
 - `unnecessary` surte efecto tanto si está equipado como si no, y la magnitud del efecto es proporcional a la cantidad que se posea (sin efecto con 0, n veces con n).
 

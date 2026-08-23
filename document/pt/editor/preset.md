@@ -31,7 +31,7 @@ ___
 
 ### Nada de duplicação.
 Proibição de IDs duplicados dentro do mesmo Tipo.
-- Nada de duplicar nos tipos Categoria, Ação, Item, Evento e Predefinição, pois eles são usados para identificar elementos.
+- 要素の判別に用いられるため、カテゴリ、アクション、アイテム、イベント、プリセットの各タイプ内で重複しないでください。
 - Ter o mesmo ID para tipos diferentes não é um problema.
 - [_type_](pt/editor/type)
 ___
@@ -113,8 +113,8 @@ ___
 Adoção da cor configurada no elemento pai
 - Se ficar em branco, a cor configurada no elemento pai é herdada.
 - A hierarquia dos tipos de cada elemento é a seguinte.
-- Por exemplo, se uma ação tiver uma cor própria configurada, ela é usada; se a ação não tiver uma cor própria, é usada a cor da categoria ou do mundo.
-- Quando um evento também tem uma categoria configurada, ele herda a cor dessa categoria da mesma forma que as ações e os itens.
+- 例えば、アクションに個別の色が設定されている場合はそれが利用されますが、アクションに個別の色が設定されていない場合はカテゴリ又はワールドの色が使用されます。
+- イベントもカテゴリを設定している場合は、アクションやアイテムと同じようにそのカテゴリの色を引き継ぎます。
 ```
 world
 ├── category

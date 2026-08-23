@@ -1,7 +1,7 @@
 
 # configuración básica
 Elementos básicos de configuración para el mundo en general.
-- Configura el nombre del mundo, la descripción, el fondo, la moneda, la capacidad, el nivel máx. de categorías, la tasa de aumento de experiencia, la tasa de descuento, los parámetros de combate estándar, etc.
+- ワールドの名前、説明、背景、通貨、容量、カテゴリの最大レベル、経験値の上昇率、割引率、標準戦闘パラメータなどを設定します。
 - Estas configuraciones afectan a todo el mundo.
 
 |nombre|Descripción|

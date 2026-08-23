@@ -10,6 +10,6 @@
 |[_category_](ru/player/category)|Компиляция из различных элементов.|
 |[_action_](ru/player/action)|Элементы действия, такие как сбор, изготовление и сражения.|
 |[_item_](ru/player/item)|Предметы.|
-|[_property_](ru/player/property)|Проверка значений коррекции|
+|[_property_](ru/player/property)|プロパティの確認|
 |[_world_](ru/player/world)|Вы можете управлять и проверять общие элементы управления и конфигурации игры,|
 |[_miscellaneous_](ru/player/miscellaneous)|Другая дополнительная информация.|

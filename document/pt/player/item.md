@@ -1,20 +1,20 @@
 
 # Item
 Detalhes do item.
-- Itens são elementos relacionados ao que você possui, como equipamentos, consumíveis e objetos de valor.
-- Só é possível equipar um item dentro de uma categoria. (Se estiver configurado para poder ser equipado como categoria)
-- Itens que não cumpriram os requisitos de liberação ficam bloqueados e não podem ser vistos em detalhe.
+- Items are elements related to what you hold, such as equipment, consumables, and valuables.
+- Only one Item can be equipped within a single Category (when the Category is set to allow equipping).
+- Items that don't meet their unlock condition are locked, and their details cannot be viewed.
 ___
 
 ## Item
-Lista de itens da Categoria.
-- Mantenha pressionado para alternar o equipamento do item.
-- Só é possível equipar um item da lista. (Se estiver configurado para poder ser equipado como categoria)
-- Itens que não cumpriram os requisitos de liberação ficam bloqueados e não podem ser vistos em detalhe.
+カテゴリ内のアイテムの一覧
+- Hold to toggle equipping the Item.
+- Only one Item in the list can be equipped (when the Category is set to allow equipping).
+- Items that don't meet their unlock condition are locked, and their details cannot be viewed.
 ___
 
 ## transações
 Comprar ou vender itens em moeda.
-- Alguns itens não podem ser comprados nem vendidos.
-- Itens bloqueados não podem ser comprados nem vendidos.
-- Pode haver um limite no número de compras para uma dada capacidade ou vaga de reserva (fila) e, ao atingi-lo, não será possível comprar mais. (Os aumentos obtidos como recompensa não estão sujeitos a esse limite)
+- Some Items cannot be bought or sold.
+- Locked Items cannot be bought or sold.
+- The Capacity and Queue may have a limit on the number of times they can be purchased; once the limit is reached, no more can be purchased (increases from rewards are not subject to the limit).

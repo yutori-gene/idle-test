@@ -5,22 +5,22 @@ ___
 
 ## Visão geral.
 Sobre este jogo.
-- Você pode verificar o mundo (ambientação, configuração) deste jogo.
-- Você também pode verificar o console (sistema) que está executando este jogo.
+- You can check this game's World (setting and lore).
+- You can also check the console (system) running this game.
 ___
 
 ## estatísticas
 Resumo do progresso
-- Você pode verificar o progresso do jogo até agora.
+- You can check the game's progress so far.
 ___
 
 ## configuração
 Alterar as configurações do jogo
-- Configure as opções relacionadas à exibição e ao processamento do jogo.
-- Os dados do jogo podem ser importados, exportados e redefinidos.
+- Configure settings related to the game's display and processing.
+- You can read, write, or reset game data.
 ___
 
 ## depurar
 Operação para verificações de depuração
-- É exibido apenas durante a depuração.
-- Não será exibido quando o jogo for publicado e distribuído.
+- This is shown only during debugging.
+- Not shown when the game is published or distributed.

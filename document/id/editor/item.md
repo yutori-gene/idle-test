@@ -2,16 +2,16 @@
 # Item
 Elemen-elemen barang seperti peralatan dan bahan habis pakai
 - Elemen ini sendiri berkaitan dengan kepemilikan benda-benda seperti peralatan, barang habis pakai, dan barang berharga.
-- Hanya satu yang dapat dilengkapi dalam suatu kategori, atau dapat tidak ada.
+- カテゴリ内で１つのみ装備することもできますが、装備できないようにもできます。
 - Ada juga cara hitung untuk menggunakannya.
 ___
 
 ## [_informasi_](id/editor/information)
 ___
 
-## Kategori.
-ID dari kategori yang dimiliki item tersebut
-- Tentukan ID dari Kategori yang dimiliki Item ini.
+## カテゴリ
+アイテムが所属するカテゴリのID
+- このアイテムが所属するカテゴリのIDを指定します。
 ___
 
 ## kelompok (usu. orang)
@@ -61,7 +61,7 @@ ___
 
 ## Tipe Peralatan
 Konfigurasi tipe untuk peralatan, efek, dan konsumsi Item.
-- Item yang dapat dikenakan harus termasuk dalam grup yang ditentukan pada `equipmentGroups` milik kategori.
+- 装備可能なアイテムは、カテゴリの`equipmentGroups`で指定されたグループに属している必要があります。
 - Hanya satu item yang dapat dilengkapi dalam grup yang sama.
 - `unnecessary` tetap berefek terlepas dari dikenakan atau tidak, dan besar efeknya sebanding dengan jumlah yang dimiliki (tidak berefek pada 0, n kali lipat pada n).
 

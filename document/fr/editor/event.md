@@ -5,7 +5,7 @@ Messages et récompenses déclenchés à des moments précis
 - Il y en a un par moment, et il n'est pas possible d'en ajouter ni d'en supprimer. Laissez le champ vide pour les moments où vous ne l'utilisez pas.
 - Elles n'apparaissent pas dans la liste des missions ou des tâches. Les éléments qui sont considérés comme accomplis dès que les conditions sont remplies doivent être configurés en tant que tâches.
 - La récompense est automatiquement acquise dès son déclenchement. Il n'y a ni opération de réception, ni ruban, comme c'est le cas pour les tâches.
-- Il peut modifier le niveau de la catégorie, le nombre d'actions effectuées et le nombre d'objets possédés lorsqu'il est activé.
+- 発動時にカテゴリのレベル、アクションの実行回数、アイテムの所持数を変化させることができます。
 - Si vous ne renseignez pas les champs « Nom », « Description » et « Icône », le texte et l'icône par défaut intégrés au joueur seront utilisés.
 
 |timing|condition d'activation|répéter|
@@ -13,7 +13,7 @@ Messages et récompenses déclenchés à des moments précis
 |`comebacked`|Lorsqu'une personne revient d'une situation désactivée pendant plus d'une seconde et qu'une action est en cours.|souvent|
 |`gameovered`|Lorsque l'endurance du joueur s'épuise au cours d'un combat.|souvent|
 |`welcomed`|Quand j'ai commencé ce monde.|une seule fois|
-|`completed`|Lorsque le niveau maximum de toutes les catégories (maxCategoryLevels) est atteint.|une seule fois|
+|`completed`|全カテゴリのレベルが最大値（maxCategoryLevels）に達した時|une seule fois|
 |`obtained`|lorsque vous avez terminé ou vérifié une action d'un type spécifique (coffre au trésor, etc.)|souvent|
 - [_task_](fr/editor/task)
 ___
@@ -52,6 +52,7 @@ ___
 - タイミングが成立するとイベントは発動し、専用の画面を開いて内容を表示します。
 - 報酬は、発動時にここで設定した条件を満たしている場合にのみ獲得します。
 - 条件を設定していない場合は、発動するたびに報酬を獲得します。
+- requiringGroupを有効にすると、ここで指定するidの意味がカテゴリ・アクション・アイテム個別のIDからグループIDに変わります。
 ___
 
 #### Type
@@ -59,7 +60,7 @@ Type d'élément référencé comme condition.
 
 |Type|Valeurs référencées|
 |-|-|
-|Catégorie.|Niveau de la Catégorie.|
+|カテゴリ|カテゴリのレベル|
 |Action|Nombre de fois où l'action a été comptée.|
 |Objet|Nombre d'objets détenus.|
 ___
@@ -87,6 +88,17 @@ L'objet doit être dans un état équipé (valable uniquement si le Type est Obj
 - Invalide si le Type est différent de l'Objet.
 ___
 
+### Agrégation de groupe
+Traite l'id de la condition comme un ID de groupe et évalue selon le total de ses membres
+- Une fois activé, l'id défini dans la condition (requirements) est traité comme l'ID d'un groupe des paramètres de base.
+- Une condition dont le Type est Catégorie est évaluée selon la somme du Niveau de toutes les Catégories appartenant à ce groupe.
+- Une condition dont le Type est Action est évaluée selon la somme du nombre d'exécutions de toutes les Actions appartenant à ce groupe.
+- Une condition dont le Type est Objet est évaluée selon la somme des quantités possédées de tous les Objets appartenant à ce groupe.
+- Les éléments verrouillés (autres que released) ne sont pas inclus dans le total.
+- La probabilité de consommation de l'Objet (chance) et la condition d'équipement (equipment) sont ignorées, et rien n'est consommé. Elles ne servent qu'à l'évaluation.
+- Lorsqu'il est désactivé, l'id de la condition est traité comme avant, comme l'ID d'une Catégorie, Action ou Objet individuel.
+___
+
 ### 報酬
 イベント発動時の報酬設定
 - タイミングが成立し、かつ条件を満たしている時に得られる報酬です。
@@ -99,7 +111,7 @@ Type d'élément à acquérir.
 
 |Type|Ce qui est acquis.|
 |-|-|
-|Catégorie.|Niveau (conversion de l'expérience ajoutée)|
+|カテゴリ|Niveau (conversion de l'expérience ajoutée)|
 |Action|Nombre de fois qu'il a été exécuté.|
 |Objet|compter le nombre de possessions|
 ___
@@ -112,7 +124,7 @@ ___
 Valeurs numériques à obtenir
 - Les valeurs négatives réduisent le nombre de possessions, le nombre de fois qu'elles ont été effectuées et leur niveau. Toutefois, elle ne peut être bas que 0.
 - Si un Objet a un nombre maximum de possessions (max), le nombre de possessions n'augmentera pas au-delà de cette valeur.
-- Si le Type est la Catégorie, la valeur configurée est ajoutée directement au niveau (1 pour 1 niveau, 0,5 pour 0,5 niveau). La façon habituelle d'ajuster cela est de configurer la valeur d'expérience de l'Action. Cette configuration n'est pas Inutile, à moins qu'il n'y ait un but particulier.
+- タイプがカテゴリの場合、設定した値がレベルに直接加算されます（1で1レベル、0.5で0.5レベル）。アクションの経験値設定で調整するのが通常の方法です。特殊な目的がない限りこの設定は不要です。
 ___
 
 #### Probabilité [-1 à 1]
@@ -164,6 +176,7 @@ ___
 - タイミングが成立するとイベントは発動し、専用の画面を開いて内容を表示します。
 - 報酬は、発動時にここで設定した条件を満たしている場合にのみ獲得します。
 - 条件を設定していない場合は、発動するたびに報酬を獲得します。
+- requiringGroupを有効にすると、ここで指定するidの意味がカテゴリ・アクション・アイテム個別のIDからグループIDに変わります。
 ___
 
 #### Type
@@ -171,7 +184,7 @@ Type d'élément référencé comme condition.
 
 |Type|Valeurs référencées|
 |-|-|
-|Catégorie.|Niveau de la Catégorie.|
+|カテゴリ|カテゴリのレベル|
 |Action|Nombre de fois où l'action a été comptée.|
 |Objet|Nombre d'objets détenus.|
 ___
@@ -199,6 +212,17 @@ L'objet doit être dans un état équipé (valable uniquement si le Type est Obj
 - Invalide si le Type est différent de l'Objet.
 ___
 
+### Agrégation de groupe
+Traite l'id de la condition comme un ID de groupe et évalue selon le total de ses membres
+- Une fois activé, l'id défini dans la condition (requirements) est traité comme l'ID d'un groupe des paramètres de base.
+- Une condition dont le Type est Catégorie est évaluée selon la somme du Niveau de toutes les Catégories appartenant à ce groupe.
+- Une condition dont le Type est Action est évaluée selon la somme du nombre d'exécutions de toutes les Actions appartenant à ce groupe.
+- Une condition dont le Type est Objet est évaluée selon la somme des quantités possédées de tous les Objets appartenant à ce groupe.
+- Les éléments verrouillés (autres que released) ne sont pas inclus dans le total.
+- La probabilité de consommation de l'Objet (chance) et la condition d'équipement (equipment) sont ignorées, et rien n'est consommé. Elles ne servent qu'à l'évaluation.
+- Lorsqu'il est désactivé, l'id de la condition est traité comme avant, comme l'ID d'une Catégorie, Action ou Objet individuel.
+___
+
 ### 報酬
 イベント発動時の報酬設定
 - タイミングが成立し、かつ条件を満たしている時に得られる報酬です。
@@ -211,7 +235,7 @@ Type d'élément à acquérir.
 
 |Type|Ce qui est acquis.|
 |-|-|
-|Catégorie.|Niveau (conversion de l'expérience ajoutée)|
+|カテゴリ|Niveau (conversion de l'expérience ajoutée)|
 |Action|Nombre de fois qu'il a été exécuté.|
 |Objet|compter le nombre de possessions|
 ___
@@ -224,7 +248,7 @@ ___
 Valeurs numériques à obtenir
 - Les valeurs négatives réduisent le nombre de possessions, le nombre de fois qu'elles ont été effectuées et leur niveau. Toutefois, elle ne peut être bas que 0.
 - Si un Objet a un nombre maximum de possessions (max), le nombre de possessions n'augmentera pas au-delà de cette valeur.
-- Si le Type est la Catégorie, la valeur configurée est ajoutée directement au niveau (1 pour 1 niveau, 0,5 pour 0,5 niveau). La façon habituelle d'ajuster cela est de configurer la valeur d'expérience de l'Action. Cette configuration n'est pas Inutile, à moins qu'il n'y ait un but particulier.
+- タイプがカテゴリの場合、設定した値がレベルに直接加算されます（1で1レベル、0.5で0.5レベル）。アクションの経験値設定で調整するのが通常の方法です。特殊な目的がない限りこの設定は不要です。
 ___
 
 #### Probabilité [-1 à 1]
@@ -276,6 +300,7 @@ ___
 - タイミングが成立するとイベントは発動し、専用の画面を開いて内容を表示します。
 - 報酬は、発動時にここで設定した条件を満たしている場合にのみ獲得します。
 - 条件を設定していない場合は、発動するたびに報酬を獲得します。
+- requiringGroupを有効にすると、ここで指定するidの意味がカテゴリ・アクション・アイテム個別のIDからグループIDに変わります。
 ___
 
 #### Type
@@ -283,7 +308,7 @@ Type d'élément référencé comme condition.
 
 |Type|Valeurs référencées|
 |-|-|
-|Catégorie.|Niveau de la Catégorie.|
+|カテゴリ|カテゴリのレベル|
 |Action|Nombre de fois où l'action a été comptée.|
 |Objet|Nombre d'objets détenus.|
 ___
@@ -311,6 +336,17 @@ L'objet doit être dans un état équipé (valable uniquement si le Type est Obj
 - Invalide si le Type est différent de l'Objet.
 ___
 
+### Agrégation de groupe
+Traite l'id de la condition comme un ID de groupe et évalue selon le total de ses membres
+- Une fois activé, l'id défini dans la condition (requirements) est traité comme l'ID d'un groupe des paramètres de base.
+- Une condition dont le Type est Catégorie est évaluée selon la somme du Niveau de toutes les Catégories appartenant à ce groupe.
+- Une condition dont le Type est Action est évaluée selon la somme du nombre d'exécutions de toutes les Actions appartenant à ce groupe.
+- Une condition dont le Type est Objet est évaluée selon la somme des quantités possédées de tous les Objets appartenant à ce groupe.
+- Les éléments verrouillés (autres que released) ne sont pas inclus dans le total.
+- La probabilité de consommation de l'Objet (chance) et la condition d'équipement (equipment) sont ignorées, et rien n'est consommé. Elles ne servent qu'à l'évaluation.
+- Lorsqu'il est désactivé, l'id de la condition est traité comme avant, comme l'ID d'une Catégorie, Action ou Objet individuel.
+___
+
 ### 報酬
 イベント発動時の報酬設定
 - タイミングが成立し、かつ条件を満たしている時に得られる報酬です。
@@ -323,7 +359,7 @@ Type d'élément à acquérir.
 
 |Type|Ce qui est acquis.|
 |-|-|
-|Catégorie.|Niveau (conversion de l'expérience ajoutée)|
+|カテゴリ|Niveau (conversion de l'expérience ajoutée)|
 |Action|Nombre de fois qu'il a été exécuté.|
 |Objet|compter le nombre de possessions|
 ___
@@ -336,7 +372,7 @@ ___
 Valeurs numériques à obtenir
 - Les valeurs négatives réduisent le nombre de possessions, le nombre de fois qu'elles ont été effectuées et leur niveau. Toutefois, elle ne peut être bas que 0.
 - Si un Objet a un nombre maximum de possessions (max), le nombre de possessions n'augmentera pas au-delà de cette valeur.
-- Si le Type est la Catégorie, la valeur configurée est ajoutée directement au niveau (1 pour 1 niveau, 0,5 pour 0,5 niveau). La façon habituelle d'ajuster cela est de configurer la valeur d'expérience de l'Action. Cette configuration n'est pas Inutile, à moins qu'il n'y ait un but particulier.
+- タイプがカテゴリの場合、設定した値がレベルに直接加算されます（1で1レベル、0.5で0.5レベル）。アクションの経験値設定で調整するのが通常の方法です。特殊な目的がない限りこの設定は不要です。
 ___
 
 #### Probabilité [-1 à 1]
@@ -355,9 +391,9 @@ ___
 ___
 
 ## À la fin du jeu
-Se déclenche lorsque toutes les catégories atteignent leur niveau maximal
-- Se déclenche lorsque les niveaux de toutes les catégories atteignent la valeur maximale (maxCategoryLevels).
-- Les catégories qui ne sont pas numeric sont exclues de la vérification.
+全カテゴリが最大レベルに達した時に発動
+- 全カテゴリのレベルが最大値（maxCategoryLevels）に達した時に発動します。
+- numeric（数値）でないカテゴリは判定から除かれます。
 ___
 
 ### [_l'information_](fr/editor/information)
@@ -388,6 +424,7 @@ ___
 - タイミングが成立するとイベントは発動し、専用の画面を開いて内容を表示します。
 - 報酬は、発動時にここで設定した条件を満たしている場合にのみ獲得します。
 - 条件を設定していない場合は、発動するたびに報酬を獲得します。
+- requiringGroupを有効にすると、ここで指定するidの意味がカテゴリ・アクション・アイテム個別のIDからグループIDに変わります。
 ___
 
 #### Type
@@ -395,7 +432,7 @@ Type d'élément référencé comme condition.
 
 |Type|Valeurs référencées|
 |-|-|
-|Catégorie.|Niveau de la Catégorie.|
+|カテゴリ|カテゴリのレベル|
 |Action|Nombre de fois où l'action a été comptée.|
 |Objet|Nombre d'objets détenus.|
 ___
@@ -423,6 +460,17 @@ L'objet doit être dans un état équipé (valable uniquement si le Type est Obj
 - Invalide si le Type est différent de l'Objet.
 ___
 
+### Agrégation de groupe
+Traite l'id de la condition comme un ID de groupe et évalue selon le total de ses membres
+- Une fois activé, l'id défini dans la condition (requirements) est traité comme l'ID d'un groupe des paramètres de base.
+- Une condition dont le Type est Catégorie est évaluée selon la somme du Niveau de toutes les Catégories appartenant à ce groupe.
+- Une condition dont le Type est Action est évaluée selon la somme du nombre d'exécutions de toutes les Actions appartenant à ce groupe.
+- Une condition dont le Type est Objet est évaluée selon la somme des quantités possédées de tous les Objets appartenant à ce groupe.
+- Les éléments verrouillés (autres que released) ne sont pas inclus dans le total.
+- La probabilité de consommation de l'Objet (chance) et la condition d'équipement (equipment) sont ignorées, et rien n'est consommé. Elles ne servent qu'à l'évaluation.
+- Lorsqu'il est désactivé, l'id de la condition est traité comme avant, comme l'ID d'une Catégorie, Action ou Objet individuel.
+___
+
 ### 報酬
 イベント発動時の報酬設定
 - タイミングが成立し、かつ条件を満たしている時に得られる報酬です。
@@ -435,7 +483,7 @@ Type d'élément à acquérir.
 
 |Type|Ce qui est acquis.|
 |-|-|
-|Catégorie.|Niveau (conversion de l'expérience ajoutée)|
+|カテゴリ|Niveau (conversion de l'expérience ajoutée)|
 |Action|Nombre de fois qu'il a été exécuté.|
 |Objet|compter le nombre de possessions|
 ___
@@ -448,7 +496,7 @@ ___
 Valeurs numériques à obtenir
 - Les valeurs négatives réduisent le nombre de possessions, le nombre de fois qu'elles ont été effectuées et leur niveau. Toutefois, elle ne peut être bas que 0.
 - Si un Objet a un nombre maximum de possessions (max), le nombre de possessions n'augmentera pas au-delà de cette valeur.
-- Si le Type est la Catégorie, la valeur configurée est ajoutée directement au niveau (1 pour 1 niveau, 0,5 pour 0,5 niveau). La façon habituelle d'ajuster cela est de configurer la valeur d'expérience de l'Action. Cette configuration n'est pas Inutile, à moins qu'il n'y ait un but particulier.
+- タイプがカテゴリの場合、設定した値がレベルに直接加算されます（1で1レベル、0.5で0.5レベル）。アクションの経験値設定で調整するのが通常の方法です。特殊な目的がない限りこの設定は不要です。
 ___
 
 #### Probabilité [-1 à 1]
@@ -500,6 +548,7 @@ ___
 - タイミングが成立するとイベントは発動し、専用の画面を開いて内容を表示します。
 - 報酬は、発動時にここで設定した条件を満たしている場合にのみ獲得します。
 - 条件を設定していない場合は、発動するたびに報酬を獲得します。
+- requiringGroupを有効にすると、ここで指定するidの意味がカテゴリ・アクション・アイテム個別のIDからグループIDに変わります。
 ___
 
 #### Type
@@ -507,7 +556,7 @@ Type d'élément référencé comme condition.
 
 |Type|Valeurs référencées|
 |-|-|
-|Catégorie.|Niveau de la Catégorie.|
+|カテゴリ|カテゴリのレベル|
 |Action|Nombre de fois où l'action a été comptée.|
 |Objet|Nombre d'objets détenus.|
 ___
@@ -535,6 +584,17 @@ L'objet doit être dans un état équipé (valable uniquement si le Type est Obj
 - Invalide si le Type est différent de l'Objet.
 ___
 
+### Agrégation de groupe
+Traite l'id de la condition comme un ID de groupe et évalue selon le total de ses membres
+- Une fois activé, l'id défini dans la condition (requirements) est traité comme l'ID d'un groupe des paramètres de base.
+- Une condition dont le Type est Catégorie est évaluée selon la somme du Niveau de toutes les Catégories appartenant à ce groupe.
+- Une condition dont le Type est Action est évaluée selon la somme du nombre d'exécutions de toutes les Actions appartenant à ce groupe.
+- Une condition dont le Type est Objet est évaluée selon la somme des quantités possédées de tous les Objets appartenant à ce groupe.
+- Les éléments verrouillés (autres que released) ne sont pas inclus dans le total.
+- La probabilité de consommation de l'Objet (chance) et la condition d'équipement (equipment) sont ignorées, et rien n'est consommé. Elles ne servent qu'à l'évaluation.
+- Lorsqu'il est désactivé, l'id de la condition est traité comme avant, comme l'ID d'une Catégorie, Action ou Objet individuel.
+___
+
 ### 報酬
 イベント発動時の報酬設定
 - タイミングが成立し、かつ条件を満たしている時に得られる報酬です。
@@ -547,7 +607,7 @@ Type d'élément à acquérir.
 
 |Type|Ce qui est acquis.|
 |-|-|
-|Catégorie.|Niveau (conversion de l'expérience ajoutée)|
+|カテゴリ|Niveau (conversion de l'expérience ajoutée)|
 |Action|Nombre de fois qu'il a été exécuté.|
 |Objet|compter le nombre de possessions|
 ___
@@ -560,7 +620,7 @@ ___
 Valeurs numériques à obtenir
 - Les valeurs négatives réduisent le nombre de possessions, le nombre de fois qu'elles ont été effectuées et leur niveau. Toutefois, elle ne peut être bas que 0.
 - Si un Objet a un nombre maximum de possessions (max), le nombre de possessions n'augmentera pas au-delà de cette valeur.
-- Si le Type est la Catégorie, la valeur configurée est ajoutée directement au niveau (1 pour 1 niveau, 0,5 pour 0,5 niveau). La façon habituelle d'ajuster cela est de configurer la valeur d'expérience de l'Action. Cette configuration n'est pas Inutile, à moins qu'il n'y ait un but particulier.
+- タイプがカテゴリの場合、設定した値がレベルに直接加算されます（1で1レベル、0.5で0.5レベル）。アクションの経験値設定で調整するのが通常の方法です。特殊な目的がない限りこの設定は不要です。
 ___
 
 #### Probabilité [-1 à 1]

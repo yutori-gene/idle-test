@@ -422,14 +422,6 @@
 			"name": "スタンドアロン",
 			"explanation": "他のカテゴリでのアクションの進捗状況にかかわらず、独立して実行される"
 		},
-		"standalone-yes": {
-			"name": "独立実行",
-			"explanation": "他のカテゴリでのアクションの進捗状況にかかわらず、独立して実行される"
-		},
-		"standalone-no": {
-			"name": "共有実行",
-			"explanation": "他のカテゴリと実行枠を共有する。同時に実行できるアクションは1つだけで、別のアクションを開始すると今の実行は待機列（キュー）に回る"
-		},
 		"action": {
 			"name": "アクション",
 			"explanation": ""
@@ -561,10 +553,6 @@
 		"now": {
 			"name": "今すぐ",
 			"explanation": "このアクションをキューの先頭に置いて、すぐに実行する"
-		},
-		"clear": {
-			"name": "クリア",
-			"explanation": "実行中のものを含む、キューにあるすべての予約を削除する"
 		},
 		"acquisition-failure": {
 			"name": "獲得失敗",
@@ -941,14 +929,6 @@
 		"config": {
 			"name": "Config",
 			"explanation": "このゲームの設定変更と、セーブデータの管理を行う"
-		},
-		"operation": {
-			"name": "Operation",
-			"explanation": "アクションの実行に関する操作方法を変更する"
-		},
-		"auto-clear-queue": {
-			"name": "キューの自動削除",
-			"explanation": "実行不可でないアクションを長押しして開始したとき、実行中のアクションを含む作業予定（キュー）をすべて削除してから、そのアクションを実行する"
 		},
 		"display": {
 			"name": "Display",

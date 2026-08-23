@@ -1,13 +1,13 @@
 
-# Kategorie.
+# カテゴリ
 Eine Zusammenstellung von verschiedenen Elementen.
-- Dieses Element fasst Aktionen und Gegenstände zusammen.
+- An element that groups together Actions and Items.
 ___
 
 ## Aufgabe
-Liste der Aufgaben in dieser Kategorie
-- Dies ist die Liste der Aufgaben, die dieser Kategorie zugeordnet sind.
-- Wähle eine Aufgabe, um ihre Abschlussbedingungen und ihre Belohnung einzusehen.
-- Ein Band kennzeichnet Aufgaben, deren Belohnung noch nicht abgeholt wurde. Wähle eine aus und drücke Erhalten.
-- Solange die Anzahl der Gegenstandsarten, die du halten kannst, am Limit ist, kannst du keine Belohnung abholen. Schaffe Platz und hole sie erneut ab.
-- Dies wird nicht angezeigt, wenn die Kategorie überhaupt keine Aufgaben hat.
+カテゴリ内のタスクの一覧
+- A list of Tasks assigned to this Category.
+- Select a Task to check its completion condition and reward.
+- Tasks whose reward hasn't been claimed yet have a ribbon. Select it and press Receive to claim it.
+- You cannot receive the reward while the number of Item types you can hold has reached its limit. Make room, then try receiving it again.
+- Not shown if the Category has no Tasks.

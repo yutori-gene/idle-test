@@ -3,13 +3,13 @@
 Configuración general del mundo del juego y estructura de datos
 - Datos sobre juegos que pueden jugarse en consolas.
 - La configuración te permite crear un juego de abandono a tu gusto.
-- Los mundos abarcan Categorías, Acciones, Artículos y Eventos.
+- ワールドはカテゴリ、アクション、アイテム、イベントなどの要素を内包します。
 ___
 
 ## [_configuración básica_](es/editor/basic)
 ___
 
-## [_Categoría._](es/editor/category)
+## [_カテゴリ_](es/editor/category)
 ___
 
 ## [_Acción._](es/editor/action)

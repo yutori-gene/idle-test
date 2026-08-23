@@ -8,5 +8,5 @@ ___
 
 ## Язык.
 Переключение языков
-- Переключает язык, отображаемый в игре.
-- Это действует только в том случае, если автор подготовил перевод.
+- Switches the language displayed in the game.
+- Only available when the author has provided a translation.

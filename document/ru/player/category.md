@@ -1,13 +1,13 @@
 
-# Категория.
+# カテゴリ
 Компиляция из различных элементов.
-- Этот элемент объединяет действия и предметы.
+- An element that groups together Actions and Items.
 ___
 
 ## Задача
-Список задач в категории
-- Это список задач, назначенных этой категории.
-- Выберите задачу, чтобы посмотреть условия её выполнения и награду.
-- Лентой отмечены задачи, награда за которые ещё не получена. Выберите одну и нажмите «Получить».
-- Награду нельзя получить, пока число видов предметов, которые вы можете хранить, находится на пределе. Освободите место и получите её снова.
-- Это не отображается, если в категории нет ни одной задачи.
+カテゴリ内のタスクの一覧
+- A list of Tasks assigned to this Category.
+- Select a Task to check its completion condition and reward.
+- Tasks whose reward hasn't been claimed yet have a ribbon. Select it and press Receive to claim it.
+- You cannot receive the reward while the number of Item types you can hold has reached its limit. Make room, then try receiving it again.
+- Not shown if the Category has no Tasks.

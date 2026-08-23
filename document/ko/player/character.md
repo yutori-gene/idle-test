@@ -5,24 +5,24 @@ ___
 
 ## 활동
 모든 액션 목록
-- 길게 누르면 액션의 실행을 전환합니다.
+- Hold to toggle performing the Action.
 ___
 
 ## 인벤토리
 모든 아이템 목록
-- 길게 누르면 아이템의 장비를 전환합니다.
+- Hold to toggle equipping the Item.
 ___
 
 ## 상태
 모든 속성 목록
 - 아이템이 카테고리에 적용하는 속성 값만 표시됩니다.
-- 실행하는 액션에 따라 다른 보정이 추가로 걸립니다.
+- Depending on the Action performed, additional bonuses may apply.
 ___
 
 ## 미션
 모든 작업 목록
-- 과제는 카테고리별로 묶여 표시됩니다.
-- 카테고리가 설정되지 않은 과제는 맨 위에 모입니다.
-- 달성한 과제에는 체크 표시가 붙습니다.
-- 보상을 아직 받지 않은 과제에는 리본이 표시됩니다. 선택한 뒤 받기를 누르면 받을 수 있습니다.
-- 한 번 달성한 과제는 이후 조건을 충족하지 않게 되어도 달성 상태로 유지됩니다.
+- Tasks are grouped and shown by Category.
+- Tasks with no Category set are grouped at the top.
+- Completed Tasks have a checkmark.
+- Tasks whose reward hasn't been claimed yet have a ribbon. Select it and press Receive to claim it.
+- Once a Task is completed, it stays completed even if the condition is no longer met afterward.

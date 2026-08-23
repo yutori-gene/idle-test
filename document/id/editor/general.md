@@ -26,17 +26,17 @@ Batas waktu untuk kemajuan mati.
 - [_category_](id/editor/category)
 ___
 
-## Kategori maks
-Batas level atas untuk kategori.
-- Konfigurasi level maks untuk setiap kategori.
+## カテゴリの最大レベル
+各カテゴリのレベル上限
+- 各カテゴリの最大レベルを設定します。
 - Jika akuisisi pengalaman terjadi di luar level ini, level maks yang konfigurasi di sini digunakan dalam perhitungan properti.
-- Nilai ini tidak memiliki hubungan untuk kategori tanpa level.
+- レベルのないカテゴリではこの値は関係ありません。
 - [_category_](id/editor/category)
 ___
 
 ## fungsi terkunci
 Menyembunyikan item sampai persyaratan terpenuhi
-- Jika diaktifkan, item tindakan Kategori akan disembunyikan sementara item tersebut tidak ada yang pernah menggunakannya atau memilikinya dan persyaratannya belum terpenuhi.
+- 有効の場合、カテゴリ・アクション・アイテムは一度も使用・所持したことがなく、かつrequirementsを満たしていない間は非表示になります。
 - Jika dinonaktifkan, semua item akan ditampilkan dari awal, tetapi tidak dapat dijalankan atau dilengkapi dengan Peralatan hingga persyaratan terpenuhi.
 - [_category_](id/editor/category)
 - [_action_](id/editor/action)
@@ -155,7 +155,7 @@ ___
 
 ## Tingkat peningkatan pengalaman [kali].
 Persentase peningkatan tingkat kesulitan level.
-- Seiring dengan meningkatnya level suatu kategori, maka semakin tinggi pula tingkat peningkatan pengalaman yang diperlukan untuk mencapai level berikutnya.
+- カテゴリのレベルが上がるにつれて、次のレベルになるのに必要な経験値の上昇率です。
 - Meningkatkan nilai ini akan meningkatkan tingkat kesulitan.
 - Jumlah pengalaman yang diperlukan untuk naik ke level berikutnya adalah (tingkat kenaikan pengalaman)^(level saat ini - 1).
 
@@ -173,7 +173,7 @@ ___
 Meminta hitung berapa kali aksi atribut yang sama telah dieksekusi untuk eksekusi suatu aksi.
 - Jika diaktifkan, hitung kali aksi dengan atribut yang sama telah dieksekusi secara otomatis ditambahkan ke kondisi eksekusi setiap tindakan.
 - Jumlah hitung yang diperlukan sama dengan nilai level aksi.
-- Jika tidak ada atribut yang ditetapkan, ID dari kategori yang digunakan akan digunakan.
+- 属性が設定されていない場合は、所属するカテゴリのIDが使用されます。
 ___
 
 ## Rasio properti [kali]

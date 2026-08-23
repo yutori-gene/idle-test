@@ -8,6 +8,6 @@ Gemeinsame Teile
 |-|-|
 |[_information_](de/editor/information)|Konfiguration der grundlegenden Informationen über das Element (ID, Name, Symbol, Farbe usw.)|
 |[_requirement_](de/editor/requirement)|Konfiguration der notwendigen Anforderungen für die Verwendung und Anzeige von Elementen.|
-|[_acquisition_](de/editor/acquisition)|Konfiguration der Erfassung auf Item- und Kategorie Level.|
+|[_acquisition_](de/editor/acquisition)|アイテムやカテゴリレベルの取得設定|
 |[_combat_](de/editor/combat)|Korrekturwerte für Aktionen des Typs "Ausdauer".|
 |[_property_](de/editor/property)|Konfiguration der Auswirkungen eines Gegenstands.|

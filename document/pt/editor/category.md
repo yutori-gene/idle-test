@@ -1,18 +1,18 @@
 
-# Categoria.
+# カテゴリ
 Estrutura geral para a classificação de ações e itens.
 - Representa uma classificação importante.
 - Por exemplo, ele pode ser configurado em qualquer ambiente, como curto alcance, longo alcance, magia, masmorras, ferreiros, fábricas etc.
-- As Ações e os Itens são colocados diretamente abaixo do mundo e são associados a uma ID de Categoria.
+- アクションやアイテムはワールド直下に配置され、カテゴリIDで関連付けられます。
 ___
 
 ## [_informações_](pt/editor/information)
 ___
 
 ## grupo (geralmente de pessoas)
-Exibir a classificação de grupos de categorias
+カテゴリの表示グループ分類
 - Aplique um dos grupos configurados no Basic.
-- Uma lista de Categorias é exibida na ordem dos grupos configurados.
+- 設定したグループ順にカテゴリ一覧が表示されます。
 - [_general_](pt/editor/general)
 ___
 
@@ -28,8 +28,8 @@ ___
 ___
 
 ## Grupo de equipamentos
-Designação de grupos de itens que podem ser equipados nessa Categoria.
-- Lista de nomes de grupos de itens que podem ser equipados nessa Categoria.
+このカテゴリで装備可能なアイテムグループの指定
+- このカテゴリで装備できるアイテムのグループ名のリストです。
 - Somente os itens do grupo que correspondem ao nome do grupo especificado aqui podem ser equipados.
 - Se uma string vazia for especificada, os itens com um grupo sem configuração (vazio) se tornarão elegíveis para Equipamento.
 - Somente um Item pode ser equipado em um mesmo grupo. Quando você equipa um novo Item, qualquer equipamento existente no mesmo grupo é automaticamente desequipado.
@@ -38,21 +38,21 @@ Designação de grupos de itens que podem ser equipados nessa Categoria.
 ___
 
 ## Disponibilidade de níveis
-Disponibilidade de funções em nível de Categoria
-- Esse é um sinalizador para indicar se essa Categoria tem um nível ou não.
+カテゴリレベル機能の有無
+- このカテゴリがレベルを持つかどうかのフラグです。
 - Se estiver ligado, ele tem um nível; se estiver desligado, não tem.
-- Um exemplo é ativar as categorias com base na experiência, como espadachim e magia, e desligar as categorias com base no local, como masmorras e ferreiros.
+- 例として、剣技や魔法といった経験に基づくカテゴリはオンにし、ダンジョンや鍛冶屋といった場所のカテゴリはオフにするなどの使い方があります。
 ___
 
 ## em progresso simultâneo
-Configurações de execução paralela com outras categorias
-- Esse é um sinalizador que indica se as ações nessa Categoria podem progredir em paralelo com ações em outras Categorias.
-- Se ligada, a Ação pode progredir simultaneamente e independentemente de outras Categorias de Ações.
-- Se estiver desligada, ela não poderá ser executada simultaneamente com ações em outras Categorias que também estejam configuradas como desligadas. Quando você começa uma nova Ação nessa Categoria, as ações em progresso em outras Categorias não autônomas são automaticamente abortadas.
+他カテゴリとの並行実行設定
+- このカテゴリのアクションが、他のカテゴリのアクションと並行して進行できるかどうかのフラグです。
+- オンの場合は、他のカテゴリのアクションとは独立して同時に進行できます。
+- オフの場合は、同じくオフに設定された他のカテゴリのアクションと同時に実行できません。新たにこのカテゴリのアクションを開始すると、他の非スタンドアロンカテゴリで進行中のアクションは自動的に中止されます。
 ___
 
 ## fundo
-Configurações de fundo específicas da Categoria
-- Configure o plano de fundo para essa Categoria.
-- Quando uma Categoria é selecionada, a imagem de fundo muda em conjunto com ela.
+カテゴリ固有の背景設定
+- このカテゴリの背景を設定します。
+- カテゴリを選択されたときに、連動して背景画像が変更されます。
 - Se nada for configurado, a configuração do plano de fundo do mundo será usada como está.

@@ -5,24 +5,24 @@ ___
 
 ## activity
 List of All Actions
-- 長押しでアクションの実行を切り替える
+- Hold to toggle performing the Action.
 ___
 
 ## inventory
 List of All Items
-- 長押しでアイテムの装備を切り替える
+- Hold to toggle equipping the Item.
 ___
 
 ## status
 List of all properties
 - Only the property value that items apply to the category is shown.
-- 実行するアクションによっては、さらに別の補正がかかる
+- Depending on the Action performed, additional bonuses may apply.
 ___
 
 ## Mission
 List of All Tasks
-- タスクはカテゴリごとにまとめて表示される
-- カテゴリが設定されていないタスクは先頭にまとめられる
-- 達成済みのタスクにはチェックマークが付く
-- 報酬をまだ受け取っていないタスクにはリボンが付く。選んで受け取るを押すと受け取れる。
-- 一度達成したタスクは、その後に条件を満たさなくなっても達成のまま
+- Tasks are grouped and shown by Category.
+- Tasks with no Category set are grouped at the top.
+- Completed Tasks have a checkmark.
+- Tasks whose reward hasn't been claimed yet have a ribbon. Select it and press Receive to claim it.
+- Once a Task is completed, it stays completed even if the condition is no longer met afterward.

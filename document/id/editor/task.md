@@ -2,10 +2,10 @@
 # Tugas
 Misi yang akan dianggap berhasil jika syarat-syaratnya terpenuhi
 - Jika memenuhi konfigurasi yang telah ditetapkan, maka target tercapai, dan pesan akan ditampilkan di bagian atas layar.
-- Akan ditampilkan dalam daftar misi pemain dan daftar tugas berdasarkan Kategori.
+- プレイヤーのミッションの一覧と、カテゴリのタスクの一覧に表示されます。
 - Hadiah tidak diberikan secara otomatis. Pemain akan menerimanya saat membuka tugas dan menekan tombol "Akuisisi".
 - Sampai imbalan tersebut diterima, bilah pada daftar akan ditandai dengan pita untuk menunjukkan bahwa imbalan tersebut belum diterima.
-- Dengan proses akuisisi, Anda dapat mengubah level Kategori, jumlah kali pelaksanaan Aksi, dan jumlah Item yang dimiliki.
+- 獲得でカテゴリのレベル、アクションの実行回数、アイテムの所持数を変化させることができます。
 - Untuk hal-hal yang ingin diaktifkan pada waktu-waktu di luar kondisi tertentu, seperti saat pertama kali dijalankan atau saat permainan berakhir, lakukan konfigurasi melalui acara di pengaturan dasar.
 - [_event_](id/editor/event)
 ___
@@ -13,11 +13,11 @@ ___
 ## [_informasi_](id/editor/information)
 ___
 
-## Kategori.
-ID Kategori tempat tugas tersebut berada
-- Tentukan ID Kategori tempat tugas ini akan dimasukkan.
-- Setelah diatur dalam konfigurasi, daftar tugas akan ditambahkan ke layar kategori pemain, dan dalam daftar misi pun akan ditampilkan secara terkelompok berdasarkan kategori.
-- Jika dibiarkan kosong, misi tersebut tidak akan termasuk dalam kategori mana pun dan akan ditampilkan secara terpisah di bagian atas daftar misi.
+## カテゴリ
+タスクが所属するカテゴリのID
+- このタスクを所属させるカテゴリのIDを指定します。
+- 設定すると、プレイヤーのカテゴリの画面にタスクの一覧が追加され、ミッションの一覧でもカテゴリごとにまとめて表示されます。
+- 空欄の場合はどのカテゴリにも属さず、ミッションの一覧の先頭にまとめて表示されます。
 ___
 
 ## waktu
@@ -43,6 +43,7 @@ Syarat penyelesaian tugas
 - この条件を満たすと達成になり、報酬を受け取れるようになります。
 - 一度達成すると、その後に条件を満たさなくなっても達成のままで、報酬もいつでも受け取れます。
 - 条件を設定していないタスクは達成しません。
+- requiringGroupを有効にすると、ここで指定するidの意味がカテゴリ・アクション・アイテム個別のIDからグループIDに変わります。
 ___
 
 ### Tipe
@@ -50,7 +51,7 @@ Jenis elemen yang direferensikan sebagai kondisi.
 
 |Tipe|Nilai yang direferensikan|
 |-|-|
-|Kategori.|Level kategori.|
+|カテゴリ|カテゴリのレベル|
 |Aksi|Hitung berapa kali aksi telah dilakukan.|
 |Item|Jumlah item yang dimiliki.|
 ___
@@ -78,10 +79,21 @@ Memerlukan Item dalam keadaan Peralatan (hanya berlaku jika Tipe-nya adalah Item
 - Tidak valid jika tipenya selain Item.
 ___
 
+## Agregasi grup
+Memperlakukan id kondisi sebagai ID grup dan menilai berdasarkan total anggotanya
+- Saat diaktifkan, id yang ditetapkan pada kondisi (requirements) diperlakukan sebagai ID grup dari pengaturan dasar.
+- Kondisi dengan Type Kategori dinilai berdasarkan total Level semua Kategori yang termasuk dalam grup tersebut.
+- Kondisi dengan Type Aksi dinilai berdasarkan total jumlah eksekusi semua Aksi yang termasuk dalam grup tersebut.
+- Kondisi dengan Type Item dinilai berdasarkan total jumlah kepemilikan semua Item yang termasuk dalam grup tersebut.
+- Elemen yang terkunci (selain released) tidak termasuk dalam total.
+- Probabilitas konsumsi Item (chance) dan syarat peralatan (equipment) diabaikan, dan tidak ada yang dikonsumsi. Hanya digunakan untuk penilaian.
+- Saat dinonaktifkan, id pada kondisi diperlakukan seperti sebelumnya, sebagai ID Kategori, Aksi, atau Item individual.
+___
+
 ## hadiah
 Konfigurasi Hadiah Saat Tugas Selesai
 - 達成したタスクを開き、獲得のバーを押した時に受け取れる報酬です。
-- カテゴリーのレベル、アクションの実行回数、アイテムの所持数を変化させることができます。
+- カテゴリのレベル、アクションの実行回数、アイテムの所持数を変化させることができます。
 - 数量にマイナスを設定することもできます。
 - 報酬を設定していないタスクは獲得のバーが出ず、達成した時点で完了になります。
 - 持てるアイテムの種類が上限に達している時は受け取れません。整理してから受け取り直します。
@@ -92,7 +104,7 @@ Jenis elemen yang akan diperoleh.
 
 |Tipe|Apa yang diperoleh dalam akuisisi.|
 |-|-|
-|Kategori.|Level (konversi pengalaman ditambahkan)|
+|カテゴリ|Level (konversi pengalaman ditambahkan)|
 |Aksi|Hitung dieksekusi.|
 |Item|hitung jumlah harta benda|
 ___
@@ -105,7 +117,7 @@ ___
 Nilai yang akan diperoleh
 - Konfigurasi minus mengurangi jumlah kepemilikan, berapa kali kepemilikan tersebut dilakukan, dan levelnya. Namun, tidak boleh dibawah 0.
 - Jika sebuah item memiliki jumlah kepemilikan maksimum (maks), jumlah kepemilikan tidak akan bertambah melebihi nilai tersebut.
-- Jika tipenya adalah Kategori, nilai yang ditetapkan ditambahkan langsung ke level (1 untuk 1 level, 0,5 untuk 0,5 level). Cara yang biasa digunakan untuk menyesuaikan hal ini adalah dengan melakukan konfigurasi untuk mengatur pengalaman dari aksi tersebut. Konfigurasi ini tidak perlu kecuali tidak ada tujuan khusus.
+- タイプがカテゴリの場合、設定した値がレベルに直接加算されます（1で1レベル、0.5で0.5レベル）。アクションの経験値設定で調整するのが通常の方法です。特殊な目的がない限りこの設定は不要です。
 ___
 
 ### Probabilitas [-1 hingga 1]
@@ -121,6 +133,6 @@ ___
 Klasifikasi kelompok tampilan tugas
 - Terapkan salah satu grup yang konfigurasi di Basic.
 - Daftar tugas akan ditampilkan sesuai urutan konfigurasi grup yang telah ditetapkan.
-- Di dalam kategori tersebut, hasilnya akan ditampilkan berdasarkan kelompok-kelompoknya.
+- カテゴリの中でさらにグループごとに分けて表示されます。
 - Jika dibiarkan kosong, tidak ada pengelompokan yang dibuat.
 - [_general_](id/editor/general)

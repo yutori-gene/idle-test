@@ -1,13 +1,13 @@
 
 # terms
 Necessary requirements configured for the use and display of elements
-- These are the conditions to be configured for each element by Category, Action, and Item.
+- カテゴリ、アクション、アイテムごとの各要素に設定する条件です。
 - If all configured conditions are not met, the operations shown in the table cannot be performed.
 - If the locked feature is enabled, the element itself will be hidden until the condition is met.
 
 |Configuration|Nothing can be done without meeting the conditions.|
 |-|-|
-|Category|Execution of all Actions and manipulation of Items in a Category|
+|カテゴリ|カテゴリ内の全てのアクションの実行とアイテムの操作|
 |Action.|Execution of Action|
 |Item|Manipulation of Items (e.g., Equipment)|
 - [_type_](en/editor/type)
@@ -18,7 +18,7 @@ Type of element referenced as a condition
 
 |Type|Referenced value|
 |-|-|
-|Category|Category Level|
+|カテゴリ|カテゴリのレベル|
 |Action.|Number of times the Action has been performed.|
 |Item|Number of Items in your possession|
 ___

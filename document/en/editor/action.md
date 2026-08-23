@@ -10,16 +10,16 @@ ___
 ## [_information_](en/editor/information)
 ___
 
-## Category
-ID of the Category to which the Action belongs
-- Specify the ID of the Category to which this Action belongs.
+## カテゴリ
+アクションが所属するカテゴリのID
+- このアクションが所属するカテゴリのIDを指定します。
 ___
 
 ## attribute
-Action-specific attribute categories
-- Individual attributes (Categories) can be configured.
-- If left blank, the category to which it belongs will be taken over.
-- For example, if you configure an attribute called magic for an Action that belongs to the category of Demon's Castle individually, the level and properties of the magic category will be calculated and applied to the Action completion time and damage.
+アクション固有の属性カテゴリ
+- 個別の属性(カテゴリ)を設定できます。
+- 空欄の場合は属するカテゴリを引き継ぎます
+- 例えば、魔王城というカテゴリに属するアクションに個別に魔法という属性を設定した場合、アクション完了時間やダメージには魔法のカテゴリのレベルやプロパティが計算され適応されます。
 - [_category_](en/editor/category)
 ___
 

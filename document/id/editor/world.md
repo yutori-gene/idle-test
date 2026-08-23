@@ -3,13 +3,13 @@
 Keseluruhan konfigurasi dunia game dan struktur data
 - Data tentang game yang dapat dimainkan di konsol.
 - Konfigurasinya memungkinkan Anda untuk membuat permainan pengabaian sesuai keinginan.
-- Dunia mencakup kategori, aksi, item, dan acara.
+- ワールドはカテゴリ、アクション、アイテム、イベントなどの要素を内包します。
 ___
 
 ## [_konfigurasi dasar_](id/editor/basic)
 ___
 
-## [_Kategori._](id/editor/category)
+## [_カテゴリ_](id/editor/category)
 ___
 
 ## [_Aksi_](id/editor/action)

@@ -2,16 +2,16 @@
 # Objet
 Éléments de biens tels que les équipements et les consommables
 - Cet élément concerne la propriété d'objets tels que les équipements, les consommables et les objets de valeur.
-- Une seule catégorie peut être équipée, ou bien elle peut être rien.
+- カテゴリ内で１つのみ装備することもできますが、装備できないようにもできます。
 - Il existe également différentes manières de les utiliser.
 ___
 
 ## [_l'information_](fr/editor/information)
 ___
 
-## Catégorie.
-ID de la Catégorie à laquelle l'Objet appartient
-- Indiquez l'ID de la catégorie à laquelle cet Objet appartient.
+## カテゴリ
+アイテムが所属するカテゴリのID
+- このアイテムが所属するカテゴリのIDを指定します。
 ___
 
 ## groupe (habituellement de personnes)
@@ -61,7 +61,7 @@ ___
 
 ## Type d'équipement
 Configuration Type pour l'équipement, les effets et la consommation des objets.
-- Les objets équipables doivent appartenir à un groupe indiqué dans `equipmentGroups` de la catégorie.
+- 装備可能なアイテムは、カテゴリの`equipmentGroups`で指定されたグループに属している必要があります。
 - Un seul Objet peut être équipé au sein d'un même groupe.
 - `unnecessary` produit son effet que l'objet soit équipé ou non, et l'ampleur de l'effet est proportionnelle au nombre possédé (aucun effet avec 0, n fois avec n).
 

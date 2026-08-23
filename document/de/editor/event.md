@@ -5,7 +5,7 @@ Nachrichten und Belohnungen, die zu festgelegten Zeitpunkten ausgelöst werden
 - Für jeden Zeitpunkt ist jeweils ein Feld vorgesehen; es können weder weitere hinzugefügt noch entfernt werden. Felder für nicht verwendete Zeitpunkte bleiben leer.
 - Sie werden nicht in der Liste der Missionen und Aufgaben angezeigt. Aufgaben, die als erledigt gelten, sobald bestimmte Bedingungen erfüllt sind, werden als Aufgaben in der Konfiguration festgelegt.
 - Die Belohnung wird automatisch bei Aktivierung erworben. Es gibt weder einen Vorgang zum Abholen wie bei Aufgaben noch ein Band.
-- Er kann das Level der Kategorie, die Anzahl der durchgeführten Aktionen und die Anzahl der Gegenstände, die er bei der Aktivierung besitzt, verändern.
+- 発動時にカテゴリのレベル、アクションの実行回数、アイテムの所持数を変化させることができます。
 - Wenn Sie die Felder „Name“, „Beschreibung“ und „Symbol“ leer lassen, werden die bei den Spielern integrierten Standardtexte und -symbole verwendet.
 
 |Zeitmessung|Aktivierungsbedingung|wiederholen|
@@ -13,7 +13,7 @@ Nachrichten und Belohnungen, die zu festgelegten Zeitpunkten ausgelöst werden
 |`comebacked`|Wenn eine Person für mehr als eine Sekunde aus dem Internet zurückkehrt und eine Aktion im Läuft ist.|oft|
 |`gameovered`|Wenn die Ausdauer des Spielers im Kampf zu Ende geht.|oft|
 |`welcomed`|Als ich mit dieser Welt anfing.|nur einmal|
-|`completed`|Wenn der max. Level aller Kategorien (maxCategoryLevels) erreicht ist.|nur einmal|
+|`completed`|全カテゴリのレベルが最大値（maxCategoryLevels）に達した時|nur einmal|
 |`obtained`|Wenn eine bestimmte Aktion (z. B. eine Schatzkiste) abgeschlossen bzw. bestätigt wurde|oft|
 - [_task_](de/editor/task)
 ___
@@ -52,6 +52,7 @@ ___
 - タイミングが成立するとイベントは発動し、専用の画面を開いて内容を表示します。
 - 報酬は、発動時にここで設定した条件を満たしている場合にのみ獲得します。
 - 条件を設定していない場合は、発動するたびに報酬を獲得します。
+- requiringGroupを有効にすると、ここで指定するidの意味がカテゴリ・アクション・アイテム個別のIDからグループIDに変わります。
 ___
 
 #### Typ.
@@ -59,7 +60,7 @@ Art des Elements, auf das als Bedingung verwiesen wird.
 
 |Typ.|Referenzierte Werte|
 |-|-|
-|Kategorie.|Level der Kategorie.|
+|カテゴリ|カテゴリのレベル|
 |Aktion.|Zählt, wie oft die Aktion durchgeführt wurde.|
 |Gegenstand|Anzahl der gehaltenen Gegenstände.|
 ___
@@ -87,6 +88,17 @@ Erfordert, dass sich der Gegenstand in Ausrüstung befindet (nur gültig, wenn d
 - Ungültig, wenn der Typ nicht der Gegenstand ist.
 ___
 
+### Gruppensumme
+Behandelt die id der Bedingung als Gruppen-ID und wertet nach der Summe ihrer Mitglieder aus
+- Bei Aktivierung wird die in der Bedingung (requirements) festgelegte id als ID einer Gruppe aus den Grundeinstellungen behandelt.
+- Eine Bedingung, deren Type Kategorie ist, wird anhand der Summe des Levels aller Kategorien dieser Gruppe ausgewertet.
+- Eine Bedingung, deren Type Aktion ist, wird anhand der Summe der Ausführungen aller Aktionen dieser Gruppe ausgewertet.
+- Eine Bedingung, deren Type Gegenstand ist, wird anhand der Summe der Anzahl aller Gegenstände dieser Gruppe im Besitz ausgewertet.
+- Gesperrte (nicht released) Elemente werden nicht in die Summe einbezogen.
+- Die Verbrauchswahrscheinlichkeit des Gegenstands (chance) und die Ausrüstungsbedingung (equipment) werden ignoriert, es wird nichts verbraucht. Sie dienen nur der Auswertung.
+- Bei Deaktivierung wird die id der Bedingung wie bisher als ID einer einzelnen Kategorie, Aktion oder eines Gegenstands behandelt.
+___
+
 ### 報酬
 イベント発動時の報酬設定
 - タイミングが成立し、かつ条件を満たしている時に得られる報酬です。
@@ -99,7 +111,7 @@ Art des zu erwerbenden Elements.
 
 |Typ.|Was wird erworben.|
 |-|-|
-|Kategorie.|Level (Erfahrungsumrechnung hinzugefügt)|
+|カテゴリ|Level (Erfahrungsumrechnung hinzugefügt)|
 |Aktion.|Anzahl der Ausführungsvorgänge.|
 |Gegenstand|Anzahl der Besitztümer|
 ___
@@ -112,7 +124,7 @@ ___
 Zu ermittelnde numerische Werte
 - Minus-Werte verringern die Anzahl der Besitztümer, die Anzahl der Durchführungen und ihr Level. Er kann jedoch nicht kleiner als 0 sein.
 - Wenn ein Gegenstand eine maximale Anzahl von Besitztümern hat (Maximum), wird die Anzahl der Besitztümer nicht über diesen Wert hinaus erhöht.
-- Ist der Typ eine Kategorie, wird der eingestellte Wert direkt zum Level addiert (1 für 1 Level, 0,5 für 0,5 Level). Der übliche Weg, dies anzupassen, ist die Konfiguration des Erfahrungs-Wertes der Aktion. Diese Konfiguration ist nicht notwendig, es sei denn, es gibt einen besonderen Zweck.
+- タイプがカテゴリの場合、設定した値がレベルに直接加算されます（1で1レベル、0.5で0.5レベル）。アクションの経験値設定で調整するのが通常の方法です。特殊な目的がない限りこの設定は不要です。
 ___
 
 #### Wahrscheinlichkeit [-1 bis 1]
@@ -164,6 +176,7 @@ ___
 - タイミングが成立するとイベントは発動し、専用の画面を開いて内容を表示します。
 - 報酬は、発動時にここで設定した条件を満たしている場合にのみ獲得します。
 - 条件を設定していない場合は、発動するたびに報酬を獲得します。
+- requiringGroupを有効にすると、ここで指定するidの意味がカテゴリ・アクション・アイテム個別のIDからグループIDに変わります。
 ___
 
 #### Typ.
@@ -171,7 +184,7 @@ Art des Elements, auf das als Bedingung verwiesen wird.
 
 |Typ.|Referenzierte Werte|
 |-|-|
-|Kategorie.|Level der Kategorie.|
+|カテゴリ|カテゴリのレベル|
 |Aktion.|Zählt, wie oft die Aktion durchgeführt wurde.|
 |Gegenstand|Anzahl der gehaltenen Gegenstände.|
 ___
@@ -199,6 +212,17 @@ Erfordert, dass sich der Gegenstand in Ausrüstung befindet (nur gültig, wenn d
 - Ungültig, wenn der Typ nicht der Gegenstand ist.
 ___
 
+### Gruppensumme
+Behandelt die id der Bedingung als Gruppen-ID und wertet nach der Summe ihrer Mitglieder aus
+- Bei Aktivierung wird die in der Bedingung (requirements) festgelegte id als ID einer Gruppe aus den Grundeinstellungen behandelt.
+- Eine Bedingung, deren Type Kategorie ist, wird anhand der Summe des Levels aller Kategorien dieser Gruppe ausgewertet.
+- Eine Bedingung, deren Type Aktion ist, wird anhand der Summe der Ausführungen aller Aktionen dieser Gruppe ausgewertet.
+- Eine Bedingung, deren Type Gegenstand ist, wird anhand der Summe der Anzahl aller Gegenstände dieser Gruppe im Besitz ausgewertet.
+- Gesperrte (nicht released) Elemente werden nicht in die Summe einbezogen.
+- Die Verbrauchswahrscheinlichkeit des Gegenstands (chance) und die Ausrüstungsbedingung (equipment) werden ignoriert, es wird nichts verbraucht. Sie dienen nur der Auswertung.
+- Bei Deaktivierung wird die id der Bedingung wie bisher als ID einer einzelnen Kategorie, Aktion oder eines Gegenstands behandelt.
+___
+
 ### 報酬
 イベント発動時の報酬設定
 - タイミングが成立し、かつ条件を満たしている時に得られる報酬です。
@@ -211,7 +235,7 @@ Art des zu erwerbenden Elements.
 
 |Typ.|Was wird erworben.|
 |-|-|
-|Kategorie.|Level (Erfahrungsumrechnung hinzugefügt)|
+|カテゴリ|Level (Erfahrungsumrechnung hinzugefügt)|
 |Aktion.|Anzahl der Ausführungsvorgänge.|
 |Gegenstand|Anzahl der Besitztümer|
 ___
@@ -224,7 +248,7 @@ ___
 Zu ermittelnde numerische Werte
 - Minus-Werte verringern die Anzahl der Besitztümer, die Anzahl der Durchführungen und ihr Level. Er kann jedoch nicht kleiner als 0 sein.
 - Wenn ein Gegenstand eine maximale Anzahl von Besitztümern hat (Maximum), wird die Anzahl der Besitztümer nicht über diesen Wert hinaus erhöht.
-- Ist der Typ eine Kategorie, wird der eingestellte Wert direkt zum Level addiert (1 für 1 Level, 0,5 für 0,5 Level). Der übliche Weg, dies anzupassen, ist die Konfiguration des Erfahrungs-Wertes der Aktion. Diese Konfiguration ist nicht notwendig, es sei denn, es gibt einen besonderen Zweck.
+- タイプがカテゴリの場合、設定した値がレベルに直接加算されます（1で1レベル、0.5で0.5レベル）。アクションの経験値設定で調整するのが通常の方法です。特殊な目的がない限りこの設定は不要です。
 ___
 
 #### Wahrscheinlichkeit [-1 bis 1]
@@ -276,6 +300,7 @@ ___
 - タイミングが成立するとイベントは発動し、専用の画面を開いて内容を表示します。
 - 報酬は、発動時にここで設定した条件を満たしている場合にのみ獲得します。
 - 条件を設定していない場合は、発動するたびに報酬を獲得します。
+- requiringGroupを有効にすると、ここで指定するidの意味がカテゴリ・アクション・アイテム個別のIDからグループIDに変わります。
 ___
 
 #### Typ.
@@ -283,7 +308,7 @@ Art des Elements, auf das als Bedingung verwiesen wird.
 
 |Typ.|Referenzierte Werte|
 |-|-|
-|Kategorie.|Level der Kategorie.|
+|カテゴリ|カテゴリのレベル|
 |Aktion.|Zählt, wie oft die Aktion durchgeführt wurde.|
 |Gegenstand|Anzahl der gehaltenen Gegenstände.|
 ___
@@ -311,6 +336,17 @@ Erfordert, dass sich der Gegenstand in Ausrüstung befindet (nur gültig, wenn d
 - Ungültig, wenn der Typ nicht der Gegenstand ist.
 ___
 
+### Gruppensumme
+Behandelt die id der Bedingung als Gruppen-ID und wertet nach der Summe ihrer Mitglieder aus
+- Bei Aktivierung wird die in der Bedingung (requirements) festgelegte id als ID einer Gruppe aus den Grundeinstellungen behandelt.
+- Eine Bedingung, deren Type Kategorie ist, wird anhand der Summe des Levels aller Kategorien dieser Gruppe ausgewertet.
+- Eine Bedingung, deren Type Aktion ist, wird anhand der Summe der Ausführungen aller Aktionen dieser Gruppe ausgewertet.
+- Eine Bedingung, deren Type Gegenstand ist, wird anhand der Summe der Anzahl aller Gegenstände dieser Gruppe im Besitz ausgewertet.
+- Gesperrte (nicht released) Elemente werden nicht in die Summe einbezogen.
+- Die Verbrauchswahrscheinlichkeit des Gegenstands (chance) und die Ausrüstungsbedingung (equipment) werden ignoriert, es wird nichts verbraucht. Sie dienen nur der Auswertung.
+- Bei Deaktivierung wird die id der Bedingung wie bisher als ID einer einzelnen Kategorie, Aktion oder eines Gegenstands behandelt.
+___
+
 ### 報酬
 イベント発動時の報酬設定
 - タイミングが成立し、かつ条件を満たしている時に得られる報酬です。
@@ -323,7 +359,7 @@ Art des zu erwerbenden Elements.
 
 |Typ.|Was wird erworben.|
 |-|-|
-|Kategorie.|Level (Erfahrungsumrechnung hinzugefügt)|
+|カテゴリ|Level (Erfahrungsumrechnung hinzugefügt)|
 |Aktion.|Anzahl der Ausführungsvorgänge.|
 |Gegenstand|Anzahl der Besitztümer|
 ___
@@ -336,7 +372,7 @@ ___
 Zu ermittelnde numerische Werte
 - Minus-Werte verringern die Anzahl der Besitztümer, die Anzahl der Durchführungen und ihr Level. Er kann jedoch nicht kleiner als 0 sein.
 - Wenn ein Gegenstand eine maximale Anzahl von Besitztümern hat (Maximum), wird die Anzahl der Besitztümer nicht über diesen Wert hinaus erhöht.
-- Ist der Typ eine Kategorie, wird der eingestellte Wert direkt zum Level addiert (1 für 1 Level, 0,5 für 0,5 Level). Der übliche Weg, dies anzupassen, ist die Konfiguration des Erfahrungs-Wertes der Aktion. Diese Konfiguration ist nicht notwendig, es sei denn, es gibt einen besonderen Zweck.
+- タイプがカテゴリの場合、設定した値がレベルに直接加算されます（1で1レベル、0.5で0.5レベル）。アクションの経験値設定で調整するのが通常の方法です。特殊な目的がない限りこの設定は不要です。
 ___
 
 #### Wahrscheinlichkeit [-1 bis 1]
@@ -355,9 +391,9 @@ ___
 ___
 
 ## Beim Abschluss
-Wird ausgelöst, wenn alle Kategorien ihr maximales Level erreichen
-- Wird ausgelöst, wenn die Level aller Kategorien den Maximalwert (maxCategoryLevels) erreichen.
-- Kategorien, die nicht numeric sind, werden von der Prüfung ausgenommen.
+全カテゴリが最大レベルに達した時に発動
+- 全カテゴリのレベルが最大値（maxCategoryLevels）に達した時に発動します。
+- numeric（数値）でないカテゴリは判定から除かれます。
 ___
 
 ### [_Informationen_](de/editor/information)
@@ -388,6 +424,7 @@ ___
 - タイミングが成立するとイベントは発動し、専用の画面を開いて内容を表示します。
 - 報酬は、発動時にここで設定した条件を満たしている場合にのみ獲得します。
 - 条件を設定していない場合は、発動するたびに報酬を獲得します。
+- requiringGroupを有効にすると、ここで指定するidの意味がカテゴリ・アクション・アイテム個別のIDからグループIDに変わります。
 ___
 
 #### Typ.
@@ -395,7 +432,7 @@ Art des Elements, auf das als Bedingung verwiesen wird.
 
 |Typ.|Referenzierte Werte|
 |-|-|
-|Kategorie.|Level der Kategorie.|
+|カテゴリ|カテゴリのレベル|
 |Aktion.|Zählt, wie oft die Aktion durchgeführt wurde.|
 |Gegenstand|Anzahl der gehaltenen Gegenstände.|
 ___
@@ -423,6 +460,17 @@ Erfordert, dass sich der Gegenstand in Ausrüstung befindet (nur gültig, wenn d
 - Ungültig, wenn der Typ nicht der Gegenstand ist.
 ___
 
+### Gruppensumme
+Behandelt die id der Bedingung als Gruppen-ID und wertet nach der Summe ihrer Mitglieder aus
+- Bei Aktivierung wird die in der Bedingung (requirements) festgelegte id als ID einer Gruppe aus den Grundeinstellungen behandelt.
+- Eine Bedingung, deren Type Kategorie ist, wird anhand der Summe des Levels aller Kategorien dieser Gruppe ausgewertet.
+- Eine Bedingung, deren Type Aktion ist, wird anhand der Summe der Ausführungen aller Aktionen dieser Gruppe ausgewertet.
+- Eine Bedingung, deren Type Gegenstand ist, wird anhand der Summe der Anzahl aller Gegenstände dieser Gruppe im Besitz ausgewertet.
+- Gesperrte (nicht released) Elemente werden nicht in die Summe einbezogen.
+- Die Verbrauchswahrscheinlichkeit des Gegenstands (chance) und die Ausrüstungsbedingung (equipment) werden ignoriert, es wird nichts verbraucht. Sie dienen nur der Auswertung.
+- Bei Deaktivierung wird die id der Bedingung wie bisher als ID einer einzelnen Kategorie, Aktion oder eines Gegenstands behandelt.
+___
+
 ### 報酬
 イベント発動時の報酬設定
 - タイミングが成立し、かつ条件を満たしている時に得られる報酬です。
@@ -435,7 +483,7 @@ Art des zu erwerbenden Elements.
 
 |Typ.|Was wird erworben.|
 |-|-|
-|Kategorie.|Level (Erfahrungsumrechnung hinzugefügt)|
+|カテゴリ|Level (Erfahrungsumrechnung hinzugefügt)|
 |Aktion.|Anzahl der Ausführungsvorgänge.|
 |Gegenstand|Anzahl der Besitztümer|
 ___
@@ -448,7 +496,7 @@ ___
 Zu ermittelnde numerische Werte
 - Minus-Werte verringern die Anzahl der Besitztümer, die Anzahl der Durchführungen und ihr Level. Er kann jedoch nicht kleiner als 0 sein.
 - Wenn ein Gegenstand eine maximale Anzahl von Besitztümern hat (Maximum), wird die Anzahl der Besitztümer nicht über diesen Wert hinaus erhöht.
-- Ist der Typ eine Kategorie, wird der eingestellte Wert direkt zum Level addiert (1 für 1 Level, 0,5 für 0,5 Level). Der übliche Weg, dies anzupassen, ist die Konfiguration des Erfahrungs-Wertes der Aktion. Diese Konfiguration ist nicht notwendig, es sei denn, es gibt einen besonderen Zweck.
+- タイプがカテゴリの場合、設定した値がレベルに直接加算されます（1で1レベル、0.5で0.5レベル）。アクションの経験値設定で調整するのが通常の方法です。特殊な目的がない限りこの設定は不要です。
 ___
 
 #### Wahrscheinlichkeit [-1 bis 1]
@@ -500,6 +548,7 @@ ___
 - タイミングが成立するとイベントは発動し、専用の画面を開いて内容を表示します。
 - 報酬は、発動時にここで設定した条件を満たしている場合にのみ獲得します。
 - 条件を設定していない場合は、発動するたびに報酬を獲得します。
+- requiringGroupを有効にすると、ここで指定するidの意味がカテゴリ・アクション・アイテム個別のIDからグループIDに変わります。
 ___
 
 #### Typ.
@@ -507,7 +556,7 @@ Art des Elements, auf das als Bedingung verwiesen wird.
 
 |Typ.|Referenzierte Werte|
 |-|-|
-|Kategorie.|Level der Kategorie.|
+|カテゴリ|カテゴリのレベル|
 |Aktion.|Zählt, wie oft die Aktion durchgeführt wurde.|
 |Gegenstand|Anzahl der gehaltenen Gegenstände.|
 ___
@@ -535,6 +584,17 @@ Erfordert, dass sich der Gegenstand in Ausrüstung befindet (nur gültig, wenn d
 - Ungültig, wenn der Typ nicht der Gegenstand ist.
 ___
 
+### Gruppensumme
+Behandelt die id der Bedingung als Gruppen-ID und wertet nach der Summe ihrer Mitglieder aus
+- Bei Aktivierung wird die in der Bedingung (requirements) festgelegte id als ID einer Gruppe aus den Grundeinstellungen behandelt.
+- Eine Bedingung, deren Type Kategorie ist, wird anhand der Summe des Levels aller Kategorien dieser Gruppe ausgewertet.
+- Eine Bedingung, deren Type Aktion ist, wird anhand der Summe der Ausführungen aller Aktionen dieser Gruppe ausgewertet.
+- Eine Bedingung, deren Type Gegenstand ist, wird anhand der Summe der Anzahl aller Gegenstände dieser Gruppe im Besitz ausgewertet.
+- Gesperrte (nicht released) Elemente werden nicht in die Summe einbezogen.
+- Die Verbrauchswahrscheinlichkeit des Gegenstands (chance) und die Ausrüstungsbedingung (equipment) werden ignoriert, es wird nichts verbraucht. Sie dienen nur der Auswertung.
+- Bei Deaktivierung wird die id der Bedingung wie bisher als ID einer einzelnen Kategorie, Aktion oder eines Gegenstands behandelt.
+___
+
 ### 報酬
 イベント発動時の報酬設定
 - タイミングが成立し、かつ条件を満たしている時に得られる報酬です。
@@ -547,7 +607,7 @@ Art des zu erwerbenden Elements.
 
 |Typ.|Was wird erworben.|
 |-|-|
-|Kategorie.|Level (Erfahrungsumrechnung hinzugefügt)|
+|カテゴリ|Level (Erfahrungsumrechnung hinzugefügt)|
 |Aktion.|Anzahl der Ausführungsvorgänge.|
 |Gegenstand|Anzahl der Besitztümer|
 ___
@@ -560,7 +620,7 @@ ___
 Zu ermittelnde numerische Werte
 - Minus-Werte verringern die Anzahl der Besitztümer, die Anzahl der Durchführungen und ihr Level. Er kann jedoch nicht kleiner als 0 sein.
 - Wenn ein Gegenstand eine maximale Anzahl von Besitztümern hat (Maximum), wird die Anzahl der Besitztümer nicht über diesen Wert hinaus erhöht.
-- Ist der Typ eine Kategorie, wird der eingestellte Wert direkt zum Level addiert (1 für 1 Level, 0,5 für 0,5 Level). Der übliche Weg, dies anzupassen, ist die Konfiguration des Erfahrungs-Wertes der Aktion. Diese Konfiguration ist nicht notwendig, es sei denn, es gibt einen besonderen Zweck.
+- タイプがカテゴリの場合、設定した値がレベルに直接加算されます（1で1レベル、0.5で0.5レベル）。アクションの経験値設定で調整するのが通常の方法です。特殊な目的がない限りこの設定は不要です。
 ___
 
 #### Wahrscheinlichkeit [-1 bis 1]

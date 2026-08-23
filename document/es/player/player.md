@@ -10,6 +10,6 @@ El juego se explica para cada columna que aparece en Juega.
 |[_category_](es/player/category)|Una recopilación de varios elementos.|
 |[_action_](es/player/action)|Elementos de acción como recoger, fabricar y luchar.|
 |[_item_](es/player/item)|Detalles del Artículo.|
-|[_property_](es/player/property)|Comprobación de los valores de corrección|
+|[_property_](es/player/property)|プロパティの確認|
 |[_world_](es/player/world)|Puedes manejar y comprobar los controles generales y la configuración del juego,|
 |[_miscellaneous_](es/player/miscellaneous)|Otra información complementaria explicada.|

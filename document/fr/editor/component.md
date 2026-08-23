@@ -8,6 +8,6 @@ Parties communes
 |-|-|
 |[_information_](fr/editor/information)|Configuration des informations de base sur l'élément (ID, nom, icône, couleur, etc.)|
 |[_requirement_](fr/editor/requirement)|Configuration des exigences nécessaires à l'utilisation et à la présentation des éléments.|
-|[_acquisition_](fr/editor/acquisition)|Configuration de l'acquisition au niveau des objets et des catégories.|
+|[_acquisition_](fr/editor/acquisition)|アイテムやカテゴリレベルの取得設定|
 |[_combat_](fr/editor/combat)|Valeurs de correction du combat pour les actions de type endurance.|
 |[_property_](fr/editor/property)|Configuration des effets d'un Objet.|

@@ -1,8 +1,8 @@
 
 # group (usu. of people)
-Define Display Groups for Categories, Actions, and Items
+カテゴリ、アクション、アイテムの表示グループを定義
 - Define groups to control the order of display.
-- You can configure the groups defined here for each Category, Action, and Item.
+- 各カテゴリ、アクション、アイテムでここで定義したグループを設定できます。
 - Groups that are the same are displayed close together.
 - If left blank, no minutes will be grouped.
 ___
@@ -30,7 +30,7 @@ ___
 
 ### Nothing to duplicate.
 Prohibit duplicate IDs within the same Type
-- Nothing should be duplicated within Category, Action, Item, Event, and Preset Types, as they are used to identify elements.
+- 要素の判別に用いられるため、カテゴリ、アクション、アイテム、イベント、プリセットの各タイプ内で重複しないでください。
 - There is no problem to have the same ID on different Types.
 - [_type_](en/editor/type)
 ___
@@ -112,8 +112,8 @@ ___
 Taking over the color configured on the parent element
 - If left blank, the color configured on the parent element is inherited.
 - The hierarchy of each element type is as follows.
-- For example, if an individual color is configured on an action it is used, but if no individual color is configured on the action, the color of the category or the world is used.
-- When an event also has a category configured, it inherits the color of that category in the same way as actions and items.
+- 例えば、アクションに個別の色が設定されている場合はそれが利用されますが、アクションに個別の色が設定されていない場合はカテゴリ又はワールドの色が使用されます。
+- イベントもカテゴリを設定している場合は、アクションやアイテムと同じようにそのカテゴリの色を引き継ぎます。
 ```
 world
 ├── category

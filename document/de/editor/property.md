@@ -20,11 +20,11 @@ Konfiguration der Auswirkungen eines Gegenstands.
 |wiederherstellen|Ändert die Menge an Ausdauer, die am Ende einer Aktion wiederhergestellt wird. Je näher an der vollständigen Erholung, desto flacher der Zuwachs. (nur für Ausdauer-Aktionen)|
 ___
 
-## Kategorie.
-Angabe der Kategorie, für die die Eigenschaft gilt.
-- Konfiguration der ID der Kategorie, für die diese Eigenschaft gilt.
-- Wird `*` eingestellt, gilt es für alle Kategorien.
-- Ist sie leer, gilt sie für die Kategorie, zu der der Gegenstand gehört.
+## カテゴリ
+プロパティを適用するカテゴリの指定
+- このプロパティを適用するカテゴリのIDを設定します。
+- `*`を設定すると全カテゴリに適用されます。
+- 空欄の場合はアイテムが属するカテゴリに適用されます。
 ___
 
 ## Wert des Angriffs [Level-Unterschied].

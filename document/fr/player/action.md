@@ -1,20 +1,20 @@
 
 # Action
 Des éléments d'action tels que la collecte, la fabrication et le combat.
-- Chaque exécution peut rapporter de l'expérience et faire monter votre niveau.
-- Chaque exécution consomme ou rapporte un objet.
-- Les actions qui ne remplissent pas les conditions de déblocage sont verrouillées et leur détail n'est pas consultable.
+- Each time it is performed, you gain Experience and may Level up.
+- Each time it is performed, Items are consumed or gained.
+- Actions that don't meet their unlock condition are locked, and their details cannot be viewed.
 ___
 
 ## Action.
-Liste des actions dans la Catégorie
-- Un appui long active ou désactive l'exécution de l'action.
-- Une seule exécution est possible au sein d'une catégorie.
-- Certaines catégories permettent de faire progresser des actions de plusieurs catégories en même temps.
-- Les actions qui ne remplissent pas les conditions de déblocage sont verrouillées et leur détail n'est pas consultable.
+カテゴリ内のアクションの一覧
+- Hold to toggle performing the Action.
+- Only one Action can be performed within a single Category.
+- Depending on the Category, Actions in multiple Categories can progress at the same time.
+- Actions that don't meet their unlock condition are locked, and their details cannot be viewed.
 ___
 
 ## Agir.
 Contrôle des actions
-- Démarre ou arrête une action.
-- Vous pouvez indiquer le nombre d'exécutions. Choisissez la position la plus à droite pour exécuter jusqu'à épuisement des ressources.
+- Starts or stops the Action.
+- You can specify the number of times to perform it. Choosing the rightmost option performs it until resources run out.

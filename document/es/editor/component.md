@@ -8,6 +8,6 @@ Piezas comunes
 |-|-|
 |[_information_](es/editor/information)|Configuración de la información básica sobre el elemento (ID, nombre, icono, color, etc.)|
 |[_requirement_](es/editor/requirement)|Configuración de los requisitos necesarios para el uso y la visualización de los elementos.|
-|[_acquisition_](es/editor/acquisition)|Configuración de adquisición a nivel de Artículo y Categoría.|
+|[_acquisition_](es/editor/acquisition)|アイテムやカテゴリレベルの取得設定|
 |[_combat_](es/editor/combat)|Valores de corrección de combate para acciones de Tipo resistencia.|
 |[_property_](es/editor/property)|Configuración de los efectos que tiene un Artículo.|

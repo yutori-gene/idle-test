@@ -8,6 +8,6 @@
 |-|-|
 |[_information_](ru/editor/information)|Конфигурация основной информации об элементе (ID, имя, значок, цвет и т. д.).|
 |[_requirement_](ru/editor/requirement)|Конфигурация требований к использованию и отображению элементов.|
-|[_acquisition_](ru/editor/acquisition)|Предметы и конфигурации приобретения на уровне категории.|
+|[_acquisition_](ru/editor/acquisition)|アイテムやカテゴリレベルの取得設定|
 |[_combat_](ru/editor/combat)|Боевые значения коррекции для действий типа "Выносливость".|
 |[_property_](ru/editor/property)|Конфигурация эффектов, которыми обладает предмет.|

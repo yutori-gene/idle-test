@@ -118,9 +118,9 @@ export const property: Type.Property = {
 	],
 	children: {
 		category: {
-			title: "Kategorie.",
-			summary: "Angabe der Kategorie, für die die Eigenschaft gilt.",
-			points: ["Konfiguration der ID der Kategorie, für die diese Eigenschaft gilt.", "Wird `*` eingestellt, gilt es für alle Kategorien.", "Ist sie leer, gilt sie für die Kategorie, zu der der Gegenstand gehört."],
+			title: "カテゴリ",
+			summary: "プロパティを適用するカテゴリの指定",
+			points: ["このプロパティを適用するカテゴリのIDを設定します。", "`*`を設定すると全カテゴリに適用されます。", "空欄の場合はアイテムが属するカテゴリに適用されます。"],
 		},
 		attack: {
 			title: "Wert des Angriffs [Level-Unterschied].",
@@ -206,11 +206,11 @@ export const combat: Type.Combat = {
 
 export const acquisition: Type.Acquisition = {
 	title: "Erwerbungen",
-	summary: "Konfiguration der Erfassung auf Item- und Kategorie Level.",
-	points: ["Konfigurieren Sie die Erwerbe.", "Sie können sowohl das Level der Kategorie als auch den Gegenstand und die Anzahl der durchgeführten Aktionen ändern.", "Die Wahrscheinlichkeit, das Produkt zu erhalten, kann konfiguriert werden."],
+	summary: "アイテムやカテゴリレベルの取得設定",
+	points: ["Konfigurieren Sie die Erwerbe.", "アイテムの他にカテゴリのレベル、アクションの実行した回数を変更できます。", "Die Wahrscheinlichkeit, das Produkt zu erhalten, kann konfiguriert werden."],
 	list: [
 		["Typ.", "Was Sie erwerben."],
-		["Kategorie.", "Level"],
+		["カテゴリ", "Level"],
 		["Aktion.", "Anzahl der Ausführungsvorgänge."],
 		["Gegenstand", "Anzahl der Besitztümer"],
 	],
@@ -220,7 +220,7 @@ export const acquisition: Type.Acquisition = {
 			summary: "Art des zu erwerbenden Elements.",
 			list: [
 				["Typ.", "Was wird erworben."],
-				["Kategorie.", "Level (Erfahrungsumrechnung hinzugefügt)"],
+				["カテゴリ", "Level (Erfahrungsumrechnung hinzugefügt)"],
 				["Aktion.", "Anzahl der Ausführungsvorgänge."],
 				["Gegenstand", "Anzahl der Besitztümer"],
 			],
@@ -232,7 +232,7 @@ export const acquisition: Type.Acquisition = {
 		count: {
 			title: "Wert",
 			summary: "Zu ermittelnde numerische Werte",
-			points: ["Minus-Werte verringern die Anzahl der Besitztümer, die Anzahl der Durchführungen und ihr Level. Er kann jedoch nicht kleiner als 0 sein.", "Wenn ein Gegenstand eine maximale Anzahl von Besitztümern hat (Maximum), wird die Anzahl der Besitztümer nicht über diesen Wert hinaus erhöht.", "Ist der Typ eine Kategorie, wird der eingestellte Wert direkt zum Level addiert (1 für 1 Level, 0,5 für 0,5 Level). Der übliche Weg, dies anzupassen, ist die Konfiguration des Erfahrungs-Wertes der Aktion. Diese Konfiguration ist nicht notwendig, es sei denn, es gibt einen besonderen Zweck."],
+			points: ["Minus-Werte verringern die Anzahl der Besitztümer, die Anzahl der Durchführungen und ihr Level. Er kann jedoch nicht kleiner als 0 sein.", "Wenn ein Gegenstand eine maximale Anzahl von Besitztümern hat (Maximum), wird die Anzahl der Besitztümer nicht über diesen Wert hinaus erhöht.", "タイプがカテゴリの場合、設定した値がレベルに直接加算されます（1で1レベル、0.5で0.5レベル）。アクションの経験値設定で調整するのが通常の方法です。特殊な目的がない限りこの設定は不要です。"],
 		},
 		chance: {
 			title: "Wahrscheinlichkeit [-1 bis 1]",
@@ -249,10 +249,10 @@ export const acquisition: Type.Acquisition = {
 export const requirement: Type.Requirement = {
 	title: "Bedingungen und Konditionen",
 	summary: "Konfiguration der notwendigen Anforderungen für die Verwendung und Anzeige von Elementen.",
-	points: ["Dies sind die Bedingungen, die für jedes Element nach Kategorie, Aktion und Gegenstand konfiguriert werden.", "Wenn nicht alle konfigurierten Bedingungen erfüllt sind, können die in der Tabelle aufgeführten Vorgänge nicht ausgeführt werden.", "Wenn die Sperrfunktion aktiviert ist, wird das Element selbst ausgeblendet, bis die Bedingung erfüllt ist."],
+	points: ["カテゴリ、アクション、アイテムごとの各要素に設定する条件です。", "Wenn nicht alle konfigurierten Bedingungen erfüllt sind, können die in der Tabelle aufgeführten Vorgänge nicht ausgeführt werden.", "Wenn die Sperrfunktion aktiviert ist, wird das Element selbst ausgeblendet, bis die Bedingung erfüllt ist."],
 	list: [
 		["Wo ist die Konfiguration vorzunehmen?", "Nichts kann nur getan werden, wenn die Bedingungen erfüllt sind."],
-		["Kategorie.", "Ausführung aller Aktionen und Manipulation von Gegenständen in der Kategorie"],
+		["カテゴリ", "カテゴリ内の全てのアクションの実行とアイテムの操作"],
 		["Aktion.", "Durchführung der Aktionen"],
 		["Gegenstand", "Manipulation von Gegenständen (z. B. Ausrüstung)"],
 	],
@@ -262,7 +262,7 @@ export const requirement: Type.Requirement = {
 			summary: "Art des Elements, auf das als Bedingung verwiesen wird.",
 			list: [
 				["Typ.", "Referenzierte Werte"],
-				["Kategorie.", "Level der Kategorie."],
+				["カテゴリ", "カテゴリのレベル"],
 				["Aktion.", "Zählt, wie oft die Aktion durchgeführt wurde."],
 				["Gegenstand", "Anzahl der gehaltenen Gegenstände."],
 			],
@@ -296,7 +296,7 @@ export const requirement: Type.Requirement = {
 export const information: Type.Information = {
 	title: "Informationen",
 	summary: "Konfiguration der grundlegenden Informationen über das Element (ID, Name, Symbol, Farbe usw.)",
-	points: ["Grundlegende Informationsgegenstände, die jedem Element in der Welt gemeinsam sind (Kategorien, Aktionen, Gegenstände, Ereignisse, usw.).", "Jedes Element wird separat konfiguriert."],
+	points: ["ワールド内の各要素（カテゴリ、アクション、アイテム、イベントなど）に共通する基本情報の項目です。", "Jedes Element wird separat konfiguriert."],
 	children: {
 		id: {
 			title: "ID",
@@ -319,7 +319,7 @@ export const information: Type.Information = {
 				noDuplicate: {
 					title: "Keine Überschneidungen.",
 					summary: "Verbot von doppelten IDs innerhalb desselben Typs.",
-					points: ["Nichts innerhalb von Kategorien, Aktionen, Gegenständen, Ereignissen und voreingestellten Typen duplizieren, da diese zur Identifizierung von Elementen verwendet werden.", "Die gleiche ID für verschiedene Typen zu haben, ist kein Problem."],
+					points: ["要素の判別に用いられるため、カテゴリ、アクション、アイテム、イベント、プリセットの各タイプ内で重複しないでください。", "Die gleiche ID für verschiedene Typen zu haben, ist kein Problem."],
 					links: { type: "type" },
 				},
 			},
@@ -387,7 +387,7 @@ export const information: Type.Information = {
 				"heritage-from-parent": {
 					title: "Vererbung vom übergeordneten Element",
 					summary: "Übernahme der am übergeordneten Element eingestellten Farbe",
-					points: ["Bleibt das Feld leer, wird die am übergeordneten Element eingestellte Farbe übernommen.", "Die Hierarchie der Typen der einzelnen Elemente sieht wie folgt aus.", "Ist zum Beispiel für eine Aktion eine eigene Farbe eingestellt, wird diese verwendet; ist für die Aktion keine eigene Farbe eingestellt, wird die Farbe der Kategorie oder der Welt verwendet.", "Ist auch für ein Ereignis eine Kategorie eingestellt, übernimmt es die Farbe dieser Kategorie ebenso wie Aktionen und Gegenstände."],
+					points: ["Bleibt das Feld leer, wird die am übergeordneten Element eingestellte Farbe übernommen.", "Die Hierarchie der Typen der einzelnen Elemente sieht wie folgt aus.", "例えば、アクションに個別の色が設定されている場合はそれが利用されますが、アクションに個別の色が設定されていない場合はカテゴリ又はワールドの色が使用されます。", "イベントもカテゴリを設定している場合は、アクションやアイテムと同じようにそのカテゴリの色を引き継ぎます。"],
 					quote: typeTree,
 					links: { type: "type" },
 				},
@@ -425,14 +425,14 @@ export const preset: Type.Information = {
 export const task: Type.Event = {
 	title: "Aufgabe",
 	summary: "Missionen, die als abgeschlossen gelten, sobald die Bedingungen erfüllt sind",
-	points: ["Wenn die Konfiguration der Bedingungen erfüllt ist, gilt die Aufgabe als erledigt, und auf dem oberen Bildschirmrand wird eine Meldung angezeigt.", "Sie werden in der Liste der Spieler-Missionen und in der Liste der Aufgaben nach Kategorie angezeigt.", "Die Belohnung wird nicht automatisch ausgezahlt. Der Spieler erhält sie, wenn er die Aufgabe öffnet und auf den Button für Erwerbungen tippt.", "Bis zur Auszahlung der Vergütung wird die Liste mit einem Band gekennzeichnet, um anzuzeigen, dass sie noch nicht entgegengenommen wurde.", "Durch Erwerbungen kannst du das Level der Kategorie, die Anzahl der ausgeführten Aktionen und die Anzahl der besessenen Gegenstände verändern.", "Elemente, die zu anderen Zeitpunkten als den festgelegten Bedingungen – beispielsweise beim ersten Start oder beim Spiel vorbei – ausgelöst werden sollen, werden in der Konfiguration unter „Ereignisse“ konfiguriert."],
+	points: ["Wenn die Konfiguration der Bedingungen erfüllt ist, gilt die Aufgabe als erledigt, und auf dem oberen Bildschirmrand wird eine Meldung angezeigt.", "プレイヤーのミッションの一覧と、カテゴリのタスクの一覧に表示されます。", "Die Belohnung wird nicht automatisch ausgezahlt. Der Spieler erhält sie, wenn er die Aufgabe öffnet und auf den Button für Erwerbungen tippt.", "Bis zur Auszahlung der Vergütung wird die Liste mit einem Band gekennzeichnet, um anzuzeigen, dass sie noch nicht entgegengenommen wurde.", "獲得でカテゴリのレベル、アクションの実行回数、アイテムの所持数を変化させることができます。", "Elemente, die zu anderen Zeitpunkten als den festgelegten Bedingungen – beispielsweise beim ersten Start oder beim Spiel vorbei – ausgelöst werden sollen, werden in der Konfiguration unter „Ereignisse“ konfiguriert."],
 	links: { event: "event" },
 	children: {
 		information: information,
 		category: {
-			title: "Kategorie.",
-			summary: "ID der Kategorie, zu der die Aufgabe gehört",
-			points: ["Geben Sie die ID der Kategorie an, der diese Aufgabe zugeordnet werden soll.", "Wenn Sie diese Konfiguration vornehmen, wird auf dem Bildschirm „Kategorien der Spieler“ eine Liste der Aufgaben hinzugefügt, und auch in der Missionsliste werden diese nach Kategorien geordnet angezeigt.", "Wenn das Feld leer ist, gehört die Mission zu keiner Kategorie und wird am Anfang der Missionsliste zusammengefasst angezeigt."],
+			title: "カテゴリ",
+			summary: "タスクが所属するカテゴリのID",
+			points: ["このタスクを所属させるカテゴリのIDを指定します。", "設定すると、プレイヤーのカテゴリの画面にタスクの一覧が追加され、ミッションの一覧でもカテゴリごとにまとめて表示されます。", "空欄の場合はどのカテゴリにも属さず、ミッションの一覧の先頭にまとめて表示されます。"],
 		},
 		timing: {
 			title: "Zeitmessung",
@@ -448,19 +448,24 @@ export const task: Type.Event = {
 		requirements: {
 			title: "Bedingungen und Konditionen",
 			summary: "Bedingungen für den Abschluss der Aufgabe",
-			points: ["タスクを達成させる条件です。", "この条件を満たすと達成になり、報酬を受け取れるようになります。", "一度達成すると、その後に条件を満たさなくなっても達成のままで、報酬もいつでも受け取れます。", "条件を設定していないタスクは達成しません。"],
+			points: ["タスクを達成させる条件です。", "この条件を満たすと達成になり、報酬を受け取れるようになります。", "一度達成すると、その後に条件を満たさなくなっても達成のままで、報酬もいつでも受け取れます。", "条件を設定していないタスクは達成しません。", "requiringGroupを有効にすると、ここで指定するidの意味がカテゴリ・アクション・アイテム個別のIDからグループIDに変わります。"],
 			children: requirement.children,
+		},
+		requiringGroup: {
+			title: "Gruppensumme",
+			summary: "Behandelt die id der Bedingung als Gruppen-ID und wertet nach der Summe ihrer Mitglieder aus",
+			points: ["Bei Aktivierung wird die in der Bedingung (requirements) festgelegte id als ID einer Gruppe aus den Grundeinstellungen behandelt.", "Eine Bedingung, deren Type Kategorie ist, wird anhand der Summe des Levels aller Kategorien dieser Gruppe ausgewertet.", "Eine Bedingung, deren Type Aktion ist, wird anhand der Summe der Ausführungen aller Aktionen dieser Gruppe ausgewertet.", "Eine Bedingung, deren Type Gegenstand ist, wird anhand der Summe der Anzahl aller Gegenstände dieser Gruppe im Besitz ausgewertet.", "Gesperrte (nicht released) Elemente werden nicht in die Summe einbezogen.", "Die Verbrauchswahrscheinlichkeit des Gegenstands (chance) und die Ausrüstungsbedingung (equipment) werden ignoriert, es wird nichts verbraucht. Sie dienen nur der Auswertung.", "Bei Deaktivierung wird die id der Bedingung wie bisher als ID einer einzelnen Kategorie, Aktion oder eines Gegenstands behandelt."],
 		},
 		acquisitions: {
 			title: "Belohnung",
 			summary: "Konfiguration der Belohnung bei Erledigung einer Aufgabe",
-			points: ["達成したタスクを開き、獲得のバーを押した時に受け取れる報酬です。", "カテゴリーのレベル、アクションの実行回数、アイテムの所持数を変化させることができます。", "数量にマイナスを設定することもできます。", "報酬を設定していないタスクは獲得のバーが出ず、達成した時点で完了になります。", "持てるアイテムの種類が上限に達している時は受け取れません。整理してから受け取り直します。"],
+			points: ["達成したタスクを開き、獲得のバーを押した時に受け取れる報酬です。", "カテゴリのレベル、アクションの実行回数、アイテムの所持数を変化させることができます。", "数量にマイナスを設定することもできます。", "報酬を設定していないタスクは獲得のバーが出ず、達成した時点で完了になります。", "持てるアイテムの種類が上限に達している時は受け取れません。整理してから受け取り直します。"],
 			children: acquisition.children,
 		},
 		group: {
 			title: "Arbeitsgruppe",
 			summary: "Anzeige, Gruppierung und Klassifizierung von Aufgaben",
-			points: ["Wenden Sie eine der in Basic konfigurierten Gruppen an.", "Die Aufgaben werden in der Reihenfolge der Konfigurationen angezeigt.", "Innerhalb der Kategorien werden die Einträge weiter in Gruppen unterteilt und angezeigt.", "Bleibt sie leer, wird keine Gruppierung vorgenommen."],
+			points: ["Wenden Sie eine der in Basic konfigurierten Gruppen an.", "Die Aufgaben werden in der Reihenfolge der Konfigurationen angezeigt.", "カテゴリの中でさらにグループごとに分けて表示されます。", "Bleibt sie leer, wird keine Gruppierung vorgenommen."],
 			links: { general: "general" },
 		},
 	},
@@ -472,8 +477,8 @@ export const task: Type.Event = {
 export const group: Type.Information = {
 	...information,
 	title: "Gruppe (z.B. von Personen)",
-	summary: "Definieren Sie Anzeigegruppen für Kategorien, Aktionen und Gegenstände",
-	points: ["Definieren Sie Gruppen, um die Reihenfolge der Anzeige zu steuern.", "Sie können die hier definierten Gruppen für jede Kategorie, Aktion und jeden Gegenstand einrichten.", "Gruppen mit der gleichen Gruppe werden dicht nebeneinander angezeigt.", "Bleibt sie leer, wird keine Gruppierung vorgenommen."],
+	summary: "カテゴリ、アクション、アイテムの表示グループを定義",
+	points: ["Definieren Sie Gruppen, um die Reihenfolge der Anzeige zu steuern.", "各カテゴリ、アクション、アイテムでここで定義したグループを設定できます。", "Gruppen mit der gleichen Gruppe werden dicht nebeneinander angezeigt.", "Bleibt sie leer, wird keine Gruppierung vorgenommen."],
 	options: {
 		label: "group",
 	},
@@ -495,11 +500,6 @@ export const skill: Type.Skill = {
 			summary: "Wird noch geschrieben",
 			points: ["Wird noch geschrieben"],
 		},
-		comment: {
-			title: "Anzeige der erläuternden Bemerkung",
-			summary: "Ob die erläuternde Bemerkung beim Auslösen als Toast-Benachrichtigung erscheint",
-			points: ["Flag dafür, ob die erläuternde Bemerkung als Toast-Benachrichtigung erscheint, wenn diese Fähigkeit ausgelöst wird.", "Wenn eingeschaltet, erscheint sie bei jedem Auslösen mit einer Wahrscheinlichkeit von (100% − Auslösewahrscheinlichkeit) ÷ 2. Bei einer Auslösewahrscheinlichkeit von 40% sind das 30%.", "Wenn ausgeschaltet, erscheint sie nicht.", "Ist die erläuternde Bemerkung leer, erscheint auch bei eingeschaltetem Flag nichts."],
-		},
 	},
 	options: {
 		label: "skill",
@@ -509,13 +509,13 @@ export const skill: Type.Skill = {
 export const item: Type.Item = {
 	title: "Gegenstand",
 	summary: "Güterelemente wie Ausrüstung und Verbrauchsgüter",
-	points: ["Dieses Element bezieht sich auf den Besitz von Gegenständen wie Ausrüstung, Verbrauchsmaterial und Wertsachen.", "Innerhalb einer Kategorie kann nur eine Ausrüstung vorhanden sein, oder sie kann Nichts sein.", "Es gibt auch zahllose Möglichkeiten, sie zu verwenden."],
+	points: ["Dieses Element bezieht sich auf den Besitz von Gegenständen wie Ausrüstung, Verbrauchsmaterial und Wertsachen.", "カテゴリ内で１つのみ装備することもできますが、装備できないようにもできます。", "Es gibt auch zahllose Möglichkeiten, sie zu verwenden."],
 	children: {
 		information: information,
 		category: {
-			title: "Kategorie.",
-			summary: "ID der Kategorie, zu der der Gegenstand gehört",
-			points: ["Geben Sie die ID der Kategorie an, zu der dieser Gegenstand gehört."],
+			title: "カテゴリ",
+			summary: "アイテムが所属するカテゴリのID",
+			points: ["このアイテムが所属するカテゴリのIDを指定します。"],
 		},
 		group: {
 			title: "Gruppe (z.B. von Personen)",
@@ -559,7 +559,7 @@ export const item: Type.Item = {
 		equipmentType: {
 			title: "Typ der Ausrüstung",
 			summary: "Typ-Einstellungen für Ausrüstung, Effekte und Verbrauch von Gegenständen.",
-			points: ["Ausrüstbare Gegenstände müssen zu einer Gruppe gehören, die in `equipmentGroups` der Kategorie angegeben ist.", "Innerhalb der gleichen Gruppe kann nur ein Gegenstand ausgerüstet werden.", "`unnecessary` wirkt unabhängig davon, ob der Gegenstand ausgerüstet ist, und die Stärke der Wirkung ist proportional zur besessenen Anzahl (bei 0 keine Wirkung, bei n das n-Fache)."],
+			points: ["装備可能なアイテムは、カテゴリの`equipmentGroups`で指定されたグループに属している必要があります。", "Innerhalb der gleichen Gruppe kann nur ein Gegenstand ausgerüstet werden.", "`unnecessary` wirkt unabhängig davon, ob der Gegenstand ausgerüstet ist, und die Stärke der Wirkung ist proportional zur besessenen Anzahl (bei 0 keine Wirkung, bei n das n-Fache)."],
 			list: [
 				["Wert", "Ausrüstung", "Effektivität.", "Verbrauch", "Beispiel."],
 				["`necessary`", "Notwendig", "Nur während der Ausrüstung (1 Stück)", "Nichts", "Schwerter, Rüstungen und andere Ausrüstung."],
@@ -586,14 +586,14 @@ export const action: Type.Action = {
 	children: {
 		information: information,
 		category: {
-			title: "Kategorie.",
-			summary: "ID der Kategorie, zu der die Aktion gehört",
-			points: ["Geben Sie die ID der Kategorie an, zu der diese Aktion gehört."],
+			title: "カテゴリ",
+			summary: "アクションが所属するカテゴリのID",
+			points: ["このアクションが所属するカテゴリのIDを指定します。"],
 		},
 		attribute: {
 			title: "Attribut",
-			summary: "Aktionsspezifische Kategorien von Attributen",
-			points: ["Es können einzelne Attribute (Kategorien) konfiguriert werden.", "Bleibt sie leer, wird die Kategorie, zu der sie gehört, übernommen", "Wenn Sie zum Beispiel das Attribut Magie für eine Aktion der Kategorie Dämonenschloss individuell konfigurieren, werden das Level und die Eigenschaften der Kategorie Magie berechnet und auf die Zeit und den Schaden der Aktion angewendet."],
+			summary: "アクション固有の属性カテゴリ",
+			points: ["個別の属性(カテゴリ)を設定できます。", "空欄の場合は属するカテゴリを引き継ぎます", "例えば、魔王城というカテゴリに属するアクションに個別に魔法という属性を設定した場合、アクション完了時間やダメージには魔法のカテゴリのレベルやプロパティが計算され適応されます。"],
 			links: { category: "category" },
 		},
 		group: {
@@ -659,15 +659,15 @@ export const action: Type.Action = {
 };
 
 export const category: Type.Category = {
-	title: "Kategorie.",
+	title: "カテゴリ",
 	summary: "Allgemeiner Rahmen für die Klassifizierung von Aktionen und Gegenständen.",
-	points: ["Stellt eine wichtige Minute dar.", "Zum Beispiel kann es in jeder beliebigen Konfiguration eingesetzt werden, wie z.B. Nahbereich, Fernbereich, Magie, Kerker, Schmiede, Manufakturen, usw.", "Aktionen und Gegenstände werden direkt ab der Welt platziert und sind mit einer Kategorie ID verbunden."],
+	points: ["Stellt eine wichtige Minute dar.", "Zum Beispiel kann es in jeder beliebigen Konfiguration eingesetzt werden, wie z.B. Nahbereich, Fernbereich, Magie, Kerker, Schmiede, Manufakturen, usw.", "アクションやアイテムはワールド直下に配置され、カテゴリIDで関連付けられます。"],
 	children: {
 		information: information,
 		group: {
 			title: "Gruppe (z.B. von Personen)",
-			summary: "Gruppeneinteilung der Kategorien anzeigen",
-			points: ["Wenden Sie eine der in Basic konfigurierten Gruppen an.", "Es wird eine Liste der Kategorien in der Reihenfolge der Konfiguration der Gruppen angezeigt."],
+			summary: "カテゴリの表示グループ分類",
+			points: ["Wenden Sie eine der in Basic konfigurierten Gruppen an.", "設定したグループ順にカテゴリ一覧が表示されます。"],
 			links: { general: "general" },
 		},
 		unlocked: {
@@ -675,27 +675,27 @@ export const category: Type.Category = {
 			summary: "Anfänglicher Anzeige- und Freigabezustand des Elements (wechselt automatisch in den nächsthöheren Zustand, sobald die Auslösebedingungen erfüllt sind)",
 			points: ["secreted: Wird in der Benutzeroberfläche erst angezeigt, wenn alle Anforderungen erfüllt sind (erscheint weder in den Hinweisen noch in der Liste der Anforderungen und Belohnungen).", "hidden: Solange kein Freischaltelement darauf verweist und die Voraussetzungen nicht erfüllt sind, bleibt es vollständig verborgen (der Name ist ausgegraut und es kann nicht bearbeitet werden).", "hinted (Standard): Es wird nur der Name angezeigt, aber der Eintrag kann erst bearbeitet werden, wenn er freigegeben ist.", "freigegeben: Unabhängig von den Bedingungen von Anfang an freigegeben und bedienbar (früher „Von Anfang an anzeigen“)."],
 		},
-		requirements: { ...requirement, options: { ...requirement.options, array: true }, summary: "Notwendige Anforderungen für die Verwendung der Kategorie." },
+		requirements: { ...requirement, options: { ...requirement.options, array: true }, summary: "カテゴリ利用に必要な条件" },
 		equipmentGroups: {
 			title: "Ausrüstungsgruppe",
-			summary: "Bezeichnung der Gegenstandsgruppen, die in dieser Kategorie ausgerüstet werden können.",
-			points: ["Liste der Gruppennamen von Gegenständen, die in dieser Kategorie ausgerüstet werden können.", "Es können nur Gegenstände aus der Gruppe ausgerüstet werden, die dem hier angegebenen Gruppennamen entspricht.", "Wird eine leere Zeichenfolge angegeben, kommen Gegenstände mit einer nicht eingestellten Gruppe (leer) für die Ausrüstung in Frage.", "In der gleichen Gruppe kann nur ein Gegenstand ausgerüstet werden. Wenn Sie einen neuen Gegenstand ausrüsten, wird ein bereits vorhandener Gegenstand in derselben Gruppe automatisch abgelegt.", "Wenn die Liste leer ist (0 Stück), kann nichts ausgerüstet werden."],
+			summary: "このカテゴリで装備可能なアイテムグループの指定",
+			points: ["このカテゴリで装備できるアイテムのグループ名のリストです。", "Es können nur Gegenstände aus der Gruppe ausgerüstet werden, die dem hier angegebenen Gruppennamen entspricht.", "Wird eine leere Zeichenfolge angegeben, kommen Gegenstände mit einer nicht eingestellten Gruppe (leer) für die Ausrüstung in Frage.", "In der gleichen Gruppe kann nur ein Gegenstand ausgerüstet werden. Wenn Sie einen neuen Gegenstand ausrüsten, wird ein bereits vorhandener Gegenstand in derselben Gruppe automatisch abgelegt.", "Wenn die Liste leer ist (0 Stück), kann nichts ausgerüstet werden."],
 			links: { general: "general" },
 		},
 		numeric: {
 			title: "Verfügbarkeit der Levels",
-			summary: "Verfügbarkeit von Funktionen auf Kategorie Level",
-			points: ["Dieses Kennzeichen gibt an, ob diese Kategorie ein Level hat oder nicht.", "Ist er an, hat er ein Level, ist er aus, hat er keins.", "Ein Beispiel ist das Einschalten von Kategorien, die auf Erfahrung basieren, wie Schwertkampf und Magie, und das Ausschalten von Kategorien, die auf dem Ort basieren, wie Verliese und Schmiede."],
+			summary: "カテゴリレベル機能の有無",
+			points: ["このカテゴリがレベルを持つかどうかのフラグです。", "Ist er an, hat er ein Level, ist er aus, hat er keins.", "例として、剣技や魔法といった経験に基づくカテゴリはオンにし、ダンジョンや鍛冶屋といった場所のカテゴリはオフにするなどの使い方があります。"],
 		},
 		standaloneProgress: {
 			title: "gleichzeitiger Fortschritt",
-			summary: "Konfiguration der parallelen Ausführung mit anderen Kategorien",
-			points: ["Dieses Kennzeichen gibt an, ob Aktionen in dieser Kategorie parallel zu Aktionen in anderen Kategorien fortschreiten können.", "Wenn sie an sind, können sie gleichzeitig und unabhängig von anderen Kategorien von Aktionen Fortschritte machen.", "Ist sie ausgeschaltet, kann sie nicht gleichzeitig mit Aktionen in anderen Kategorien durchgeführt werden, die ebenfalls auf \"Aus\" gesetzt sind. Wenn Sie eine neue Aktion in dieser Kategorie starten, werden laufende Aktionen in anderen, nicht eigenständigen Kategorien automatisch abgebrochen."],
+			summary: "他カテゴリとの並行実行設定",
+			points: ["このカテゴリのアクションが、他のカテゴリのアクションと並行して進行できるかどうかのフラグです。", "オンの場合は、他のカテゴリのアクションとは独立して同時に進行できます。", "オフの場合は、同じくオフに設定された他のカテゴリのアクションと同時に実行できません。新たにこのカテゴリのアクションを開始すると、他の非スタンドアロンカテゴリで進行中のアクションは自動的に中止されます。"],
 		},
 		background: {
 			title: "Hintergrund",
-			summary: "Kategorie-spezifische Hintergrund-Einstellungen",
-			points: ["Konfiguration des Hintergrunds für diese Kategorie.", "Wenn eine Kategorie ausgewählt wird, ändert sich das Hintergrundbild in Verbindung mit dieser Kategorie.", "Wenn nichts konfiguriert ist, wird die Welt-Hintergrundeinstellung so verwendet, wie sie ist."],
+			summary: "カテゴリ固有の背景設定",
+			points: ["このカテゴリの背景を設定します。", "カテゴリを選択されたときに、連動して背景画像が変更されます。", "Wenn nichts konfiguriert ist, wird die Welt-Hintergrundeinstellung so verwendet, wie sie ist."],
 		},
 	},
 	options: {
@@ -706,7 +706,7 @@ export const category: Type.Category = {
 export const type: Markdown = {
 	title: "Typ.",
 	summary: "Grundlegende Minuten-Klassifizierung der Welten",
-	points: ["Es gibt sieben Arten von Welten.", "Alle Elemente befinden sich direkt ab der Welt.", "Aktionen und Gegenstände werden mit der ID der Kategorie, zu der sie gehören, verknüpft."],
+	points: ["Es gibt sieben Arten von Welten.", "Alle Elemente befinden sich direkt ab der Welt.", "アクションとアイテムは所属するカテゴリのIDで関連付けられます。"],
 	list: expandList("Typ.", [category, action, item, skill, group, task, preset], "Beschreibung"),
 	quote: typeTree,
 	options: {
@@ -823,15 +823,15 @@ export const general: Type.General = {
 			links: { category: "category" },
 		},
 		maxCategoryLevels: {
-			title: "Maximales Level der Kategorie",
-			summary: "Level-Grenze für jede Kategorie.",
-			points: ["Konfiguration des maximalen Levels für jede Kategorie.", "Werden über dieses Level hinausgehende Erfahrungen erworben, so wird bei der Berechnung der einzelnen Eigenschaften der hier eingestellte maximale Wert verwendet.", "Dieser Wert ist für Kategorien ohne Levels nicht relevant."],
+			title: "カテゴリの最大レベル",
+			summary: "各カテゴリのレベル上限",
+			points: ["各カテゴリの最大レベルを設定します。", "Werden über dieses Level hinausgehende Erfahrungen erworben, so wird bei der Berechnung der einzelnen Eigenschaften der hier eingestellte maximale Wert verwendet.", "レベルのないカテゴリではこの値は関係ありません。"],
 			links: { category: "category" },
 		},
 		locking: {
 			title: "Sperrfunktion",
 			summary: "Artikel ausblenden, bis die Anforderungen erfüllt sind",
-			points: ["Wenn diese Option aktiviert ist, wird der Gegenstand der Kategorie Aktion ausgeblendet, solange er nicht verwendet wurde oder nicht über ihn verfügt und die Anforderungen nicht erfüllt sind.", "Wenn diese Funktion deaktiviert ist, werden alle Elemente von Anfang an angezeigt, können aber erst ausgeführt oder ausgerüstet werden, wenn die Anforderungen erfüllt sind."],
+			points: ["有効の場合、カテゴリ・アクション・アイテムは一度も使用・所持したことがなく、かつrequirementsを満たしていない間は非表示になります。", "Wenn diese Funktion deaktiviert ist, werden alle Elemente von Anfang an angezeigt, können aber erst ausgeführt oder ausgerüstet werden, wenn die Anforderungen erfüllt sind."],
 			links: { category: "category", action: "action", item: "item" },
 		},
 		coins: {
@@ -929,7 +929,7 @@ export const general: Type.General = {
 		levelCommonRatio: {
 			title: "Rate des Anstiegs der Erfahrung [Zeiten].",
 			summary: "Prozentualer Anstieg des Schwierigkeitsgrads beim Level-up.",
-			points: ["Mit steigendem Level einer Kategorie steigt auch die für das Erreichen des nächsten Levels notwendige Erfahrung.", "Wenn Sie diesen Wert erhöhen, steigt der Schwierigkeitsgrad.", "Die für den Aufstieg auf das nächste Level notwendige Erfahrung entspricht (Erfahrung-Zuwachsrate)^(aktuelles Level - 1)."],
+			points: ["カテゴリのレベルが上がるにつれて、次のレベルになるのに必要な経験値の上昇率です。", "Wenn Sie diesen Wert erhöhen, steigt der Schwierigkeitsgrad.", "Die für den Aufstieg auf das nächste Level notwendige Erfahrung entspricht (Erfahrung-Zuwachsrate)^(aktuelles Level - 1)."],
 			list: [
 				["Rate des Anstiegs der Erfahrung", "Lv.1", "Lv.2", "Lv.10", "Lv.50", "Lv.99."],
 				["0", "x1.00", "x1.00", "x1.00", "x1.00", "x1.00"],
@@ -943,7 +943,7 @@ export const general: Type.General = {
 		actionLevelLimit: {
 			title: "Action Level Restriction",
 			summary: "Fragt ab, wie oft das gleiche Attribut Aktion für die Ausführung einer Aktion gezählt wurde.",
-			points: ["Wenn diese Option aktiviert ist, wird die Anzahl der Ausführungen einer Aktion mit denselben Attributen automatisch zu den Ausführungsbedingungen jeder Aktion hinzugefügt.", "Die Anzahl der notwendigen Male entspricht dem Level-Wert der Aktion.", "Wenn kein Attribut konfiguriert ist, wird die ID der Kategorie verwendet, zu der sie gehört."],
+			points: ["Wenn diese Option aktiviert ist, wird die Anzahl der Ausführungen einer Aktion mit denselben Attributen automatisch zu den Ausführungsbedingungen jeder Aktion hinzugefügt.", "Die Anzahl der notwendigen Male entspricht dem Level-Wert der Aktion.", "属性が設定されていない場合は、所属するカテゴリのIDが使用されます。"],
 		},
 		propertyRatio: {
 			title: "Eigenschaftsfaktor [Zeiten]",
@@ -1045,7 +1045,7 @@ const toFixedEvent = (title: string, summary: string, points: string[], timingPo
 		requirements: {
 			title: "条件",
 			summary: "報酬を獲得する条件",
-			points: ["タイミングが成立するとイベントは発動し、専用の画面を開いて内容を表示します。", "報酬は、発動時にここで設定した条件を満たしている場合にのみ獲得します。", "条件を設定していない場合は、発動するたびに報酬を獲得します。"],
+			points: ["タイミングが成立するとイベントは発動し、専用の画面を開いて内容を表示します。", "報酬は、発動時にここで設定した条件を満たしている場合にのみ獲得します。", "条件を設定していない場合は、発動するたびに報酬を獲得します。", "requiringGroupを有効にすると、ここで指定するidの意味がカテゴリ・アクション・アイテム個別のIDからグループIDに変わります。"],
 			children: requirement.children,
 		},
 		acquisitions: {
@@ -1065,13 +1065,13 @@ const toFixedEvent = (title: string, summary: string, points: string[], timingPo
 export const event: Type.Events = {
 	title: "Ereignis",
 	summary: "Nachrichten und Belohnungen, die zu festgelegten Zeitpunkten ausgelöst werden",
-	points: ["Zu bestimmten Zeitpunkten, beispielsweise beim ersten Öffnen einer Welt oder wenn das Spiel vorbei ist, wird diese Funktion ausgelöst und ein spezieller Bildschirm geöffnet.", "Für jeden Zeitpunkt ist jeweils ein Feld vorgesehen; es können weder weitere hinzugefügt noch entfernt werden. Felder für nicht verwendete Zeitpunkte bleiben leer.", "Sie werden nicht in der Liste der Missionen und Aufgaben angezeigt. Aufgaben, die als erledigt gelten, sobald bestimmte Bedingungen erfüllt sind, werden als Aufgaben in der Konfiguration festgelegt.", "Die Belohnung wird automatisch bei Aktivierung erworben. Es gibt weder einen Vorgang zum Abholen wie bei Aufgaben noch ein Band.", "Er kann das Level der Kategorie, die Anzahl der durchgeführten Aktionen und die Anzahl der Gegenstände, die er bei der Aktivierung besitzt, verändern.", "Wenn Sie die Felder „Name“, „Beschreibung“ und „Symbol“ leer lassen, werden die bei den Spielern integrierten Standardtexte und -symbole verwendet."],
+	points: ["Zu bestimmten Zeitpunkten, beispielsweise beim ersten Öffnen einer Welt oder wenn das Spiel vorbei ist, wird diese Funktion ausgelöst und ein spezieller Bildschirm geöffnet.", "Für jeden Zeitpunkt ist jeweils ein Feld vorgesehen; es können weder weitere hinzugefügt noch entfernt werden. Felder für nicht verwendete Zeitpunkte bleiben leer.", "Sie werden nicht in der Liste der Missionen und Aufgaben angezeigt. Aufgaben, die als erledigt gelten, sobald bestimmte Bedingungen erfüllt sind, werden als Aufgaben in der Konfiguration festgelegt.", "Die Belohnung wird automatisch bei Aktivierung erworben. Es gibt weder einen Vorgang zum Abholen wie bei Aufgaben noch ein Band.", "発動時にカテゴリのレベル、アクションの実行回数、アイテムの所持数を変化させることができます。", "Wenn Sie die Felder „Name“, „Beschreibung“ und „Symbol“ leer lassen, werden die bei den Spielern integrierten Standardtexte und -symbole verwendet."],
 	list: [
 		["Zeitmessung", "Aktivierungsbedingung", "wiederholen"],
 		["`comebacked`", "Wenn eine Person für mehr als eine Sekunde aus dem Internet zurückkehrt und eine Aktion im Läuft ist.", "oft"],
 		["`gameovered`", "Wenn die Ausdauer des Spielers im Kampf zu Ende geht.", "oft"],
 		["`welcomed`", "Als ich mit dieser Welt anfing.", "nur einmal"],
-		["`completed`", "Wenn der max. Level aller Kategorien (maxCategoryLevels) erreicht ist.", "nur einmal"],
+		["`completed`", "全カテゴリのレベルが最大値（maxCategoryLevels）に達した時", "nur einmal"],
 		["`obtained`", "Wenn eine bestimmte Aktion (z. B. eine Schatzkiste) abgeschlossen bzw. bestätigt wurde", "oft"],
 	],
 	links: { task: "task" },
@@ -1079,7 +1079,7 @@ export const event: Type.Events = {
 		comebacked: toFixedEvent("Bei Rückkehr", "Wird bei der Rückkehr aus dem Offline-Zustand ausgelöst", ["Wird ausgelöst, wenn du nach mindestens einer Sekunde offline zurückkehrst und eine Aktion im Gange war.", "Wird zusammen mit der Zusammenfassung des Fortschritts während deiner Abwesenheit angezeigt."], ["Es ist auf `comebacked` festgelegt und kann nicht bearbeitet werden.", "Wird bei jeder Rückkehr ausgelöst, beliebig oft."]),
 		gameovered: toFixedEvent("Bei Game Over", "Wird ausgelöst, wenn im Kampf die Ausdauer aufgebraucht ist", ["Wird ausgelöst, wenn die Ausdauer des Spielers im Kampf aufgebraucht ist.", "Mit einer negativen Belohnungsmenge lässt sich einem Game Over ein Preis zuordnen."], ["Es ist auf `gameovered` festgelegt und kann nicht bearbeitet werden.", "Wird bei jedem Game Over ausgelöst, beliebig oft."]),
 		welcomed: toFixedEvent("Beim ersten Start", "Wird beim ersten Öffnen der Welt ausgelöst", ["Wird ausgelöst, wenn diese Welt zum ersten Mal gestartet wird.", "Dient dazu, die Spielwelt vorzustellen oder die Startausrüstung zu übergeben."], ["Es ist auf `welcomed` festgelegt und kann nicht bearbeitet werden.", "Wird nur einmal ausgelöst, beim ersten Start."]),
-		completed: toFixedEvent("Beim Abschluss", "Wird ausgelöst, wenn alle Kategorien ihr maximales Level erreichen", ["Wird ausgelöst, wenn die Level aller Kategorien den Maximalwert (maxCategoryLevels) erreichen.", "Kategorien, die nicht numeric sind, werden von der Prüfung ausgenommen."], ["Es ist auf `completed` festgelegt und kann nicht bearbeitet werden.", "Wird nur einmal ausgelöst, wenn die Bedingungen erfüllt sind."]),
+		completed: toFixedEvent("Beim Abschluss", "全カテゴリが最大レベルに達した時に発動", ["全カテゴリのレベルが最大値（maxCategoryLevels）に達した時に発動します。", "numeric（数値）でないカテゴリは判定から除かれます。"], ["Es ist auf `completed` festgelegt und kann nicht bearbeitet werden.", "Wird nur einmal ausgelöst, wenn die Bedingungen erfüllt sind."]),
 		obtained: toFixedEvent("Beim Abschluss einer Einzelaktion", "Wird beim Abschluss einer Einzelaktion wie einer Schatztruhe ausgelöst", ["Wird ausgelöst, wenn eine Aktion der Art single (etwa eine Schatztruhe) abgeschlossen und bestätigt wird.", "Zusätzlich zur eigenen Belohnung der Aktion lässt sich die hier eingestellte Belohnung obendrauf geben."], ["Es ist auf `obtained` festgelegt und kann nicht bearbeitet werden.", "Wird bei jedem Abschluss einer Einzelaktion ausgelöst, beliebig oft."]),
 	},
 	options: {
@@ -1090,7 +1090,7 @@ export const event: Type.Events = {
 export const basic: Type.Basic = {
 	title: "Grundeinstellung",
 	summary: "Grundlegende Konfigurationselemente für die Welt im Allgemeinen.",
-	points: ["Konfiguration des Namens der Welt, der Beschreibung, des Hintergrunds, der Währung, der Kapazität, des maximalen Levels der Kategorien, der Rate des Erfahrungszuwachses, des Rabatts, der Standard-Kampfparameter, usw.", "Diese Konfigurationen wirken sich auf die gesamte Welt aus."],
+	points: ["ワールドの名前、説明、背景、通貨、容量、カテゴリの最大レベル、経験値の上昇率、割引率、標準戦闘パラメータなどを設定します。", "Diese Konfigurationen wirken sich auf die gesamte Welt aus."],
 	list: expandList("Name", [overview, general, design, event, development], "Beschreibung"),
 	children: {
 		overview: overview,
@@ -1111,7 +1111,7 @@ export const basic: Type.Basic = {
 export const world: Type.World = {
 	title: "Welt",
 	summary: "Konfiguration der gesamten Spielwelt und Datenstruktur",
-	points: ["Daten über Spiele, die auf Konsolen gespielt werden können.", "Mit den Konfigurationen können Sie ein Abbruchspiel nach Ihren Wünschen gestalten.", "Welten bestehen aus Kategorien, Aktionen, Gegenständen und Ereignissen."],
+	points: ["Daten über Spiele, die auf Konsolen gespielt werden können.", "Mit den Konfigurationen können Sie ein Abbruchspiel nach Ihren Wünschen gestalten.", "ワールドはカテゴリ、アクション、アイテム、イベントなどの要素を内包します。"],
 	children: {
 		basic: basic,
 		categories: { ...category, options: { ...category.options, array: true } },

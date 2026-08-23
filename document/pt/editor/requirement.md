@@ -1,13 +1,13 @@
 
 # termos e condições
 Configuração dos requisitos necessários para o uso e exibição de elementos.
-- Essas são as condições configuradas para cada elemento por Categoria, Ação e Item.
+- カテゴリ、アクション、アイテムごとの各要素に設定する条件です。
 - Se todas as condições de configuração não forem atendidas, as operações mostradas na tabela não poderão ser realizadas.
 - Se a função de bloqueio estiver ativada, o elemento em si ficará oculto até que a condição seja atendida.
 
 |Onde fazer a configuração|O que nada pode ser feito se as condições forem atendidas.|
 |-|-|
-|Categoria.|Execução de todas as Ações e manipulação de Itens na Categoria|
+|カテゴリ|カテゴリ内の全てのアクションの実行とアイテムの操作|
 |Ação.|Execução de ações|
 |Item|Manipulação de itens (por exemplo, Equipamento)|
 - [_type_](pt/editor/type)
@@ -18,7 +18,7 @@ Tipo de elemento referenciado como uma condição.
 
 |Tipo.|Valores referenciados|
 |-|-|
-|Categoria.|Nível da Categoria.|
+|カテゴリ|カテゴリのレベル|
 |Ação.|Número de vezes que a Ação foi executada.|
 |Item|Número de itens mantidos.|
 ___

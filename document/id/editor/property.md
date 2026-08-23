@@ -20,11 +20,11 @@ Konfigurasi efek yang dimiliki Item.
 |mengembalikan|Mengubah jumlah stamina yang dipulihkan di akhir aksi. Semakin mendekati pemulihan penuh, semakin landai kenaikannya. (hanya untuk aksi stamina)|
 ___
 
-## Kategori.
-Spesifikasi kategori yang berlaku untuk properti tersebut.
-- Konfigurasi ID kategori yang berlaku untuk properti ini.
-- Jika diatur `*`, berlaku untuk semua kategori.
-- Jika kosong, ini berlaku untuk Kategori di mana Item tersebut berada.
+## カテゴリ
+プロパティを適用するカテゴリの指定
+- このプロパティを適用するカテゴリのIDを設定します。
+- `*`を設定すると全カテゴリに適用されます。
+- 空欄の場合はアイテムが属するカテゴリに適用されます。
 ___
 
 ## Nilai serangan [perbedaan level].

@@ -1,13 +1,13 @@
 
 # acquisitions
-Configure acquisition of Item or Category level
+アイテムやカテゴリレベルの取得設定
 - Configure the acquisition.
-- You can change the level of the Category as well as the Item, and the number of times the Action has been performed.
+- アイテムの他にカテゴリのレベル、アクションの実行した回数を変更できます。
 - You can configure the probability of obtaining the product.
 
 |Type|What you will acquire|
 |-|-|
-|Category|level|
+|カテゴリ|level|
 |Action.|Number of times executed|
 |Item|number possessed|
 - [_type_](en/editor/type)
@@ -18,7 +18,7 @@ Type of element to be acquired
 
 |Type|What is Acquisitions|
 |-|-|
-|Category|Level (added in terms of experience value)|
+|カテゴリ|Level (added in terms of experience value)|
 |Action.|Number of times executed|
 |Item|number possessed|
 ___
@@ -31,7 +31,7 @@ ___
 Value to be obtained
 - Minus values configured will decrease the number of possessions, the number of times they have been performed, and their level. However, it will not go down to 0 or below.
 - If an Item has a configured maximum ownership count (max), the number of possessions will not increase beyond that value.
-- If the Type is Category, the value configured is added directly to the level (1 for 1 level, 0.5 for 0.5 level). The usual way to adjust this is to use the Action's experience value config. Unnecessary to configure this setting unless there is a special purpose.
+- タイプがカテゴリの場合、設定した値がレベルに直接加算されます（1で1レベル、0.5で0.5レベル）。アクションの経験値設定で調整するのが通常の方法です。特殊な目的がない限りこの設定は不要です。
 ___
 
 ## Probability [-1 to 1]

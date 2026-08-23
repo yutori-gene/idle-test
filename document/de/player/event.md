@@ -1,6 +1,6 @@
 
 # Ereignis
 Ein System, das zu festgelegten Zeitpunkten ausgelöst wird
-- Wird zu bestimmten Zeitpunkten ausgelöst, etwa bei der Rückkehr ins Spiel oder bei einem Game Over.
-- Bei Auslösung öffnet sich dieser Bildschirm und die Belohnung wird zusammen mit einer Nachricht automatisch gewährt.
-- Eine Aufgabe schließt du ab, indem du bestimmte Bedingungen erfüllst; die Belohnung holst du dir selbst ab.
+- Occurs at set timings, such as when you return to the game or when it's game over.
+- When it occurs, this screen opens and a reward is automatically granted along with a message.
+- A Task is completed when its condition is met, and you receive the reward yourself.

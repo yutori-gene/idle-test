@@ -1,13 +1,13 @@
 
 # Erwerbungen
-Konfiguration der Erfassung auf Item- und Kategorie Level.
+アイテムやカテゴリレベルの取得設定
 - Konfigurieren Sie die Erwerbe.
-- Sie können sowohl das Level der Kategorie als auch den Gegenstand und die Anzahl der durchgeführten Aktionen ändern.
+- アイテムの他にカテゴリのレベル、アクションの実行した回数を変更できます。
 - Die Wahrscheinlichkeit, das Produkt zu erhalten, kann konfiguriert werden.
 
 |Typ.|Was Sie erwerben.|
 |-|-|
-|Kategorie.|Level|
+|カテゴリ|Level|
 |Aktion.|Anzahl der Ausführungsvorgänge.|
 |Gegenstand|Anzahl der Besitztümer|
 - [_type_](de/editor/type)
@@ -18,7 +18,7 @@ Art des zu erwerbenden Elements.
 
 |Typ.|Was wird erworben.|
 |-|-|
-|Kategorie.|Level (Erfahrungsumrechnung hinzugefügt)|
+|カテゴリ|Level (Erfahrungsumrechnung hinzugefügt)|
 |Aktion.|Anzahl der Ausführungsvorgänge.|
 |Gegenstand|Anzahl der Besitztümer|
 ___
@@ -31,7 +31,7 @@ ___
 Zu ermittelnde numerische Werte
 - Minus-Werte verringern die Anzahl der Besitztümer, die Anzahl der Durchführungen und ihr Level. Er kann jedoch nicht kleiner als 0 sein.
 - Wenn ein Gegenstand eine maximale Anzahl von Besitztümern hat (Maximum), wird die Anzahl der Besitztümer nicht über diesen Wert hinaus erhöht.
-- Ist der Typ eine Kategorie, wird der eingestellte Wert direkt zum Level addiert (1 für 1 Level, 0,5 für 0,5 Level). Der übliche Weg, dies anzupassen, ist die Konfiguration des Erfahrungs-Wertes der Aktion. Diese Konfiguration ist nicht notwendig, es sei denn, es gibt einen besonderen Zweck.
+- タイプがカテゴリの場合、設定した値がレベルに直接加算されます（1で1レベル、0.5で0.5レベル）。アクションの経験値設定で調整するのが通常の方法です。特殊な目的がない限りこの設定は不要です。
 ___
 
 ## Wahrscheinlichkeit [-1 bis 1]

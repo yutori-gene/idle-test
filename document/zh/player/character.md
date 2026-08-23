@@ -5,24 +5,24 @@ ___
 
 ## 活动
 所有动作清单
-- 长按可切换动作的执行。
+- Hold to toggle performing the Action.
 ___
 
 ## 库存
 所有物品清单
-- 长按可切换物品的装备。
+- Hold to toggle equipping the Item.
 ___
 
 ## 状态。
 所有属性列表
 - 仅显示物品对该类别产生的属性数值。
-- 根据要执行的动作，还会有其他修正。
+- Depending on the Action performed, additional bonuses may apply.
 ___
 
 ## 使命
 所有任务列表
-- 任务按类别分组显示。
-- 未设置类别的任务会汇总在最前面。
-- 已完成的任务会显示勾选标记。
-- 尚未领取奖励的任务会标有丝带。选中后按领取即可获得。
-- 任务一旦完成便保持完成状态，即使之后不再满足条件。
+- Tasks are grouped and shown by Category.
+- Tasks with no Category set are grouped at the top.
+- Completed Tasks have a checkmark.
+- Tasks whose reward hasn't been claimed yet have a ribbon. Select it and press Receive to claim it.
+- Once a Task is completed, it stays completed even if the condition is no longer met afterward.

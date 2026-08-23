@@ -1,20 +1,20 @@
 
 # 物品
 物品详情。
-- 物品是与装备、消耗品、贵重品等持有物相关的要素。
-- 一个类别中只能装备一件物品。（在设置为可作为类别装备时）
-- 未满足解锁条件的物品处于锁定状态，无法查看详情。
+- Items are elements related to what you hold, such as equipment, consumables, and valuables.
+- Only one Item can be equipped within a single Category (when the Category is set to allow equipping).
+- Items that don't meet their unlock condition are locked, and their details cannot be viewed.
 ___
 
 ## 物品。
-类别中的物品清单。
-- 长按可切换物品的装备。
-- 列表中只能装备一件物品。（在设置为可作为类别装备时）
-- 未满足解锁条件的物品处于锁定状态，无法查看详情。
+カテゴリ内のアイテムの一覧
+- Hold to toggle equipping the Item.
+- Only one Item in the list can be equipped (when the Category is set to allow equipping).
+- Items that don't meet their unlock condition are locked, and their details cannot be viewed.
 ___
 
 ## 交易
 购买或出售货币物品。
-- 部分物品无法买卖。
-- 锁定的物品无法买卖。
-- 持有上限或预约槽（队列）的购买次数可能有上限，达到上限后将无法继续购买。（通过奖励获得的增加不受此限制）
+- Some Items cannot be bought or sold.
+- Locked Items cannot be bought or sold.
+- The Capacity and Queue may have a limit on the number of times they can be purchased; once the limit is reached, no more can be purchased (increases from rewards are not subject to the limit).

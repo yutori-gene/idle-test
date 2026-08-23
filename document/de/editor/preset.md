@@ -31,7 +31,7 @@ ___
 
 ### Keine Überschneidungen.
 Verbot von doppelten IDs innerhalb desselben Typs.
-- Nichts innerhalb von Kategorien, Aktionen, Gegenständen, Ereignissen und voreingestellten Typen duplizieren, da diese zur Identifizierung von Elementen verwendet werden.
+- 要素の判別に用いられるため、カテゴリ、アクション、アイテム、イベント、プリセットの各タイプ内で重複しないでください。
 - Die gleiche ID für verschiedene Typen zu haben, ist kein Problem.
 - [_type_](de/editor/type)
 ___
@@ -113,8 +113,8 @@ ___
 Übernahme der am übergeordneten Element eingestellten Farbe
 - Bleibt das Feld leer, wird die am übergeordneten Element eingestellte Farbe übernommen.
 - Die Hierarchie der Typen der einzelnen Elemente sieht wie folgt aus.
-- Ist zum Beispiel für eine Aktion eine eigene Farbe eingestellt, wird diese verwendet; ist für die Aktion keine eigene Farbe eingestellt, wird die Farbe der Kategorie oder der Welt verwendet.
-- Ist auch für ein Ereignis eine Kategorie eingestellt, übernimmt es die Farbe dieser Kategorie ebenso wie Aktionen und Gegenstände.
+- 例えば、アクションに個別の色が設定されている場合はそれが利用されますが、アクションに個別の色が設定されていない場合はカテゴリ又はワールドの色が使用されます。
+- イベントもカテゴリを設定している場合は、アクションやアイテムと同じようにそのカテゴリの色を引き継ぎます。
 ```
 world
 ├── category

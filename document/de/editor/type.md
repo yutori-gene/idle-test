@@ -3,7 +3,7 @@
 Grundlegende Minuten-Klassifizierung der Welten
 - Es gibt sieben Arten von Welten.
 - Alle Elemente befinden sich direkt ab der Welt.
-- Aktionen und Gegenstände werden mit der ID der Kategorie, zu der sie gehören, verknüpft.
+- アクションとアイテムは所属するカテゴリのIDで関連付けられます。
 
 |Typ.|Beschreibung|
 |-|-|
@@ -11,7 +11,7 @@ Grundlegende Minuten-Klassifizierung der Welten
 |[_action_](de/editor/action)|Elemente des Handelns wie Sammeln, Herstellen und Kämpfen.|
 |[_item_](de/editor/item)|Güterelemente wie Ausrüstung und Verbrauchsgüter|
 |[_skill_](de/editor/skill)|Wird noch geschrieben|
-|[_group_](de/editor/group)|Definieren Sie Anzeigegruppen für Kategorien, Aktionen und Gegenstände|
+|[_group_](de/editor/group)|カテゴリ、アクション、アイテムの表示グループを定義|
 |[_task_](de/editor/task)|Missionen, die als abgeschlossen gelten, sobald die Bedingungen erfüllt sind|
 |[_preset_](de/editor/preset)|Anpassen der Anzeige von Systemelementen|
 ```

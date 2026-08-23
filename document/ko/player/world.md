@@ -5,22 +5,22 @@ ___
 
 ## 개요
 이 게임 소개
-- 이 게임의 월드(세계관, 설정)를 확인할 수 있습니다.
-- 이 게임을 구동하는 콘솔(시스템)도 확인할 수 있습니다.
+- You can check this game's World (setting and lore).
+- You can also check the console (system) running this game.
 ___
 
 ## 통계
 진행 상황 정리
-- 지금까지의 게임 진행 상황을 확인할 수 있습니다.
+- You can check the game's progress so far.
 ___
 
 ## 설정
 게임 설정 변경
-- 게임의 표시와 처리에 관한 설정을 합니다.
-- 게임 데이터를 입출력하고 초기화할 수 있습니다.
+- Configure settings related to the game's display and processing.
+- You can read, write, or reset game data.
 ___
 
 ## 디버그
 디버깅 확인을 위한 조작
-- 디버그 중에만 표시됩니다.
-- 게임을 공개하고 배포할 때는 표시되지 않습니다.
+- This is shown only during debugging.
+- Not shown when the game is published or distributed.

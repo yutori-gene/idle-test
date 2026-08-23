@@ -5,24 +5,24 @@ ___
 
 ## Aktivität
 Liste aller Aktionen
-- Ein langer Druck schaltet die Ausführung der Aktion um.
+- Hold to toggle performing the Action.
 ___
 
 ## Inventar
 Liste aller Gegenstände
-- Langes Drücken schaltet die Ausrüstung des Gegenstands um.
+- Hold to toggle equipping the Item.
 ___
 
 ## Status
 Liste aller Eigenschaften
 - Nur der Eigenschaftswert, den Gegenstände auf die Kategorie anwenden, wird angezeigt.
-- Je nach auszuführender Aktion greifen noch weitere Korrekturen.
+- Depending on the Action performed, additional bonuses may apply.
 ___
 
 ## Mission
 Liste aller Aufgaben
-- Die Aufgaben werden nach Kategorie gruppiert angezeigt.
-- Aufgaben ohne eingestellte Kategorie werden oben zusammengefasst.
-- Bei abgeschlossenen Aufgaben wird ein Häkchen angezeigt.
-- Ein Band kennzeichnet Aufgaben, deren Belohnung noch nicht abgeholt wurde. Wähle eine aus und drücke Erhalten.
-- Eine einmal abgeschlossene Aufgabe bleibt abgeschlossen, auch wenn die Bedingungen später nicht mehr erfüllt sind.
+- Tasks are grouped and shown by Category.
+- Tasks with no Category set are grouped at the top.
+- Completed Tasks have a checkmark.
+- Tasks whose reward hasn't been claimed yet have a ribbon. Select it and press Receive to claim it.
+- Once a Task is completed, it stays completed even if the condition is no longer met afterward.

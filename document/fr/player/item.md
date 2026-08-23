@@ -1,20 +1,20 @@
 
 # Objet
 Détails de l'objet.
-- Les objets sont des éléments liés à ce que l'on possède, comme l'équipement, les consommables et les objets de valeur.
-- Un seul objet peut être équipé au sein d'une catégorie. (S'il est configuré pour pouvoir être équipé en tant que catégorie)
-- Les objets qui ne remplissent pas les conditions de déblocage sont verrouillés et leur détail n'est pas consultable.
+- Items are elements related to what you hold, such as equipment, consumables, and valuables.
+- Only one Item can be equipped within a single Category (when the Category is set to allow equipping).
+- Items that don't meet their unlock condition are locked, and their details cannot be viewed.
 ___
 
 ## Objet.
-Liste des objets de la catégorie.
-- Appuyez longuement pour activer ou désactiver l'équipement de l'objet.
-- Un seul objet de la liste peut être équipé. (S'il est configuré pour pouvoir être équipé en tant que catégorie)
-- Les objets qui ne remplissent pas les conditions de déblocage sont verrouillés et leur détail n'est pas consultable.
+カテゴリ内のアイテムの一覧
+- Hold to toggle equipping the Item.
+- Only one Item in the list can be equipped (when the Category is set to allow equipping).
+- Items that don't meet their unlock condition are locked, and their details cannot be viewed.
 ___
 
 ## transactions
 Acheter ou vendre des objets en monnaie.
-- Certains objets ne peuvent être ni achetés ni vendus.
-- Les objets verrouillés ne peuvent être ni achetés ni vendus.
-- Le nombre d'achats peut être limité pour une capacité ou un emplacement de réservation (file d'attente) donné ; une fois cette limite atteinte, vous ne pourrez plus acheter. (Les augmentations issues des récompenses ne sont pas soumises à cette limite)
+- Some Items cannot be bought or sold.
+- Locked Items cannot be bought or sold.
+- The Capacity and Queue may have a limit on the number of times they can be purchased; once the limit is reached, no more can be purchased (increases from rewards are not subject to the limit).

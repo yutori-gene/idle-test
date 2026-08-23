@@ -1,7 +1,7 @@
 
 # l'information
 Configuration des informations de base sur l'élément (ID, nom, icône, couleur, etc.)
-- Éléments d'information de base communs à chaque élément du monde (catégories, actions, objets, événements, etc.).
+- ワールド内の各要素（カテゴリ、アクション、アイテム、イベントなど）に共通する基本情報の項目です。
 - Chaque élément est configuré séparément.
 ___
 
@@ -28,7 +28,7 @@ ___
 
 ### Pas de double emploi.
 Interdiction de dupliquer les ID au sein d'un même Type.
-- Ne pas dupliquer dans les types de catégories, d'actions, d'objets, d'événements et de préréglages car ils sont utilisés pour identifier les éléments.
+- 要素の判別に用いられるため、カテゴリ、アクション、アイテム、イベント、プリセットの各タイプ内で重複しないでください。
 - Le fait d'avoir le même ID pour différents types ne pose pas de problème.
 - [_type_](fr/editor/type)
 ___
@@ -110,8 +110,8 @@ ___
 Reprise de la couleur configurée sur l'élément parent
 - Si le champ est laissé vide, la couleur configurée sur l'élément parent est héritée.
 - La hiérarchie des types de chaque élément est la suivante.
-- Par exemple, si une couleur propre est configurée sur une action, c'est elle qui est utilisée ; si aucune couleur propre n'est configurée sur l'action, la couleur de la catégorie ou du monde est utilisée.
-- Lorsqu'un événement a également une catégorie configurée, il hérite de la couleur de cette catégorie, tout comme les actions et les objets.
+- 例えば、アクションに個別の色が設定されている場合はそれが利用されますが、アクションに個別の色が設定されていない場合はカテゴリ又はワールドの色が使用されます。
+- イベントもカテゴリを設定している場合は、アクションやアイテムと同じようにそのカテゴリの色を引き継ぎます。
 ```
 world
 ├── category

@@ -26,17 +26,17 @@ Délais pour le progrès désactivé.
 - [_category_](fr/editor/category)
 ___
 
-## Niveau max de la Catégorie
-Niveau haut pour chaque Catégorie.
-- Configurer le niveau max pour chaque Catégorie.
+## カテゴリの最大レベル
+各カテゴリのレベル上限
+- 各カテゴリの最大レベルを設定します。
 - Si l'expérience est acquise au-delà de ce niveau, le niveau max fixé ici est utilisé dans le calcul de chaque propriété.
-- Cette valeur n'est pas relationnelle pour les catégories sans niveau.
+- レベルのないカテゴリではこの値は関係ありません。
 - [_category_](fr/editor/category)
 ___
 
 ## fonction verrouillée
 Cacher des éléments jusqu'à ce que les exigences soient satisfaites
-- Si cette option est activée, l'Objet de l'action de catégorie est masqué tant qu'il n'a jamais été utilisé ou possédé et que les conditions requises n'ont pas été remplies.
+- 有効の場合、カテゴリ・アクション・アイテムは一度も使用・所持したことがなく、かつrequirementsを満たしていない間は非表示になります。
 - S'il est désactivé, tous les éléments sont affichés dès le début, mais ne peuvent être exécutés ou équipés tant que les conditions requises ne sont pas remplies.
 - [_category_](fr/editor/category)
 - [_action_](fr/editor/action)
@@ -155,7 +155,7 @@ ___
 
 ## Taux de haut de l'expérience [fois].
 Augmentation en pourcentage de la difficulté du niveau.
-- Plus le niveau d'une catégorie est élevé, plus le taux d'augmentation de l'expérience requise pour atteindre le niveau suivant est élevé.
+- カテゴリのレベルが上がるにつれて、次のレベルになるのに必要な経験値の上昇率です。
 - En augmentant cette valeur, vous augmentez le niveau de difficulté.
 - Le nombre de points d'expérience nécessaires pour passer au niveau suivant est égal à (taux d'augmentation des points d'expérience)^(niveau actuel - 1).
 
@@ -173,7 +173,7 @@ ___
 Demande le nombre de fois où la même action d'attribut a été exécutée pour l'exécution d'une action.
 - Si cette option est activée, le nombre de fois qu'une action ayant les mêmes attributs a été exécutée est automatiquement ajouté aux conditions d'exécution de chaque action.
 - Le nombre de fois compté est égal à la valeur du niveau de l'Action.
-- Si aucun attribut n'est configuré, c'est l'ID de la catégorie à laquelle il appartient qui est utilisé.
+- 属性が設定されていない場合は、所属するカテゴリのIDが使用されます。
 ___
 
 ## Rapport de propriété [fois]

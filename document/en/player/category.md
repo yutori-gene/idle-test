@@ -1,13 +1,13 @@
 
-# Category
+# カテゴリ
 A compilation of various elements
-- アクションやアイテムをまとめた要素
+- An element that groups together Actions and Items.
 ___
 
 ## Task
-List of tasks in this category
-- このカテゴリに割り当てられたタスクの一覧
-- タスクを選ぶと、達成条件と報酬を確認できる
-- 報酬をまだ受け取っていないタスクにはリボンが付く。選んで受け取るを押すと受け取れる。
-- 所持できるアイテムの種類数が上限に達している間は報酬を受け取れない。空きを作ってから受け取り直す。
-- カテゴリにタスクが1つもない場合は表示されない
+カテゴリ内のタスクの一覧
+- A list of Tasks assigned to this Category.
+- Select a Task to check its completion condition and reward.
+- Tasks whose reward hasn't been claimed yet have a ribbon. Select it and press Receive to claim it.
+- You cannot receive the reward while the number of Item types you can hold has reached its limit. Make room, then try receiving it again.
+- Not shown if the Category has no Tasks.

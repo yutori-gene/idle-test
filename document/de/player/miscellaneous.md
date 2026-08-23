@@ -8,5 +8,5 @@ ___
 
 ## Sprache.
 Wechsel der Sprache
-- Wechselt die im Spiel angezeigte Sprache.
-- Das gilt nur, wenn der Autor eine Übersetzung bereitgestellt hat.
+- Switches the language displayed in the game.
+- Only available when the author has provided a translation.

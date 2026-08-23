@@ -1,6 +1,6 @@
 
 # 이벤트
 정해진 시점에 작동하는 시스템
-- 게임에 복귀했을 때나 게임 오버가 되었을 때 등 정해진 시점에 발생합니다.
-- 발생하면 이 화면이 열리고, 메시지와 함께 보상이 자동으로 지급됩니다.
-- 과제는 특정 조건을 충족하면 달성되며, 보상은 직접 받습니다.
+- Occurs at set timings, such as when you return to the game or when it's game over.
+- When it occurs, this screen opens and a reward is automatically granted along with a message.
+- A Task is completed when its condition is met, and you receive the reward yourself.

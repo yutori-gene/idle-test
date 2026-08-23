@@ -8,6 +8,6 @@
 |-|-|
 |[_information_](ko/editor/information)|요소의 기본 정보(ID, 이름, 아이콘, 색상 등)를 설정합니다.|
 |[_requirement_](ko/editor/requirement)|요소의 사용 및 표시에 필요한 요구사항 설정|
-|[_acquisition_](ko/editor/acquisition)|아이템 및 카테고리 레벨 획득 설정|
+|[_acquisition_](ko/editor/acquisition)|アイテムやカテゴリレベルの取得設定|
 |[_combat_](ko/editor/combat)|스태미너 타입 액션의 전투 보정 값 설정|
 |[_property_](ko/editor/property)|아이템이 가지는 효과 설정|

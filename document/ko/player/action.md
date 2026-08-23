@@ -1,20 +1,20 @@
 
 # 액션
 채집, 제작, 전투 등의 행동 요소
-- 실행할 때마다 경험치를 얻어 레벨이 오를 수 있습니다.
-- 실행할 때마다 아이템을 소비하거나 획득합니다.
-- 해제 조건을 충족하지 못한 액션은 잠기며 자세한 내용을 볼 수 없습니다.
+- Each time it is performed, you gain Experience and may Level up.
+- Each time it is performed, Items are consumed or gained.
+- Actions that don't meet their unlock condition are locked, and their details cannot be viewed.
 ___
 
 ## 액션
-카테고리 내 액션 목록
-- 길게 누르면 액션의 실행을 전환합니다.
-- 하나의 카테고리에서 실행할 수 있는 것은 하나뿐입니다.
-- 일부 카테고리에서는 여러 카테고리의 액션을 동시에 진행할 수 있습니다.
-- 해제 조건을 충족하지 못한 액션은 잠기며 자세한 내용을 볼 수 없습니다.
+カテゴリ内のアクションの一覧
+- Hold to toggle performing the Action.
+- Only one Action can be performed within a single Category.
+- Depending on the Category, Actions in multiple Categories can progress at the same time.
+- Actions that don't meet their unlock condition are locked, and their details cannot be viewed.
 ___
 
 ## 행동
 액션 제어
-- 액션을 시작하거나 중지합니다.
-- 실행할 횟수를 지정할 수 있습니다. 맨 오른쪽을 선택하면 자원이 소진될 때까지 실행합니다.
+- Starts or stops the Action.
+- You can specify the number of times to perform it. Choosing the rightmost option performs it until resources run out.
