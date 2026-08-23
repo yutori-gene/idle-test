@@ -6370,8 +6370,7 @@
       "items": {
         "type": "object",
         "additionalProperties": false,
-        "format": "categories",
-        "basicCategoryTitle": "Skill",
+        "format": "grid",
         "headerTemplate": "{{ i1 }}: {{ self.information.id }}",
         "options": {
           "disable_collapse": true
@@ -6379,7 +6378,8 @@
         "required": [
           "information",
           "chance",
-          "property"
+          "property",
+          "comment"
         ],
         "properties": {
           "information": {
@@ -6674,12 +6674,31 @@
               }
             },
             "title": "전투 값",
-            "description": "작성 예정",
+            "description": "발동한 턴에 더해지는 전투 값",
             "yutori": {
               "points": [
-                "작성 예정"
+                "이 스킬이 발동한 턴에만 이 전투 값이 레벨 차이 보정으로 더해집니다.",
+                "회복 값만은 예외로, 그 턴이 아니라 결판이 난 뒤의 회복에 합산되어 적용됩니다. 액션 중 발동한 스킬의 회복 값 중 가장 큰 값을, 아군의 스킬이면 회복량에 더하고 상대의 스킬이면 회복량에서 뺍니다."
               ],
               "reference": "ko/editor/combat"
+            }
+          },
+          "comment": {
+            "type": "boolean",
+            "default": false,
+            "format": "checkbox",
+            "title": "설명문 표시",
+            "options": {
+              "infoText": "발동 시 설명문을 토스트로 표시할지 여부"
+            },
+            "yutori": {
+              "points": [
+                "이 스킬이 발동했을 때 설명문을 토스트로 표시할지에 대한 플래그입니다.",
+                "켜면 발동할 때마다 (100% − 발동 확률) ÷ 2의 확률로 표시합니다. 발동 확률이 40%라면 30%입니다.",
+                "끄면 표시하지 않습니다.",
+                "설명문이 비어 있으면 켜도 표시되지 않습니다."
+              ],
+              "reference": "ko/editor/skill?id=설명문 표시"
             }
           }
         }

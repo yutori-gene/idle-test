@@ -196,7 +196,7 @@ export const combat: Type.Combat = {
 		restore: {
 			title: "Nilai pemulihan [perbedaan level].",
 			summary: "Koreksi perbedaan level untuk pulihkan stamina.",
-			points: ["Semakin tinggi nilainya, semakin banyak stamina yang dipulihkan."],
+			points: ["Semakin tinggi nilainya, semakin banyak stamina yang dipulihkan.", "Jika diatur di sisi lawan (nilai tempur Aksi dan skill lawan), efeknya berbalik dan jumlah pemulihan pemain berkurang sebesar nilai tersebut."],
 		},
 	},
 	options: {
@@ -497,8 +497,13 @@ export const skill: Type.Skill = {
 		},
 		property: {
 			...combat,
-			summary: "Akan ditulis",
-			points: ["Akan ditulis"],
+			summary: "Nilai tempur yang ditambahkan pada giliran aktivasi",
+			points: ["Hanya pada giliran skill ini aktif, nilai tempur ini ditambahkan sebagai koreksi perbedaan level.", "Nilai pemulihan adalah pengecualian: alih-alih berlaku pada giliran itu, nilai-nilai tersebut digabungkan dan diterapkan pada pemulihan setelah hasil ditentukan. Di antara nilai pemulihan skill yang aktif selama Aksi, nilai terbesar ditambahkan ke jumlah pemulihan jika itu skill milik pemain sendiri, dan dikurangkan jika itu skill lawan."],
+		},
+		comment: {
+			title: "Tampilan catatan penjelasan",
+			summary: "Apakah catatan penjelasan ditampilkan sebagai notifikasi toast saat aktif",
+			points: ["Penanda apakah catatan penjelasan ditampilkan sebagai notifikasi toast saat skill ini aktif.", "Jika aktif, catatan ditampilkan setiap kali skill aktif dengan peluang (100% − peluang aktivasi) ÷ 2. Dengan peluang aktivasi 40%, hasilnya 30%.", "Jika nonaktif, catatan tidak ditampilkan.", "Jika catatan penjelasan kosong, tidak ada yang ditampilkan meskipun opsi ini aktif."],
 		},
 	},
 	options: {

@@ -196,7 +196,7 @@ export const combat: Type.Combat = {
 		restore: {
 			title: "Restoration value [level difference].",
 			summary: "Correction for level difference in stamina restoration",
-			points: ["The higher the value, the more stamina is restored."],
+			points: ["The higher the value, the more stamina is restored.", "When set on the opponent's side (the Action's combat value and the opponent's skills), it works in reverse, and the player's restoration amount decreases by that value instead."],
 		},
 	},
 	options: {
@@ -497,8 +497,13 @@ export const skill: Type.Skill = {
 		},
 		property: {
 			...combat,
-			summary: "To be written",
-			points: ["To be written"],
+			summary: "Combat value added on the turn it activates",
+			points: ["Only on the turn this skill activates, this combat value is added as a correction for the level difference.", "Restoration values are an exception: instead of taking effect on that turn, they are combined and take effect in the restoration after the outcome is decided. Among the restoration values of skills that activated during the Action, the largest one is added to the restoration amount if it is the player's own skill, and subtracted from it if it is the opponent's skill."],
+		},
+		comment: {
+			title: "Explanation display",
+			summary: "Whether to show the explanatory note as a toast on activation",
+			points: ["A flag for whether the explanatory note is shown as a toast when this skill activates.", "When on, it is shown each time the skill activates, with a probability of (100% − activation probability) ÷ 2. An activation probability of 40% gives 30%.", "When off, it is not shown.", "If the explanatory note is blank, nothing is shown even when this is on."],
 		},
 	},
 	options: {

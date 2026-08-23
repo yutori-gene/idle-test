@@ -196,7 +196,7 @@ export const combat: Type.Combat = {
 		restore: {
 			title: "Valor restaurado [diferença de nível].",
 			summary: "Correção da diferença de nível para restaurar a resistência.",
-			points: ["Quanto maior o valor, mais resistência é restaurada."],
+			points: ["Quanto maior o valor, mais resistência é restaurada.", "Se configurado do lado do oponente (o valor de combate da Ação e as habilidades do oponente), o efeito se inverte, e a quantidade de restauração do jogador diminui nesse valor."],
 		},
 	},
 	options: {
@@ -497,8 +497,13 @@ export const skill: Type.Skill = {
 		},
 		property: {
 			...combat,
-			summary: "A ser escrito",
-			points: ["A ser escrito"],
+			summary: "Valor de combate adicionado no turno de ativação",
+			points: ["Somente no turno em que esta habilidade é ativada, esse valor de combate é adicionado como correção da diferença de nível.", "Os valores de restauração são a exceção: em vez de terem efeito naquele turno, eles são somados e aplicados à restauração após o resultado ser decidido. Entre os valores de restauração das habilidades ativadas durante a Ação, o maior é somado à quantidade de restauração se for uma habilidade do próprio jogador, e subtraído dela se for uma habilidade do oponente."],
+		},
+		comment: {
+			title: "Exibição da nota explicativa",
+			summary: "Se a nota explicativa é exibida como notificação flutuante ao ativar",
+			points: ["Indicador de se a nota explicativa é exibida como notificação flutuante quando esta habilidade é ativada.", "Quando ativado, é exibida a cada ativação com uma probabilidade de (100% − probabilidade de ativação) ÷ 2. Com 40% de probabilidade de ativação, resulta em 30%.", "Quando desativado, não é exibida.", "Se a nota explicativa estiver vazia, nada é exibido mesmo com a opção ativada."],
 		},
 	},
 	options: {

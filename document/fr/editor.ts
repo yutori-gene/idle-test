@@ -196,7 +196,7 @@ export const combat: Type.Combat = {
 		restore: {
 			title: "Valeur de restauration [différence de niveau].",
 			summary: "Correction de la différence de niveau pour restaurer l'endurance.",
-			points: ["Plus la valeur est élevée, plus l'endurance est restaurée."],
+			points: ["Plus la valeur est élevée, plus l'endurance est restaurée.", "S'il est défini du côté de l'adversaire (la valeur de combat de l'Action et les compétences de l'adversaire), l'effet s'inverse et la quantité de restauration du joueur diminue de cette valeur."],
 		},
 	},
 	options: {
@@ -497,8 +497,13 @@ export const skill: Type.Skill = {
 		},
 		property: {
 			...combat,
-			summary: "À rédiger",
-			points: ["À rédiger"],
+			summary: "Valeur de combat ajoutée au tour d'activation",
+			points: ["Seulement au tour où cette compétence se déclenche, cette valeur de combat s'ajoute comme correction de la différence de niveau.", "Les valeurs de restauration font exception : au lieu de s'appliquer à ce tour, elles sont cumulées et s'appliquent à la restauration après que le résultat est déterminé. Parmi les valeurs de restauration des compétences déclenchées pendant l'Action, la plus élevée est ajoutée à la quantité de restauration s'il s'agit d'une compétence du joueur, et soustraite s'il s'agit d'une compétence de l'adversaire."],
+		},
+		comment: {
+			title: "Affichage de la note explicative",
+			summary: "Afficher ou non la note explicative en notification toast lors du déclenchement",
+			points: ["Indicateur déterminant si la note explicative s'affiche en notification toast lorsque cette compétence se déclenche.", "Si activé, elle s'affiche à chaque déclenchement avec une probabilité de (100% − probabilité de déclenchement) ÷ 2. Pour une probabilité de déclenchement de 40%, cela donne 30%.", "Si désactivé, elle ne s'affiche pas.", "Si la note explicative est vide, rien ne s'affiche même lorsque l'option est activée."],
 		},
 	},
 	options: {

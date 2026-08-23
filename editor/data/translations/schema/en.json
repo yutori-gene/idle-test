@@ -6370,8 +6370,7 @@
       "items": {
         "type": "object",
         "additionalProperties": false,
-        "format": "categories",
-        "basicCategoryTitle": "Skill",
+        "format": "grid",
         "headerTemplate": "{{ i1 }}: {{ self.information.id }}",
         "options": {
           "disable_collapse": true
@@ -6379,7 +6378,8 @@
         "required": [
           "information",
           "chance",
-          "property"
+          "property",
+          "comment"
         ],
         "properties": {
           "information": {
@@ -6674,12 +6674,31 @@
               }
             },
             "title": "combat value",
-            "description": "To be written",
+            "description": "Combat value added on the turn it activates",
             "yutori": {
               "points": [
-                "To be written"
+                "Only on the turn this skill activates, this combat value is added as a correction for the level difference.",
+                "Restoration values are an exception: instead of taking effect on that turn, they are combined and take effect in the restoration after the outcome is decided. Among the restoration values of skills that activated during the Action, the largest one is added to the restoration amount if it is the player's own skill, and subtracted from it if it is the opponent's skill."
               ],
               "reference": "en/editor/combat"
+            }
+          },
+          "comment": {
+            "type": "boolean",
+            "default": false,
+            "format": "checkbox",
+            "title": "Explanation display",
+            "options": {
+              "infoText": "Whether to show the explanatory note as a toast on activation"
+            },
+            "yutori": {
+              "points": [
+                "A flag for whether the explanatory note is shown as a toast when this skill activates.",
+                "When on, it is shown each time the skill activates, with a probability of (100% − activation probability) ÷ 2. An activation probability of 40% gives 30%.",
+                "When off, it is not shown.",
+                "If the explanatory note is blank, nothing is shown even when this is on."
+              ],
+              "reference": "en/editor/skill?id=Explanation display"
             }
           }
         }

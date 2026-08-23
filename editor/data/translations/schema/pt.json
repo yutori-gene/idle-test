@@ -6370,8 +6370,7 @@
       "items": {
         "type": "object",
         "additionalProperties": false,
-        "format": "categories",
-        "basicCategoryTitle": "Skill",
+        "format": "grid",
         "headerTemplate": "{{ i1 }}: {{ self.information.id }}",
         "options": {
           "disable_collapse": true
@@ -6379,7 +6378,8 @@
         "required": [
           "information",
           "chance",
-          "property"
+          "property",
+          "comment"
         ],
         "properties": {
           "information": {
@@ -6674,12 +6674,31 @@
               }
             },
             "title": "valor de combate",
-            "description": "A ser escrito",
+            "description": "Valor de combate adicionado no turno de ativação",
             "yutori": {
               "points": [
-                "A ser escrito"
+                "Somente no turno em que esta habilidade é ativada, esse valor de combate é adicionado como correção da diferença de nível.",
+                "Os valores de restauração são a exceção: em vez de terem efeito naquele turno, eles são somados e aplicados à restauração após o resultado ser decidido. Entre os valores de restauração das habilidades ativadas durante a Ação, o maior é somado à quantidade de restauração se for uma habilidade do próprio jogador, e subtraído dela se for uma habilidade do oponente."
               ],
               "reference": "pt/editor/combat"
+            }
+          },
+          "comment": {
+            "type": "boolean",
+            "default": false,
+            "format": "checkbox",
+            "title": "Exibição da nota explicativa",
+            "options": {
+              "infoText": "Se a nota explicativa é exibida como notificação flutuante ao ativar"
+            },
+            "yutori": {
+              "points": [
+                "Indicador de se a nota explicativa é exibida como notificação flutuante quando esta habilidade é ativada.",
+                "Quando ativado, é exibida a cada ativação com uma probabilidade de (100% − probabilidade de ativação) ÷ 2. Com 40% de probabilidade de ativação, resulta em 30%.",
+                "Quando desativado, não é exibida.",
+                "Se a nota explicativa estiver vazia, nada é exibido mesmo com a opção ativada."
+              ],
+              "reference": "pt/editor/skill?id=Exibição da nota explicativa"
             }
           }
         }

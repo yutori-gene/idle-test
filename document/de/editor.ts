@@ -196,7 +196,7 @@ export const combat: Type.Combat = {
 		restore: {
 			title: "Wert des Wiederherstellens [Level-Differenz].",
 			summary: "Level-Differenz-Korrektur beim Wiederherstellen der Ausdauer.",
-			points: ["Je höher der Wert, desto mehr Ausdauer wird wiederhergestellt."],
+			points: ["Je höher der Wert, desto mehr Ausdauer wird wiederhergestellt.", "Wenn auf der Seite des Gegners eingestellt (der Kampfwert der Aktion und die Fähigkeiten des Gegners), kehrt sich die Wirkung um, und die Wiederherstellungsmenge des Spielers verringert sich um diesen Wert."],
 		},
 	},
 	options: {
@@ -497,8 +497,13 @@ export const skill: Type.Skill = {
 		},
 		property: {
 			...combat,
-			summary: "Wird noch geschrieben",
-			points: ["Wird noch geschrieben"],
+			summary: "Kampfwert, der in der Runde der Auslösung hinzugefügt wird",
+			points: ["Nur in der Runde, in der diese Fähigkeit ausgelöst wird, wird dieser Kampfwert als Korrektur für die Level-Differenz hinzugefügt.", "Wiederherstellungswerte sind die Ausnahme: Statt in dieser Runde zu wirken, werden sie zusammengefasst und auf die Wiederherstellung nach der Entscheidung des Ausgangs angewendet. Unter den Wiederherstellungswerten der während der Aktion ausgelösten Fähigkeiten wird der größte zur Wiederherstellungsmenge addiert, wenn es die eigene Fähigkeit des Spielers ist, und davon abgezogen, wenn es die Fähigkeit des Gegners ist."],
+		},
+		comment: {
+			title: "Anzeige der erläuternden Bemerkung",
+			summary: "Ob die erläuternde Bemerkung beim Auslösen als Toast-Benachrichtigung erscheint",
+			points: ["Flag dafür, ob die erläuternde Bemerkung als Toast-Benachrichtigung erscheint, wenn diese Fähigkeit ausgelöst wird.", "Wenn eingeschaltet, erscheint sie bei jedem Auslösen mit einer Wahrscheinlichkeit von (100% − Auslösewahrscheinlichkeit) ÷ 2. Bei einer Auslösewahrscheinlichkeit von 40% sind das 30%.", "Wenn ausgeschaltet, erscheint sie nicht.", "Ist die erläuternde Bemerkung leer, erscheint auch bei eingeschaltetem Flag nichts."],
 		},
 	},
 	options: {

@@ -6370,8 +6370,7 @@
       "items": {
         "type": "object",
         "additionalProperties": false,
-        "format": "categories",
-        "basicCategoryTitle": "Skill",
+        "format": "grid",
         "headerTemplate": "{{ i1 }}: {{ self.information.id }}",
         "options": {
           "disable_collapse": true
@@ -6379,7 +6378,8 @@
         "required": [
           "information",
           "chance",
-          "property"
+          "property",
+          "comment"
         ],
         "properties": {
           "information": {
@@ -6674,12 +6674,31 @@
               }
             },
             "title": "戦闘値",
-            "description": "執筆予定",
+            "description": "発動したターンに加わる戦闘値",
             "yutori": {
               "points": [
-                "執筆予定"
+                "このスキルが発動したターンだけ、ここの戦闘値がレベル差の補正として加わります。",
+                "回復値だけは例外で、そのターンではなく決着したあとの回復にまとめて効きます。アクション中に発動したスキルの回復値のうち最大のものを、味方のスキルは回復量へ足し、相手のスキルは回復量から引きます。"
               ],
               "reference": "ja/editor/combat"
+            }
+          },
+          "comment": {
+            "type": "boolean",
+            "default": false,
+            "format": "checkbox",
+            "title": "説明の表示",
+            "options": {
+              "infoText": "発動時に説明をトーストで表示するか"
+            },
+            "yutori": {
+              "points": [
+                "このスキルが発動したときに、説明をトーストで表示するかどうかのフラグです。",
+                "オンの場合は、発動するたびに（100% − 発動確率）÷ 2 の確率で表示します。発動確率が40%なら30%です。",
+                "オフの場合は表示しません。",
+                "説明が空欄の場合は、オンにしても表示されません。"
+              ],
+              "reference": "ja/editor/skill?id=説明の表示"
             }
           }
         }

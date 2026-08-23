@@ -6370,8 +6370,7 @@
       "items": {
         "type": "object",
         "additionalProperties": false,
-        "format": "categories",
-        "basicCategoryTitle": "Skill",
+        "format": "grid",
         "headerTemplate": "{{ i1 }}: {{ self.information.id }}",
         "options": {
           "disable_collapse": true
@@ -6379,7 +6378,8 @@
         "required": [
           "information",
           "chance",
-          "property"
+          "property",
+          "comment"
         ],
         "properties": {
           "information": {
@@ -6674,12 +6674,31 @@
               }
             },
             "title": "nilai tempur",
-            "description": "Akan ditulis",
+            "description": "Nilai tempur yang ditambahkan pada giliran aktivasi",
             "yutori": {
               "points": [
-                "Akan ditulis"
+                "Hanya pada giliran skill ini aktif, nilai tempur ini ditambahkan sebagai koreksi perbedaan level.",
+                "Nilai pemulihan adalah pengecualian: alih-alih berlaku pada giliran itu, nilai-nilai tersebut digabungkan dan diterapkan pada pemulihan setelah hasil ditentukan. Di antara nilai pemulihan skill yang aktif selama Aksi, nilai terbesar ditambahkan ke jumlah pemulihan jika itu skill milik pemain sendiri, dan dikurangkan jika itu skill lawan."
               ],
               "reference": "id/editor/combat"
+            }
+          },
+          "comment": {
+            "type": "boolean",
+            "default": false,
+            "format": "checkbox",
+            "title": "Tampilan catatan penjelasan",
+            "options": {
+              "infoText": "Apakah catatan penjelasan ditampilkan sebagai notifikasi toast saat aktif"
+            },
+            "yutori": {
+              "points": [
+                "Penanda apakah catatan penjelasan ditampilkan sebagai notifikasi toast saat skill ini aktif.",
+                "Jika aktif, catatan ditampilkan setiap kali skill aktif dengan peluang (100% − peluang aktivasi) ÷ 2. Dengan peluang aktivasi 40%, hasilnya 30%.",
+                "Jika nonaktif, catatan tidak ditampilkan.",
+                "Jika catatan penjelasan kosong, tidak ada yang ditampilkan meskipun opsi ini aktif."
+              ],
+              "reference": "id/editor/skill?id=Tampilan catatan penjelasan"
             }
           }
         }

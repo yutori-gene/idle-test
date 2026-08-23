@@ -196,7 +196,7 @@ export const combat: Type.Combat = {
 		restore: {
 			title: "Valor de restauración [diferencia de nivel].",
 			summary: "Corrección de la diferencia de nivel para restaurar la resistencia.",
-			points: ["Cuanto mayor sea el valor, más resistencia se restaurará."],
+			points: ["Cuanto mayor sea el valor, más resistencia se restaurará.", "Si se configura en el lado del oponente (el valor de combate de la Acción y las habilidades del oponente), el efecto se invierte y la cantidad de restauración del jugador disminuye en ese valor."],
 		},
 	},
 	options: {
@@ -497,8 +497,13 @@ export const skill: Type.Skill = {
 		},
 		property: {
 			...combat,
-			summary: "Pendiente de redacción",
-			points: ["Pendiente de redacción"],
+			summary: "Valor de combate añadido en el turno de activación",
+			points: ["Solo en el turno en que se activa esta habilidad, este valor de combate se añade como corrección de la diferencia de nivel.", "Los valores de restauración son la excepción: en lugar de aplicarse en ese turno, se combinan y se aplican a la restauración después de decidirse el resultado. Entre los valores de restauración de las habilidades activadas durante la Acción, el mayor se suma a la cantidad de restauración si es una habilidad propia del jugador, y se resta de ella si es una habilidad del oponente."],
+		},
+		comment: {
+			title: "Visualización de la nota explicativa",
+			summary: "Si la nota explicativa se muestra como notificación emergente al activarse",
+			points: ["Indicador de si la nota explicativa se muestra como notificación emergente cuando se activa esta habilidad.", "Si está activado, se muestra en cada activación con una probabilidad de (100% − probabilidad de activación) ÷ 2. Con una probabilidad de activación del 40%, resulta un 30%.", "Si está desactivado, no se muestra.", "Si la nota explicativa está vacía, no se muestra nada aunque esté activado."],
 		},
 	},
 	options: {

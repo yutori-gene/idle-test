@@ -7,8 +7,8 @@
 	"skill": {},
 	"preset": {
 		"locked": {
-			"name": "Locked",
-			"explanation": "This element unlocks when the condition is met."
+			"name": "Verrouillé",
+			"explanation": "Cet élément sera débloqué dès que les conditions seront remplies."
 		},
 		"max": {
 			"name": "Max",
@@ -20,42 +20,42 @@
 		},
 		"maximum": {
 			"name": "Maximum",
-			"explanation": "You cannot hold or use more than this number."
+			"explanation": "Vous ne pouvez pas détenir ni exercer un nombre supérieur à celui-ci."
 		},
 		"purchased-count": {
-			"name": "Purchased Count",
+			"name": "Nombre d'achats",
 			"explanation": ""
 		},
 		"purchase-limit": {
-			"name": "Purchase Limit",
-			"explanation": "The maximum number of times this can be purchased."
+			"name": "Limite d'achat",
+			"explanation": "Le nombre maximal de délais d'achat autorisés."
 		},
 		"purchasable-count": {
-			"name": "Purchasable",
-			"explanation": "Shows how many more times this can be purchased."
+			"name": "En vente",
+			"explanation": "Le nombre de fois où vous pouvez encore effectuer un achat."
 		},
 		"total": {
 			"name": "Total",
 			"explanation": ""
 		},
 		"percentage": {
-			"name": "Percentage",
+			"name": "Pourcentage",
 			"explanation": ""
 		},
 		"player": {
-			"name": "Player",
+			"name": "Joueur",
 			"explanation": ""
 		},
 		"target": {
-			"name": "Target",
+			"name": "Cible",
 			"explanation": ""
 		},
 		"requirement": {
-			"name": "Requirement",
+			"name": "Exigence",
 			"explanation": ""
 		},
 		"requirements": {
-			"name": "Requirements",
+			"name": "Exigences",
 			"explanation": ""
 		},
 		"acquisition": {
@@ -67,47 +67,47 @@
 			"explanation": ""
 		},
 		"results": {
-			"name": "Results",
+			"name": "Résultats",
 			"explanation": ""
 		},
 		"yes": {
-			"name": "Yes",
+			"name": "Oui",
 			"explanation": ""
 		},
 		"no": {
-			"name": "No",
+			"name": "Non",
 			"explanation": ""
 		},
 		"on": {
-			"name": "On",
+			"name": "Le",
 			"explanation": ""
 		},
 		"off": {
-			"name": "Off",
+			"name": "Désactivé",
 			"explanation": ""
 		},
 		"seconds": {
-			"name": "Seconds",
+			"name": "Secondes",
 			"explanation": ""
 		},
 		"minutes": {
-			"name": "Minutes",
+			"name": "Procès-verbal des minutes de la séance",
 			"explanation": ""
 		},
 		"hours": {
-			"name": "Hours",
+			"name": "Heures",
 			"explanation": ""
 		},
 		"days": {
-			"name": "Days",
+			"name": "Jours",
 			"explanation": ""
 		},
 		"years": {
-			"name": "Years",
+			"name": "Années",
 			"explanation": ""
 		},
 		"centuries": {
-			"name": "Centuries",
+			"name": "Siècles",
 			"explanation": ""
 		},
 		"endless": {
@@ -115,19 +115,19 @@
 			"explanation": ""
 		},
 		"success": {
-			"name": "Success",
+			"name": "Succès",
 			"explanation": ""
 		},
 		"failure": {
-			"name": "Failure",
-			"explanation": "Failure"
+			"name": "Échec",
+			"explanation": "échec"
 		},
 		"up": {
-			"name": "Up",
+			"name": "Haut",
 			"explanation": ""
 		},
 		"down": {
-			"name": "Down",
+			"name": "Bas",
 			"explanation": ""
 		},
 		"question": {
@@ -136,562 +136,574 @@
 		},
 		"navigation": {
 			"name": "Navigation",
-			"explanation": "You can also swipe to move between columns. A \"Top\" button appears at the bottom left of the screen."
+			"explanation": "Vous pouvez également passer d'une colonne à l'autre en balayant l'écran. Le bouton du haut s'affiche en bas à gauche de l'écran."
 		},
 		"navigation-back": {
-			"name": "Back",
+			"name": "Retour",
 			"explanation": ""
 		},
 		"navigation-top": {
-			"name": "Top",
+			"name": "Haut",
 			"explanation": ""
 		},
 		"navigation-forward": {
-			"name": "Forward",
+			"name": "Avant",
 			"explanation": ""
 		},
 		"navigation-column": {
-			"name": "Column",
-			"explanation": "The position of this column and the total number of columns, including those off-screen."
+			"name": "Colonne",
+			"explanation": "La position de cette colonne et le nombre total de colonnes, y compris celles qui ne sont pas visibles à l'écran."
 		},
 		"checked": {
-			"name": "Checked",
+			"name": "Coché",
 			"explanation": ""
 		},
 		"chevron-down": {
-			"name": "Down Arrow",
+			"name": "Chevron vers le bas",
 			"explanation": ""
 		},
 		"chevron-right": {
-			"name": "Right Arrow",
+			"name": "Chevron à droite",
 			"explanation": ""
 		},
 		"selected": {
-			"name": "Selected",
+			"name": "Sélectionné",
 			"explanation": ""
 		},
 		"character": {
-			"name": "Character",
+			"name": "Personnage",
 			"explanation": ""
 		},
 		"activity": {
-			"name": "Activity",
-			"explanation": "A list of available Actions, grouped by Category."
+			"name": "Activité",
+			"explanation": ""
 		},
 		"inventory": {
-			"name": "Inventory",
-			"explanation": "A list of Items you own, grouped by Category."
+			"name": "Inventaire",
+			"explanation": ""
 		},
 		"status": {
-			"name": "Status",
-			"explanation": "Shows the current state, such as bonuses applied to a Category."
+			"name": "Statut",
+			"explanation": ""
 		},
 		"ability": {
 			"name": "Aptitude",
 			"explanation": "Liste des compétences pouvant se déclencher maintenant, regroupées par catégorie."
 		},
 		"world": {
-			"name": "World",
+			"name": "Monde",
 			"explanation": ""
 		},
 		"overview": {
-			"name": "Overview",
-			"explanation": "Shows an overview of this World and the console running it."
+			"name": "Aperçu",
+			"explanation": ""
 		},
 		"version": {
 			"name": "Version",
 			"explanation": ""
 		},
 		"license": {
-			"name": "License",
+			"name": "Licence",
 			"explanation": ""
 		},
 		"updated": {
-			"name": "Updated",
+			"name": "Mise à jour",
 			"explanation": ""
 		},
 		"author": {
-			"name": "Author",
+			"name": "Auteur",
 			"explanation": ""
 		},
 		"homepage": {
-			"name": "Homepage",
+			"name": "Page d'accueil",
 			"explanation": ""
 		},
 		"estimated-playing-time": {
-			"name": "Estimated Playing Time",
-			"explanation": "The time the author estimates it takes to complete this World."
+			"name": "Durée estimée de lecture",
+			"explanation": "Temps estimé par l'auteur pour achever la création de cet univers"
 		},
 		"detail": {
-			"name": "Detail",
+			"name": "Détails",
 			"explanation": ""
 		},
 		"default-language": {
-			"name": "Default Language",
+			"name": "Langue par défaut",
 			"explanation": ""
 		},
 		"language-change-enable-general": {
-			"name": "Changeable",
-			"explanation": "The display language can be changed in the settings screen."
+			"name": "Activer le changement de langue - Généralités",
+			"explanation": "Vous pouvez modifier la langue d'affichage dans les paramètres."
 		},
 		"max-category-level": {
-			"name": "Max Category Level",
-			"explanation": "The maximum Level each Category can reach."
+			"name": "Niveau maximal de la catégorie",
+			"explanation": "Le niveau maximal pouvant être atteint dans chaque catégorie."
 		},
 		"level-common-ratio": {
-			"name": "Level Growth Ratio",
-			"explanation": "Shows how much the Experience needed for the next Level increases each time you Level up."
+			"name": "Niveau Rapport courant",
+			"explanation": "Combien de points d'expérience faut-il pour passer au niveau suivant à chaque fois que l'on gagne un niveau ?"
 		},
 		"console": {
 			"name": "Console",
-			"explanation": "This game runs on the \"Idle RPG\" console system. It is free and publicly available, so anyone can create a game."
+			"explanation": "Ce jeu fonctionne sur la console Idle RPG. Celle-ci est gratuite et accessible à tous, ce qui permet à n'importe qui de créer des jeux."
 		},
 		"statistics": {
-			"name": "Statistics",
-			"explanation": "Shows totals recorded throughout play."
+			"name": "Statistiques",
+			"explanation": ""
 		},
 		"coin": {
-			"name": "Coin",
-			"explanation": "An Item used as currency for buying and selling."
+			"name": "Pièce de monnaie",
+			"explanation": "Un objet qui sert de monnaie pour les achats et les ventes."
 		},
 		"play-time": {
-			"name": "Play Time",
-			"explanation": "The date and time you started playing, and how long you have played."
+			"name": "プレイ時間",
+			"explanation": "プレイを開始した日時と、プレイしている時間"
 		},
 		"play-started": {
-			"name": "Start Date",
-			"explanation": "The date and time you started playing."
+			"name": "開始日時",
+			"explanation": "プレイを開始した日時"
 		},
 		"play-duration": {
-			"name": "Elapsed Time",
-			"explanation": "The time elapsed since you started playing."
+			"name": "経過時間",
+			"explanation": "プレイを開始してから経過した時間"
 		},
 		"coins-earned": {
-			"name": "Coins Earned",
-			"explanation": "The total amount of each Coin earned so far."
+			"name": "獲得コイン",
+			"explanation": "これまでに獲得した、各コインの合計量"
 		},
 		"unique-count": {
-			"name": "Unique Count",
-			"explanation": "The number of distinct types you can hold at once."
+			"name": "種類数",
+			"explanation": "同時に所持できる種類の数"
 		},
 		"max-capacity": {
-			"name": "Capacity",
-			"explanation": "The current maximum number of Item types you can hold."
+			"name": "容量",
+			"explanation": "現在所持できるアイテムの種類数の上限"
 		},
 		"max-queue": {
-			"name": "Queue",
-			"explanation": "The current maximum number of Actions the Queue can hold."
+			"name": "キュー",
+			"explanation": "現在キューに保持できるアクション数の上限"
 		},
 		"statistics-category": {
-			"name": "Category",
-			"explanation": "Shows how many Categories in this World have been unlocked."
+			"name": "カテゴリ",
+			"explanation": "このワールドのカテゴリがどれだけ開放されているかを示す"
 		},
 		"statistics-action": {
-			"name": "Action",
-			"explanation": "Shows how many Actions in this World have been unlocked."
+			"name": "アクション",
+			"explanation": "このワールドのアクションがどれだけ開放されているかを示す"
 		},
 		"statistics-item": {
-			"name": "Item",
-			"explanation": "Shows how many Items in this World have been unlocked."
+			"name": "アイテム",
+			"explanation": "このワールドのアイテムがどれだけ開放されているかを示す"
 		},
 		"statistics-event": {
-			"name": "Event",
-			"explanation": "Shows how many Events in this World have been unlocked."
+			"name": "イベント",
+			"explanation": "このワールドのイベントがどれだけ開放されているかを示す"
 		},
 		"count-unlocked": {
-			"name": "Unlocked",
-			"explanation": "The number unlocked so far, out of the total."
+			"name": "解放済み",
+			"explanation": "全体のうち、これまでに解放された数"
 		},
 		"level-total": {
-			"name": "Total Level",
-			"explanation": "The sum of all Category Levels, and its maximum."
+			"name": "合計レベル",
+			"explanation": "全カテゴリのレベルの合計値と、その最大値"
 		},
 		"count-performed": {
-			"name": "Performed",
-			"explanation": "The total number of times Actions have been performed."
+			"name": "実行済み",
+			"explanation": "これまでにアクションを実行した合計回数"
 		},
 		"count-earned": {
-			"name": "Earned",
-			"explanation": "The total number of Items earned so far."
+			"name": "獲得済み",
+			"explanation": "これまでに獲得したアイテムの合計数"
 		},
 		"count-triggered": {
-			"name": "Triggered",
-			"explanation": "The total number of times Events have occurred."
+			"name": "発生済み",
+			"explanation": "これまでにイベントが発生した合計回数"
 		},
 		"debug": {
-			"name": "Debug",
-			"explanation": "Provides tools for testing the World. Only available in debug mode."
+			"name": "Déboguer",
+			"explanation": ""
 		},
 		"acceleration": {
-			"name": "Acceleration",
-			"explanation": "Speeds up the passage of time in the game. Raising the speed too high while Actions have short execution times may cause processing to fall behind, freezing or crashing the app, so use caution."
+			"name": "Accélération",
+			"explanation": "Accélère le déroulement du jeu. Attention : si vous augmentez trop la vitesse alors que le temps d'exécution des actions est déjà lent, le traitement ne pourra pas suivre et l'application se bloquera ou plantera."
 		},
 		"multiplier": {
-			"name": "Multiplier",
+			"name": "Multiplicateur",
 			"explanation": ""
 		},
 		"skip": {
-			"name": "Skip",
-			"explanation": "Advances in-game time at once without waiting."
+			"name": "Passer",
+			"explanation": "Fait avancer le temps du jeu d’un seul coup, sans attendre."
 		},
 		"skip-hour": {
-			"name": "Skip 1 Hour",
-			"explanation": "Advances the game by 1 hour at once. Progress is processed the same as while away, and the results are shown in a notification."
+			"name": "Passer 1 heure",
+			"explanation": "Fait avancer le jeu d'une heure d'un seul coup. La progression est traitée de la même manière que pendant votre absence, et les résultats sont affichés sous forme de notifications."
 		},
 		"adjustment": {
-			"name": "Value Adjustment",
-			"explanation": "Increases or decreases the number of Items held or Category Levels."
+			"name": "Ajustement",
+			"explanation": "Augmente ou diminue le nombre d'objets possédés ou le niveau de la catégorie."
 		},
 		"adjustment-type": {
 			"name": "Type",
 			"explanation": ""
 		},
 		"adjustment-category": {
-			"name": "Category",
-			"explanation": "Adjusts a Category's Level. For example, setting +5 raises the Level by 5."
+			"name": "Catégorie",
+			"explanation": "Ajustez le niveau de la catégorie. Par exemple, si vous le réglez sur +5, 5 niveaux seront ajoutés."
 		},
 		"adjustment-action": {
 			"name": "Action",
-			"explanation": "This increases or decreases the number of times the Action has been performed. However, rewards earned by completing the Action are not applied."
+			"explanation": "Cela permettra d'augmenter ou de réduire le nombre de fois où l'action a été effectuée. Toutefois, cela ne tiendra pas compte des récompenses obtenues à l'issue de l'action."
 		},
 		"adjustment-item": {
-			"name": "Item",
-			"explanation": "Increases or decreases the number of Items held."
+			"name": "Objet",
+			"explanation": "Augmente ou diminue le nombre d'objets que vous possédez."
 		},
 		"adjustment-id": {
 			"name": "ID",
-			"explanation": "Specify the ID of the target type. If left blank, the addition or subtraction applies to all IDs."
+			"explanation": "Indiquez l'ID du type cible. Si ce champ est laissé vide, l'addition et la soustraction seront ajustées pour tous les ID."
 		},
 		"adjustment-sign": {
-			"name": "Sign",
+			"name": "Signe",
 			"explanation": ""
 		},
 		"adjustment-plus": {
 			"name": "Plus",
-			"explanation": "Adds the specified value."
+			"explanation": "Ajoute la valeur numérique indiquée."
 		},
 		"adjustment-minus": {
-			"name": "Minus",
-			"explanation": "Subtracts the specified value."
+			"name": "Moins",
+			"explanation": "Soustrais le nombre indiqué."
 		},
 		"adjustment-count": {
-			"name": "Count",
-			"explanation": "The amount to increase or decrease. Use the sign to specify plus or minus."
+			"name": "Compter",
+			"explanation": "Le nombre à augmenter ou à diminuer. Indiquez, à l'aide d'un symbole, s'il faut l'augmenter ou le diminuer."
 		},
 		"adjustment-adjust": {
-			"name": "Adjust",
-			"explanation": "Performs the adjustment with the specified conditions."
+			"name": "Ajusteur",
+			"explanation": "Les ajustements sont effectués dans les conditions spécifiées."
 		},
 		"pwa": {
-			"name": "Install PWA",
-			"explanation": "Installs the Progressive Web App (PWA)."
+			"name": "Installer l'application PWA",
+			"explanation": "Installer une application web progressive (PWA)."
 		},
 		"go-top": {
-			"name": "Go to Top",
+			"name": "Retour en haut de la page",
 			"explanation": ""
 		},
 		"iconify": {
 			"name": "Iconify",
-			"explanation": "This game uses icon sets provided by Iconify. Thanks to everyone who contributed to their creation."
+			"explanation": "Ce jeu utilise des jeux d'icônes fournis par iconify. Je tiens à remercier toutes les personnes qui ont participé à leur création."
 		},
 		"category": {
-			"name": "Category",
+			"name": "Catégorie",
 			"explanation": ""
 		},
 		"categories": {
-			"name": "Category List",
+			"name": "Liste des catégories",
 			"explanation": ""
 		},
 		"level": {
-			"name": "Level",
+			"name": "Niveau",
 			"explanation": ""
 		},
 		"level-up": {
-			"name": "Level Up",
+			"name": "Niveau supérieur",
 			"explanation": ""
 		},
 		"category-unlocked": {
-			"name": "Category Unlocked",
+			"name": "Catégorie débloquée",
 			"explanation": ""
 		},
 		"element": {
-			"name": "Element",
+			"name": "Élément",
 			"explanation": ""
 		},
 		"standalone": {
-			"name": "Standalone",
-			"explanation": "Runs independently, regardless of Action progress in other Categories."
+			"name": "Autonome",
+			"explanation": "Il fonctionne de manière autonome, quel que soit l'état d'avancement des actions menées dans les autres catégories."
+		},
+		"standalone-yes": {
+			"name": "Autonome",
+			"explanation": "Il fonctionne de manière autonome, quel que soit l'état d'avancement des actions menées dans les autres catégories."
+		},
+		"standalone-no": {
+			"name": "Partagé",
+			"explanation": "Elle partage un emplacement d'exécution avec d'autres catégories. Une seule action peut s'exécuter à la fois ; en démarrer une autre renvoie l'action en cours dans la file d'attente."
 		},
 		"action": {
 			"name": "Action",
 			"explanation": ""
 		},
 		"actions": {
-			"name": "Action List",
-			"explanation": "A list of Actions belonging to this Category."
+			"name": "Liste des actions",
+			"explanation": ""
 		},
 		"action-unlocked": {
-			"name": "Action Unlocked",
+			"name": "Action débloquée",
 			"explanation": ""
 		},
 		"attribute": {
-			"name": "Attribute",
-			"explanation": "An attribute unique to this Action. The Category's Properties are applied to this Attribute, and Experience is also granted to it."
+			"name": "Attribut",
+			"explanation": "Caractéristiques spécifiques à cette action. Les propriétés de catégorie s'appliquent aux attributs de cette action. Des points d'expérience sont également attribués à cet attribut."
 		},
 		"progress": {
-			"name": "Progress",
+			"name": "Progrès",
 			"explanation": ""
 		},
 		"progressing": {
-			"name": "In Progress",
+			"name": "En cours",
 			"explanation": ""
 		},
 		"progressing-action": {
-			"name": "In Progress",
+			"name": "En cours",
 			"explanation": ""
 		},
 		"possible-action": {
-			"name": "Available",
+			"name": "Possible",
 			"explanation": ""
 		},
 		"impossible-action": {
-			"name": "Unavailable",
+			"name": "Impossible",
 			"explanation": ""
 		},
 		"idle": {
-			"name": "Idle",
+			"name": "Inactif",
 			"explanation": ""
 		},
 		"progress-type": {
-			"name": "Progress Type",
+			"name": "Type de progression",
 			"explanation": ""
 		},
 		"persistent": {
-			"name": "Persistent",
-			"explanation": "Performs a series of Actions, granting a reward each time an Action is completed."
+			"name": "Persistant",
+			"explanation": "Vous effectuez une série d'actions, et chaque fois que vous terminez une action, vous recevez une récompense."
 		},
 		"single": {
-			"name": "Single",
-			"explanation": "Can be performed only once. Progress is saved even if interrupted midway."
+			"name": "Unique",
+			"explanation": "Vous ne pouvez effectuer une action qu'une seule fois, et votre progression sera enregistrée même si vous l'interrompez en cours de route."
 		},
 		"snap": {
-			"name": "Snap",
-			"explanation": "The Action completes instantly."
+			"name": "Instantané",
+			"explanation": "L'action s'achève instantanément."
 		},
 		"stamina": {
-			"name": "Stamina",
-			"explanation": "Each time the Action is performed, both the Player's and the Target's Stamina decrease. When the Target's Stamina runs out, you win; when the Player's Stamina runs out, it's game over. Nothing is lost on game over, but all Actions in progress are interrupted."
+			"name": "Endurance",
+			"explanation": "Chaque action réduit l'endurance du joueur et celle de la cible. Lorsque l'endurance de la cible est épuisée, vous gagnez ; lorsque celle du joueur est épuisée, la partie se termine. Une fois la partie terminée, vous n'avez plus rien à perdre, mais toute progression dans les actions est interrompue."
 		},
 		"enable-count": {
-			"name": "Available Count",
+			"name": "Activer le comptage",
 			"explanation": ""
 		},
 		"estimated-time": {
-			"name": "Estimated Time",
+			"name": "Temps estimé",
 			"explanation": ""
 		},
 		"count": {
-			"name": "Count",
+			"name": "Compter",
 			"explanation": ""
 		},
 		"completed-count": {
-			"name": "Completed Count",
+			"name": "Nombre d'opérations terminées",
 			"explanation": ""
 		},
 		"current-count": {
-			"name": "Current Count",
+			"name": "Nom actuel",
 			"explanation": ""
 		},
 		"elapsed-time": {
-			"name": "Elapsed Time",
+			"name": "Temps écoulé",
 			"explanation": ""
 		},
 		"rest-time": {
-			"name": "Remaining Time",
+			"name": "Temps de repos",
 			"explanation": ""
 		},
 		"each-time": {
-			"name": "Cycle",
+			"name": "À chaque saison",
 			"explanation": ""
 		},
 		"next-time": {
-			"name": "Until Next",
+			"name": "La prochaine fois",
 			"explanation": ""
 		},
 		"rest-count": {
-			"name": "Remaining Count",
+			"name": "Nombre de jours de repos",
 			"explanation": ""
 		},
 		"act": {
-			"name": "Act",
-			"explanation": "Starts or stops this Action and shows its progress."
+			"name": "Exécuter",
+			"explanation": ""
 		},
 		"start": {
-			"name": "Start",
+			"name": "Commencer",
 			"explanation": ""
 		},
 		"end": {
-			"name": "End",
+			"name": "Fin",
 			"explanation": ""
 		},
 		"stop": {
-			"name": "Stop",
+			"name": "Arrêter",
 			"explanation": ""
 		},
 		"reserve": {
-			"name": "Reserve",
-			"explanation": "Adds this Action to the reservation Queue to be performed in order."
+			"name": "Réserve",
+			"explanation": "Ajoutez cette action à la file d'attente des réservations pour une exécution séquentielle."
 		},
 		"reorder": {
-			"name": "Reorder",
-			"explanation": "Applies the chosen count and order to this Action in the Queue. Moving an Action in progress to position 1 or later stops it and returns it to waiting."
+			"name": "Réorganiser",
+			"explanation": "Applique le nombre d'exécutions et la place sélectionnés à cette action dans la file d'attente. Déplacer une action en cours vers 1 ou plus l'arrête et la renvoie dans la liste d'attente."
 		},
 		"position": {
-			"name": "Position",
-			"explanation": "Choose this Action's position in the Queue. 0 is the front, pushing back the Action in progress and performing this one immediately. 1 or later waits at that position."
+			"name": "Ordre d'exécution",
+			"explanation": "Choisissez la place de cette action dans la file d'attente. 0 correspond à la tête : elle démarre immédiatement et l'action en cours recule d'un rang. À partir de 1, elle attend à cette place."
 		},
 		"now": {
-			"name": "Now",
-			"explanation": "Places this Action at the front of the Queue and performs it immediately."
+			"name": "Maintenant",
+			"explanation": "Place cette action en tête de la file d'attente et l'exécute immédiatement."
+		},
+		"clear": {
+			"name": "Vider",
+			"explanation": "Supprime toutes les réservations de la file d'attente, y compris celle en cours."
 		},
 		"acquisition-failure": {
-			"name": "Failure Reward",
-			"explanation": "Rewards marked [Failure] can only be earned when the Action fails. The percentage shown is the chance of earning it."
+			"name": "Échec d'acquisition",
+			"explanation": "Les récompenses précédées de [Échec] ne sont obtenues que lorsque l'action échoue, et le pourcentage affiché est la chance de les obtenir."
 		},
 		"item": {
-			"name": "Item",
+			"name": "Objet",
 			"explanation": ""
 		},
 		"items": {
-			"name": "Item List",
-			"explanation": "A list of Items belonging to this Category."
+			"name": "Liste des objets",
+			"explanation": ""
 		},
 		"item-type": {
 			"name": "Type",
-			"explanation": "The type of this Item."
+			"explanation": "Le type de cet objet."
 		},
 		"normal": {
 			"name": "Normal",
-			"explanation": "A normal Item that can be owned, equipped, and traded."
+			"explanation": "Un objet ordinaire que vous pouvez posséder, équiper et échanger."
 		},
 		"capacity": {
-			"name": "Capacity",
-			"explanation": "A special Item representing the number of Item types you can own at once."
+			"name": "Capacité",
+			"explanation": "Un objet spécial qui représente le nombre de types d'objets que vous pouvez posséder en même temps."
 		},
 		"queue": {
-			"name": "Queue",
-			"explanation": "A special Item representing the number of Actions that can be placed in the Queue. The Action currently in progress at the front is included in this count."
+			"name": "File d'attente",
+			"explanation": "Un objet spécial qui indique combien d'actions la file d'attente peut contenir, y compris celle en cours en tête."
 		},
 		"equipping": {
-			"name": "Equipping",
+			"name": "Équipement",
 			"explanation": ""
 		},
 		"unequipping": {
-			"name": "Unequipping",
+			"name": "Déséquipement",
 			"explanation": ""
 		},
 		"equip": {
-			"name": "Equip",
+			"name": "Équiper",
 			"explanation": ""
 		},
 		"equipment": {
-			"name": "Equipment",
+			"name": "Équipement",
 			"explanation": ""
 		},
 		"unequip": {
-			"name": "Unequip",
+			"name": "Déséquiper",
 			"explanation": ""
 		},
 		"nothing": {
-			"name": "None",
+			"name": "Rien",
 			"explanation": ""
 		},
 		"own-count": {
-			"name": "Owned Count",
-			"explanation": "The quantity currently owned."
+			"name": "Nom propre",
+			"explanation": "Que vous possédiez ou non cet objet."
 		},
 		"recovery": {
-			"name": "Recovery",
-			"explanation": "The percentage of Stamina recovered at the start of combat."
+			"name": "Récupération",
+			"explanation": "Vous ne pouvez posséder qu'un seul objet propre."
 		},
 		"unique": {
 			"name": "Unique",
-			"explanation": "Only one can be owned."
+			"explanation": "Vous ne pouvez posséder qu'un seul objet propre."
 		},
 		"equipment-type": {
-			"name": "Equipment Type",
-			"explanation": "The Equipment Type of this Item."
+			"name": "Équipement",
+			"explanation": "Le type d'équipement de l'objet."
 		},
 		"necessary-item": {
-			"name": "Necessary",
-			"explanation": "The effect activates when this Item is equipped."
+			"name": "Nécessaire",
+			"explanation": "L'équipement de cet objet aura des effets."
 		},
 		"unnecessary-item": {
-			"name": "Unnecessary",
-			"explanation": "This Item cannot be equipped, but its effect activates just by owning it. The effect multiplies by the number owned."
+			"name": "Inutile",
+			"explanation": "Vous ne pouvez pas équiper cet objet, mais le simple fait de l'avoir en votre possession aura des effets. Ces effets sont multipliés par le nombre d'exemplaires que vous possédez."
 		},
 		"impossible-item": {
 			"name": "Impossible",
-			"explanation": "This Item cannot be equipped."
+			"explanation": "Cet objet ne peut pas être équipé."
 		},
 		"consumable-item": {
-			"name": "Consumable",
-			"explanation": "Has an effect when equipped, but is consumed each time the Action is performed."
+			"name": "Consommable",
+			"explanation": "Lorsqu'il est équipé, il produit un effet, mais il est consommé à chaque fois que vous effectuez une action."
 		},
 		"buy": {
-			"name": "Buy",
-			"explanation": "The price when buying this Item."
+			"name": "Acheter",
+			"explanation": "La valeur de l'objet au moment de l'achat."
 		},
 		"buying-value": {
-			"name": "Buying Value",
-			"explanation": "The price when buying this Item."
+			"name": "Acheter le titre",
+			"explanation": "La valeur de l'objet au moment de l'achat."
 		},
 		"sell": {
-			"name": "Sell",
-			"explanation": "The price when selling this Item."
+			"name": "Vendre",
+			"explanation": "La valeur de l'objet au moment de la vente."
 		},
 		"selling": {
-			"name": "Sell",
-			"explanation": "Choose an Item you own from the list and sell it."
+			"name": "Vendre",
+			"explanation": ""
 		},
 		"kind": {
-			"name": "Kind",
+			"name": "Type",
 			"explanation": ""
 		},
 		"selling-value": {
-			"name": "Selling Value",
-			"explanation": "The price when selling this Item."
+			"name": "Vendre la valeur commerciale",
+			"explanation": "La valeur de l'objet au moment de la vente."
 		},
 		"trade": {
-			"name": "Trade",
-			"explanation": "Buy or sell this Item."
+			"name": "Commerce",
+			"explanation": ""
 		},
 		"trade-failed": {
-			"name": "Trade Failed",
-			"explanation": "The trade failed."
+			"name": "Transaction échouée",
+			"explanation": "La transaction a échoué."
 		},
 		"capacity-full": {
-			"name": "Capacity Full",
-			"explanation": "The Inventory Capacity is full."
+			"name": "Capacité : complet",
+			"explanation": "Capacité de stockage atteinte."
 		},
 		"queue-full": {
-			"name": "Queue Full",
-			"explanation": "The Queue is full, including the Action in progress."
+			"name": "File d'attente pleine",
+			"explanation": "La file d'attente est pleine, action en cours comprise."
 		},
 		"already-queued": {
-			"name": "Already Queued",
-			"explanation": "This Action is already in the Queue."
+			"name": "Déjà dans la file d'attente",
+			"explanation": "Cette action est déjà dans la file d'attente."
 		},
 		"purchase-limit-reached": {
-			"name": "Purchase Limit Reached",
-			"explanation": "The purchase limit has been reached."
+			"name": "Limite d'achat atteinte",
+			"explanation": "La limite d'achat a été atteinte."
 		},
 		"completed-maximum": {
-			"name": "Completion Limit",
-			"explanation": "The number of completions has reached its limit."
+			"name": "Maximum terminé",
+			"explanation": "Vous avez atteint le nombre maximal de tentatives autorisées pour terminer."
 		},
 		"relationships": {
-			"name": "Related Items",
+			"name": "Relations",
 			"explanation": ""
 		},
 		"relationship-items": {
@@ -699,8 +711,8 @@
 			"explanation": "Une liste des objets liés aux actions de cette catégorie."
 		},
 		"requirement-equipment": {
-			"name": "Required Equipment",
-			"explanation": "This Item must be equipped."
+			"name": "Matériel requis pour cette exigence",
+			"explanation": "Cet objet doit être équipé."
 		},
 		"skill": {
 			"name": "Compétence",
@@ -715,7 +727,7 @@
 			"explanation": "Aucune compétence ne peut se déclencher pour le moment."
 		},
 		"property": {
-			"name": "Property",
+			"name": "Propriété",
 			"explanation": ""
 		},
 		"calculation": {
@@ -723,183 +735,183 @@
 			"explanation": ""
 		},
 		"properties": {
-			"name": "Property List",
-			"explanation": "A list of Properties belonging to this Category."
+			"name": "Liste des propriétés",
+			"explanation": ""
 		},
 		"attack": {
-			"name": "Attack",
-			"explanation": "Damage dealt to the Target."
+			"name": "Attaque",
+			"explanation": "Dégâts infligés à la cible."
 		},
 		"defence": {
-			"name": "Defence",
-			"explanation": "Damage taken from the Target."
+			"name": "Défense",
+			"explanation": "Dégâts infligés par la cible."
 		},
 		"accuracy": {
-			"name": "Accuracy",
-			"explanation": "The chance of dealing damage to the monster."
+			"name": "Précision",
+			"explanation": "Probabilité d'infliger des dégâts au monstre."
 		},
 		"evasion": {
-			"name": "Evasion",
-			"explanation": "The chance of taking damage from the monster."
+			"name": "Évasion",
+			"explanation": "Probabilité de subir des dégâts infligés par un monstre."
 		},
 		"restore": {
-			"name": "Restore",
-			"explanation": "Affects the amount recovered during combat."
+			"name": "Restaurateur",
+			"explanation": "Influence la quantité de points de vie perdus au cours du combat."
 		},
 		"speed": {
-			"name": "Speed",
-			"explanation": "Affects the speed of the Action."
+			"name": "Vitesse",
+			"explanation": "Influence la vitesse de l'action."
 		},
 		"chance": {
 			"name": "Chance",
-			"explanation": "This Action may also succeed, but if it fails, you get no reward or Experience."
+			"explanation": "Cette action peut aboutir, mais en cas d'échec, vous ne recevrez ni récompense ni points d'expérience."
 		},
 		"experience": {
-			"name": "Experience",
-			"explanation": "Affects the Experience gained from the Action."
+			"name": "Épreuve",
+			"explanation": "Cela a une incidence sur les points d'expérience gagnés grâce aux actions."
 		},
 		"value": {
-			"name": "Value",
+			"name": "Valeur",
 			"explanation": ""
 		},
 		"resources": {
-			"name": "Bonus Items",
+			"name": "Ressources",
 			"explanation": ""
 		},
 		"base-value": {
-			"name": "Base Value",
-			"explanation": "A value unique to this game or Action."
+			"name": "Valeur de base",
+			"explanation": "Une valeur unique pour ce jeu ou cette action."
 		},
 		"level-gap": {
-			"name": "Level Gap",
-			"explanation": "For the calculation, see the \"Level\" block."
+			"name": "Écart de niveau",
+			"explanation": "Pour les calculs numériques, voir la section « Niveau »."
 		},
 		"reflected-value": {
-			"name": "Reflected Value",
-			"explanation": "The final value calculated from \"Base Value\" and \"Level Gap\"."
+			"name": "Valeur réfléchie",
+			"explanation": "Valeur finale calculée à partir de la « valeur de base » et de l'« écart de niveau »."
 		},
 		"level-gap-property": {
-			"name": "Level Gap Property",
-			"explanation": "The \"Level Gap\" value is the sum of each value in this block."
+			"name": "Propriété « Niveau Gap »",
+			"explanation": "La valeur « Level Gap » correspond à la somme de toutes les valeurs contenues dans ce bloc."
 		},
 		"level-gap-category": {
-			"name": "Level Gap Category",
-			"explanation": "The value obtained by subtracting this Action's Level from the Player's Category Level. For \"Experience\", however, this is reversed."
+			"name": "Catégorie « Différence de niveau »",
+			"explanation": "Le niveau de la catégorie du joueur moins le niveau de l'action. Dans le cas de l'« expérience », c'est l'inverse."
 		},
 		"level-gap-action": {
-			"name": "Level Gap Action",
-			"explanation": "When the Progress Type is \"Stamina\", a value unique to this Action set by it."
+			"name": "Action relative à la différence de niveau",
+			"explanation": "Lorsque le type de progression est « endurance », il s'agit de la valeur unique définie par cette action."
 		},
 		"level-gap-item": {
-			"name": "Level Gap Item",
-			"explanation": "A bonus value from equipped Items, or Items whose effect activates without being equipped."
+			"name": "Objet de décalage de niveau",
+			"explanation": "Il s'agit de la valeur de correction provenant des objets équipés, ou des objets dont l'effet s'applique même s'ils ne sont pas équipés."
 		},
 		"no-status": {
-			"name": "No Status",
-			"explanation": "There are no available Status Categories."
+			"name": "Non statutaire",
+			"explanation": "Aucune catégorie de statut n'est disponible."
 		},
 		"event": {
-			"name": "Event",
+			"name": "Événement",
 			"explanation": ""
 		},
 		"timing": {
-			"name": "Timing",
-			"explanation": "The timing when this Event occurs."
+			"name": "Calendrier",
+			"explanation": ""
 		},
 		"timing-matched": {
-			"name": "Condition Met",
-			"explanation": "Occurs the moment the condition is met."
+			"name": "条件達成",
+			"explanation": "条件が満たされた瞬間に発生する"
 		},
 		"timing-comebacked": {
-			"name": "Comeback",
-			"explanation": "Occurs when you return after being away for a while."
+			"name": "カムバック",
+			"explanation": "しばらく離れていたあと、戻ってきたときに発生する"
 		},
 		"timing-gameovered": {
-			"name": "Game Over",
-			"explanation": "Occurs when Stamina runs out during combat."
+			"name": "ゲームオーバー",
+			"explanation": "戦闘中にスタミナが尽きたときに発生する"
 		},
 		"timing-welcomed": {
-			"name": "First Launch",
-			"explanation": "Occurs when you open this World for the first time."
+			"name": "初回起動",
+			"explanation": "このワールドを初めて開いたときに発生する"
 		},
 		"timing-completed": {
-			"name": "Complete",
-			"explanation": "Occurs when all Categories reach their maximum Level."
+			"name": "コンプリート",
+			"explanation": "すべてのカテゴリが最大レベルに到達したときに発生する"
 		},
 		"timing-obtained": {
-			"name": "Obtained",
-			"explanation": "Occurs when a Single Action is completed."
+			"name": "獲得",
+			"explanation": "単発のアクションが完了したときに発生する"
 		},
 		"matched": {
-			"name": "Matched",
-			"explanation": "The condition has been met."
+			"name": "Correspondant",
+			"explanation": "Les conditions ont été remplies."
 		},
 		"comebacked": {
-			"name": "Comebacked",
-			"explanation": "Welcome back! Here's what happened while you were away:"
+			"name": "De retour",
+			"explanation": "Bon retour parmi nous ! Voici les progrès réalisés pendant votre absence :"
 		},
 		"gameovered": {
-			"name": "Gameovered",
-			"explanation": "Game over. Progress has been reset."
+			"name": "Jeu terminé",
+			"explanation": "Fin de partie. Ta progression a été réinitialisée."
 		},
 		"completed": {
-			"name": "Completed",
-			"explanation": "Congratulations! You have completed all Categories."
+			"name": "Terminé",
+			"explanation": "Félicitations ! Vous avez terminé toutes les catégories."
 		},
 		"welcomed": {
-			"name": "Welcomed",
-			"explanation": "Welcome to this World!"
+			"name": "Bienvenue",
+			"explanation": "Bienvenue dans ce monde !"
 		},
 		"obtained": {
-			"name": "Obtained",
-			"explanation": "Here's what you obtained:"
+			"name": "Obtenu",
+			"explanation": "Vous avez obtenu :"
 		},
 		"achieved": {
-			"name": "Achieved",
+			"name": "Réalisé",
 			"explanation": ""
 		},
 		"receive": {
-			"name": "Receive",
-			"explanation": "Receive the reward for this Task."
+			"name": "Recevoir",
+			"explanation": "Recevez la récompense de cette tâche."
 		},
 		"received": {
-			"name": "Received",
-			"explanation": "The reward for this Task has already been received."
+			"name": "Reçu",
+			"explanation": "La récompense de cette tâche a déjà été reçue."
 		},
 		"hidden": {
-			"name": "Hidden",
-			"explanation": "Once you check the content, this column will be hidden."
+			"name": "Masqué",
+			"explanation": "Une fois le contenu confirmé, cette colonne sera masquée."
 		},
 		"task": {
-			"name": "Task",
+			"name": "Tâche",
 			"explanation": ""
 		},
 		"task-completed": {
-			"name": "Task Completed",
+			"name": "Tâche terminée",
 			"explanation": ""
 		},
 		"tasks": {
-			"name": "Task List",
-			"explanation": "A list of Tasks set for this Category."
+			"name": "Liste des tâches",
+			"explanation": ""
 		},
 		"missions": {
 			"name": "Missions",
-			"explanation": "A list of Tasks across all Categories and their completion status."
+			"explanation": ""
 		},
 		"language-en": {
-			"name": "English",
+			"name": "Anglais",
 			"explanation": ""
 		},
 		"language-zh": {
-			"name": "中文（简体）",
+			"name": "CHINOIS (SIMPLIFIÉ)",
 			"explanation": ""
 		},
 		"language-es": {
-			"name": "Español",
+			"name": "Espagnol",
 			"explanation": ""
 		},
 		"language-pt": {
-			"name": "Português",
+			"name": "Portugais",
 			"explanation": ""
 		},
 		"language-fr": {
@@ -907,15 +919,15 @@
 			"explanation": ""
 		},
 		"language-ru": {
-			"name": "Русский",
+			"name": "Russe",
 			"explanation": ""
 		},
 		"language-de": {
-			"name": "Deutsch",
+			"name": "Allemand",
 			"explanation": ""
 		},
 		"language-ja": {
-			"name": "日本語",
+			"name": "JAPONAIS",
 			"explanation": ""
 		},
 		"language-id": {
@@ -923,248 +935,256 @@
 			"explanation": ""
 		},
 		"language-ko": {
-			"name": "한국어",
+			"name": "CORÉEN",
 			"explanation": ""
 		},
 		"config": {
-			"name": "Config",
-			"explanation": "Change this game's settings and manage save data."
+			"name": "Configuration",
+			"explanation": ""
+		},
+		"operation": {
+			"name": "Opération",
+			"explanation": "Modifie la façon dont les actions sont exécutées."
+		},
+		"auto-clear-queue": {
+			"name": "Vidage automatique de la file d'attente",
+			"explanation": "Lorsque vous appuyez longuement pour démarrer une action exécutable, toutes les réservations de la file d'attente, y compris celle en cours, sont supprimées avant que cette action ne démarre."
 		},
 		"display": {
-			"name": "Display",
-			"explanation": "Change how the game is displayed on screen."
+			"name": "Affichage",
+			"explanation": "Modifie la façon dont le jeu est affiché à l’écran."
 		},
 		"language": {
-			"name": "Language",
-			"explanation": "Change the language used for display."
+			"name": "Langue",
+			"explanation": ""
 		},
 		"selected-language": {
-			"name": "Selected Language",
+			"name": "Langue sélectionnée",
 			"explanation": ""
 		},
 		"language-change-enable": {
-			"name": "Language Change Enable",
-			"explanation": "The display language can be changed."
+			"name": "Activer le changement de langue",
+			"explanation": "Vous pouvez modifier la langue d'affichage."
 		},
 		"language-change-unenable": {
-			"name": "Language Change Unenable",
-			"explanation": "There are no other languages available for display."
+			"name": "Désactiver le changement de langue",
+			"explanation": "Aucune autre langue n'est disponible pour l'affichage."
 		},
 		"category-shortcut": {
-			"name": "Category Shortcut",
-			"explanation": "When you open a Category, also show its Action List or Item List."
+			"name": "Lien vers la catégorie",
+			"explanation": "À l'ouverture d'une catégorie, la liste des actions ou la liste des objets s'affiche également."
 		},
 		"showing-hint": {
-			"name": "Hint",
-			"explanation": "Shows explanations of how to operate the game."
+			"name": "Indice",
+			"explanation": "Affiche le mode d'emploi."
 		},
 		"showing-navigation": {
 			"name": "Navigation",
-			"explanation": "Shows buttons for moving between columns. Even without showing the buttons, you can move between columns by swiping."
+			"explanation": "Affiche les boutons permettant de passer d'une colonne à l'autre. Vous pouvez également faire glisser votre doigt pour passer d'une colonne à l'autre sans les afficher."
 		},
 		"performance": {
 			"name": "Performance",
-			"explanation": "Adjusts behavior to suit your device."
+			"explanation": "Ajuste le fonctionnement de la console sur votre appareil."
 		},
 		"performing-highly": {
-			"name": "Performing Highly",
-			"explanation": "Increases the update frequency. If performance is heavy, turning this off is recommended. Does not affect the execution time of each Action."
+			"name": "Des performances exceptionnelles",
+			"explanation": "Augmentez la fréquence de mise à jour. Si cette opération mobilise beaucoup de ressources, nous vous recommandons de désactiver cette option. Cela n'a aucune incidence sur la durée d'exécution de chaque action."
 		},
 		"data": {
-			"name": "Data",
-			"explanation": "Save, load, or delete this World's progress data."
+			"name": "Données",
+			"explanation": "Enregistre, charge et efface les données de progression de ce monde."
 		},
 		"export-game": {
-			"name": "Export Game",
-			"explanation": "Game data has been exported."
+			"name": "Exporter le jeu",
+			"explanation": "Les données du jeu ont été exportées."
 		},
 		"import-game": {
-			"name": "Import Game",
-			"explanation": "Game data has been imported."
+			"name": "Importer un jeu",
+			"explanation": "Les données du jeu ont été importées."
 		},
 		"import-mistake": {
-			"name": "Import Mistake",
-			"explanation": "Failed to load the game data."
+			"name": "Erreur d'importation",
+			"explanation": "Impossible de charger les données du jeu."
 		},
 		"reset-game": {
-			"name": "Reset Game",
-			"explanation": "Deletes all progress data for this World. This action cannot be undone. After confirming that you really want to delete the file, type \"DELETE\" into the input field. (Not required in debug mode.)"
+			"name": "Réinitialiser la partie",
+			"explanation": "Supprime toutes les données de progression de ce monde. Cette action est irréversible. Veuillez confirmer que vous souhaitez bien supprimer le fichier, puis saisissez « DELETE » dans le champ de saisie. (Non requis en mode débogage)"
 		},
 		"reset-really": {
-			"name": "Really?",
+			"name": "Vraiment ?",
 			"explanation": ""
 		},
 		"reset-alert": {
-			"name": "Reset Alert",
-			"explanation": "Resetting the game erases all data. Are you sure you want to reset the game?"
+			"name": "Réinitialiser l'alerte",
+			"explanation": "La réinitialisation du jeu effacera toutes les données. Êtes-vous sûr de vouloir réinitialiser le jeu ?"
 		},
 		"reset-debug-mode": {
-			"name": "Reset Debug Mode",
-			"explanation": "In debug mode, no input is required in the confirmation field."
+			"name": "Réinitialiser le mode débogage",
+			"explanation": "En mode débogage, aucune saisie n'est requise dans le champ de confirmation."
 		},
 		"restart": {
-			"name": "Restart",
-			"explanation": "Reloads the console. Used to check whether the build has been updated."
+			"name": "Redémarrer",
+			"explanation": "Recharge la console. À utiliser pour vérifier si la build a été remplacée."
 		},
 		"hint-language-switching": {
 			"name": "Hint Language Switching",
-			"explanation": "Switches the language displayed in the game."
+			"explanation": "Change la langue affichée dans le jeu."
 		},
 		"hint-language-availability": {
 			"name": "Hint Language Availability",
-			"explanation": "Only available when the author has provided a translation."
+			"explanation": "Ceci n'est valable que si l'auteur a préparé une traduction."
 		},
 		"hint-event-timing": {
 			"name": "Hint Event Timing",
-			"explanation": "Occurs at set timings, such as when you return to the game or when it's game over."
+			"explanation": "Se déclenche à des moments précis, comme au retour dans le jeu ou en cas de fin de partie."
 		},
 		"hint-event-reward": {
 			"name": "Hint Event Reward",
-			"explanation": "When it occurs, this screen opens and a reward is automatically granted along with a message."
+			"explanation": "Au déclenchement, cet écran s'ouvre et la récompense est accordée automatiquement avec un message."
 		},
 		"hint-event-task": {
 			"name": "Hint Event Task",
-			"explanation": "A Task is completed when its condition is met, and you receive the reward yourself."
+			"explanation": "Une tâche s'accomplit en remplissant certaines conditions, et vous récupérez la récompense vous-même."
 		},
 		"hint-debug-visibility": {
 			"name": "Hint Debug Visibility",
-			"explanation": "This is shown only during debugging."
+			"explanation": "Ceci n'est affiché que pendant le débogage."
 		},
 		"hint-debug-publishing": {
 			"name": "Hint Debug Publishing",
-			"explanation": "Not shown when the game is published or distributed."
+			"explanation": "Ceci ne sera pas affiché lors de la publication et de la distribution du jeu."
 		},
 		"hint-config-settings": {
 			"name": "Hint Config Settings",
-			"explanation": "Configure settings related to the game's display and processing."
+			"explanation": "Configurez les réglages liés à l'affichage et au traitement du jeu."
 		},
 		"hint-config-data": {
 			"name": "Hint Config Data",
-			"explanation": "You can read, write, or reset game data."
+			"explanation": "Les données du jeu peuvent être importées, exportées et réinitialisées."
 		},
 		"hint-statistics-progress": {
 			"name": "Hint Statistics Progress",
-			"explanation": "You can check the game's progress so far."
+			"explanation": "Vous pouvez consulter la progression du jeu jusqu'à présent."
 		},
 		"hint-overview-world": {
 			"name": "Hint Overview World",
-			"explanation": "You can check this game's World (setting and lore)."
+			"explanation": "Vous pouvez consulter le monde (univers, configuration) de ce jeu."
 		},
 		"hint-overview-console": {
 			"name": "Hint Overview Console",
-			"explanation": "You can also check the console (system) running this game."
+			"explanation": "Vous pouvez également consulter la console (le système) qui fait tourner ce jeu."
 		},
 		"hint-properties-list": {
 			"name": "Hint Properties List",
-			"explanation": "A list of Properties set for each Category."
+			"explanation": "Voici la liste des propriétés configurées pour chaque catégorie."
 		},
 		"hint-properties-meaning": {
 			"name": "Hint Properties Meaning",
-			"explanation": "Properties are elements that affect the performance of Actions."
+			"explanation": "Une propriété est un élément qui influe sur l'exécution d'une action."
 		},
 		"hint-properties-equipment": {
 			"name": "Hint Properties Equipment",
-			"explanation": "The effect is adjusted by equipping Items (some Items do not require equipping)."
+			"explanation": "L'effet est corrigé par l'équipement de l'objet. (Certains objets n'en ont pas besoin)"
 		},
 		"hint-trade-availability": {
 			"name": "Hint Trade Availability",
-			"explanation": "Some Items cannot be bought or sold."
+			"explanation": "Certains objets ne peuvent être ni achetés ni vendus."
 		},
 		"hint-trade-locked": {
 			"name": "Hint Trade Locked",
-			"explanation": "Locked Items cannot be bought or sold."
+			"explanation": "Les objets verrouillés ne peuvent être ni achetés ni vendus."
 		},
 		"hint-trade-limit": {
 			"name": "Hint Trade Limit",
-			"explanation": "The Capacity and Queue may have a limit on the number of times they can be purchased; once the limit is reached, no more can be purchased (increases from rewards are not subject to the limit)."
+			"explanation": "Le nombre d'achats peut être limité pour une capacité ou un emplacement de réservation (file d'attente) donné ; une fois cette limite atteinte, vous ne pourrez plus acheter. (Les augmentations issues des récompenses ne sont pas soumises à cette limite)"
 		},
 		"hint-items-equipping": {
 			"name": "Hint Items Equipping",
-			"explanation": "Hold to toggle equipping the Item."
+			"explanation": "Appuyez longuement pour activer ou désactiver l'équipement de l'objet."
 		},
 		"hint-items-exclusive": {
 			"name": "Hint Items Exclusive",
-			"explanation": "Only one Item in the list can be equipped (when the Category is set to allow equipping)."
+			"explanation": "Un seul objet de la liste peut être équipé. (S'il est configuré pour pouvoir être équipé en tant que catégorie)"
 		},
 		"hint-items-locked": {
 			"name": "Hint Items Locked",
-			"explanation": "Items that don't meet their unlock condition are locked, and their details cannot be viewed."
+			"explanation": "Les objets qui ne remplissent pas les conditions de déblocage sont verrouillés et leur détail n'est pas consultable."
 		},
 		"hint-item-meaning": {
 			"name": "Hint Item Meaning",
-			"explanation": "Items are elements related to what you hold, such as equipment, consumables, and valuables."
+			"explanation": "Les objets sont des éléments liés à ce que l'on possède, comme l'équipement, les consommables et les objets de valeur."
 		},
 		"hint-item-exclusive": {
 			"name": "Hint Item Exclusive",
-			"explanation": "Only one Item can be equipped within a single Category (when the Category is set to allow equipping)."
+			"explanation": "Un seul objet peut être équipé au sein d'une catégorie. (S'il est configuré pour pouvoir être équipé en tant que catégorie)"
 		},
 		"hint-item-locked": {
 			"name": "Hint Item Locked",
-			"explanation": "Items that don't meet their unlock condition are locked, and their details cannot be viewed."
+			"explanation": "Les objets qui ne remplissent pas les conditions de déblocage sont verrouillés et leur détail n'est pas consultable."
 		},
 		"hint-act-control": {
 			"name": "Hint Act Control",
-			"explanation": "Starts or stops the Action."
+			"explanation": "Démarre ou arrête une action."
 		},
 		"hint-act-count": {
 			"name": "Hint Act Count",
-			"explanation": "You can specify the number of times to perform it. Choosing the rightmost option performs it until resources run out."
+			"explanation": "Vous pouvez indiquer le nombre d'exécutions. Choisissez la position la plus à droite pour exécuter jusqu'à épuisement des ressources."
 		},
 		"hint-queue-removing": {
 			"name": "Hint Queue Removing",
-			"explanation": "Hold the bar to remove it from the Queue. Since the front is in progress, it stops and the next one begins."
+			"explanation": "Un appui long sur une barre la retire de la file d'attente. La première est en cours : elle s'arrête et la suivante démarre."
 		},
 		"hint-actions-executing": {
 			"name": "Hint Actions Executing",
-			"explanation": "Hold to toggle performing the Action."
+			"explanation": "Un appui long active ou désactive l'exécution de l'action."
 		},
 		"hint-actions-exclusive": {
 			"name": "Hint Actions Exclusive",
-			"explanation": "Only one Action can be performed within a single Category."
+			"explanation": "Une seule exécution est possible au sein d'une catégorie."
 		},
 		"hint-actions-parallel": {
 			"name": "Hint Actions Parallel",
-			"explanation": "Depending on the Category, Actions in multiple Categories can progress at the same time."
+			"explanation": "Certaines catégories permettent de faire progresser des actions de plusieurs catégories en même temps."
 		},
 		"hint-actions-locked": {
 			"name": "Hint Actions Locked",
-			"explanation": "Actions that don't meet their unlock condition are locked, and their details cannot be viewed."
+			"explanation": "Les actions qui ne remplissent pas les conditions de déblocage sont verrouillées et leur détail n'est pas consultable."
 		},
 		"hint-action-experience": {
 			"name": "Hint Action Experience",
-			"explanation": "Each time it is performed, you gain Experience and may Level up."
+			"explanation": "Chaque exécution peut rapporter de l'expérience et faire monter votre niveau."
 		},
 		"hint-action-resource": {
 			"name": "Hint Action Resource",
-			"explanation": "Each time it is performed, Items are consumed or gained."
+			"explanation": "Chaque exécution consomme ou rapporte un objet."
 		},
 		"hint-action-locked": {
 			"name": "Hint Action Locked",
-			"explanation": "Actions that don't meet their unlock condition are locked, and their details cannot be viewed."
+			"explanation": "Les actions qui ne remplissent pas les conditions de déblocage sont verrouillées et leur détail n'est pas consultable."
 		},
 		"hint-tasks-list": {
 			"name": "Hint Tasks List",
-			"explanation": "A list of Tasks assigned to this Category."
+			"explanation": "Voici la liste des tâches attribuées à cette catégorie."
 		},
 		"hint-tasks-detail": {
 			"name": "Hint Tasks Detail",
-			"explanation": "Select a Task to check its completion condition and reward."
+			"explanation": "Sélectionnez une tâche pour consulter ses conditions d'accomplissement et sa récompense."
 		},
 		"hint-tasks-unclaimed": {
 			"name": "Hint Tasks Unclaimed",
-			"explanation": "Tasks whose reward hasn't been claimed yet have a ribbon. Select it and press Receive to claim it."
+			"explanation": "Un ruban signale les tâches dont la récompense n'a pas encore été réclamée. Sélectionnez-en une et appuyez sur recevoir pour l'obtenir."
 		},
 		"hint-tasks-capacity": {
 			"name": "Hint Tasks Capacity",
-			"explanation": "You cannot receive the reward while the number of Item types you can hold has reached its limit. Make room, then try receiving it again."
+			"explanation": "Vous ne pouvez pas réclamer de récompense tant que le nombre de types d'objets que vous pouvez détenir est à sa limite. Libérez de la place puis réclamez-la de nouveau."
 		},
 		"hint-tasks-empty": {
 			"name": "Hint Tasks Empty",
-			"explanation": "Not shown if the Category has no Tasks."
+			"explanation": "Ceci ne s'affiche pas lorsque la catégorie ne comporte aucune tâche."
 		},
 		"hint-category-meaning": {
 			"name": "Hint Category Meaning",
-			"explanation": "An element that groups together Actions and Items."
+			"explanation": "Cet élément regroupe des actions et des objets."
 		},
 		"hint-status-property": {
 			"name": "Hint Status Property",
@@ -1172,67 +1192,67 @@
 		},
 		"hint-status-action": {
 			"name": "Hint Status Action",
-			"explanation": "Depending on the Action performed, additional bonuses may apply."
+			"explanation": "D'autres corrections s'appliquent encore selon l'action à exécuter."
 		},
 		"hint-inventory-equipping": {
 			"name": "Hint Inventory Equipping",
-			"explanation": "Hold to toggle equipping the Item."
+			"explanation": "Appuyez longuement pour activer ou désactiver l'équipement de l'objet."
 		},
 		"hint-activity-executing": {
 			"name": "Hint Activity Executing",
-			"explanation": "Hold to toggle performing the Action."
+			"explanation": "Un appui long active ou désactive l'exécution de l'action."
 		},
 		"hint-missions-grouping": {
 			"name": "Hint Missions Grouping",
-			"explanation": "Tasks are grouped and shown by Category."
+			"explanation": "Les tâches sont regroupées et affichées par catégorie."
 		},
 		"hint-missions-ungrouped": {
 			"name": "Hint Missions Ungrouped",
-			"explanation": "Tasks with no Category set are grouped at the top."
+			"explanation": "Les tâches sans catégorie configurée sont regroupées en haut."
 		},
 		"hint-missions-completed": {
 			"name": "Hint Missions Completed",
-			"explanation": "Completed Tasks have a checkmark."
+			"explanation": "Une coche est affichée sur les tâches accomplies."
 		},
 		"hint-missions-unclaimed": {
 			"name": "Hint Missions Unclaimed",
-			"explanation": "Tasks whose reward hasn't been claimed yet have a ribbon. Select it and press Receive to claim it."
+			"explanation": "Un ruban signale les tâches dont la récompense n'a pas encore été réclamée. Sélectionnez-en une et appuyez sur recevoir pour l'obtenir."
 		},
 		"hint-missions-permanent": {
 			"name": "Hint Missions Permanent",
-			"explanation": "Once a Task is completed, it stays completed even if the condition is no longer met afterward."
+			"explanation": "Une fois accomplie, une tâche le reste, même si les conditions ne sont plus remplies par la suite."
 		},
 		"hint-attack-scope": {
 			"name": "Hint Attack Scope",
-			"explanation": "Opening from a Category shows a list of contributing Items; opening from an Item shows a list of affected Categories."
+			"explanation": "カテゴリから開くと寄与しているアイテムの一覧、アイテムから開くと影響先カテゴリの一覧が表示される"
 		},
 		"hint-defence-scope": {
 			"name": "Hint Defence Scope",
-			"explanation": "Opening from a Category shows a list of contributing Items; opening from an Item shows a list of affected Categories."
+			"explanation": "カテゴリから開くと寄与しているアイテムの一覧、アイテムから開くと影響先カテゴリの一覧が表示される"
 		},
 		"hint-accuracy-scope": {
 			"name": "Hint Accuracy Scope",
-			"explanation": "Opening from a Category shows a list of contributing Items; opening from an Item shows a list of affected Categories."
+			"explanation": "カテゴリから開くと寄与しているアイテムの一覧、アイテムから開くと影響先カテゴリの一覧が表示される"
 		},
 		"hint-evasion-scope": {
 			"name": "Hint Evasion Scope",
-			"explanation": "Opening from a Category shows a list of contributing Items; opening from an Item shows a list of affected Categories."
+			"explanation": "カテゴリから開くと寄与しているアイテムの一覧、アイテムから開くと影響先カテゴリの一覧が表示される"
 		},
 		"hint-restore-scope": {
 			"name": "Hint Restore Scope",
-			"explanation": "Opening from a Category shows a list of contributing Items; opening from an Item shows a list of affected Categories."
+			"explanation": "カテゴリから開くと寄与しているアイテムの一覧、アイテムから開くと影響先カテゴリの一覧が表示される"
 		},
 		"hint-speed-scope": {
 			"name": "Hint Speed Scope",
-			"explanation": "Opening from a Category shows a list of contributing Items; opening from an Item shows a list of affected Categories."
+			"explanation": "カテゴリから開くと寄与しているアイテムの一覧、アイテムから開くと影響先カテゴリの一覧が表示される"
 		},
 		"hint-chance-scope": {
 			"name": "Hint Chance Scope",
-			"explanation": "Opening from a Category shows a list of contributing Items; opening from an Item shows a list of affected Categories."
+			"explanation": "カテゴリから開くと寄与しているアイテムの一覧、アイテムから開くと影響先カテゴリの一覧が表示される"
 		},
 		"hint-experience-scope": {
 			"name": "Hint Experience Scope",
-			"explanation": "Opening from a Category shows a list of contributing Items; opening from an Item shows a list of affected Categories."
+			"explanation": "カテゴリから開くと寄与しているアイテムの一覧、アイテムから開くと影響先カテゴリの一覧が表示される"
 		}
 	}
 }

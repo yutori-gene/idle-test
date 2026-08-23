@@ -6370,8 +6370,7 @@
       "items": {
         "type": "object",
         "additionalProperties": false,
-        "format": "categories",
-        "basicCategoryTitle": "Skill",
+        "format": "grid",
         "headerTemplate": "{{ i1 }}: {{ self.information.id }}",
         "options": {
           "disable_collapse": true
@@ -6379,7 +6378,8 @@
         "required": [
           "information",
           "chance",
-          "property"
+          "property",
+          "comment"
         ],
         "properties": {
           "information": {
@@ -6674,12 +6674,31 @@
               }
             },
             "title": "valeur de combat",
-            "description": "À rédiger",
+            "description": "Valeur de combat ajoutée au tour d'activation",
             "yutori": {
               "points": [
-                "À rédiger"
+                "Seulement au tour où cette compétence se déclenche, cette valeur de combat s'ajoute comme correction de la différence de niveau.",
+                "Les valeurs de restauration font exception : au lieu de s'appliquer à ce tour, elles sont cumulées et s'appliquent à la restauration après que le résultat est déterminé. Parmi les valeurs de restauration des compétences déclenchées pendant l'Action, la plus élevée est ajoutée à la quantité de restauration s'il s'agit d'une compétence du joueur, et soustraite s'il s'agit d'une compétence de l'adversaire."
               ],
               "reference": "fr/editor/combat"
+            }
+          },
+          "comment": {
+            "type": "boolean",
+            "default": false,
+            "format": "checkbox",
+            "title": "Affichage de la note explicative",
+            "options": {
+              "infoText": "Afficher ou non la note explicative en notification toast lors du déclenchement"
+            },
+            "yutori": {
+              "points": [
+                "Indicateur déterminant si la note explicative s'affiche en notification toast lorsque cette compétence se déclenche.",
+                "Si activé, elle s'affiche à chaque déclenchement avec une probabilité de (100% − probabilité de déclenchement) ÷ 2. Pour une probabilité de déclenchement de 40%, cela donne 30%.",
+                "Si désactivé, elle ne s'affiche pas.",
+                "Si la note explicative est vide, rien ne s'affiche même lorsque l'option est activée."
+              ],
+              "reference": "fr/editor/skill?id=Affichage de la note explicative"
             }
           }
         }
