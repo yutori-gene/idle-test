@@ -498,7 +498,7 @@ export const skill: Type.Skill = {
 		comment: {
 			title: "Affichage de la note explicative",
 			summary: "Afficher ou non la note explicative en notification toast lors du déclenchement",
-			points: ["Indicateur déterminant si la note explicative s'affiche en notification toast lorsque cette compétence se déclenche.", "Si activé, elle s'affiche une seule fois, au premier déclenchement après l'ouverture du navigateur.", "Si désactivé, elle ne s'affiche pas.", "Si la note explicative est vide, rien ne s'affiche même lorsque l'option est activée."],
+			points: ["Indicateur déterminant si la note explicative s'affiche en notification toast lorsque cette compétence se déclenche.", "Si activé, elle s'affiche à chaque déclenchement avec une probabilité de (100% − probabilité de déclenchement) ÷ 2. Pour une probabilité de déclenchement de 40%, cela donne 30%.", "Si désactivé, elle ne s'affiche pas.", "Si la note explicative est vide, rien ne s'affiche même lorsque l'option est activée."],
 		},
 	},
 	options: {

@@ -18,6 +18,6 @@ ___
 ## Exibição da nota explicativa
 Se a nota explicativa é exibida como notificação flutuante ao ativar
 - Indicador de se a nota explicativa é exibida como notificação flutuante quando esta habilidade é ativada.
-- Quando ativado, é exibida uma única vez, na primeira ativação após abrir o navegador.
+- Quando ativado, é exibida a cada ativação com uma probabilidade de (100% − probabilidade de ativação) ÷ 2. Com 40% de probabilidade de ativação, resulta em 30%.
 - Quando desativado, não é exibida.
 - Se a nota explicativa estiver vazia, nada é exibido mesmo com a opção ativada.
