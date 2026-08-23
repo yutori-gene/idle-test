@@ -10,7 +10,6 @@ world
 ├── item
 ├── skill
 ├── group
-├── task
 └── preset
 `;
 
@@ -425,8 +424,8 @@ export const preset: Type.Information = {
 export const task: Type.Event = {
 	title: "Tâche",
 	summary: "Missions qui sont considérées comme accomplies lorsque les conditions sont remplies",
-	points: ["Lorsque la configuration définie est remplie, l'objectif est atteint et un message s'affiche en haut de l'écran.", "プレイヤーのミッションの一覧と、カテゴリのタスクの一覧に表示されます。", "La récompense n'est pas attribuée automatiquement. Le joueur la reçoit lorsqu'il ouvre la tâche et appuie sur la barre d'acquisitions.", "Tant que la récompense n'a pas été perçue, un ruban apparaît sur la barre de la liste pour indiquer qu'elle n'a pas encore été perçue.", "獲得でカテゴリのレベル、アクションの実行回数、アイテムの所持数を変化させることができます。", "Les éléments que vous souhaitez déclencher à des moments autres que ceux prévus (par exemple lors du premier démarrage ou en cas de jeu terminé) doivent faire l’objet d’une configuration dans les événements des paramètres de base."],
-	links: { event: "event" },
+	points: ["Lorsque la configuration définie est remplie, l'objectif est atteint et un message s'affiche en haut de l'écran.", "プレイヤーのミッションの一覧と、カテゴリのタスクの一覧に表示されます。", "La récompense n'est pas attribuée automatiquement. Le joueur la reçoit lorsqu'il ouvre la tâche et appuie sur la barre d'acquisitions.", "Tant que la récompense n'a pas été perçue, un ruban apparaît sur la barre de la liste pour indiquer qu'elle n'a pas encore été perçue.", "獲得でカテゴリのレベル、アクションの実行回数、アイテムの所持数を変化させることができます。", "初回起動時やゲームオーバー時など、条件以外のタイミングで発動させたいものは固定イベント（unique）で設定します。"],
+	links: { unique: "unique" },
 	children: {
 		information: information,
 		category: {
@@ -437,8 +436,8 @@ export const task: Type.Event = {
 		timing: {
 			title: "timing",
 			summary: "タスク発動のタイミング（`tasked`固定）",
-			points: ["タスクは`tasked`（設定した条件を満たした時）で固定されており、編集できません。", "La récompense ne peut être obtenue qu'une seule fois ; une fois reçue, le statut « Objectif atteint » reste inchangé.", "Pour les éléments que vous souhaitez déclencher à d'autres moments, effectuez la configuration dans les événements des paramètres par défaut."],
-			links: { event: "event" },
+			points: ["タスクは`tasked`（設定した条件を満たした時）で固定されており、編集できません。", "La récompense ne peut être obtenue qu'une seule fois ; une fois reçue, le statut « Objectif atteint » reste inchangé.", "それ以外の決まったタイミングで発動させたいものは、固定イベント（unique）で設定します。"],
+			links: { unique: "unique" },
 		},
 		unlocked: {
 			title: "État d'affichage initial",
@@ -471,6 +470,56 @@ export const task: Type.Event = {
 	},
 	options: {
 		label: "task",
+	},
+};
+
+// 現時点ではプレイヤーに未実装（今後実装予定）。構造はtaskと同じで、timingだけchanged固定
+export const changed: Type.Event = {
+	title: "変化イベント",
+	summary: "執筆予定",
+	points: ["執筆予定（現時点ではプレイヤーに未実装です）"],
+	children: {
+		information: information,
+		category: {
+			title: "カテゴリ",
+			summary: "執筆予定",
+			points: ["執筆予定"],
+		},
+		timing: {
+			title: "タイミング",
+			summary: "変化イベント発動のタイミング（`changed`固定）",
+			points: ["`changed`で固定されており、編集できません。", "執筆予定（現時点ではプレイヤーに未実装です）"],
+		},
+		unlocked: {
+			title: "初期表示状態",
+			summary: "執筆予定",
+			points: ["執筆予定"],
+		},
+		requirements: {
+			title: "条件",
+			summary: "執筆予定",
+			points: ["執筆予定"],
+			children: requirement.children,
+		},
+		requiringGroup: {
+			title: "グループ集計",
+			summary: "執筆予定",
+			points: ["執筆予定"],
+		},
+		acquisitions: {
+			title: "報酬",
+			summary: "執筆予定",
+			points: ["執筆予定"],
+			children: acquisition.children,
+		},
+		group: {
+			title: "タスクグループ",
+			summary: "執筆予定",
+			points: ["執筆予定"],
+		},
+	},
+	options: {
+		label: "changed",
 	},
 };
 
@@ -711,8 +760,8 @@ export const category: Type.Category = {
 export const type: Markdown = {
 	title: "Type",
 	summary: "Classification de base des mondes",
-	points: ["Les mondes sont de sept types.", "Tous les éléments sont placés directement sous le monde.", "アクションとアイテムは所属するカテゴリのIDで関連付けられます。"],
-	list: expandList("Type", [category, action, item, skill, group, task, preset], "Description"),
+	points: ["ワールドは6つのタイプで構成されます。", "Tous les éléments sont placés directement sous le monde.", "アクションとアイテムは所属するカテゴリのIDで関連付けられます。"],
+	list: expandList("Type", [category, action, item, skill, group, preset], "Description"),
 	quote: typeTree,
 	options: {
 		label: "type",
@@ -1026,7 +1075,7 @@ export const overview: Type.Overview = {
 };
 
 // タイミングごとの固定イベント。項目の説明はタスクと共通で、タイミング固有の説明だけ差し替える
-const toFixedEvent = (title: string, summary: string, points: string[], timingPoints: string[]): Type.Event => ({
+const toUniqueEvent = (title: string, summary: string, points: string[], timingPoints: string[]): Type.Event => ({
 	title,
 	summary,
 	points,
@@ -1067,28 +1116,45 @@ const toFixedEvent = (title: string, summary: string, points: string[], timingPo
 	},
 });
 
-export const event: Type.Events = {
-	title: "Événement",
-	summary: "Messages et récompenses déclenchés à des moments précis",
-	points: ["Elle s'active à des moments précis, par exemple lorsque vous accédez à un monde pour la première fois ou lorsque vous terminez le jeu, et ouvre un écran dédié.", "Il y en a un par moment, et il n'est pas possible d'en ajouter ni d'en supprimer. Laissez le champ vide pour les moments où vous ne l'utilisez pas.", "Elles n'apparaissent pas dans la liste des missions ou des tâches. Les éléments qui sont considérés comme accomplis dès que les conditions sont remplies doivent être configurés en tant que tâches.", "La récompense est automatiquement acquise dès son déclenchement. Il n'y a ni opération de réception, ni ruban, comme c'est le cas pour les tâches.", "発動時にカテゴリのレベル、アクションの実行回数、アイテムの所持数を変化させることができます。", "Si vous ne renseignez pas les champs « Nom », « Description » et « Icône », le texte et l'icône par défaut intégrés au joueur seront utilisés."],
+export const unique: Type.Unique = {
+	title: "固定イベント",
+	summary: "決まったタイミングで発動するメッセージと報酬",
+	points: ["ワールドを初めて開いた時やゲームオーバーになった時など、決まったタイミングで発動して専用の画面を開きます。", "タイミングごとに1つずつ用意されており、追加も削除もできません。使わないタイミングは空欄のままにします。", "ミッションやタスクの一覧には表示されません。条件を満たすと達成になるものはタスクで設定します。", "報酬は発動と同時に自動で獲得します。タスクのような受け取りの操作もリボンもありません。", "発動時にカテゴリのレベル、アクションの実行回数、アイテムの所持数を変化させることができます。", "名前・説明・アイコンを空欄にすると、プレイヤーに内蔵されている既定の文言とアイコンが使われます。"],
 	list: [
-		["timing", "condition d'activation", "répéter"],
-		["`comebacked`", "Lorsqu'une personne revient d'une situation désactivée pendant plus d'une seconde et qu'une action est en cours.", "souvent"],
-		["`gameovered`", "Lorsque l'endurance du joueur s'épuise au cours d'un combat.", "souvent"],
-		["`welcomed`", "Quand j'ai commencé ce monde.", "une seule fois"],
-		["`completed`", "全カテゴリのレベルが最大値（maxCategoryLevels）に達した時", "une seule fois"],
-		["`obtained`", "lorsque vous avez terminé ou vérifié une action d'un type spécifique (coffre au trésor, etc.)", "souvent"],
+		["タイミング", "発動条件", "繰り返し"],
+		["`comebacked`", "オフラインから1秒以上経過して復帰し、かつ進行中のアクションがあった時", "何度も"],
+		["`gameovered`", "戦闘でプレイヤーのスタミナがなくなった時", "何度も"],
+		["`welcomed`", "このワールドを初めて起動した時", "一度のみ"],
+		["`completed`", "全カテゴリのレベルが最大値（maxCategoryLevels）に達した時", "一度のみ"],
+		["`obtained`", "single種別のアクション（宝箱など）を完了・確認した時", "何度も"],
 	],
 	links: { task: "task" },
 	children: {
-		comebacked: toFixedEvent("Au retour", "Se déclenche au retour après une absence hors ligne", ["Se déclenche lorsque vous revenez après une seconde ou plus hors ligne et qu'une action était en cours.", "S'affiche avec le récapitulatif de la progression réalisée pendant votre absence."], ["Fixé à `comebacked`, non modifiable.", "Se déclenche à chaque retour, autant de fois que nécessaire."]),
-		gameovered: toFixedEvent("À la fin de partie", "Se déclenche lorsque l'endurance est épuisée en combat", ["Se déclenche lorsque l'endurance du joueur est épuisée en combat.", "En définissant une quantité de récompense négative, vous pouvez associer un coût à la fin de partie."], ["Fixé à `gameovered`, non modifiable.", "Se déclenche à chaque fin de partie, autant de fois que nécessaire."]),
-		welcomed: toFixedEvent("Au premier démarrage", "Se déclenche à la première ouverture du monde", ["Se déclenche lorsque ce monde est lancé pour la première fois.", "Sert à présenter l'univers ou à remettre l'équipement de départ."], ["Fixé à `welcomed`, non modifiable.", "Se déclenche une seule fois, au premier démarrage."]),
-		completed: toFixedEvent("À la fin du jeu", "全カテゴリが最大レベルに達した時に発動", ["全カテゴリのレベルが最大値（maxCategoryLevels）に達した時に発動します。", "numeric（数値）でないカテゴリは判定から除かれます。"], ["Fixé à `completed`, non modifiable.", "Se déclenche une seule fois, lorsque les conditions sont remplies."]),
-		obtained: toFixedEvent("À l'achèvement d'une action unique", "Se déclenche à l'achèvement d'une action unique comme un coffre au trésor", ["Se déclenche lorsqu'une action de type single (comme un coffre au trésor) est terminée et confirmée.", "Indépendamment de la récompense propre à l'action, vous pouvez ajouter par-dessus la récompense configurée ici."], ["Fixé à `obtained`, non modifiable.", "Se déclenche à chaque achèvement d'une action unique, autant de fois que nécessaire."]),
+		comebacked: toUniqueEvent("復帰時", "オフラインから復帰した時に発動", ["オフラインから1秒以上経過して復帰し、かつ進行中のアクションがあった時に発動します。", "離れているあいだの進行のまとめと一緒に表示されます。"], ["`comebacked`で固定されており、編集できません。", "復帰するたびに何度でも発動します。"]),
+		gameovered: toUniqueEvent("ゲームオーバー時", "戦闘でスタミナがなくなった時に発動", ["戦闘でプレイヤーのスタミナがなくなった時に発動します。", "報酬の数量にマイナスを設定すれば、ゲームオーバーの代償を持たせることができます。"], ["`gameovered`で固定されており、編集できません。", "ゲームオーバーになるたびに何度でも発動します。"]),
+		welcomed: toUniqueEvent("初回開始時", "ワールドを初めて開いた時に発動", ["このワールドを初めて起動した時に発動します。", "世界観の説明や、開始時に渡す支度品の受け渡しに使います。"], ["`welcomed`で固定されており、編集できません。", "初回の起動時に一度だけ発動します。"]),
+		completed: toUniqueEvent("クリア時", "全カテゴリが最大レベルに達した時に発動", ["全カテゴリのレベルが最大値（maxCategoryLevels）に達した時に発動します。", "numeric（数値）でないカテゴリは判定から除かれます。"], ["`completed`で固定されており、編集できません。", "条件を満たした時に一度だけ発動します。"]),
+		obtained: toUniqueEvent("単発アクション完了時", "宝箱などの単発アクションを完了した時に発動", ["single種別のアクション（宝箱など）を完了・確認した時に発動します。", "アクション自体の報酬とは別に、ここで設定した報酬を上乗せできます。"], ["`obtained`で固定されており、編集できません。", "単発アクションを完了するたびに何度でも発動します。"]),
 	},
 	options: {
-		label: "event",
+		label: "unique",
+	},
+};
+
+// タスク・変化イベント・固定イベントをまとめたイベント全体
+export const events: Type.Events = {
+	title: "イベント",
+	summary: "タスク・変化イベント・固定イベントをまとめた、ワールドのイベント全体",
+	points: ["ワールドのイベントはタスク（tasks）・変化イベント（changed）・固定イベント（unique）の3種類で構成されます。", "タスクは条件を満たすと達成になるミッションです。", "変化イベントは今後実装予定で、現時点ではプレイヤーに機能はありません。", "固定イベントはタイミングごとに1つずつ用意される、追加・削除できない枠です。"],
+	list: expandList("種類", [task, changed, unique], "説明"),
+	children: {
+		tasks: { ...task, options: { ...task.options, array: true } },
+		changed: { ...changed, options: { ...changed.options, array: true } },
+		unique: unique,
+	},
+	options: {
+		label: "events",
+		linkedList: true,
 	},
 };
 
@@ -1096,12 +1162,11 @@ export const basic: Type.Basic = {
 	title: "configuration de base",
 	summary: "Éléments de configuration de base pour le monde en général.",
 	points: ["ワールドの名前、説明、背景、通貨、容量、カテゴリの最大レベル、経験値の上昇率、割引率、標準戦闘パラメータなどを設定します。", "Ces configurations affectent le monde entier."],
-	list: expandList("nom", [overview, general, design, event, development], "Description"),
+	list: expandList("nom", [overview, general, design, development], "Description"),
 	children: {
 		overview: overview,
 		general: general,
 		design: design,
-		events: event,
 		development: development,
 	},
 	options: {
@@ -1124,7 +1189,7 @@ export const world: Type.World = {
 		items: { ...item, options: { ...item.options, array: true } },
 		skills: { ...skill, options: { ...skill.options, array: true } },
 		groups: { ...group, options: { ...group.options, array: true } },
-		tasks: { ...task, options: { ...task.options, array: true } },
+		events: events,
 		presets: { ...preset, options: { ...preset.options, array: true } },
 	},
 	options: {
@@ -1137,7 +1202,7 @@ export const world: Type.World = {
 export const editor: Markdown = {
 	title: "éditeur",
 	summary: "Explications sur l'utilisation de l'éditeur et la structure des mondes.",
-	list: expandList("nom", [world, basic, type, component, miscellaneous], "Description"),
+	list: expandList("nom", [world, basic, type, events, component, miscellaneous], "Description"),
 	options: {
 		label: "editor",
 		linkedList: true,
@@ -1151,10 +1216,11 @@ export const editor: Markdown = {
 export const tree: Tree = {
 	title: editor,
 	twig: [
-		{ title: world }, 
-		{ title: basic, twig: [overview, general, design, event, development] },
-		{ title: type, twig: [category, action, item, skill, group, task, preset] },
-		{ title: component, twig: [information, requirement, acquisition, combat, property] }, 
+		{ title: world },
+		{ title: basic, twig: [overview, general, design, development] },
+		{ title: type, twig: [category, action, item, skill, group, preset] },
+		{ title: events, twig: [task, changed, unique] },
+		{ title: component, twig: [information, requirement, acquisition, combat, property] },
 		{ title: miscellaneous, twig: [translation] }
 	],
 };

@@ -10,7 +10,6 @@ world
 ├── item
 ├── skill
 ├── group
-├── task
 └── preset
 `;
 
@@ -425,8 +424,8 @@ export const preset: Type.Information = {
 export const task: Type.Event = {
 	title: "Tugas",
 	summary: "Misi yang akan dianggap berhasil jika syarat-syaratnya terpenuhi",
-	points: ["Jika memenuhi konfigurasi yang telah ditetapkan, maka target tercapai, dan pesan akan ditampilkan di bagian atas layar.", "プレイヤーのミッションの一覧と、カテゴリのタスクの一覧に表示されます。", "Hadiah tidak diberikan secara otomatis. Pemain akan menerimanya saat membuka tugas dan menekan tombol \"Akuisisi\".", "Sampai imbalan tersebut diterima, bilah pada daftar akan ditandai dengan pita untuk menunjukkan bahwa imbalan tersebut belum diterima.", "獲得でカテゴリのレベル、アクションの実行回数、アイテムの所持数を変化させることができます。", "Untuk hal-hal yang ingin diaktifkan pada waktu-waktu di luar kondisi tertentu, seperti saat pertama kali dijalankan atau saat permainan berakhir, lakukan konfigurasi melalui acara di pengaturan dasar."],
-	links: { event: "event" },
+	points: ["Jika memenuhi konfigurasi yang telah ditetapkan, maka target tercapai, dan pesan akan ditampilkan di bagian atas layar.", "プレイヤーのミッションの一覧と、カテゴリのタスクの一覧に表示されます。", "Hadiah tidak diberikan secara otomatis. Pemain akan menerimanya saat membuka tugas dan menekan tombol \"Akuisisi\".", "Sampai imbalan tersebut diterima, bilah pada daftar akan ditandai dengan pita untuk menunjukkan bahwa imbalan tersebut belum diterima.", "獲得でカテゴリのレベル、アクションの実行回数、アイテムの所持数を変化させることができます。", "初回起動時やゲームオーバー時など、条件以外のタイミングで発動させたいものは固定イベント（unique）で設定します。"],
+	links: { unique: "unique" },
 	children: {
 		information: information,
 		category: {
@@ -437,8 +436,8 @@ export const task: Type.Event = {
 		timing: {
 			title: "waktu",
 			summary: "タスク発動のタイミング（`tasked`固定）",
-			points: ["タスクは`tasked`（設定した条件を満たした時）で固定されており、編集できません。", "Hadiah hanya dapat diterima satu kali, dan setelah diterima, status pencapaiannya tidak akan berubah lagi.", "Untuk hal-hal yang ingin diaktifkan pada waktu lain, lakukan konfigurasi melalui acara di pengaturan dasar."],
-			links: { event: "event" },
+			points: ["タスクは`tasked`（設定した条件を満たした時）で固定されており、編集できません。", "Hadiah hanya dapat diterima satu kali, dan setelah diterima, status pencapaiannya tidak akan berubah lagi.", "それ以外の決まったタイミングで発動させたいものは、固定イベント（unique）で設定します。"],
+			links: { unique: "unique" },
 		},
 		unlocked: {
 			title: "Tampilan awal",
@@ -471,6 +470,56 @@ export const task: Type.Event = {
 	},
 	options: {
 		label: "task",
+	},
+};
+
+// 現時点ではプレイヤーに未実装（今後実装予定）。構造はtaskと同じで、timingだけchanged固定
+export const changed: Type.Event = {
+	title: "変化イベント",
+	summary: "執筆予定",
+	points: ["執筆予定（現時点ではプレイヤーに未実装です）"],
+	children: {
+		information: information,
+		category: {
+			title: "カテゴリ",
+			summary: "執筆予定",
+			points: ["執筆予定"],
+		},
+		timing: {
+			title: "タイミング",
+			summary: "変化イベント発動のタイミング（`changed`固定）",
+			points: ["`changed`で固定されており、編集できません。", "執筆予定（現時点ではプレイヤーに未実装です）"],
+		},
+		unlocked: {
+			title: "初期表示状態",
+			summary: "執筆予定",
+			points: ["執筆予定"],
+		},
+		requirements: {
+			title: "条件",
+			summary: "執筆予定",
+			points: ["執筆予定"],
+			children: requirement.children,
+		},
+		requiringGroup: {
+			title: "グループ集計",
+			summary: "執筆予定",
+			points: ["執筆予定"],
+		},
+		acquisitions: {
+			title: "報酬",
+			summary: "執筆予定",
+			points: ["執筆予定"],
+			children: acquisition.children,
+		},
+		group: {
+			title: "タスクグループ",
+			summary: "執筆予定",
+			points: ["執筆予定"],
+		},
+	},
+	options: {
+		label: "changed",
 	},
 };
 
@@ -711,8 +760,8 @@ export const category: Type.Category = {
 export const type: Markdown = {
 	title: "Tipe",
 	summary: "Klasifikasi dasar dunia",
-	points: ["Dunia terdiri dari tujuh tipe.", "Semua elemen ditempatkan langsung dibawah dunia.", "アクションとアイテムは所属するカテゴリのIDで関連付けられます。"],
-	list: expandList("Tipe", [category, action, item, skill, group, task, preset], "Deskripsi"),
+	points: ["ワールドは6つのタイプで構成されます。", "Semua elemen ditempatkan langsung dibawah dunia.", "アクションとアイテムは所属するカテゴリのIDで関連付けられます。"],
+	list: expandList("Tipe", [category, action, item, skill, group, preset], "Deskripsi"),
 	quote: typeTree,
 	options: {
 		label: "type",
@@ -1026,7 +1075,7 @@ export const overview: Type.Overview = {
 };
 
 // タイミングごとの固定イベント。項目の説明はタスクと共通で、タイミング固有の説明だけ差し替える
-const toFixedEvent = (title: string, summary: string, points: string[], timingPoints: string[]): Type.Event => ({
+const toUniqueEvent = (title: string, summary: string, points: string[], timingPoints: string[]): Type.Event => ({
 	title,
 	summary,
 	points,
@@ -1067,28 +1116,45 @@ const toFixedEvent = (title: string, summary: string, points: string[], timingPo
 	},
 });
 
-export const event: Type.Events = {
-	title: "acara",
-	summary: "Pesan dan hadiah yang muncul pada waktu tertentu",
-	points: ["Fitur ini akan aktif pada waktu-waktu tertentu, seperti saat pertama kali membuka dunia atau saat permainan berakhir, dan akan membuka layar khusus.", "Tersedia satu per satu untuk setiap waktu, dan tidak dapat ditambahkan maupun dihapus. Untuk waktu yang tidak digunakan, biarkan kolomnya kosong.", "Tidak akan ditampilkan dalam daftar misi atau tugas. Hal-hal yang akan dianggap tercapai jika memenuhi syarat tertentu harus dikonfigurasi sebagai tugas.", "Akuisisi imbalan akan dilakukan secara otomatis begitu fitur tersebut diaktifkan. Tidak ada langkah pengambilan seperti pada tugas, dan tidak ada pita pemberitahuan.", "発動時にカテゴリのレベル、アクションの実行回数、アイテムの所持数を変化させることができます。", "Jika kolom nama, deskripsi, dan ikon dibiarkan kosong, teks dan ikon default yang sudah ada di dalam game akan digunakan oleh pemain."],
+export const unique: Type.Unique = {
+	title: "固定イベント",
+	summary: "決まったタイミングで発動するメッセージと報酬",
+	points: ["ワールドを初めて開いた時やゲームオーバーになった時など、決まったタイミングで発動して専用の画面を開きます。", "タイミングごとに1つずつ用意されており、追加も削除もできません。使わないタイミングは空欄のままにします。", "ミッションやタスクの一覧には表示されません。条件を満たすと達成になるものはタスクで設定します。", "報酬は発動と同時に自動で獲得します。タスクのような受け取りの操作もリボンもありません。", "発動時にカテゴリのレベル、アクションの実行回数、アイテムの所持数を変化させることができます。", "名前・説明・アイコンを空欄にすると、プレイヤーに内蔵されている既定の文言とアイコンが使われます。"],
 	list: [
-		["waktu", "kondisi aktivasi", "ulangi"],
-		["`comebacked`", "Ketika seseorang kembali dari offline selama lebih dari satu detik dan ada aksi yang sedang berlangsung.", "sering"],
-		["`gameovered`", "Ketika stamina pemain habis dalam pertempuran.", "sering"],
-		["`welcomed`", "Ketika saya pertama kali memulai dunia ini.", "hanya sekali"],
-		["`completed`", "全カテゴリのレベルが最大値（maxCategoryLevels）に達した時", "hanya sekali"],
-		["`obtained`", "Saat menyelesaikan atau memeriksa Aksi jenis tunggal (seperti peti harta karun, dll.)", "sering"],
+		["タイミング", "発動条件", "繰り返し"],
+		["`comebacked`", "オフラインから1秒以上経過して復帰し、かつ進行中のアクションがあった時", "何度も"],
+		["`gameovered`", "戦闘でプレイヤーのスタミナがなくなった時", "何度も"],
+		["`welcomed`", "このワールドを初めて起動した時", "一度のみ"],
+		["`completed`", "全カテゴリのレベルが最大値（maxCategoryLevels）に達した時", "一度のみ"],
+		["`obtained`", "single種別のアクション（宝箱など）を完了・確認した時", "何度も"],
 	],
 	links: { task: "task" },
 	children: {
-		comebacked: toFixedEvent("Saat kembali", "Terpicu saat kembali dari kondisi luring", ["Terpicu saat kamu kembali setelah satu detik atau lebih luring dan ada aksi yang sedang berjalan.", "Ditampilkan bersama ringkasan kemajuan selama kamu pergi."], ["Nilainya tetap `comebacked` dan tidak dapat diubah.", "Terpicu setiap kali kamu kembali, tanpa batas jumlah."]),
-		gameovered: toFixedEvent("Saat permainan berakhir", "Terpicu saat stamina habis dalam pertarungan", ["Terpicu saat stamina pemain habis dalam pertarungan.", "Dengan mengatur jumlah hadiah menjadi negatif, kamu dapat memberi konsekuensi atas berakhirnya permainan."], ["Nilainya tetap `gameovered` dan tidak dapat diubah.", "Terpicu setiap kali permainan berakhir, tanpa batas jumlah."]),
-		welcomed: toFixedEvent("Saat pertama kali dimulai", "Terpicu saat dunia dibuka untuk pertama kalinya", ["Terpicu saat dunia ini dijalankan untuk pertama kalinya.", "Digunakan untuk menjelaskan latar dunia atau menyerahkan perbekalan awal."], ["Nilainya tetap `welcomed` dan tidak dapat diubah.", "Hanya terpicu sekali, saat pertama kali dijalankan."]),
-		completed: toFixedEvent("Saat tamat", "全カテゴリが最大レベルに達した時に発動", ["全カテゴリのレベルが最大値（maxCategoryLevels）に達した時に発動します。", "numeric（数値）でないカテゴリは判定から除かれます。"], ["Nilainya tetap `completed` dan tidak dapat diubah.", "Hanya terpicu sekali, saat kondisinya terpenuhi."]),
-		obtained: toFixedEvent("Saat aksi sekali jalan selesai", "Terpicu saat aksi sekali jalan seperti peti harta selesai", ["Terpicu saat aksi berjenis single (seperti peti harta) diselesaikan dan dikonfirmasi.", "Terpisah dari hadiah aksi itu sendiri, kamu dapat menambahkan hadiah yang diatur di sini."], ["Nilainya tetap `obtained` dan tidak dapat diubah.", "Terpicu setiap kali aksi sekali jalan selesai, tanpa batas jumlah."]),
+		comebacked: toUniqueEvent("復帰時", "オフラインから復帰した時に発動", ["オフラインから1秒以上経過して復帰し、かつ進行中のアクションがあった時に発動します。", "離れているあいだの進行のまとめと一緒に表示されます。"], ["`comebacked`で固定されており、編集できません。", "復帰するたびに何度でも発動します。"]),
+		gameovered: toUniqueEvent("ゲームオーバー時", "戦闘でスタミナがなくなった時に発動", ["戦闘でプレイヤーのスタミナがなくなった時に発動します。", "報酬の数量にマイナスを設定すれば、ゲームオーバーの代償を持たせることができます。"], ["`gameovered`で固定されており、編集できません。", "ゲームオーバーになるたびに何度でも発動します。"]),
+		welcomed: toUniqueEvent("初回開始時", "ワールドを初めて開いた時に発動", ["このワールドを初めて起動した時に発動します。", "世界観の説明や、開始時に渡す支度品の受け渡しに使います。"], ["`welcomed`で固定されており、編集できません。", "初回の起動時に一度だけ発動します。"]),
+		completed: toUniqueEvent("クリア時", "全カテゴリが最大レベルに達した時に発動", ["全カテゴリのレベルが最大値（maxCategoryLevels）に達した時に発動します。", "numeric（数値）でないカテゴリは判定から除かれます。"], ["`completed`で固定されており、編集できません。", "条件を満たした時に一度だけ発動します。"]),
+		obtained: toUniqueEvent("単発アクション完了時", "宝箱などの単発アクションを完了した時に発動", ["single種別のアクション（宝箱など）を完了・確認した時に発動します。", "アクション自体の報酬とは別に、ここで設定した報酬を上乗せできます。"], ["`obtained`で固定されており、編集できません。", "単発アクションを完了するたびに何度でも発動します。"]),
 	},
 	options: {
-		label: "event",
+		label: "unique",
+	},
+};
+
+// タスク・変化イベント・固定イベントをまとめたイベント全体
+export const events: Type.Events = {
+	title: "イベント",
+	summary: "タスク・変化イベント・固定イベントをまとめた、ワールドのイベント全体",
+	points: ["ワールドのイベントはタスク（tasks）・変化イベント（changed）・固定イベント（unique）の3種類で構成されます。", "タスクは条件を満たすと達成になるミッションです。", "変化イベントは今後実装予定で、現時点ではプレイヤーに機能はありません。", "固定イベントはタイミングごとに1つずつ用意される、追加・削除できない枠です。"],
+	list: expandList("種類", [task, changed, unique], "説明"),
+	children: {
+		tasks: { ...task, options: { ...task.options, array: true } },
+		changed: { ...changed, options: { ...changed.options, array: true } },
+		unique: unique,
+	},
+	options: {
+		label: "events",
+		linkedList: true,
 	},
 };
 
@@ -1096,12 +1162,11 @@ export const basic: Type.Basic = {
 	title: "konfigurasi dasar",
 	summary: "Item konfigurasi dasar untuk dunia secara umum.",
 	points: ["ワールドの名前、説明、背景、通貨、容量、カテゴリの最大レベル、経験値の上昇率、割引率、標準戦闘パラメータなどを設定します。", "Konfigurasi ini memengaruhi seluruh dunia."],
-	list: expandList("nama", [overview, general, design, event, development], "Deskripsi"),
+	list: expandList("nama", [overview, general, design, development], "Deskripsi"),
 	children: {
 		overview: overview,
 		general: general,
 		design: design,
-		events: event,
 		development: development,
 	},
 	options: {
@@ -1124,7 +1189,7 @@ export const world: Type.World = {
 		items: { ...item, options: { ...item.options, array: true } },
 		skills: { ...skill, options: { ...skill.options, array: true } },
 		groups: { ...group, options: { ...group.options, array: true } },
-		tasks: { ...task, options: { ...task.options, array: true } },
+		events: events,
 		presets: { ...preset, options: { ...preset.options, array: true } },
 	},
 	options: {
@@ -1137,7 +1202,7 @@ export const world: Type.World = {
 export const editor: Markdown = {
 	title: "editor",
 	summary: "Penjelasan tentang cara menggunakan editor dan struktur dunia.",
-	list: expandList("nama", [world, basic, type, component, miscellaneous], "Deskripsi"),
+	list: expandList("nama", [world, basic, type, events, component, miscellaneous], "Deskripsi"),
 	options: {
 		label: "editor",
 		linkedList: true,
@@ -1151,10 +1216,11 @@ export const editor: Markdown = {
 export const tree: Tree = {
 	title: editor,
 	twig: [
-		{ title: world }, 
-		{ title: basic, twig: [overview, general, design, event, development] },
-		{ title: type, twig: [category, action, item, skill, group, task, preset] },
-		{ title: component, twig: [information, requirement, acquisition, combat, property] }, 
+		{ title: world },
+		{ title: basic, twig: [overview, general, design, development] },
+		{ title: type, twig: [category, action, item, skill, group, preset] },
+		{ title: events, twig: [task, changed, unique] },
+		{ title: component, twig: [information, requirement, acquisition, combat, property] },
 		{ title: miscellaneous, twig: [translation] }
 	],
 };
