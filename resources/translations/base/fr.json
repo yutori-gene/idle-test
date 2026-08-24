@@ -714,6 +714,10 @@
 			"name": "Matériel requis pour cette exigence",
 			"explanation": "Cet objet doit être équipé."
 		},
+		"group": {
+			"name": "グループ",
+			"explanation": ""
+		},
 		"skill": {
 			"name": "Compétence",
 			"explanation": "Elle est tirée au sort à chaque tour de combat et, lorsqu'elle se déclenche, corrige les valeurs de combat pour ce tour uniquement."

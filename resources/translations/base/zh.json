@@ -714,6 +714,10 @@
 			"name": "装备要求",
 			"explanation": "必须装备此物品。"
 		},
+		"group": {
+			"name": "グループ",
+			"explanation": ""
+		},
 		"skill": {
 			"name": "技能",
 			"explanation": "战斗中每回合抽取一次，发动后仅在该回合修正战斗值。"

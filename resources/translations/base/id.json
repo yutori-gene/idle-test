@@ -714,6 +714,10 @@
 			"name": "Persyaratan Peralatan",
 			"explanation": "Item ini harus dilengkapi."
 		},
+		"group": {
+			"name": "グループ",
+			"explanation": ""
+		},
 		"skill": {
 			"name": "Skill",
 			"explanation": "Diundi setiap giliran dalam pertarungan dan, saat aktif, mengoreksi nilai tempur hanya pada giliran itu."

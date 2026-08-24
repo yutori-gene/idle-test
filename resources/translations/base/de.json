@@ -714,6 +714,10 @@
 			"name": "Anforderungen an die Ausrüstung",
 			"explanation": "Dieser Gegenstand muss ausgerüstet sein."
 		},
+		"group": {
+			"name": "グループ",
+			"explanation": ""
+		},
 		"skill": {
 			"name": "Fähigkeit",
 			"explanation": "Sie wird im Kampf jede Runde ausgelost und korrigiert beim Auslösen die Kampfwerte nur für diese Runde."

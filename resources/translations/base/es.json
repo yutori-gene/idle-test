@@ -714,6 +714,10 @@
 			"name": "Equipo y material necesarios",
 			"explanation": "Este artículo debe equiparse."
 		},
+		"group": {
+			"name": "グループ",
+			"explanation": ""
+		},
 		"skill": {
 			"name": "Habilidad",
 			"explanation": "Se sortea en cada turno de combate y, al activarse, corrige los valores de combate solo en ese turno."

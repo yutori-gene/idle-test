@@ -714,6 +714,10 @@
 			"name": "필수 장비",
 			"explanation": "이 아이템은 반드시 장착해야 합니다."
 		},
+		"group": {
+			"name": "グループ",
+			"explanation": ""
+		},
 		"skill": {
 			"name": "스킬",
 			"explanation": "전투에서 턴마다 추첨되며, 발동하면 그 턴에만 전투 값을 보정한다."

@@ -714,6 +714,10 @@
 			"name": "必須装備",
 			"explanation": "このアイテムは装備する必要がある"
 		},
+		"group": {
+			"name": "グループ",
+			"explanation": ""
+		},
 		"skill": {
 			"name": "Skill",
 			"explanation": "It is drawn each turn in combat, and when it triggers it corrects the combat values for that turn only."

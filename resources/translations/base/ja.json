@@ -714,6 +714,10 @@
 			"name": "必須装備",
 			"explanation": "このアイテムは装備する必要がある"
 		},
+		"group": {
+			"name": "グループ",
+			"explanation": ""
+		},
 		"skill": {
 			"name": "スキル",
 			"explanation": "戦闘でターンごとに抽選され、発動するとそのターンだけ戦闘値を補正する"
