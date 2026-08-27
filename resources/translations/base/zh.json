@@ -78,6 +78,10 @@
 			"name": "结果",
 			"explanation": ""
 		},
+		"ok": {
+			"name": "OK？",
+			"explanation": ""
+		},
 		"yes": {
 			"name": "是",
 			"explanation": ""
@@ -532,6 +536,10 @@
 		},
 		"completed-count": {
 			"name": "计数完成",
+			"explanation": ""
+		},
+		"turn": {
+			"name": "ターン",
 			"explanation": ""
 		},
 		"current-count": {

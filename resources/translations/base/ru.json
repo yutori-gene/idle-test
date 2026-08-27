@@ -78,6 +78,10 @@
 			"name": "Результаты",
 			"explanation": ""
 		},
+		"ok": {
+			"name": "OK？",
+			"explanation": ""
+		},
 		"yes": {
 			"name": "Да",
 			"explanation": ""
@@ -532,6 +536,10 @@
 		},
 		"completed-count": {
 			"name": "Количество завершенных",
+			"explanation": ""
+		},
+		"turn": {
+			"name": "ターン",
 			"explanation": ""
 		},
 		"current-count": {
