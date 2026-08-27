@@ -18,9 +18,17 @@
 			"name": "最小",
 			"explanation": ""
 		},
-		"maximum": {
-			"name": "最大值",
-			"explanation": "您持有的数量不得超过此限额，也不得行使超过此限额的权利。"
+		"maximum-owned": {
+			"name": "最大所有数",
+			"explanation": "この数を超えてアイテムを保有することはできない"
+		},
+		"maximum-execution": {
+			"name": "最大実行数",
+			"explanation": "この数を超えてアクションを実行することはできない"
+		},
+		"unavailable": {
+			"name": "不可",
+			"explanation": ""
 		},
 		"purchased-count": {
 			"name": "购买次数",
@@ -32,7 +40,7 @@
 		},
 		"purchasable-count": {
 			"name": "可购买",
-			"explanation": "您还可以购买的时间。"
+			"explanation": "あと何回購入できるか"
 		},
 		"total": {
 			"name": "总计",
@@ -51,11 +59,11 @@
 			"explanation": ""
 		},
 		"requirement": {
-			"name": "要求",
+			"name": "条件",
 			"explanation": ""
 		},
 		"requirements": {
-			"name": "要求",
+			"name": "条件一覧",
 			"explanation": ""
 		},
 		"acquisition": {
@@ -63,7 +71,7 @@
 			"explanation": ""
 		},
 		"acquisitions": {
-			"name": "获取",
+			"name": "獲得一覧",
 			"explanation": ""
 		},
 		"results": {
@@ -155,7 +163,7 @@
 			"explanation": "该栏的位置以及栏的总数（包括屏幕外的栏）。"
 		},
 		"checked": {
-			"name": "已核对",
+			"name": "確認済",
 			"explanation": ""
 		},
 		"chevron-down": {
@@ -167,8 +175,8 @@
 			"explanation": ""
 		},
 		"selected": {
-			"name": "已选中",
-			"explanation": ""
+			"name": "選択済",
+			"explanation": "売却するために選んだアイテムの合計"
 		},
 		"character": {
 			"name": "角色",
@@ -184,7 +192,7 @@
 		},
 		"status": {
 			"name": "状态",
-			"explanation": ""
+			"explanation": "カテゴリに適用された補正など、現在の状態を表示"
 		},
 		"ability": {
 			"name": "能力",
@@ -196,7 +204,7 @@
 		},
 		"overview": {
 			"name": "概览",
-			"explanation": ""
+			"explanation": "このワールドと、それを実行しているコンソールの概要を表示"
 		},
 		"version": {
 			"name": "版本",
@@ -228,7 +236,7 @@
 		},
 		"default-language": {
 			"name": "默认语言",
-			"explanation": ""
+			"explanation": "ワールドが最初に表示する言語"
 		},
 		"language-change-enable-general": {
 			"name": "语言设置 启用 常规",
@@ -248,7 +256,7 @@
 		},
 		"statistics": {
 			"name": "统计数据",
-			"explanation": ""
+			"explanation": "プレイを通じて記録された合計を表示"
 		},
 		"coin": {
 			"name": "硬币",
@@ -404,7 +412,7 @@
 		},
 		"level": {
 			"name": "等级",
-			"explanation": ""
+			"explanation": "このカテゴリの習熟度。経験値がたまると上がる"
 		},
 		"category-experience": {
 			"name": "経験値",
@@ -427,16 +435,16 @@
 			"explanation": "它独立运行，不受其他类别中动作进度的影响。"
 		},
 		"standalone-yes": {
-			"name": "独立执行",
+			"name": "パッシブ",
 			"explanation": "它独立运行，不受其他类别中动作进度的影响。"
 		},
 		"standalone-no": {
-			"name": "共享执行",
+			"name": "アクティブ",
 			"explanation": "与其他类别共享执行位。同时只能执行一个动作，开始其他动作时，当前动作会被移入等待队列。"
 		},
 		"action": {
 			"name": "动作",
-			"explanation": ""
+			"explanation": "このカテゴリで実行できる行動"
 		},
 		"actions": {
 			"name": "动作列表",
@@ -480,11 +488,11 @@
 		},
 		"persistent": {
 			"name": "持久",
-			"explanation": "你需要执行一系列动作，每次完成一个动作，你都会获得奖励。"
+			"explanation": "アクションを連続して実行し、アクションを完了するたびに報酬がもらえる"
 		},
 		"single": {
 			"name": "单曲",
-			"explanation": "每项操作只能执行一次，即使中途中断，进度也会被保存。"
+			"explanation": "１回実行すると止まり、連続では実行されない。途中で中断しても進行状況は保存される。"
 		},
 		"snap": {
 			"name": "快速",
@@ -527,7 +535,7 @@
 			"explanation": ""
 		},
 		"next-time": {
-			"name": "下次",
+			"name": "次まで",
 			"explanation": ""
 		},
 		"rest-count": {
@@ -576,11 +584,11 @@
 		},
 		"acquisition-failure": {
 			"name": "获取失败",
-			"explanation": "标有 [失败] 的奖励只有在动作失败时才能获得，显示的百分比是获得该奖励的概率。"
+			"explanation": "説明に [失敗] と付いた報酬は、アクションに失敗したときだけ獲得できる。表示されている割合はその獲得確率。"
 		},
 		"item": {
 			"name": "物品",
-			"explanation": ""
+			"explanation": "このカテゴリに関わる持ち物"
 		},
 		"items": {
 			"name": "物品列表",
@@ -600,11 +608,11 @@
 		},
 		"capacity": {
 			"name": "容量",
-			"explanation": "表示可同时拥有的物品种类数量的特殊物品。"
+			"explanation": "同時に所有できるアイテムの種類数に影響"
 		},
 		"queue": {
 			"name": "队列",
-			"explanation": "表示队列可容纳多少个动作的特殊物品。队首正在执行的动作也计入其中。"
+			"explanation": "キュー（アクションの予約枠）に入れられるアクションの数"
 		},
 		"equipping": {
 			"name": "正在装备中",
@@ -615,7 +623,7 @@
 			"explanation": ""
 		},
 		"equip": {
-			"name": "装备",
+			"name": "装備する",
 			"explanation": ""
 		},
 		"equipment": {
@@ -623,7 +631,7 @@
 			"explanation": ""
 		},
 		"unequip": {
-			"name": "卸下装备",
+			"name": "装備解除する",
 			"explanation": ""
 		},
 		"nothing": {
@@ -636,54 +644,54 @@
 		},
 		"recovery": {
 			"name": "恢复",
-			"explanation": "你只能拥有一件。"
+			"explanation": "戦闘開始時のスタミナの回復量"
 		},
 		"unique": {
 			"name": "独特",
-			"explanation": "你只能拥有一件。"
+			"explanation": "1つだけ所有できるアイテム"
 		},
 		"equipment-type": {
 			"name": "装备",
-			"explanation": "该物品的装备类型。"
+			"explanation": "アイテムの装備タイプ"
 		},
 		"necessary-item": {
 			"name": "必要",
-			"explanation": "装备该物品会产生效果。"
+			"explanation": "装備すると効果が発動する"
 		},
 		"unnecessary-item": {
 			"name": "不必要",
-			"explanation": "虽然无法装备该物品，但只要持有它就会产生效果。该效果会根据你拥有的数量成倍增加。"
+			"explanation": "所持しているだけで効果が発動する。その効果は、所持している数だけ倍増する。"
 		},
 		"impossible-item": {
 			"name": "不可能",
-			"explanation": "该物品无法装备。"
+			"explanation": "装備できない"
 		},
 		"consumable-item": {
 			"name": "消耗品",
-			"explanation": "装备后即生效，但每次你采取行动时都会消耗一次。"
+			"explanation": "装備すると効果を発揮するが、アクションを行うたびに消費される（スタミナのターンごとには消費されない）"
 		},
 		"buy": {
 			"name": "购买",
-			"explanation": "购买该商品时的价格。"
+			"explanation": "アイテムを購入する"
 		},
 		"buying-value": {
-			"name": "购买价值",
-			"explanation": "购买该商品时的价格。"
+			"name": "購入価格",
+			"explanation": "購入する際の価格"
 		},
 		"sell": {
 			"name": "出售",
-			"explanation": "该物品出售时的价格。"
+			"explanation": "アイテムを売却する"
 		},
 		"selling": {
 			"name": "出售",
-			"explanation": ""
+			"explanation": "所有しているアイテムを、一覧から選んでまとめて売却する"
 		},
 		"kind": {
 			"name": "种类",
-			"explanation": ""
+			"explanation": "選んだアイテムの種類の数"
 		},
 		"selling-value": {
-			"name": "销售价值",
+			"name": "売却価格",
 			"explanation": "该物品出售时的价格。"
 		},
 		"trade": {
@@ -691,19 +699,19 @@
 			"explanation": ""
 		},
 		"trade-failed": {
-			"name": "交易失败",
+			"name": "交換不可",
 			"explanation": "交易失败。"
 		},
 		"capacity-full": {
-			"name": "已满",
+			"name": "イベントリが満杯",
 			"explanation": "库存已满。"
 		},
 		"queue-full": {
-			"name": "队列已满",
+			"name": "キューが満杯",
 			"explanation": "包含正在执行的动作在内，队列已满。"
 		},
 		"already-queued": {
-			"name": "已加入队列",
+			"name": "既にキューにある",
 			"explanation": "该动作已在队列中。"
 		},
 		"unmatched-requirements": {
@@ -711,7 +719,7 @@
 			"explanation": "実行に必要な条件を満たしていない"
 		},
 		"purchase-limit-reached": {
-			"name": "已达到购买限额",
+			"name": "購入上限に到達",
 			"explanation": "已达到购买限额。"
 		},
 		"completed-maximum": {
@@ -719,7 +727,7 @@
 			"explanation": "您已达到最大完成次数。"
 		},
 		"relationships": {
-			"name": "关系",
+			"name": "関連",
 			"explanation": ""
 		},
 		"related-actions": {
@@ -727,7 +735,7 @@
 			"explanation": ""
 		},
 		"relationship-items": {
-			"name": "相关物品列表",
+			"name": "関連アイテム",
 			"explanation": "与该类别动作相关的物品列表。"
 		},
 		"requirement-equipment": {
@@ -740,19 +748,19 @@
 		},
 		"skill": {
 			"name": "技能",
-			"explanation": "战斗中每回合抽取一次，发动后仅在该回合修正战斗值。"
+			"explanation": "戦闘中に発動するとそのターンだけ戦闘値を補正する"
 		},
 		"skills": {
 			"name": "技能列表",
 			"explanation": "该要素拥有的技能列表。"
 		},
 		"no-ability": {
-			"name": "无能力",
+			"name": "スキルがない",
 			"explanation": "当前没有可以发动的技能。"
 		},
 		"property": {
 			"name": "属性",
-			"explanation": ""
+			"explanation": "アクションの結果に影響する数値"
 		},
 		"calculation": {
 			"name": "计算",
@@ -764,23 +772,23 @@
 		},
 		"attack": {
 			"name": "攻击",
-			"explanation": "对目标造成伤害。"
+			"explanation": "プレイヤーからターゲットへのダメージ"
 		},
 		"defence": {
 			"name": "防御",
-			"explanation": "目标造成的伤害。"
+			"explanation": "ターゲットからぷれいやーへのダメージ"
 		},
 		"accuracy": {
 			"name": "准确性",
-			"explanation": "对怪物造成伤害的概率。"
+			"explanation": "プレイヤーからターゲットにダメージを与える確率"
 		},
 		"evasion": {
 			"name": "闪避",
-			"explanation": "受到怪物伤害的概率。"
+			"explanation": "ターゲットからプレイヤーへダメージを受ける確率"
 		},
 		"restore": {
 			"name": "恢复",
-			"explanation": "影响战斗中的恢复量。"
+			"explanation": "ターゲットのスタミナがなくり、次のアクションに移る時の回復量"
 		},
 		"speed": {
 			"name": "速度",
@@ -788,7 +796,7 @@
 		},
 		"chance": {
 			"name": "机会",
-			"explanation": "该操作可能会成功，但如果失败，你将无法获得任何奖励或经验值。"
+			"explanation": "失敗した場合は報酬も経験値も得られない"
 		},
 		"experience": {
 			"name": "经验",
@@ -832,10 +840,10 @@
 		},
 		"no-status": {
 			"name": "无状态",
-			"explanation": "没有可用的状态类别。"
+			"explanation": "どのカテゴリにもプロパティ補正はない"
 		},
 		"event": {
-			"name": "事件",
+			"name": "イベント",
 			"explanation": ""
 		},
 		"timing": {
@@ -867,51 +875,51 @@
 			"explanation": "単発のアクションが完了したときに発生する"
 		},
 		"tasked": {
-			"name": "Tasked",
+			"name": "条件達成",
 			"explanation": "条件が満たされた"
 		},
 		"comebacked": {
-			"name": "回归",
+			"name": "おかえりなさい",
 			"explanation": "欢迎回来！您离开期间的进度如下："
 		},
 		"gameovered": {
-			"name": "游戏结束",
+			"name": "ゲームオーバー",
 			"explanation": "游戏结束。您的进度已被重置。"
 		},
 		"completed": {
-			"name": "完成",
+			"name": "コンプリート",
 			"explanation": "恭喜！您已完成所有类别。"
 		},
 		"welcomed": {
-			"name": "欢迎",
+			"name": "ようこそ",
 			"explanation": "欢迎来到这个世界！"
 		},
 		"obtained": {
-			"name": "已获取",
-			"explanation": "您获得的是："
+			"name": "獲得",
+			"explanation": "獲得したものを確認してみよう"
 		},
 		"achieved": {
-			"name": "已完成",
-			"explanation": ""
+			"name": "達成",
+			"explanation": "タスクを達成しているかどうか"
 		},
 		"receive": {
-			"name": "领取",
+			"name": "受け取る",
 			"explanation": "领取此任务的奖励。"
 		},
 		"received": {
-			"name": "已领取",
+			"name": "受け取り済",
 			"explanation": "此任务的奖励已经领取。"
 		},
 		"hidden": {
-			"name": "隐藏",
+			"name": "非表示",
 			"explanation": "确认内容后，此栏将被隐藏。"
 		},
 		"task": {
-			"name": "任务",
-			"explanation": ""
+			"name": "タスク",
+			"explanation": "達成すると報酬を受け取れる課題"
 		},
 		"task-completed": {
-			"name": "任务完成",
+			"name": "タスク達成",
 			"explanation": ""
 		},
 		"tasks": {
@@ -919,7 +927,7 @@
 			"explanation": ""
 		},
 		"missions": {
-			"name": "任务",
+			"name": "ミッション",
 			"explanation": ""
 		},
 		"language-en": {
@@ -963,7 +971,7 @@
 			"explanation": ""
 		},
 		"config": {
-			"name": "配置",
+			"name": "設定",
 			"explanation": ""
 		},
 		"operation": {
@@ -972,30 +980,30 @@
 		},
 		"auto-clear-queue": {
 			"name": "自动清空队列",
-			"explanation": "长按开始一个可执行的动作时，会先清空队列中包括当前正在执行的所有预约，然后再执行该动作。"
+			"explanation": "アクションを長押ししてクイックスタートしたとき、実行中のアクションを含む作業予定（キュー）をすべて削除してから、そのアクションを実行する"
 		},
 		"display": {
-			"name": "显示",
+			"name": "表示",
 			"explanation": "更改游戏在屏幕上的显示方式。"
 		},
 		"language": {
-			"name": "语言",
+			"name": "言語",
 			"explanation": ""
 		},
 		"selected-language": {
-			"name": "所选语言",
-			"explanation": ""
+			"name": "選択中の言語",
+			"explanation": "いま表示に使っている言語"
 		},
 		"language-change-enable": {
-			"name": "启用语言更改",
+			"name": "変更できる",
 			"explanation": "您可以更改显示语言。"
 		},
 		"language-change-unenable": {
-			"name": "语言更改功能已禁用",
+			"name": "変更できない",
 			"explanation": "没有其他可用的语言可供显示。"
 		},
 		"category-shortcut": {
-			"name": "类别快捷方式",
+			"name": "カテゴリの同時表示",
 			"explanation": "打开类别时，会一并显示动作列表或物品列表。"
 		},
 		"showing-hint": {
@@ -1007,47 +1015,47 @@
 			"explanation": "显示用于在各栏之间切换的按钮。您也可以通过滑动在各栏之间切换，而无需显示这些按钮。"
 		},
 		"performance": {
-			"name": "性能",
+			"name": "パフォーマンス",
 			"explanation": "调整控制台在您的设备上的运行方式。"
 		},
 		"performing-highly": {
-			"name": "优异表现",
+			"name": "高頻度更新",
 			"explanation": "提高更新频率。如果操作负载较重，建议将其关闭。这不会影响每个操作的执行时间。"
 		},
 		"data": {
-			"name": "数据",
+			"name": "データ",
 			"explanation": "保存、读取并删除这个世界的进度数据。"
 		},
 		"export-game": {
-			"name": "导出游戏",
-			"explanation": "游戏数据已导出。"
+			"name": "エクスポート",
+			"explanation": "ゲームの進行データがエクスポートされた"
 		},
 		"import-game": {
-			"name": "导入游戏",
-			"explanation": "游戏数据已导入。"
+			"name": "インポート",
+			"explanation": "ゲームの進行データがインポートされた"
 		},
 		"import-mistake": {
-			"name": "导入错误",
+			"name": "読み込み失敗",
 			"explanation": "无法加载游戏数据。"
 		},
 		"reset-game": {
-			"name": "重置游戏",
-			"explanation": "删除该世界的所有进度数据。此操作无法撤销。请确认您确实要删除该文件，然后在输入框中输入“DELETE”。（调试模式下无需此操作）"
+			"name": "ゲームをリセット",
+			"explanation": "このワールドの進行状況データをすべて削除する。この操作は元に戻せない。本当にファイルを削除してよいか確認したうえで、入力欄に「DELETE」と入力する。"
 		},
 		"reset-really": {
 			"name": "是真的吗？",
 			"explanation": ""
 		},
 		"reset-alert": {
-			"name": "重置提醒",
+			"name": "リセットの確認",
 			"explanation": "重置游戏将清除所有数据。您确定要重置游戏吗？"
 		},
 		"reset-debug-mode": {
-			"name": "重置调试模式",
+			"name": "デバッグモード",
 			"explanation": "在调试模式下，请确认该字段无需输入任何内容。"
 		},
 		"restart": {
-			"name": "重启",
+			"name": "再起動",
 			"explanation": "重新加载控制台。可用于确认构建是否已更换。"
 		},
 		"hint-language-scope": {
@@ -1088,15 +1096,15 @@
 		},
 		"hint-config-settings": {
 			"name": "Hint Config Settings",
-			"explanation": "进行与游戏显示和处理相关的设置。"
+			"explanation": "操作方法・画面表示・動作の重さを変えられる。設定は進行データの一部として保存され、書き出したデータにも引き継がれる"
 		},
 		"hint-config-data": {
 			"name": "Hint Config Data",
-			"explanation": "可以输入、输出并重置游戏数据。"
+			"explanation": "進行データはこの端末にワールドごとに保存される。書き出したファイルを読み込めるのは、同じワールドの同じバージョンだけ"
 		},
 		"hint-statistics-progress": {
 			"name": "Hint Statistics Progress",
-			"explanation": "可以查看目前为止的游戏进度。"
+			"explanation": "プレイ時間や獲得コインの累計と、いま所持枠・予約枠（キュー）をいくつまで持てるかを確認できる"
 		},
 		"hint-statistics-unlocked": {
 			"name": "Hint Statistics Unlocked",
@@ -1108,11 +1116,11 @@
 		},
 		"hint-overview-world": {
 			"name": "Hint Overview World",
-			"explanation": "可以查看此游戏的世界（世界观、设定）。"
+			"explanation": "作者・バージョン・推定プレイ時間などワールドの素性と、既定言語・カテゴリレベルの上限・レベル成長率といったワールド全体に共通する設定を確認できる"
 		},
 		"hint-overview-console": {
 			"name": "Hint Overview Console",
-			"explanation": "也可以查看运行此游戏的控制台（系统）。"
+			"explanation": "コンソールはワールドを読み込んで動かす実行環境。ワールドとは別にバージョンと更新日を持つ"
 		},
 		"hint-properties-meaning": {
 			"name": "Hint Properties Meaning",
@@ -1128,7 +1136,7 @@
 		},
 		"hint-trade-availability": {
 			"name": "Hint Trade Availability",
-			"explanation": "部分物品无法买卖。"
+			"explanation": "価格が無いと購入・売却の枠そのものが出ない。ロック中も売買できない"
 		},
 		"hint-trade-capacity": {
 			"name": "Hint Trade Capacity",
@@ -1136,7 +1144,7 @@
 		},
 		"hint-trade-limit": {
 			"name": "Hint Trade Limit",
-			"explanation": "持有上限或预约槽（队列）的购买次数可能有上限，达到上限后将无法继续购买。（通过奖励获得的增加不受此限制）"
+			"explanation": "所持枠とキューの枠は1つずつで、買うたびに値上がりする。購入回数に上限があるワールドもある（報酬ぶんは数えない）"
 		},
 		"hint-trade-selling": {
 			"name": "Hint Trade Selling",
@@ -1156,11 +1164,11 @@
 		},
 		"hint-items-exclusive": {
 			"name": "Hint Items Exclusive",
-			"explanation": "列表中只能装备一件物品。（在设置为可作为类别装备时）"
+			"explanation": "グループごとに装備できるアイテムは1つだけ"
 		},
 		"hint-items-locked": {
 			"name": "Hint Items Locked",
-			"explanation": "未满足解锁条件的物品处于锁定状态，无法查看详情。"
+			"explanation": "解放条件を満たしていないアイテムは斜線付きで表示され、説明文と所持数が伏せられる"
 		},
 		"hint-items-relationship": {
 			"name": "Hint Items Relationship",
@@ -1172,7 +1180,7 @@
 		},
 		"hint-item-exclusive": {
 			"name": "Hint Item Exclusive",
-			"explanation": "一个类别中只能装备一件物品。（在设置为可作为类别装备时）"
+			"explanation": "装備できるアイテムはグループごとに1つだけ。グループが違えば同じカテゴリでも同時に装備できる"
 		},
 		"hint-item-equipping": {
 			"name": "Hint Item Equipping",
@@ -1180,11 +1188,11 @@
 		},
 		"hint-item-locked": {
 			"name": "Hint Item Locked",
-			"explanation": "未满足解锁条件的物品处于锁定状态，无法查看详情。"
+			"explanation": "解放条件を満たしていないアイテムは斜線付きで表示され、説明文と所持数が伏せられる"
 		},
 		"hint-act-count": {
 			"name": "Hint Act Count",
-			"explanation": "可以指定执行次数。选择最右端则会一直执行到资源耗尽。"
+			"explanation": "一番右の∞は、資源か総実行回数の上限で止まるまで実行し続ける"
 		},
 		"hint-act-position": {
 			"name": "Hint Act Position",
@@ -1232,11 +1240,11 @@
 		},
 		"hint-actions-parallel": {
 			"name": "Hint Actions Parallel",
-			"explanation": "部分类别允许同时推进多个类别的动作。"
+			"explanation": "カテゴリによっては（スタンドアロンがパッシブ）、複数のカテゴリのアクションを同時に進行できる"
 		},
 		"hint-actions-locked": {
 			"name": "Hint Actions Locked",
-			"explanation": "未满足解锁条件的动作处于锁定状态，无法查看详情。"
+			"explanation": "解放条件を満たしていないアクションは斜線付きで表示され、説明文が伏せられる"
 		},
 		"hint-action-meaning": {
 			"name": "Hint Action Meaning",
@@ -1252,11 +1260,11 @@
 		},
 		"hint-action-resource": {
 			"name": "Hint Action Resource",
-			"explanation": "每次执行都会消耗或获得物品。"
+			"explanation": "「条件」に並ぶものは実行のたびに消費される。割合があるものは消費される確率"
 		},
 		"hint-action-locked": {
 			"name": "Hint Action Locked",
-			"explanation": "未满足解锁条件的动作处于锁定状态，无法查看详情。"
+			"explanation": "解放条件を満たしていないアクションは斜線付きで表示され、説明文が伏せられる"
 		},
 		"hint-skills-list": {
 			"name": "Hint Skills List",
@@ -1288,15 +1296,15 @@
 		},
 		"hint-tasks-unclaimed": {
 			"name": "Hint Tasks Unclaimed",
-			"explanation": "尚未领取奖励的任务会标有丝带。选中后按领取即可获得。"
+			"explanation": "報酬をまだ受け取っていないタスクにはリボンが付く。開いて受け取るを押す"
 		},
 		"hint-tasks-capacity": {
 			"name": "Hint Tasks Capacity",
-			"explanation": "可持有的物品种类数达到上限时无法领取奖励。请腾出空间后再次领取。"
+			"explanation": "所持できる種類数が上限のあいだは報酬を受け取れない。空きを作ってから受け取り直す"
 		},
 		"hint-category-meaning": {
 			"name": "Hint Category Meaning",
-			"explanation": "这是汇总了动作和物品的要素。"
+			"explanation": "カテゴリはアクション・アイテム・プロパティ・スキル・タスクをまとめた単位"
 		},
 		"hint-category-level": {
 			"name": "Hint Category Level",
@@ -1316,7 +1324,7 @@
 		},
 		"hint-status-property": {
 			"name": "Hint Status Property",
-			"explanation": "仅显示物品对该类别产生的属性数值。"
+			"explanation": "ここに並ぶのはアイテムによる補正のみで、実行するアクションによってはさらにスキルなどの別の補正がかかる"
 		},
 		"hint-status-stacking": {
 			"name": "Hint Status Stacking",
@@ -1328,7 +1336,7 @@
 		},
 		"hint-inventory-equipping": {
 			"name": "Hint Inventory Equipping",
-			"explanation": "长按可切换物品的装备。"
+			"explanation": "バーを長押しすると装備を切り替えられる"
 		},
 		"hint-inventory-capacity": {
 			"name": "Hint Inventory Capacity",
@@ -1352,7 +1360,7 @@
 		},
 		"hint-activity-executing": {
 			"name": "Hint Activity Executing",
-			"explanation": "长按可切换动作的执行。"
+			"explanation": "バーを長押しすると実行を切り替えられる"
 		},
 		"hint-activity-index": {
 			"name": "Hint Activity Index",
@@ -1376,11 +1384,11 @@
 		},
 		"hint-missions-completed": {
 			"name": "Hint Missions Completed",
-			"explanation": "已完成的任务会显示勾选标记。"
+			"explanation": "達成済みのタスクにはチェックマークが付く。一度達成すれば、その後条件を満たさなくなっても達成のまま"
 		},
 		"hint-missions-unclaimed": {
 			"name": "Hint Missions Unclaimed",
-			"explanation": "尚未领取奖励的任务会标有丝带。选中后按领取即可获得。"
+			"explanation": "報酬をまだ受け取っていないタスクにはリボンが付く。開いて受け取るを押す"
 		},
 		"hint-property-meaning": {
 			"name": "Hint Property Meaning",

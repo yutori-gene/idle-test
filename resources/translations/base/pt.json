@@ -18,9 +18,17 @@
 			"name": "Mín.",
 			"explanation": ""
 		},
-		"maximum": {
-			"name": "Máximo",
-			"explanation": "Você não pode possuir nem exercer mais do que esse número."
+		"maximum-owned": {
+			"name": "最大所有数",
+			"explanation": "この数を超えてアイテムを保有することはできない"
+		},
+		"maximum-execution": {
+			"name": "最大実行数",
+			"explanation": "この数を超えてアクションを実行することはできない"
+		},
+		"unavailable": {
+			"name": "不可",
+			"explanation": ""
 		},
 		"purchased-count": {
 			"name": "Número de unidades adquiridas",
@@ -32,7 +40,7 @@
 		},
 		"purchasable-count": {
 			"name": "Disponível para compra",
-			"explanation": "O tempo que você ainda pode comprar."
+			"explanation": "あと何回購入できるか"
 		},
 		"total": {
 			"name": "Total",
@@ -51,11 +59,11 @@
 			"explanation": ""
 		},
 		"requirement": {
-			"name": "Requisito",
+			"name": "条件",
 			"explanation": ""
 		},
 		"requirements": {
-			"name": "Requisitos",
+			"name": "条件一覧",
 			"explanation": ""
 		},
 		"acquisition": {
@@ -63,7 +71,7 @@
 			"explanation": ""
 		},
 		"acquisitions": {
-			"name": "Aquisições",
+			"name": "獲得一覧",
 			"explanation": ""
 		},
 		"results": {
@@ -155,7 +163,7 @@
 			"explanation": "A posição desta coluna e o número total de colunas, incluindo as que estão fora da tela."
 		},
 		"checked": {
-			"name": "Marcado",
+			"name": "確認済",
 			"explanation": ""
 		},
 		"chevron-down": {
@@ -167,8 +175,8 @@
 			"explanation": ""
 		},
 		"selected": {
-			"name": "Selecionado",
-			"explanation": ""
+			"name": "選択済",
+			"explanation": "売却するために選んだアイテムの合計"
 		},
 		"character": {
 			"name": "Personagem",
@@ -184,7 +192,7 @@
 		},
 		"status": {
 			"name": "Status",
-			"explanation": ""
+			"explanation": "カテゴリに適用された補正など、現在の状態を表示"
 		},
 		"ability": {
 			"name": "Aptidão",
@@ -196,7 +204,7 @@
 		},
 		"overview": {
 			"name": "Visão geral",
-			"explanation": ""
+			"explanation": "このワールドと、それを実行しているコンソールの概要を表示"
 		},
 		"version": {
 			"name": "Versão",
@@ -228,7 +236,7 @@
 		},
 		"default-language": {
 			"name": "Idioma padrão",
-			"explanation": ""
+			"explanation": "ワールドが最初に表示する言語"
 		},
 		"language-change-enable-general": {
 			"name": "Alterar idioma Ativar Geral",
@@ -248,7 +256,7 @@
 		},
 		"statistics": {
 			"name": "Estatísticas",
-			"explanation": ""
+			"explanation": "プレイを通じて記録された合計を表示"
 		},
 		"coin": {
 			"name": "Moeda",
@@ -404,7 +412,7 @@
 		},
 		"level": {
 			"name": "Nível",
-			"explanation": ""
+			"explanation": "このカテゴリの習熟度。経験値がたまると上がる"
 		},
 		"category-experience": {
 			"name": "経験値",
@@ -427,16 +435,16 @@
 			"explanation": "Funciona de forma independente, independentemente do andamento das ações em outras categorias."
 		},
 		"standalone-yes": {
-			"name": "Autônomo",
+			"name": "パッシブ",
 			"explanation": "Funciona de forma independente, independentemente do andamento das ações em outras categorias."
 		},
 		"standalone-no": {
-			"name": "Compartilhado",
+			"name": "アクティブ",
 			"explanation": "Compartilha um espaço de execução com outras categorias. Apenas uma ação pode ser executada por vez; ao iniciar outra, a atual é enviada para a fila de espera."
 		},
 		"action": {
 			"name": "Ação",
-			"explanation": ""
+			"explanation": "このカテゴリで実行できる行動"
 		},
 		"actions": {
 			"name": "Lista de ações",
@@ -480,11 +488,11 @@
 		},
 		"persistent": {
 			"name": "Persistente",
-			"explanation": "Você realiza uma série de ações e, cada vez que conclui uma ação, recebe uma recompensa."
+			"explanation": "アクションを連続して実行し、アクションを完了するたびに報酬がもらえる"
 		},
 		"single": {
 			"name": "Único",
-			"explanation": "Você só pode realizar uma ação uma vez, e seu progresso será salvo mesmo que você a interrompa no meio do caminho."
+			"explanation": "１回実行すると止まり、連続では実行されない。途中で中断しても進行状況は保存される。"
 		},
 		"snap": {
 			"name": "Instantâneo",
@@ -527,7 +535,7 @@
 			"explanation": ""
 		},
 		"next-time": {
-			"name": "Da próxima vez",
+			"name": "次まで",
 			"explanation": ""
 		},
 		"rest-count": {
@@ -576,11 +584,11 @@
 		},
 		"acquisition-failure": {
 			"name": "Falha de aquisição",
-			"explanation": "As recompensas com o prefixo [Fracasso] só são obtidas quando a ação falha, e a porcentagem exibida é a chance de obtê-las."
+			"explanation": "説明に [失敗] と付いた報酬は、アクションに失敗したときだけ獲得できる。表示されている割合はその獲得確率。"
 		},
 		"item": {
 			"name": "Item",
-			"explanation": ""
+			"explanation": "このカテゴリに関わる持ち物"
 		},
 		"items": {
 			"name": "Lista de itens",
@@ -600,11 +608,11 @@
 		},
 		"capacity": {
 			"name": "Capacidade",
-			"explanation": "Um item especial que representa quantos tipos de itens você pode possuir ao mesmo tempo."
+			"explanation": "同時に所有できるアイテムの種類数に影響"
 		},
 		"queue": {
 			"name": "Fila",
-			"explanation": "Um item especial que indica quantas ações a fila comporta, incluindo a que está em execução no início."
+			"explanation": "キュー（アクションの予約枠）に入れられるアクションの数"
 		},
 		"equipping": {
 			"name": "Equipando",
@@ -615,7 +623,7 @@
 			"explanation": ""
 		},
 		"equip": {
-			"name": "Equipar",
+			"name": "装備する",
 			"explanation": ""
 		},
 		"equipment": {
@@ -623,7 +631,7 @@
 			"explanation": ""
 		},
 		"unequip": {
-			"name": "Desequipar",
+			"name": "装備解除する",
 			"explanation": ""
 		},
 		"nothing": {
@@ -636,54 +644,54 @@
 		},
 		"recovery": {
 			"name": "A recuperação",
-			"explanation": "Você só pode ter um próprio."
+			"explanation": "戦闘開始時のスタミナの回復量"
 		},
 		"unique": {
 			"name": "Único",
-			"explanation": "Você só pode ter um próprio."
+			"explanation": "1つだけ所有できるアイテム"
 		},
 		"equipment-type": {
 			"name": "Equipamento",
-			"explanation": "O tipo de equipamento do item."
+			"explanation": "アイテムの装備タイプ"
 		},
 		"necessary-item": {
 			"name": "Necessário",
-			"explanation": "Equipar o item terá efeitos."
+			"explanation": "装備すると効果が発動する"
 		},
 		"unnecessary-item": {
 			"name": "Desnecessário",
-			"explanation": "Você não pode equipar o item, mas o simples fato de tê-lo em sua posse já produz efeitos. O efeito é multiplicado pelo número de itens próprios que você possui."
+			"explanation": "所持しているだけで効果が発動する。その効果は、所持している数だけ倍増する。"
 		},
 		"impossible-item": {
 			"name": "Impossível",
-			"explanation": "Este item não pode ser equipado."
+			"explanation": "装備できない"
 		},
 		"consumable-item": {
 			"name": "Consumível",
-			"explanation": "Quando equipado, ele tem um efeito, mas é consumido toda vez que você realiza uma ação."
+			"explanation": "装備すると効果を発揮するが、アクションを行うたびに消費される（スタミナのターンごとには消費されない）"
 		},
 		"buy": {
 			"name": "Comprar",
-			"explanation": "O valor do item no momento da compra."
+			"explanation": "アイテムを購入する"
 		},
 		"buying-value": {
-			"name": "Valor da compra",
-			"explanation": "O valor do item no momento da compra."
+			"name": "購入価格",
+			"explanation": "購入する際の価格"
 		},
 		"sell": {
 			"name": "Fornecedor",
-			"explanation": "O valor do item no momento da venda."
+			"explanation": "アイテムを売却する"
 		},
 		"selling": {
 			"name": "Vendas",
-			"explanation": ""
+			"explanation": "所有しているアイテムを、一覧から選んでまとめて売却する"
 		},
 		"kind": {
 			"name": "Tipo",
-			"explanation": ""
+			"explanation": "選んだアイテムの種類の数"
 		},
 		"selling-value": {
-			"name": "Valor de venda",
+			"name": "売却価格",
 			"explanation": "O valor do item no momento da venda."
 		},
 		"trade": {
@@ -691,19 +699,19 @@
 			"explanation": ""
 		},
 		"trade-failed": {
-			"name": "A transação falhou",
+			"name": "交換不可",
 			"explanation": "A negociação não foi concluída."
 		},
 		"capacity-full": {
-			"name": "Ingressos esgotados",
+			"name": "イベントリが満杯",
 			"explanation": "O estoque está esgotado."
 		},
 		"queue-full": {
-			"name": "Fila lotada",
+			"name": "キューが満杯",
 			"explanation": "A fila está cheia, incluindo a ação em execução."
 		},
 		"already-queued": {
-			"name": "Já está na fila",
+			"name": "既にキューにある",
 			"explanation": "Esta ação já está na fila."
 		},
 		"unmatched-requirements": {
@@ -711,7 +719,7 @@
 			"explanation": "実行に必要な条件を満たしていない"
 		},
 		"purchase-limit-reached": {
-			"name": "Limite de compra atingido",
+			"name": "購入上限に到達",
 			"explanation": "Limite de compra atingido."
 		},
 		"completed-maximum": {
@@ -719,7 +727,7 @@
 			"explanation": "Você atingiu o número máximo de conclusões concluídas."
 		},
 		"relationships": {
-			"name": "Relações",
+			"name": "関連",
 			"explanation": ""
 		},
 		"related-actions": {
@@ -727,7 +735,7 @@
 			"explanation": ""
 		},
 		"relationship-items": {
-			"name": "Lista de itens relacionados",
+			"name": "関連アイテム",
 			"explanation": "Uma lista de itens relacionados às ações desta categoria."
 		},
 		"requirement-equipment": {
@@ -740,19 +748,19 @@
 		},
 		"skill": {
 			"name": "Habilidade",
-			"explanation": "É sorteada a cada turno de combate e, ao ser ativada, corrige os valores de combate apenas naquele turno."
+			"explanation": "戦闘中に発動するとそのターンだけ戦闘値を補正する"
 		},
 		"skills": {
 			"name": "Lista de habilidades",
 			"explanation": "Lista das habilidades que este elemento possui."
 		},
 		"no-ability": {
-			"name": "Sem aptidão",
+			"name": "スキルがない",
 			"explanation": "Não há habilidades que possam ser ativadas agora."
 		},
 		"property": {
 			"name": "Propriedade",
-			"explanation": ""
+			"explanation": "アクションの結果に影響する数値"
 		},
 		"calculation": {
 			"name": "Cálculo",
@@ -764,23 +772,23 @@
 		},
 		"attack": {
 			"name": "Ataque",
-			"explanation": "Dano ao alvo."
+			"explanation": "プレイヤーからターゲットへのダメージ"
 		},
 		"defence": {
 			"name": "Defesa",
-			"explanation": "Dano causado pelo alvo."
+			"explanation": "ターゲットからぷれいやーへのダメージ"
 		},
 		"accuracy": {
 			"name": "Precisão",
-			"explanation": "Probabilidade de causar dano ao monstro."
+			"explanation": "プレイヤーからターゲットにダメージを与える確率"
 		},
 		"evasion": {
 			"name": "Evasão",
-			"explanation": "Probabilidade de sofrer dano causado por um monstro."
+			"explanation": "ターゲットからプレイヤーへダメージを受ける確率"
 		},
 		"restore": {
 			"name": "Restaurar",
-			"explanation": "Afeta a quantidade de recuperação durante a batalha."
+			"explanation": "ターゲットのスタミナがなくり、次のアクションに移る時の回復量"
 		},
 		"speed": {
 			"name": "Velocidade",
@@ -788,7 +796,7 @@
 		},
 		"chance": {
 			"name": "Chance",
-			"explanation": "A ação pode ser um sucesso, mas, caso falhe, você não receberá nenhuma recompensa nem pontos de experiência."
+			"explanation": "失敗した場合は報酬も経験値も得られない"
 		},
 		"experience": {
 			"name": "Experiência",
@@ -832,10 +840,10 @@
 		},
 		"no-status": {
 			"name": "Sem status",
-			"explanation": "Não há categorias de status disponíveis."
+			"explanation": "どのカテゴリにもプロパティ補正はない"
 		},
 		"event": {
-			"name": "Evento",
+			"name": "イベント",
 			"explanation": ""
 		},
 		"timing": {
@@ -867,51 +875,51 @@
 			"explanation": "単発のアクションが完了したときに発生する"
 		},
 		"tasked": {
-			"name": "Tasked",
+			"name": "条件達成",
 			"explanation": "条件が満たされた"
 		},
 		"comebacked": {
-			"name": "Retornado",
+			"name": "おかえりなさい",
 			"explanation": "Bem-vindo de volta! O que aconteceu enquanto você esteve ausente:"
 		},
 		"gameovered": {
-			"name": "Jogo terminado",
+			"name": "ゲームオーバー",
 			"explanation": "Fim do jogo. Seu progresso foi reiniciado."
 		},
 		"completed": {
-			"name": "Concluído",
+			"name": "コンプリート",
 			"explanation": "Parabéns! Você concluiu todas as categorias."
 		},
 		"welcomed": {
-			"name": "Bem-vindo",
+			"name": "ようこそ",
 			"explanation": "Bem-vindo a este mundo!"
 		},
 		"obtained": {
-			"name": "Obtido",
-			"explanation": "Você obteve:"
+			"name": "獲得",
+			"explanation": "獲得したものを確認してみよう"
 		},
 		"achieved": {
-			"name": "Concluído",
-			"explanation": ""
+			"name": "達成",
+			"explanation": "タスクを達成しているかどうか"
 		},
 		"receive": {
-			"name": "Receber",
+			"name": "受け取る",
 			"explanation": "Receba a recompensa desta tarefa."
 		},
 		"received": {
-			"name": "Recebido",
+			"name": "受け取り済",
 			"explanation": "A recompensa desta tarefa já foi recebida."
 		},
 		"hidden": {
-			"name": "Oculto",
+			"name": "非表示",
 			"explanation": "Depois de confirmar o conteúdo, esta coluna ficará oculta."
 		},
 		"task": {
-			"name": "Tarefa",
-			"explanation": ""
+			"name": "タスク",
+			"explanation": "達成すると報酬を受け取れる課題"
 		},
 		"task-completed": {
-			"name": "Tarefa concluída",
+			"name": "タスク達成",
 			"explanation": ""
 		},
 		"tasks": {
@@ -919,7 +927,7 @@
 			"explanation": ""
 		},
 		"missions": {
-			"name": "Missões",
+			"name": "ミッション",
 			"explanation": ""
 		},
 		"language-en": {
@@ -963,39 +971,39 @@
 			"explanation": ""
 		},
 		"config": {
-			"name": "Configuração",
+			"name": "設定",
 			"explanation": ""
 		},
 		"operation": {
-			"name": "Operação",
+			"name": "操作",
 			"explanation": "Altera a forma como as ações são executadas."
 		},
 		"auto-clear-queue": {
 			"name": "Limpeza automática da fila",
-			"explanation": "Ao manter pressionada uma ação executável para iniciá-la, todas as reservas na fila, incluindo a que está em execução, são apagadas antes de executar essa ação."
+			"explanation": "アクションを長押ししてクイックスタートしたとき、実行中のアクションを含む作業予定（キュー）をすべて削除してから、そのアクションを実行する"
 		},
 		"display": {
-			"name": "Exibição",
+			"name": "表示",
 			"explanation": "Altera a forma como o jogo é exibido na tela."
 		},
 		"language": {
-			"name": "Idioma",
+			"name": "言語",
 			"explanation": ""
 		},
 		"selected-language": {
-			"name": "Idioma selecionado",
-			"explanation": ""
+			"name": "選択中の言語",
+			"explanation": "いま表示に使っている言語"
 		},
 		"language-change-enable": {
-			"name": "Ativar mudança de idioma",
+			"name": "変更できる",
 			"explanation": "Você pode alterar o idioma exibido."
 		},
 		"language-change-unenable": {
-			"name": "Desativar a alteração de idioma",
+			"name": "変更できない",
 			"explanation": "Não há outros idiomas disponíveis para exibição."
 		},
 		"category-shortcut": {
-			"name": "Atalho para a categoria",
+			"name": "カテゴリの同時表示",
 			"explanation": "Ao abrir uma categoria, a lista de ações ou a lista de itens também será exibida."
 		},
 		"showing-hint": {
@@ -1007,47 +1015,47 @@
 			"explanation": "Exibe botões para alternar entre colunas. Você também pode deslizar o dedo para alternar entre colunas sem precisar exibi-los."
 		},
 		"performance": {
-			"name": "Desempenho",
+			"name": "パフォーマンス",
 			"explanation": "Ajusta como o console funciona no seu dispositivo."
 		},
 		"performing-highly": {
-			"name": "Desempenho de alto nível",
+			"name": "高頻度更新",
 			"explanation": "Aumente a frequência de atualização. Se a operação for pesada, recomendamos desativar essa opção. Isso não afeta o tempo de execução de cada ação."
 		},
 		"data": {
-			"name": "Dados",
+			"name": "データ",
 			"explanation": "Salva, carrega e apaga os dados de progresso deste mundo."
 		},
 		"export-game": {
-			"name": "Exportar jogo",
-			"explanation": "Os dados do jogo foram exportados."
+			"name": "エクスポート",
+			"explanation": "ゲームの進行データがエクスポートされた"
 		},
 		"import-game": {
-			"name": "Importar jogo",
-			"explanation": "Os dados do jogo foram importados."
+			"name": "インポート",
+			"explanation": "ゲームの進行データがインポートされた"
 		},
 		"import-mistake": {
-			"name": "Erro na importação",
+			"name": "読み込み失敗",
 			"explanation": "Não foi possível carregar os dados do jogo."
 		},
 		"reset-game": {
-			"name": "Reiniciar o jogo",
-			"explanation": "Exclua todos os dados de progresso deste mundo. Essa ação não pode ser revertida. Confirme se realmente deseja excluir o arquivo e, em seguida, digite “DELETE” no campo de entrada. (Não é necessário no modo de depuração)"
+			"name": "ゲームをリセット",
+			"explanation": "このワールドの進行状況データをすべて削除する。この操作は元に戻せない。本当にファイルを削除してよいか確認したうえで、入力欄に「DELETE」と入力する。"
 		},
 		"reset-really": {
 			"name": "Sério?",
 			"explanation": ""
 		},
 		"reset-alert": {
-			"name": "Redefinir alerta",
+			"name": "リセットの確認",
 			"explanation": "A redefinição do jogo apagará todos os dados. Tem certeza de que deseja redefinir o jogo?"
 		},
 		"reset-debug-mode": {
-			"name": "Redefinir o modo de depuração",
+			"name": "デバッグモード",
 			"explanation": "No modo de depuração, não é necessário inserir nada no campo de confirmação."
 		},
 		"restart": {
-			"name": "Reiniciar",
+			"name": "再起動",
 			"explanation": "Recarrega o console. Use para verificar se a compilação foi substituída."
 		},
 		"hint-language-scope": {
@@ -1088,15 +1096,15 @@
 		},
 		"hint-config-settings": {
 			"name": "Hint Config Settings",
-			"explanation": "Configure as opções relacionadas à exibição e ao processamento do jogo."
+			"explanation": "操作方法・画面表示・動作の重さを変えられる。設定は進行データの一部として保存され、書き出したデータにも引き継がれる"
 		},
 		"hint-config-data": {
 			"name": "Hint Config Data",
-			"explanation": "Os dados do jogo podem ser importados, exportados e redefinidos."
+			"explanation": "進行データはこの端末にワールドごとに保存される。書き出したファイルを読み込めるのは、同じワールドの同じバージョンだけ"
 		},
 		"hint-statistics-progress": {
 			"name": "Hint Statistics Progress",
-			"explanation": "Você pode verificar o progresso do jogo até agora."
+			"explanation": "プレイ時間や獲得コインの累計と、いま所持枠・予約枠（キュー）をいくつまで持てるかを確認できる"
 		},
 		"hint-statistics-unlocked": {
 			"name": "Hint Statistics Unlocked",
@@ -1108,11 +1116,11 @@
 		},
 		"hint-overview-world": {
 			"name": "Hint Overview World",
-			"explanation": "Você pode verificar o mundo (ambientação, configuração) deste jogo."
+			"explanation": "作者・バージョン・推定プレイ時間などワールドの素性と、既定言語・カテゴリレベルの上限・レベル成長率といったワールド全体に共通する設定を確認できる"
 		},
 		"hint-overview-console": {
 			"name": "Hint Overview Console",
-			"explanation": "Você também pode verificar o console (sistema) que está executando este jogo."
+			"explanation": "コンソールはワールドを読み込んで動かす実行環境。ワールドとは別にバージョンと更新日を持つ"
 		},
 		"hint-properties-meaning": {
 			"name": "Hint Properties Meaning",
@@ -1128,7 +1136,7 @@
 		},
 		"hint-trade-availability": {
 			"name": "Hint Trade Availability",
-			"explanation": "Alguns itens não podem ser comprados nem vendidos."
+			"explanation": "価格が無いと購入・売却の枠そのものが出ない。ロック中も売買できない"
 		},
 		"hint-trade-capacity": {
 			"name": "Hint Trade Capacity",
@@ -1136,7 +1144,7 @@
 		},
 		"hint-trade-limit": {
 			"name": "Hint Trade Limit",
-			"explanation": "Pode haver um limite no número de compras para uma dada capacidade ou vaga de reserva (fila) e, ao atingi-lo, não será possível comprar mais. (Os aumentos obtidos como recompensa não estão sujeitos a esse limite)"
+			"explanation": "所持枠とキューの枠は1つずつで、買うたびに値上がりする。購入回数に上限があるワールドもある（報酬ぶんは数えない）"
 		},
 		"hint-trade-selling": {
 			"name": "Hint Trade Selling",
@@ -1156,11 +1164,11 @@
 		},
 		"hint-items-exclusive": {
 			"name": "Hint Items Exclusive",
-			"explanation": "Só é possível equipar um item da lista. (Se estiver configurado para poder ser equipado como categoria)"
+			"explanation": "グループごとに装備できるアイテムは1つだけ"
 		},
 		"hint-items-locked": {
 			"name": "Hint Items Locked",
-			"explanation": "Itens que não cumpriram os requisitos de liberação ficam bloqueados e não podem ser vistos em detalhe."
+			"explanation": "解放条件を満たしていないアイテムは斜線付きで表示され、説明文と所持数が伏せられる"
 		},
 		"hint-items-relationship": {
 			"name": "Hint Items Relationship",
@@ -1172,7 +1180,7 @@
 		},
 		"hint-item-exclusive": {
 			"name": "Hint Item Exclusive",
-			"explanation": "Só é possível equipar um item dentro de uma categoria. (Se estiver configurado para poder ser equipado como categoria)"
+			"explanation": "装備できるアイテムはグループごとに1つだけ。グループが違えば同じカテゴリでも同時に装備できる"
 		},
 		"hint-item-equipping": {
 			"name": "Hint Item Equipping",
@@ -1180,11 +1188,11 @@
 		},
 		"hint-item-locked": {
 			"name": "Hint Item Locked",
-			"explanation": "Itens que não cumpriram os requisitos de liberação ficam bloqueados e não podem ser vistos em detalhe."
+			"explanation": "解放条件を満たしていないアイテムは斜線付きで表示され、説明文と所持数が伏せられる"
 		},
 		"hint-act-count": {
 			"name": "Hint Act Count",
-			"explanation": "Você pode indicar quantas vezes executá-la. Escolha a posição mais à direita para executar até os recursos acabarem."
+			"explanation": "一番右の∞は、資源か総実行回数の上限で止まるまで実行し続ける"
 		},
 		"hint-act-position": {
 			"name": "Hint Act Position",
@@ -1232,11 +1240,11 @@
 		},
 		"hint-actions-parallel": {
 			"name": "Hint Actions Parallel",
-			"explanation": "Algumas categorias permitem avançar ações de mais de uma categoria ao mesmo tempo."
+			"explanation": "カテゴリによっては（スタンドアロンがパッシブ）、複数のカテゴリのアクションを同時に進行できる"
 		},
 		"hint-actions-locked": {
 			"name": "Hint Actions Locked",
-			"explanation": "Ações que não cumpriram as condições de liberação ficam bloqueadas e não podem ser vistas em detalhe."
+			"explanation": "解放条件を満たしていないアクションは斜線付きで表示され、説明文が伏せられる"
 		},
 		"hint-action-meaning": {
 			"name": "Hint Action Meaning",
@@ -1252,11 +1260,11 @@
 		},
 		"hint-action-resource": {
 			"name": "Hint Action Resource",
-			"explanation": "Cada execução consome ou obtém um item."
+			"explanation": "「条件」に並ぶものは実行のたびに消費される。割合があるものは消費される確率"
 		},
 		"hint-action-locked": {
 			"name": "Hint Action Locked",
-			"explanation": "Ações que não cumpriram as condições de liberação ficam bloqueadas e não podem ser vistas em detalhe."
+			"explanation": "解放条件を満たしていないアクションは斜線付きで表示され、説明文が伏せられる"
 		},
 		"hint-skills-list": {
 			"name": "Hint Skills List",
@@ -1288,15 +1296,15 @@
 		},
 		"hint-tasks-unclaimed": {
 			"name": "Hint Tasks Unclaimed",
-			"explanation": "Uma fita marca as tarefas cuja recompensa ainda não foi resgatada. Selecione uma e pressione receber para obtê-la."
+			"explanation": "報酬をまだ受け取っていないタスクにはリボンが付く。開いて受け取るを押す"
 		},
 		"hint-tasks-capacity": {
 			"name": "Hint Tasks Capacity",
-			"explanation": "Não é possível resgatar uma recompensa enquanto o número de tipos de itens que você pode ter estiver no limite. Libere espaço e resgate novamente."
+			"explanation": "所持できる種類数が上限のあいだは報酬を受け取れない。空きを作ってから受け取り直す"
 		},
 		"hint-category-meaning": {
 			"name": "Hint Category Meaning",
-			"explanation": "Este elemento é uma compilação de ações e itens."
+			"explanation": "カテゴリはアクション・アイテム・プロパティ・スキル・タスクをまとめた単位"
 		},
 		"hint-category-level": {
 			"name": "Hint Category Level",
@@ -1316,7 +1324,7 @@
 		},
 		"hint-status-property": {
 			"name": "Hint Status Property",
-			"explanation": "Somente o valor da propriedade que os itens aplicam à categoria é exibido."
+			"explanation": "ここに並ぶのはアイテムによる補正のみで、実行するアクションによってはさらにスキルなどの別の補正がかかる"
 		},
 		"hint-status-stacking": {
 			"name": "Hint Status Stacking",
@@ -1328,7 +1336,7 @@
 		},
 		"hint-inventory-equipping": {
 			"name": "Hint Inventory Equipping",
-			"explanation": "Mantenha pressionado para alternar o equipamento do item."
+			"explanation": "バーを長押しすると装備を切り替えられる"
 		},
 		"hint-inventory-capacity": {
 			"name": "Hint Inventory Capacity",
@@ -1352,7 +1360,7 @@
 		},
 		"hint-activity-executing": {
 			"name": "Hint Activity Executing",
-			"explanation": "Um toque longo alterna a execução da ação."
+			"explanation": "バーを長押しすると実行を切り替えられる"
 		},
 		"hint-activity-index": {
 			"name": "Hint Activity Index",
@@ -1376,11 +1384,11 @@
 		},
 		"hint-missions-completed": {
 			"name": "Hint Missions Completed",
-			"explanation": "Uma marca de seleção é exibida nas tarefas concluídas."
+			"explanation": "達成済みのタスクにはチェックマークが付く。一度達成すれば、その後条件を満たさなくなっても達成のまま"
 		},
 		"hint-missions-unclaimed": {
 			"name": "Hint Missions Unclaimed",
-			"explanation": "Uma fita marca as tarefas cuja recompensa ainda não foi resgatada. Selecione uma e pressione receber para obtê-la."
+			"explanation": "報酬をまだ受け取っていないタスクにはリボンが付く。開いて受け取るを押す"
 		},
 		"hint-property-meaning": {
 			"name": "Hint Property Meaning",
