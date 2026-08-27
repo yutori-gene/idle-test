@@ -130,6 +130,10 @@
 			"name": "失敗",
 			"explanation": "失敗"
 		},
+		"failure-only": {
+			"name": "失敗時",
+			"explanation": ""
+		},
 		"up": {
 			"name": "上へ",
 			"explanation": ""
@@ -584,7 +588,7 @@
 		},
 		"acquisition-failure": {
 			"name": "獲得失敗",
-			"explanation": "説明に [失敗] と付いた報酬は、アクションに失敗したときだけ獲得できる。表示されている割合はその獲得確率。"
+			"explanation": "説明に [失敗時] と付いた報酬は、アクションに失敗したときだけ獲得できる。表示されている割合はその獲得確率。"
 		},
 		"item": {
 			"name": "アイテム",
@@ -659,7 +663,7 @@
 			"explanation": "装備すると効果が発動する"
 		},
 		"unnecessary-item": {
-			"name": "不要",
+			"name": "常時発動",
 			"explanation": "所持しているだけで効果が発動する。その効果は、所持している数だけ倍増する。"
 		},
 		"impossible-item": {
@@ -738,9 +742,9 @@
 			"name": "関連アイテム",
 			"explanation": "カテゴリのアクションに関係するアイテムの一覧"
 		},
-		"requirement-equipment": {
-			"name": "必須装備",
-			"explanation": "このアイテムは装備する必要がある"
+		"required-equipment": {
+			"name": "要装備",
+			"explanation": ""
 		},
 		"group": {
 			"name": "グループ",

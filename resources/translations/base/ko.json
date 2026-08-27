@@ -130,6 +130,10 @@
 			"name": "실패",
 			"explanation": "실패"
 		},
+		"failure-only": {
+			"name": "失敗時",
+			"explanation": ""
+		},
 		"up": {
 			"name": "위",
 			"explanation": ""
@@ -584,7 +588,7 @@
 		},
 		"acquisition-failure": {
 			"name": "획득 실패",
-			"explanation": "説明に [失敗] と付いた報酬は、アクションに失敗したときだけ獲得できる。表示されている割合はその獲得確率。"
+			"explanation": "説明に [失敗時] と付いた報酬は、アクションに失敗したときだけ獲得できる。表示されている割合はその獲得確率。"
 		},
 		"item": {
 			"name": "아이템",
@@ -659,7 +663,7 @@
 			"explanation": "装備すると効果が発動する"
 		},
 		"unnecessary-item": {
-			"name": "불필요",
+			"name": "常時発動",
 			"explanation": "所持しているだけで効果が発動する。その効果は、所持している数だけ倍増する。"
 		},
 		"impossible-item": {
@@ -738,9 +742,9 @@
 			"name": "関連アイテム",
 			"explanation": "이 카테고리의 액션과 관련된 아이템 목록입니다."
 		},
-		"requirement-equipment": {
-			"name": "필수 장비",
-			"explanation": "이 아이템은 반드시 장착해야 합니다."
+		"required-equipment": {
+			"name": "要装備",
+			"explanation": ""
 		},
 		"group": {
 			"name": "グループ",

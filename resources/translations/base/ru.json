@@ -130,6 +130,10 @@
 			"name": "Неудача",
 			"explanation": "неудача"
 		},
+		"failure-only": {
+			"name": "失敗時",
+			"explanation": ""
+		},
 		"up": {
 			"name": "Вверх",
 			"explanation": ""
@@ -584,7 +588,7 @@
 		},
 		"acquisition-failure": {
 			"name": "Неудача получения",
-			"explanation": "説明に [失敗] と付いた報酬は、アクションに失敗したときだけ獲得できる。表示されている割合はその獲得確率。"
+			"explanation": "説明に [失敗時] と付いた報酬は、アクションに失敗したときだけ獲得できる。表示されている割合はその獲得確率。"
 		},
 		"item": {
 			"name": "Предмет",
@@ -659,7 +663,7 @@
 			"explanation": "装備すると効果が発動する"
 		},
 		"unnecessary-item": {
-			"name": "Не нужно",
+			"name": "常時発動",
 			"explanation": "所持しているだけで効果が発動する。その効果は、所持している数だけ倍増する。"
 		},
 		"impossible-item": {
@@ -738,9 +742,9 @@
 			"name": "関連アイテム",
 			"explanation": "Список предметов, связанных с действиями этой категории."
 		},
-		"requirement-equipment": {
-			"name": "Требования к снаряжению",
-			"explanation": "Этот предмет необходимо снарядить."
+		"required-equipment": {
+			"name": "要装備",
+			"explanation": ""
 		},
 		"group": {
 			"name": "グループ",

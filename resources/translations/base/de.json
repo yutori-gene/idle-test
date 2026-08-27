@@ -130,6 +130,10 @@
 			"name": "Fehler",
 			"explanation": "Fehler"
 		},
+		"failure-only": {
+			"name": "失敗時",
+			"explanation": ""
+		},
 		"up": {
 			"name": "Auf den Boden",
 			"explanation": ""
@@ -584,7 +588,7 @@
 		},
 		"acquisition-failure": {
 			"name": "Fehlgeschlagener Erwerb",
-			"explanation": "説明に [失敗] と付いた報酬は、アクションに失敗したときだけ獲得できる。表示されている割合はその獲得確率。"
+			"explanation": "説明に [失敗時] と付いた報酬は、アクションに失敗したときだけ獲得できる。表示されている割合はその獲得確率。"
 		},
 		"item": {
 			"name": "Gegenstand",
@@ -659,7 +663,7 @@
 			"explanation": "装備すると効果が発動する"
 		},
 		"unnecessary-item": {
-			"name": "Unnötig",
+			"name": "常時発動",
 			"explanation": "所持しているだけで効果が発動する。その効果は、所持している数だけ倍増する。"
 		},
 		"impossible-item": {
@@ -738,9 +742,9 @@
 			"name": "関連アイテム",
 			"explanation": "Eine Liste der Gegenstände, die mit den Aktionen dieser Kategorie zusammenhängen."
 		},
-		"requirement-equipment": {
-			"name": "Anforderungen an die Ausrüstung",
-			"explanation": "Dieser Gegenstand muss ausgerüstet sein."
+		"required-equipment": {
+			"name": "要装備",
+			"explanation": ""
 		},
 		"group": {
 			"name": "グループ",
