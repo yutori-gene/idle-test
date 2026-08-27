@@ -272,7 +272,7 @@
 		},
 		"unique-count": {
 			"name": "種類数",
-			"explanation": "同時に所持できる種類の数"
+			"explanation": "所持できるアイテムの種類の数"
 		},
 		"max-capacity": {
 			"name": "容量",
@@ -284,22 +284,22 @@
 		},
 		"statistics-category": {
 			"name": "カテゴリ",
-			"explanation": "このワールドのカテゴリがどれだけ開放されているかを示す"
+			"explanation": "このワールドのカテゴリがどれだけ開放されているか"
 		},
 		"statistics-action": {
 			"name": "アクション",
-			"explanation": "このワールドのアクションがどれだけ開放されているかを示す"
+			"explanation": "このワールドのアクションがどれだけ開放されているか"
 		},
 		"statistics-item": {
 			"name": "アイテム",
-			"explanation": "このワールドのアイテムがどれだけ開放されているかを示す"
+			"explanation": "このワールドのアイテムがどれだけ開放されているか"
 		},
 		"statistics-event": {
 			"name": "イベント",
 			"explanation": "このワールドのイベントがどれだけ開放されているかを示す"
 		},
 		"count-unlocked": {
-			"name": "解放済み",
+			"name": "解放済",
 			"explanation": "全体のうち、これまでに解放された数"
 		},
 		"level-total": {
@@ -307,15 +307,15 @@
 			"explanation": "全カテゴリのレベルの合計値と、その最大値"
 		},
 		"count-performed": {
-			"name": "実行済み",
+			"name": "実行済",
 			"explanation": "これまでにアクションを実行した合計回数"
 		},
 		"count-earned": {
-			"name": "獲得済み",
+			"name": "獲得済",
 			"explanation": "これまでに獲得したアイテムの合計数"
 		},
 		"count-triggered": {
-			"name": "発生済み",
+			"name": "発生済",
 			"explanation": "これまでにイベントが発生した合計回数"
 		},
 		"debug": {
@@ -405,6 +405,10 @@
 		"level": {
 			"name": "Nível",
 			"explanation": ""
+		},
+		"category-experience": {
+			"name": "経験値",
+			"explanation": "次のレベルまでの進み具合。アクションを実行すると増える"
 		},
 		"level-up": {
 			"name": "Subida de nível",
@@ -578,6 +582,10 @@
 			"name": "Lista de itens",
 			"explanation": ""
 		},
+		"selling-items": {
+			"name": "アイテム一覧",
+			"explanation": "売却額が設定された所持アイテムの一覧"
+		},
 		"item-type": {
 			"name": "Tipo",
 			"explanation": "O tipo deste item."
@@ -693,6 +701,10 @@
 		"already-queued": {
 			"name": "Já está na fila",
 			"explanation": "Esta ação já está na fila."
+		},
+		"unmatched-requirements": {
+			"name": "条件を満たしていない",
+			"explanation": "実行に必要な条件を満たしていない"
 		},
 		"purchase-limit-reached": {
 			"name": "Limite de compra atingido",
@@ -828,7 +840,7 @@
 		},
 		"timing-comebacked": {
 			"name": "カムバック",
-			"explanation": "しばらく離れていたあと、戻ってきたときに発生する"
+			"explanation": "しばらくオフラインで離れていたあと、戻ってきたときに発生する"
 		},
 		"timing-gameovered": {
 			"name": "ゲームオーバー",
@@ -1030,33 +1042,41 @@
 			"name": "Reiniciar",
 			"explanation": "Recarrega o console. Use para verificar se a compilação foi substituída."
 		},
-		"hint-language-switching": {
-			"name": "Hint Language Switching",
-			"explanation": "Alterna o idioma exibido no jogo."
+		"hint-language-scope": {
+			"name": "Hint Language Scope",
+			"explanation": "切り替わるのは画面の言語"
 		},
-		"hint-language-availability": {
-			"name": "Hint Language Availability",
-			"explanation": "Isto só é válido se o autor tiver preparado uma tradução."
+		"hint-language-fallback": {
+			"name": "Hint Language Fallback",
+			"explanation": "翻訳が無い文章は既定の言語のまま表示される"
 		},
-		"hint-event-timing": {
-			"name": "Hint Event Timing",
-			"explanation": "É acionado em momentos específicos, como ao voltar ao jogo ou ao perder a partida."
+		"hint-event-capacity": {
+			"name": "Hint Event Capacity",
+			"explanation": "所持できる種類数が上限のあいだは報酬を受け取れない。空きを作ってから受け取り直す"
 		},
-		"hint-event-reward": {
-			"name": "Hint Event Reward",
-			"explanation": "Ao ser acionado, esta tela será aberta e a recompensa será concedida automaticamente junto com uma mensagem."
+		"hint-event-closing": {
+			"name": "Hint Event Closing",
+			"explanation": "確認済を押すか、左のカラムへスライドすると閉じる"
 		},
-		"hint-event-task": {
-			"name": "Hint Event Task",
-			"explanation": "Uma tarefa é concluída ao cumprir determinadas condições, e a recompensa você mesmo recebe."
+		"hint-group-meaning": {
+			"name": "Hint Group Meaning",
+			"explanation": "グループはカテゴリ・アクション・アイテムをまたいで束ねる分類"
 		},
-		"hint-debug-visibility": {
-			"name": "Hint Debug Visibility",
-			"explanation": "É exibido apenas durante a depuração."
+		"hint-group-exclusive": {
+			"name": "Hint Group Exclusive",
+			"explanation": "装備できるアイテムはグループごとに1つだけ"
 		},
-		"hint-debug-publishing": {
-			"name": "Hint Debug Publishing",
-			"explanation": "Não será exibido quando o jogo for publicado e distribuído."
+		"hint-group-index": {
+			"name": "Hint Group Index",
+			"explanation": "右の値はカテゴリがレベル、アクションが必要レベル、アイテムが所持数"
+		},
+		"hint-debug-mode": {
+			"name": "Hint Debug Mode",
+			"explanation": "デバッグモードで起動したときだけ表示される。通常のプレイでは現れない"
+		},
+		"hint-debug-acceleration": {
+			"name": "Hint Debug Acceleration",
+			"explanation": "加速の設定は進行データに保存されるが、効くのはデバッグモードの間だけ"
 		},
 		"hint-config-settings": {
 			"name": "Hint Config Settings",
@@ -1070,6 +1090,14 @@
 			"name": "Hint Statistics Progress",
 			"explanation": "Você pode verificar o progresso do jogo até agora."
 		},
+		"hint-statistics-unlocked": {
+			"name": "Hint Statistics Unlocked",
+			"explanation": "カテゴリ・アクション・アイテム・イベントの解放数は、まだ見つけていないものも含めたワールド全体の数が分母になる"
+		},
+		"hint-statistics-opening": {
+			"name": "Hint Statistics Opening",
+			"explanation": "コインや容量・キュー、内訳に並ぶカテゴリはタップするとその画面を開ける"
+		},
 		"hint-overview-world": {
 			"name": "Hint Overview World",
 			"explanation": "Você pode verificar o mundo (ambientação, configuração) deste jogo."
@@ -1078,29 +1106,41 @@
 			"name": "Hint Overview Console",
 			"explanation": "Você também pode verificar o console (sistema) que está executando este jogo."
 		},
-		"hint-properties-list": {
-			"name": "Hint Properties List",
-			"explanation": "Esta é a lista de propriedades configuradas para cada categoria."
-		},
 		"hint-properties-meaning": {
 			"name": "Hint Properties Meaning",
 			"explanation": "Uma propriedade é um elemento que afeta a execução de uma ação."
 		},
-		"hint-properties-equipment": {
-			"name": "Hint Properties Equipment",
-			"explanation": "O efeito é corrigido pelo equipamento do item. (Alguns itens não precisam)"
+		"hint-properties-resource": {
+			"name": "Hint Properties Resource",
+			"explanation": "下に並ぶタグが、その値に寄与しているアイテムと内訳"
+		},
+		"hint-properties-crossing": {
+			"name": "Hint Properties Crossing",
+			"explanation": "他のカテゴリのアイテムでも、対象がこのカテゴリなら効く"
 		},
 		"hint-trade-availability": {
 			"name": "Hint Trade Availability",
 			"explanation": "Alguns itens não podem ser comprados nem vendidos."
 		},
-		"hint-trade-locked": {
-			"name": "Hint Trade Locked",
-			"explanation": "Itens bloqueados não podem ser comprados nem vendidos."
+		"hint-trade-capacity": {
+			"name": "Hint Trade Capacity",
+			"explanation": "所持枠が満杯だと、まだ持っていない種類は買えない。買い足しはできる"
 		},
 		"hint-trade-limit": {
 			"name": "Hint Trade Limit",
 			"explanation": "Pode haver um limite no número de compras para uma dada capacidade ou vaga de reserva (fila) e, ao atingi-lo, não será possível comprar mais. (Os aumentos obtidos como recompensa não estão sujeitos a esse limite)"
+		},
+		"hint-trade-selling": {
+			"name": "Hint Trade Selling",
+			"explanation": "売って0個になった装備は自動で外れる"
+		},
+		"hint-items-meaning": {
+			"name": "Hint Items Meaning",
+			"explanation": "アイテムは装備品・消耗品・貴重品など、所持するものに関わる要素"
+		},
+		"hint-items-list": {
+			"name": "Hint Items List",
+			"explanation": "このカテゴリで所持できるアイテムの一覧"
 		},
 		"hint-items-equipping": {
 			"name": "Hint Items Equipping",
@@ -1114,6 +1154,10 @@
 			"name": "Hint Items Locked",
 			"explanation": "Itens que não cumpriram os requisitos de liberação ficam bloqueados e não podem ser vistos em detalhe."
 		},
+		"hint-items-relationship": {
+			"name": "Hint Items Relationship",
+			"explanation": "関連はアイテムの入手と消費されるアクション"
+		},
 		"hint-item-meaning": {
 			"name": "Hint Item Meaning",
 			"explanation": "Itens são elementos relacionados ao que você possui, como equipamentos, consumíveis e objetos de valor."
@@ -1122,21 +1166,53 @@
 			"name": "Hint Item Exclusive",
 			"explanation": "Só é possível equipar um item dentro de uma categoria. (Se estiver configurado para poder ser equipado como categoria)"
 		},
+		"hint-item-equipping": {
+			"name": "Hint Item Equipping",
+			"explanation": "装備するボタンは、所持していて要件を満たし、カテゴリが装備先として認めているアイテムにだけ出る"
+		},
 		"hint-item-locked": {
 			"name": "Hint Item Locked",
 			"explanation": "Itens que não cumpriram os requisitos de liberação ficam bloqueados e não podem ser vistos em detalhe."
-		},
-		"hint-act-control": {
-			"name": "Hint Act Control",
-			"explanation": "Inicia ou interrompe uma ação."
 		},
 		"hint-act-count": {
 			"name": "Hint Act Count",
 			"explanation": "Você pode indicar quantas vezes executá-la. Escolha a posição mais à direita para executar até os recursos acabarem."
 		},
+		"hint-act-position": {
+			"name": "Hint Act Position",
+			"explanation": "実行順の0は今すぐ実行、1以降は待機。割り込まれた実行中は残り回数を保って待機へ戻り、あとで再開する"
+		},
+		"hint-act-queue": {
+			"name": "Hint Act Queue",
+			"explanation": "満杯でも予約は通り、あふれた待機は後ろから捨てられる。順番が来て実行できない予約も捨てられる"
+		},
+		"hint-act-opening": {
+			"name": "Hint Act Opening",
+			"explanation": "ターゲットやスキルの行を押すと、そのカラムを開ける"
+		},
+		"hint-calculation-ratio": {
+			"name": "Hint Calculation Ratio",
+			"explanation": "反映された値は足し引きではなく、レベル差10ごとに倍率が掛かる。攻撃と経験値は増え、防御と所要時間は減る"
+		},
+		"hint-calculation-weight": {
+			"name": "Hint Calculation Weight",
+			"explanation": "効き方はプロパティごとに違う"
+		},
+		"hint-calculation-odds": {
+			"name": "Hint Calculation Odds",
+			"explanation": "命中・回避・成功確率・回復量は0%と100%を超えない"
+		},
 		"hint-queue-removing": {
 			"name": "Hint Queue Removing",
 			"explanation": "Um toque longo em uma barra a remove da fila. A primeira está em execução: ela para e a próxima começa."
+		},
+		"hint-actions-meaning": {
+			"name": "Hint Actions Meaning",
+			"explanation": "アクションは、実行すると経験値や報酬を得られる行動"
+		},
+		"hint-actions-list": {
+			"name": "Hint Actions List",
+			"explanation": "このカテゴリで実行できるアクションの一覧"
 		},
 		"hint-actions-executing": {
 			"name": "Hint Actions Executing",
@@ -1154,9 +1230,17 @@
 			"name": "Hint Actions Locked",
 			"explanation": "Ações que não cumpriram as condições de liberação ficam bloqueadas e não podem ser vistas em detalhe."
 		},
-		"hint-action-experience": {
-			"name": "Hint Action Experience",
-			"explanation": "Cada execução pode conceder experiência e aumentar o seu nível."
+		"hint-action-meaning": {
+			"name": "Hint Action Meaning",
+			"explanation": "アクションは、実行すると経験値や報酬を得られる行動"
+		},
+		"hint-action-attribute": {
+			"name": "Hint Action Attribute",
+			"explanation": "属性は経験値の入り先になるカテゴリ。自分のカテゴリと違うこともあり、実行に必要なレベルもそちらで判定される"
+		},
+		"hint-action-executing": {
+			"name": "Hint Action Executing",
+			"explanation": "実行の行を長押しすると開始と停止を切り替えられる"
 		},
 		"hint-action-resource": {
 			"name": "Hint Action Resource",
@@ -1166,13 +1250,33 @@
 			"name": "Hint Action Locked",
 			"explanation": "Ações que não cumpriram as condições de liberação ficam bloqueadas e não podem ser vistas em detalhe."
 		},
-		"hint-tasks-list": {
-			"name": "Hint Tasks List",
-			"explanation": "Esta é a lista de tarefas atribuídas a esta categoria."
+		"hint-skills-list": {
+			"name": "Hint Skills List",
+			"explanation": "それぞれのカテゴリのアイテムが持つスキルを並べている"
 		},
-		"hint-tasks-detail": {
-			"name": "Hint Tasks Detail",
-			"explanation": "Selecione uma tarefa para verificar suas condições de conclusão e sua recompensa."
+		"hint-skills-chance": {
+			"name": "Hint Skills Chance",
+			"explanation": "割合は発動する確率"
+		},
+		"hint-skills-opponent": {
+			"name": "Hint Skills Opponent",
+			"explanation": "アクション側が持つスキルはアクションカラムで確認できる"
+		},
+		"hint-skill-meaning": {
+			"name": "Hint Skill Meaning",
+			"explanation": "スキルは、戦闘中に発動するとそのターンだけ戦闘値を補正する要素"
+		},
+		"hint-skill-chance": {
+			"name": "Hint Skill Chance",
+			"explanation": "発動はターンごとに抽選され、味方・相手それぞれ1ターンに1つまで。ほかのスキルが先に当たると、表示の確率どおりには出ない"
+		},
+		"hint-skill-restore": {
+			"name": "Hint Skill Restore",
+			"explanation": "回復だけはそのターンには効かず、戦闘が決着したあとの回復にまとめて反映される"
+		},
+		"hint-tasks-meaning": {
+			"name": "Hint Tasks Meaning",
+			"explanation": "タスクは、条件を満たすと達成となるイベント。報酬は自分で受け取る"
 		},
 		"hint-tasks-unclaimed": {
 			"name": "Hint Tasks Unclaimed",
@@ -1182,37 +1286,85 @@
 			"name": "Hint Tasks Capacity",
 			"explanation": "Não é possível resgatar uma recompensa enquanto o número de tipos de itens que você pode ter estiver no limite. Libere espaço e resgate novamente."
 		},
-		"hint-tasks-empty": {
-			"name": "Hint Tasks Empty",
-			"explanation": "Isto não é exibido quando a categoria não possui nenhuma tarefa."
-		},
 		"hint-category-meaning": {
 			"name": "Hint Category Meaning",
 			"explanation": "Este elemento é uma compilação de ações e itens."
+		},
+		"hint-category-level": {
+			"name": "Hint Category Level",
+			"explanation": "レベルはアクションの実行で得られる経験値によって上がる"
+		},
+		"hint-category-holding": {
+			"name": "Hint Category Holding",
+			"explanation": "進捗と装備のバーは長押しで切り替えられる"
+		},
+		"hint-category-equipment": {
+			"name": "Hint Category Equipment",
+			"explanation": "装備枠はグループごとに1つ用意される"
+		},
+		"hint-status-meaning": {
+			"name": "Hint Status Meaning",
+			"explanation": "プロパティはアクションの実行結果に影響する数値補正"
 		},
 		"hint-status-property": {
 			"name": "Hint Status Property",
 			"explanation": "Somente o valor da propriedade que os itens aplicam à categoria é exibido."
 		},
-		"hint-status-action": {
-			"name": "Hint Status Action",
-			"explanation": "Há ainda outras correções dependendo da ação a ser executada."
+		"hint-status-stacking": {
+			"name": "Hint Status Stacking",
+			"explanation": "装備の要らないアイテムは、所持数に比例して補正が増える"
+		},
+		"hint-inventory-meaning": {
+			"name": "Hint Inventory Meaning",
+			"explanation": "アイテムは装備品・消耗品・貴重品など、所持するものに関わる要素"
 		},
 		"hint-inventory-equipping": {
 			"name": "Hint Inventory Equipping",
 			"explanation": "Mantenha pressionado para alternar o equipamento do item."
 		},
+		"hint-inventory-capacity": {
+			"name": "Hint Inventory Capacity",
+			"explanation": "所持枠は個数ではなくアイテムの種類数を数える"
+		},
+		"hint-selling-list": {
+			"name": "Hint Selling List",
+			"explanation": "並ぶのは売却額が設定された所持アイテムだけ"
+		},
+		"hint-selling-amount": {
+			"name": "Hint Selling Amount",
+			"explanation": "選ぶと所持数すべてが売却対象になる。値は総額"
+		},
+		"hint-selling-unequip": {
+			"name": "Hint Selling Unequip",
+			"explanation": "売って0個になった装備は自動で外れる"
+		},
+		"hint-activity-meaning": {
+			"name": "Hint Activity Meaning",
+			"explanation": "アクションは、実行すると経験値や報酬を得られる行動"
+		},
 		"hint-activity-executing": {
 			"name": "Hint Activity Executing",
 			"explanation": "Um toque longo alterna a execução da ação."
 		},
-		"hint-missions-grouping": {
-			"name": "Hint Missions Grouping",
-			"explanation": "As tarefas são agrupadas e exibidas por categoria."
+		"hint-activity-index": {
+			"name": "Hint Activity Index",
+			"explanation": "Lv.n はそのアクションに必要なレベル"
 		},
-		"hint-missions-ungrouped": {
-			"name": "Hint Missions Ungrouped",
-			"explanation": "As tarefas sem categoria configurada são agrupadas no topo."
+		"hint-ability-meaning": {
+			"name": "Hint Ability Meaning",
+			"explanation": "スキルは、戦闘中に発動するとそのターンだけ戦闘値を補正する要素"
+		},
+		"hint-ability-source": {
+			"name": "Hint Ability Source",
+			"explanation": "並ぶのは装備中のアイテムと、装備の要らない所持アイテムが持つスキル"
+		},
+		"hint-ability-chance": {
+			"name": "Hint Ability Chance",
+			"explanation": "割合は発動する確率"
+		},
+		"hint-missions-meaning": {
+			"name": "Hint Missions Meaning",
+			"explanation": "タスクは、条件を満たすと達成となるイベント。報酬は自分で受け取る"
 		},
 		"hint-missions-completed": {
 			"name": "Hint Missions Completed",
@@ -1222,41 +1374,13 @@
 			"name": "Hint Missions Unclaimed",
 			"explanation": "Uma fita marca as tarefas cuja recompensa ainda não foi resgatada. Selecione uma e pressione receber para obtê-la."
 		},
-		"hint-missions-permanent": {
-			"name": "Hint Missions Permanent",
-			"explanation": "Depois de concluída, a tarefa permanece concluída mesmo que as condições deixem de ser cumpridas."
+		"hint-property-meaning": {
+			"name": "Hint Property Meaning",
+			"explanation": "プロパティはアクションの実行結果に影響する数値補正"
 		},
-		"hint-attack-scope": {
-			"name": "Hint Attack Scope",
-			"explanation": "カテゴリから開くと寄与しているアイテムの一覧、アイテムから開くと影響先カテゴリの一覧が表示される"
-		},
-		"hint-defence-scope": {
-			"name": "Hint Defence Scope",
-			"explanation": "カテゴリから開くと寄与しているアイテムの一覧、アイテムから開くと影響先カテゴリの一覧が表示される"
-		},
-		"hint-accuracy-scope": {
-			"name": "Hint Accuracy Scope",
-			"explanation": "カテゴリから開くと寄与しているアイテムの一覧、アイテムから開くと影響先カテゴリの一覧が表示される"
-		},
-		"hint-evasion-scope": {
-			"name": "Hint Evasion Scope",
-			"explanation": "カテゴリから開くと寄与しているアイテムの一覧、アイテムから開くと影響先カテゴリの一覧が表示される"
-		},
-		"hint-restore-scope": {
-			"name": "Hint Restore Scope",
-			"explanation": "カテゴリから開くと寄与しているアイテムの一覧、アイテムから開くと影響先カテゴリの一覧が表示される"
-		},
-		"hint-speed-scope": {
-			"name": "Hint Speed Scope",
-			"explanation": "カテゴリから開くと寄与しているアイテムの一覧、アイテムから開くと影響先カテゴリの一覧が表示される"
-		},
-		"hint-chance-scope": {
-			"name": "Hint Chance Scope",
-			"explanation": "カテゴリから開くと寄与しているアイテムの一覧、アイテムから開くと影響先カテゴリの一覧が表示される"
-		},
-		"hint-experience-scope": {
-			"name": "Hint Experience Scope",
-			"explanation": "カテゴリから開くと寄与しているアイテムの一覧、アイテムから開くと影響先カテゴリの一覧が表示される"
+		"hint-property-scope": {
+			"name": "Hint Property Scope",
+			"explanation": "カテゴリから開くと寄与しているアイテムの一覧、アイテムから開くと影響先カテゴリの一覧、スキルから開くと補正値だけが表示される"
 		}
 	}
 }
