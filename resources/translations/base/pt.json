@@ -246,13 +246,25 @@
 			"name": "Alterar idioma Ativar Geral",
 			"explanation": "Você pode alterar o idioma de exibição nas configurações."
 		},
+		"offline-max-hours": {
+			"name": "最大オフライン時間",
+			"explanation": "オフラインだった時間をゲーム進行に反映する上限"
+		},
 		"max-category-level": {
 			"name": "Nível máximo da categoria",
 			"explanation": "O nível máximo que pode ser alcançado em cada categoria."
 		},
 		"level-common-ratio": {
-			"name": "Nível Proporção comum",
+			"name": "必要経験値の増加度合",
 			"explanation": "Quantos pontos de experiência são necessários para chegar ao próximo nível cada vez que você sobe de nível?"
+		},
+		"property-ratio": {
+			"name": "プロパティの影響度合",
+			"explanation": "レベル差10ごとにプロパティが何倍になるかの倍率。1でレベル差の影響なし"
+		},
+		"default-action-stamina": {
+			"name": "アクションのスタミナの規定値",
+			"explanation": "全アクションに共通する基本の戦闘値。個別の戦闘値はここに加算される"
 		},
 		"console": {
 			"name": "Console",
@@ -627,7 +639,7 @@
 			"explanation": ""
 		},
 		"equip": {
-			"name": "装備する",
+			"name": "装備",
 			"explanation": ""
 		},
 		"equipment": {
@@ -635,7 +647,7 @@
 			"explanation": ""
 		},
 		"unequip": {
-			"name": "装備解除する",
+			"name": "装備解除",
 			"explanation": ""
 		},
 		"nothing": {
@@ -748,7 +760,7 @@
 		},
 		"group": {
 			"name": "グループ",
-			"explanation": ""
+			"explanation": "カテゴリ・アクション・アイテムをまたいで束ねる分類"
 		},
 		"skill": {
 			"name": "Habilidade",
@@ -1120,7 +1132,7 @@
 		},
 		"hint-overview-world": {
 			"name": "Hint Overview World",
-			"explanation": "作者・バージョン・推定プレイ時間などワールドの素性と、既定言語・カテゴリレベルの上限・レベル成長率といったワールド全体に共通する設定を確認できる"
+			"explanation": "作者・バージョン・推定プレイ時間などワールドの素性と、既定言語・最大オフライン時間・カテゴリレベルの上限・必要経験値の増加度合といったワールド全体に共通する設定を確認できる"
 		},
 		"hint-overview-console": {
 			"name": "Hint Overview Console",
