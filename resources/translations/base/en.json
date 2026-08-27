@@ -722,6 +722,10 @@
 			"name": "Related Items",
 			"explanation": ""
 		},
+		"related-actions": {
+			"name": "関連アクション",
+			"explanation": ""
+		},
 		"relationship-items": {
 			"name": "Related Items",
 			"explanation": "A list of items related to this category's actions."

@@ -722,6 +722,10 @@
 			"name": "관계",
 			"explanation": ""
 		},
+		"related-actions": {
+			"name": "関連アクション",
+			"explanation": ""
+		},
 		"relationship-items": {
 			"name": "관련 아이템 목록",
 			"explanation": "이 카테고리의 액션과 관련된 아이템 목록입니다."

@@ -722,6 +722,10 @@
 			"name": "Отношения",
 			"explanation": ""
 		},
+		"related-actions": {
+			"name": "関連アクション",
+			"explanation": ""
+		},
 		"relationship-items": {
 			"name": "Список связанных предметов",
 			"explanation": "Список предметов, связанных с действиями этой категории."

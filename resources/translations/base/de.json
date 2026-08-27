@@ -722,6 +722,10 @@
 			"name": "Beziehungen",
 			"explanation": ""
 		},
+		"related-actions": {
+			"name": "関連アクション",
+			"explanation": ""
+		},
 		"relationship-items": {
 			"name": "Liste verwandter Gegenstände",
 			"explanation": "Eine Liste der Gegenstände, die mit den Aktionen dieser Kategorie zusammenhängen."

@@ -722,6 +722,10 @@
 			"name": "Hubungan",
 			"explanation": ""
 		},
+		"related-actions": {
+			"name": "関連アクション",
+			"explanation": ""
+		},
 		"relationship-items": {
 			"name": "Daftar item terkait",
 			"explanation": "Daftar item yang terkait dengan aksi kategori ini."
