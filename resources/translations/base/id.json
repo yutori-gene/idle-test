@@ -538,6 +538,10 @@
 			"name": "Jalankan",
 			"explanation": ""
 		},
+		"confirm": {
+			"name": "Konfirmasi",
+			"explanation": "Menetapkan hasil progres yang telah selesai."
+		},
 		"start": {
 			"name": "Mulai",
 			"explanation": ""

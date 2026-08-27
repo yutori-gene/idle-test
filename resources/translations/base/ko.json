@@ -538,6 +538,10 @@
 			"name": "액트",
 			"explanation": ""
 		},
+		"confirm": {
+			"name": "확인",
+			"explanation": "완료된 진행 결과를 확정합니다."
+		},
 		"start": {
 			"name": "시작",
 			"explanation": ""

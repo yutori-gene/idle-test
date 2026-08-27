@@ -538,6 +538,10 @@
 			"name": "执行",
 			"explanation": ""
 		},
+		"confirm": {
+			"name": "确认",
+			"explanation": "确定已完成进度的结果。"
+		},
 		"start": {
 			"name": "开始",
 			"explanation": ""

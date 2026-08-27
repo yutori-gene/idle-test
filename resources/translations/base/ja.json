@@ -538,6 +538,10 @@
 			"name": "実行",
 			"explanation": "このアクションの開始・停止を行い、進行状況を表示する"
 		},
+		"confirm": {
+			"name": "確認する",
+			"explanation": "終わった進行の結果を確定する"
+		},
 		"start": {
 			"name": "開始",
 			"explanation": ""

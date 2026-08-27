@@ -538,6 +538,10 @@
 			"name": "Exécuter",
 			"explanation": ""
 		},
+		"confirm": {
+			"name": "Confirmer",
+			"explanation": "Confirme le résultat d'une progression terminée."
+		},
 		"start": {
 			"name": "Commencer",
 			"explanation": ""

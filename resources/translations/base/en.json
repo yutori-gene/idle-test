@@ -538,6 +538,10 @@
 			"name": "Act",
 			"explanation": "Starts or stops this Action and shows its progress."
 		},
+		"confirm": {
+			"name": "Confirm",
+			"explanation": "Finalizes the result of a completed progress."
+		},
 		"start": {
 			"name": "Start",
 			"explanation": ""
