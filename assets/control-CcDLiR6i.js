@@ -347,8 +347,8 @@ to {
 		width: 100%;
 		height: 100%;
 		`}
-		/* 試し実装: これ以外の全アイコンに、ワールドの標準文字色でアウトラインを付ける */
-		filter: ${R.getOutline(R.colors.text)};
+		/* 試し実装: これ以外の全アイコンに、ワールドのバー色でアウトラインを付ける */
+		filter: ${R.getOutline(R.colors.bar)};
 	`,a=`image`in e?e:e.icon,o=ch(r),s=a.emoji&&G(`span`,{css:o.emoji,children:a.emoji}),c=Z.check.debugMode(),l=a.image;a.image&&!c&&(l=(a.image.startsWith(`./`)||a.image.startsWith(`data:`),a.image));let u=ah(t),d=l&&G(`img`,{src:l,width:r?void 0:t,height:t,css:o.image}),f=a.iconify&&G(Ti,{icon:`yutori:${a.iconify.split(`:`).join(`_`)}`,inline:r,width:r?void 0:u,height:r?t:u,css:o.iconify});return rh(nh,{children:[r&&` `,G(`span`,{css:i,children:d||f||s}),r&&` `]})}function ch(e){let t=e?``:`
 		display: block;
 		flex-shrink: 0;
