@@ -397,8 +397,8 @@ to {
 			/* background-color: rgba(71, 185, 113, 0.5); */
 			font-size: ${t}px;
 			left: ${e?5:Q.scroll.getGriderWidth().windowWidth-(t+5)}px;
-			/* アイコンセットの副アイコン(iconBar)と同じ縁取りで、背景から浮かせる。色はワールドの色(バー色) */
-			filter: ${R.getOutline(R.colors.bar)};
+			/* アイコンセットの副アイコン(iconBar)と同じ縁取りで、背景から浮かせる。色はワールドの標準文字色 */
+			filter: ${R.getOutline(R.colors.text)};
 		`}}function Th({children:e,icon:t,omission:n=!1,anchoring:r=!1,alpha:i=1,size:a=1}){let o=e,s=Eh(i,a,n),c=o.split(`/`),l=r?$.primitive.getDomain(o):o;return rh(nh,{children:[t&&G(`span`,{css:s.icon,children:G(sh,{information:t,size:ga.xs,inline:!0,alpha:i})}),$.primitive.switches([r,c.length==2,!0],[G(`a`,{href:o,css:s.text,target:`_blank`,children:l}),rh(nh,{children:[G(`span`,{css:s.text,children:c[0].trimEnd()}),rh(`span`,{css:[s.text,s.trade],children:[`/`,(c[1]??``).trimStart()]})]}),G(`span`,{css:s.text,children:o})])]})}function Eh(e,t,n){return{icon:D`
 			${R.inlineIcon}
 			/* 呼び出し元(説明欄)は縦中央そろえのflexなので、IconPartがinlineで挟む空白文字は消える。
