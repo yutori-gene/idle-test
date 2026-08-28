@@ -627,7 +627,7 @@ export const item: Type.Item = {
 		equipmentType: {
 			title: "Type d'équipement",
 			summary: "Configuration Type pour l'équipement, les effets et la consommation des objets.",
-			points: ["装備可能なアイテムは、カテゴリの`equipmentGroups`で指定されたグループに属している必要があります。", "Un seul Objet peut être équipé au sein d'un même groupe.", "`unnecessary` produit son effet que l'objet soit équipé ou non, et l'ampleur de l'effet est proportionnelle au nombre possédé (aucun effet avec 0, n fois avec n)."],
+			points: ["`necessary`・`consumable`のアイテムは、そのグループが自動的にカテゴリの装備枠になります。", "同じグループ内では1つのアイテムのみ装備できます。新しいアイテムを装備すると、同グループの既存装備は自動的に解除されます。", "装備枠の並び順は、ワールドのグループ一覧の定義順に従います。", "`unnecessary`は装備の有無に関わらず効果が発揮され、効果量は所持数に比例します（0個で効果なし、n個でn倍）。"],
 			list: [
 				["valeur", "Équipement", "Efficacité.", "la consommation", "Exemple."],
 				["`necessary`", "Nécessaire", "Uniquement lors de l'équipement (1 unité)", "rien", "Épées, armures et autres équipements."],
@@ -744,12 +744,6 @@ export const category: Type.Category = {
 			points: ["secreted : Ne s'affiche en aucun cas dans l'interface utilisateur tant que toutes les conditions ne sont pas remplies (il n'apparaît pas dans les indices et est masqué dans la liste des conditions et des récompenses).", "hidden : Il est entièrement masqué tant qu'aucun élément de libération ne le référence et que les conditions requises ne sont pas remplies (son nom est grisé et il est inactif).", "hinted (par défaut) : seul le nom s'affiche en avant-première, mais il n'est pas possible d'interagir avec cet élément tant qu'il n'est pas disponible.", "released : Disponible et utilisable dès le début, quelles que soient les conditions (anciennement « Afficher dès le début »)."],
 		},
 		requirements: { ...requirement, options: { ...requirement.options, array: true }, summary: "カテゴリ利用に必要な条件" },
-		equipmentGroups: {
-			title: "groupe d'équipement",
-			summary: "このカテゴリで装備可能なアイテムグループの指定",
-			points: ["このカテゴリで装備できるアイテムのグループ名のリストです。", "Seuls les objets du groupe correspondant au nom de groupe spécifié ici peuvent être équipés.", "Si une chaîne vide est spécifiée, les objets dont le groupe n'est pas configuré (vide) deviennent éligibles à l'équipement.", "Un seul objet peut être équipé dans le même groupe. Lorsque vous équipez un nouvel Objet, tout équipement existant dans le même groupe est automatiquement déséquipé.", "Si la liste est vide (0 pièce), rien ne peut être équipé."],
-			links: { general: "general" },
-		},
 		numeric: {
 			title: "Disponibilité des niveaux",
 			summary: "カテゴリレベル機能の有無",

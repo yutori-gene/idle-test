@@ -1,0 +1,25 @@
+
+# Artículo
+Detalles del Artículo.
+- Los artículos son elementos relacionados con lo que posees, como equipamiento, consumibles y objetos de valor.
+- 装備できるアイテムはグループごとに1つだけ。グループが違えば同じカテゴリでも同時に装備できる
+- 装備するボタンは、所持していて要件を満たし、カテゴリが装備先として認めているアイテムにだけ出る
+- 解放条件を満たしていないアイテムは斜線付きで表示され、説明文と所持数が伏せられる
+___
+
+## Artículo
+カテゴリ内のアイテムの一覧
+- アイテムは装備品・消耗品・貴重品など、所持するものに関わる要素
+- このカテゴリで所持できるアイテムの一覧
+- Mantén pulsado para alternar el equipamiento del artículo.
+- グループごとに装備できるアイテムは1つだけ
+- 解放条件を満たしていないアイテムは斜線付きで表示され、説明文と所持数が伏せられる
+- 関連はアイテムの入手と消費されるアクション
+___
+
+## transacciones
+Compra o venta de Artículos en divisa.
+- 価格が無いと購入・売却の枠そのものが出ない。ロック中も売買できない
+- 所持枠が満杯だと、まだ持っていない種類は買えない。買い足しはできる
+- 所持枠とキューの枠は1つずつで、買うたびに値上がりする。購入回数に上限があるワールドもある（報酬ぶんは数えない）
+- 売って0個になった装備は自動で外れる

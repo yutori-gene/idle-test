@@ -627,7 +627,7 @@ export const item: Type.Item = {
 		equipmentType: {
 			title: "Tipe Peralatan",
 			summary: "Konfigurasi tipe untuk peralatan, efek, dan konsumsi Item.",
-			points: ["装備可能なアイテムは、カテゴリの`equipmentGroups`で指定されたグループに属している必要があります。", "Hanya satu item yang dapat dilengkapi dalam grup yang sama.", "`unnecessary` tetap berefek terlepas dari dikenakan atau tidak, dan besar efeknya sebanding dengan jumlah yang dimiliki (tidak berefek pada 0, n kali lipat pada n)."],
+			points: ["`necessary`・`consumable`のアイテムは、そのグループが自動的にカテゴリの装備枠になります。", "同じグループ内では1つのアイテムのみ装備できます。新しいアイテムを装備すると、同グループの既存装備は自動的に解除されます。", "装備枠の並び順は、ワールドのグループ一覧の定義順に従います。", "`unnecessary`は装備の有無に関わらず効果が発揮され、効果量は所持数に比例します（0個で効果なし、n個でn倍）。"],
 			list: [
 				["nilai", "Peralatan", "Efektivitas.", "konsumsi", "Contoh."],
 				["`necessary`", "Diperlukan", "Hanya saat melengkapi (1 buah)", "tidak ada", "Pedang, baju besi, dan peralatan lainnya."],
@@ -744,12 +744,6 @@ export const category: Type.Category = {
 			points: ["secreted: Tidak akan ditampilkan sama sekali di antarmuka pengguna (UI) sampai semua persyaratan terpenuhi (tidak muncul di Petunjuk, dan disembunyikan dalam daftar persyaratan/hadiah).", "hidden: Akan tersembunyi sepenuhnya (namanya juga akan berwarna abu-abu dan tidak dapat dioperasikan) selama tidak dirujuk oleh elemen pelepasan mana pun dan persyaratannya belum terpenuhi.", "hinted (default): Hanya nama yang ditampilkan sebagai pratinjau, tetapi tidak dapat dioperasikan sampai dibuka.", "released: Dapat diakses dan dioperasikan sejak awal tanpa memandang kondisi apa pun (sebelumnya disebut “Tampilkan sejak awal”)."],
 		},
 		requirements: { ...requirement, options: { ...requirement.options, array: true }, summary: "カテゴリ利用に必要な条件" },
-		equipmentGroups: {
-			title: "kelompok Peralatan",
-			summary: "このカテゴリで装備可能なアイテムグループの指定",
-			points: ["このカテゴリで装備できるアイテムのグループ名のリストです。", "Hanya item dari grup yang sesuai dengan nama grup yang ditentukan di sini yang dapat menjadi Peralatan.", "Jika string kosong ditentukan, item dengan konfigurasi grup yang tidak disetel (kosong) menjadi memenuhi syarat untuk Peralatan.", "Hanya satu item yang dapat digunakan sebagai Peralatan dalam grup yang sama. Saat Anda melengkapi item baru, peralatan yang ada dalam grup yang sama secara otomatis dilepas.", "Jika daftar kosong (0 buah), tidak ada peralatan yang dapat digunakan."],
-			links: { general: "general" },
-		},
 		numeric: {
 			title: "Ketersediaan level",
 			summary: "カテゴリレベル機能の有無",

@@ -627,7 +627,7 @@ export const item: Type.Item = {
 		equipmentType: {
 			title: "Tipo de Equipamiento",
 			summary: "Tipo de configuración para el Equipamiento, efectos y consumo de Artículos.",
-			points: ["装備可能なアイテムは、カテゴリの`equipmentGroups`で指定されたグループに属している必要があります。", "Sólo se puede equipar un objeto dentro del mismo grupo.", "`unnecessary` surte efecto tanto si está equipado como si no, y la magnitud del efecto es proporcional a la cantidad que se posea (sin efecto con 0, n veces con n)."],
+			points: ["`necessary`・`consumable`のアイテムは、そのグループが自動的にカテゴリの装備枠になります。", "同じグループ内では1つのアイテムのみ装備できます。新しいアイテムを装備すると、同グループの既存装備は自動的に解除されます。", "装備枠の並び順は、ワールドのグループ一覧の定義順に従います。", "`unnecessary`は装備の有無に関わらず効果が発揮され、効果量は所持数に比例します（0個で効果なし、n個でn倍）。"],
 			list: [
 				["valor", "Equipamiento", "Eficacia.", "consumo", "Ejemplo."],
 				["`necessary`", "Necesario", "Equipando (1 unidad)", "nada", "Espadas, armaduras y otros Equipamientos."],
@@ -744,12 +744,6 @@ export const category: Type.Category = {
 			points: ["secreted: No aparecerá en la interfaz de usuario hasta que se cumplan todos los requisitos (no aparecerá en las Pistas y permanecerá oculto en la lista de requisitos y recompensas).", "oculto: permanece completamente oculto (el nombre aparece en gris y no se puede modificar) mientras no sea referenciado por ningún elemento de liberación y no se cumplan los requisitos.", "hinted (por defecto): Solo se muestra el nombre como avance, pero no se puede modificar hasta que se libere.", "released: Se desbloquea y se puede manejar desde el principio, independientemente de las condiciones (antes «Mostrar desde el principio»)."],
 		},
 		requirements: { ...requirement, options: { ...requirement.options, array: true }, summary: "カテゴリ利用に必要な条件" },
-		equipmentGroups: {
-			title: "grupo de equipamiento",
-			summary: "このカテゴリで装備可能なアイテムグループの指定",
-			points: ["このカテゴリで装備できるアイテムのグループ名のリストです。", "Sólo se pueden equipar los artículos del grupo que coincida con el nombre del grupo especificado aquí.", "Si se especifica una cadena vacía, los Artículos con un grupo no configurado (vacío) pasan a ser elegibles para Equipamiento.", "Sólo se puede equipar un objeto en el mismo grupo. Cuando equipas un nuevo Artículo, cualquier equipamiento existente en el mismo grupo se desactiva automáticamente.", "Si la lista está vacía (0 piezas), no se puede equipar nada."],
-			links: { general: "general" },
-		},
 		numeric: {
 			title: "Disponibilidad de niveles",
 			summary: "カテゴリレベル機能の有無",

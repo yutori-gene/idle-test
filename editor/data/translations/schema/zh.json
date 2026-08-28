@@ -466,7 +466,7 @@
             },
             "propertyRatio": {
               "type": "number",
-              "default": 2,
+              "default": 1.5,
               "minimum": 1,
               "propertyOrder": 104,
               "title": "属性倍率[倍]",
@@ -1696,7 +1696,6 @@
           "group",
           "unlocked",
           "requirements",
-          "equipmentGroups",
           "numeric",
           "standaloneProgress",
           "background"
@@ -2056,32 +2055,6 @@
                 "如果启用了锁定功能，元素本身就会被隐藏，直到满足条件为止。"
               ],
               "reference": "zh/editor/requirement"
-            }
-          },
-          "equipmentGroups": {
-            "type": "array",
-            "items": {
-              "type": "string",
-              "pattern": "^[0-9a-zA-Z\\-]*$"
-            },
-            "options": {
-              "disable_collapse": true,
-              "infoText": "このカテゴリで装備可能なアイテムグループの指定"
-            },
-            "default": [
-              ""
-            ],
-            "uniqueItems": true,
-            "title": "装备组",
-            "yutori": {
-              "points": [
-                "このカテゴリで装備できるアイテムのグループ名のリストです。",
-                "只有与此处指定的组名称相匹配的组中的物品才能装备。",
-                "如果指定的是空字符串，那么未配置组（空）的物品就有资格装备。",
-                "同一组中只能装备一件物品。装备新物品时，同组中的任何现有装备都会自动卸下。",
-                "如果列表为空（0 件），则无法装备任何物品。"
-              ],
-              "reference": "zh/editor/category?id=装备组"
             }
           },
           "numeric": {
@@ -3289,9 +3262,10 @@
             "title": "装备类型",
             "yutori": {
               "points": [
-                "装備可能なアイテムは、カテゴリの`equipmentGroups`で指定されたグループに属している必要があります。",
-                "同一组内只能装备一件物品。",
-                "`unnecessary` 无论是否装备都会发挥效果，效果量与持有数成正比（持有 0 个时无效果，持有 n 个时为 n 倍）。"
+                "`necessary`・`consumable`のアイテムは、そのグループが自動的にカテゴリの装備枠になります。",
+                "同じグループ内では1つのアイテムのみ装備できます。新しいアイテムを装備すると、同グループの既存装備は自動的に解除されます。",
+                "装備枠の並び順は、ワールドのグループ一覧の定義順に従います。",
+                "`unnecessary`は装備の有無に関わらず効果が発揮され、効果量は所持数に比例します（0個で効果なし、n個でn倍）。"
               ],
               "reference": "zh/editor/item?id=装备类型"
             }
@@ -4979,11 +4953,11 @@
                 "pattern": "^[0-9a-zA-Z\\-]*$",
                 "title": "カテゴリ",
                 "options": {
-                  "infoText": "執筆予定"
+                  "infoText": "変化イベントが所属するカテゴリのID（画面に表示されないため分類のみに使われます）"
                 },
                 "yutori": {
                   "points": [
-                    "執筆予定"
+                    "プレイヤーの画面には表示されないため、この設定は見た目に影響しません。"
                   ],
                   "reference": "zh/editor/changed?id=カテゴリ"
                 }
@@ -5005,7 +4979,7 @@
                 "yutori": {
                   "points": [
                     "`changed`で固定されており、編集できません。",
-                    "執筆予定（現時点ではプレイヤーに未実装です）"
+                    "数量が変化するあらゆるタイミングでチェックされ、条件を満たすたびに繰り返し発動します。"
                   ],
                   "reference": "zh/editor/changed?id=タイミング"
                 }
@@ -5026,12 +5000,12 @@
                     "Hinted: Name shown as a teaser but not operable until released (default)",
                     "Released: Unlocked and operable from the start regardless of conditions"
                   ],
-                  "infoText": "執筆予定"
+                  "infoText": "画面に表示されないため実質的に影響しません"
                 },
                 "title": "初期表示状態",
                 "yutori": {
                   "points": [
-                    "執筆予定"
+                    "変化イベントはプレイヤーの画面に表示されないため、この設定は使われません。"
                   ],
                   "reference": "zh/editor/changed?id=初期表示状態"
                 }
@@ -5041,7 +5015,7 @@
                 "format": "table",
                 "options": {
                   "disable_collapse": true,
-                  "infoText": "執筆予定"
+                  "infoText": "変化イベント発動の条件（数量の増加量で判定）"
                 },
                 "items": {
                   "type": "object",
@@ -5141,7 +5115,12 @@
                 "title": "条件",
                 "yutori": {
                   "points": [
-                    "執筆予定"
+                    "設定した数だけ、そのタイミング1回で増えていれば条件を満たします。所持数などの絶対値は見ません。",
+                    "例えばアイテムの条件を3に設定した場合、その1回でそのアイテムが3個以上増えていれば満たされます。",
+                    "減少は増加条件には数えません。",
+                    "複数の条件を設定した場合、その1回の変化ですべてを同時に満たす必要があります。",
+                    "条件を設定していない変化イベントは発動しません。",
+                    "requiringGroupを有効にすると、ここで指定するidの意味がカテゴリ・アクション・アイテム個別のIDからグループIDに変わります。"
                   ],
                   "reference": "zh/editor/changed?id=条件"
                 }
@@ -5152,11 +5131,13 @@
                 "format": "checkbox",
                 "title": "グループ集計",
                 "options": {
-                  "infoText": "執筆予定"
+                  "infoText": "条件のidをグループIDとして扱い、所属する要素の増加量の合計で判定する"
                 },
                 "yutori": {
                   "points": [
-                    "執筆予定"
+                    "有効にすると、条件（requirements）に設定したidは基本設定のグループのIDとして扱われます。",
+                    "そのグループに属する全カテゴリ・全アクション・全アイテムの増加量を合計して判定します。",
+                    "無効の場合は今まで通り、条件のidは個別のカテゴリ・アクション・アイテムのIDとして扱われます。"
                   ],
                   "reference": "zh/editor/changed?id=グループ集計"
                 }
@@ -5166,7 +5147,7 @@
                 "format": "table",
                 "options": {
                   "disable_collapse": true,
-                  "infoText": "執筆予定"
+                  "infoText": "変化イベント発動時の報酬設定"
                 },
                 "items": {
                   "type": "object",
@@ -5251,7 +5232,9 @@
                 "title": "報酬",
                 "yutori": {
                   "points": [
-                    "執筆予定"
+                    "条件を満たすたびに自動で受け取ります。プレイヤーの操作は不要です。",
+                    "カテゴリのレベル、アクションの実行回数、アイテムの所持数を変化させることができます。",
+                    "数量にマイナスを設定することもできます。"
                   ],
                   "reference": "zh/editor/changed?id=報酬"
                 }
@@ -5260,24 +5243,28 @@
                 "type": "string",
                 "pattern": "^[0-9a-zA-Z\\-]*$",
                 "default": "",
-                "title": "タスクグループ",
+                "title": "変化イベントグループ",
                 "options": {
-                  "infoText": "執筆予定"
+                  "infoText": "内部管理用の表示グループ分類（画面に表示されないため実質未使用）"
                 },
                 "yutori": {
                   "points": [
-                    "執筆予定"
+                    "変化イベントはプレイヤーの画面に表示されないため、この設定は見た目に影響しません。"
                   ],
-                  "reference": "zh/editor/changed?id=タスクグループ"
+                  "reference": "zh/editor/changed?id=変化イベントグループ"
                 }
               }
             }
           },
           "title": "変化イベント",
-          "description": "執筆予定",
+          "description": "カテゴリ・アクション・アイテムの数量が一度に条件量以上増えた時に発動する内部処理用イベント",
           "yutori": {
             "points": [
-              "執筆予定（現時点ではプレイヤーに未実装です）"
+              "アクションの完了、購入・売却、宝箱の開封など、数量が変化するあらゆるタイミングでチェックされます。",
+              "条件（requirements）は所持数などの絶対値ではなく、そのタイミング1回分の増加量で判定します。複数回に分けた小さな増加は合算されません。",
+              "複数の条件を設定した場合、その1回の変化ですべての条件を同時に満たす必要があります。",
+              "条件を満たすたびに報酬を受け取り、何度でも繰り返し発動します。タスクと違って一度きりではありません。",
+              "プレイヤーの画面には一切表示されません。ミッションの一覧にも出ず、達成のメッセージも出ません。"
             ],
             "reference": "zh/editor/changed"
           }
@@ -8040,7 +8027,7 @@
         "points": [
           "ワールドのイベントはタスク（tasks）・変化イベント（changed）・固定イベント（unique）の3種類で構成されます。",
           "タスクは条件を満たすと達成になるミッションです。",
-          "変化イベントは今後実装予定で、現時点ではプレイヤーに機能はありません。",
+          "変化イベントは数量の増加をきっかけに繰り返し発動する、画面に表示されない内部処理用のイベントです。",
           "固定イベントはタイミングごとに1つずつ用意される、追加・削除できない枠です。"
         ],
         "reference": "zh/editor/events"

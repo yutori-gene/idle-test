@@ -1,0 +1,102 @@
+
+# Aktion.
+Elemente des Handelns wie Sammeln, Herstellen und Kämpfen.
+- Dies sind Elemente, die Handlungen wie Sammeln, Herstellen, Kaufen und Verkaufen sowie Kämpfen darstellen.
+- Mit jeder Handlung, die du ausführst, gewinnst du Erfahrung und dein Level steigt.
+- Sie können für jede Handlung Gegenstände einrichten, die verbraucht oder beschafft werden sollen.
+- Es gibt ja verschiedene Arten von Handlungen.
+___
+
+## [_Informationen_](de/editor/information)
+___
+
+## カテゴリ
+アクションが所属するカテゴリのID
+- このアクションが所属するカテゴリのIDを指定します。
+___
+
+## Attribut
+アクション固有の属性カテゴリ
+- 個別の属性(カテゴリ)を設定できます。
+- 空欄の場合は属するカテゴリを引き継ぎます
+- 例えば、魔王城というカテゴリに属するアクションに個別に魔法という属性を設定した場合、アクション完了時間やダメージには魔法のカテゴリのレベルやプロパティが計算され適応されます。
+- [_category_](de/editor/category)
+___
+
+## Gruppe (z.B. von Personen)
+Anzeige der Gruppeneinteilung der Aktionen
+- Wenden Sie eine der in Basic konfigurierten Gruppen an.
+- Es wird eine Liste der Aktionen in der Reihenfolge der Konfiguration der Gruppen angezeigt.
+- [_general_](de/editor/general)
+___
+
+## Anfänglicher Freigabezustand
+Anfänglicher Anzeige- und Freigabezustand des Elements (wechselt automatisch in den nächsthöheren Zustand, sobald die Auslösebedingungen erfüllt sind)
+- secreted: Wird in der Benutzeroberfläche erst angezeigt, wenn alle Anforderungen erfüllt sind (erscheint weder in den Hinweisen noch in der Liste der Anforderungen und Belohnungen).
+- hidden: Solange kein Freischaltelement darauf verweist und die Voraussetzungen nicht erfüllt sind, bleibt es vollständig verborgen (der Name ist ausgegraut und es kann nicht bearbeitet werden).
+- hinted (Standard): Es wird nur der Name angezeigt, aber der Eintrag kann erst bearbeitet werden, wenn er freigegeben ist.
+- freigegeben: Unabhängig von den Bedingungen von Anfang an freigegeben und bedienbar (früher „Von Anfang an anzeigen“).
+___
+
+## Level
+Schwierigkeitsgrad der Aktion.
+- Der Schwierigkeitsgrad der Aktion wird durch das Level angegeben.
+- Berechnen Sie jede Eigenschaft zur Laufzeit im Vergleich zum Level des Spielers.
+- Wenn du zum Beispiel eine Aktion ausführst, die über deinem Level liegt, ist die Erfolgsrate geringer.
+- Wenn die Bedingungen erfüllt sind, kann die Ausführung auch dann erfolgen, wenn das Level des Spielers unter diesem Wert liegt.
+- [_property_](de/editor/property)
+___
+
+## [_Bedingungen und Konditionen_](de/editor/requirement)
+___
+
+## Zeit [s].
+Typische Zeit für die Durchführung der Aktion
+- Die für die einmalige Durchführung einer Aktion notwendige Standardzeit (in Sekunden).
+- Beim Typ `stamina` ist dies das Zeitintervall einer Runde (die Ausdauer beider Seiten wird einmal verringert).
+- Die tatsächliche Ausführung kann aufgrund der Berechnung der Eigenschaften variieren.
+- [_property_](de/editor/property)
+___
+
+## Erfahrung [nächstes Level bei 100].
+Erfahrungen aus erfolgreichen Aktionen
+- Die Standard-Erfahrung, die durch die einmalige und erfolgreiche Durchführung einer Aktion erworben wird; 100 Minuten entsprechen einem Level an Erfahrung.
+- Im Falle eines Kampfes ist es ratsam, mehr zu konfigurieren, da es bei einem Sieg des Gegners zu Erwerbungen kommt.
+- Die tatsächliche Ausführung kann aufgrund der Berechnung der Eigenschaften variieren.
+- [_property_](de/editor/property)
+___
+
+## Wahrscheinlichkeit des Erfolgs [0-1].
+Wahrscheinlichkeit des Erfolgs bei Abschluss der Aktion
+- Die Wahrscheinlichkeit des Erfolgs bei Abschluss der Aktion.
+- Bei `1` gelingt sie immer, bei `0` scheitert sie immer.
+- Im Falle eines Fehlers werden verbrauchbare Gegenstände verbraucht, aber keine Belohnung oder Erfahrung gewonnen.
+- Die tatsächliche Ausführung kann aufgrund der Berechnung der Eigenschaften variieren.
+___
+
+## Maximale Anzahl von Durchläufen [mal].
+Maximale Anzahl von Malen, die eine Aktion durchgeführt werden kann.
+- Die maximale Anzahl von Malen, die eine Aktion erfolgreich abgeschlossen werden kann.
+- Bei `0` ist es unbegrenzt.
+- Wenn die Obergrenze erreicht ist, ist die Aktion nicht mehr ausführbar.
+___
+
+## [_Erwerbungen_](de/editor/acquisition)
+___
+
+## Fortschritt Typ
+Typ der Ausführung der Aktion
+- Es gibt vier Arten.
+
+|Typ.|Vorgangsdetails|Ausdauer|Beispiel.|
+|-|-|-|-|
+|`persistent`|Es handelt sich dabei um eine Aktion, die ständig wiederholt wird; für jeden Abschluss erhalten Sie Erfahrung und Belohnungen.|Keine Beziehung|Holzeinschlag, Bergbau, Fischerei|
+|`single`|Führen Sie eine Aktion nach der anderen durch. Bei einer Unterbrechung wird der Fortschritt gespeichert und kann beim nächsten Mal fortgesetzt werden. Nach Abschluss drückt der Benutzer die Aktion Bestätigen, um das Ergebnis zu erhalten.|Keine Beziehung|Schatztruhen öffnen, Fähigkeiten durch Lesen lernen|
+|`snap`|Dieser Typ von Aktion wird sofort ausgeführt. Wird sofort und ohne Zeitverzögerung abgeschlossen.|Keine Beziehung|Handeln, Verwendung von Gegenständen.|
+|`stamina`|Mit jeder benötigten Zeit sinkt die Ausdauer des Spielers und des Gegners. Wenn die Ausdauer des Gegners erschöpft ist, erhält man Erfahrung und Belohnungen. Wenn die Ausdauer des Spielers zu Ende geht, ist das Spiel vorbei und alle laufenden Aktionen werden abgebrochen.|Einschlägig.|Kampfhandlungen, gefährliche Einsätze.|
+___
+
+## [_Kampfwert_](de/editor/combat)
+___
+
+## [_Fähigkeit_](de/editor/skill)

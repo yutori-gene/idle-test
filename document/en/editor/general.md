@@ -1,0 +1,199 @@
+
+# general
+Basic game settings such as language, level settings, etc.
+___
+
+## Language
+Language at the time of creation of the world
+- Configure the language to be used in this world editor.
+- This is the first language displayed when the user starts the game.
+___
+
+## translation
+Do you have multilingual translations available?
+- If enabled, users can play in any language.
+- If disabled, you can play only in the language selected in the language config.
+- Necessary to prepare translation data for each language if translation is to be enabled.
+- [_translation_](en/editor/translation)
+___
+
+## Max. offline time [hours]
+Time limits for offline progress
+- Configure the max number of hours of progress when offline.
+- For example, if 6 hours is set, the process of coming back offline up to 6 hours will be processed, but if more time is allowed to come back offline, the offline time will be treated as 6 hours.
+- If the time is set to 0 hours, no process processing will be done at all when returning offline.
+- The max value is 24 hours.
+- [_category_](en/editor/category)
+___
+
+## カテゴリの最大レベル
+各カテゴリのレベル上限
+- 各カテゴリの最大レベルを設定します。
+- If experience is acquired beyond this level, the max level configured here is used in the calculation of each property.
+- レベルのないカテゴリではこの値は関係ありません。
+- [_category_](en/editor/category)
+___
+
+## locked function
+Hide items until requirements are met
+- 有効の場合、カテゴリ・アクション・アイテムは一度も使用・所持したことがなく、かつrequirementsを満たしていない間は非表示になります。
+- If disabled, all items are displayed from the beginning, but cannot be executed or equipped until requirements are met.
+- [_category_](en/editor/category)
+- [_action_](en/editor/action)
+- [_item_](en/editor/item)
+___
+
+## currency
+Configuring the In-Game Currency (Coins)
+- Configure the in-game currency.
+- You can define multiple currencies and configure each one with its own information (ID, name, icon, color, etc.).
+- Currency is used to buy and sell items and to expand inventory capacity.
+- The first currency is treated as the primary currency and is used when there is nothing specified for the currency ID (`coinId`) for an Item or capacity.
+- [_information_](en/editor/information)
+- [_item_](en/editor/item)
+___
+
+## capacity
+Configure inventory capacity
+- Controls the maximum count of the types of Items a player can have.
+- The number of each Item is controlled by the count of the type of Item you own, not by the number of Items you own.
+- Setting `initialCount` to 0 makes the capacity unlimited.
+- Use the ID configured here when referring to capacity items in conditions or rewards.
+- [_item_](en/editor/item)
+___
+
+### [_information_](en/editor/information)
+___
+
+### Default value [pcs].
+Initial inventory capacity (the number of different types of Items you can have)
+- This is the initial capacity (the number of different types of Items you can have) at the start of the game.
+- Setting it to `0` makes the capacity unlimited.
+___
+
+### Base price [coins].
+Initial price to increase capacity by one
+- The base price (in coins) to increase inventory capacity by one slot.
+- The actual price is calculated as "Base Price x Percentage Increase ^ Number of Purchases Already Made".
+- Example: If the base price is 100 and the rate of increase is 1.2, the first coin will be 100 coins, the second 120 coins, and the third 144 coins.
+___
+
+### Percentage increase [times].
+Percentage increase in capacity expansion costs
+- It is a multiplier for how much the cost of capacity expansion increases with the nth buy.
+- With `1.0` the price always stays the same, and with `1.2` it rises by 20% with every purchase.
+- Formula: Base Price × Percentage Increase ^ Number of Purchases
+
+|rate of increase|1st addition|Fifth increase|Tenth increase|100th increase|1000th increase|
+|-|-|-|-|-|-|
+|1.00|x1.00|x1.00|x1.00|x1.00|x1.00|
+|1.05|x1.00|x1.22|x1.63|x131.50|x1.7×10²⁰|
+|1.10|x1.00|x1.61|x2.59|x1.4×10⁴|x2.7×10⁴¹|
+|1.20|x1.00|x2.49|x6.19|x8.3×10⁷|x8.3×10⁷⁹|
+|1.50|x1.00|x5.06|x57.67|x1.9×10¹⁷|x7.0×10¹⁷⁶|
+___
+
+### Currency ID
+ID of the currency used for capacity expansion
+- Specify the ID of the currency (coins) to be used for inventory capacity expansion.
+- If left blank, the main currency (the first one listed under "coins") will be used.
+___
+
+### Purchase Limit [Times]
+Maximum number of times you can buy storage
+- This is the maximum number of times you can buy storage capacity using currency.
+- If you set it to `0`, you can buy unlimited things.
+- If you set it to `-1`, you will no longer be able to buy.
+- Capacity increases resulting from rewards are not subject to this limit.
+___
+
+## Queue
+Configuring the Number of Queue Slots for Consecutive Actions
+- Manages the number of queue slots for executing actions in sequence.
+- The queue includes the running action, and the action at its head is the one being executed. When there is only `1` slot, only the running action fits and nothing can wait.
+- In addition to buying slots with currency, just like storage capacity, you can also increase the number of slots by selecting specific Items from the queue as rewards for actions and events.
+- When referencing items in the queue based on conditions or rewards, use the ID configured here.
+- [_item_](en/editor/item)
+___
+
+### [_information_](en/editor/information)
+___
+
+### Default value [pcs].
+Number of consecutive runs at the start of the game
+- This is the number of queue slots available at the start of the game.
+- The minimum value is `1` (the running action uses one slot, and there is no `0` = unlimited option, as with capacity).
+___
+
+### Base price [coins].
+Initial price to add one slot
+- This is the base price (in coins) to add one slot for consecutive runs.
+- The actual price is calculated as "Base Price x Percentage Increase ^ Number of Purchases Already Made".
+- Example: If the base price is 100 and the rate of increase is 1.2, the first coin will be 100 coins, the second 120 coins, and the third 144 coins.
+___
+
+### Percentage increase [times].
+Rate of increase in frame expansion costs
+- This is the multiplier that indicates how much the cost of expanding the slot increases with the nth buy.
+- With `1.0` the price always stays the same, and with `1.2` it rises by 20% with every purchase.
+- Formula: Base Price × Percentage Increase ^ Number of Purchases
+___
+
+### Currency ID
+Currency ID used for expanding the limit
+- Specify the ID of the currency (coins) to be used for the price of extending the continuous execution window.
+- If left blank, the main currency (the first one listed under "coins") will be used.
+___
+
+### Purchase Limit [Times]
+Maximum number of times you can buy a slot
+- This is the maximum number of times you can buy a slot for consecutive runs using currency.
+- If you set it to `0`, you can buy unlimited things.
+- If you set it to `-1`, you will no longer be able to buy.
+- Increases in the quota resulting from compensation are not subject to this cap.
+___
+
+## Rate of increase in experience [times].
+Percentage increase in level difficulty
+- カテゴリのレベルが上がるにつれて、次のレベルになるのに必要な経験値の上昇率です。
+- Increasing this value increases the difficulty.
+- The experience necessary to reach the next level is (experience point gain rate)^(current level - 1).
+
+|Rate of increase in experience value|Lv.1|Lv.2|Lv.10|Lv.50|Lv.99|
+|-|-|-|-|-|-|
+|0|x1.00|x1.00|x1.00|x1.00|x1.00|
+|0.02|x1.00|x1.02|x1.22|x2.69|x5.52|
+|0.05|x1.00|x1.05|x1.55|x11.47|x131.50|
+|0.10|x1.00|x1.10|x2.36|x117.39|x5.7×10⁴|
+|0.20|x1.00|x1.20|x6.19|x3.3 x 10³|x1.3×10¹¹¹|
+- [_category_](en/editor/category)
+___
+
+## Action Level Limits
+Requests the number of times the same attribute action has been executed to execute the action
+- If enabled, the number of times an action with the same attribute has been executed is automatically added to the execution condition of each Action.
+- The Necessary count is equal to the level value of the Action.
+- 属性が設定されていない場合は、所属するカテゴリのIDが使用されます。
+___
+
+## Property ratio [times]
+How many times a property changes per 10 of level difference
+- Configures how many times each property changes every time the difference between the level of the category and the level of the action widens by `10`.
+- The ratio is calculated as (property ratio)^(level difference ÷ 10). When the level difference is `0` the ratio is `1`, and the value configured in the action is used as it is.
+- Attack and experience increase by this ratio, while defence (damage taken) and quickness (required time) decrease by the same ratio.
+- Accuracy, evasion, probability of success and restoration are values that stay within `0` to `100`%, so the ratio applies to the proportion between the side that succeeds and the side that does not. `0`% and `100`% never change, and the values in between never exceed `100`%.
+- Defence, evasion and quickness take half the effect of the ratio (a level difference of `20` equals a level difference of `10` for the other properties). Defence and evasion apply twice, to the rate of being hit and to the damage taken, and quickness applies to every other property as the number of executions, so their effect is weakened to keep the balance.
+- A good guideline is (experience increase rate) to the power of `6.7`. Above that, levelling up accelerates as the level rises; below that, the later levels take more time.
+- Setting it to `1` removes the influence of the level difference. The larger the value, the steeper the advantage and disadvantage caused by the level difference.
+
+|Property ratio|Level difference -20|Level difference -10|Level difference 0|Level difference +10|Level difference +20|
+|-|-|-|-|-|-|
+|`1`|`x1.00`|`x1.00`|`x1.00`|`x1.00`|`x1.00`|
+|`1.5`|`x0.44`|`x0.67`|`x1.00`|`x1.50`|`x2.25`|
+|`2`|`x0.25`|`x0.50`|`x1.00`|`x2.00`|`x4.00`|
+|`3`|`x0.11`|`x0.33`|`x1.00`|`x3.00`|`x9.00`|
+- [_action_](en/editor/action)
+- [_property_](en/editor/property)
+___
+
+## [_combat value_](en/editor/combat)

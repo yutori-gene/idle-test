@@ -627,7 +627,7 @@ export const item: Type.Item = {
 		equipmentType: {
 			title: "Tipo de Equipamento",
 			summary: "Configurações de tipo para Equipamento, efeitos e consumo de itens.",
-			points: ["装備可能なアイテムは、カテゴリの`equipmentGroups`で指定されたグループに属している必要があります。", "Somente um Item pode ser equipado em um mesmo grupo.", "`unnecessary` produz efeito independentemente de estar equipado, e a intensidade do efeito é proporcional à quantidade que você possui (sem efeito com 0, n vezes com n)."],
+			points: ["`necessary`・`consumable`のアイテムは、そのグループが自動的にカテゴリの装備枠になります。", "同じグループ内では1つのアイテムのみ装備できます。新しいアイテムを装備すると、同グループの既存装備は自動的に解除されます。", "装備枠の並び順は、ワールドのグループ一覧の定義順に従います。", "`unnecessary`は装備の有無に関わらず効果が発揮され、効果量は所持数に比例します（0個で効果なし、n個でn倍）。"],
 			list: [
 				["valor", "Equipamento", "Eficácia.", "consumo", "Exemplo."],
 				["`necessary`", "Necessário", "Apenas enquanto estiver equipando (1 unidade)", "nada", "Espadas, armaduras e outros equipamentos."],
@@ -744,12 +744,6 @@ export const category: Type.Category = {
 			points: ["secreted: Não será exibido na interface do usuário até que todos os requisitos sejam atendidos (não aparece nas Dicas e fica oculto na lista de requisitos/recompensas).", "hidden: Fica totalmente oculto enquanto não for referenciado por nenhum elemento de liberação e não atender aos requisitos (o nome fica desativado e não pode ser alterado).", "hinted (padrão): Apenas o nome é exibido como prévia, mas não é possível realizar nenhuma ação até que seja liberado.", "liberado: fica liberado e pronto para uso desde o início, independentemente das condições (antiga opção “Exibir desde o início”)."],
 		},
 		requirements: { ...requirement, options: { ...requirement.options, array: true }, summary: "カテゴリ利用に必要な条件" },
-		equipmentGroups: {
-			title: "Grupo de equipamentos",
-			summary: "このカテゴリで装備可能なアイテムグループの指定",
-			points: ["このカテゴリで装備できるアイテムのグループ名のリストです。", "Somente os itens do grupo que correspondem ao nome do grupo especificado aqui podem ser equipados.", "Se uma string vazia for especificada, os itens com um grupo sem configuração (vazio) se tornarão elegíveis para Equipamento.", "Somente um Item pode ser equipado em um mesmo grupo. Quando você equipa um novo Item, qualquer equipamento existente no mesmo grupo é automaticamente desequipado.", "Se a lista estiver vazia (0 peças), nada poderá ser equipado."],
-			links: { general: "general" },
-		},
 		numeric: {
 			title: "Disponibilidade de níveis",
 			summary: "カテゴリレベル機能の有無",

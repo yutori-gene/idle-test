@@ -627,7 +627,7 @@ export const item: Type.Item = {
 		equipmentType: {
 			title: "Typ der Ausrüstung",
 			summary: "Typ-Einstellungen für Ausrüstung, Effekte und Verbrauch von Gegenständen.",
-			points: ["装備可能なアイテムは、カテゴリの`equipmentGroups`で指定されたグループに属している必要があります。", "Innerhalb der gleichen Gruppe kann nur ein Gegenstand ausgerüstet werden.", "`unnecessary` wirkt unabhängig davon, ob der Gegenstand ausgerüstet ist, und die Stärke der Wirkung ist proportional zur besessenen Anzahl (bei 0 keine Wirkung, bei n das n-Fache)."],
+			points: ["`necessary`・`consumable`のアイテムは、そのグループが自動的にカテゴリの装備枠になります。", "同じグループ内では1つのアイテムのみ装備できます。新しいアイテムを装備すると、同グループの既存装備は自動的に解除されます。", "装備枠の並び順は、ワールドのグループ一覧の定義順に従います。", "`unnecessary`は装備の有無に関わらず効果が発揮され、効果量は所持数に比例します（0個で効果なし、n個でn倍）。"],
 			list: [
 				["Wert", "Ausrüstung", "Effektivität.", "Verbrauch", "Beispiel."],
 				["`necessary`", "Notwendig", "Nur während der Ausrüstung (1 Stück)", "Nichts", "Schwerter, Rüstungen und andere Ausrüstung."],
@@ -744,12 +744,6 @@ export const category: Type.Category = {
 			points: ["secreted: Wird in der Benutzeroberfläche erst angezeigt, wenn alle Anforderungen erfüllt sind (erscheint weder in den Hinweisen noch in der Liste der Anforderungen und Belohnungen).", "hidden: Solange kein Freischaltelement darauf verweist und die Voraussetzungen nicht erfüllt sind, bleibt es vollständig verborgen (der Name ist ausgegraut und es kann nicht bearbeitet werden).", "hinted (Standard): Es wird nur der Name angezeigt, aber der Eintrag kann erst bearbeitet werden, wenn er freigegeben ist.", "freigegeben: Unabhängig von den Bedingungen von Anfang an freigegeben und bedienbar (früher „Von Anfang an anzeigen“)."],
 		},
 		requirements: { ...requirement, options: { ...requirement.options, array: true }, summary: "カテゴリ利用に必要な条件" },
-		equipmentGroups: {
-			title: "Ausrüstungsgruppe",
-			summary: "このカテゴリで装備可能なアイテムグループの指定",
-			points: ["このカテゴリで装備できるアイテムのグループ名のリストです。", "Es können nur Gegenstände aus der Gruppe ausgerüstet werden, die dem hier angegebenen Gruppennamen entspricht.", "Wird eine leere Zeichenfolge angegeben, kommen Gegenstände mit einer nicht eingestellten Gruppe (leer) für die Ausrüstung in Frage.", "In der gleichen Gruppe kann nur ein Gegenstand ausgerüstet werden. Wenn Sie einen neuen Gegenstand ausrüsten, wird ein bereits vorhandener Gegenstand in derselben Gruppe automatisch abgelegt.", "Wenn die Liste leer ist (0 Stück), kann nichts ausgerüstet werden."],
-			links: { general: "general" },
-		},
 		numeric: {
 			title: "Verfügbarkeit der Levels",
 			summary: "カテゴリレベル機能の有無",

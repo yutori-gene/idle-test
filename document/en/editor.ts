@@ -627,7 +627,7 @@ export const item: Type.Item = {
 		equipmentType: {
 			title: "Equipment Type",
 			summary: "Type configurations for Equipment, Effects, and Consumption of Items",
-			points: ["装備可能なアイテムは、カテゴリの`equipmentGroups`で指定されたグループに属している必要があります。", "Only one Item may be Equipment within the same group.", "`unnecessary` takes effect regardless of whether it is equipped, and the size of the effect is proportional to the number held (no effect with 0, n times with n)."],
+			points: ["`necessary`・`consumable`のアイテムは、そのグループが自動的にカテゴリの装備枠になります。", "同じグループ内では1つのアイテムのみ装備できます。新しいアイテムを装備すると、同グループの既存装備は自動的に解除されます。", "装備枠の並び順は、ワールドのグループ一覧の定義順に従います。", "`unnecessary`は装備の有無に関わらず効果が発揮され、効果量は所持数に比例します（0個で効果なし、n個でn倍）。"],
 			list: [
 				["value", "Equipment", "Effectiveness", "consumption", "Example"],
 				["`necessary`", "Necessary", "Only during equipping (1 unit)", "nothing", "Equipment such as swords and armor"],
@@ -744,12 +744,6 @@ export const category: Type.Category = {
 			points: ["secreted: Will not appear on the UI at all until all requirements are met (it will not appear in Hints, and will be hidden in the list of requirements and rewards).", "hidden: Remains completely hidden (with its name grayed out and unavailable for interaction) as long as it is not referenced by any unlocking elements and does not meet any requirements.", "hinted (default): Only the name is displayed as a preview, but you cannot interact with it until it is unlocked.", "released: The item is released and available for use from the start, regardless of conditions (formerly \"Display from the Start\")."],
 		},
 		requirements: { ...requirement, options: { ...requirement.options, array: true }, summary: "カテゴリ利用に必要な条件" },
-		equipmentGroups: {
-			title: "Equipment Groups",
-			summary: "このカテゴリで装備可能なアイテムグループの指定",
-			points: ["このカテゴリで装備できるアイテムのグループ名のリストです。", "You can only equip items from the group that matches the group name you specify here.", "If an empty string is specified, an item with an unconfigured (empty) group will be targeted for Equipment.", "Only one Item can be equipped in the same group. When you equip a new Item, any existing Equipment in the same group will automatically be unequipped.", "If you set the list to empty (0 pieces), you cannot equip anything."],
-			links: { general: "general" },
-		},
 		numeric: {
 			title: "Level Availability",
 			summary: "カテゴリレベル機能の有無",
